@@ -1,0 +1,28 @@
+
+
+# nodejs
+node_modules/
+
+# build output
+dist/
+build/
+
+# temp
+temp
+tmp
+
+# log
+logs
+.log
+.log*
+
+# env
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# hugo
+hugo/resources/_gen
+hugo/public

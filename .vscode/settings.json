@@ -1,0 +1,13 @@
+{
+  "liveServer.settings.root": "/hugo/public",
+  "files.exclude": {
+    "node_modules": true,
+    "hugo/public": true,
+    "hugo/resources/_gen": true,
+  },
+  "search.exclude": {
+    "node_modules/*": true,
+    "hugo/public/*": true,
+    "hugo/resources/_gen/*": true,
+  }
+}

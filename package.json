@@ -1,0 +1,28 @@
+{
+  "name": "hans-blog",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [
+    "blog"
+  ],
+  "homepage": "https://github.com/plzhans/hans-blog#readme",
+  "bugs": {
+    "url": "https://github.com/plzhans/hans-blog/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plzhans/hans-blog.git"
+  },
+  "license": "ISC",
+  "author": "plzhans",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hugo:watch": "hugo server -D -s ./hugo --logLevel debug"
+  },
+  "dependencies": {
+    "@notionhq/client": "^5.9.0",
+    "dotenv": "^17.2.3",
+    "notion-to-md": "^3.1.9",
+    "yargs": "^18.0.0"
+  }
+}

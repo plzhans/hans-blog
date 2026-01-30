@@ -1,0 +1,45 @@
+#baseURL = 'https://blog.plzhans.com'
+theme = "m10c"
+languageCode = 'ko-kr'
+
+title = '부탁해스마일'
+
+#contentDir = "contents"
+
+[params]
+  author = "plzhans"
+  description = "개발자 블로그"
+  CopyrightHTML = "Copyright &#xA9; plzhans. All Rights Reserved."
+  menu_item_separator = " - "
+  [[params.social]]
+    icon = "brand-github"
+    name = "Github"
+    url = "https://github.com/plzhans"
+
+  [params.style]
+    darkestColor = "#242930"
+    darkColor = "#353b43"
+    lightColor = "#afbac4"
+    lightestColor = "#ffffff"
+    primaryColor = "#57cc8a"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 2
+#   [[menu.main]]
+#     identifier = "about"
+#     name = "About"
+#     url = "/about/"
+#     weight = 3
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
