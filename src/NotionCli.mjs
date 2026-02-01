@@ -1,19 +1,24 @@
 import "dotenv/config";
+import fs from "fs";
+import yaml from "js-yaml";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { Client } from "@notionhq/client";
 import { NotionApiClient } from "./clients/NotionApiClient.mjs";
 import { NotionExportService } from "./services/NotionExportService.mjs";
 
-if (!process.env.NOTION_API_TOKEN) throw new Error("NOTION_API_TOKEN is required (.env)");
+function loadConfig(filePath = "notion.yml") {
+  if (!fs.existsSync(filePath)) return {};
+  return yaml.load(fs.readFileSync(filePath, "utf-8")) || {};
+}
 
 function createService() {
-  const outDir = process.env.HUGO_CONTENT_DIR || "hugo/content/notion";
+  const config = loadConfig();
   const notionClient = new Client({
     auth: process.env.NOTION_API_TOKEN,
   });
   const notionApiClient = new NotionApiClient(notionClient, process.env.NOTION_API_TOKEN);
-  return new NotionExportService(notionApiClient, notionClient, outDir);
+  return new NotionExportService(notionApiClient, notionClient, config.propertyKeys, config.statusValues);
 }
 
 yargs(hideBin(process.argv))
@@ -35,7 +40,7 @@ yargs(hideBin(process.argv))
             throw new Error(
               "database_id is required (argument or NOTION_DATABASE_ID env)"
             );
-          }
+          }          
           const service = createService();
           await service.showPulishRequestPagesByDatabase(argv.database_id);
         }
@@ -61,8 +66,9 @@ yargs(hideBin(process.argv))
               "database_id is required (argument or NOTION_DATABASE_ID env)"
             );
           }
+          const outDir = process.env.HUGO_CONTENT_DIR || "hugo/content/notion";
           const service = createService();
-          await service.syncPulishByDatabase(argv.database_id, argv.draft);
+          await service.syncPulishByDatabase(argv.database_id, outDir, argv.draft);
         }
       )
       .demandCommand(1, "Please specify a database subcommand")
@@ -77,17 +83,17 @@ yargs(hideBin(process.argv))
         (yy) =>
           yy.positional("page_id", {
             type: "string",
-            default: process.env.NOTION_PAGE_ID,
-            describe: "Notion page ID (default: NOTION_PAGE_ID env)",
+            describe: "Notion page ID",
           }),
         async (argv) => {
           if (!argv.page_id) {
             throw new Error(
-              "page_id is required (argument or NOTION_PAGE_ID env)"
+              "page_id is required"
             );
           }
+          const outDir = process.env.HUGO_CONTENT_DIR || "hugo/content/notion";
           const service = createService();
-          await service.exportPage(argv.page_id);
+          await service.syncPublishPage(argv.page_id, outDir);
         }
       )
       .demandCommand(1, "Please specify a page subcommand")

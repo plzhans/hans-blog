@@ -1,0 +1,19 @@
+# Notion 데이터베이스 프로퍼티 매핑
+# 노션 DB의 프로퍼티 이름이 변경되면 여기서만 수정하면 됩니다.
+# 참고: 생성일자(created_time), 수정일자(last_edited_time)는 page 고유 필드이므로 설정 불필요
+propertyKeys:
+  # 페이지 발행 상태 (status 타입). "발행 요청" 필터 및 "발행" 여부 판단에 사용
+  status: "상태"
+  # 카테고리 (select/multi_select 타입). Hugo content 경로 및 front-matter categories에 사용
+  category: "카테고리"
+  # 태그 (multi_select/select/rich_text 타입). Hugo front-matter tags에 사용
+  tags: "태그"
+  # 고유 식별자 (unique_id 타입). Hugo front-matter id 및 url에 사용
+  uniqueId: "ID"
+
+# 상태 프로퍼티 값 매핑
+statusValues:
+  # DB 필터 조건으로 사용. 이 값과 일치하는 페이지만 동기화 대상
+  publishRequest: "발행 요청"
+  # 발행 여부 판단. 상태 이름에 이 값이 포함되면 draft: false 처리
+  publish: "발행"

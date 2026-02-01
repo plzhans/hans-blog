@@ -5,6 +5,7 @@ import { NotionToMarkdown } from "notion-to-md";
 import { slugify } from "../utils/TextUtils.mjs";
 import { downloadToFile } from "../utils/WebUtils.mjs";
 import { ensureDir } from "../utils/FileUtils.mjs";
+import { finished } from "stream/promises";
 
 /**
  * Notion 데이터를 Markdown 파일로 export 하는 서비스
@@ -13,26 +14,24 @@ export class NotionExportService {
   /**
    * @param {import("../clients/NotionApiClient.mjs").NotionApiClient} notionApiClient
    * @param {import("@notionhq/client").Client} notionClient
-   * @param {string} outDir
+   * @param {{ status?: string, category?: string, tags?: string, uniqueId?: string }} [propertyKeys]
+   * @param {{ publishRequest?: string, publish?: string }} [statusValues]
    */
-  constructor(notionApiClient, notionClient, outDir) {
+  constructor(notionApiClient, notionClient, propertyKeys, statusValues) {
     this.notionApiClient = notionApiClient;
     this.notionClient = notionClient;
-    this.outDir = outDir;
-  }
-
-  /** 단일 페이지를 Markdown으로 export */
-  async exportPage(pageId) {
-    await this.notion2markdown(pageId, this.outDir, new Set());
-  }
-
-  /** "발행 요청" 상태 필터 객체 생성 */
-  #makeFilterForPulishRequest(){
-    const filter = {
-        property: "상태",
-        status: { equals: "발행 요청" },
-    }
-    return filter;
+    this.propertyKeys = {
+      status: "상태",
+      category: "카테고리",
+      tags: "태그",
+      uniqueId: "ID",
+      ...propertyKeys,
+    };
+    this.statusValues = {
+      publishRequest: "발행 요청",
+      publish: "발행",
+      ...statusValues,
+    };
   }
 
   /** 데이터베이스에서 발행 요청 페이지 목록을 콘솔에 출력 */
@@ -73,35 +72,108 @@ export class NotionExportService {
   }
 
   /** 데이터베이스의 발행 요청 페이지를 모두 동기화(export) */
-  async syncPulishByDatabase(databaseId, draft = false) {
+  async syncPulishByDatabase(databaseId, outDir, draft = false) {
+    const existsPageMap = this.#findLocalNotionPagesInDir(outDir);
+
     const filter = draft ? undefined : this.#makeFilterForPulishRequest();
     const pages = await this.getPulishRequestPagesByDatabase(databaseId, filter);
     for (const page of pages) {
-      await this.syncPage(page);
+      await this.#internalSyncPage(page, existsPageMap, outDir);
     }
   }
 
-  /** 단일 페이지를 Markdown으로 동기화 */
-  async syncPage(page) {
-    await this.notion2markdown(page, this.outDir);
+  /** 단일 페이지를 Markdown으로 export */
+  async syncPublishPage(pageId, outDir) {
+    // notion 에서 pageId로 페이지 정보를 가져옴
+    const page = await this.notionApiClient.retrievePage(pageId);
+    if (!page) {  
+      throw new Error(`Page not found: ${pageId}`);
+    }
+    const existsPageMap = this.#findLocalNotionPagesInDir(outDir);
+    await this.#internalSyncPage(page, existsPageMap, outDir);
+  }
+
+  // ── 내부 동기화 로직 ──
+
+  /** "발행 요청" 상태 필터 객체 생성 */
+  #makeFilterForPulishRequest(){
+    const filter = {
+        property: this.propertyKeys.status,
+        status: { equals: this.statusValues.publishRequest },
+    }
+    return filter;
+  }
+
+  async #internalSyncPage(page, existsPageMap, outDir) {
+    await this.#notion2hugoContent(page, existsPageMap, outDir);
+  }
+
+  #findLocalNotionPagesInDir(baseDir) {
+    const existsPageMap = new Map();
+    if (!fs.existsSync(baseDir)) {
+      return existsPageMap;
+    }
+
+    const files = fs.globSync("**/notion_*.json", { cwd: baseDir });
+    for (const file of files) {
+      const name = path.basename(file);
+      const pageId = name.slice(7, -5); // "notion_" 제거 및 ".json" 제거
+      existsPageMap.set(pageId, path.join(baseDir, path.dirname(file)));
+    }
+    return existsPageMap;
   }
 
   /** Notion 페이지를 Markdown 파일로 변환하여 저장 (이미지 다운로드 포함) */
-  async notion2markdown(page, baseOutDir) {
-    if (!page || !page.id) return;
+  async #notion2hugoContent(page, existsPageMap, baseOutDir) {
+    if (!page || !page.id) {
+      throw new Error(`Invalid page: page or page.id is missing.`);
+    };
     const pageId = page.id;
+    const uniqueId = this.#getNotionPageUniqueId(page, this.propertyKeys.uniqueId);
     const title = this.#extractPageTitle(page);
     const slug = slugify(title);
-    const categoryLower = this.#extractPageCategory(page.properties, "카테고리")
+    const categoryLower = this.#extractPageCategory(page.properties, this.propertyKeys.category)
       .join("/")
       .toLowerCase() || "etc";
 
-    const pageDir = path.join(baseOutDir, categoryLower, slug);
-    const assetsDir = path.join(pageDir, "assets");
-    await ensureDir(assetsDir);
-    await ensureDir(pageDir);
+    const prevPageDir = existsPageMap.get(pageId);
+    const finalPageDir = path.join(baseOutDir, categoryLower, slug);
 
-    // Notion -> Markdown 변환기
+    if (prevPageDir && prevPageDir !== finalPageDir) {
+      await ensureDir(path.dirname(finalPageDir));
+      fs.renameSync(prevPageDir, finalPageDir);
+      existsPageMap.set(pageId, finalPageDir);
+      console.log(`📂 Moved page directory: ${prevPageDir} -> ${finalPageDir}`);
+    }
+
+    const assetsDir = path.join(finalPageDir, "assets");
+    const mdFilePath = path.join(finalPageDir, `index.md`);
+    const metaFilePath = path.join(finalPageDir, `notion_${pageId}.json`);
+
+    const publish = page.properties[this.propertyKeys.status]?.status?.name?.includes(this.statusValues.publish);
+    const draft = !publish;
+
+    const createdTime = new Date(page.created_time);
+    const lastEditedTime = new Date(page.last_edited_time);
+
+    // meta.json 비교: 변경 없고 index.md 존재하면 skip
+    if (fs.existsSync(metaFilePath) && fs.existsSync(mdFilePath)) {
+      try {
+        this.#updateFrontMatterDraft(mdFilePath, draft, title);
+
+        const prevMeta = JSON.parse(fs.readFileSync(metaFilePath, "utf-8"));
+        if (prevMeta.last_edited_time === page.last_edited_time) {
+          console.log(`⏭️ Skipped (not modified): ${title} (last_edited: ${page.last_edited_time})`);
+          return;
+        }
+      } catch (e) {
+        console.error(`❌ Failed to parse meta.json: ${metaFilePath}`, e);
+        throw e;
+      }
+    } else {
+      await ensureDir(finalPageDir);
+    }
+
     const n2m = new NotionToMarkdown({
       notionClient: this.notionClient,
       config: {
@@ -109,34 +181,40 @@ export class NotionExportService {
       },
     });
 
-    // 이미지 블록을 "로컬 다운로드 + 링크 치환"으로 커스텀
+    // 이미지 블록을 로컬 다운로드 + 링크 치환으로 커스텀
     let imageIndex = 0;
     n2m.setCustomTransformer("image", (block) => this.#transformImageBlock(block, assetsDir, ++imageIndex));
 
-    const pageFileName = path.join(pageDir, `index.md`);
-    const ws = fs.createWriteStream(pageFileName, { encoding: "utf-8" });
-    this.#wirteHugoHeader(ws, page, title);
-    ws.write("\n");
+    await ensureDir(assetsDir);
 
     const mdBlocks = await n2m.pageToMarkdown(pageId);
     const mdStringObj = n2m.toMarkdownString(mdBlocks);
 
-    // 변환
-    if (mdStringObj.parent) {
-      ws.write(mdStringObj.parent);
+    let ws;
+    try {
+      ws = fs.createWriteStream(mdFilePath, { encoding: "utf-8" });
+
+      this.#wirteHugoHeader(ws, page, uniqueId, title, draft);
+      ws.write("\n");
+
+      if (mdStringObj.parent) {
+        ws.write(mdStringObj.parent);
+      }
+
+      ws.end();
+      await finished(ws);
+      this.#trySetFileTime(mdFilePath, createdTime, lastEditedTime);
+    } catch (e) {
+      if (ws) ws.destroy(e);
+      throw e;
     }
 
-    // 일단 하위 페이지믄 무시
-    // // 하위 child page는 Notion 블록을 직접 훑어서 재귀로 export
-    // const children = await this.notionApiClient.listAllChildren(pageId);
-    // const childPages = children.filter((b) => b.type === "child_page");
+    fs.writeFileSync(metaFilePath, JSON.stringify(page, null, 2), { encoding: "utf-8" });
+    this.#trySetFileTime(metaFilePath, createdTime, lastEditedTime);
 
-    // for (const cp of childPages) {
-    //   await this.#exportPageRecursive(cp.id, pageDir, visited);
-    // }
-
-    console.log(`✅ Exported: ${title} -> ${pageFileName}`);
+    console.log(`✅ Exported: ${title} -> ${mdFilePath}`);
   }
+
   // ── Notion 속성 헬퍼 ──
 
   /** Notion 속성 값을 문자열로 변환 (출력/로깅용) */
@@ -192,12 +270,21 @@ export class NotionExportService {
     if (prop.type === "select") {
       return prop.select?.name ? [prop.select.name] : [];
     }
-    // 혹시 rich_text에 넣는 경우도 대비
+    // rich_text에 넣는 경우도 대비
     if (prop.type === "rich_text") {
       const v = (prop.rich_text ?? []).map((t) => t.plain_text).join("").trim();
       return v ? v.split(",").map(s => s.trim()).filter(Boolean) : [];
     }
     return [];
+  }
+
+  /** Notion 속성에서 unique_id number를 반환, 없으면 page.id 반환 */
+  #getNotionPageUniqueId(page, key) {
+    const prop = page?.properties?.[key];
+    if (prop?.type === "unique_id") {
+      return prop.unique_id?.number ?? page.id;
+    }
+    return page.id;
   }
 
   /** Notion 속성에서 카테고리 목록을 배열로 반환 (select / multi_select 지원) */
@@ -212,6 +299,17 @@ export class NotionExportService {
       return (prop.multi_select ?? []).map((x) => x.name);
     }
     return [];
+  }
+
+  // ── 파일 헬퍼 ──
+
+  /** 파일 시간(atime, mtime) 설정 (실패 시 경고만 출력) */
+  #trySetFileTime(filePath, atime, mtime) {
+    try {
+      fs.utimesSync(filePath, atime, mtime);
+    } catch (e) {
+      console.warn(`⚠️ Failed to set file time: ${e.message}`);
+    }
   }
 
   // ── Hugo 헬퍼 ──
@@ -249,11 +347,32 @@ export class NotionExportService {
     }
   }
 
+  /** front-matter 내 draft 값을 확인하고 다르면 갱신 */
+  #updateFrontMatterDraft(mdFilePath, draft, title) {
+    const mdContent = fs.readFileSync(mdFilePath, "utf-8");
+    const frontMatterEnd = mdContent.indexOf("\n---", 4);
+    if (frontMatterEnd === -1) return;
+
+    const frontMatter = mdContent.slice(0, frontMatterEnd);
+    const draftMatch = frontMatter.match(/^draft:\s*(true|false)\s*$/m);
+    if (!draftMatch) return;
+
+    const fileDraft = draftMatch[1] === "true";
+    if (fileDraft === draft) return;
+
+    const updatedFrontMatter = frontMatter.replace(/^draft:\s*(true|false)\s*$/m, `draft: ${draft}`);
+    const updated = updatedFrontMatter + mdContent.slice(frontMatterEnd);
+    fs.writeFileSync(mdFilePath, updated, "utf-8");
+    console.log(`📝 Updated draft: ${fileDraft} -> ${draft} : ${title}`);
+  }
+
   /** Hugo front-matter(YAML 헤더)를 WriteStream에 작성 */
-  #wirteHugoHeader(ws, page, title, draft = false) {
-    const tags = this.#extractPageTags(page.properties, "태그");
-    const category = this.#extractPageCategory(page.properties, "카테고리");
+  #wirteHugoHeader(ws, page, uniqueId, title, draft = false) {
+    const tags = this.#extractPageTags(page.properties, this.propertyKeys.tags);
+    const category = this.#extractPageCategory(page.properties, this.propertyKeys.category);
     ws.write("---\n");
+    ws.write(`id: "${uniqueId}"\n`);
+    ws.write(`url: "/notion/${uniqueId}"\n`);
     ws.write(`title: "${title.replace(/"/g, '\\"')}"\n`);
     if(tags.length > 0){
       ws.write("tags:\n");
@@ -272,6 +391,4 @@ export class NotionExportService {
     ws.write(`draft: ${draft}\n`);
     ws.write("---\n");
   }
-
-  
 }

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(node:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/plzhans/projects/hans/hans-blog/.github"
+    ]
+  }
+}

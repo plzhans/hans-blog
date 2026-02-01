@@ -1,0 +1,43 @@
+
+@GITHUB_PAT = {{$dotenv GITHUB_PAT}}
+@NOTION_PAGE_ID = 2f084d10-c3fb-80f3-8dbe-f6361bae7e0a
+
+### Notion Sync - repository_dispatch 트리거
+# GitHub Action notion-sync.yml 실행
+
+POST https://api.github.com/repos/plzhans/hans-blog/dispatches
+Authorization: token {{GITHUB_PAT}}
+Accept: application/vnd.github.v3+json
+Content-Type: application/json
+
+{
+  "event_type": "notion-sync",
+  "client_payload": {
+    "notion_data": {
+      "id": "{{NOTION_PAGE_ID}}",
+      "properties": {
+        "제목": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": { "content": "test", "link": null },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "test",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/20e84d10c3fb80428fbeed3a2e82d336",
+    }
+  }
+}

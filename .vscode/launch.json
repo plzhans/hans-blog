@@ -4,29 +4,52 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "(debug) database sync",
-      "program": "${workspaceFolder}/src/NotionCli.mjs",
-      "args": ["database", "sync"],
-      "envFile": "${workspaceFolder}/.env",
+      "name": "hugo:watch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "hugo:watch"],
       "console": "integratedTerminal"
     },
+    {
+    "type": "node",
+    "request": "launch",
+    "name": "(debug) database sync",
+    "runtimeExecutable": "${env:NVM_DIR}/nvm-exec",
+    "runtimeArgs": ["node"],
+    "program": "${workspaceFolder}/src/NotionCli.mjs",
+    "args": ["database", "sync"],
+    "envFile": "${workspaceFolder}/.env",
+    "console": "internalConsole",
+    "outputCapture": "std",
+    "autoAttachChildProcesses": true,
+    "cwd": "${workspaceFolder}",
+    "timeout": 30000 
+  },
     {
       "type": "node",
       "request": "launch",
       "name": "(debug) database view",
+      "runtimeExecutable": "${env:NVM_DIR}/nvm-exec",
       "program": "${workspaceFolder}/src/NotionCli.mjs",
       "args": ["database", "view"],
       "envFile": "${workspaceFolder}/.env",
-      "console": "integratedTerminal"
+      "console": "internalConsole"
     },
     {
       "type": "node",
       "request": "launch",
       "name": "(debug) page sync",
+      "runtimeExecutable": "${env:NVM_DIR}/nvm-exec",
       "program": "${workspaceFolder}/src/NotionCli.mjs",
-      "args": ["page", "sync"],
+      "args": ["page", "sync", "${input:pageId}"],
       "envFile": "${workspaceFolder}/.env",
-      "console": "integratedTerminal"
+      "console": "internalConsole"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "pageId",
+      "type": "promptString",
+      "description": "Notion Page ID"
     }
   ]
 }
