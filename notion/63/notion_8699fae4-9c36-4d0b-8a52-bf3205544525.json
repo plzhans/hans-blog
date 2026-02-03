@@ -1,7 +1,7 @@
 {
   "object": "page",
-  "id": "17584d10-c3fb-8065-81af-dade0cf3f9a8",
-  "created_time": "2025-01-08T09:42:00.000Z",
+  "id": "8699fae4-9c36-4d0b-8a52-bf3205544525",
+  "created_time": "2024-06-14T02:46:00.000Z",
   "last_edited_time": "2026-02-03T04:28:00.000Z",
   "created_by": {
     "object": "user",
@@ -30,16 +30,21 @@
     "생성일": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2025-01-08T09:42:00.000Z"
+      "created_time": "2024-06-14T02:46:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "VXhL",
-          "name": "git",
-          "color": "blue"
+          "id": "5400692f-d03e-4936-b95c-32fd39bab231",
+          "name": "java",
+          "color": "pink"
+        },
+        {
+          "id": "rdWY",
+          "name": "mysql",
+          "color": "default"
         }
       ]
     },
@@ -53,7 +58,7 @@
       "type": "unique_id",
       "unique_id": {
         "prefix": "POST",
-        "number": 69
+        "number": 63
       }
     },
     "상태": {
@@ -89,9 +94,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "9bdb5196-7014-4a83-9375-182716238338",
-        "name": "Git",
-        "color": "green"
+        "id": "ab81d1ac-9425-4cbe-91ba-0909c81fb65b",
+        "name": "Develop",
+        "color": "pink"
       }
     },
     "제목": {
@@ -101,7 +106,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Git 삭제 브런치 복구",
+            "content": "Java Timezone",
             "link": null
           },
           "annotations": {
@@ -112,12 +117,12 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Git 삭제 브런치 복구",
+          "plain_text": "Java Timezone",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/Git-17584d10c3fb806581afdade0cf3f9a8",
+  "url": "https://www.notion.so/Java-Timezone-8699fae49c364d0b8a52bf3205544525",
   "public_url": null
 }

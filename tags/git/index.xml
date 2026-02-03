@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 부탁해스마일</title><link>/tags/git/</link><description>Recent content in Git on 부탁해스마일</description><generator>Hugo</generator><language>ko-kr</language><lastBuildDate>Fri, 30 Jan 2026 06:35:00 +0000</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git 삭제 브런치 복구</title><link>/notion/69/</link><pubDate>Wed, 08 Jan 2025 09:42:00 +0000</pubDate><guid>/notion/69/</guid><description>&lt;h2 id="목표"&gt;목표&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on 부탁해스마일</title><link>/tags/git/</link><description>Recent content in Git on 부탁해스마일</description><generator>Hugo</generator><language>ko-kr</language><lastBuildDate>Tue, 03 Feb 2026 04:28:00 +0000</lastBuildDate><atom:link href="/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git 삭제 브런치 복구</title><link>/notion/69/</link><pubDate>Wed, 08 Jan 2025 09:42:00 +0000</pubDate><guid>/notion/69/</guid><description>&lt;h2 id="목표"&gt;목표&lt;/h2&gt;
 &lt;p&gt;별도의 브런치에 &lt;strong&gt;삭제한 특정 커밋 시점으로 복구&lt;/strong&gt;합니다.&lt;/p&gt;
 &lt;h2 id="상황"&gt;상황&lt;/h2&gt;
 &lt;p&gt;브런치를 삭제한 뒤, &lt;strong&gt;해당 브런치에서 작업했던 커밋으로 다시 브런치를 복구&lt;/strong&gt;해야 하는 경우가 있습니다.&lt;/p&gt;
@@ -8,7 +8,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;git reflog
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="복구-대상-선택"&gt;복구 대상 선택&lt;/h3&gt;
 &lt;p&gt;reflog 출력에서 &lt;strong&gt;복구하려는 시점의 커밋 해시&lt;/strong&gt;를 확인합니다.&lt;/p&gt;
-&lt;p&gt;&lt;img src="./assets/1_8d37488e48ac.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="./assets/1_9b6af5440c4a.png" alt=""&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="2-커밋-해시로-브런치-다시-만들기"&gt;2. 커밋 해시로 브런치 다시 만들기&lt;/h2&gt;
 &lt;p&gt;찾아낸 커밋 해시를 기준으로 새 브런치를 생성하고 바로 체크아웃합니다.&lt;/p&gt;</description></item></channel></rss>
