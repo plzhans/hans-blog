@@ -5,7 +5,7 @@
 &lt;hr&gt;
 &lt;h2 id="1-reflog로-복구-지점커밋-해시-찾기"&gt;1. reflog로 복구 지점(커밋 해시) 찾기&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;reflog&lt;/code&gt;는 브런치를 삭제했더라도 &lt;strong&gt;로컬에서 HEAD가 이동했던 기록&lt;/strong&gt;을 남겨두기 때문에, 복구할 커밋 해시를 찾는 데 유용합니다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1&lt;/span&gt;&lt;span&gt;git reflog
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git reflog
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="복구-대상-선택"&gt;복구 대상 선택&lt;/h3&gt;
 &lt;p&gt;reflog 출력에서 &lt;strong&gt;복구하려는 시점의 커밋 해시&lt;/strong&gt;를 확인합니다.&lt;/p&gt;
 &lt;p&gt;&lt;img src="./assets/1_534bed29e37d.png" alt=""&gt;&lt;/p&gt;
