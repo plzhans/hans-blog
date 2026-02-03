@@ -72,4 +72,25 @@
   }
   </script>
   {{- end }}
+
+  <script>
+    document.querySelectorAll('.highlight').forEach(function (block) {
+      var btn = document.createElement('button');
+      btn.className = 'code-copy-btn';
+      btn.textContent = 'Copy';
+      btn.addEventListener('click', function () {
+        var code = block.querySelector('code');
+        if (!code) return;
+        var rows = code.querySelectorAll('span[style*="display:flex"] > span:last-child');
+        var text = rows.length
+          ? Array.prototype.map.call(rows, function (el) { return el.textContent; }).join('')
+          : code.textContent;
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied!';
+          setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+        });
+      });
+      block.appendChild(btn);
+    });
+  </script>
 {{ end }}

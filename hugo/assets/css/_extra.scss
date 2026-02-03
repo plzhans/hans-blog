@@ -1,0 +1,28 @@
+.highlight {
+  position: relative;
+
+  .code-copy-btn {
+    position: absolute;
+    top: 0.4em;
+    right: 0.4em;
+    z-index: 1;
+    padding: 0.2em 0.5em;
+    border: 1px solid rgba($light-color, 0.3);
+    border-radius: 4px;
+    background: rgba($darkest-color, 0.8);
+    color: $light-color;
+    font-size: 0.75em;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &:hover {
+      background: rgba($primary-color, 0.3);
+      border-color: rgba($primary-color, 0.6);
+    }
+  }
+
+  &:hover .code-copy-btn {
+    opacity: 1;
+  }
+}

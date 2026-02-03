@@ -33,6 +33,14 @@ title = '부탁해스마일'
     lightestColor = "#ffffff"
     primaryColor = "#57cc8a"
 
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = false
+
 [menu]
   [[menu.main]]
     identifier = "home"
