@@ -132,6 +132,16 @@ Notion 데이터베이스에 버튼 속성을 추가하고, 버튼 클릭 시 �
 
 ![Make.com 시나리오 구성](docs/screenshot/makecom-01.png)
 
+## 댓글 시스템 (giscus)
+
+[giscus](https://giscus.app/ko)를 사용하여 블로그 포스트에 댓글 기능을 제공합니다.
+GitHub Discussions 기반으로, 방문자가 GitHub 계정으로 로그인하여 댓글과 리액션을 남길 수 있습니다.
+
+- 설정: [`hugo/hugo.toml`](hugo/hugo.toml)의 `[params.giscus]` 섹션
+- 템플릿: [`hugo/layouts/_default/single.html`](hugo/layouts/_default/single.html)
+
+> 자세한 설정 방법은 [`docs/giscus.md`](docs/giscus.md)를 참고하세요.
+
 ### GitHub Secrets 설정
 
 GitHub Actions 워크플로우에서 사용하는 환경변수를 미리 등록해야 합니다.

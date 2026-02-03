@@ -44,6 +44,18 @@ title = '부탁해스마일'
   category = "categories"
   tag = "tags"
 
+[params.giscus]
+  repo = "plzhans/hans-blog"
+  repoId = "R_kgDORDHy7g"
+  category = "General"
+  categoryId = "DIC_kwDORDHy7s4C1zoX"
+  mapping = "pathname"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "top"
+  theme = "dark"
+  lang = "ko"
+
 [services]
   [services.googleAnalytics]
     ID = "G-7QCWSVX3WN"
