@@ -35,6 +35,7 @@ title = '부탁해스마일'
 
 [markup]
   [markup.highlight]
+    noClasses = false
     codeFences = true
     guessSyntax = false
     style = "monokai"

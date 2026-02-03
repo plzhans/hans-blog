@@ -158,3 +158,24 @@ GitHub 저장소의 **Settings > Secrets and variables > Actions**에서 다음 
 | `PAT_TOKEN` | GitHub Personal Access Token. Notion 동기화 후 커밋 push 시 Deploy Hugo 워크플로우를 트리거하기 위해 필요. Fine-grained PAT: `Contents: Read and write`, Classic PAT: `repo` |
 | `NOTION_API_TOKEN` | Notion Integration API 토큰 |
 | `NOTION_DATABASE_ID` | Notion 데이터베이스 ID |
+
+## 기타 참고 사항
+
+### 코드 하이라이트 커스텀
+
+코드 블록의 하이라이트 스타일을 커스텀하기 위해 Hugo의 Chroma CSS 클래스 방식을 사용합니다.
+
+[`hugo/hugo.toml`](hugo/hugo.toml)에서 `noClasses = false` 설정 후, Chroma 스타일 CSS를 생성합니다.
+
+```bash
+hugo gen chromastyles --style=monokai > hugo/assets/css/syntax.css
+```
+
+생성된 CSS를 [`hugo/assets/css/_extra.scss`](hugo/assets/css/_extra.scss)에서 import 합니다.
+> 참고: `_extra.scss`는 테마 기본 스타일 외에 추가 커스텀 스타일을 정의하는 파일입니다.
+
+```scss
+@import 'syntax';
+```
+
+> 다른 스타일을 적용하려면 `--style` 옵션을 변경하면 됩니다. 사용 가능한 스타일 목록은 [Chroma Style Gallery](https://xyproto.github.io/splash/docs/)에서 확인할 수 있습니다.

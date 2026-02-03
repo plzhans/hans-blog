@@ -81,9 +81,9 @@
       btn.addEventListener('click', function () {
         var code = block.querySelector('code');
         if (!code) return;
-        var rows = code.querySelectorAll('span[style*="display:flex"] > span:last-child');
-        var text = rows.length
-          ? Array.prototype.map.call(rows, function (el) { return el.textContent; }).join('')
+        var lines = code.querySelectorAll('.cl');
+        var text = lines.length
+          ? Array.prototype.map.call(lines, function (el) { return el.textContent; }).join('')
           : code.textContent;
         navigator.clipboard.writeText(text).then(function () {
           btn.textContent = 'Copied!';

@@ -1,5 +1,22 @@
+@import 'syntax';
+
 .highlight {
   position: relative;
+
+  .cl {
+    color: #cccccc;
+  }
+
+  .ln {
+    color: rgba($light-color, 0.3);
+    user-select: none;
+    margin-right: 1em;
+  }
+
+  code:not([data-lang]) .ln,
+  code[data-lang="shell"] .ln {
+    display: none;
+  }
 
   .code-copy-btn {
     position: absolute;
