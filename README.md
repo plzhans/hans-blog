@@ -183,3 +183,9 @@ hugo gen chromastyles --style=monokai > hugo/assets/css/syntax.css
 ```
 
 > 다른 스타일을 적용하려면 `--style` 옵션을 변경하면 됩니다. 사용 가능한 스타일 목록은 [Chroma Style Gallery](https://xyproto.github.io/splash/docs/)에서 확인할 수 있습니다.
+
+## 라이선스
+
+소스 코드는 [MIT License](LICENSE)로 제공됩니다.
+
+블로그 콘텐츠(`hugo/content/` 하위의 글, 이미지)는 저작권자(plzhans)에게 있으며, 무단 복제 및 배포를 금지합니다.
