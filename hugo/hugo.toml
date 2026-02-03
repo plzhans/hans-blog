@@ -10,12 +10,20 @@ title = '부탁해스마일'
 [params]
   author = "plzhans"
   description = "개발자 블로그"
-  CopyrightHTML = "Copyright &#xA9; plzhans. All Rights Reserved."
+  CopyrightHTML = 'Copyright &#xA9; plzhans. All Rights Reserved.<br/>Powered by <a href="https://github.com/plzhans/hans-blog" target="_blank">hans-blog</a>'
   menu_item_separator = " - "
   [[params.social]]
     icon = "brand-github"
     name = "Github"
     url = "https://github.com/plzhans"
+  [[params.social]]
+    icon = "code"
+    name = "Source"
+    url = "https://github.com/plzhans/hans-blog"
+  [[params.social]]
+    icon = "rss"
+    name = "RSS"
+    url = "/index.xml"
 
   [params.style]
     darkestColor = "#242930"
