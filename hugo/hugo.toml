@@ -1,6 +1,7 @@
-#baseURL = 'https://blog.plzhans.com'
+baseURL = 'https://blog.plzhans.com'
 theme = "m10c"
 languageCode = 'ko-kr'
+enableRobotsTXT = true
 
 title = '부탁해스마일'
 

@@ -132,6 +132,12 @@ Notion 데이터베이스에 버튼 속성을 추가하고, 버튼 클릭 시 �
 
 ![Make.com 시나리오 구성](docs/screenshot/makecom-01.png)
 
+## SEO 설정
+
+사이트 검색 최적화를 위해 SEO 설정이 적용되어 있습니다.
+
+> 자세한 내용은 [`docs/seo.md`](docs/seo.md)를 참고하세요.
+
 ## 댓글 시스템 (giscus)
 
 [giscus](https://giscus.app/ko)를 사용하여 블로그 포스트에 댓글 기능을 제공합니다.

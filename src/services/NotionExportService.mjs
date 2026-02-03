@@ -25,6 +25,7 @@ export class NotionExportService {
       category: "카테고리",
       tags: "태그",
       uniqueId: "ID",
+      summary: "요약",
       ...propertyKeys,
     };
     this.statusValues = {
@@ -221,7 +222,15 @@ export class NotionExportService {
 
     // 이미지 블록을 로컬 다운로드 + 링크 치환으로 커스텀
     let imageIndex = 0;
-    n2m.setCustomTransformer("image", (block) => this.#transformImageBlock(block, assetsDir, ++imageIndex));
+    let firstImagePath = null;
+    n2m.setCustomTransformer("image", async (block) => {
+      const result = await this.#transformImageBlock(block, assetsDir, ++imageIndex);
+      if (!firstImagePath && typeof result === 'string') {
+        const match = result.match(/\.\/(assets\/.+?)\)/);
+        if (match) firstImagePath = match[1];
+      }
+      return result;
+    });
 
     await ensureDir(assetsDir);
 
@@ -232,7 +241,7 @@ export class NotionExportService {
     try {
       ws = fs.createWriteStream(mdFilePath, { encoding: "utf-8" });
 
-      this.#wirteHugoHeader(ws, page, uniqueId, title, draft);
+      this.#wirteHugoHeader(ws, page, uniqueId, title, draft, firstImagePath);
       ws.write("\n");
 
       if (mdStringObj.parent) {
@@ -341,6 +350,16 @@ export class NotionExportService {
     return [];
   }
 
+  /** Notion 속성에서 텍스트 값을 문자열로 반환 (rich_text 지원) */
+  #extractTextProperty(properties, key){
+    const prop = properties[key];
+    if (!prop) return "";
+    if (prop.type === "rich_text") {
+      return (prop.rich_text ?? []).map(t => t.plain_text).join("").trim();
+    }
+    return "";
+  }
+
   // ── 파일 헬퍼 ──
 
   /** 파일 시간(atime, mtime) 설정 (실패 시 경고만 출력) */
@@ -388,13 +407,17 @@ export class NotionExportService {
   }
 
   /** Hugo front-matter(YAML 헤더)를 WriteStream에 작성 */
-  #wirteHugoHeader(ws, page, uniqueId, title, draft = false) {
+  #wirteHugoHeader(ws, page, uniqueId, title, draft = false, firstImagePath = null) {
     const tags = this.#extractPageTags(page.properties, this.propertyKeys.tags);
     const category = this.#extractPageCategory(page.properties, this.propertyKeys.category);
+    const summary = this.#extractTextProperty(page.properties, this.propertyKeys.summary);
     ws.write("---\n");
     ws.write(`id: "${uniqueId}"\n`);
     ws.write(`url: "/notion/${uniqueId}"\n`);
     ws.write(`title: "${title.replace(/"/g, '\\"')}"\n`);
+    if(summary){
+      ws.write(`description: "${summary.replace(/"/g, '\\"')}"\n`);
+    }
     if(tags.length > 0){
       ws.write("tags:\n");
       for(const tag of tags){
@@ -410,6 +433,10 @@ export class NotionExportService {
     ws.write(`date: ${page.created_time}\n`);
     ws.write(`lastmod: ${page.last_edited_time}\n`);
     ws.write(`draft: ${draft}\n`);
+    if(firstImagePath){
+      ws.write("images:\n");
+      ws.write(`  - "${firstImagePath}"\n`);
+    }
     ws.write("---\n");
   }
 
