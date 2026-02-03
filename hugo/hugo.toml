@@ -43,3 +43,7 @@ title = '부탁해스마일'
 [taxonomies]
   category = "categories"
   tag = "tags"
+
+[services]
+  [services.googleAnalytics]
+    ID = "G-7QCWSVX3WN"
