@@ -30,6 +30,7 @@ export class NotionExportService {
     this.statusValues = {
       publishRequest: "발행 요청",
       publish: "발행",
+      published: "발행 완료",
       ...statusValues,
     };
   }
@@ -61,24 +62,36 @@ export class NotionExportService {
     return await this.getPagesByDatabase(databaseId, filter);
   }
 
-  /** 데이터베이스에서 페이지 목록 조회 (필터 선택적 적용) */
+  /** 데이터베이스에서 페이지 목록 조회 (필터 선택적 적용, 페이징 처리) */
   async getPagesByDatabase(databaseId, filter) {
-    if(filter){
-      return this.notionApiClient.queryDatabase(databaseId, {
-        filter: filter
-      });
+    let results = [];
+    let cursor = undefined;
+    let pageNum = 0;
+
+    while (true) {
+      const params = {};
+      if (filter) params.filter = filter;
+      if (cursor) params.start_cursor = cursor;
+
+      const resp = await this.notionApiClient.queryDatabase(databaseId, params);
+      const items = resp.results || [];
+      results = results.concat(items);
+      pageNum++;
+      console.log(`📄 Page ${pageNum} loaded: ${items.length} items (total: ${results.length})`);
+
+      if (!resp.has_more) break;
+      cursor = resp.next_cursor;
     }
-    return this.notionApiClient.queryDatabase(databaseId);
+    return results;
   }
 
-  /** 데이터베이스의 발행 요청 페이지를 모두 동기화(export) */
-  async syncPulishByDatabase(databaseId, outDir, draft = false) {
+  /** 데이터베이스의 전체 페이지를 동기화(export) */
+  async syncPulishByDatabase(databaseId, outDir, includeDraft = false) {
     const existsPageMap = this.#findLocalNotionPagesInDir(outDir);
 
-    const filter = draft ? undefined : this.#makeFilterForPulishRequest();
-    const pages = await this.getPulishRequestPagesByDatabase(databaseId, filter);
+    const pages = await this.getPagesByDatabase(databaseId);
     for (const page of pages) {
-      await this.#internalSyncPage(page, existsPageMap, outDir);
+      await this.#internalSyncPage(page, existsPageMap, outDir, includeDraft);
     }
   }
 
@@ -95,17 +108,25 @@ export class NotionExportService {
 
   // ── 내부 동기화 로직 ──
 
-  /** "발행 요청" 상태 필터 객체 생성 */
+  /** "발행 요청" 또는 "발행 완료" 상태 필터 객체 생성 */
   #makeFilterForPulishRequest(){
     const filter = {
-        property: this.propertyKeys.status,
-        status: { equals: this.statusValues.publishRequest },
-    }
+      or: [
+        { property: this.propertyKeys.status, status: { equals: this.statusValues.publishRequest } },
+        { property: this.propertyKeys.status, status: { equals: this.statusValues.published } },
+      ],
+    };
     return filter;
   }
 
-  async #internalSyncPage(page, existsPageMap, outDir) {
-    await this.#notion2hugoContent(page, existsPageMap, outDir);
+  async #internalSyncPage(page, existsPageMap, outDir, includeDraft = false) {
+    const updated = await this.#notion2hugoContent(page, existsPageMap, outDir, includeDraft);
+    if(updated){
+      const currentStatus = page.properties[this.propertyKeys.status]?.status?.name;
+      if(currentStatus === this.statusValues.publishRequest){
+        await this.#notionPageStatusPublished(page.id);
+      }
+    }
   }
 
   #findLocalNotionPagesInDir(baseDir) {
@@ -124,19 +145,29 @@ export class NotionExportService {
   }
 
   /** Notion 페이지를 Markdown 파일로 변환하여 저장 (이미지 다운로드 포함) */
-  async #notion2hugoContent(page, existsPageMap, baseOutDir) {
+  async #notion2hugoContent(page, existsPageMap, baseOutDir, includeDraft = false) {
     if (!page || !page.id) {
       throw new Error(`Invalid page: page or page.id is missing.`);
     };
     const pageId = page.id;
-    const uniqueId = this.#getNotionPageUniqueId(page, this.propertyKeys.uniqueId);
     const title = this.#extractPageTitle(page);
+    const currentStatus = page.properties[this.propertyKeys.status]?.status?.name;
+    const draft = !(currentStatus === this.statusValues.publishRequest || currentStatus === this.statusValues.published);
+    const prevPageDir = existsPageMap.get(pageId);
+
+    // draft이고 로컬 파일이 없으면 무시
+    if (draft && !includeDraft && !prevPageDir) {
+      return false;
+    }
+
+    console.log(`\n🔄 Processing: ${title} (${pageId})`);
+
+    const uniqueId = this.#getNotionPageUniqueId(page, this.propertyKeys.uniqueId);
     const slug = slugify(title);
     const categoryLower = this.#extractPageCategory(page.properties, this.propertyKeys.category)
-      .join("/")
-      .toLowerCase() || "etc";
+      .map(c => slugify(c))
+      .join("/") || "etc";
 
-    const prevPageDir = existsPageMap.get(pageId);
     const finalPageDir = path.join(baseOutDir, categoryLower, slug);
 
     if (prevPageDir && prevPageDir !== finalPageDir) {
@@ -150,27 +181,34 @@ export class NotionExportService {
     const mdFilePath = path.join(finalPageDir, `index.md`);
     const metaFilePath = path.join(finalPageDir, `notion_${pageId}.json`);
 
-    const publish = page.properties[this.propertyKeys.status]?.status?.name?.includes(this.statusValues.publish);
-    const draft = !publish;
-
     const createdTime = new Date(page.created_time);
     const lastEditedTime = new Date(page.last_edited_time);
 
-    // meta.json 비교: 변경 없고 index.md 존재하면 skip
+    // meta.json 비교: 변경 없고 index.md 존재하면 sk
     if (fs.existsSync(metaFilePath) && fs.existsSync(mdFilePath)) {
+      if (draft && !includeDraft) {
+        fs.rmSync(finalPageDir, { recursive: true, force: true });
+        console.log(`  🗑️ Deleted (draft) (status: ${currentStatus})`);
+        return false;
+      }
       try {
-        this.#updateFrontMatterDraft(mdFilePath, draft, title);
-
         const prevMeta = JSON.parse(fs.readFileSync(metaFilePath, "utf-8"));
         if (prevMeta.last_edited_time === page.last_edited_time) {
-          console.log(`⏭️ Skipped (not modified): ${title} (last_edited: ${page.last_edited_time})`);
-          return;
+          if (currentStatus !== this.statusValues.published) {
+            console.log(`  ⏭️ Skipped (not modified), status update needed`);
+            return true;
+          }
+          console.log(`  ⏭️ Skipped (not modified) (status: ${currentStatus}, last_edited: ${page.last_edited_time})`);
+          return false;
         }
       } catch (e) {
         console.error(`❌ Failed to parse meta.json: ${metaFilePath}`, e);
         throw e;
       }
     } else {
+      if (draft && !includeDraft) {
+        return false;
+      }
       await ensureDir(finalPageDir);
     }
 
@@ -212,7 +250,9 @@ export class NotionExportService {
     fs.writeFileSync(metaFilePath, JSON.stringify(page, null, 2), { encoding: "utf-8" });
     this.#trySetFileTime(metaFilePath, createdTime, lastEditedTime);
 
-    console.log(`✅ Exported: ${title} -> ${mdFilePath}`);
+    console.log(`  ✅ Exported: ${mdFilePath}`);
+
+    return true;
   }
 
   // ── Notion 속성 헬퍼 ──
@@ -347,25 +387,6 @@ export class NotionExportService {
     }
   }
 
-  /** front-matter 내 draft 값을 확인하고 다르면 갱신 */
-  #updateFrontMatterDraft(mdFilePath, draft, title) {
-    const mdContent = fs.readFileSync(mdFilePath, "utf-8");
-    const frontMatterEnd = mdContent.indexOf("\n---", 4);
-    if (frontMatterEnd === -1) return;
-
-    const frontMatter = mdContent.slice(0, frontMatterEnd);
-    const draftMatch = frontMatter.match(/^draft:\s*(true|false)\s*$/m);
-    if (!draftMatch) return;
-
-    const fileDraft = draftMatch[1] === "true";
-    if (fileDraft === draft) return;
-
-    const updatedFrontMatter = frontMatter.replace(/^draft:\s*(true|false)\s*$/m, `draft: ${draft}`);
-    const updated = updatedFrontMatter + mdContent.slice(frontMatterEnd);
-    fs.writeFileSync(mdFilePath, updated, "utf-8");
-    console.log(`📝 Updated draft: ${fileDraft} -> ${draft} : ${title}`);
-  }
-
   /** Hugo front-matter(YAML 헤더)를 WriteStream에 작성 */
   #wirteHugoHeader(ws, page, uniqueId, title, draft = false) {
     const tags = this.#extractPageTags(page.properties, this.propertyKeys.tags);
@@ -390,5 +411,16 @@ export class NotionExportService {
     ws.write(`lastmod: ${page.last_edited_time}\n`);
     ws.write(`draft: ${draft}\n`);
     ws.write("---\n");
+  }
+
+  async #notionPageStatusPublished(pageId) {
+    const properties = {
+      [this.propertyKeys.status]: {
+        status: {
+          name: this.statusValues.published,
+        },
+      },
+    };
+    await this.notionApiClient.updatePageProperties(pageId, properties);
   }
 }

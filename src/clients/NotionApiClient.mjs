@@ -12,21 +12,12 @@ export class NotionApiClient {
     return this.notion.pages.retrieve({ page_id: pageId });
   }
 
-  async queryDatabase(databaseId, { filter } = {}) {
-    let results = [];
-    let cursor = undefined;
+  async queryDatabase(databaseId, params = {}) {
+    return this.notion.dataSources.query({ data_source_id: databaseId, ...params });
+  }
 
-    while (true) {
-      const params = { data_source_id: databaseId };
-      if (filter) params.filter = filter;
-      if (cursor) params.start_cursor = cursor;
-
-      const resp = await this.notion.dataSources.query(params);
-      results = results.concat(resp.results || []);
-      if (!resp.has_more) break;
-      cursor = resp.next_cursor;
-    }
-    return results;
+  async updatePageProperties(pageId, properties) {
+    return this.notion.pages.update({ page_id: pageId, properties });
   }
 
   async listAllChildren(blockId) {

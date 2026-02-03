@@ -1,15 +1,15 @@
 {
   "object": "page",
-  "id": "67a15ca0-7580-4d61-bb94-1081ab3a74d2",
-  "created_time": "2022-03-17T07:49:00.000Z",
-  "last_edited_time": "2026-01-29T01:24:00.000Z",
+  "id": "17584d10-c3fb-8065-81af-dade0cf3f9a8",
+  "created_time": "2025-01-08T09:42:00.000Z",
+  "last_edited_time": "2026-02-03T04:28:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "267f1fdf-c042-437e-a78a-083637f37b61"
   },
   "cover": null,
   "icon": null,
@@ -30,39 +30,39 @@
     "생성일": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2022-03-17T07:49:00.000Z"
+      "created_time": "2025-01-08T09:42:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "8f32e0fc-3196-4ad0-bb3b-84e74bfcc5d5",
-          "name": "os",
-          "color": "default"
+          "id": "VXhL",
+          "name": "git",
+          "color": "blue"
         }
       ]
     },
     "업데이트됨": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-01-29T01:24:00.000Z"
+      "last_edited_time": "2026-02-03T04:28:00.000Z"
     },
     "ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": "POST",
-        "number": 40
+        "number": 69
       }
     },
     "상태": {
       "id": "%5B~Jq",
       "type": "status",
       "status": {
-        "id": ":{JA",
-        "name": "초안",
-        "color": "gray"
+        "id": "DOao",
+        "name": "발행 완료",
+        "color": "green"
       }
     },
     "요약": {
@@ -89,9 +89,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "47750515-86a8-4c65-a6b3-aa9cded26090",
-        "name": "OS",
-        "color": "red"
+        "id": "9bdb5196-7014-4a83-9375-182716238338",
+        "name": "Git",
+        "color": "green"
       }
     },
     "제목": {
@@ -101,24 +101,23 @@
         {
           "type": "text",
           "text": {
-            "content": "리눅스 홈(/home) 디렉토리 접근 이슈",
+            "content": "Git 삭제 브런치 복구",
             "link": null
           },
           "annotations": {
-            "bold": true,
+            "bold": false,
             "italic": false,
             "strikethrough": false,
             "underline": false,
             "code": false,
             "color": "default"
           },
-          "plain_text": "리눅스 홈(/home) 디렉토리 접근 이슈",
+          "plain_text": "Git 삭제 브런치 복구",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/home-67a15ca075804d61bb941081ab3a74d2",
-  "public_url": null,
-  "request_id": "17285f1f-46fc-4078-9c56-8b3caecddd61"
+  "url": "https://www.notion.so/Git-17584d10c3fb806581afdade0cf3f9a8",
+  "public_url": null
 }

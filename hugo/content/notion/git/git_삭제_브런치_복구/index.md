@@ -7,7 +7,7 @@ tags:
 categories:
   - "Git"
 date: 2025-01-08T09:42:00.000Z
-lastmod: 2026-01-30T06:35:00.000Z
+lastmod: 2026-02-03T04:28:00.000Z
 draft: false
 ---
 
@@ -44,7 +44,7 @@ git reflog
 reflog 출력에서 **복구하려는 시점의 커밋 해시**를 확인합니다.
 
 
-![](./assets/1_8d37488e48ac.png)
+![](./assets/1_9b6af5440c4a.png)
 
 
 ---
@@ -71,5 +71,5 @@ git checkout -b repair-1234 f730c6ea10
 브런치가 정상적으로 생성되고 해당 커밋으로 이동했는지 확인합니다.
 
 
-![](./assets/2_c3e64351d172.png)
+![](./assets/2_7d564e6a544a.png)
 

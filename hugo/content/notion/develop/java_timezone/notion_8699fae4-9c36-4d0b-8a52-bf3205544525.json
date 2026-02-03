@@ -1,15 +1,15 @@
 {
   "object": "page",
-  "id": "2f084d10-c3fb-80f3-8dbe-f6361bae7e0a",
-  "created_time": "2026-01-22T04:58:00.000Z",
-  "last_edited_time": "2026-01-30T07:24:00.000Z",
+  "id": "8699fae4-9c36-4d0b-8a52-bf3205544525",
+  "created_time": "2024-06-14T02:46:00.000Z",
+  "last_edited_time": "2026-02-03T04:28:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "267f1fdf-c042-437e-a78a-083637f37b61"
   },
   "cover": null,
   "icon": null,
@@ -30,44 +30,44 @@
     "생성일": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-01-22T04:58:00.000Z"
+      "created_time": "2024-06-14T02:46:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "fe5f2e93-b333-404c-baa7-461c45bd3aa3",
-          "name": ".net",
-          "color": "red"
+          "id": "5400692f-d03e-4936-b95c-32fd39bab231",
+          "name": "java",
+          "color": "pink"
         },
         {
-          "id": "f9c1815b-83df-49db-9c2f-dcaa691507ac",
-          "name": "c#",
-          "color": "yellow"
+          "id": "rdWY",
+          "name": "mysql",
+          "color": "default"
         }
       ]
     },
     "업데이트됨": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-01-30T07:24:00.000Z"
+      "last_edited_time": "2026-02-03T04:28:00.000Z"
     },
     "ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": "POST",
-        "number": 87
+        "number": 63
       }
     },
     "상태": {
       "id": "%5B~Jq",
       "type": "status",
       "status": {
-        "id": ":{JA",
-        "name": "초안",
-        "color": "gray"
+        "id": "DOao",
+        "name": "발행 완료",
+        "color": "green"
       }
     },
     "요약": {
@@ -106,7 +106,7 @@
         {
           "type": "text",
           "text": {
-            "content": "C# .Net 이슈 체크",
+            "content": "Java Timezone",
             "link": null
           },
           "annotations": {
@@ -117,13 +117,12 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "C# .Net 이슈 체크",
+          "plain_text": "Java Timezone",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/C-Net-2f084d10c3fb80f38dbef6361bae7e0a",
-  "public_url": null,
-  "request_id": "33201d67-c6a1-4c28-a225-07931474e6a3"
+  "url": "https://www.notion.so/Java-Timezone-8699fae49c364d0b8a52bf3205544525",
+  "public_url": null
 }
