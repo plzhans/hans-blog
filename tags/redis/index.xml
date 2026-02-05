@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>부탁해스마일</title><link>https://blog.plzhans.com/</link><description>Recent content on 부탁해스마일</description><generator>Hugo</generator><language>ko-kr</language><lastBuildDate>Thu, 05 Feb 2026 01:49:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Redis dump vs aof</title><link>https://blog.plzhans.com/notion/80/</link><pubDate>Tue, 10 Jun 2025 16:16:00 +0900</pubDate><guid>https://blog.plzhans.com/notion/80/</guid><description>&lt;p&gt;&lt;img src="./assets/1_2fd22a0f-7e83-818a-9822-e350339c6f6b.png" alt=""&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on 부탁해스마일</title><link>https://blog.plzhans.com/tags/redis/</link><description>Recent content in Redis on 부탁해스마일</description><generator>Hugo</generator><language>ko-kr</language><lastBuildDate>Thu, 05 Feb 2026 01:49:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/tags/redis/index.xml" rel="self" type="application/rss+xml"/><item><title>Redis dump vs aof</title><link>https://blog.plzhans.com/notion/80/</link><pubDate>Tue, 10 Jun 2025 16:16:00 +0900</pubDate><guid>https://blog.plzhans.com/notion/80/</guid><description>&lt;p&gt;&lt;img src="./assets/1_2fd22a0f-7e83-818a-9822-e350339c6f6b.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="-개요"&gt;📌 개요&lt;/h2&gt;
 &lt;p&gt;Redis 데이터 백업 방법 3가지:&lt;/p&gt;
 &lt;ul&gt;
@@ -44,17 +44,4 @@
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id="-aof-방식"&gt;📝 AOF 방식&lt;/h2&gt;
-&lt;p&gt;명령어를 처리 순서대로 AOF 파일에 평문 형태로 기록&lt;/p&gt;</description></item><item><title>Git 삭제 브런치 복구</title><link>https://blog.plzhans.com/notion/69/</link><pubDate>Wed, 08 Jan 2025 18:42:00 +0900</pubDate><guid>https://blog.plzhans.com/notion/69/</guid><description>&lt;h2 id="목표"&gt;목표&lt;/h2&gt;
-&lt;p&gt;별도의 브런치에 &lt;strong&gt;삭제한 특정 커밋 시점으로 복구&lt;/strong&gt;합니다.&lt;/p&gt;
-&lt;h2 id="상황"&gt;상황&lt;/h2&gt;
-&lt;p&gt;브런치를 삭제한 뒤, &lt;strong&gt;해당 브런치에서 작업했던 커밋으로 다시 브런치를 복구&lt;/strong&gt;해야 하는 경우가 있습니다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="1-reflog로-복구-지점커밋-해시-찾기"&gt;1. reflog로 복구 지점(커밋 해시) 찾기&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;reflog&lt;/code&gt;는 브런치를 삭제했더라도 &lt;strong&gt;로컬에서 HEAD가 이동했던 기록&lt;/strong&gt;을 남겨두기 때문에, 복구할 커밋 해시를 찾는 데 유용합니다.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git reflog
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="복구-대상-선택"&gt;복구 대상 선택&lt;/h3&gt;
-&lt;p&gt;reflog 출력에서 &lt;strong&gt;복구하려는 시점의 커밋 해시&lt;/strong&gt;를 확인합니다.&lt;/p&gt;
-&lt;p&gt;&lt;img src="./assets/1_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png" alt=""&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="2-커밋-해시로-브런치-다시-만들기"&gt;2. 커밋 해시로 브런치 다시 만들기&lt;/h2&gt;
-&lt;p&gt;찾아낸 커밋 해시를 기준으로 새 브런치를 생성하고 바로 체크아웃합니다.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;명령어를 처리 순서대로 AOF 파일에 평문 형태로 기록&lt;/p&gt;</description></item></channel></rss>
