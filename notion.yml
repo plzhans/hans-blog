@@ -9,7 +9,11 @@ propertyKeys:
   # 태그 (multi_select/select/rich_text 타입). Hugo front-matter tags에 사용
   tags: "태그"
   # 고유 식별자 (unique_id 타입). Hugo front-matter id 및 url에 사용
-  uniqueId: "ID"
+  uniqueId: "POST_ID"
+  # 생성일 (date/created_time 타입). 페이지 프로퍼티에 해당 컬럼이 있으면 사용, 없으면 page.created_time 사용
+  createdDate: "생성일"
+  # 발행일 (date 타입). 발행 완료 시 현재 시간으로 자동 업데이트
+  publishedDate: "발행일"
 
 # 상태 프로퍼티 값 매핑
 statusValues:

@@ -7,11 +7,20 @@ import { Client } from "@notionhq/client";
 import { NotionApiClient } from "./clients/NotionApiClient.mjs";
 import { NotionExportService } from "./services/NotionExportService.mjs";
 
+/**
+ * YAML 설정 파일을 로드하여 객체로 반환
+ * @param {string} [filePath="notion.yml"] - 설정 파일 경로
+ * @returns {Object} 파싱된 설정 객체 (파일이 없으면 빈 객체)
+ */
 function loadConfig(filePath = "notion.yml") {
   if (!fs.existsSync(filePath)) return {};
   return yaml.load(fs.readFileSync(filePath, "utf-8")) || {};
 }
 
+/**
+ * NotionExportService 인스턴스를 생성
+ * @returns {NotionExportService} 설정이 적용된 서비스 인스턴스
+ */
 function createService() {
   const config = loadConfig();
   const notionClient = new Client({
