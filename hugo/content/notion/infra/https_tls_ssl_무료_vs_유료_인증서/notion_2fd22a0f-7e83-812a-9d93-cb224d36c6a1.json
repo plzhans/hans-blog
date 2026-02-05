@@ -2,7 +2,7 @@
   "object": "page",
   "id": "2fd22a0f-7e83-812a-9d93-cb224d36c6a1",
   "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-02-05T17:02:00.000Z",
+  "last_edited_time": "2026-02-05T17:16:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -56,7 +56,7 @@
     "수정일": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-02-05T17:02:00.000Z"
+      "last_edited_time": "2026-02-05T17:16:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -139,7 +139,11 @@
     "발행일": {
       "id": "nEEr",
       "type": "date",
-      "date": null
+      "date": {
+        "start": "2026-02-05T17:02:00.000+00:00",
+        "end": null,
+        "time_zone": null
+      }
     },
     "생성일": {
       "id": "oe%60s",
@@ -166,7 +170,7 @@
         {
           "type": "text",
           "text": {
-            "content": "HTTPS TLS/SSL 인증서",
+            "content": "HTTPS TLS/SSL 무료 vs 유료 인증서",
             "link": null
           },
           "annotations": {
@@ -177,13 +181,13 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "HTTPS TLS/SSL 인증서",
+          "plain_text": "HTTPS TLS/SSL 무료 vs 유료 인증서",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/HTTPS-TLS-SSL-2fd22a0f7e83812a9d93cb224d36c6a1",
+  "url": "https://www.notion.so/HTTPS-TLS-SSL-vs-2fd22a0f7e83812a9d93cb224d36c6a1",
   "public_url": null,
-  "request_id": "a25d1996-f39a-4c80-860f-4a5b21490267"
+  "request_id": "ad88b3a4-027a-4ca5-8c17-d61e829230f4"
 }
