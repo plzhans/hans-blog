@@ -3,7 +3,7 @@
 @NOTION_PAGE_ID = 2f084d10-c3fb-80f3-8dbe-f6361bae7e0a
 
 ### Notion Sync - repository_dispatch 트리거
-# GitHub Action notion-sync.yml 실행
+# GitHub Action notion-page-sync.yml 실행
 
 POST https://api.github.com/repos/plzhans/hans-blog/dispatches
 Authorization: token {{GITHUB_PAT}}
@@ -11,7 +11,7 @@ Accept: application/vnd.github.v3+json
 Content-Type: application/json
 
 {
-  "event_type": "notion-sync",
+  "event_type": "notion-page-sync",
   "client_payload": {
     "notion_data": {
       "id": "{{NOTION_PAGE_ID}}",

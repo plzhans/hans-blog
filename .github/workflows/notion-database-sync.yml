@@ -1,0 +1,50 @@
+name: Notion Database Sync
+
+on:
+  repository_dispatch:
+    types: [notion-database-sync]
+
+permissions:
+  contents: write
+
+jobs:
+  notion-dtabase-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Notion database sync
+        env:
+          NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: node src/NotionCli.mjs database sync
+
+      - name: Commit content changes
+        id: commit
+        run: |
+          git config user.name "notion-webhook[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add hugo/content/
+          if git diff --cached --quiet; then
+            echo "No content changes to commit"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "chore(notion): database sync"
+            git push
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+

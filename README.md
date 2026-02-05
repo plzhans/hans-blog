@@ -2,7 +2,8 @@
 
 [![GitHub Pages](https://img.shields.io/github/actions/workflow/status/plzhans/hans-blog/pages/pages-build-deployment?branch=gh-pages&label=GitHub%20Pages&logo=github)](https://github.com/plzhans/hans-blog/actions/workflows/pages/pages-build-deployment)
 [![Deploy Hugo](https://github.com/plzhans/hans-blog/actions/workflows/deploy-hugo.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/deploy-hugo.yml)
-[![Notion Page Sync](https://github.com/plzhans/hans-blog/actions/workflows/notion-sync.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/notion-sync.yml)
+[![Notion Database Sync](https://github.com/plzhans/hans-blog/actions/workflows/notion-database-sync.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/notion-database-sync.yml)
+[![Notion Page Sync](https://github.com/plzhans/hans-blog/actions/workflows/notion-page-sync.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/notion-page-sync.yml)
 [![Hugo](https://img.shields.io/badge/Hugo-extended-ff4088)](https://gohugo.io)
 [![Blog](https://img.shields.io/badge/Blog-blog.plzhans.com-blue)](https://blog.plzhans.com)
 ![License](https://img.shields.io/github/license/plzhans/hans-blog)

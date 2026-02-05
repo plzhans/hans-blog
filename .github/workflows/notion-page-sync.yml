@@ -2,7 +2,7 @@ name: Notion Page Sync
 
 on:
   repository_dispatch:
-    types: [notion-sync]
+    types: [notion-page-sync]
 
 permissions:
   contents: write
@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Sync Notion page
+      - name: Notion page sync
         env:
           NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
@@ -48,7 +48,7 @@ jobs:
             echo "No content changes to commit"
             echo "changed=false" >> $GITHUB_OUTPUT
           else
-            git commit -m "chore(notion): sync page ${NOTION_PAGE_TITLE}" -m "page_id: ${NOTION_PAGE_ID}" -m "page_url: ${NOTION_PAGE_URL}"
+            git commit -m "chore(notion): page sync ${NOTION_PAGE_TITLE}" -m "page_id: ${NOTION_PAGE_ID}" -m "page_url: ${NOTION_PAGE_URL}"
             git push
             echo "changed=true" >> $GITHUB_OUTPUT
           fi

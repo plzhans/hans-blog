@@ -94,7 +94,7 @@
                 "shareCookies": false,
                 "requestCompressedContent": true,
                 "inputMethod": "jsonString",
-                "jsonStringBodyContent": "{\n  \"event_type\": \"notion-sync\",\n  \"client_payload\": {\n    \"notion_data\" : {{1.data}}\n  }\n}"
+                "jsonStringBodyContent": "{\n  \"event_type\": \"{{1.event_type}}\",\n  \"client_payload\": {\n    \"notion_data\" : {{1.data}}\n  }\n}"
             },
             "metadata": {
                 "designer": {

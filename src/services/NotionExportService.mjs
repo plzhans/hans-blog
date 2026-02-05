@@ -183,7 +183,8 @@ export class NotionExportService {
         },
       },
     };
-    await this.notionApiClient.updatePageProperties(pageId, properties);
+    const res =  await this.notionApiClient.updatePageProperties(pageId, properties);
+    return res;
   }
 
   /**
@@ -241,14 +242,29 @@ export class NotionExportService {
         return false;
       }
       try {
-        const prevMeta = JSON.parse(fs.readFileSync(metaFilePath, "utf-8"));
+        const prevMetaRaw = fs.readFileSync(metaFilePath, "utf-8");
+        const prevMeta = JSON.parse(prevMetaRaw);
+
+        // 수정일이 동일한 경우: 변경 없음
         if (prevMeta.last_edited_time === page.last_edited_time) {
+          // 아직 발행 완료가 아니면 상태 업데이트만 필요 (컨텐츠 재생성은 스킵)
           if (currentStatus !== this.statusValues.published) {
             console.log(`  ⏭️ Skipped (not modified), status update needed`);
             return true;
           }
+          // 이미 발행 완료 상태면 아무 작업도 필요 없음
           console.log(`  ⏭️ Skipped (not modified) (status: ${currentStatus}, last_edited: ${page.last_edited_time})`);
           return false;
+        } else {
+          // 수정일이 다른 경우: 변경 있음
+          // 발행 완료 후 Notion에 상태를 "발행 완료"로 업데이트하면
+          // last_edited_time과 status가 변경되어 다음 sync 에서 수정된 것으로 인식됨.
+          // 이전/현재 모두 발행 완료 상태라면 이 변경은 상태 업데이트에 의한 것이므로 스킵.
+          const prevStatus = prevMeta.properties[this.propertyKeys.status]?.status?.name;
+          if (prevStatus === this.statusValues.published && currentStatus === this.statusValues.published) {
+            console.log(`  ⏭️ Skipped (already published) (status: ${currentStatus}, last_edited: ${prevMeta.last_edited_time} -> ${page.last_edited_time})`);
+            return false;
+          }
         }
       } catch (e) {
         console.error(`❌ Failed to parse meta.json: ${metaFilePath}`, e);
