@@ -11,7 +11,7 @@ title = '부탁해스마일'
   author = "plzhans"
   description = "개발자 블로그"
   avatar = "/avatar-plzhans.png"
-  CopyrightHTML = 'Copyright &#xA9; plzhans. All Rights Reserved.<br/>Powered by <a href="https://github.com/plzhans/hans-blog" target="_blank">hans-blog</a>'
+  CopyrightHTML = 'Copyright &#xA9; plzhans. All Rights Reserved. | Powered by <a href="https://github.com/plzhans/hans-blog" target="_blank">github.com/plzhans/hans-blog</a>'
   menu_item_separator = " - "
   [[params.social]]
     icon = "brand-github"

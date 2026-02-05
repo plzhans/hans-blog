@@ -28,6 +28,15 @@
     <div class="post-content">
       {{ .Content }}
     </div>
+    <div class="post-notice">
+      이 글은 <a href="https://www.notion.so" target="_blank" rel="noopener">Notion</a>에서 작성되었고
+      {{ $source := index (where .Site.Params.social "name" "Source") 0 -}}
+      <a href="https://docs.github.com/ko/actions" target="_blank" rel="noopener">Github Action</a>을 통해
+      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>로 변환되었습니다.
+      {{- with .Site.Params.CopyrightHTML }}
+      <div class="post-copyright">{{ . | safeHTML }}</div>
+      {{- end }}
+    </div>
     <div class="post-footer">
       {{- with .Site.Params.giscus }}
         {{- if .repo }}

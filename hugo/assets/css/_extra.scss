@@ -1,5 +1,36 @@
 @import 'syntax';
 
+.post-notice {
+  margin-top: 2em;
+  padding: 0.8em 1em;
+  border-top: 1px solid rgba($light-color, 0.15);
+  font-size: 0.95em;
+  color: rgba($light-color, 0.5);
+  text-align: center;
+
+  a {
+    color: rgba($primary-color, 0.7);
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .post-copyright {
+    margin-top: 0.5em;
+  }
+}
+
+.post-footer {
+  padding-top: 1.5em;
+  border-top: 1px solid rgba($light-color, 0.15);
+
+  .giscus-comments {
+    margin-top: 0.5em;
+  }
+}
+
 .highlight {
   position: relative;
 
