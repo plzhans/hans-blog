@@ -82,6 +82,13 @@
   </script>
   {{- end }}
 
+  {{ if .Store.Get "hasMermaid" }}
+  <script src="/lib/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+  {{ end }}
+
   <script>
     document.querySelectorAll('.highlight').forEach(function (block) {
       var btn = document.createElement('button');

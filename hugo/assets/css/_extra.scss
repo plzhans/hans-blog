@@ -74,3 +74,12 @@
     opacity: 1;
   }
 }
+
+.post-content .mermaid {
+  border-left: 0.4em solid rgba($primary-color, .8);
+  background: $dark-color;
+  padding: 1.5em 1em;
+  margin: 1em 0;
+  border-radius: 0 0.4em 0.4em 0;
+  text-align: center;
+}
