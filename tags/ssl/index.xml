@@ -1,10 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ssl on 부탁해스마일</title><link>https://blog.plzhans.com/tags/ssl/</link><description>Recent content in Ssl on 부탁해스마일</description><generator>Hugo</generator><language>ko-kr</language><lastBuildDate>Thu, 05 Feb 2026 17:02:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/tags/ssl/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTPS TLS/SSL 인증서</title><link>https://blog.plzhans.com/notion/39/</link><pubDate>Thu, 17 Mar 2022 16:48:00 +0900</pubDate><guid>https://blog.plzhans.com/notion/39/</guid><description>&lt;p&gt;&lt;img src="./assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png" alt=""&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ssl on 부탁해스마일</title><link>https://blog.plzhans.com/tags/ssl/</link><description>Recent content in Ssl on 부탁해스마일</description><generator>Hugo</generator><language>ko-kr</language><lastBuildDate>Thu, 05 Feb 2026 17:16:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/tags/ssl/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTPS TLS/SSL 무료 vs 유료 인증서</title><link>https://blog.plzhans.com/notion/39/</link><pubDate>Thu, 17 Mar 2022 16:48:00 +0900</pubDate><guid>https://blog.plzhans.com/notion/39/</guid><description>&lt;p&gt;&lt;img src="./assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="개요"&gt;개요&lt;/h2&gt;
 &lt;p&gt;HTTPS 통신을 위해 TLS/SSL 인증서와 도메인이 필요하다.&lt;/p&gt;
 &lt;p&gt;소유한 도메인에 대해 발급되며 클라이언트는 접속한 도메인과 인증서의 도메인이 일치하는지 검증한다.&lt;/p&gt;
 &lt;p&gt;이 문서는 실무 관점에서 도메인별 인증서 발급 방법을 정리한다.&lt;/p&gt;
 &lt;p&gt;이론보다는 실무적 선택과 구현에 초점을 둔다.&lt;/p&gt;
 &lt;h2 id="ssl-인증서-발급-및-검증-흐름"&gt;SSL 인증서 발급 및 검증 흐름&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;핵심 포인트&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CA 기관의 역할&lt;/strong&gt;: 서버의 공개키를 검증하고 서명하여 신뢰성 보장&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;발급업체의 역할&lt;/strong&gt;: 서버와 CA 기관 사이에서 인증서 발급 절차를 중개&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OS의 역할&lt;/strong&gt;: CA 루트 인증서를 사전 내장하여 클라이언트가 서버 인증서 검증에 사용&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;클라이언트의 역할&lt;/strong&gt;: OS에 내장된 CA 루트 인증서로 서버 인증서의 서명을 검증하고 신뢰성 확인&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class="mermaid"&gt;sequenceDiagram
  participant 서버
  participant 발급업체
@@ -40,5 +47,5 @@
  end
 &lt;/div&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;핵심 포인트&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;h2 id="tlsssl-인증서란"&gt;TLS/SSL 인증서란&lt;/h2&gt;
+&lt;p&gt;웹에서 HTTP를 HTTPS로 전환하기 위해 필요한 디지털 인증서다. 서버에서 개인키를 생성하고&lt;/p&gt;</description></item></channel></rss>
