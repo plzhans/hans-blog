@@ -22,6 +22,10 @@ title = '부탁해스마일'
     name = "Source"
     url = "https://github.com/plzhans/hans-blog"
   [[params.social]]
+    icon = "mail"
+    name = "Email"
+    url = "mailto:plzhans@gmail.com"
+  [[params.social]]
     icon = "rss"
     name = "RSS"
     url = "/index.xml"
