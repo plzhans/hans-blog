@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Database on 부탁해스마일</title><link>https://blog.plzhans.com/ko/categories/database/</link><description>Recent content in Database on 부탁해스마일</description><generator>Hugo</generator><language>ko</language><lastBuildDate>Fri, 06 Feb 2026 06:28:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/ko/categories/database/index.xml" rel="self" type="application/rss+xml"/><item><title>Redis dump vs aof</title><link>https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/</link><pubDate>Tue, 10 Jun 2025 16:16:00 +0900</pubDate><guid>https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/assets/1_2fd22a0f-7e83-818a-9822-e350339c6f6b.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="-개요"&gt;📌 개요&lt;/h2&gt;
+&lt;p&gt;Redis 데이터 백업 방법 3가지:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dump (RDB)&lt;/strong&gt;: 주기적으로 데이터를 RDB 파일 형태로 저장&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AOF&lt;/strong&gt;: 명령어를 처리 순서대로 AOF 파일에 기록&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hybrid AOF&lt;/strong&gt;: RDB와 AOF 장점을 결합한 방식&lt;/li&gt;
+&lt;li&gt;Dump와 AOF는 각각 독립적인 퍼시스턴스 프로세스이며 두 파일은 상호 참조하지 않음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-dump-rdb-방식"&gt;🗂️ Dump (RDB) 방식&lt;/h2&gt;
+&lt;p&gt;메모리 데이터를 바이너리 형태로 주기적으로 RDB 파일에 저장&lt;/p&gt;
+&lt;h3 id="설정-방법-redisconf"&gt;설정 방법 (&lt;code&gt;redis.conf&lt;/code&gt;)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB 스냅샷 활성화&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;900&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# 900초(15분) 동안 1개 이상 키 변경 시&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;300&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="c1"&gt;# 300초(5분) 동안 10개 이상 키 변경 시&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="m"&gt;10000&lt;/span&gt; &lt;span class="c1"&gt;# 60초 동안 10000개 이상 키 변경 시&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB 파일명 및 저장 경로&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;dbfilename dump.rdb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;dir /var/lib/redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB 압축 및 무결성&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;rdbcompression yes &lt;span class="c1"&gt;# LZF 압축 사용 (CPU 증가, 파일 크기 감소)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;rdbchecksum yes &lt;span class="c1"&gt;# CRC64 체크섬으로 무결성 검증 (약 10% 성능 저하)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# BGSAVE 동작 제어&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;stop-writes-on-bgsave-error yes &lt;span class="c1"&gt;# 백그라운드 저장 실패 시 쓰기 명령 거부&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;rdb-save-incremental-fsync yes &lt;span class="c1"&gt;# 32MB마다 fsync 수행 (디스크 I/O 분산)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 복제(Replication) 설정&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync no &lt;span class="c1"&gt;# 레플리카로 RDB를 디스크 없이 직접 전송 (no: 디스크 사용)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync-delay &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# diskless sync 시작 전 대기 시간 (초)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="장점"&gt;장점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;재시작 시 AOF 대비 &lt;strong&gt;빠른 복구 속도&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="단점"&gt;단점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;주기적 저장으로 인한 &lt;strong&gt;데이터 유실 가능성&lt;/strong&gt; (dump 전 서버 중지 시)&lt;/li&gt;
+&lt;li&gt;파일 내용을 직접 확인 불가&lt;/li&gt;
+&lt;li&gt;파일 손상 시 복구 도구 필요 (직접 편집 불가)&lt;/li&gt;
+&lt;li&gt;바이너리 형태로 Redis 버전 호환성 문제 발생 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-aof-방식"&gt;📝 AOF 방식&lt;/h2&gt;
+&lt;p&gt;명령어를 처리 순서대로 AOF 파일에 평문 형태로 기록&lt;/p&gt;</description></item></channel></rss>

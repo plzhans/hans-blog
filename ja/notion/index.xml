@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notions on 부탁해스마일</title><link>https://blog.plzhans.com/ja/notion/</link><description>Recent content in Notions on 부탁해스마일</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Fri, 06 Feb 2026 06:28:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/ja/notion/index.xml" rel="self" type="application/rss+xml"/><item><title>Redis dump vs aof</title><link>https://blog.plzhans.com/ja/notion/database/80-redis-dump-vs-aof/</link><pubDate>Tue, 10 Jun 2025 16:16:00 +0900</pubDate><guid>https://blog.plzhans.com/ja/notion/database/80-redis-dump-vs-aof/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/assets/1_2fd22a0f-7e83-818a-9822-e350339c6f6b.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="-概要"&gt;📌 概要&lt;/h2&gt;
+&lt;p&gt;Redisデータバックアップ方法3つ:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dump (RDB)&lt;/strong&gt;: 定期的にデータをRDBファイル形式で保存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AOF&lt;/strong&gt;: コマンドを処理順にAOFファイルに記録&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hybrid AOF&lt;/strong&gt;: RDBとAOFの長所を組み合わせた方式&lt;/li&gt;
+&lt;li&gt;DumpとAOFはそれぞれ独立した永続化プロセスであり、2つのファイルは相互参照しない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-dump-rdb-方式"&gt;🗂️ Dump (RDB) 方式&lt;/h2&gt;
+&lt;p&gt;メモリデータをバイナリ形式で定期的にRDBファイルに保存&lt;/p&gt;
+&lt;h3 id="設定方法-redisconf"&gt;設定方法 (&lt;code&gt;redis.conf&lt;/code&gt;)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDBスナップショット有効化&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;900&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# 900秒(15分)間に1個以上のキー変更時&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;300&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="c1"&gt;# 300秒(5分)間に10個以上のキー変更時&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="m"&gt;10000&lt;/span&gt; &lt;span class="c1"&gt;# 60秒間に10000個以上のキー変更時&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDBファイル名および保存パス&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;dbfilename dump.rdb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;dir /var/lib/redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB圧縮および整合性&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;rdbcompression yes &lt;span class="c1"&gt;# LZF圧縮使用 (CPU増加、ファイルサイズ減少)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;rdbchecksum yes &lt;span class="c1"&gt;# CRC64チェックサムで整合性検証 (約10%性能低下)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# BGSAVE動作制御&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;stop-writes-on-bgsave-error yes &lt;span class="c1"&gt;# バックグラウンド保存失敗時に書き込みコマンド拒否&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;rdb-save-incremental-fsync yes &lt;span class="c1"&gt;# 32MBごとにfsync実行 (ディスクI/O分散)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# レプリケーション設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync no &lt;span class="c1"&gt;# レプリカにRDBをディスクなしで直接転送 (no: ディスク使用)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync-delay &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# diskless sync開始前の待機時間 (秒)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="長所"&gt;長所&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;再起動時にAOFに比べて&lt;strong&gt;速い復旧速度&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="短所"&gt;短所&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;定期的保存による&lt;strong&gt;データ損失の可能性&lt;/strong&gt; (dump前のサーバー停止時)&lt;/li&gt;
+&lt;li&gt;ファイル内容を直接確認不可&lt;/li&gt;
+&lt;li&gt;ファイル破損時に復旧ツール必要 (直接編集不可)&lt;/li&gt;
+&lt;li&gt;バイナリ形式でRedisバージョン互換性問題が発生する可能性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-aof-方式"&gt;📝 AOF 方式&lt;/h2&gt;
+&lt;p&gt;コマンドを処理順にAOFファイルに平文形式で記録&lt;/p&gt;</description></item><item><title>Git 削除ブランチ復旧</title><link>https://blog.plzhans.com/ja/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/</link><pubDate>Wed, 08 Jan 2025 18:42:00 +0900</pubDate><guid>https://blog.plzhans.com/ja/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/</guid><description>&lt;h2 id="目標"&gt;目標&lt;/h2&gt;
+&lt;p&gt;別のブランチに&lt;strong&gt;削除した特定のコミット時点に復旧&lt;/strong&gt;します。&lt;/p&gt;
+&lt;h2 id="状況"&gt;状況&lt;/h2&gt;
+&lt;p&gt;ブランチを削除した後、&lt;strong&gt;該当ブランチで作業していたコミットに再びブランチを復旧&lt;/strong&gt;する必要がある場合があります。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="1-reflogで復旧ポイントコミットハッシュを探す"&gt;1. reflogで復旧ポイント(コミットハッシュ)を探す&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;reflog&lt;/code&gt;はブランチを削除しても&lt;strong&gt;ローカルでHEADが移動した記録&lt;/strong&gt;を残しているため、復旧するコミットハッシュを探すのに有用です。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git reflog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="復旧対象選択"&gt;復旧対象選択&lt;/h3&gt;
+&lt;p&gt;reflog出力から&lt;strong&gt;復旧したい時点のコミットハッシュ&lt;/strong&gt;を確認します。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/assets/1_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="2-コミットハッシュでブランチを再作成"&gt;2. コミットハッシュでブランチを再作成&lt;/h2&gt;
+&lt;p&gt;見つけたコミットハッシュを基準に新しいブランチを作成し、すぐにチェックアウトします。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# git checkout -b &amp;lt;復旧する新しいブランチ名&amp;gt; &amp;lt;削除したコミットハッシュ&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;2&lt;/span&gt;&lt;span class="cl"&gt;git checkout -b repair-1234 f730c6ea10
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="3-復旧確認"&gt;3. 復旧確認&lt;/h2&gt;
+&lt;p&gt;ブランチが正常に生成され、該当コミットに移動したかを確認します。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/assets/2_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png" alt=""&gt;&lt;/p&gt;</description></item><item><title>HTTPS TLS/SSL 無料 vs 有料証明書</title><link>https://blog.plzhans.com/ja/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/</link><pubDate>Thu, 17 Mar 2022 16:48:00 +0900</pubDate><guid>https://blog.plzhans.com/ja/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="概要"&gt;概要&lt;/h2&gt;
+&lt;p&gt;HTTPS通信のためにTLS/SSL証明書とドメインが必要です。&lt;/p&gt;
+&lt;p&gt;所有するドメインに対して発行され、クライアントは接続したドメインと証明書のドメインが一致するかを検証します。&lt;/p&gt;
+&lt;p&gt;この文書は、実務観点からドメイン別証明書発行方法を整理します。&lt;/p&gt;
+&lt;p&gt;理論よりも実務的な選択と実装に焦点を置きます。&lt;/p&gt;
+&lt;h2 id="ssl証明書発行および検証フロー"&gt;SSL証明書発行および検証フロー&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;核心ポイント&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CA機関の役割&lt;/strong&gt;: サーバーの公開鍵を検証して署名し、信頼性を保証&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;発行業者の役割&lt;/strong&gt;: サーバーとCA機関の間で証明書発行手順を仲介&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OSの役割&lt;/strong&gt;: CAルート証明書を事前に内蔵し、クライアントがサーバー証明書検証に使用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアントの役割&lt;/strong&gt;: OSに内蔵されたCAルート証明書でサーバー証明書の署名を検証し、信頼性を確認&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="mermaid"&gt;sequenceDiagram
+ participant 서버
+ participant 발급업체
+ participant CA기관
+ participant OS
+ participant 클라이언트
+
+ %% 인증서 발급 단계
+ Note over 서버,CA기관: 1. 인증서 발급 단계
+ 서버-&gt;&gt;서버: 개인키/공개키 쌍 생성
+ 서버-&gt;&gt;발급업체: 인증서 구매 요청&lt;br/&gt;(공개키 + 도메인 정보)
+ 발급업체-&gt;&gt;CA기관: CSR(인증서 서명 요청) 전달
+ CA기관-&gt;&gt;CA기관: 도메인 소유권 검증&lt;br/&gt;(DNS/HTTP/Email 방식)
+ CA기관-&gt;&gt;CA기관: CA 개인키로 서버 공개키 서명
+ CA기관-&gt;&gt;발급업체: 서명된 SSL 인증서 발급&lt;br/&gt;(공개키 + CA 서명 + 도메인 정보)
+ 발급업체-&gt;&gt;서버: 인증서 전달
+ 서버-&gt;&gt;서버: 인증서와 개인키를 서버에 설치
+ CA기관-&gt;&gt;OS: CA 루트 인증서 사전 등록&lt;br/&gt;(브라우저/OS 배포 시 내장)
+
+ %% HTTPS 연결 단계
+ Note over 서버,클라이언트: 2. HTTPS 연결 단계
+ 클라이언트-&gt;&gt;서버: HTTPS 사이트 접속 요청&lt;br/&gt;(Client Hello)
+ 서버-&gt;&gt;클라이언트: SSL 인증서 전송&lt;br/&gt;(Server Hello)
+ 클라이언트-&gt;&gt;OS: CA 루트 인증서 조회&lt;br/&gt;(인증서 검증용)
+ OS-&gt;&gt;클라이언트: CA 루트 인증서 반환
+ 클라이언트-&gt;&gt;클라이언트: 인증서 유효性 검증&lt;br/&gt;1) CA 루트 인증서로 서명 확인&lt;br/&gt;2) 도메인 일치 여부 확인&lt;br/&gt;3) 유효기간 확인
+
+ alt 인증서 검증 성공
+ 클라이언트-&gt;&gt;클라이언트: 안전한 HTTPS 연결 표시 (🔒)
+ Note over 서버,클라이언트: 이후 암호화된 통신 시작
+ else 인증서 검증 실패
+ 클라이언트-&gt;&gt;클라이언트: 보안 경고 표시&lt;br/&gt;(신뢰할 수 없는 인증서)
+ end
+&lt;/div&gt;
+
+&lt;h2 id="tlsssl証明書とは"&gt;TLS/SSL証明書とは&lt;/h2&gt;
+&lt;p&gt;ウェブでHTTPをHTTPSに転換するために必要なデジタル証明書です。サーバーで秘密鍵を生成し&lt;/p&gt;</description></item></channel></rss>

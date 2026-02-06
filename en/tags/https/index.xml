@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Https on 부탁해스마일</title><link>https://blog.plzhans.com/en/tags/https/</link><description>Recent content in Https on 부탁해스마일</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 06 Feb 2026 06:28:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/en/tags/https/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTPS TLS/SSL Free vs Paid Certificates</title><link>https://blog.plzhans.com/en/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/</link><pubDate>Thu, 17 Mar 2022 16:48:00 +0900</pubDate><guid>https://blog.plzhans.com/en/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;p&gt;HTTPS communication requires a TLS/SSL certificate and domain.&lt;/p&gt;
+&lt;p&gt;Certificates are issued for owned domains, and clients verify that the accessed domain matches the certificate&amp;rsquo;s domain.&lt;/p&gt;
+&lt;p&gt;This document organizes domain-specific certificate issuance methods from a practical perspective.&lt;/p&gt;
+&lt;p&gt;It focuses on practical choices and implementation rather than theory.&lt;/p&gt;
+&lt;h2 id="ssl-certificate-issuance-and-verification-flow"&gt;SSL Certificate Issuance and Verification Flow&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Key Points&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Role of CA Authority&lt;/strong&gt;: Verifies and signs the server&amp;rsquo;s public key to ensure trustworthiness&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Role of Issuers&lt;/strong&gt;: Intermediates the certificate issuance process between the server and CA authority&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Role of OS&lt;/strong&gt;: Pre-embeds CA root certificates for clients to use in server certificate verification&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Role of Client&lt;/strong&gt;: Verifies the server certificate&amp;rsquo;s signature with the CA root certificate embedded in the OS and confirms trustworthiness&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="mermaid"&gt;sequenceDiagram
+ participant 서버
+ participant 발급업체
+ participant CA기관
+ participant OS
+ participant 클라이언트
+
+ %% 인증서 발급 단계
+ Note over 서버,CA기관: 1. 인증서 발급 단계
+ 서버-&gt;&gt;서버: 개인키/공개키 쌍 생성
+ 서버-&gt;&gt;발급업체: 인증서 구매 요청&lt;br/&gt;(공개키 + 도메인 정보)
+ 발급업체-&gt;&gt;CA기관: CSR(인증서 서명 요청) 전달
+ CA기관-&gt;&gt;CA기관: 도메인 소유권 검증&lt;br/&gt;(DNS/HTTP/Email 방식)
+ CA기관-&gt;&gt;CA기관: CA 개인키로 서버 공개키 서명
+ CA기관-&gt;&gt;발급업체: 서명된 SSL 인증서 발급&lt;br/&gt;(공개키 + CA 서명 + 도메인 정보)
+ 발급업체-&gt;&gt;서버: 인증서 전달
+ 서버-&gt;&gt;서버: 인증서와 개인키를 서버에 설치
+ CA기관-&gt;&gt;OS: CA 루트 인증서 사전 등록&lt;br/&gt;(브라우저/OS 배포 시 내장)
+
+ %% HTTPS 연결 단계
+ Note over 서버,클라이언트: 2. HTTPS 연결 단계
+ 클라이언트-&gt;&gt;서버: HTTPS 사이트 접속 요청&lt;br/&gt;(Client Hello)
+ 서버-&gt;&gt;클라이언트: SSL 인증서 전송&lt;br/&gt;(Server Hello)
+ 클라이언트-&gt;&gt;OS: CA 루트 인증서 조회&lt;br/&gt;(인증서 검증용)
+ OS-&gt;&gt;클라이언트: CA 루트 인증서 반환
+ 클라이언트-&gt;&gt;클라이언트: 인증서 유효성 검증&lt;br/&gt;1) CA 루트 인증서로 서명 확인&lt;br/&gt;2) 도메인 일치 여부 확인&lt;br/&gt;3) 유효기간 확인
+
+ alt 인증서 검증 성공
+ 클라이언트-&gt;&gt;클라이언트: 안전한 HTTPS 연결 표시 (🔒)
+ Note over 서버,클라이언트: 이후 암호화된 통신 시작
+ else 인증서 검증 실패
+ 클라이언트-&gt;&gt;클라이언트: 보안 경고 표시&lt;br/&gt;(신뢰할 수 없는 인증서)
+ end
+&lt;/div&gt;
+
+&lt;h2 id="what-is-a-tlsssl-certificate"&gt;What is a TLS/SSL Certificate&lt;/h2&gt;
+&lt;p&gt;It is a digital certificate required to convert HTTP to HTTPS on the web. The server generates a private key and&lt;/p&gt;</description></item></channel></rss>

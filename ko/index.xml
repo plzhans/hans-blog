@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>부탁해스마일</title><link>https://blog.plzhans.com/ko/</link><description>Recent content on 부탁해스마일</description><generator>Hugo</generator><language>ko</language><lastBuildDate>Fri, 06 Feb 2026 06:28:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/ko/index.xml" rel="self" type="application/rss+xml"/><item><title>Redis dump vs aof</title><link>https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/</link><pubDate>Tue, 10 Jun 2025 16:16:00 +0900</pubDate><guid>https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/assets/1_2fd22a0f-7e83-818a-9822-e350339c6f6b.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="-개요"&gt;📌 개요&lt;/h2&gt;
+&lt;p&gt;Redis 데이터 백업 방법 3가지:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dump (RDB)&lt;/strong&gt;: 주기적으로 데이터를 RDB 파일 형태로 저장&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AOF&lt;/strong&gt;: 명령어를 처리 순서대로 AOF 파일에 기록&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hybrid AOF&lt;/strong&gt;: RDB와 AOF 장점을 결합한 방식&lt;/li&gt;
+&lt;li&gt;Dump와 AOF는 각각 독립적인 퍼시스턴스 프로세스이며 두 파일은 상호 참조하지 않음&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-dump-rdb-방식"&gt;🗂️ Dump (RDB) 방식&lt;/h2&gt;
+&lt;p&gt;메모리 데이터를 바이너리 형태로 주기적으로 RDB 파일에 저장&lt;/p&gt;
+&lt;h3 id="설정-방법-redisconf"&gt;설정 방법 (&lt;code&gt;redis.conf&lt;/code&gt;)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB 스냅샷 활성화&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;900&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# 900초(15분) 동안 1개 이상 키 변경 시&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;300&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="c1"&gt;# 300초(5분) 동안 10개 이상 키 변경 시&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="m"&gt;10000&lt;/span&gt; &lt;span class="c1"&gt;# 60초 동안 10000개 이상 키 변경 시&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB 파일명 및 저장 경로&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;dbfilename dump.rdb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;dir /var/lib/redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB 압축 및 무결성&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;rdbcompression yes &lt;span class="c1"&gt;# LZF 압축 사용 (CPU 증가, 파일 크기 감소)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;rdbchecksum yes &lt;span class="c1"&gt;# CRC64 체크섬으로 무결성 검증 (약 10% 성능 저하)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# BGSAVE 동작 제어&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;stop-writes-on-bgsave-error yes &lt;span class="c1"&gt;# 백그라운드 저장 실패 시 쓰기 명령 거부&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;rdb-save-incremental-fsync yes &lt;span class="c1"&gt;# 32MB마다 fsync 수행 (디스크 I/O 분산)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 복제(Replication) 설정&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync no &lt;span class="c1"&gt;# 레플리카로 RDB를 디스크 없이 직접 전송 (no: 디스크 사용)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync-delay &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# diskless sync 시작 전 대기 시간 (초)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="장점"&gt;장점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;재시작 시 AOF 대비 &lt;strong&gt;빠른 복구 속도&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="단점"&gt;단점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;주기적 저장으로 인한 &lt;strong&gt;데이터 유실 가능성&lt;/strong&gt; (dump 전 서버 중지 시)&lt;/li&gt;
+&lt;li&gt;파일 내용을 직접 확인 불가&lt;/li&gt;
+&lt;li&gt;파일 손상 시 복구 도구 필요 (직접 편집 불가)&lt;/li&gt;
+&lt;li&gt;바이너리 형태로 Redis 버전 호환성 문제 발생 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-aof-방식"&gt;📝 AOF 방식&lt;/h2&gt;
+&lt;p&gt;명령어를 처리 순서대로 AOF 파일에 평문 형태로 기록&lt;/p&gt;</description></item><item><title>Git 삭제 브런치 복구</title><link>https://blog.plzhans.com/ko/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/</link><pubDate>Wed, 08 Jan 2025 18:42:00 +0900</pubDate><guid>https://blog.plzhans.com/ko/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/</guid><description>&lt;h2 id="목표"&gt;목표&lt;/h2&gt;
+&lt;p&gt;별도의 브런치에 &lt;strong&gt;삭제한 특정 커밋 시점으로 복구&lt;/strong&gt;합니다.&lt;/p&gt;
+&lt;h2 id="상황"&gt;상황&lt;/h2&gt;
+&lt;p&gt;브런치를 삭제한 뒤, &lt;strong&gt;해당 브런치에서 작업했던 커밋으로 다시 브런치를 복구&lt;/strong&gt;해야 하는 경우가 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="1-reflog로-복구-지점커밋-해시-찾기"&gt;1. reflog로 복구 지점(커밋 해시) 찾기&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;reflog&lt;/code&gt;는 브런치를 삭제했더라도 &lt;strong&gt;로컬에서 HEAD가 이동했던 기록&lt;/strong&gt;을 남겨두기 때문에, 복구할 커밋 해시를 찾는 데 유용합니다.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git reflog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="복구-대상-선택"&gt;복구 대상 선택&lt;/h3&gt;
+&lt;p&gt;reflog 출력에서 &lt;strong&gt;복구하려는 시점의 커밋 해시&lt;/strong&gt;를 확인합니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/assets/1_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png" alt=""&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="2-커밋-해시로-브런치-다시-만들기"&gt;2. 커밋 해시로 브런치 다시 만들기&lt;/h2&gt;
+&lt;p&gt;찾아낸 커밋 해시를 기준으로 새 브런치를 생성하고 바로 체크아웃합니다.&lt;/p&gt;</description></item><item><title>HTTPS TLS/SSL 무료 vs 유료 인증서</title><link>https://blog.plzhans.com/ko/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/</link><pubDate>Thu, 17 Mar 2022 16:48:00 +0900</pubDate><guid>https://blog.plzhans.com/ko/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="개요"&gt;개요&lt;/h2&gt;
+&lt;p&gt;HTTPS 통신을 위해 TLS/SSL 인증서와 도메인이 필요하다.&lt;/p&gt;
+&lt;p&gt;소유한 도메인에 대해 발급되며 클라이언트는 접속한 도메인과 인증서의 도메인이 일치하는지 검증한다.&lt;/p&gt;
+&lt;p&gt;이 문서는 실무 관점에서 도메인별 인증서 발급 방법을 정리한다.&lt;/p&gt;
+&lt;p&gt;이론보다는 실무적 선택과 구현에 초점을 둔다.&lt;/p&gt;
+&lt;h2 id="ssl-인증서-발급-및-검증-흐름"&gt;SSL 인증서 발급 및 검증 흐름&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;핵심 포인트&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CA 기관의 역할&lt;/strong&gt;: 서버의 공개키를 검증하고 서명하여 신뢰성 보장&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;발급업체의 역할&lt;/strong&gt;: 서버와 CA 기관 사이에서 인증서 발급 절차를 중개&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OS의 역할&lt;/strong&gt;: CA 루트 인증서를 사전 내장하여 클라이언트가 서버 인증서 검증에 사용&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;클라이언트의 역할&lt;/strong&gt;: OS에 내장된 CA 루트 인증서로 서버 인증서의 서명을 검증하고 신뢰성 확인&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="mermaid"&gt;sequenceDiagram
+ participant 서버
+ participant 발급업체
+ participant CA기관
+ participant OS
+ participant 클라이언트
+
+ %% 인증서 발급 단계
+ Note over 서버,CA기관: 1. 인증서 발급 단계
+ 서버-&gt;&gt;서버: 개인키/공개키 쌍 생성
+ 서버-&gt;&gt;발급업체: 인증서 구매 요청&lt;br/&gt;(공개키 + 도메인 정보)
+ 발급업체-&gt;&gt;CA기관: CSR(인증서 서명 요청) 전달
+ CA기관-&gt;&gt;CA기관: 도메인 소유권 검증&lt;br/&gt;(DNS/HTTP/Email 방식)
+ CA기관-&gt;&gt;CA기관: CA 개인키로 서버 공개키 서명
+ CA기관-&gt;&gt;발급업체: 서명된 SSL 인증서 발급&lt;br/&gt;(공개키 + CA 서명 + 도메인 정보)
+ 발급업체-&gt;&gt;서버: 인증서 전달
+ 서버-&gt;&gt;서버: 인증서와 개인키를 서버에 설치
+ CA기관-&gt;&gt;OS: CA 루트 인증서 사전 등록&lt;br/&gt;(브라우저/OS 배포 시 내장)
+
+ %% HTTPS 연결 단계
+ Note over 서버,클라이언트: 2. HTTPS 연결 단계
+ 클라이언트-&gt;&gt;서버: HTTPS 사이트 접속 요청&lt;br/&gt;(Client Hello)
+ 서버-&gt;&gt;클라이언트: SSL 인증서 전송&lt;br/&gt;(Server Hello)
+ 클라이언트-&gt;&gt;OS: CA 루트 인증서 조회&lt;br/&gt;(인증서 검증용)
+ OS-&gt;&gt;클라이언트: CA 루트 인증서 반환
+ 클라이언트-&gt;&gt;클라이언트: 인증서 유효성 검증&lt;br/&gt;1) CA 루트 인증서로 서명 확인&lt;br/&gt;2) 도메인 일치 여부 확인&lt;br/&gt;3) 유효기간 확인
+ 
+ alt 인증서 검증 성공
+ 클라이언트-&gt;&gt;클라이언트: 안전한 HTTPS 연결 표시 (🔒)
+ Note over 서버,클라이언트: 이후 암호화된 통신 시작
+ else 인증서 검증 실패
+ 클라이언트-&gt;&gt;클라이언트: 보안 경고 표시&lt;br/&gt;(신뢰할 수 없는 인증서)
+ end
+&lt;/div&gt;
+
+&lt;h2 id="tlsssl-인증서란"&gt;TLS/SSL 인증서란&lt;/h2&gt;
+&lt;p&gt;웹에서 HTTP를 HTTPS로 전환하기 위해 필요한 디지털 인증서다. 서버에서 개인키를 생성하고&lt;/p&gt;</description></item></channel></rss>

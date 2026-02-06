@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Database on 부탁해스마일</title><link>https://blog.plzhans.com/ja/tags/database/</link><description>Recent content in Database on 부탁해스마일</description><generator>Hugo</generator><language>ja</language><lastBuildDate>Fri, 06 Feb 2026 06:28:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/ja/tags/database/index.xml" rel="self" type="application/rss+xml"/><item><title>Redis dump vs aof</title><link>https://blog.plzhans.com/ja/notion/database/80-redis-dump-vs-aof/</link><pubDate>Tue, 10 Jun 2025 16:16:00 +0900</pubDate><guid>https://blog.plzhans.com/ja/notion/database/80-redis-dump-vs-aof/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/assets/1_2fd22a0f-7e83-818a-9822-e350339c6f6b.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="-概要"&gt;📌 概要&lt;/h2&gt;
+&lt;p&gt;Redisデータバックアップ方法3つ:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dump (RDB)&lt;/strong&gt;: 定期的にデータをRDBファイル形式で保存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AOF&lt;/strong&gt;: コマンドを処理順にAOFファイルに記録&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hybrid AOF&lt;/strong&gt;: RDBとAOFの長所を組み合わせた方式&lt;/li&gt;
+&lt;li&gt;DumpとAOFはそれぞれ独立した永続化プロセスであり、2つのファイルは相互参照しない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-dump-rdb-方式"&gt;🗂️ Dump (RDB) 方式&lt;/h2&gt;
+&lt;p&gt;メモリデータをバイナリ形式で定期的にRDBファイルに保存&lt;/p&gt;
+&lt;h3 id="設定方法-redisconf"&gt;設定方法 (&lt;code&gt;redis.conf&lt;/code&gt;)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDBスナップショット有効化&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;900&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# 900秒(15分)間に1個以上のキー変更時&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;300&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="c1"&gt;# 300秒(5分)間に10個以上のキー変更時&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="m"&gt;10000&lt;/span&gt; &lt;span class="c1"&gt;# 60秒間に10000個以上のキー変更時&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDBファイル名および保存パス&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;dbfilename dump.rdb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;dir /var/lib/redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB圧縮および整合性&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;rdbcompression yes &lt;span class="c1"&gt;# LZF圧縮使用 (CPU増加、ファイルサイズ減少)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;rdbchecksum yes &lt;span class="c1"&gt;# CRC64チェックサムで整合性検証 (約10%性能低下)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# BGSAVE動作制御&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;stop-writes-on-bgsave-error yes &lt;span class="c1"&gt;# バックグラウンド保存失敗時に書き込みコマンド拒否&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;rdb-save-incremental-fsync yes &lt;span class="c1"&gt;# 32MBごとにfsync実行 (ディスクI/O分散)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# レプリケーション設定&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync no &lt;span class="c1"&gt;# レプリカにRDBをディスクなしで直接転送 (no: ディスク使用)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync-delay &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# diskless sync開始前の待機時間 (秒)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="長所"&gt;長所&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;再起動時にAOFに比べて&lt;strong&gt;速い復旧速度&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="短所"&gt;短所&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;定期的保存による&lt;strong&gt;データ損失の可能性&lt;/strong&gt; (dump前のサーバー停止時)&lt;/li&gt;
+&lt;li&gt;ファイル内容を直接確認不可&lt;/li&gt;
+&lt;li&gt;ファイル破損時に復旧ツール必要 (直接編集不可)&lt;/li&gt;
+&lt;li&gt;バイナリ形式でRedisバージョン互換性問題が発生する可能性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-aof-方式"&gt;📝 AOF 方式&lt;/h2&gt;
+&lt;p&gt;コマンドを処理順にAOFファイルに平文形式で記録&lt;/p&gt;</description></item></channel></rss>

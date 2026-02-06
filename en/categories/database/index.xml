@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Database on 부탁해스마일</title><link>https://blog.plzhans.com/en/categories/database/</link><description>Recent content in Database on 부탁해스마일</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 06 Feb 2026 06:28:00 +0000</lastBuildDate><atom:link href="https://blog.plzhans.com/en/categories/database/index.xml" rel="self" type="application/rss+xml"/><item><title>Redis dump vs aof</title><link>https://blog.plzhans.com/en/notion/database/80-redis-dump-vs-aof/</link><pubDate>Tue, 10 Jun 2025 16:16:00 +0900</pubDate><guid>https://blog.plzhans.com/en/notion/database/80-redis-dump-vs-aof/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/database/80-redis-dump-vs-aof/assets/1_2fd22a0f-7e83-818a-9822-e350339c6f6b.png" alt=""&gt;&lt;/p&gt;
+&lt;h2 id="-overview"&gt;📌 Overview&lt;/h2&gt;
+&lt;p&gt;Three Redis data backup methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dump (RDB)&lt;/strong&gt;: Periodically saves data as RDB files&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AOF&lt;/strong&gt;: Records commands to AOF files in execution order&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hybrid AOF&lt;/strong&gt;: Combines advantages of RDB and AOF&lt;/li&gt;
+&lt;li&gt;Dump and AOF are independent persistence processes and the two files do not reference each other&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-dump-rdb-method"&gt;🗂️ Dump (RDB) Method&lt;/h2&gt;
+&lt;p&gt;Periodically saves in-memory data to RDB files in binary format&lt;/p&gt;
+&lt;h3 id="configuration-redisconf"&gt;Configuration (&lt;code&gt;redis.conf&lt;/code&gt;)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 1&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Enable RDB snapshots&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 2&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;900&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="c1"&gt;# If at least 1 key changed in 900 seconds (15 minutes)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 3&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;300&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt; &lt;span class="c1"&gt;# If at least 10 keys changed in 300 seconds (5 minutes)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 4&lt;/span&gt;&lt;span class="cl"&gt;save &lt;span class="m"&gt;60&lt;/span&gt; &lt;span class="m"&gt;10000&lt;/span&gt; &lt;span class="c1"&gt;# If at least 10000 keys changed in 60 seconds&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 5&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 6&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB filename and directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 7&lt;/span&gt;&lt;span class="cl"&gt;dbfilename dump.rdb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 8&lt;/span&gt;&lt;span class="cl"&gt;dir /var/lib/redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt; 9&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;10&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# RDB compression and integrity&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;11&lt;/span&gt;&lt;span class="cl"&gt;rdbcompression yes &lt;span class="c1"&gt;# Use LZF compression (increases CPU, reduces file size)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;12&lt;/span&gt;&lt;span class="cl"&gt;rdbchecksum yes &lt;span class="c1"&gt;# Verify integrity with CRC64 checksum (about 10% performance overhead)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;13&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;14&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# BGSAVE behavior control&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;15&lt;/span&gt;&lt;span class="cl"&gt;stop-writes-on-bgsave-error yes &lt;span class="c1"&gt;# Refuse write commands if background save fails&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;16&lt;/span&gt;&lt;span class="cl"&gt;rdb-save-incremental-fsync yes &lt;span class="c1"&gt;# Perform fsync every 32MB (distributes disk I/O)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;17&lt;/span&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;18&lt;/span&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Replication settings&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;19&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync no &lt;span class="c1"&gt;# Transfer RDB to replicas directly without disk (no: uses disk)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;20&lt;/span&gt;&lt;span class="cl"&gt;repl-diskless-sync-delay &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="c1"&gt;# Wait time before starting diskless sync (seconds)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="advantages"&gt;Advantages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Faster recovery&lt;/strong&gt; compared to AOF on restart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="disadvantages"&gt;Disadvantages&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Potential data loss&lt;/strong&gt; due to periodic saves (if server stops before dump)&lt;/li&gt;
+&lt;li&gt;File contents cannot be directly inspected&lt;/li&gt;
+&lt;li&gt;Recovery tools needed if file corrupts (cannot edit directly)&lt;/li&gt;
+&lt;li&gt;Binary format may cause Redis version compatibility issues&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-aof-method"&gt;📝 AOF Method&lt;/h2&gt;
+&lt;p&gt;Records commands in plain text to AOF files in execution order&lt;/p&gt;</description></item></channel></rss>
