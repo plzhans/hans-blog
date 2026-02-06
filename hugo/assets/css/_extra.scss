@@ -1,5 +1,159 @@
 @import 'syntax';
 
+// Noto Sans KR 폰트 (한국어/일본어/영어 통합)
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/NotoSansKR-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/NotoSansKR-Bold.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95em;
+}
+
+// Post Meta Row (날짜 + 언어 선택기)
+.post-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+  .post-meta {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
+
+      svg {
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+}
+
+// Post Tags (날짜 아래)
+.post-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3em;
+  margin-top: 0.5em;
+
+  .post-tags-label {
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+}
+
+// Language Switcher
+.language-switcher {
+  position: relative;
+  display: inline-block;
+
+  .language-current {
+    display: inline-block;
+    padding: 0.4em 0.8em;
+    min-width: 5em;
+    text-align: center;
+    border: 1px solid rgba($light-color, 0.3);
+    border-radius: 4px;
+    color: $lightest-color;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s;
+
+    &::after {
+      content: " \25BC";
+      font-size: 0.7em;
+      margin-left: 0.3em;
+    }
+
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+
+  .language-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0.5em 0 0.3em 0;
+    list-style: none;
+    background: $dark-color;
+    border: 1px solid rgba($light-color, 0.2);
+    border-radius: 4px;
+    min-width: 100%;
+    z-index: 100;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -0.5em;
+      left: 0;
+      right: 0;
+      height: 0.5em;
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      display: block;
+      padding: 0.4em 1em;
+      color: $light-color;
+      text-decoration: none;
+      font-size: 0.9em;
+      white-space: nowrap;
+
+      &:hover {
+        background: rgba($primary-color, 0.2);
+        color: $primary-color;
+      }
+    }
+  }
+
+  &:hover .language-list {
+    display: block;
+  }
+}
+
+// AI 번역 안내
+.post-translation-notice {
+  margin-top: 2em;
+  padding: 0.6em 1em;
+  background: rgba($primary-color, 0.1);
+  border-left: 3px solid $primary-color;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.85em;
+  color: rgba($light-color, 0.7);
+}
+
 .post-notice {
   margin-top: 2em;
   padding: 0.8em 1em;

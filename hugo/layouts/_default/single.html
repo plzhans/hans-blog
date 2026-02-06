@@ -3,28 +3,49 @@
     <header class="post-header">
       <h1 class ="post-title">{{ .Title }}</h1>
       {{- if ne .Type "page" }}
-      <div class="post-meta">
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
-          {{ .PublishDate.Format "Jan 2, 2006" }}
-        </div>
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
-          {{ .ReadingTime }} min read
-        </div>
-        {{- with .Params.tags }}
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
-          {{- range . -}}
-            {{ with $.Site.GetPage (printf "/%s/%s" "tags" . ) }}
-              <a class="tag" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <div class="post-meta-row">
+        <div class="post-meta">
+          <span>
+            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+            {{- if eq .Language.Lang "en" }}
+            {{ .PublishDate.Format "Jan 2, 2006" }}
+            {{- else if eq .Language.Lang "ja" }}
+            {{ .PublishDate.Format "2006/01/02" }}
+            {{- else }}
+            {{ .PublishDate.Format "2006-01-02" }}
             {{- end }}
+          </span>
+          {{- if eq .Language.Lang "en" }}
+          <span>
+            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+            {{ .ReadingTime }} min read
+          </span>
           {{- end }}
         </div>
+        {{ partial "language-switcher.html" . }}
+      </div>
+      {{- with .Params.tags }}
+      <div class="post-tags">
+        <span class="post-tags-label">{{ partial "icon.html" (dict "ctx" $ "name" "tag") }}</span>
+        {{- range . -}}
+          {{- $tag := . -}}
+          {{ with $.Site.GetPage (printf "/%s/%s" "tags" . ) }}
+            <a class="tag" href="{{ .RelPermalink }}">{{ $tag }}</a>
+          {{- end }}
         {{- end }}
       </div>
       {{- end }}
+      {{- end }}
     </header>
+    {{- if or (eq .Language.Lang "en") (eq .Language.Lang "ja") }}
+    <div class="post-translation-notice">
+      {{- if eq .Language.Lang "en" }}
+      This article was originally written in Korean and automatically translated into English using AI.
+      {{- else if eq .Language.Lang "ja" }}
+      この記事は韓国語で執筆され、AIを用いて英語に自動翻訳されました。
+      {{- end }}
+    </div>
+    {{- end }}
     <div class="post-content">
       {{ .Content }}
     </div>

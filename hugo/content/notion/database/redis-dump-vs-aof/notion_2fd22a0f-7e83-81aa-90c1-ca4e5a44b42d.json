@@ -1,0 +1,210 @@
+{
+  "object": "page",
+  "id": "2fd22a0f-7e83-81aa-90c1-ca4e5a44b42d",
+  "created_time": "2026-02-04T09:04:00.000Z",
+  "last_edited_time": "2026-02-06T06:30:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "data_source_id",
+    "data_source_id": "2fd22a0f-7e83-814c-9f88-000b7bdd1d4a",
+    "database_id": "2fd22a0f-7e83-81d7-82d0-cd0ed07cb7cb"
+  },
+  "archived": false,
+  "in_trash": false,
+  "is_locked": false,
+  "properties": {
+    "원문 URL": {
+      "id": "EjQP",
+      "type": "url",
+      "url": null
+    },
+    "AI_번역": {
+      "id": "H%3BiO",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "created_at": {
+      "id": "Hhcd",
+      "type": "created_time",
+      "created_time": "2026-02-04T09:04:00.000Z"
+    },
+    "태그": {
+      "id": "NGeX",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "b:zy",
+          "name": "database",
+          "color": "default"
+        },
+        {
+          "id": "pSVX",
+          "name": "redis",
+          "color": "default"
+        }
+      ]
+    },
+    "수정일": {
+      "id": "PeH%60",
+      "type": "last_edited_time",
+      "last_edited_time": "2026-02-06T06:30:00.000Z"
+    },
+    "AUTO_ID": {
+      "id": "WCbd",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null,
+        "number": 27
+      }
+    },
+    "상태": {
+      "id": "%5B~Jq",
+      "type": "status",
+      "status": {
+        "id": "DOao",
+        "name": "발행 완료",
+        "color": "green"
+      }
+    },
+    "요약": {
+      "id": "bCTc",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Redis 데이터 백업 및 퍼시스턴스 방법 완벽 가이드. RDB(Dump), AOF, Hybrid AOF 방식의 redis.conf 설정, 장단점 비교, 성능 최적화 및 선택 기준을 상황별로 제시. BGSAVE, fork, fsync, Copy-on-Write 메모리 관리 포함",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Redis 데이터 백업 및 퍼시스턴스 방법 완벽 가이드. RDB(Dump), AOF, Hybrid AOF 방식의 redis.conf 설정, 장단점 비교, 성능 최적화 및 선택 기준을 상황별로 제시. BGSAVE, fork, fsync, Copy-on-Write 메모리 관리 포함",
+          "href": null
+        }
+      ]
+    },
+    "버튼": {
+      "id": "g%5BAq",
+      "type": "button",
+      "button": {}
+    },
+    "POST_ID": {
+      "id": "ik%40%5C",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "80",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "80",
+          "href": null
+        }
+      ]
+    },
+    "slug": {
+      "id": "inig",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "80-redis-dump-vs-aof",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "80-redis-dump-vs-aof",
+          "href": null
+        }
+      ]
+    },
+    "동기화": {
+      "id": "keny",
+      "type": "button",
+      "button": {}
+    },
+    "발행일": {
+      "id": "nEEr",
+      "type": "date",
+      "date": {
+        "start": "2026-02-06T06:30:00.000+00:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "생성일": {
+      "id": "oe%60s",
+      "type": "date",
+      "date": {
+        "start": "2025-06-10T16:16:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "카테고리": {
+      "id": "vwVr",
+      "type": "select",
+      "select": {
+        "id": "b0522fae-732b-42b3-97e0-58ce220257a9",
+        "name": "Database",
+        "color": "yellow"
+      }
+    },
+    "제목": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Redis dump vs aof",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Redis dump vs aof",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/Redis-dump-vs-aof-2fd22a0f7e8381aa90c1ca4e5a44b42d",
+  "public_url": null
+}

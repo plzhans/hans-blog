@@ -1,17 +1,48 @@
+# 기본 URL
 baseURL = 'https://blog.plzhans.com'
-theme = "m10c"
-languageCode = 'ko-kr'
-enableRobotsTXT = true
-
+# 제목
 title = '부탁해스마일'
+# 언어 코드
+languageCode = 'ko-kr'
 
+# 사용할 Hugo 테마
+theme = "m10c"
+
+# 기본 콘텐츠 언어
+defaultContentLanguage = "ko"
+# 기본 언어도 서브디렉토리에 포함 (/ko/)
+defaultContentLanguageInSubdir = true
+
+# robots.txt 파일 자동 생성
+enableRobotsTXT = true
+# 콘텐츠 디렉토리 경로 (기본값: content)
 #contentDir = "contents"
 
+# 다국어 설정
+[languages]
+  [languages.ko]
+    weight = 1
+    languageName = "한국어"
+
+  [languages.en]
+    weight = 2
+    languageName = "English"
+
+  [languages.ja]
+    weight = 3
+    languageName = "日本語"
+
+# 사이트 파라미터 설정
 [params]
+  # 작성자 이름
   author = "plzhans"
+  # 사이트 설명
   description = "개발자 블로그"
+  # 프로필 이미지 경로
   avatar = "/avatar-plzhans.png"
+  # 저작권 표시 HTML
   CopyrightHTML = 'Copyright &#xA9; plzhans. All Rights Reserved. | Powered by <a href="https://github.com/plzhans/hans-blog" target="_blank">github.com/plzhans/hans-blog</a>'
+  # 메뉴 아이템 구분자
   menu_item_separator = " - "
   [[params.social]]
     icon = "brand-github"
@@ -82,3 +113,4 @@ title = '부탁해스마일'
 [services]
   [services.googleAnalytics]
     ID = "G-7QCWSVX3WN"
+

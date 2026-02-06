@@ -25,6 +25,7 @@ export class NotionExportService {
       tags: "태그",
       uniqueId: "ID",
       summary: "요약",
+      slug: "slug",
       createdDate: "생성일",
       publishedDate: "발행일",
       ...propertyKeys,
@@ -160,16 +161,16 @@ export class NotionExportService {
     if(updated){
       const currentStatus = page.properties[this.propertyKeys.status]?.status?.name;
       if(currentStatus === this.statusValues.publishRequest){
-        await this.#notionPageStatusPublished(page.id);
+        await this.#notionPageStatusPublished(page);
       }
     }
   }
 
   /**
    * Notion 페이지 상태를 "발행 완료"로 변경
-   * @param {string} pageId - Notion 페이지 ID
+   * @param {Object} page - Notion 페이지 객체
    */
-  async #notionPageStatusPublished(pageId) {
+  async #notionPageStatusPublished(page) {
     const now = new Date().toISOString();
     const properties = {
       [this.propertyKeys.status]: {
@@ -183,7 +184,8 @@ export class NotionExportService {
         },
       },
     };
-    const res =  await this.notionApiClient.updatePageProperties(pageId, properties);
+
+    const res = await this.notionApiClient.updatePageProperties(page.id, properties);
     return res;
   }
 
@@ -205,6 +207,14 @@ export class NotionExportService {
     const draft = !(currentStatus === this.statusValues.publishRequest || currentStatus === this.statusValues.published);
     const prevPageDir = existsPageMap.get(pageId);
 
+    // 발행 요청 시 slug 검증
+    if (currentStatus === this.statusValues.publishRequest) {
+      if (!this.#hasTextProperty(page.properties, this.propertyKeys.slug)) {
+        console.error(`❌ Publish request rejected: slug property is empty for page "${title}" (${pageId})`);
+        return false;
+      }
+    }
+
     // draft이고 로컬 파일이 없으면 무시
     if (draft && !includeDraft && !prevPageDir) {
       return false;
@@ -213,12 +223,12 @@ export class NotionExportService {
     console.log(`🔄 Processing: ${title} (${pageId})`);
 
     const postId = this.#extractPagePostId(page, this.propertyKeys.uniqueId);
-    const slug = slugify(title);
+    const titleSlug = slugify(title);
     const categoryLower = this.#extractPageCategory(page.properties, this.propertyKeys.category)
       .map(c => slugify(c))
       .join("/") || "etc";
 
-    const finalPageDir = path.join(baseOutDir, categoryLower, slug);
+    const finalPageDir = path.join(baseOutDir, categoryLower, titleSlug);
 
     if (prevPageDir && prevPageDir !== finalPageDir) {
       await ensureDir(path.dirname(finalPageDir));
@@ -319,7 +329,7 @@ export class NotionExportService {
     try {
       ws = fs.createWriteStream(mdFilePath, { encoding: "utf-8" });
 
-      this.#wirteHugoHeader(ws, page, postId, title, draft, firstImagePath);
+      this.#wirteHugoHeader(ws, page, postId, title, titleSlug, draft, firstImagePath);
       ws.write("\n");
 
       if (mdStringObj.parent) {
@@ -465,6 +475,17 @@ export class NotionExportService {
   }
 
   /**
+   * Notion 속성이 존재하고 값이 비어있지 않은지 확인 (rich_text 지원)
+   * @param {Object} properties - Notion 페이지 속성 객체
+   * @param {string} key - 텍스트 속성 키
+   * @returns {boolean} 속성이 존재하고 값이 비어있지 않으면 true, 속성이 없거나 빈 문자열이면 false
+   */
+  #hasTextProperty(properties, key) {
+    const value = this.#extractTextProperty(properties, key);
+    return !!value;
+  }
+
+  /**
    * Notion 속성 값을 문자열로 변환 (출력/로깅용)
    * @param {Object} prop - Notion 속성 객체
    * @returns {string} 변환된 문자열
@@ -593,17 +614,20 @@ export class NotionExportService {
    * @param {Object} page - Notion 페이지 객체
    * @param {number|string} uniqueId - 페이지 고유 ID
    * @param {string} title - 페이지 제목
+   * @param {string} titleSlug - 페이지 slug
    * @param {boolean} [draft=false] - draft 여부
    * @param {string|null} [firstImagePath=null] - 대표 이미지 경로
    */
-  #wirteHugoHeader(ws, page, uniqueId, title, draft = false, firstImagePath = null) {
+  #wirteHugoHeader(ws, page, uniqueId, title, titleSlug, draft = false, firstImagePath = null) {
     const tags = this.#extractPageTags(page.properties, this.propertyKeys.tags);
     const category = this.#extractPageCategory(page.properties, this.propertyKeys.category);
     const summary = this.#extractTextProperty(page.properties, this.propertyKeys.summary);
     const createdTime = this.#extractCreatedTime(page);
+    const slug = this.#extractTextProperty(page.properties, this.propertyKeys.slug) || titleSlug;
     ws.write("---\n");
     ws.write(`id: "${uniqueId}"\n`);
-    ws.write(`url: "/notion/${uniqueId}"\n`);
+    ws.write(`translationKey: "${uniqueId}"\n`);
+    ws.write(`slug: "${uniqueId}-${slug}"\n`);
     ws.write(`title: "${title.replace(/"/g, '\\"')}"\n`);
     if(summary){
       ws.write(`description: "${summary.replace(/"/g, '\\"')}"\n`);

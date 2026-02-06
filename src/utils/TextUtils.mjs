@@ -6,7 +6,7 @@
 export function slugify(s) {
   return (s || "untitled")
     .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, "_")
-    .replace(/^_+|_+$/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/^-+|-+$/g, "")
     .slice(0, 80);
 }

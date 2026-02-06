@@ -27,3 +27,4 @@ logs
 # hugo
 hugo/resources/_gen
 hugo/public
+.claude
