@@ -44,7 +44,7 @@
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id="-aof-方式"&gt;📝 AOF 方式&lt;/h2&gt;
-&lt;p&gt;コマンドを処理順にAOFファイルに平文形式で記録&lt;/p&gt;</description></item><item><title>Git 削除ブランチ復旧</title><link>https://blog.plzhans.com/ja/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/</link><pubDate>Wed, 08 Jan 2025 18:42:00 +0900</pubDate><guid>https://blog.plzhans.com/ja/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/</guid><description>&lt;h2 id="目標"&gt;目標&lt;/h2&gt;
+&lt;p&gt;コマンドを処理順にAOFファイルに平文形式で記録&lt;/p&gt;</description></item><item><title>Git 削除ブランチ復旧</title><link>https://blog.plzhans.com/ja/notion/git/69-git-deleted-branch-recovery/</link><pubDate>Wed, 08 Jan 2025 18:42:00 +0900</pubDate><guid>https://blog.plzhans.com/ja/notion/git/69-git-deleted-branch-recovery/</guid><description>&lt;h2 id="目標"&gt;目標&lt;/h2&gt;
 &lt;p&gt;別のブランチに&lt;strong&gt;削除した特定のコミット時点に復旧&lt;/strong&gt;します。&lt;/p&gt;
 &lt;h2 id="状況"&gt;状況&lt;/h2&gt;
 &lt;p&gt;ブランチを削除した後、&lt;strong&gt;該当ブランチで作業していたコミットに再びブランチを復旧&lt;/strong&gt;する必要がある場合があります。&lt;/p&gt;
@@ -54,7 +54,7 @@
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="ln"&gt;1&lt;/span&gt;&lt;span class="cl"&gt;git reflog
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="復旧対象選択"&gt;復旧対象選択&lt;/h3&gt;
 &lt;p&gt;reflog出力から&lt;strong&gt;復旧したい時点のコミットハッシュ&lt;/strong&gt;を確認します。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/assets/1_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/git/69-git-deleted-branch-recovery/assets/1_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png" alt=""&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="2-コミットハッシュでブランチを再作成"&gt;2. コミットハッシュでブランチを再作成&lt;/h2&gt;
 &lt;p&gt;見つけたコミットハッシュを基準に新しいブランチを作成し、すぐにチェックアウトします。&lt;/p&gt;
@@ -63,7 +63,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id="3-復旧確認"&gt;3. 復旧確認&lt;/h2&gt;
 &lt;p&gt;ブランチが正常に生成され、該当コミットに移動したかを確認します。&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/git/69-git-%EC%82%AD%EC%A0%9C-%EB%B8%8C%EB%9F%B0%EC%B9%98-%EB%B3%B5%EA%B5%AC/assets/2_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png" alt=""&gt;&lt;/p&gt;</description></item><item><title>HTTPS TLS/SSL 無料 vs 有料証明書</title><link>https://blog.plzhans.com/ja/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/</link><pubDate>Thu, 17 Mar 2022 16:48:00 +0900</pubDate><guid>https://blog.plzhans.com/ja/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/infra/39-https-tls-ssl-%EB%AC%B4%EB%A3%8C-vs-%EC%9C%A0%EB%A3%8C-%EC%9D%B8%EC%A6%9D%EC%84%9C/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/git/69-git-deleted-branch-recovery/assets/2_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png" alt=""&gt;&lt;/p&gt;</description></item><item><title>HTTPS TLS/SSL 無料 vs 有料証明書</title><link>https://blog.plzhans.com/ja/notion/infra/39-https-tls-ssl-free-vs-paid-certificates/</link><pubDate>Thu, 17 Mar 2022 16:48:00 +0900</pubDate><guid>https://blog.plzhans.com/ja/notion/infra/39-https-tls-ssl-free-vs-paid-certificates/</guid><description>&lt;p&gt;&lt;img src="https://blog.plzhans.com/ko/notion/infra/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png" alt=""&gt;&lt;/p&gt;
 &lt;h2 id="概要"&gt;概要&lt;/h2&gt;
 &lt;p&gt;HTTPS通信のためにTLS/SSL証明書とドメインが必要です。&lt;/p&gt;
 &lt;p&gt;所有するドメインに対して発行され、クライアントは接続したドメインと証明書のドメインが一致するかを検証します。&lt;/p&gt;
