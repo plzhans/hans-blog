@@ -10,7 +10,7 @@ tags:
   - "githb-pages"
   - "domain"
 date: 2026-02-04T18:07:00.000+09:00
-lastmod: 2026-02-09T07:11:00.000Z
+lastmod: 2026-02-09T07:12:00.000Z
 draft: false
 images:
   - "assets/1_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png"
@@ -78,7 +78,7 @@ DNS 제공업체에 따라 A, AAAA 또는 ALIAS 레코드를 설정한다.
 2606:50c0:8001::153
 2606:50c0:8002::153
 2606:50c0:8003::153 |
-| ALIAS 또는 ANAME | @    | [USERNAME.github.io](http://username.github.io/)                                |
+| ALIAS 또는 ANAME | @    | USERNAME.github.io                                                              |
 
 
 **참고:** ALIAS/ANAME 레코드를 지원하지 않는 DNS 제공업체는 A 레코드를 사용한다.
