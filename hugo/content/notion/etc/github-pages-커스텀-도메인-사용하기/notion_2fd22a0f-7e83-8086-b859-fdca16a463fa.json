@@ -1,0 +1,249 @@
+{
+  "object": "page",
+  "id": "2fd22a0f-7e83-8086-b859-fdca16a463fa",
+  "created_time": "2026-02-04T09:07:00.000Z",
+  "last_edited_time": "2026-02-09T07:10:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "data_source_id",
+    "data_source_id": "2fd22a0f-7e83-814c-9f88-000b7bdd1d4a",
+    "database_id": "2fd22a0f-7e83-81d7-82d0-cd0ed07cb7cb"
+  },
+  "archived": false,
+  "in_trash": false,
+  "is_locked": false,
+  "properties": {
+    "원문 URL": {
+      "id": "EjQP",
+      "type": "url",
+      "url": null
+    },
+    "AI_번역": {
+      "id": "H%3BiO",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "created_at": {
+      "id": "Hhcd",
+      "type": "created_time",
+      "created_time": "2026-02-04T09:07:00.000Z"
+    },
+    "태그": {
+      "id": "NGeX",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "c883a4a8-4839-4b1a-8cce-01c1a2779b11",
+          "name": "github",
+          "color": "purple"
+        },
+        {
+          "id": "c317d7e0-321b-4f64-a8ad-f26ff9113757",
+          "name": "github-action",
+          "color": "gray"
+        },
+        {
+          "id": "546fa89c-9d99-47ac-a8e5-46d6f7e0038d",
+          "name": "githb-pages",
+          "color": "blue"
+        },
+        {
+          "id": "c8635470-24e8-485c-a6d9-c79c71688cb2",
+          "name": "domain",
+          "color": "red"
+        }
+      ]
+    },
+    "수정일": {
+      "id": "PeH%60",
+      "type": "last_edited_time",
+      "last_edited_time": "2026-02-09T07:10:00.000Z"
+    },
+    "AUTO_ID": {
+      "id": "WCbd",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null,
+        "number": 87
+      }
+    },
+    "상태": {
+      "id": "%5B~Jq",
+      "type": "status",
+      "status": {
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
+      }
+    },
+    "요약": {
+      "id": "bCTc",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "GitHub Pages의 기본 URL(",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "GitHub Pages의 기본 URL(",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "username.github.io/repository",
+            "link": {
+              "url": "http://username.github.io/repository"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "username.github.io/repository",
+          "href": "http://username.github.io/repository"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ") 대신 커스텀 도메인을 설정하는 방법을 다룹니다. 도메인의 CNAME 레코드 설정과 GitHub Repository Settings에서 Custom domain 구성 방법을 설명하며, HTTPS 인증서 적용 옵션도 포함합니다.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ") 대신 커스텀 도메인을 설정하는 방법을 다룹니다. 도메인의 CNAME 레코드 설정과 GitHub Repository Settings에서 Custom domain 구성 방법을 설명하며, HTTPS 인증서 적용 옵션도 포함합니다.",
+          "href": null
+        }
+      ]
+    },
+    "버튼": {
+      "id": "g%5BAq",
+      "type": "button",
+      "button": {}
+    },
+    "POST_ID": {
+      "id": "ik%40%5C",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "86",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "86",
+          "href": null
+        }
+      ]
+    },
+    "slug": {
+      "id": "inig",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "github-pages-custom-domain",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "github-pages-custom-domain",
+          "href": null
+        }
+      ]
+    },
+    "동기화": {
+      "id": "keny",
+      "type": "button",
+      "button": {}
+    },
+    "발행일": {
+      "id": "nEEr",
+      "type": "date",
+      "date": null
+    },
+    "생성일": {
+      "id": "oe%60s",
+      "type": "date",
+      "date": {
+        "start": "2026-02-04T18:07:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "카테고리": {
+      "id": "vwVr",
+      "type": "select",
+      "select": null
+    },
+    "제목": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Github pages 커스텀 도메인 사용하기",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Github pages 커스텀 도메인 사용하기",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/Github-pages-2fd22a0f7e838086b859fdca16a463fa",
+  "public_url": null,
+  "request_id": "a4416e0a-3227-4d69-a890-007d4d718f30"
+}
