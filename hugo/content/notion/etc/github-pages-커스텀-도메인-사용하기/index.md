@@ -10,7 +10,7 @@ tags:
   - "githb-pages"
   - "domain"
 date: 2026-02-04T18:07:00.000+09:00
-lastmod: 2026-02-09T07:10:00.000Z
+lastmod: 2026-02-09T07:11:00.000Z
 draft: false
 images:
   - "assets/1_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png"
@@ -26,7 +26,7 @@ GitHub Pages는 기본적으로 `https://{계정명}.`[`github.io/{저장소명}
 # 서브(하위) 도메인 사용
 
 
-`blog.plzhans.com`과 같은 서브 도메인을 사용하는 경우다.
+`hugosample.plzhans.com`과 같은 서브 도메인을 사용하는 경우다.
 
 
 ## DNS 설정
@@ -41,7 +41,7 @@ GitHub Pages는 기본적으로 `https://{계정명}.`[`github.io/{저장소명}
 **설정 예시**
 
 - Type: CNAME
-- Name: 서브도메인 (예: blog)
+- Name: 서브도메인 (예: hugosample)
 - Value: {계정명}.[github.io](http://github.io/)
 
 ## GitHub Pages 설정
@@ -50,7 +50,7 @@ GitHub Pages는 기본적으로 `https://{계정명}.`[`github.io/{저장소명}
 Repository → Settings → Pages → Custom domain에서 커스텀 도메인을 입력한다.
 
 
-**입력 예시:** [blog.example.com](http://blog.example.com/)
+**입력 예시:** hugosample[.p](http://blog.example.com/)lzhans.com
 
 
 ![](./assets/2_30222a0f-7e83-80fe-875c-c3b270a89dd1.png)
@@ -90,7 +90,7 @@ DNS 제공업체에 따라 A, AAAA 또는 ALIAS 레코드를 설정한다.
 Repository → Settings → Pages → Custom domain에서 커스텀 도메인을 입력한다.
 
 
-**입력 예시:** [p](http://example.com/)
+**입력 예시:** plzhans.com
 
 
 # HTTPS 활성화
@@ -102,6 +102,9 @@ Repository → Settings → Pages → Custom domain에서 커스텀 도메인을
 > ⚠️ 인증서 발급과 전파에는 최대 24시간이 소요될 수 있다. HTTPS 연결이 되지 않는다면 하루 정도 기다린 후 다시 시도한다.
 
 
-# 참고
+---
+
+
+참고
 
 - [GitHub 공식 문서: 커스텀 도메인 관리](https://docs.github.com/ko/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
