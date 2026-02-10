@@ -315,21 +315,10 @@ export class NotionExportService {
       return result.markdown;
     });
     n2m.setCustomTransformer("paragraph", async (block) => {
-      const richTexts = block?.paragraph?.rich_text;
-      if (!richTexts) return block;
-
-      for (const rt of richTexts) {
-        if (rt.href && rt.href.includes("notion.so/")){
-          const resolved = this.#resolveNotionPageUrl(rt.href, existsPageMap);
-          if (resolved) {
-            rt.href = resolved;
-            if (rt.text?.link) {
-              rt.text.link.url = resolved;
-            }
-          }
-        }
-      }
-      return block;
+      return this.transformCommonBlock(block, existsPageMap);
+    });
+    n2m.setCustomTransformer("bulleted_list_item", async (block) => {
+      return this.transformCommonBlock(block, existsPageMap);
     });
 
     const mdBlocks = await n2m.pageToMarkdown(pageId);
@@ -537,11 +526,31 @@ export class NotionExportService {
   // ── 링크 치환 헬퍼 ──
 
   /**
-   * Notion 페이지 URL에서 ID를 추출하여 Hugo 상대 경로로 변환
-   * @param {string} url - Notion 페이지 URL
+   * 공통 블록 변환 — rich_text 내 Notion 링크를 Hugo 상대 경로로 치환
+   * @param {object} block - Notion 블록 객체
    * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
-   * @returns {string|null} 변환된 상대 경로 (매칭 실패 시 null)
+   * @returns {object} 변환된 블록
    */
+  transformCommonBlock(block, existsPageMap) {
+    const blockData = block?.[block.type];
+    const richTexts = blockData?.rich_text;
+    if (!richTexts) return block;
+
+    // 노션 링크가 existsPageMap 에 있는 페이지인 경우 최종 링크로 대체하기
+    for (const rt of richTexts) {
+      if (rt.href && rt.href.includes("notion.so/")){
+        const resolved = this.#resolveNotionPageUrl(rt.href, existsPageMap);
+        if (resolved) {
+          rt.href = resolved;
+          if (rt.text?.link) {
+            rt.text.link.url = resolved;
+          }
+        }
+      }
+    }
+    return block;
+  }
+
   #resolveNotionPageUrl(url, existsPageMap) {
     const rawId = url.split("notion.so/").pop().replace(/-/g, '');
     if (!rawId) return null;

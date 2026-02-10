@@ -1,5 +1,5 @@
 # 기본 URL (빌드 시 --baseURL 플래그로 설정)
-# baseURL = 'https://blog.plzhans.com'
+baseURL = 'https://blog.plzhans.com'
 # 제목
 title = '부탁해스마일'
 # 언어 코드
