@@ -2,14 +2,14 @@
   "object": "page",
   "id": "2fd22a0f-7e83-81ed-b096-fbb1eeec1160",
   "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-02-10T07:15:00.000Z",
+  "last_edited_time": "2026-02-10T08:23:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "cover": null,
   "icon": null,
@@ -61,7 +61,7 @@
     "수정일": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-02-10T07:15:00.000Z"
+      "last_edited_time": "2026-02-10T08:23:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -75,9 +75,9 @@
       "id": "%5B~Jq",
       "type": "status",
       "status": {
-        "id": "DOao",
-        "name": "발행 완료",
-        "color": "green"
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
       }
     },
     "요약": {
@@ -207,5 +207,6 @@
     }
   },
   "url": "https://www.notion.so/Hugo-Github-2fd22a0f7e8381edb096fbb1eeec1160",
-  "public_url": null
+  "public_url": null,
+  "request_id": "01020e6f-14d5-4c6a-adbf-667290fa9bdd"
 }

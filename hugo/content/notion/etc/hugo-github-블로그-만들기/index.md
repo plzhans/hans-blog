@@ -9,7 +9,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-01-29T10:44:00.000+09:00
-lastmod: 2026-02-10T07:15:00.000Z
+lastmod: 2026-02-10T08:23:00.000Z
 draft: false
 ---
 
@@ -23,14 +23,37 @@ draft: false
 # 서론
 
 
-기술 관련 글을 노션에 작성하다가 블로그로 발행할 방법을 찾게 되었다. 
+기술 관련 내용을 에버노트와 개인 문서에 정리해오다가 노션의 웹사이트 기능을 활용해 블로그로 운영하려고 준비했었다.
 
 
-노션을 직접 블로그로 사용하는 것은 제약이 많아 노션 글을 마크다운으로 변환해서 Hugo로 빌드하는 방식을 선택했다.
+하지만 노션은 커스터마이징에 제약이 있었고 커스텀 도메인 사용에도 추가 비용이 발생해서 고민을 좀 하게 되었다.
 
 
-예전에는 GitHub에서 공식 지원하는 Jekyll을 사용했지만 Hugo가 빌드 속도도 빠르고 활발하게 업데이트되고 있어 Hugo를 선택했다.
+대안으로 vlog 형태로 전환할지 Markdown으로 다시 작성해 Jekyll로 옮길지 고민했다.
 
+
+하지만 작성이 편한 노션을 포기할 수 없었다. 결론은 노션으로 작성하고 정적 웹사이트로 배포하자!
+
+
+현재 이 블로그는 다음과 같은 흐름으로 운영하고 있다. (소스 참고 : [https://github.com/plzhans/hans-blog](https://github.com/plzhans/hans-blog))
+
+
+노션 작성
+
+
+→ 노션 API로 Markdown 변환
+
+
+→ Hugo 정적 사이트 빌드
+
+
+→ GitLab Pages 배포
+
+
+# 목표
+
+- md 파일로 작성된 문서를 hugo 로 빌드하고
+- Github pages 로 배포 자동화 하기
 
 ## Hugo 선택 이유
 
@@ -325,10 +348,10 @@ GitHub Actions 탭에서 워크플로우 실행을 확인하고, Settings → Pa
 **예시 주소:** [https://plzhans.github.io/hugo-sample/](https://plzhans.github.io/hugo-sample/)
 
 
-# 주의사항
+## 주의사항
 
 
-## baseURL 설정
+### baseURL 설정
 
 
 `hugo.toml`의 `baseURL` 또는 빌드 시 `--baseURL` 옵션이 정확하지 않으면 CSS와 이미지 경로가 잘못되어 오류가 발생한다.
@@ -337,8 +360,7 @@ GitHub Actions 탭에서 워크플로우 실행을 확인하고, Settings → Pa
 이 가이드에서는 GitHub Actions 워크플로우의 환경 변수 `HUGO_BASEURL`에 배포 주소를 설정했다.
 
 
-## 커스텀 도메인 설정
+## 관련 된 글 
 
-
-커스텀 도메인 연결은 [Github pages 커스텀 도메인 사용하기](../86-github-pages-custom-domain/)를 참고한다.
-
+- 커스텀 도메인 설정 : [Github pages 커스텀 도메인 사용하기](https://www.notion.so/2fd22a0f7e838086b859fdca16a463fa)
+- (준비중) 노션에서 작성한 글 배포 자동화하여 Github pages 배포하기
