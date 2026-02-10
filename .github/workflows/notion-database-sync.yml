@@ -4,6 +4,10 @@ on:
   repository_dispatch:
     types: [notion-database-sync]
 
+concurrency:
+  group: notion-database-sync
+  cancel-in-progress: false
+
 permissions:
   contents: write
 

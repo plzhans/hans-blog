@@ -10,13 +10,22 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
 permissions:
-  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     env:
+      HUGO_BASEURL: https://blog.plzhans.com
       HUGO_CACHEDIR: /tmp/hugo_cache
 
     steps:
@@ -41,10 +50,16 @@ jobs:
             ${{ runner.os }}-hugomod-
 
       - name: Build
-        run: hugo -s ./hugo --minify --gc --cleanDestinationDir
+        run: hugo -s ./hugo --baseURL $HUGO_BASEURL --minify --gc --cleanDestinationDir
 
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./hugo/public
+          path: ./hugo/public
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Print deployed URL
+        run: echo "Deployed to ${{ steps.deploy.outputs.page_url }}"

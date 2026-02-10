@@ -4,6 +4,10 @@ on:
   repository_dispatch:
     types: [notion-page-sync]
 
+concurrency:
+  group: notion-page-sync-${{ github.event.client_payload.notion_data.id }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
