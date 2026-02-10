@@ -7,8 +7,10 @@ description: "This guide covers how to set up a custom domain instead of the def
 tags:
   - "github"
   - "github-action"
-  - "githb-pages"
+  - "github-pages"
   - "domain"
+categories:
+  - "Git"
 date: 2026-02-04T18:07:00.000+09:00
 lastmod: 2026-02-10T07:36:00.000Z
 draft: false
