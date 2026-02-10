@@ -10,7 +10,7 @@ tags:
   - "githb-pages"
   - "domain"
 date: 2026-02-04T18:07:00.000+09:00
-lastmod: 2026-02-10T07:33:00.000Z
+lastmod: 2026-02-10T07:36:00.000Z
 draft: false
 images:
   - "assets/1_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png"
@@ -20,7 +20,8 @@ images:
 # 개요
 
 
-GitHub Pages는 기본적으로 `https://{계정명}.`[`github.io/{저장소명}/`](http://github.io/%7B저장소명%7D/) 형식의 URL을 제공한다.
+GitHub Pages는 기본적으로 `https://{계정명}.`[`github.io/{저장소명}/`](http://github.io/%7B저장소명%7D/) 형식의 URL을 제공한다. 
+
 
 이 문서는 커스텀 도메인을 연결하는 방법을 설명한다.
 

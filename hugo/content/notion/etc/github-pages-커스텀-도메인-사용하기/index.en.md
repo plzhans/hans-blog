@@ -10,7 +10,7 @@ tags:
   - "githb-pages"
   - "domain"
 date: 2026-02-04T18:07:00.000+09:00
-lastmod: 2026-02-09T07:45:00.000Z
+lastmod: 2026-02-10T07:36:00.000Z
 draft: false
 images:
   - "assets/1_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png"
@@ -74,7 +74,7 @@ Set up A, AAAA, or ALIAS records depending on your DNS provider.
 | -------------- | ---- | ------------------------------------------------------------------------------- |
 | A              | @    | 185.199.108.153<br>185.199.109.153<br>185.199.110.153<br>185.199.111.153                 |
 | AAAA           | @    | 2606:50c0:8000::153<br>2606:50c0:8001::153<br>2606:50c0:8002::153<br>2606:50c0:8003::153 |
-| ALIAS 또는 ANAME | @    | USERNAME.github.io                                                              |
+| ALIAS or ANAME | @    | USERNAME.github.io                                                              |
 
 
 **Note:** If your DNS provider does not support ALIAS/ANAME records, use A records instead.

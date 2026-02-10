@@ -9,7 +9,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-01-29T10:44:00.000+09:00
-lastmod: 2026-02-09T07:48:00.000Z
+lastmod: 2026-02-10T08:23:00.000Z
 draft: false
 ---
 
@@ -23,14 +23,28 @@ draft: false
 # はじめに
 
 
-技術関連の記事をNotionで書いていたところ、ブログとして公開する方法を探すことになりました。
+技術関連の内容をEvernoteや個人ドキュメントに整理してきましたが、Notionのウェブサイト機能を活用してブログとして運営しようと準備していました。
 
 
-Notionを直接ブログとして使用するのは制約が多いため、Notionの記事をMarkdownに変換してHugoでビルドする方式を選びました。
+しかし、Notionはカスタマイズに制約があり、カスタムドメインの使用にも追加費用が発生するため、悩むことになりました。
 
 
-以前はGitHubが公式サポートしているJekyllを使用していましたが、Hugoはビルド速度が速く、活発にアップデートされているためHugoを選びました。
+代替案として、vlog形式に転換するか、Markdownで書き直してJekyllに移行するか検討しました。
 
+
+しかし、執筆が便利なNotionを諦めることはできませんでした。結論はNotionで作成して静的ウェブサイトとしてデプロイすること！
+
+
+現在このブログは以下のような流れで運営しています。（ソース参考：[https://github.com/plzhans/hans-blog](https://github.com/plzhans/hans-blog)）
+
+
+> Notionで作成 → Notion APIでMarkdownに変換 → Hugo静的サイトビルド → GitLab Pagesデプロイ
+
+
+# 目標
+
+- mdファイルで作成されたドキュメントをHugoでビルドする
+- GitHub Pagesへのデプロイを自動化する
 
 ## Hugoを選んだ理由
 
@@ -325,10 +339,10 @@ GitHub Actionsタブでワークフローの実行を確認し、Settings → Pa
 **例のURL:** [https://plzhans.github.io/hugo-sample/](https://plzhans.github.io/hugo-sample/)
 
 
-# 注意事項
+## 注意事項
 
 
-## baseURL設定
+### baseURL設定
 
 
 `hugo.toml` の `baseURL` またはビルド時の `--baseURL` オプションが正確でない場合、CSSと画像パスが間違ってエラーが発生します。
@@ -337,7 +351,7 @@ GitHub Actionsタブでワークフローの実行を確認し、Settings → Pa
 このガイドでは、GitHub Actionsワークフローの環境変数 `HUGO_BASEURL` にデプロイアドレスを設定しました。
 
 
-## カスタムドメイン設定
+## 関連記事
 
-
-カスタムドメインの接続は[GitHub Pagesでカスタムドメインを使用する](../86-github-pages-custom-domain/)を参照してください。
+- カスタムドメイン設定：[GitHub Pagesでカスタムドメインを使用する](../86-github-pages-custom-domain/)
+- （準備中）Notionで作成した記事をGitHub Pagesに自動デプロイする

@@ -9,7 +9,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-01-29T10:44:00.000+09:00
-lastmod: 2026-02-10T08:23:00.000Z
+lastmod: 2026-02-10T08:32:00.000Z
 draft: false
 ---
 
@@ -362,5 +362,5 @@ GitHub Actions 탭에서 워크플로우 실행을 확인하고, Settings → Pa
 
 ## 관련 된 글 
 
-- 커스텀 도메인 설정 : [Github pages 커스텀 도메인 사용하기](https://www.notion.so/2fd22a0f7e838086b859fdca16a463fa)
+- 커스텀 도메인 설정 : [Github pages 커스텀 도메인 사용하기](../86-github-pages-custom-domain/)
 - (준비중) 노션에서 작성한 글 배포 자동화하여 Github pages 배포하기

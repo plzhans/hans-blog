@@ -9,7 +9,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-01-29T10:44:00.000+09:00
-lastmod: 2026-02-09T07:48:00.000Z
+lastmod: 2026-02-10T08:23:00.000Z
 draft: false
 ---
 
@@ -23,14 +23,28 @@ draft: false
 # Introduction
 
 
-I had been writing technical articles in Notion and was looking for a way to publish them as a blog.
+I had been organizing technical content in Evernote and personal documents, and was preparing to run a blog using Notion's website feature.
 
 
-Using Notion directly as a blog has many limitations, so I chose to convert Notion articles to Markdown and build with Hugo.
+However, Notion had limitations in customization, and using a custom domain also incurred additional costs, which made me think twice.
 
 
-I previously used Jekyll, which is officially supported by GitHub, but I chose Hugo because it has faster build speeds and is being actively updated.
+I considered switching to a vlog format or rewriting in Markdown and migrating to Jekyll as alternatives.
 
+
+But I couldn't give up Notion, which is convenient for writing. The conclusion was to write in Notion and deploy as a static website!
+
+
+This blog is currently operated with the following workflow. (Source: [https://github.com/plzhans/hans-blog](https://github.com/plzhans/hans-blog))
+
+
+> Write in Notion → Convert to Markdown via Notion API → Build static site with Hugo → Deploy to GitLab Pages
+
+
+# Goal
+
+- Build documents written in md files with Hugo
+- Automate deployment to GitHub Pages
 
 ## Why Hugo
 
@@ -325,10 +339,10 @@ Check the workflow execution in the GitHub Actions tab and verify the deployed U
 **Example URL:** [https://plzhans.github.io/hugo-sample/](https://plzhans.github.io/hugo-sample/)
 
 
-# Important Notes
+## Important Notes
 
 
-## baseURL Configuration
+### baseURL Configuration
 
 
 If the `baseURL` in `hugo.toml` or the `--baseURL` option during build is incorrect, CSS and image paths will be wrong, causing errors.
@@ -337,7 +351,7 @@ If the `baseURL` in `hugo.toml` or the `--baseURL` option during build is incorr
 In this guide, the deployment URL is set in the `HUGO_BASEURL` environment variable of the GitHub Actions workflow.
 
 
-## Custom Domain Setup
+## Related Articles
 
-
-For custom domain configuration, refer to [Using a Custom Domain with GitHub Pages](../86-github-pages-custom-domain/).
+- Custom domain setup: [Using a Custom Domain with GitHub Pages](../86-github-pages-custom-domain/)
+- (Coming soon) Automating Notion article deployment to GitHub Pages
