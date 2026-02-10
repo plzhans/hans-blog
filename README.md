@@ -1,6 +1,5 @@
 # hans-blog
 
-[![GitHub Pages](https://img.shields.io/github/actions/workflow/status/plzhans/hans-blog/pages/pages-build-deployment?branch=gh-pages&label=GitHub%20Pages&logo=github)](https://github.com/plzhans/hans-blog/actions/workflows/pages/pages-build-deployment)
 [![Deploy Hugo](https://github.com/plzhans/hans-blog/actions/workflows/deploy-hugo.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/deploy-hugo.yml)
 [![Notion Database Sync](https://github.com/plzhans/hans-blog/actions/workflows/notion-database-sync.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/notion-database-sync.yml)
 [![Notion Page Sync](https://github.com/plzhans/hans-blog/actions/workflows/notion-page-sync.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/notion-page-sync.yml)
@@ -17,7 +16,7 @@
 hans-blog/
 ├── hugo/              # Hugo 프로젝트
 │   ├── content/       # 변환된 Markdown 콘텐츠
-│   └── public/        # 빌드 결과물 (gh-pages 브랜치에 배포)
+│   └── public/        # 빌드 결과물 (GitHub Actions에서 배포)
 ├── src/
 │   └── NotionCli.mjs  # Notion → Hugo Markdown 변환 CLI
 ├── .github/workflows/ # GitHub Actions 워크플로우
@@ -90,29 +89,21 @@ hugo -s ./hugo --logLevel debug
 
 ### GitHub Pages
 
-Hugo로 빌드된 `hugo/public/` 디렉토리가 `gh-pages` 브랜치에 배포되며, GitHub Pages 설정을 통해 서빙됩니다.
+GitHub Actions의 `deploy-hugo.yml` 워크플로우에서 Hugo 빌드 후 `actions/deploy-pages`를 통해 GitHub Pages에 배포합니다. 
 
-**브랜치 분리 (`master` / `gh-pages`):**
+별도의 저장소나 브랜치 없이 아티팩트 업로드 방식으로 동작합니다.
 
-GitHub Pages는 브랜치 기반으로 동작하기 때문에 소스 코드와 빌드 결과물을 같은 브랜치에서 관리할 수 없습니다. 별도 저장소를 사용하거나 브랜치를 분리해야 하며, 이 프로젝트에서는 브랜치를 분리하는 방식을 사용합니다.
-
-- `master` - 소스 코드 (Hugo 프로젝트, NotionCli, GitHub Actions 등)
-- `gh-pages` - Hugo 빌드 결과물 (`hugo/public/`)
-
-> 참고: GitLab Pages는 아티팩트 업로드 방식이라 브랜치 분리 없이 배포할 수 있습니다.
+- `master` 브랜치에 `hugo/` 하위 변경이 push되면 자동으로 빌드 및 배포 실행
+- `workflow_dispatch`로 수동 배포도 가능
 
 **커스텀 도메인 설정:**
 
 GitHub Pages는 기본적으로 `plzhans.github.io/hans-blog` URL을 제공합니다. 커스텀 도메인 `blog.plzhans.com`을 사용하기 위해 다음 설정이 필요합니다:
 
 1. DNS에 CNAME 레코드 추가: `blog.plzhans.com` → `plzhans.github.io`
-2. `gh-pages` 브랜치 루트에 `CNAME` 파일이 존재해야 하며, 파일 내용에 커스텀 도메인(`blog.plzhans.com`)이 명시되어야 합니다.
+2. GitHub 저장소 Settings > Pages에서 커스텀 도메인 설정
 
 ### GitHub Actions
-
-#### 자동 배포
-
-`master` 브랜치에 `hugo/content/` 하위 Markdown 파일 변경이 push되면 자동으로 Hugo 빌드 및 배포가 실행됩니다.
 
 #### Notion Webhook 연동 (Make.com)
 
