@@ -1,15 +1,15 @@
 {
   "object": "page",
-  "id": "2fd22a0f-7e83-8086-b859-fdca16a463fa",
-  "created_time": "2026-02-04T09:07:00.000Z",
-  "last_edited_time": "2026-02-10T07:33:00.000Z",
+  "id": "2fd22a0f-7e83-81ed-b096-fbb1eeec1160",
+  "created_time": "2026-02-04T09:04:00.000Z",
+  "last_edited_time": "2026-02-10T07:15:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
   },
   "cover": null,
   "icon": null,
@@ -35,16 +35,16 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-02-04T09:07:00.000Z"
+      "created_time": "2026-02-04T09:04:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "c883a4a8-4839-4b1a-8cce-01c1a2779b11",
-          "name": "github",
-          "color": "purple"
+          "id": "e3126427-d60a-43ac-84f8-0b7a28091e25",
+          "name": "hugo",
+          "color": "pink"
         },
         {
           "id": "c317d7e0-321b-4f64-a8ad-f26ff9113757",
@@ -52,37 +52,32 @@
           "color": "gray"
         },
         {
-          "id": "546fa89c-9d99-47ac-a8e5-46d6f7e0038d",
-          "name": "githb-pages",
-          "color": "blue"
-        },
-        {
-          "id": "c8635470-24e8-485c-a6d9-c79c71688cb2",
-          "name": "domain",
-          "color": "red"
+          "id": "0579ade5-617f-4ef1-bf35-7d996cb2a24f",
+          "name": "github-pages",
+          "color": "orange"
         }
       ]
     },
     "수정일": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-02-10T07:33:00.000Z"
+      "last_edited_time": "2026-02-10T07:15:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 87
+        "number": 35
       }
     },
     "상태": {
       "id": "%5B~Jq",
       "type": "status",
       "status": {
-        "id": "=rr:",
-        "name": "발행 요청",
-        "color": "purple"
+        "id": "DOao",
+        "name": "발행 완료",
+        "color": "green"
       }
     },
     "요약": {
@@ -92,7 +87,7 @@
         {
           "type": "text",
           "text": {
-            "content": "GitHub Pages의 기본 URL(",
+            "content": "Hugo 정적 사이트 생성기와 GitHub Pages를 활용한 개인 블로그 구축 가이드입니다. Hugo 설치, m10c 테마 적용, 로컬 개발 환경 설정부터 GitHub Actions를 통한 자동 배포 파이프라인 구성까지 전체 과정을 단계별로 설명합니다. Jekyll 대비 빠른 빌드 속도와 노션-마크다운 기반 작성 워크플로우를 채택한 이유도 포함합니다.",
             "link": null
           },
           "annotations": {
@@ -103,43 +98,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "GitHub Pages의 기본 URL(",
-          "href": null
-        },
-        {
-          "type": "text",
-          "text": {
-            "content": "username.github.io/repository",
-            "link": {
-              "url": "http://username.github.io/repository"
-            }
-          },
-          "annotations": {
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          },
-          "plain_text": "username.github.io/repository",
-          "href": "http://username.github.io/repository"
-        },
-        {
-          "type": "text",
-          "text": {
-            "content": ") 대신 커스텀 도메인을 설정하는 방법을 다룹니다. 도메인의 CNAME 레코드 설정과 GitHub Repository Settings에서 Custom domain 구성 방법을 설명하며, HTTPS 인증서 적용 옵션도 포함합니다.",
-            "link": null
-          },
-          "annotations": {
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          },
-          "plain_text": ") 대신 커스텀 도메인을 설정하는 방법을 다룹니다. 도메인의 CNAME 레코드 설정과 GitHub Repository Settings에서 Custom domain 구성 방법을 설명하며, HTTPS 인증서 적용 옵션도 포함합니다.",
+          "plain_text": "Hugo 정적 사이트 생성기와 GitHub Pages를 활용한 개인 블로그 구축 가이드입니다. Hugo 설치, m10c 테마 적용, 로컬 개발 환경 설정부터 GitHub Actions를 통한 자동 배포 파이프라인 구성까지 전체 과정을 단계별로 설명합니다. Jekyll 대비 빠른 빌드 속도와 노션-마크다운 기반 작성 워크플로우를 채택한 이유도 포함합니다.",
           "href": null
         }
       ]
@@ -156,7 +115,7 @@
         {
           "type": "text",
           "text": {
-            "content": "86",
+            "content": "94",
             "link": null
           },
           "annotations": {
@@ -167,7 +126,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "86",
+          "plain_text": "94",
           "href": null
         }
       ]
@@ -179,7 +138,7 @@
         {
           "type": "text",
           "text": {
-            "content": "github-pages-custom-domain",
+            "content": "hugo-github-blog",
             "link": null
           },
           "annotations": {
@@ -190,7 +149,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "github-pages-custom-domain",
+          "plain_text": "hugo-github-blog",
           "href": null
         }
       ]
@@ -204,7 +163,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-02-09T07:45:00.000+00:00",
+        "start": "2026-02-10T07:15:00.000+00:00",
         "end": null,
         "time_zone": null
       }
@@ -213,7 +172,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-02-04T18:07:00.000+09:00",
+        "start": "2026-01-29T10:44:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -230,7 +189,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Github pages 커스텀 도메인 사용하기",
+            "content": "Hugo + Github 블로그 만들기",
             "link": null
           },
           "annotations": {
@@ -241,12 +200,12 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Github pages 커스텀 도메인 사용하기",
+          "plain_text": "Hugo + Github 블로그 만들기",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/Github-pages-2fd22a0f7e838086b859fdca16a463fa",
+  "url": "https://www.notion.so/Hugo-Github-2fd22a0f7e8381edb096fbb1eeec1160",
   "public_url": null
 }

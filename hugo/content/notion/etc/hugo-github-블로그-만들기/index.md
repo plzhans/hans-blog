@@ -1,0 +1,344 @@
+---
+id: "94"
+translationKey: "94"
+slug: "94-hugo-github-blog"
+title: "Hugo + Github 블로그 만들기"
+description: "Hugo 정적 사이트 생성기와 GitHub Pages를 활용한 개인 블로그 구축 가이드입니다. Hugo 설치, m10c 테마 적용, 로컬 개발 환경 설정부터 GitHub Actions를 통한 자동 배포 파이프라인 구성까지 전체 과정을 단계별로 설명합니다. Jekyll 대비 빠른 빌드 속도와 노션-마크다운 기반 작성 워크플로우를 채택한 이유도 포함합니다."
+tags:
+  - "hugo"
+  - "github-action"
+  - "github-pages"
+date: 2026-01-29T10:44:00.000+09:00
+lastmod: 2026-02-10T07:15:00.000Z
+draft: false
+---
+
+
+> 💡 **구축 환경**  
+> - 테스트 환경: Mac  
+>   
+> - 배포 환경: GitHub Actions
+
+
+# 서론
+
+
+기술 관련 글을 노션에 작성하다가 블로그로 발행할 방법을 찾게 되었다. 
+
+
+노션을 직접 블로그로 사용하는 것은 제약이 많아 노션 글을 마크다운으로 변환해서 Hugo로 빌드하는 방식을 선택했다.
+
+
+예전에는 GitHub에서 공식 지원하는 Jekyll을 사용했지만 Hugo가 빌드 속도도 빠르고 활발하게 업데이트되고 있어 Hugo를 선택했다.
+
+
+## Hugo 선택 이유
+
+- GitHub Star 수가 많고 활발하게 업데이트 중
+- 1000개 이상의 페이지를 빌드할 때 Jekyll보다 빠름
+
+# Hugo 테마 선택
+
+
+[Hugo Themes](https://themes.gohugo.io/)에서 테마를 먼저 선택했다.
+
+
+**선택한 테마:** [m10c](https://themes.gohugo.io/themes/hugo-theme-m10c/)
+
+
+**테마 선택 기준**
+
+- SEO 최적화 기능 지원
+- 다국어 사이트 기능 지원
+
+m10c는 일부 기능이 완벽하게 지원되지 않지만, Hugo의 레이아웃 오버라이드로 보완 가능하다.
+
+
+# Hugo 설치
+
+
+**설치 문서:** [Installation Guide](https://gohugo.io/installation/)
+
+
+**Hugo 문서:** [Documentation](https://gohugo.io/documentation/)
+
+
+## Mac 설치
+
+
+```shell
+# Hugo 설치
+brew install hugo
+
+# 설치 확인
+hugo --version
+```
+
+
+# Hugo 사이트 생성
+
+
+## 프로젝트 초기화
+
+
+```shell
+# 작업 디렉토리 생성
+mkdir hugo && cd hugo
+
+# Hugo 사이트 생성
+hugo new site .
+
+# 생성 결과 확인
+tree
+# .
+# ├── archetypes
+# │   └── default.md
+# ├── assets
+# ├── content
+# ├── data
+# ├── hugo.toml
+# ├── i18n
+# ├── layouts
+# ├── static
+# └── themes
+```
+
+
+## 테마 설치
+
+
+Git submodule을 사용해서 테마를 설치한다.
+
+
+```shell
+# Git 저장소 초기화 (필요한 경우)
+git init
+
+# 테마 submodule 추가
+git submodule add https://github.com/vaga/hugo-theme-m10c.git themes/m10c
+
+# 설치 확인
+ls -al themes/m10c
+```
+
+
+## 샘플 콘텐츠 복사 (선택사항)
+
+
+```shell
+# 테마의 샘플 콘텐츠 복사
+cp -R themes/m10c/exampleSite/content ./content
+
+# 확인
+ls -al ./content/
+```
+
+
+## Hugo 설정
+
+
+기본 설정 파일인 `hugo.toml`을 테마의 샘플 설정으로 교체한다.
+
+
+```shell
+# 기존 설정 삭제
+rm hugo.toml
+
+# 샘플 설정 복사
+cp themes/m10c/exampleSite/config.toml ./hugo.toml
+```
+
+
+`hugo.toml` 파일을 열어서 기본 설정을 수정한다.
+
+
+```toml
+baseURL = "https://testblog.plzhans.com"
+title = "Test blog"
+theme = "m10c"
+```
+
+
+**주의:** `themesDir` 설정은 제거하고, `theme`는 실제 디렉토리 이름과 일치시킨다.
+
+
+## 로컬 서버 실행
+
+
+```shell
+# 개발 서버 시작
+hugo server -D
+```
+
+
+실행 결과 예시:
+
+
+```javascript
+Watching for changes in /Users/plzhans/temp/sample/hugo/...
+Start building sites …
+hugo v0.154.5+extended+withdeploy darwin/arm64 BuildDate=2026-01-11T20:53:23Z
+
+Built in 2 ms
+Environment: "development"
+Web Server is available at http://localhost:57264/
+Press Ctrl+C to stop
+```
+
+
+브라우저에서 표시된 주소로 접속해서 확인한다.
+
+
+# GitHub Pages 배포
+
+
+## 저장소 생성
+
+
+GitHub에서 새 저장소를 생성한다.
+
+
+## 배포 전략 선택
+
+
+Jekyll와 Hugo 모두 소스와 빌드 결과물을 분리해서 관리한다. 
+
+
+Jekyll은 GitHub Pages가 자동으로 감지해서 배포하지만 Hugo는 GitHub Actions를 통해 직접 배포해야 한다.
+
+
+이 문서에서는 방법1을 사용하여 배포 전략을 수립하였다.
+
+
+### 방법1 : actions/deploy-pages
+
+- 저장소 1개 사용
+- GitHub Pages 소스를 GitHub Actions로 설정
+- main 브랜치 push → Hugo 빌드 → 결과물 업로드 → 자동 배포
+
+### 방법2: peaceiris/actions-gh-pages
+
+- 저장소 1개 사용
+- GitHub Pages를 gh-pages 브랜치에 연결
+- main 브랜치 push → Hugo 빌드 → gh-pages 브랜치에 커밋
+
+### 방법3: 배포 저장소 분리
+
+- 저장소 2개 사용 (소스 저장소, 배포 저장소)
+- 빌드 결과물을 배포 저장소에 푸시
+
+## GitHub Pages 설정
+
+
+Repository → Settings → Pages → Source를 **GitHub Actions**로 설정
+
+
+## GitHub Actions 워크플로우 작성
+
+
+`.github/workflows/deploy-hugo.yml` 파일을 생성한다.
+
+
+```yaml
+name: Deploy Hugo
+
+on:
+  push:
+    branches: [ master ]
+   
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  HUGO_BASEURL: https://plzhans.github.io/hugo-sample/
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_CACHEDIR: /tmp/hugo_cache
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Cache Hugo
+        uses: actions/cache@v4
+        with:
+          path: $ env.HUGO_CACHEDIR 
+          key: $ runner.os -hugomod-$ hashFiles('**/go.sum') 
+          restore-keys: |
+            $ runner.os -hugomod-
+
+      - name: Build
+        run: hugo --minify --gc --cleanDestinationDir --baseURL "$HUGO_BASEURL"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - uses: actions/deploy-pages@v4
+```
+
+
+## Git 배포
+
+
+```shell
+# 원격 저장소 추가
+git remote add origin git@github.com:plzhans/hugo-sample.git
+
+# .gitignore 설정
+echo "/public/" >> .gitignore
+
+# 전체 파일 커밋
+git add . 
+git commit -m "first commit"
+
+# 브랜치 생성 및 푸시
+git branch -M master
+git push -u origin master
+```
+
+
+## 배포 확인
+
+
+GitHub Actions 탭에서 워크플로우 실행을 확인하고, Settings → Pages에서 배포된 URL을 확인한다.
+
+
+**예시 주소:** [https://plzhans.github.io/hugo-sample/](https://plzhans.github.io/hugo-sample/)
+
+
+# 주의사항
+
+
+## baseURL 설정
+
+
+`hugo.toml`의 `baseURL` 또는 빌드 시 `--baseURL` 옵션이 정확하지 않으면 CSS와 이미지 경로가 잘못되어 오류가 발생한다.
+
+
+이 가이드에서는 GitHub Actions 워크플로우의 환경 변수 `HUGO_BASEURL`에 배포 주소를 설정했다.
+
+
+## 커스텀 도메인 설정
+
+
+커스텀 도메인 연결은 [Github pages 커스텀 도메인 사용하기](../86-github-pages-custom-domain/)를 참고한다.
+
