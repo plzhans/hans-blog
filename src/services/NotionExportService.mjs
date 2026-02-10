@@ -730,16 +730,18 @@ export class NotionExportService {
     if(summary){
       ws.write(`description: "${summary.replace(/"/g, '\\"')}"\n`);
     }
+    ws.write("categories:\n");
+    if(category.length > 0){
+      for(const cat of category){
+        ws.write(`  - "${cat.replace(/"/g, '\\"')}"\n`);
+      }
+    } else {
+      ws.write(`  - etc\n`);
+    }
     if(tags.length > 0){
       ws.write("tags:\n");
       for(const tag of tags){
         ws.write(`  - "${tag.replace(/"/g, '\\"')}"\n`);
-      }
-    }
-    if(category.length > 0){
-      ws.write("categories:\n");
-      for(const cat of category){
-        ws.write(`  - "${cat.replace(/"/g, '\\"')}"\n`);
       }
     }
     ws.write(`date: ${createdTime}\n`);

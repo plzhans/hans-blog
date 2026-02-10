@@ -37,27 +37,43 @@
       {{- end }}
       {{- end }}
     </header>
-    {{- if or (eq .Language.Lang "en") (eq .Language.Lang "ja") }}
+    {{- if ne .Language.Lang "ko" }}
+    {{- with i18n "translation_notice" }}
     <div class="post-translation-notice">
-      {{- if eq .Language.Lang "en" }}
-      This article was originally written in Korean and automatically translated into English using AI.
-      {{- else if eq .Language.Lang "ja" }}
-      この記事は韓国語で執筆され、AIを用いて英語に自動翻訳されました。
-      {{- end }}
+      {{ . }}
     </div>
+    {{- end }}
     {{- end }}
     <div class="post-content">
       {{ .Content }}
     </div>
+    
     <div class="post-notice">
-      이 글은 <a href="https://www.notion.so" target="_blank" rel="noopener">Notion</a>에서 작성되었고
-      {{ $source := index (where .Site.Params.social "name" "Source") 0 -}}
-      <a href="https://docs.github.com/ko/actions" target="_blank" rel="noopener">Github Action</a>을 통해
-      <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>로 변환되었습니다.
+      {{ i18n "post_notice" | safeHTML }}
       {{- with .Site.Params.CopyrightHTML }}
       <div class="post-copyright">{{ . | safeHTML }}</div>
       {{- end }}
     </div>
+    {{- $currentPage := . }}
+    {{- $categories := .GetTerms "categories" }}
+    {{- if $categories }}
+      {{- $firstCategory := index $categories 0 }}
+      {{- $relatedPosts := where $firstCategory.Pages "Permalink" "ne" $currentPage.Permalink }}
+      {{- $relatedPosts = first 5 $relatedPosts }}
+      {{- if $relatedPosts }}
+    <div class="related-posts">
+      <h3 class="related-posts-title">{{ i18n "related_posts_title" $firstCategory.Title }}</h3>
+      <ul class="related-posts-list">
+        {{- range $relatedPosts }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span class="related-posts-date">{{ .PublishDate.Format "2006-01-02" }}</span>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+      {{- end }}
+    {{- end }}
     <div class="post-footer">
       {{- with .Site.Params.giscus }}
         {{- if .repo }}
@@ -73,7 +89,7 @@
             data-emit-metadata="{{ .emitMetadata | default "0" }}"
             data-input-position="{{ .inputPosition | default "top" }}"
             data-theme="{{ .theme | default "dark" }}"
-            data-lang="{{ .lang | default "ko" }}"
+            data-lang="{{ $.Language.Lang }}"
             crossorigin="anonymous"
             async>
           </script>

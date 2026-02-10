@@ -1,0 +1,8 @@
+[translation_notice]
+other = "この記事は韓国語で執筆され、AIを用いて日本語に自動翻訳されました。"
+
+[post_notice]
+other = "この記事は<a href=\"https://www.notion.so\" target=\"_blank\" rel=\"noopener\">Notion</a>で執筆され、<a href=\"https://docs.github.com/ja/actions\" target=\"_blank\" rel=\"noopener\">Github Action</a>を通じて<a href=\"https://gohugo.io\" target=\"_blank\" rel=\"noopener\">Hugo</a>に変換されました。"
+
+[related_posts_title]
+other = "{{ . }}カテゴリの他の記事"

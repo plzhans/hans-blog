@@ -1,0 +1,8 @@
+[translation_notice]
+other = "This article was originally written in Korean and automatically translated into English using AI."
+
+[post_notice]
+other = "This post was written in <a href=\"https://www.notion.so\" target=\"_blank\" rel=\"noopener\">Notion</a> and converted to <a href=\"https://gohugo.io\" target=\"_blank\" rel=\"noopener\">Hugo</a> via <a href=\"https://docs.github.com/en/actions\" target=\"_blank\" rel=\"noopener\">Github Action</a>."
+
+[related_posts_title]
+other = "Other posts in {{ . }}"
