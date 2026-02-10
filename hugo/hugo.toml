@@ -43,7 +43,7 @@ enableRobotsTXT = true
   # 저작권 표시 HTML
   CopyrightHTML = 'Copyright &#xA9; plzhans. All Rights Reserved. | Powered by <a href="https://github.com/plzhans/hans-blog" target="_blank">github.com/plzhans/hans-blog</a>'
   # 메뉴 아이템 구분자
-  menu_item_separator = " - "
+  menu_item_separator = ""
   [[params.social]]
     icon = "brand-github"
     name = "Github"
@@ -86,6 +86,11 @@ enableRobotsTXT = true
     name = "Home"
     url = "/"
     weight = 1
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
