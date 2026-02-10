@@ -1,6 +1,13 @@
 {{ define "main" }}
   <article class="post">
     <header class="post-header">
+      {{- with (.GetTerms "categories") }}
+      <div class="post-category">
+        {{- range . }}
+        <a href="{{ .RelPermalink }}">[{{ .Title }}]</a>
+        {{- end }}
+      </div>
+      {{- end }}
       <h1 class ="post-title">{{ .Title }}</h1>
       {{- if ne .Type "page" }}
       <div class="post-meta-row">

@@ -40,6 +40,132 @@ body {
   }
 }
 
+// Post Category (제목 위)
+.post-category {
+  font-size: 0.78em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
+
+  & + .post-title {
+    margin-top: 0.2em;
+  }
+
+  a {
+    color: $light-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    & + a::before {
+      content: " / ";
+      color: rgba($light-color, 0.4);
+    }
+  }
+}
+
+// Posts Group (홈 카테고리별 그룹)
+.posts-group {
+  margin-bottom: 2em;
+
+  .posts-group-title {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.6em 0;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid rgba($primary-color, 0.4);
+
+    a {
+      color: $primary-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Posts List Item
+.posts-list-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  flex-wrap: wrap;
+  margin-bottom: 0.3em;
+}
+
+.posts-list-item-category {
+  display: inline-block;
+  font-size: 0.72em;
+  font-weight: 700;
+  color: $primary-color;
+  border: 1px solid rgba($primary-color, 0.5);
+  border-radius: 3px;
+  padding: 0.1em 0.5em;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover {
+    background: rgba($primary-color, 0.15);
+  }
+}
+
+.posts-list-item-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  text-decoration: none;
+
+  &:hover .posts-list-item-title {
+    color: $primary-color;
+  }
+}
+
+.posts-list-item-thumbnail {
+  flex-shrink: 0;
+  width: 8em;
+  height: 5.5em;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba($darkest-color, 0.5);
+  padding: 0.4em;
+  box-sizing: border-box;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.posts-list-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.posts-list-item-title {
+  color: $lightest-color;
+  font-size: 1em;
+  font-weight: 700;
+  transition: color 0.15s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.posts-list-item-description {
+  color: $light-color;
+  font-size: 0.85em;
+}
+
 // Post Meta Row (날짜 + 언어 선택기)
 .post-meta-row {
   display: flex;

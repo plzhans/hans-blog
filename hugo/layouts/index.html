@@ -1,0 +1,55 @@
+{{ define "main" }}
+  <article>
+    {{ with .Title -}}<h1>{{- . -}}</h1>{{- end }}
+    {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
+
+    {{ range $name, $pages := .Site.Taxonomies.categories }}
+      {{ $categoryPage := $.Site.GetPage (printf "/categories/%s" $name) }}
+      {{ $filteredPages := where $pages.Pages "Type" "!=" "page" }}
+      {{ $filteredPages = first 5 $filteredPages }}
+      {{ if $filteredPages }}
+      <div class="posts-group">
+        <h2 class="posts-group-title">
+          {{ if $categoryPage }}
+          <a href="{{ $categoryPage.RelPermalink }}">{{ $categoryPage.Title }}</a>
+          {{ else }}{{ $name }}{{ end }}
+        </h2>
+        <ul class="posts-list">
+          {{ range $filteredPages }}
+          {{- $post := . }}
+          <li class="posts-list-item">
+            <a class="posts-list-item-link" href="{{ .RelPermalink }}">
+              {{- with .Params.images }}
+              <div class="posts-list-item-thumbnail">
+                {{- $langPrefix := printf "/%s/" $post.Language.Lang -}}
+                {{- $imgBase := $post.RelPermalink | strings.TrimPrefix $langPrefix | printf "/ko/%s" -}}
+                <img src="{{ $imgBase }}{{ index . 0 }}" alt="" loading="lazy">
+              </div>
+              {{- end }}
+              <div class="posts-list-item-body">
+                <div class="posts-list-item-title">{{- .Title -}}</div>
+                <span class="posts-list-item-description">
+                  {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+                  {{- if eq .Language.Lang "en" }}
+                  {{ .PublishDate.Format "Jan 2, 2006" }}
+                  {{- else if eq .Language.Lang "ja" }}
+                  {{ .PublishDate.Format "2006/01/02" }}
+                  {{- else }}
+                  {{ .PublishDate.Format "2006-01-02" }}
+                  {{- end }}
+                  {{- if eq .Language.Lang "en" }}
+                  <span class="posts-list-item-separator">-</span>
+                  {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+                  {{ .ReadingTime }} min read
+                  {{- end }}
+                </span>
+              </div>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    {{ end }}
+  </article>
+{{ end }}
