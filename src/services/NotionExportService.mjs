@@ -314,6 +314,23 @@ export class NotionExportService {
       }
       return result.markdown;
     });
+    n2m.setCustomTransformer("paragraph", async (block) => {
+      const richTexts = block?.paragraph?.rich_text;
+      if (!richTexts) return block;
+
+      for (const rt of richTexts) {
+        if (rt.href && rt.href.includes("notion.so/")){
+          const resolved = this.#resolveNotionPageUrl(rt.href, existsPageMap);
+          if (resolved) {
+            rt.href = resolved;
+            if (rt.text?.link) {
+              rt.text.link.url = resolved;
+            }
+          }
+        }
+      }
+      return block;
+    });
 
     const mdBlocks = await n2m.pageToMarkdown(pageId);
 
@@ -333,7 +350,7 @@ export class NotionExportService {
       ws.write("\n");
 
       if (mdStringObj.parent) {
-        ws.write(mdStringObj.parent);
+        ws.write(this.#fixMarkdownTables(mdStringObj.parent));
       }
 
       ws.end();
@@ -517,6 +534,44 @@ export class NotionExportService {
     }
   }
 
+  // ── 링크 치환 헬퍼 ──
+
+  /**
+   * Notion 페이지 URL에서 ID를 추출하여 Hugo 상대 경로로 변환
+   * @param {string} url - Notion 페이지 URL
+   * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
+   * @returns {string|null} 변환된 상대 경로 (매칭 실패 시 null)
+   */
+  #resolveNotionPageUrl(url, existsPageMap) {
+    const rawId = url.split("notion.so/").pop().replace(/-/g, '');
+    if (!rawId) return null;
+
+    let pageId = null;
+    let pageDir = null;
+    for (const [key, dir] of existsPageMap) {
+      if (key.replace(/-/g, '') === rawId) {
+        pageId = key;
+        pageDir = dir;
+        break;
+      }
+    }
+    if (!pageDir) return null;
+
+    const metaFilePath = path.join(pageDir, `notion_${pageId}.json`);
+    if (!fs.existsSync(metaFilePath)) return null;
+
+    try {
+      const meta = JSON.parse(fs.readFileSync(metaFilePath, "utf-8"));
+      const postId = this.#extractPagePostId(meta, this.propertyKeys.uniqueId);
+      const slug = this.#extractTextProperty(meta.properties, this.propertyKeys.slug);
+      if (!slug) return null;
+      return `../${postId}-${slug}/`;
+    } catch (e) {
+      console.warn(`⚠️ Failed to resolve Notion link: ${url}`, e);
+      return null;
+    }
+  }
+
   // ── 파일 헬퍼 ──
 
   /** URL에서 확장자를 추출할 수 없을 때 블록 타입별 기본 확장자 */
@@ -604,6 +659,40 @@ export class NotionExportService {
     } catch (e) {
       console.warn(`⚠️ Failed to set file time: ${e.message}`);
     }
+  }
+
+  // ── 마크다운 후처리 ──
+
+  /**
+   * 마크다운 테이블 셀 내 줄바꿈을 <br>로 치환
+   * notion-to-md가 테이블 셀에 실제 줄바꿈을 넣어 마크다운 테이블이 깨지는 문제를 수정
+   * @param {string} markdown - 마크다운 문자열
+   * @returns {string} 수정된 마크다운 문자열
+   */
+  #fixMarkdownTables(markdown) {
+    const lines = markdown.split('\n');
+    const result = [];
+    let pendingRow = null;
+
+    for (const line of lines) {
+      if (pendingRow !== null) {
+        pendingRow += '<br>' + line.trim();
+        if (line.trimEnd().endsWith('|')) {
+          result.push(pendingRow);
+          pendingRow = null;
+        }
+      } else if (line.trimStart().startsWith('|') && !line.trimEnd().endsWith('|')) {
+        pendingRow = line;
+      } else {
+        result.push(line);
+      }
+    }
+
+    if (pendingRow !== null) {
+      result.push(pendingRow);
+    }
+
+    return result.join('\n');
   }
 
   // ── Hugo 출력 헬퍼 ──

@@ -69,6 +69,9 @@ enableRobotsTXT = true
     primaryColor = "#57cc8a"
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.highlight]
     noClasses = false
     codeFences = true
@@ -97,6 +100,10 @@ enableRobotsTXT = true
 [taxonomies]
   category = "categories"
   tag = "tags"
+
+# URL 구조 설정 - slug만 사용
+[permalinks]
+  notion = "/:slug/"
 
 [params.giscus]
   repo = "plzhans/hans-blog"
