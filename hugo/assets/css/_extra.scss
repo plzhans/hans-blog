@@ -152,13 +152,19 @@ body {
 }
 
 .posts-list-item-title {
+  display: block;
   color: $lightest-color;
   font-size: 1em;
   font-weight: 700;
+  text-decoration: none;
   transition: color 0.15s;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  &:hover {
+    color: $primary-color;
+  }
 }
 
 .posts-list-item-description {

@@ -11,8 +11,8 @@
         {{ range $latestPages }}
         {{- $post := . }}
         <li class="posts-list-item">
-          <a class="posts-list-item-link" href="{{ .RelPermalink }}">
-            <div class="posts-list-item-thumbnail">
+          <div class="posts-list-item-link">
+            <a class="posts-list-item-thumbnail" href="{{ .RelPermalink }}">
               {{- with .Params.images }}
               {{- $langPrefix := printf "/%s/" $post.Language.Lang -}}
               {{- $imgBase := $post.RelPermalink | strings.TrimPrefix $langPrefix | printf "/ko/%s" -}}
@@ -20,14 +20,14 @@
               {{- else }}
               <img src="{{ $.Site.Params.avatar }}" alt="" loading="lazy">
               {{- end }}
-            </div>
+            </a>
             <div class="posts-list-item-body">
               {{- with $post.GetTerms "categories" }}
               <div class="posts-list-item-category">
-                {{- range . }}[{{ .Title }}]{{- end }}
+                {{- range . }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{- end }}
               </div>
               {{- end }}
-              <div class="posts-list-item-title">{{- .Title -}}</div>
+              <a class="posts-list-item-title" href="{{ .RelPermalink }}">{{- .Title -}}</a>
               <span class="posts-list-item-description">
                 {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
                 {{- if eq .Language.Lang "en" }}
@@ -44,7 +44,7 @@
                 {{- end }}
               </span>
             </div>
-          </a>
+          </div>
         </li>
         {{ end }}
       </ul>
