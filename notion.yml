@@ -14,6 +14,11 @@ propertyKeys:
   createdDate: "생성일"
   # 발행일 (date 타입). 발행 완료 시 현재 시간으로 자동 업데이트
   publishedDate: "발행일"
+  # 발행 URL (url 타입). 발행 완료 시 실제 발행된 URL로 자동 업데이트
+  publishUrl: "발행 URL"
+
+# Hugo 사이트 기본 URL. 발행 URL 생성에 사용 (baseURL/{POST_ID}-{slug}/)
+hugoBaseUrl: "https://blog.plzhans.com"
 
 # 상태 프로퍼티 값 매핑
 statusValues:

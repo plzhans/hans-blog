@@ -27,7 +27,7 @@ function createService() {
     auth: process.env.NOTION_API_TOKEN,
   });
   const notionApiClient = new NotionApiClient(notionClient, process.env.NOTION_API_TOKEN);
-  return new NotionExportService(notionApiClient, notionClient, config.propertyKeys, config.statusValues);
+  return new NotionExportService(notionApiClient, notionClient, config.propertyKeys, config.statusValues, config.hugoBaseUrl);
 }
 
 yargs(hideBin(process.argv))

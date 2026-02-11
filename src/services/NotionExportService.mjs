@@ -13,12 +13,14 @@ export class NotionExportService {
   /**
    * @param {import("../clients/NotionApiClient.mjs").NotionApiClient} notionApiClient
    * @param {import("@notionhq/client").Client} notionClient
-   * @param {{ status?: string, category?: string, tags?: string, uniqueId?: string, createdDate?: string }} [propertyKeys]
+   * @param {{ status?: string, category?: string, tags?: string, uniqueId?: string, createdDate?: string, publishUrl?: string }} [propertyKeys]
    * @param {{ publishRequest?: string, publish?: string }} [statusValues]
+   * @param {string} [hugoBaseUrl]
    */
-  constructor(notionApiClient, notionClient, propertyKeys, statusValues) {
+  constructor(notionApiClient, notionClient, propertyKeys, statusValues, hugoBaseUrl) {
     this.notionApiClient = notionApiClient;
     this.notionClient = notionClient;
+    this.hugoBaseUrl = (hugoBaseUrl || "").replace(/\/+$/, "");
     this.propertyKeys = {
       status: "상태",
       category: "카테고리",
@@ -28,6 +30,7 @@ export class NotionExportService {
       slug: "slug",
       createdDate: "생성일",
       publishedDate: "발행일",
+      publishUrl: "발행 URL",
       ...propertyKeys,
     };
     this.statusValues = {
@@ -172,6 +175,8 @@ export class NotionExportService {
    */
   async #notionPageStatusPublished(page) {
     const now = new Date().toISOString();
+    const postId = this.#extractPagePostId(page, this.propertyKeys.uniqueId);
+    const slug = this.#extractTextProperty(page.properties, this.propertyKeys.slug);
     const properties = {
       [this.propertyKeys.status]: {
         status: {
@@ -184,6 +189,12 @@ export class NotionExportService {
         },
       },
     };
+
+    if (this.hugoBaseUrl && slug) {
+      properties[this.propertyKeys.publishUrl] = {
+        url: `${this.hugoBaseUrl}/ko/${postId}-${slug}/`,
+      };
+    }
 
     const res = await this.notionApiClient.updatePageProperties(page.id, properties);
     return res;
