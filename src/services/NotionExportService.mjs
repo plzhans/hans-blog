@@ -32,6 +32,7 @@ export class NotionExportService {
       publishedDate: "발행일",
       publishUrl: "발행 URL",
       toc: "toc",
+      modifiedDate: "수정일",
       ...propertyKeys,
     };
     this.statusValues = {
@@ -267,15 +268,31 @@ export class NotionExportService {
         const prevMetaRaw = fs.readFileSync(metaFilePath, "utf-8");
         const prevMeta = JSON.parse(prevMetaRaw);
 
+        // 수정일 프로퍼티 우선, 없으면 last_edited_time 폴백
+        const modifiedDateProp = page.properties[this.propertyKeys.modifiedDate];
+        const currentModified = modifiedDateProp?.date?.start || page.last_edited_time;
+        const prevModifiedDateProp = prevMeta.properties?.[this.propertyKeys.modifiedDate];
+        const prevModified = prevModifiedDateProp?.date?.start || prevMeta.last_edited_time;
+
+        // 수정일 프로퍼티가 비어 있으면 last_edited_time 값으로 Notion에 업데이트
+        if (!modifiedDateProp?.date?.start) {
+          await this.notionApiClient.updatePageProperties(page.id, {
+            [this.propertyKeys.modifiedDate]: {
+              date: { start: page.last_edited_time },
+            },
+          });
+          console.log(`  📅 Updated modifiedDate property: ${page.last_edited_time}`);
+        }
+
         // 수정일이 동일한 경우: 변경 없음
-        if (prevMeta.last_edited_time === page.last_edited_time) {
+        if (prevModified === currentModified) {
           // 아직 발행 완료가 아니면 상태 업데이트만 필요 (컨텐츠 재생성은 스킵)
           if (currentStatus !== this.statusValues.published) {
             console.log(`  ⏭️ Skipped (not modified), status update needed`);
             return true;
           }
           // 이미 발행 완료 상태면 아무 작업도 필요 없음
-          console.log(`  ⏭️ Skipped (not modified) (status: ${currentStatus}, last_edited: ${page.last_edited_time})`);
+          console.log(`  ⏭️ Skipped (not modified) (status: ${currentStatus}, modified: ${currentModified})`);
           return false;
         } else {
           // 수정일이 다른 경우: 변경 있음
@@ -284,7 +301,7 @@ export class NotionExportService {
           // 이전/현재 모두 발행 완료 상태라면 이 변경은 상태 업데이트에 의한 것이므로 스킵.
           const prevStatus = prevMeta.properties[this.propertyKeys.status]?.status?.name;
           if (prevStatus === this.statusValues.published && currentStatus === this.statusValues.published) {
-            console.log(`  ⏭️ Skipped (already published) (status: ${currentStatus}, last_edited: ${prevMeta.last_edited_time} -> ${page.last_edited_time})`);
+            console.log(`  ⏭️ Skipped (already published) (status: ${currentStatus}, modified: ${prevModified} -> ${currentModified})`);
             return false;
           }
         }
