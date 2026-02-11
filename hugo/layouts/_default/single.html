@@ -52,6 +52,12 @@
     {{- end }}
     {{- end }}
     <div class="post-content">
+      {{- if .Params.toc }}
+      <div class="post-toc">
+        <h2>{{ i18n "toc_title" | default "Table of Contents" }}</h2>
+        {{ .TableOfContents }}
+      </div>
+      {{- end }}
       {{ .Content }}
     </div>
     

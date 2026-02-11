@@ -31,6 +31,7 @@ export class NotionExportService {
       createdDate: "생성일",
       publishedDate: "발행일",
       publishUrl: "발행 URL",
+      toc: "toc",
       ...propertyKeys,
     };
     this.statusValues = {
@@ -346,7 +347,8 @@ export class NotionExportService {
     try {
       ws = fs.createWriteStream(mdFilePath, { encoding: "utf-8" });
 
-      this.#wirteHugoHeader(ws, page, postId, title, titleSlug, draft, firstImagePath);
+      const toc = page.properties[this.propertyKeys.toc]?.checkbox === true;
+      this.#wirteHugoHeader(ws, page, postId, title, titleSlug, toc, draft, firstImagePath);
       ws.write("\n");
 
       if (mdStringObj.parent) {
@@ -721,13 +723,14 @@ export class NotionExportService {
    * Hugo front-matter(YAML 헤더)를 WriteStream에 작성
    * @param {fs.WriteStream} ws - 쓰기 스트림
    * @param {Object} page - Notion 페이지 객체
-   * @param {number|string} uniqueId - 페이지 고유 ID
+   * @param {string} uniqueId - 페이지 고유 ID
    * @param {string} title - 페이지 제목
    * @param {string} titleSlug - 페이지 slug
-   * @param {boolean} [draft=false] - draft 여부
-   * @param {string|null} [firstImagePath=null] - 대표 이미지 경로
+   * @param {boolean} 목차(TOC) 표시 여부
+   * @param {boolean} draft 여부
+   * @param {string} 대표 이미지 경로
    */
-  #wirteHugoHeader(ws, page, uniqueId, title, titleSlug, draft = false, firstImagePath = null) {
+  #wirteHugoHeader(ws, page, uniqueId, title, titleSlug, toc, draft, firstImagePath) {
     const tags = this.#extractPageTags(page.properties, this.propertyKeys.tags);
     const category = this.#extractPageCategory(page.properties, this.propertyKeys.category);
     const summary = this.#extractTextProperty(page.properties, this.propertyKeys.summary);
@@ -744,7 +747,7 @@ export class NotionExportService {
     ws.write("categories:\n");
     if(category.length > 0){
       for(const cat of category){
-        ws.write(`  - "${cat.replace(/"/g, '\\"')}"\n`);
+        ws.write(`  - "${cat.toLowerCase().replace(/"/g, '\\"')}"\n`);
       }
     } else {
       ws.write(`  - etc\n`);
@@ -757,6 +760,7 @@ export class NotionExportService {
     }
     ws.write(`date: ${createdTime}\n`);
     ws.write(`lastmod: ${page.last_edited_time}\n`);
+    ws.write(`toc: ${toc}\n`);
     ws.write(`draft: ${draft}\n`);
     if(firstImagePath){
       ws.write("images:\n");
