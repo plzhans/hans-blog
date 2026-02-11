@@ -5,12 +5,12 @@ slug: "93-hugo-multilingual-seo-setup"
 title: "hugo site 다국어 지원하기"
 description: "Hugo 정적 사이트 생성기로 다국어 블로그를 구축할 때 필요한 SEO 최적화 및 다국어 설정 방법을 설명합니다. sitemap.xml, robots.txt, Schema.org JSON-LD, Open Graph, meta description 등 검색 엔진 최적화 설정을 자동화하고, HTML lang 속성, hreflang 태그, canonical URL을 통해 다국어 콘텐츠의 중복 문제를 방지하는 방법을 다룹니다. hugo.toml에서 defaultContentLanguageInSubdir 설정, translationKey로 언어 간 연결, 테마 baseof.html 오버라이드를 통한 SEO 태그 추가 방법을 설명하며, url 대신 slug 사용으로 언어별 URL 충돌을 해결하는 실전 트러블슈팅을 제공합니다."
 categories:
-  - "Infra"
+  - "infra"
 tags:
   - "hugo"
   - "seo"
 date: 2026-02-06T11:34:00.000+09:00
-lastmod: 2026-02-11T08:29:00.000Z
+lastmod: 2026-02-11T09:36:00.000Z
 toc: true
 draft: false
 ---
@@ -247,7 +247,7 @@ Hugo에서 게시물 주소를 설정할 때 `url` 대신 `slug`를 사용해야
 
 **원인**
 
-- 테마가 hreflang 태그 생성을 지원하지 않음
+- 테마가 hreflang 태그 생성을 지원하지 않음.
 
 **해결**
 
