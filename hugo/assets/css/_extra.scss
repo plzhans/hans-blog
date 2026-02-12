@@ -122,13 +122,18 @@ $top-header-height: 3rem;
   }
 }
 
-.app-header-social a {
-  color: $lightest-color;
+.app-header-social {
+  margin: 0.3em 0;
+
+  a {
+    color: $lightest-color;
+  }
 }
 
 // 사이드바와 콘텐츠를 헤더 아래로 밀기
 .app-header {
   margin-top: $top-header-height;
+  padding-top: 1em;
   text-align: left;
 }
 
@@ -208,7 +213,7 @@ body {
 .app-header-categories {
   display: flex;
   flex-direction: column;
-  gap: 0.3em;
+  gap: 0.1em;
   margin-top: 0.5em;
 
   .app-header-menu-item {
@@ -912,9 +917,16 @@ table {
 }
 
 // AdSense 광고 영역
+.adsense-article-bottom,
+.adsense-sidebar {
+  .adsbygoogle {
+    background: rgba($light-color, 0.08);
+  }
+}
+
 .adsense-article-bottom {
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin-top: 0.5em;
+  margin-top: 0.5em;
   text-align: center;
 }
 
