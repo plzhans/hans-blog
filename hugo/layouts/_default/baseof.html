@@ -7,7 +7,7 @@
 <!doctype html>
 <html lang="{{ .Site.LanguageCode | default "en-us" }}">
   <head>
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} :: {{ .Site.Title }}{{ end }}</title>
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | default "/favicon.ico" }}" />
     <meta charset="utf-8" />
     {{ hugo.Generator }}
@@ -45,33 +45,40 @@
   <body>
     <div class="top-header">
       <div class="top-header-inner">
-        <a class="top-header-logo" href="{{ "" | relLangURL }}">blog.plzhans.com</a>
-        {{ if .IsTranslated }}
-        <div class="top-header-lang">
-          <span class="language-current">{{ .Language.LanguageName }}</span>
-          <ul class="language-list">
-            {{- range .Translations }}
-            <li><a href="{{ .RelPermalink }}" lang="{{ .Lang }}">{{ .Language.LanguageName }}</a></li>
-            {{- end }}
-          </ul>
+        <a class="top-header-logo" href="{{ "" | relLangURL }}">{{ .Site.Title }}</a>
+        <div class="top-header-actions">
+          {{ if .IsTranslated }}
+          <div class="top-header-lang">
+            <span class="language-current">{{ .Language.LanguageName }}</span>
+            <ul class="language-list">
+              {{- range .Translations }}
+              <li><a href="{{ .RelPermalink }}" lang="{{ .Lang }}">{{ .Language.LanguageName }}</a></li>
+              {{- end }}
+            </ul>
+          </div>
+          {{ else if gt (len .Site.Languages) 1 }}
+          <div class="top-header-lang">
+            <span class="language-current">{{ .Language.LanguageName }}</span>
+            <ul class="language-list">
+              {{- range .Site.Languages }}
+              {{- if ne .Lang $.Language.Lang }}
+              <li><a href="{{ "" | relLangURL }}" lang="{{ .Lang }}">{{ .LanguageName }}</a></li>
+              {{- end }}
+              {{- end }}
+            </ul>
+          </div>
+          {{ end }}
+          <button class="menu-toggle" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        {{ else if gt (len .Site.Languages) 1 }}
-        <div class="top-header-lang">
-          <span class="language-current">{{ .Language.LanguageName }}</span>
-          <ul class="language-list">
-            {{- range .Site.Languages }}
-            {{- if ne .Lang $.Language.Lang }}
-            <li><a href="{{ "" | relLangURL }}" lang="{{ .Lang }}">{{ .LanguageName }}</a></li>
-            {{- end }}
-            {{- end }}
-          </ul>
-        </div>
-        {{ end }}
       </div>
     </div>
+    <div class="menu-overlay" onclick="document.body.classList.remove('menu-open')"></div>
+    <button class="sidebar-collapse-btn" aria-label="Toggle sidebar" onclick="toggleSidebar()">&#x276E;</button>
     <header class="app-header">
       <a href="{{ "" | relLangURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
-      <span class="app-header-title">{{ .Site.Title }}</span>
+      <span class="app-header-title">@{{ .Site.Params.author }}</span>
       <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
       {{- with .Site.Params.social }}
       <div class="app-header-social">
@@ -114,5 +121,19 @@
         {{ .Content }}
       {{ end }}
     </main>
+    <script>
+    // 사이드 메뉴 내 링크 클릭 시 드로어 닫기
+    document.querySelector('.app-header').addEventListener('click', function(e) {
+      if (e.target.closest('a')) document.body.classList.remove('menu-open');
+    });
+    // 데스크톱 사이드바 접기/펼치기
+    function toggleSidebar() {
+      document.body.classList.toggle('sidebar-collapsed');
+      localStorage.setItem('sidebar-collapsed', document.body.classList.contains('sidebar-collapsed'));
+    }
+    if (localStorage.getItem('sidebar-collapsed') === 'true') {
+      document.body.classList.add('sidebar-collapsed');
+    }
+    </script>
   </body>
 </html>

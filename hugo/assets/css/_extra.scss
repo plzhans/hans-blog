@@ -108,6 +108,142 @@ $top-header-height: 3rem;
   }
 }
 
+.top-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+// 햄버거 메뉴 버튼 (모바일 전용)
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4em;
+  margin-left: 0.8em;
+  flex-direction: column;
+  gap: 5px;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: $lightest-color;
+    border-radius: 1px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+}
+
+@media (max-width: 939px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  // 모바일 사이드바 광고 숨김
+  .adsense-sidebar {
+    display: none;
+  }
+
+  // 풀스크린 메뉴: 기본은 숨김
+  .app-header {
+    position: fixed;
+    top: $top-header-height;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100vh - #{$top-header-height});
+    overflow-y: auto;
+    z-index: 150;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    background: $dark-color;
+    margin-top: 0;
+    padding: 2em 2.5em;
+    text-align: center;
+  }
+
+  // 오버레이 (풀스크린이므로 불필요하지만 구조 유지)
+  .menu-overlay {
+    display: none;
+  }
+
+  // 메뉴 열림 상태
+  .menu-open {
+    overflow: hidden; // 배경 스크롤 방지
+
+    .app-header {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    // 햄버거 → X 애니메이션
+    .menu-toggle {
+      span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+  }
+}
+
+// 데스크톱 사이드바 접기 버튼
+.sidebar-collapse-btn {
+  display: none;
+}
+
+@media (min-width: 940px) {
+  .sidebar-collapse-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: calc(#{$top-header-height} + 1em);
+    left: calc(20rem - 1px);
+    width: 1.4em;
+    height: 2.4em;
+    background: $darkest-color;
+    border: 1px solid rgba($light-color, 0.15);
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    color: rgba($light-color, 0.5);
+    font-size: 0.75em;
+    cursor: pointer;
+    z-index: 100;
+    transition: left 0.3s ease, color 0.2s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  // 사이드바 접힘 상태
+  .sidebar-collapsed {
+    .app-header {
+      margin-left: -20rem;
+    }
+
+    .sidebar-collapse-btn {
+      left: 0;
+      border-left: 1px solid rgba($light-color, 0.15);
+      border-radius: 0 4px 4px 0;
+      transform: scaleX(-1);
+    }
+  }
+
+  // 사이드바 트랜지션
+  .app-header {
+    transition: margin-left 0.3s ease;
+  }
+}
+
 // 아바타 테두리
 .app-header-avatar {
   border-color: rgba($light-color, 0.3);
@@ -130,25 +266,30 @@ $top-header-height: 3rem;
   }
 }
 
-// 사이드바와 콘텐츠를 헤더 아래로 밀기
-.app-header {
-  margin-top: $top-header-height;
-  padding-top: 1em;
-  text-align: left;
-}
-
+// 콘텐츠를 헤더 아래로 밀기
 .app-container {
   margin-top: $top-header-height;
 }
 
 @media (min-width: 940px) {
+  body {
+    display: flex;
+  }
+
   .app-header {
-    margin-top: 0;
-    top: $top-header-height;
+    position: static;
+    flex-shrink: 0;
+    margin-top: $top-header-height;
+    padding-top: 1em;
+    text-align: left;
     min-height: calc(100vh - #{$top-header-height});
   }
 
   .app-container {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0;
+    padding-top: 1em;
     max-width: 110rem;
   }
 }
@@ -289,10 +430,13 @@ body {
 // 카드형 그리드 목록
 .posts-card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 0.8em;
 
   @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
   }
   @media (min-width: 940px) {
@@ -716,7 +860,7 @@ body {
   display: flex;
   gap: 2em;
 
-  .post-content {
+  .post-main {
     flex: 1;
     min-width: 0;
   }
@@ -933,4 +1077,192 @@ table {
 .adsense-sidebar {
   margin-top: 0.5em;
   text-align: center;
+}
+
+// 게시글 액션 버튼 (인쇄, 공유)
+.post-header {
+  position: relative;
+}
+
+.post-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0.4em;
+}
+
+.post-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4em;
+  height: 2.4em;
+  padding: 0;
+  font-size: 0.9em;
+  color: $light-color;
+  background: rgba($light-color, 0.06);
+  border: 1px solid rgba($light-color, 0.25);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+
+  &:hover {
+    color: $primary-color;
+    border-color: $primary-color;
+    background: rgba($primary-color, 0.12);
+  }
+}
+
+// 즐겨찾기 툴팁
+.bookmark-tooltip {
+  position: absolute;
+  top: calc(100% + 0.4em);
+  right: 0;
+  padding: 0.5em 0.8em;
+  background: $darkest-color;
+  border: 1px solid rgba($light-color, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  color: $light-color;
+  font-size: 0.8em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 50;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+// 공유 드롭다운
+.share-wrap {
+  position: relative;
+}
+
+.share-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.4em);
+  right: 0;
+  min-width: 10em;
+  padding: 0.4em 0;
+  background: $darkest-color;
+  border: 1px solid rgba($light-color, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  z-index: 50;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.5em;
+    right: 0.6em;
+    border: 0.4em solid transparent;
+    border-bottom-color: rgba($light-color, 0.15);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -0.35em;
+    right: 0.65em;
+    border: 0.35em solid transparent;
+    border-bottom-color: $darkest-color;
+  }
+}
+
+.share-wrap.open .share-dropdown {
+  display: block;
+}
+
+.share-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  width: 100%;
+  padding: 0.5em 1em;
+  font-size: 0.85em;
+  color: $light-color;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+
+  svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  &:hover {
+    color: $primary-color;
+    background: rgba($primary-color, 0.1);
+
+    svg { opacity: 1; }
+  }
+}
+
+// 인쇄 스타일
+@media print {
+  // 본문만 표시
+  .top-header,
+  .sidebar-collapse-btn,
+  .app-header,
+  .menu-overlay,
+  .post-toc-sidebar,
+  .post-notice,
+  .post-translation-notice,
+  .adsense-article-bottom,
+  .adsense-sidebar,
+  .related-posts,
+  .post-footer,
+  .post-source,
+  .post-actions {
+    display: none !important;
+  }
+
+  // 레이아웃 초기화
+  .app-container {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .post-content-wrap {
+    display: block;
+  }
+
+  .post-content {
+    max-width: 100%;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 12pt;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .post-title {
+    font-size: 2em;
+  }
+
+  // 코드 블록 인쇄 최적화
+  pre, code {
+    border: 1px solid #ddd;
+    background: #f5f5f5 !important;
+    color: #333 !important;
+  }
+
+  .highlight {
+    .code-copy-btn {
+      display: none !important;
+    }
+  }
 }
