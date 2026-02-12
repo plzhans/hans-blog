@@ -41,6 +41,15 @@
         {{- end }}
       </div>
       {{- end }}
+      {{- $source := index (where .Site.Params.social "name" "Source") 0 }}
+      {{- with $source }}
+      <div class="post-source">
+        <span class="post-source-label">{{ partial "icon.html" (dict "ctx" $ "name" "brand-github") }}</span>
+        <a class="post-source-link" href="{{ .url }}/blob/{{ .branch | default "master" }}/{{ .contentPrefix | default "content" }}/{{ $.File.Path }}" target="_blank" rel="noopener noreferrer">
+          {{ .url | replaceRE "^https?://" "" }}
+        </a>
+      </div>
+      {{- end }}
       {{- end }}
     </header>
     {{- if ne .Language.Lang "ko" }}

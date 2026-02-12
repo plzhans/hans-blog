@@ -521,6 +521,42 @@ body {
   }
 }
 
+// Post Source (GitHub)
+.post-source {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 0.5em;
+
+  .post-source-label {
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  .post-source-link {
+    display: inline-block;
+    font-size: 0.78em;
+    color: $primary-color;
+    background: rgba($primary-color, 0.1);
+    border: 1px solid rgba($primary-color, 0.3);
+    border-radius: 3px;
+    padding: 0.15em 0.5em;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover {
+      color: $lightest-color;
+      border-color: rgba($primary-color, 0.6);
+      background: rgba($primary-color, 0.2);
+    }
+  }
+}
+
 // Post Tags (날짜 아래)
 .post-tags {
   display: flex;

@@ -52,6 +52,8 @@ enableRobotsTXT = true
     icon = "code"
     name = "Source"
     url = "https://github.com/plzhans/hans-blog"
+    branch = "master"
+    contentPrefix = "hugo/content"
   [[params.social]]
     icon = "mail"
     name = "Email"
