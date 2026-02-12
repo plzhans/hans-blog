@@ -138,7 +138,35 @@
   {{ if .Store.Get "hasMermaid" }}
   <script src="/lib/mermaid.min.js"></script>
   <script>
-    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        darkMode: true,
+        background: '#f8f9fa',
+        primaryColor: '#2b8a5e',
+        primaryTextColor: '#1a202c',
+        primaryBorderColor: '#4a5568',
+        secondaryColor: '#2d3748',
+        secondaryTextColor: '#1a202c',
+        tertiaryColor: '#2d3748',
+        lineColor: '#a0aec0',
+        textColor: '#1a202c',
+        mainBkg: '#2d3748',
+        nodeBorder: '#4a5568',
+        actorBkg: '#2d3748',
+        actorTextColor: '#ffffff',
+        actorLineColor: '#a0aec0',
+        signalColor: '#a0aec0',
+        signalTextColor: '#1a202c',
+        noteBkgColor: '#2b8a5e',
+        noteTextColor: '#ffffff',
+        noteBorderColor: '#276749',
+        labelBoxBkgColor: '#2d3748',
+        labelTextColor: '#ffffff',
+        loopTextColor: '#000000'
+      }
+    });
   </script>
   {{ end }}
 
