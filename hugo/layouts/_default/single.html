@@ -79,6 +79,13 @@
       <div class="post-copyright">{{ . | safeHTML }}</div>
       {{- end }}
     </div>
+    {{- with .Site.Params.adsense }}
+    {{- if and .publisherId .adSlotArticleBottom }}
+    <div class="adsense-article-bottom">
+      {{ partial "adsense.html" (dict "publisherId" .publisherId "slotId" .adSlotArticleBottom) }}
+    </div>
+    {{- end }}
+    {{- end }}
     {{- $currentPage := . }}
     {{- $categories := .GetTerms "categories" }}
     {{- if $categories }}

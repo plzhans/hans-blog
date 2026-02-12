@@ -24,6 +24,12 @@
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
 
+    {{- with .Site.Params.adsense }}
+    {{- if .publisherId }}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .publisherId }}" crossorigin="anonymous"></script>
+    {{- end }}
+    {{- end }}
+
     {{/* Canonical URL - 검색 엔진에게 공식 URL 알림 */}}
     <link rel="canonical" href="{{ .Permalink }}" />
 
@@ -94,6 +100,14 @@
         {{- end }}
         {{- end }}
       </nav>
+      {{- with .Site.Params.adsense }}
+      {{- if and .publisherId .adSlotSidebar }}
+      <hr />
+      <div class="adsense-sidebar">
+        {{ partial "adsense.html" (dict "publisherId" .publisherId "slotId" .adSlotSidebar) }}
+      </div>
+      {{- end }}
+      {{- end }}
     </header>
     <main class="app-container">
       {{ block "main" . }}

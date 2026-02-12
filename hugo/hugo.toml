@@ -109,6 +109,11 @@ enableRobotsTXT = true
   theme = "light"
   lang = "ko"
 
+[params.adsense]
+  publisherId = "ca-pub-6229891888422992"
+  adSlotArticleBottom = "8636834920"
+  adSlotSidebar = "3576079939"
+
 [services]
   [services.googleAnalytics]
     ID = "G-7QCWSVX3WN"

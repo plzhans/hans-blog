@@ -1,0 +1,11 @@
+{{- $publisherId := .publisherId }}
+{{- $slotId := .slotId }}
+{{- if and $publisherId $slotId }}
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="{{ $publisherId }}"
+     data-ad-slot="{{ $slotId }}"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{{- end }}
