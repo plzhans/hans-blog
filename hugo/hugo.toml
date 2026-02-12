@@ -62,11 +62,11 @@ enableRobotsTXT = true
     url = "/index.xml"
 
   [params.style]
-    darkestColor = "#242930"
-    darkColor = "#353b43"
-    lightColor = "#afbac4"
-    lightestColor = "#ffffff"
-    primaryColor = "#57cc8a"
+    darkestColor = "#f0f2f5"
+    darkColor = "#ffffff"
+    lightColor = "#4a5568"
+    lightestColor = "#1a202c"
+    primaryColor = "#2b8a5e"
 
 [markup]
   [markup.goldmark]
@@ -76,26 +76,11 @@ enableRobotsTXT = true
     noClasses = false
     codeFences = true
     guessSyntax = false
-    style = "monokai"
+    style = "github"
     lineNos = true
     lineNumbersInTable = false
 
 [menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories/"
-    weight = 3
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 2
 #   [[menu.main]]
 #     identifier = "about"
 #     name = "About"
@@ -119,7 +104,7 @@ enableRobotsTXT = true
   reactionsEnabled = "1"
   emitMetadata = "0"
   inputPosition = "top"
-  theme = "dark"
+  theme = "light"
   lang = "ko"
 
 [services]

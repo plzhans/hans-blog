@@ -29,7 +29,6 @@
           </span>
           {{- end }}
         </div>
-        {{ partial "language-switcher.html" . }}
       </div>
       {{- with .Params.tags }}
       <div class="post-tags">
@@ -51,14 +50,18 @@
     </div>
     {{- end }}
     {{- end }}
-    <div class="post-content">
-      {{- if .Params.toc }}
-      <div class="post-toc">
-        <h2>{{ i18n "toc_title" | default "Table of Contents" }}</h2>
-        {{ .TableOfContents }}
+    <div class="post-content-wrap">
+      <div class="post-content">
+        {{ .Content }}
       </div>
+      {{- if .Params.toc }}
+      <aside class="post-toc-sidebar">
+        <div class="post-toc">
+          <h2>{{ i18n "toc_title" | default "Table of Contents" }}</h2>
+          {{ .TableOfContents }}
+        </div>
+      </aside>
       {{- end }}
-      {{ .Content }}
     </div>
     
     <div class="post-notice">

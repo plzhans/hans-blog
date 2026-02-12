@@ -1,3 +1,6 @@
+[latest_posts]
+other = "최신글"
+
 [post_notice]
 other = "이 글은 <a href=\"https://www.notion.so\" target=\"_blank\" rel=\"noopener\">Notion</a>에서 작성되었고 <a href=\"https://docs.github.com/ko/actions\" target=\"_blank\" rel=\"noopener\">Github Action</a>을 통해 <a href=\"https://gohugo.io\" target=\"_blank\" rel=\"noopener\">Hugo</a>로 변환되었습니다."
 

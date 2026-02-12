@@ -1,53 +1,44 @@
 {{ define "main" }}
   <article>
-    {{ with .Title -}}<h1>{{- . -}}</h1>{{- end }}
+    <h1>{{ i18n "latest_posts" }}</h1>
     {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
 
     {{ $allPages := where .Site.RegularPages "Type" "!=" "page" }}
-    {{ $latestPages := first 10 $allPages }}
+    {{ $latestPages := first 20 $allPages }}
     {{ if $latestPages }}
-    <div class="posts-group">
-      <ul class="posts-list">
-        {{ range $latestPages }}
-        {{- $post := . }}
-        <li class="posts-list-item">
-          <div class="posts-list-item-link">
-            <a class="posts-list-item-thumbnail" href="{{ .RelPermalink }}">
-              {{- with .Params.images }}
-              {{- $langPrefix := printf "/%s/" $post.Language.Lang -}}
-              {{- $imgBase := $post.RelPermalink | strings.TrimPrefix $langPrefix | printf "/ko/%s" -}}
-              <img src="{{ $imgBase }}{{ index . 0 }}" alt="" loading="lazy">
+    <div class="posts-card-grid">
+      {{ range $latestPages }}
+      {{- $post := . }}
+      <a class="post-card{{ if not .Params.images }} post-card--no-thumb{{ end }}" href="{{ .RelPermalink }}">
+        {{- with .Params.images }}
+        <div class="post-card-thumbnail">
+          {{- $langPrefix := printf "/%s/" $post.Language.Lang -}}
+          {{- $imgBase := $post.RelPermalink | strings.TrimPrefix $langPrefix | printf "/ko/%s" -}}
+          <img src="{{ $imgBase }}{{ index . 0 }}" alt="" loading="lazy">
+        </div>
+        {{- end }}
+        <div class="post-card-body">
+          <span class="post-card-title">{{- .Title -}}</span>
+          {{ with .Description | default .Summary }}<span class="post-card-summary">{{ . | plainify | truncate (cond (not $post.Params.images) 500 200) }}</span>{{ end }}
+          <div class="post-card-footer">
+            {{- with $post.GetTerms "categories" }}
+            <span class="post-card-category">
+              {{- range . }}{{ .Title }}{{- end }}
+            </span>
+            {{- end }}
+            <span class="post-card-date">
+              {{- if eq .Language.Lang "en" }}
+              {{ .PublishDate.Format "Jan 2, 2006" }}
+              {{- else if eq .Language.Lang "ja" }}
+              {{ .PublishDate.Format "2006/01/02" }}
               {{- else }}
-              <img src="{{ $.Site.Params.avatar }}" alt="" loading="lazy">
+              {{ .PublishDate.Format "2006-01-02" }}
               {{- end }}
-            </a>
-            <div class="posts-list-item-body">
-              {{- with $post.GetTerms "categories" }}
-              <div class="posts-list-item-category">
-                {{- range . }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{- end }}
-              </div>
-              {{- end }}
-              <a class="posts-list-item-title" href="{{ .RelPermalink }}">{{- .Title -}}</a>
-              <span class="posts-list-item-description">
-                {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
-                {{- if eq .Language.Lang "en" }}
-                {{ .PublishDate.Format "Jan 2, 2006" }}
-                {{- else if eq .Language.Lang "ja" }}
-                {{ .PublishDate.Format "2006/01/02" }}
-                {{- else }}
-                {{ .PublishDate.Format "2006-01-02" }}
-                {{- end }}
-                {{- if eq .Language.Lang "en" }}
-                <span class="posts-list-item-separator">-</span>
-                {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
-                {{ .ReadingTime }} min read
-                {{- end }}
-              </span>
-            </div>
+            </span>
           </div>
-        </li>
-        {{ end }}
-      </ul>
+        </div>
+      </a>
+      {{ end }}
     </div>
     {{ end }}
   </article>

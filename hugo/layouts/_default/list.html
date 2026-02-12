@@ -2,29 +2,27 @@
   <article>
     {{ with .Title -}}<h1>{{- . -}}</h1>{{- end }}
     {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
-    <ul class="posts-list">
+    <div class="posts-card-grid">
       {{ range where .Paginator.Pages "Type" "!=" "page" }}
         {{- $post := . }}
-        <li class="posts-list-item">
-          <div class="posts-list-item-link">
-            <a class="posts-list-item-thumbnail" href="{{ .RelPermalink }}">
-              {{- with .Params.images }}
-              {{- $langPrefix := printf "/%s/" $post.Language.Lang -}}
-              {{- $imgBase := $post.RelPermalink | strings.TrimPrefix $langPrefix | printf "/ko/%s" -}}
-              <img src="{{ $imgBase }}{{ index . 0 }}" alt="" loading="lazy">
-              {{- else }}
-              <img src="{{ $.Site.Params.avatar }}" alt="" loading="lazy">
-              {{- end }}
-            </a>
-            <div class="posts-list-item-body">
+        <a class="post-card{{ if not .Params.images }} post-card--no-thumb{{ end }}" href="{{ .RelPermalink }}">
+          {{- with .Params.images }}
+          <div class="post-card-thumbnail">
+            {{- $langPrefix := printf "/%s/" $post.Language.Lang -}}
+            {{- $imgBase := $post.RelPermalink | strings.TrimPrefix $langPrefix | printf "/ko/%s" -}}
+            <img src="{{ $imgBase }}{{ index . 0 }}" alt="" loading="lazy">
+          </div>
+          {{- end }}
+          <div class="post-card-body">
+            <span class="post-card-title">{{- .Title -}}</span>
+            {{ with .Description | default .Summary }}<span class="post-card-summary">{{ . | plainify | truncate (cond (not $post.Params.images) 500 200) }}</span>{{ end }}
+            <div class="post-card-footer">
               {{- with $post.GetTerms "categories" }}
-              <div class="posts-list-item-category">
-                {{- range . }}<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{- end }}
-              </div>
+              <span class="post-card-category">
+                {{- range . }}{{ .Title }}{{- end }}
+              </span>
               {{- end }}
-              <a class="posts-list-item-title" href="{{ .RelPermalink }}">{{- .Title -}}</a>
-              <span class="posts-list-item-description">
-                {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+              <span class="post-card-date">
                 {{- if eq .Language.Lang "en" }}
                 {{ .PublishDate.Format "Jan 2, 2006" }}
                 {{- else if eq .Language.Lang "ja" }}
@@ -32,17 +30,12 @@
                 {{- else }}
                 {{ .PublishDate.Format "2006-01-02" }}
                 {{- end }}
-                {{- if eq .Language.Lang "en" }}
-                <span class="posts-list-item-separator">-</span>
-                {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
-                {{ .ReadingTime }} min read
-                {{- end }}
               </span>
             </div>
           </div>
-        </li>
+        </a>
       {{ end }}
-    </ul>
+    </div>
     {{ partial "pagination.html" $ }}
   </article>
 {{ end }}

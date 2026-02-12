@@ -37,6 +37,32 @@
 
   </head>
   <body>
+    <div class="top-header">
+      <div class="top-header-inner">
+        <a class="top-header-logo" href="{{ "" | relLangURL }}">blog.plzhans.com</a>
+        {{ if .IsTranslated }}
+        <div class="top-header-lang">
+          <span class="language-current">{{ .Language.LanguageName }}</span>
+          <ul class="language-list">
+            {{- range .Translations }}
+            <li><a href="{{ .RelPermalink }}" lang="{{ .Lang }}">{{ .Language.LanguageName }}</a></li>
+            {{- end }}
+          </ul>
+        </div>
+        {{ else if gt (len .Site.Languages) 1 }}
+        <div class="top-header-lang">
+          <span class="language-current">{{ .Language.LanguageName }}</span>
+          <ul class="language-list">
+            {{- range .Site.Languages }}
+            {{- if ne .Lang $.Language.Lang }}
+            <li><a href="{{ "" | relLangURL }}" lang="{{ .Lang }}">{{ .LanguageName }}</a></li>
+            {{- end }}
+            {{- end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+    </div>
     <header class="app-header">
       <a href="{{ "" | relLangURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
       <span class="app-header-title">{{ .Site.Title }}</span>
@@ -50,14 +76,24 @@
         {{ end }}
       </div>
       {{- end }}
-      {{- with .Site.Menus.main }}
       <hr />
-      <nav class="app-header-menu">
-        {{- range $key, $item := . }}
-          <a class="app-header-menu-item" href="{{ $item.URL | relLangURL }}">{{ $item.Name }}</a>
+      <a class="app-header-label" href="{{ "/categories/" | relLangURL }}">Categories</a>
+      <nav class="app-header-categories">
+        {{- with .Site.Taxonomies.categories }}
+        {{- range .Alphabetical }}
+          <a class="app-header-menu-item" href="{{ "/categories/" | relLangURL }}{{ .Name | urlize }}/">{{ .Name }}</a>
+        {{- end }}
         {{- end }}
       </nav>
-      {{- end }}      
+      <hr />
+      <a class="app-header-label" href="{{ "/tags/" | relLangURL }}">Tags</a>
+      <nav class="app-header-tags">
+        {{- with .Site.Taxonomies.tags }}
+        {{- range .Alphabetical }}
+          <a class="app-header-tag" href="{{ "/tags/" | relLangURL }}{{ .Name | urlize }}/">{{ .Name }}</a>
+        {{- end }}
+        {{- end }}
+      </nav>
     </header>
     <main class="app-container">
       {{ block "main" . }}
