@@ -49,37 +49,37 @@ It focuses on practical choices and implementation rather than theory.
 
 ```mermaid
 sequenceDiagram
-    participant 서버
-    participant 발급업체
-    participant CA기관
+    participant Server
+    participant Issuer
+    participant CA Authority
     participant OS
-    participant 클라이언트
+    participant Client
 
-    %% 인증서 발급 단계
-    Note over 서버,CA기관: 1. 인증서 발급 단계
-    서버->>서버: 개인키/공개키 쌍 생성
-    서버->>발급업체: 인증서 구매 요청<br/>(공개키 + 도메인 정보)
-    발급업체->>CA기관: CSR(인증서 서명 요청) 전달
-    CA기관->>CA기관: 도메인 소유권 검증<br/>(DNS/HTTP/Email 방식)
-    CA기관->>CA기관: CA 개인키로 서버 공개키 서명
-    CA기관->>발급업체: 서명된 SSL 인증서 발급<br/>(공개키 + CA 서명 + 도메인 정보)
-    발급업체->>서버: 인증서 전달
-    서버->>서버: 인증서와 개인키를 서버에 설치
-    CA기관->>OS: CA 루트 인증서 사전 등록<br/>(브라우저/OS 배포 시 내장)
+    %% Certificate Issuance Phase
+    Note over Server,CA Authority: 1. Certificate Issuance Phase
+    Server->>Server: Generate private/public key pair
+    Server->>Issuer: Certificate purchase request<br/>(public key + domain info)
+    Issuer->>CA Authority: Forward CSR (Certificate Signing Request)
+    CA Authority->>CA Authority: Domain ownership verification<br/>(DNS/HTTP/Email methods)
+    CA Authority->>CA Authority: Sign server public key with CA private key
+    CA Authority->>Issuer: Issue signed SSL certificate<br/>(public key + CA signature + domain info)
+    Issuer->>Server: Deliver certificate
+    Server->>Server: Install certificate and private key on server
+    CA Authority->>OS: Pre-register CA root certificate<br/>(embedded in browser/OS distribution)
 
-    %% HTTPS 연결 단계
-    Note over 서버,클라이언트: 2. HTTPS 연결 단계
-    클라이언트->>서버: HTTPS 사이트 접속 요청<br/>(Client Hello)
-    서버->>클라이언트: SSL 인증서 전송<br/>(Server Hello)
-    클라이언트->>OS: CA 루트 인증서 조회<br/>(인증서 검증용)
-    OS->>클라이언트: CA 루트 인증서 반환
-    클라이언트->>클라이언트: 인증서 유효성 검증<br/>1) CA 루트 인증서로 서명 확인<br/>2) 도메인 일치 여부 확인<br/>3) 유효기간 확인
+    %% HTTPS Connection Phase
+    Note over Server,Client: 2. HTTPS Connection Phase
+    Client->>Server: HTTPS site connection request<br/>(Client Hello)
+    Server->>Client: Send SSL certificate<br/>(Server Hello)
+    Client->>OS: Query CA root certificate<br/>(for certificate verification)
+    OS->>Client: Return CA root certificate
+    Client->>Client: Certificate validity verification<br/>1) Verify signature with CA root certificate<br/>2) Check domain match<br/>3) Check validity period
 
-    alt 인증서 검증 성공
-        클라이언트->>클라이언트: 안전한 HTTPS 연결 표시 (🔒)
-        Note over 서버,클라이언트: 이후 암호화된 통신 시작
-    else 인증서 검증 실패
-        클라이언트->>클라이언트: 보안 경고 표시<br/>(신뢰할 수 없는 인증서)
+    alt Certificate verification success
+        Client->>Client: Display secure HTTPS connection (🔒)
+        Note over Server,Client: Encrypted communication begins
+    else Certificate verification failure
+        Client->>Client: Display security warning<br/>(untrusted certificate)
     end
 ```
 

@@ -16,11 +16,12 @@ Hugo 블로그의 index.md 파일을 index.en.md (영어), index.ja.md (일본�
 2. 원문에서 영어는 대부분 기술 용어이므로 가능하면 번역하지 않는다.
 3. 한국어 텍스트는 반드시 해당 언어로 번역합니다.
 4. 코드 블록, 명령어, 변수명, 함수명 등 기술 용어는 번역하지 않고 그대로 유지합니다.
-5. 마크다운 문법과 Hugo front matter(YAML 헤더)의 구조를 그대로 유지합니다.
-6. 의역보다는 직역을 선호하되, 문맥상 자연스러운 표현을 사용합니다.
-7. 이미지 경로, 링크 등은 변경하지 않습니다.
-8. front matter의 title, description, summary 등 메타데이터는 번역합니다.
-9. slug, date, categories, tags 등 시스템 필드는 변경하지 않습니다.
+5. 코드 블록이 mermaid 을 사용한 경우 한글 텍스트도 번역합니다.
+6. 마크다운 문법과 Hugo front matter(YAML 헤더)의 구조를 그대로 유지합니다.
+7. 의역보다는 직역을 선호하되, 문맥상 자연스러운 표현을 사용합니다.
+8. 이미지 경로, 링크 등은 변경하지 않습니다.
+9. front matter의 title, description, summary 등 메타데이터는 번역합니다.
+10. slug, date, categories, tags 등 시스템 필드는 변경하지 않습니다.
 
 ### 언어별 스타일
 - 영어: 자연스러운 기술 문서 영어 표현 사용
