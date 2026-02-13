@@ -185,12 +185,14 @@ export class NotionExportService {
           name: this.statusValues.published,
         },
       },
-      [this.propertyKeys.publishedDate]: {
+    };
+    if (!this.#extractDateValue(page.properties, this.propertyKeys.publishedDate)) {
+      properties[this.propertyKeys.publishedDate] = {
         date: {
           start: now,
         },
-      },
-    };
+      };
+    }
 
     if (this.hugoBaseUrl && slug) {
       properties[this.propertyKeys.publishUrl] = {
@@ -273,7 +275,7 @@ export class NotionExportService {
         const prevModified = this.#extractModifiedTime(prevMeta);
 
         // 수정일 프로퍼티가 비어 있으면 last_edited_time 값으로 Notion에 업데이트
-        if (!modifiedDateProp?.date?.start) {
+        if (!this.#extractDateValue(page.properties, this.propertyKeys.modifiedDate)) {
           await this.notionApiClient.updatePageProperties(page.id, {
             [this.propertyKeys.modifiedDate]: {
               date: { start: page.last_edited_time },
@@ -481,14 +483,11 @@ export class NotionExportService {
    * @returns {string} ISO 8601 형식의 생성일 문자열
    */
   #extractCreatedTime(page) {
+    const dateValue = this.#extractDateValue(page?.properties, this.propertyKeys.createdDate);
+    if (dateValue) return dateValue;
     const prop = page?.properties?.[this.propertyKeys.createdDate];
-    if (prop) {
-      if (prop.type === "date" && prop.date?.start) {
-        return prop.date.start;
-      }
-      if (prop.type === "created_time" && prop.created_time) {
-        return prop.created_time;
-      }
+    if (prop?.type === "created_time" && prop.created_time) {
+      return prop.created_time;
     }
     return page.created_time;
   }
@@ -499,11 +498,8 @@ export class NotionExportService {
    * @returns {string} ISO 8601 형식의 발행일 문자열
    */
   #extractPublishedDate(page) {
-    const prop = page?.properties?.[this.propertyKeys.publishedDate];
-    if (prop?.type === "date" && prop.date?.start) {
-      return prop.date.start;
-    }
-    return this.#extractCreatedTime(page);
+    return this.#extractDateValue(page?.properties, this.propertyKeys.publishedDate)
+      || this.#extractCreatedTime(page);
   }
 
   /**
@@ -512,16 +508,27 @@ export class NotionExportService {
    * @returns {string} ISO 8601 형식의 수정일 문자열
    */
   #extractModifiedTime(page) {
+    const dateValue = this.#extractDateValue(page?.properties, this.propertyKeys.modifiedDate);
+    if (dateValue) return dateValue;
     const prop = page?.properties?.[this.propertyKeys.modifiedDate];
-    if (prop) {
-      if (prop.type === "date" && prop.date?.start) {
-        return prop.date.start;
-      }
-      if (prop.type === "last_edited_time" && prop.last_edited_time) {
-        return prop.last_edited_time;
-      }
+    if (prop?.type === "last_edited_time" && prop.last_edited_time) {
+      return prop.last_edited_time;
     }
     return page.last_edited_time;
+  }
+
+  /**
+   * Notion 속성에서 date 값을 추출
+   * @param {Object} properties - Notion 페이지 속성 객체
+   * @param {string} key - 날짜 속성 키
+   * @returns {string|null} ISO 8601 형식의 날짜 문자열 또는 null
+   */
+  #extractDateValue(properties, key) {
+    const prop = properties?.[key];
+    if (prop?.type === "date" && prop.date?.start) {
+      return prop.date.start;
+    }
+    return null;
   }
 
   /**
