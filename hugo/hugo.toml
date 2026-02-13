@@ -58,10 +58,6 @@ enableRobotsTXT = true
     icon = "mail"
     name = "Email"
     url = "mailto:plzhans@gmail.com"
-  [[params.social]]
-    icon = "rss"
-    name = "RSS"
-    url = "/index.xml"
 
   [params.style]
     darkestColor = "#f0f2f5"

@@ -87,6 +87,9 @@
             {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
           </a>
         {{ end }}
+          <a href="{{ "index.xml" | absLangURL }}" target="_blank" rel="noreferrer noopener me">
+            {{ partial "icon.html" (dict "ctx" $ "name" "rss" "title" "RSS") }}
+          </a>
       </div>
       {{- end }}
       <hr />
