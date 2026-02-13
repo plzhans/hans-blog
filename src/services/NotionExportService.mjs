@@ -494,6 +494,19 @@ export class NotionExportService {
   }
 
   /**
+   * 페이지에서 발행일을 추출 (발행일 프로퍼티 우선, 없으면 생성일 폴백)
+   * @param {Object} page - Notion 페이지 객체
+   * @returns {string} ISO 8601 형식의 발행일 문자열
+   */
+  #extractPublishedDate(page) {
+    const prop = page?.properties?.[this.propertyKeys.publishedDate];
+    if (prop?.type === "date" && prop.date?.start) {
+      return prop.date.start;
+    }
+    return this.#extractCreatedTime(page);
+  }
+
+  /**
    * 페이지에서 수정일을 추출 (수정일 프로퍼티 우선, 없으면 last_edited_time 폴백)
    * @param {Object} page - Notion 페이지 객체
    * @returns {string} ISO 8601 형식의 수정일 문자열
@@ -767,9 +780,10 @@ export class NotionExportService {
     const tags = this.#extractPageTags(page.properties, this.propertyKeys.tags);
     const category = this.#extractPageCategory(page.properties, this.propertyKeys.category);
     const summary = this.#extractTextProperty(page.properties, this.propertyKeys.summary);
-    const createdTime = this.#extractCreatedTime(page);
+    const publishedDate = this.#extractPublishedDate(page);
     const slug = this.#extractTextProperty(page.properties, this.propertyKeys.slug) || titleSlug;
     const modifiedDate = this.#extractModifiedTime(page);
+    const lastmod = new Date(modifiedDate) >= new Date(publishedDate) ? modifiedDate : publishedDate;
     ws.write("---\n");
     ws.write(`id: "${uniqueId}"\n`);
     ws.write(`translationKey: "${uniqueId}"\n`);
@@ -792,8 +806,8 @@ export class NotionExportService {
         ws.write(`  - "${tag.replace(/"/g, '\\"')}"\n`);
       }
     }
-    ws.write(`date: ${createdTime}\n`);
-    ws.write(`lastmod: ${modifiedDate}\n`);
+    ws.write(`date: ${publishedDate}\n`);
+    ws.write(`lastmod: ${lastmod}\n`);
     ws.write(`toc: ${toc}\n`);
     ws.write(`draft: ${draft}\n`);
     if(firstImagePath){
