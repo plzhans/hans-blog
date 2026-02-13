@@ -269,10 +269,8 @@ export class NotionExportService {
         const prevMeta = JSON.parse(prevMetaRaw);
 
         // 수정일 프로퍼티 우선, 없으면 last_edited_time 폴백
-        const modifiedDateProp = page.properties[this.propertyKeys.modifiedDate];
-        const currentModified = modifiedDateProp?.date?.start || page.last_edited_time;
-        const prevModifiedDateProp = prevMeta.properties?.[this.propertyKeys.modifiedDate];
-        const prevModified = prevModifiedDateProp?.date?.start || prevMeta.last_edited_time;
+        const currentModified = this.#extractModifiedTime(page);
+        const prevModified = this.#extractModifiedTime(prevMeta);
 
         // 수정일 프로퍼티가 비어 있으면 last_edited_time 값으로 Notion에 업데이트
         if (!modifiedDateProp?.date?.start) {
@@ -493,6 +491,24 @@ export class NotionExportService {
       }
     }
     return page.created_time;
+  }
+
+  /**
+   * 페이지에서 수정일을 추출 (수정일 프로퍼티 우선, 없으면 last_edited_time 폴백)
+   * @param {Object} page - Notion 페이지 객체
+   * @returns {string} ISO 8601 형식의 수정일 문자열
+   */
+  #extractModifiedTime(page) {
+    const prop = page?.properties?.[this.propertyKeys.modifiedDate];
+    if (prop) {
+      if (prop.type === "date" && prop.date?.start) {
+        return prop.date.start;
+      }
+      if (prop.type === "last_edited_time" && prop.last_edited_time) {
+        return prop.last_edited_time;
+      }
+    }
+    return page.last_edited_time;
   }
 
   /**
@@ -753,6 +769,7 @@ export class NotionExportService {
     const summary = this.#extractTextProperty(page.properties, this.propertyKeys.summary);
     const createdTime = this.#extractCreatedTime(page);
     const slug = this.#extractTextProperty(page.properties, this.propertyKeys.slug) || titleSlug;
+    const modifiedDate = this.#extractModifiedTime(page);
     ws.write("---\n");
     ws.write(`id: "${uniqueId}"\n`);
     ws.write(`translationKey: "${uniqueId}"\n`);
@@ -776,7 +793,7 @@ export class NotionExportService {
       }
     }
     ws.write(`date: ${createdTime}\n`);
-    ws.write(`lastmod: ${page.last_edited_time}\n`);
+    ws.write(`lastmod: ${modifiedDate}\n`);
     ws.write(`toc: ${toc}\n`);
     ws.write(`draft: ${draft}\n`);
     if(firstImagePath){
