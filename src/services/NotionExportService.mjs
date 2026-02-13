@@ -813,8 +813,8 @@ export class NotionExportService {
         ws.write(`  - "${tag.replace(/"/g, '\\"')}"\n`);
       }
     }
-    ws.write(`date: ${publishedDate}\n`);
-    ws.write(`lastmod: ${lastmod}\n`);
+    ws.write(`date: ${new Date(publishedDate).toISOString()}\n`);
+    ws.write(`lastmod: ${new Date(lastmod).toISOString()}\n`);
     ws.write(`toc: ${toc}\n`);
     ws.write(`draft: ${draft}\n`);
     if(firstImagePath){
