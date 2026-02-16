@@ -1,15 +1,15 @@
 {
   "object": "page",
-  "id": "2fd22a0f-7e83-81ed-b096-fbb1eeec1160",
-  "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-02-16T17:41:00.000Z",
+  "id": "30922a0f-7e83-8081-983a-d8ba3c21ba28",
+  "created_time": "2026-02-16T15:07:00.000Z",
+  "last_edited_time": "2026-02-16T17:42:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -30,40 +30,40 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-02-04T09:04:00.000Z"
+      "created_time": "2026-02-16T15:07:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "e3126427-d60a-43ac-84f8-0b7a28091e25",
-          "name": "hugo",
-          "color": "pink"
+          "id": "VXhL",
+          "name": "git",
+          "color": "blue"
         },
         {
-          "id": "c317d7e0-321b-4f64-a8ad-f26ff9113757",
-          "name": "github-action",
-          "color": "gray"
+          "id": "c883a4a8-4839-4b1a-8cce-01c1a2779b11",
+          "name": "github",
+          "color": "purple"
         },
         {
-          "id": "0579ade5-617f-4ef1-bf35-7d996cb2a24f",
-          "name": "github-pages",
-          "color": "orange"
+          "id": "a4fdf6a0-d747-4aa1-8cbc-f72b92a65b77",
+          "name": "gpg",
+          "color": "red"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-02-16T17:41:00.000Z"
+      "last_edited_time": "2026-02-16T17:42:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 35
+        "number": 7
       }
     },
     "발행 URL": {
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-02-10T09:17:00.000+00:00",
+        "start": "2026-02-17T02:42:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -89,9 +89,9 @@
       "id": "%5B~Jq",
       "type": "status",
       "status": {
-        "id": "DOao",
-        "name": "발행 완료",
-        "color": "green"
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
       }
     },
     "요약": {
@@ -101,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Hugo 정적 사이트 생성기와 GitHub Pages를 활용한 개인 블로그 구축 가이드입니다. Hugo 설치, m10c 테마 적용, 로컬 개발 환경 설정부터 GitHub Actions를 통한 자동 배포 파이프라인 구성까지 전체 과정을 단계별로 설명합니다. Jekyll 대비 빠른 빌드 속도와 노션-마크다운 기반 작성 워크플로우를 채택한 이유도 포함합니다.",
+            "content": "Git 커밋 서명을 GPG로 설정하는 과정을 단계별로 정리했습니다. GnuPG 설치부터 키 생성과 내보내기까지 다룹니다. Git에서 자동 서명을 설정하는 방법을 설명합니다. 로컬에서 서명 검증하는 방법을 안내합니다. GitHub에 공개키를 등록해 Verified 배지를 확인하는 흐름을 정리했습니다.",
             "link": null
           },
           "annotations": {
@@ -112,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Hugo 정적 사이트 생성기와 GitHub Pages를 활용한 개인 블로그 구축 가이드입니다. Hugo 설치, m10c 테마 적용, 로컬 개발 환경 설정부터 GitHub Actions를 통한 자동 배포 파이프라인 구성까지 전체 과정을 단계별로 설명합니다. Jekyll 대비 빠른 빌드 속도와 노션-마크다운 기반 작성 워크플로우를 채택한 이유도 포함합니다.",
+          "plain_text": "Git 커밋 서명을 GPG로 설정하는 과정을 단계별로 정리했습니다. GnuPG 설치부터 키 생성과 내보내기까지 다룹니다. Git에서 자동 서명을 설정하는 방법을 설명합니다. 로컬에서 서명 검증하는 방법을 안내합니다. GitHub에 공개키를 등록해 Verified 배지를 확인하는 흐름을 정리했습니다.",
           "href": null
         }
       ]
@@ -124,7 +124,7 @@
         {
           "type": "text",
           "text": {
-            "content": "94",
+            "content": "88",
             "link": null
           },
           "annotations": {
@@ -135,7 +135,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "94",
+          "plain_text": "88",
           "href": null
         }
       ]
@@ -147,7 +147,7 @@
         {
           "type": "text",
           "text": {
-            "content": "hugo-github-blog",
+            "content": "github-gpg-commit-signing",
             "link": null
           },
           "annotations": {
@@ -158,7 +158,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "hugo-github-blog",
+          "plain_text": "github-gpg-commit-signing",
           "href": null
         }
       ]
@@ -171,17 +171,13 @@
     "발행일": {
       "id": "nEEr",
       "type": "date",
-      "date": {
-        "start": "2026-02-10T08:46:00.000+00:00",
-        "end": null,
-        "time_zone": null
-      }
+      "date": null
     },
     "생성일": {
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-01-29T10:44:00.000+09:00",
+        "start": "2026-02-17T00:07:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -202,7 +198,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Hugo + Github 블로그 만들기",
+            "content": "github에서 GPG로 git 커밋 서명하기",
             "link": null
           },
           "annotations": {
@@ -213,12 +209,12 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Hugo + Github 블로그 만들기",
+          "plain_text": "github에서 GPG로 git 커밋 서명하기",
           "href": null
         }
       ]
     }
   },
-  "url": "https://www.notion.so/Hugo-Github-2fd22a0f7e8381edb096fbb1eeec1160",
+  "url": "https://www.notion.so/github-GPG-git-30922a0f7e838081983ad8ba3c21ba28",
   "public_url": null
 }

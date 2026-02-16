@@ -9,8 +9,8 @@ categories:
 tags:
   - "hugo"
   - "seo"
-date: 2026-02-06T11:34:00.000+09:00
-lastmod: 2026-02-11T09:36:00.000Z
+date: 2026-02-11T09:55:00.000Z
+lastmod: 2026-02-11T09:55:00.000Z
 toc: true
 draft: false
 ---
