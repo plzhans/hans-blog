@@ -10,8 +10,8 @@ tags:
   - "git"
   - "github"
   - "gpg"
-date: 2026-02-16T15:07:00.000Z
-lastmod: 2026-02-16T17:42:00.000Z
+date: 2026-02-16T17:42:00.000Z
+lastmod: 2026-02-16T17:45:00.000Z
 toc: true
 draft: false
 images:
@@ -131,12 +131,10 @@ gpg --list-secret-keys
 > (9) ECC (sign and encrypt) _default_  
 > (10) ECC (sign only)  
 > (14) Existing key from card  
-> Your selection?  
-> # 키 종류 선택 \>\> 1  
+> Your selection? 1  
 >   
 > RSA keys may be between 1024 and 4096 bits long.  
-> What keysize do you want? (3072)  
-> # 키 크기 \>\> 원하는 크기. (ex) 4096  
+> What keysize do you want? (3072) 4096  
 > 
 >
 > Requested keysize is 4096 bits
@@ -146,28 +144,24 @@ gpg --list-secret-keys
 > \<n\>w = key expires in n weeks
 > \<n\>m = key expires in n months
 > \<n\>y = key expires in n years
-> Key is valid for? (0)
-> # 키 유효기간 \>\> 원하는 기간. (ex) 1y 
+> Key is valid for? (0) 1y
 >
 >
 > Key is valid for? (0) 1y
 > Key expires at 2027년  2월 16일 화요일 17시 14분 10초 KST
-> Is this correct? (y/N)
->
->
-> \>\> 기간 확인 : y
+> Is this correct? (y/N) y
 >
 >
 > GnuPG needs to construct a user ID to identify your key.
 >
 >
 > Real name: your name
-> Email address: your [email@email.com](mailto:email@email.com)
+> Email address: your test@email.com
 > Not a valid email address
-> Email address: [test@test.com](mailto:test@test.com)
+> Email address: test@test.com
 > Comment: test
 > You selected this USER-ID:
-> "your name (test) [test@test.com](mailto:test@test.com)"
+> "your name (test) test@test.com"
 >
 >
 
