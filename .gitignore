@@ -18,8 +18,7 @@ logs
 
 # env
 .env
-.env.*
-!.env.sample
+*.env
 
 # OS
 .DS_Store
