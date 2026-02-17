@@ -10,10 +10,15 @@ tags:
   - "hugo"
   - "seo"
 date: 2026-02-11T09:55:00.000Z
-lastmod: 2026-02-11T09:55:00.000Z
+lastmod: 2026-02-17T17:06:00.000Z
 toc: true
 draft: false
+images:
+  - "assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png"
 ---
+
+
+![](./assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png)
 
 
 ## 목표

@@ -11,10 +11,15 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-02-10T09:17:00.000Z
+lastmod: 2026-02-17T17:07:00.000Z
 toc: true
 draft: false
+images:
+  - "assets/1_30a22a0f-7e83-80a5-b144-e674438c0672.png"
 ---
+
+
+![](./assets/1_30a22a0f-7e83-80a5-b144-e674438c0672.png)
 
 
 > 💡 **구축 환경**  
@@ -24,6 +29,9 @@ draft: false
 
 
 # 서론
+
+
+![image]()
 
 
 기술 관련 내용을 에버노트와 개인 문서에 정리해오다가 노션의 웹사이트 기능을 활용해 블로그로 운영하려고 준비했었다.

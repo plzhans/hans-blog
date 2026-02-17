@@ -3,17 +3,20 @@ id: "69"
 translationKey: "69"
 slug: "69-git-deleted-branch-recovery"
 title: "Git 삭제 브런치 복구"
+categories:
+  - "git"
 tags:
   - "git"
-categories:
-  - "Git"
-date: 2025-01-08T18:42:00.000+09:00
-lastmod: 2026-02-06T06:28:00.000Z
+date: 2026-02-06T06:30:00.000Z
+lastmod: 2026-02-17T17:06:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png"
+  - "assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png"
 ---
+
+
+![](./assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png)
 
 
 ## 목표
@@ -48,7 +51,7 @@ git reflog
 reflog 출력에서 **복구하려는 시점의 커밋 해시**를 확인합니다.
 
 
-![](./assets/1_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)
+![](./assets/2_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)
 
 
 ---
@@ -75,5 +78,5 @@ git checkout -b repair-1234 f730c6ea10
 브런치가 정상적으로 생성되고 해당 커밋으로 이동했는지 확인합니다.
 
 
-![](./assets/2_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png)
+![](./assets/3_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png)
 

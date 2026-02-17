@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-02-16T17:45:00.000Z
+lastmod: 2026-02-17T17:07:00.000Z
 toc: true
 draft: false
 images:
@@ -198,10 +198,30 @@ gpg --delete-keys {pub uuid}
 
 ```shell
 # 개인키 내보내기
+# gpg --armor --export-secret-keys {key_id} > private.asc
 gpg --armor --export-secret-keys 7XXXXXXXXXXXXXXXX6 > private.asc
 
 # 공개키 내보내기
+# gpg --armor --export {key_id} > public.asc
 gpg --armor --export 7XXXXXXXXXXXXXXXX6 > public.asc
+```
+
+
+</details>
+
+<details>
+<summary>키 복원하기</summary>
+
+```toml
+# 
+gpg --import private.asc
+
+# trust 지정 
+# gpg --edit-key {key_id}
+gpg --edit-key 7XXXXXXXXXXXXXXXX6
+
+# 등록 확인
+gpg --list-secret-keys --keyid-format LONG
 ```
 
 
@@ -350,26 +370,19 @@ GPG 키에 암호가 설정된 상태에서 발생할 수 있습니다.
 
 OS와 환경에 따라 처리 방법이 다릅니다. 저는 mac 환경이어서 **pinentry-mac**을 설치해 해결했습니다.
 
-> 패키지 설치  
-> brew install pinentry-mac  
->   
-> ~/.gnupg/gpg-agent.conf에 아래 내용을 추가합니다.  
-> pinentry-program /opt/homebrew/bin/pinentry-mac  
->   
-> ~/.profile에 아래 내용을 추가합니다.  
-> export GPG_TTY=$(tty)  
->   
-> 프로필을 다시 읽습니다.  
-> source ~/.profile  
->   
-> # gpg agent 재시작
->
-> gpgconf --kill gpg-agent
-> gpgconf --launch gpg-agent
->
->
-> 다시 커밋 : 암호 입력창 활성화
->
+> 
+> 1. 패키지 설치
+> `brew install pinentry-mac`
+> 2. ~/.gnupg/gpg-agent.conf 아래 내용을 추가합니다.
+> `pinentry-program /opt/homebrew/bin/pinentry-mac`
+> 3. ~/.profile 아래 내용을 추가합니다.
+> `export GPG_TTY=$(tty)`
+> 4. 프로필을 다시 읽습니다.
+> `source ~/.profile`
+> 5. gpg agent 재시작
+> `gpgconf --kill gpg-agent`
+> `gpgconf --launch gpg-agent`
+> 6. 다시 커밋 : 암호 입력창 활성화
 >
 > ![](./assets/3_30922a0f-7e83-8047-9f1b-ec157d7d9f09.png)
 >
