@@ -930,6 +930,15 @@ body {
 .highlight {
   position: relative;
 
+  ::selection {
+    background: rgba(#51afef, 0.45);
+    color: #ffffff;
+  }
+  ::-moz-selection {
+    background: rgba(#51afef, 0.45);
+    color: #ffffff;
+  }
+
   .cl {
     color: #cccccc;
   }
