@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-02-18T05:03:00.000Z
+lastmod: 2026-02-18T05:05:00.000Z
 toc: true
 draft: false
 images:
@@ -185,7 +185,7 @@ gpg --armor --export 7XXXXXXXXXXXXXXXX6 > public.asc
 </details>
 
 <details>
-<summary>키 복원하</summary>
+<summary>키 복원하기</summary>
 
 ```toml
 # 
