@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-02-18T05:10:00.000Z
+lastmod: 2026-02-18T05:15:00.000Z
 toc: true
 draft: false
 images:
@@ -326,7 +326,10 @@ git verify-commit HEAD
 ### 트러블슈팅
 
 <details>
-<summary>문제: 서명 문제로 커밋이 실패했습니다.</summary>
+<summary>**error: gpg failed to sign the data**</summary>
+
+**서명 문제로 커밋이 실패했습니다.**
+
 > 
 >
 > **error: gpg failed to sign the data:**
@@ -354,16 +357,10 @@ git verify-commit HEAD
 >
 >
 
-### 원인
+**원인 :** GPG 키에 암호가 설정된 상태에서 발생할 수 있습니다.
 
 
-GPG 키에 암호가 설정된 상태에서 발생할 수 있습니다.
-
-
-### 해결
-
-
-OS와 환경에 따라 처리 방법이 다릅니다. 저는 mac 환경이어서 **pinentry-mac**을 설치해 해결했습니다.
+**해결 :** OS와 환경에 따라 처리 방법이 다릅니다. 저는 mac 환경이어서 **pinentry-mac**을 설치해 해결했습니다.
 
 > 
 > 1. 패키지 설치
