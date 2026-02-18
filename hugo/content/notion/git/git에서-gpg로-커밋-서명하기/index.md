@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-02-18T05:19:00.000Z
+lastmod: 2026-02-18T05:35:00.000Z
 toc: true
 draft: false
 images:
@@ -154,9 +154,7 @@ gpg --list-keys
 
 ### 기타 필요한 기능
 
-<details>
-<summary>키 삭제가 필요한 경우</summary>
-
+{{< details summary="키 삭제가 필요한 경우" >}}
 ```shell
 # 개인키 삭제
 gpg --delete-secret-keys {sec uuid}
@@ -164,13 +162,9 @@ gpg --delete-secret-keys {sec uuid}
 # 공개키 삭제
 gpg --delete-keys {pub uuid}
 ```
+{{< /details >}}
 
-
-</details>
-
-<details>
-<summary>키 내보내기</summary>
-
+{{< details summary="키 내보내기" >}}
 ```shell
 # 개인키 내보내기
 # gpg --armor --export-secret-keys {key_id} > private.asc
@@ -180,14 +174,10 @@ gpg --armor --export-secret-keys 7XXXXXXXXXXXXXXXX6 > private.asc
 # gpg --armor --export {key_id} > public.asc
 gpg --armor --export 7XXXXXXXXXXXXXXXX6 > public.asc
 ```
+{{< /details >}}
 
-
-</details>
-
-<details>
-<summary>키 복원하기</summary>
-
-```toml
+{{< details summary="키 복원하기" >}}
+```shell
 # 
 gpg --import private.asc
 
@@ -198,25 +188,19 @@ gpg --edit-key 7XXXXXXXXXXXXXXXX6
 # 등록 확인
 gpg --list-secret-keys --keyid-format LONG
 ```
-
-
-</details>
+{{< /details >}}
 
 
 ### (참고) 트러블슈팅
 
-<details>
-<summary>**오류**: Passphrase(키 암호)를 사용하지 않으려고 했습니다. 키 생성 과정이 다시 암호 입력 화면으로 돌아왔습니다.</summary>
-
+{{< details summary="**오류**: Passphrase(키 암호)를 사용하지 않으려고 했습니다. 키 생성 과정이 다시 암호 입력 화면으로 돌아왔습니다." >}}
 **원인**
 
 - 최신 버전에서는 키 유출에 대한 보안 이슈 때문에 키 암호 사용을 강하게 권고합니다.
 - 우회 방법이 있기는 합니다. 배치 모드 등으로 처리가 가능합니다. 그래도 가능하면 짧게라도 암호를 설정하는 편이 안전합니다.
 
 **해결** : 암호를 설정했습니다.
-
-
-</details>
+{{< /details >}}
 
 
 ## Git 서명
@@ -239,22 +223,16 @@ Github 커밋에 "Verified" 배지도 함께 표시됩니다.
 
 ### 옵션 A) 수동 서명(커밋마다 `-S`)
 
-<details>
-<summary>자동 설정 없이 서명할 커밋에만 `-S`를 붙입니다.</summary>
-
+{{< details summary="자동 설정 없이 서명할 커밋에만 `-S`를 붙입니다." >}}
 ```shell
 git commit -S -m "Commit message"
 ```
-
-
-</details>
+{{< /details >}}
 
 
 ### 옵션 B) 글로벌 자동 서명(모든 저장소)
 
-<details>
-<summary>로컬 환경에서 만드는 모든 저장소에 자동 서명을 켭니다.</summary>
-
+{{< details summary="로컬 환경에서 만드는 모든 저장소에 자동 서명을 켭니다." >}}
 ```shell
 # GPG 키 ID 등록(전역)
 git config --global user.signingkey 7XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX6
@@ -265,15 +243,12 @@ git config --global commit.gpgsign true
 # 설정 확인
 git config --show-origin commit.gpgsign
 ```
-
-
-</details>
+{{< /details >}}
 
 
 ### 옵션 C) 저장소 단위 자동 서명(특정 저장소만)
 
-<details>
-<summary>특정 저장소에서만 자동 서명을 켭니다.</summary>
+{{< details summary="특정 저장소에서만 자동 서명을 켭니다." >}}
 - `--global`은 모든 저장소에 적용합니다.
 - `--local`은 현재 저장소에만 적용합니다. 설정은 `.git/config`에 저장됩니다.
 
@@ -290,9 +265,7 @@ git config --local commit.gpgsign true
 # 설정 확인
 git config --show-origin commit.gpgsign
 ```
-
-
-</details>
+{{< /details >}}
 
 
 ### GPG로 서명된 커밋 생성
@@ -324,9 +297,7 @@ git verify-commit HEAD
 
 ### (참고) 트러블슈팅
 
-<details>
-<summary>**error: gpg failed to sign the data**</summary>
-
+{{< details summary="**error: gpg failed to sign the data**" >}}
 **서명 문제로 커밋이 실패했습니다.**
 
 
@@ -364,8 +335,7 @@ gpg: signing failed: Inappropriate ioctl for device
 > ![](./assets/3_30922a0f-7e83-8047-9f1b-ec157d7d9f09.png)
 >
 >
-
-</details>
+{{< /details >}}
 
 
 ## GitHub 서명
