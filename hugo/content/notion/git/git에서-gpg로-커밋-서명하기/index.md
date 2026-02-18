@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-02-18T05:15:00.000Z
+lastmod: 2026-02-18T05:19:00.000Z
 toc: true
 draft: false
 images:
@@ -205,19 +205,18 @@ gpg --list-secret-keys --keyid-format LONG
 
 ### (참고) 트러블슈팅
 
+<details>
+<summary>**오류**: Passphrase(키 암호)를 사용하지 않으려고 했습니다. 키 생성 과정이 다시 암호 입력 화면으로 돌아왔습니다.</summary>
 
-### 문제 : Passphrase(키 암호)를 사용하지 않으려고 했습니다. 키 생성 과정이 다시 암호 입력 화면으로 돌아왔습니다.
+**원인**
+
+- 최신 버전에서는 키 유출에 대한 보안 이슈 때문에 키 암호 사용을 강하게 권고합니다.
+- 우회 방법이 있기는 합니다. 배치 모드 등으로 처리가 가능합니다. 그래도 가능하면 짧게라도 암호를 설정하는 편이 안전합니다.
+
+**해결** : 암호를 설정했습니다.
 
 
-    ### 원인
-
-    - 최신 버전에서는 키 유출에 대한 보안 이슈 때문에 키 암호 사용을 강하게 권고합니다.
-    - 우회 방법이 있기는 합니다. 배치 모드 등으로 처리가 가능합니다. 그래도 가능하면 짧게라도 암호를 설정하는 편이 안전합니다.
-
-    ### 해결
-
-
-    암호를 설정했습니다.
+</details>
 
 
 ## Git 서명
@@ -323,39 +322,25 @@ git verify-commit HEAD
 ```
 
 
-### 트러블슈팅
+### (참고) 트러블슈팅
 
 <details>
 <summary>**error: gpg failed to sign the data**</summary>
 
 **서명 문제로 커밋이 실패했습니다.**
 
-> 
->
-> **error: gpg failed to sign the data:**
->
->
-> [GNUPG:] KEY_CONSIDERED 7E7DCEBF62463A41ACD992D8D9F62FE2379DF7E6 2
->
->
-> [GNUPG:] BEGIN_SIGNING H8
->
->
-> [GNUPG:] PINENTRY_LAUNCHED 42114 curses 1.3.2 - xterm-256color NONE - 501/20 0
->
->
-> gpg: signing failed: Inappropriate ioctl for device
->
->
-> [GNUPG:] FAILURE sign 83918950
->
->
-> gpg: signing failed: Inappropriate ioctl for device
->
->
-> **fatal: failed to write commit object**
->
->
+
+```plain text
+**error: gpg failed to sign the data:**
+[GNUPG:] KEY_CONSIDERED 7E7DCEBF62463A41ACD992D8D9F62FE2379DF7E6 2
+[GNUPG:] BEGIN_SIGNING H8
+[GNUPG:] PINENTRY_LAUNCHED 42114 curses 1.3.2 - xterm-256color NONE - 501/20 0
+gpg: signing failed: Inappropriate ioctl for device
+[GNUPG:] FAILURE sign 83918950
+gpg: signing failed: Inappropriate ioctl for device
+**fatal: failed to write commit object**
+```
+
 
 **원인 :** GPG 키에 암호가 설정된 상태에서 발생할 수 있습니다.
 
