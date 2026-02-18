@@ -2,7 +2,7 @@
 id: "88"
 translationKey: "88"
 slug: "88-github-gpg-commit-signing"
-title: "github에서 GPG로 git 커밋 서명하기"
+title: "Git에서 GPG로 커밋 서명하기"
 description: "Git 커밋 서명을 GPG로 설정하는 과정을 단계별로 정리했습니다. GnuPG 설치부터 키 생성과 내보내기까지 다룹니다. Git에서 자동 서명을 설정하는 방법을 설명합니다. 로컬에서 서명 검증하는 방법을 안내합니다. GitHub에 공개키를 등록해 Verified 배지를 확인하는 흐름을 정리했습니다."
 categories:
   - "git"
@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-02-17T17:07:00.000Z
+lastmod: 2026-02-18T05:03:00.000Z
 toc: true
 draft: false
 images:
@@ -22,17 +22,25 @@ images:
 ![](./assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png)
 
 
-# 목표
+# 개요
 
-- GPG 키를 새로 발급받기
-- Git에 GPG 키를 등록하고 커밋 서명을 설정하기
-- GPG로 서명된 커밋을 생성하고 GitHub에 푸시하기
-- GitHub에서 "Verified" 배지로 서명을 확인하기
+
+Git 커밋에 GPG 디지털 서명을 추가하면 커밋 작성자의 신원을 증명하고 코드 무결성을 보장할 수 있습니다. 
+
+
+이 문서에서는 GPG의 개념과 Git에서의 활용 방법을 소개합니다.
+
+
+GPG 키 생성부터 Git 설정, GitHub 연동까지 전체 과정을 단계별로 안내합니다. 
+
 
 # GPG란?
 
 
-**GPG(GNU Privacy Guard)**는 데이터 암호화와 디지털 서명을 위한 오픈 소스 암호화 소프트웨어입니다. PGP(Pretty Good Privacy) 표준을 따릅니다. 공개키 암호화 방식을 사용합니다.
+**GPG(GNU Privacy Guard)**는 데이터 암호화와 디지털 서명을 위한 오픈 소스 암호화 소프트웨어입니다. 
+
+
+PGP(Pretty Good Privacy) 표준을 따르며 공개키 암호화 방식을 사용합니다.
 
 
 **주요 특징**
@@ -41,86 +49,50 @@ images:
 - **디지털 서명:** 개인키로 데이터에 서명합니다. 작성자 신원과 데이터 무결성을 보장합니다.
 - **보안 통신:** 이메일과 파일 등을 안전하게 암호화해 전송할 수 있습니다.
 
-**Git에서의 활용**
+## **Git과 GPG**
 
 
-Git에서 GPG는 커밋과 태그에 디지털 서명을 추가할 때 사용합니다. 다음 효과가 있습니다.
+Git에서 GPG는 커밋과 태그에 디지털 서명을 추가할 때 사용합니다. 
 
 - 커밋이 실제로 본인에 의해 작성되었음을 증명할 수 있습니다.
 - GitHub와 GitLab 같은 플랫폼에서 "Verified" 배지를 표시해 신뢰성을 높입니다.
 - 코드 변조와 위조를 방지해 프로젝트 보안을 강화합니다.
+- 파일을 암호화하여 보호합니다
 
-# 설치
-
-
-## 빠른 가이드
+## Git 커밋을 왜 서명하나요?
 
 
-자세한 내용은 **GPG 개인키 만들기** 문서를 참고합니다.
+Git 커밋 작성자 정보는 `git config user.name`과 `user.email`로 누구나 임의 설정이 가능합니다.
 
 
-```shell
-# 패키지 설치 (예: mac)
-brew install gnupg
-
-# 키 생성
-gpg --full-generate-key
-
-# 키 확인
-gpg --list-secret-keys
-```
+따라서 이름과 이메일만으로는 실제 작성자를 신뢰하기 어렵습니다.
 
 
-## 자세한 설치
+커밋 전에 개인키로 커밋에 서명하고 공개키를 GitHub 같은 저장소에 등록하면 플랫폼이 서명을 검증해 커밋 작성자 일치 여부를 확인할 수 있습니다.
 
 
-### 패키지 설치 (mac 기준)
+# GPG 사용하기
 
 
-```shell
+## gnupg 설치
+
+
+gnupg : GPG 를 사용하기 위한 패키지 설치 (예: mac)
+
+
+```toml
 brew install gnupg
 ```
 
 
-# GPG 키 생성
+## 키 생성
 
 
-`gpg --full-generate-key`는 대화형 모드로 동작합니다. 배치 모드도 별도로 지원합니다.
+`gpg --full-generate-key`는 대화형 모드로 기본 동작합니다.  배치 모드도 옵션으로 지원합니다.
 
 
-## 트러블슈팅
-
-
-### 문제
-
-
-Passphrase(키 암호)를 사용하지 않으려고 했습니다. 키 생성 과정이 다시 암호 입력 화면으로 돌아왔습니다.
-
-
-### 원인
-
-- 최신 버전에서는 키 유출에 대한 보안 이슈 때문에 키 암호 사용을 강하게 권고합니다.
-- 우회 방법이 있기는 합니다. 배치 모드 등으로 처리가 가능합니다. 그래도 가능하면 짧게라도 암호를 설정하는 편이 안전합니다.
-
-### 해결
-
-
-암호를 설정했습니다.
-
-
-## 생성
-
-
-```shell
+```toml
 gpg --full-generate-key
-```
-
-
-생성한 키를 확인합니다.
-
-
-```shell
-gpg --list-secret-keys
 ```
 
 > Please select what kind of key you want:  
@@ -168,7 +140,7 @@ gpg --list-secret-keys
 ![](./assets/2_30922a0f-7e83-8051-b1f7-d7a544c8425e.png)
 
 
-## 기타
+## 키 생성 확인
 
 
 ```shell
@@ -178,6 +150,9 @@ gpg --list-secret-keys
 # 공개키 목록
 gpg --list-keys
 ```
+
+
+## 기타 필요한 기능
 
 <details>
 <summary>키 삭제가 필요한 경우</summary>
@@ -210,7 +185,7 @@ gpg --armor --export 7XXXXXXXXXXXXXXXX6 > public.asc
 </details>
 
 <details>
-<summary>키 복원하기</summary>
+<summary>키 복원하</summary>
 
 ```toml
 # 
@@ -228,16 +203,36 @@ gpg --list-secret-keys --keyid-format LONG
 </details>
 
 
-# GitHub GPG 서명 준비
+### (참고) 트러블슈팅
+
+
+### 문제 : Passphrase(키 암호)를 사용하지 않으려고 했습니다. 키 생성 과정이 다시 암호 입력 화면으로 돌아왔습니다.
+
+
+    ### 원인
+
+    - 최신 버전에서는 키 유출에 대한 보안 이슈 때문에 키 암호 사용을 강하게 권고합니다.
+    - 우회 방법이 있기는 합니다. 배치 모드 등으로 처리가 가능합니다. 그래도 가능하면 짧게라도 암호를 설정하는 편이 안전합니다.
+
+    ### 해결
+
+
+    암호를 설정했습니다.
+
+
+# Git 서명
 
 
 커밋을 할 때는 GitHub에 등록한 GPG 공개키와 연결된 개인키로 서명해야 합니다.
 
 
-이를 통해 GitHub가 커밋 작성자를 검증합니다. "Verified" 배지도 함께 표시됩니다.
+나중에 Github는 서명된 커밋이 푸시되면 커밋 작성자를 검증합니다. 
 
 
-## Git에서 GPG 서명 설정
+Github 커밋에 "Verified" 배지도 함께 표시됩니다.
+
+
+## Git에서 GPG 서명 준비
 
 
 아래 세 가지 방식 중 하나를 선택합니다.
@@ -391,10 +386,28 @@ OS와 환경에 따라 처리 방법이 다릅니다. 저는 mac 환경이어서
 </details>
 
 
-# GitHub에 푸시
+# GitHub 서명
 
 
-## GitHub에 GPG 키 등록
+## GitHub와 GPG
+
+
+GitHub에 GPG 공개키를 등록하면 커밋 서명을 검증할 수 있습니다.
+
+
+GitHub는 푸시된 커밋의 서명을 확인할 때 등록된 GPG 공개키를 사용해 서명이 유효한지 검증합니다.
+
+
+검증이 성공하면 커밋 옆에 "Verified" 배지가 표시되어 해당 커밋이 등록된 키의 소유자가 작성했음을 증명합니다.
+
+
+이를 통해 다음과 같은 장점을 얻을 수 있습니다:
+
+- **신원 검증:** 커밋 작성자가 실제로 본인임을 증명합니다.
+- **위변조 방지:** 다른 사람이 내 이름으로 커밋을 작성하는 것을 방지합니다.
+- **신뢰성 향상:** 오픈소스 프로젝트나 팀 협업에서 코드의 출처를 명확히 합니다.
+
+## 등록 절차
 
 
 GPG 공개키를 GitHub 개인 설정의 **GPG keys** 섹션에 등록합니다.
