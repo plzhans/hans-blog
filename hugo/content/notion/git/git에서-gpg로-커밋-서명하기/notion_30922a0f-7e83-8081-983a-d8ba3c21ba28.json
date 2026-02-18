@@ -9,7 +9,7 @@
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-02-18T14:06:00.000+09:00",
+        "start": "2026-02-18T14:10:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -89,9 +89,9 @@
       "id": "%5B~Jq",
       "type": "status",
       "status": {
-        "id": "DOao",
-        "name": "발행 완료",
-        "color": "green"
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
       }
     },
     "요약": {
@@ -221,5 +221,5 @@
   },
   "url": "https://www.notion.so/Git-GPG-30922a0f7e838081983ad8ba3c21ba28",
   "public_url": null,
-  "request_id": "fd14ab8c-4b4f-49c9-9456-9a9c7841408a"
+  "request_id": "52167d7a-d76c-4113-909d-e4ecd4aaefc3"
 }
