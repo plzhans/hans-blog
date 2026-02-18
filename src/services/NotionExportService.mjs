@@ -369,7 +369,10 @@ export class NotionExportService {
       ws.write("\n");
 
       if (mdStringObj.parent) {
-        ws.write(this.#fixMarkdownTables(mdStringObj.parent));
+        let md = mdStringObj.parent;
+        md = this.#convertDetailsToShortcode(md);
+        md = this.#fixMarkdownTables(md);
+        ws.write(md);
       }
 
       ws.end();
@@ -744,6 +747,20 @@ export class NotionExportService {
    * @param {string} markdown - 마크다운 문자열
    * @returns {string} 수정된 마크다운 문자열
    */
+  /**
+   * notion-to-md가 toggle 블록을 <details>/<summary> HTML로 출력하면
+   * Hugo(Goldmark)가 내부 마크다운을 파싱하지 않는 문제를 해결.
+   * <details> HTML을 Hugo shortcode {{< details >}} 로 변환한다.
+   */
+  #convertDetailsToShortcode(markdown) {
+    return markdown.replace(
+      /<details>\n<summary>(.*?)<\/summary>\n([\s\S]*?)<\/details>/g,
+      (_, summary, content) => {
+        return `{{< details summary="${summary.replace(/"/g, '\\"')}" >}}\n${content.trim()}\n{{< /details >}}`;
+      }
+    );
+  }
+
   #fixMarkdownTables(markdown) {
     const lines = markdown.split('\n');
     const result = [];
