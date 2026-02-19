@@ -372,6 +372,7 @@ export class NotionExportService {
         let md = mdStringObj.parent;
         md = this.#convertDetailsToShortcode(md);
         md = this.#fixMarkdownTables(md);
+        md = this.#fixKoreanBoldItalic(md);
         ws.write(md);
       }
 
@@ -740,13 +741,20 @@ export class NotionExportService {
   }
 
   // ── 마크다운 후처리 ──
-
+  
   /**
-   * 마크다운 테이블 셀 내 줄바꿈을 <br>로 치환
-   * notion-to-md가 테이블 셀에 실제 줄바꿈을 넣어 마크다운 테이블이 깨지는 문제를 수정
-   * @param {string} markdown - 마크다운 문자열
-   * @returns {string} 수정된 마크다운 문자열
+   * CommonMark 스펙상 닫는 ** 앞이 punctuation이고 뒤가 한글 letter이면
+   * right-flanking 조건 미충족으로 bold/italic이 렌더링되지 않는 문제를 해결.
+   * **text**한글 → <strong>text</strong>한글 로 변환해 마크다운 파싱을 우회한다.
+   * Hugo goldmark.renderer.unsafe = true 이므로 인라인 HTML이 허용됨.
    */
+  #fixKoreanBoldItalic(markdown) {
+    // **text**한글 → <strong>text</strong>한글 (<strong>과 ** 결과 동일, 한글 뒤따를 때 파싱 우회)
+    return markdown
+      .replace(/\*\*([^*\n]+)\*\*([\uAC00-\uD7A3])/g, '<strong>$1</strong>$2')
+      .replace(/(?<!\*)\*(?!\*)([^*\n]+)\*(?!\*)([\uAC00-\uD7A3])/g, '<em>$1</em>$2');
+  }
+
   /**
    * notion-to-md가 toggle 블록을 <details>/<summary> HTML로 출력하면
    * Hugo(Goldmark)가 내부 마크다운을 파싱하지 않는 문제를 해결.
@@ -761,6 +769,12 @@ export class NotionExportService {
     );
   }
 
+  /**
+   * 마크다운 테이블 셀 내 줄바꿈을 <br>로 치환
+   * notion-to-md가 테이블 셀에 실제 줄바꿈을 넣어 마크다운 테이블이 깨지는 문제를 수정
+   * @param {string} markdown - 마크다운 문자열
+   * @returns {string} 수정된 마크다운 문자열
+   */
   #fixMarkdownTables(markdown) {
     const lines = markdown.split('\n');
     const result = [];
