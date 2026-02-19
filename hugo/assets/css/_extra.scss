@@ -512,6 +512,7 @@ body {
 // 썸네일 없는 카드: 요약 더 보이기
 .post-card--no-thumb .post-card-summary {
   -webkit-line-clamp: 10;
+  line-clamp: 10;
 }
 
 .post-card-summary {
@@ -520,6 +521,7 @@ body {
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -925,6 +927,17 @@ body {
   .giscus-comments {
     margin-top: 0.5em;
   }
+}
+
+p > code {
+  background: $darkest-color;
+  color: #e25662;
+  border: 1px solid rgba(#292927, 0.25);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.93em;
+  letter-spacing: -0.03em;
+  word-spacing: -0.1em;
 }
 
 .highlight {
