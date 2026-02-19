@@ -10,7 +10,7 @@ tags:
   - "hugo"
   - "seo"
 date: 2026-02-11T09:55:00.000Z
-lastmod: 2026-02-17T17:06:00.000Z
+lastmod: 2026-02-17T17:08:00.000Z
 toc: true
 draft: false
 images:
@@ -41,34 +41,34 @@ SEO(Search Engine Optimization, 검색 엔진 최적화)는 Google 등 검색 �
 
 ### 1. 절대 URL - Hugo baseURL 설정
 
-- **파일**: `hugo/hugo.toml`
-- **내용**: `baseURL = '`[`https://blog.plzhans.com`](https://blog.plzhans.com/)`'`
+- **​파일**: `hugo/hugo.toml`
+- **​내용**: `baseURL = '`[`https://blog.plzhans.com`](https://blog.plzhans.com/)`'`
 - sitemap.xml, RSS 피드, Open Graph 등에서 올바른 절대 URL이 생성됨
 - Sitemap (`sitemap.xml`), RSS 피드 (`index.xml`)는 Hugo가 자동 생성
 - `hugo server` (개발)에서는 자동으로 [`localhost:1313`](http://localhost:1313/)을 사용하므로 별도 처리 불필요
 
 ### 2. robots.txt 자동 생성
 
-- **파일**: `hugo/hugo.toml`
-- **내용**: `enableRobotsTXT = true`
+- **​파일**: `hugo/hugo.toml`
+- **​내용**: `enableRobotsTXT = true`
 - Hugo 빌드 시 `robots.txt` 자동 생성 (모든 크롤러 허용 + Sitemap URL 포함)
 
 ### 3. [Schema.org](http://schema.org/) 구조화 데이터 (JSON-LD)
 
-- **파일**: `hugo/layouts/_default/single.html`
+- **​파일**: `hugo/layouts/_default/single.html`
 - 글 페이지(`type != "page"`)에 `BlogPosting` JSON-LD 삽입
 - 포함 항목: headline, datePublished, dateModified, author, description, mainEntityOfPage
 - Google 검색 결과에서 리치 스니펫(작성자, 날짜 등) 표시 가능
 
 ### 4. og:image (대표 이미지) / Open Graph
 
-- **파일**: `src/services/NotionExportService.mjs`
+- **​파일**: `src/services/NotionExportService.mjs`
 - Notion 동기화 시 콘텐츠의 첫 번째 이미지를 감지하여 front matter `images` 필드에 자동 추가
 - Open Graph 메타 태그는 Hugo 내장 템플릿(`_internal/opengraph.html`)으로 출력되며, `images`를 `og:image`로 사용
 
 ### 5. meta description / Twitter Card
 
-- **파일**: `src/services/NotionExportService.mjs`
+- **​파일**: `src/services/NotionExportService.mjs`
 - Notion의 "요약" 프로퍼티를 front matter `description` 필드로 출력
 - Hugo 내장 opengraph/twitter_cards 템플릿 및 baseof.html의 meta description에서 사용
 - Twitter Card 메타 태그는 Hugo 내장 템플릿(`_internal/twitter_cards.html`)으로 출력
@@ -76,7 +76,7 @@ SEO(Search Engine Optimization, 검색 엔진 최적화)는 Google 등 검색 �
 
 ### 6. Canonical URL
 
-- **파일**: `hugo/layouts/_default/baseof.html`
+- **​파일**: `hugo/layouts/_default/baseof.html`
 - 테마(`m10c`)의 `baseof.html`을 오버라이드하여 `<link rel="canonical">` 태그 추가
 - `.Permalink`을 canonical URL로 사용
 - 다국어 hreflang 태그도 함께 포함 (번역 페이지 존재 시 `alternate` + `x-default` 출력)
@@ -197,7 +197,7 @@ defaultContentLanguageInSubdir = true
 ### 4. hreflang 태그 생성
 
 
-**콘텐츠 파일에 translationKey 설정**
+**​콘텐츠 파일에 translationKey 설정**
 
 
 ```markdown
@@ -231,30 +231,30 @@ title: "Redis dump vs aof"
 Hugo에서 게시물 주소를 설정할 때 `url` 대신 `slug`를 사용해야 한다.
 
 
-**원인**
+**​원인**
 
 - `slug`로 설정하면 `/ko/`, `/en/` 등 언어 접두사가 자동으로 추가됨
 - `url`로 강제 지정하면 Hugo가 언어 코드를 자동으로 추가하지 않음
 - `url` 사용 시 `/ko/post/example`, `/en/post/example`처럼 각 언어별로 url 자체에 언어 코드를 직접 넣어줘야 함
 - `url`에 언어 코드 없이 동일한 경로를 지정하면 서로 다른 언어의 게시물이 동일한 URL을 가지게 되어 충돌 발생
 
-**해결**
+**​해결**
 
 - `url` 대신 `slug` 사용으로 전환
 - `hugo.toml`에서 `defaultContentLanguageInSubdir = true` 설정하여 기본 언어를 포함한 모든 언어가 서브디렉토리 구조를 갖도록 함
 
-**참고**
+**​참고**
 
 - `slug`만 지정하면 언어 코드는 자동 추가되지만, slug 자체가 특정 언어로 작성된 경우 각 언어별로 번역해야 한다. slug는 영어로 작성하는 것을 권장한다.
 
 ### translationKey 추가했으나 hreflang 미생성
 
 
-**원인**
+**​원인**
 
 - 테마가 hreflang 태그 생성을 지원하지 않음.
 
-**해결**
+**​해결**
 
 - baseof.html에 hreflang 관련 코드를 오버라이딩하여 추가
 

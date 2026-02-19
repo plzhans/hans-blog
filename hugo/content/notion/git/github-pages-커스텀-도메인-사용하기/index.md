@@ -12,7 +12,7 @@ tags:
   - "domain"
   - "github-pages"
 date: 2026-02-10T07:34:00.000Z
-lastmod: 2026-02-17T17:07:00.000Z
+lastmod: 2026-02-17T17:08:00.000Z
 toc: true
 draft: false
 images:
@@ -47,7 +47,7 @@ GitHub Pages는 기본적으로 `https://{계정명}.`[`github.io/{저장소명}
 ![](./assets/2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png)
 
 
-**설정 예시**
+**​설정 예시**
 
 - Type: CNAME
 - Name: 서브도메인 (예: hugosample)
@@ -59,7 +59,7 @@ GitHub Pages는 기본적으로 `https://{계정명}.`[`github.io/{저장소명}
 Repository → Settings → Pages → Custom domain에서 커스텀 도메인을 입력한다.
 
 
-**입력 예시:** hugosample.plzhans.com
+**​입력 예시:** hugosample.plzhans.com
 
 
 ![](./assets/3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png)
@@ -84,7 +84,7 @@ DNS 제공업체에 따라 A, AAAA 또는 ALIAS 레코드를 설정한다.
 | ALIAS 또는 ANAME | @    | USERNAME.github.io                                                              |
 
 
-**참고:** ALIAS/ANAME 레코드를 지원하지 않는 DNS 제공업체는 A 레코드를 사용한다.
+**​참고:** ALIAS/ANAME 레코드를 지원하지 않는 DNS 제공업체는 A 레코드를 사용한다.
 
 
 ## GitHub Pages 설정
@@ -93,7 +93,7 @@ DNS 제공업체에 따라 A, AAAA 또는 ALIAS 레코드를 설정한다.
 Repository → Settings → Pages → Custom domain에서 커스텀 도메인을 입력한다.
 
 
-**입력 예시:** plzhans.com
+**​입력 예시:** plzhans.com
 
 
 # HTTPS 활성화
