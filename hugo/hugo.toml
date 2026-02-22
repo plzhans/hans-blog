@@ -11,7 +11,7 @@ theme = "m10c"
 # 기본 콘텐츠 언어
 defaultContentLanguage = "ko"
 # 기본 언어도 서브디렉토리에 포함 (/ko/)
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 
 # robots.txt 파일 자동 생성
 enableRobotsTXT = true
