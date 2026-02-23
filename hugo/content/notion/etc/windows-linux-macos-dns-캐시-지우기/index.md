@@ -6,10 +6,8 @@ title: "Windows/Linux/macOS DNS 캐시 지우기"
 description: "DNS 레코드를 변경했는데도 반영이 느릴 때, Windows, Linux, macOS에서 DNS 캐시를 비우는 방법을 정리했습니다. ipconfig /flushdns, resolvectl(systemd-resolved) 등 OS별 명령과 확인 방법을 포함하며, TTL 및 리졸버/네임서버 캐싱 정책으로 전파 지연이 발생할 수 있다는 점과 브라우저 재시작(전체 종료) 필요도 함께 안내합니다."
 categories:
   - etc
-tags:
-  - "dns"
-date: 2019-06-19T02:14:00.000Z
-lastmod: 2026-02-22T16:09:00.000Z
+date: 2026-02-22T16:11:00.000Z
+lastmod: 2026-02-22T16:13:00.000Z
 toc: true
 draft: false
 images:
@@ -35,7 +33,9 @@ images:
 > ⚠️ **로컬 캐시를 비워도 즉시 반영되지 않을 수 있습니다**  
 > 로컬 캐시를 비워도 DNS 리졸버나 네임서버의 캐싱 정책에 의해 **TTL이 남아 있으면** 변경이 바로 전파되지 않을 수 있습니다.  
 >   
+>   
 > 이 경우에는 **일정 시간이 지난 뒤에야** 새로운 레코드가 반영됩니다.  
+>   
 >   
 > 브라우저를 사용 중이라면 브라우저 자체 캐시 때문에 이전 결과가 보일 수 있으니, <strong>실행 중인 브라우저를 모두 종료</strong>한 뒤 다시 확인하세요.
 
