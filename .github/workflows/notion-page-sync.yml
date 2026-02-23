@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name "notion-webhook[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add hugo/content/
+          git add content/
           if git diff --cached --quiet; then
             echo "No content changes to commit"
             echo "changed=false" >> $GITHUB_OUTPUT

@@ -75,7 +75,7 @@ yargs(hideBin(process.argv))
               "database_id is required (argument or NOTION_DATABASE_ID env)"
             );
           }
-          const outDir = process.env.HUGO_CONTENT_DIR || "hugo/content/notion";
+          const outDir = process.env.HUGO_CONTENT_DIR || "content/notion";
           const service = createService();
           await service.syncPulishByDatabase(argv.database_id, outDir, argv.draft);
         }
@@ -100,7 +100,7 @@ yargs(hideBin(process.argv))
               "page_id is required"
             );
           }
-          const outDir = process.env.HUGO_CONTENT_DIR || "hugo/content/notion";
+          const outDir = process.env.HUGO_CONTENT_DIR || "content/notion";
           const service = createService();
           await service.syncPublishPage(argv.page_id, outDir);
         }

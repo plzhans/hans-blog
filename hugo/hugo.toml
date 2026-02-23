@@ -16,8 +16,8 @@ defaultContentLanguageInSubdir = false
 # robots.txt 파일 자동 생성
 enableRobotsTXT = true
 # 콘텐츠 디렉토리 경로 (기본값: content)
-#contentDir = "contents"
-
+contentDir = "../content"
+  
 # 다국어 설정
 [languages]
   [languages.ko]
@@ -53,7 +53,7 @@ enableRobotsTXT = true
     name = "Source"
     url = "https://github.com/plzhans/hans-blog"
     branch = "master"
-    contentPrefix = "hugo/content"
+    contentPrefix = "content"
   [[params.social]]
     icon = "mail"
     name = "Email"

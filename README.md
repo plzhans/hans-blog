@@ -62,7 +62,7 @@ npm install
 ### Notion 작성글 변환
 
 Notion에서 작성한 글을 Markdown 파일로 변환하여
-[`hugo/content/`](hugo/content/) 하위에 생성합니다.
+[`content/`](content/) 하위에 생성합니다.
 
 로컬에서 실행할 때 환경변수가 필요합니다.
 [`.env.sample`](.env.sample)을 복사하여 `.env` 파일을 만들고 값을 채워주세요.
@@ -180,4 +180,4 @@ hugo gen chromastyles --style=monokai > hugo/assets/css/syntax.css
 
 소스 코드는 [MIT License](LICENSE)로 제공됩니다.
 
-블로그 콘텐츠(`hugo/content/` 하위의 글, 이미지)는 저작권자(plzhans)에게 있으며, 무단 복제 및 배포를 금지합니다.
+블로그 콘텐츠(`content/` 하위의 글, 이미지)는 저작권자(plzhans)에게 있으며, 무단 복제 및 배포를 금지합니다.
