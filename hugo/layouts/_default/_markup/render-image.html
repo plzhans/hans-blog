@@ -1,0 +1,7 @@
+{{- $src := .Destination -}}
+{{- if strings.HasPrefix $src "./assets/" -}}
+  {{- $basePath := .Page.RelPermalink | strings.TrimPrefix (printf "/%s/" .Page.Language.Lang) -}}
+  {{- if not (strings.HasPrefix $basePath "/") }}{{- $basePath = printf "/%s" $basePath }}{{- end -}}
+  {{- $src = printf "%s%s" $basePath (strings.TrimPrefix "./" $src) -}}
+{{- end -}}
+<img src="{{ $src }}"{{ with .Text }} alt="{{ . }}"{{ end }}{{ with .Title }} title="{{ . }}"{{ end }}>

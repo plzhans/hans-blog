@@ -4,12 +4,18 @@
     {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
     <div class="posts-card-grid">
       {{ range where .Paginator.Pages "Type" "!=" "page" }}
-        {{- $post := . }}
-        <a class="post-card{{ if not .Params.images }} post-card--no-thumb{{ end }}" href="{{ .RelPermalink }}">
-          {{- with .Params.images }}
+        {{- $post := . -}}
+        {{- $thumbPost := $post -}}
+        {{- if ne $post.Language.Lang (index $.Site.Languages 0).Lang -}}
+          {{- range $post.AllTranslations -}}
+            {{- if eq .Language.Lang (index $.Site.Languages 0).Lang -}}{{- $thumbPost = . -}}{{- end -}}
+          {{- end -}}
+        {{- end -}}
+        <a class="post-card{{ if not $thumbPost.Params.images }} post-card--no-thumb{{ end }}" href="{{ $post.RelPermalink }}">
+          {{- with $thumbPost.Params.images }}
           <div class="post-card-thumbnail">
-            {{- $langPrefix := printf "/%s/" $post.Language.Lang -}}
-            {{- $imgBase := $post.RelPermalink | strings.TrimPrefix $langPrefix | printf "/ko/%s" -}}
+            {{- $imgBase := $post.RelPermalink | strings.TrimPrefix (printf "/%s/" $post.Language.Lang) -}}
+            {{- if not (strings.HasPrefix $imgBase "/") }}{{- $imgBase = printf "/%s" $imgBase }}{{- end -}}
             <img src="{{ $imgBase }}{{ index . 0 }}" alt="" loading="lazy">
           </div>
           {{- end }}
