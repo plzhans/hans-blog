@@ -12,8 +12,13 @@ tags:
 date: 2026-02-06T11:34:00.000+09:00
 lastmod: 2026-02-11T08:29:00.000Z
 toc: true
+images:
+  - "assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png"
 draft: false
 ---
+
+
+![](./assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png)
 
 
 ## Goal

@@ -13,8 +13,13 @@ categories:
 date: 2026-01-29T10:44:00.000+09:00
 lastmod: 2026-02-10T08:23:00.000Z
 toc: true
+images:
+  - "assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png"
 draft: false
 ---
+
+
+![](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
 
 
 > 💡 **構築環境**
