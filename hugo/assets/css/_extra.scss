@@ -1226,6 +1226,11 @@ table {
   }
 }
 
+// Details / Toggle
+details summary {
+  cursor: pointer;
+}
+
 // 인쇄 스타일
 @media print {
   // 본문만 표시
