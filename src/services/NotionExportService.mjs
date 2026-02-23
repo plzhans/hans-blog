@@ -196,7 +196,7 @@ export class NotionExportService {
 
     if (this.hugoBaseUrl && slug) {
       properties[this.propertyKeys.publishUrl] = {
-        url: `${this.hugoBaseUrl}/ko/${postId}-${slug}/`,
+        url: `${this.hugoBaseUrl}/${postId}-${slug}/`,
       };
     }
 
@@ -343,10 +343,46 @@ export class NotionExportService {
       }
       return result.markdown;
     });
-    n2m.setCustomTransformer("paragraph", async (block) => {
-      return this.transformCommonBlock(block, existsPageMap);
+    n2m.setCustomTransformer("callout", async (block) => {
+      const blockData = block.callout;
+
+      // callout 자체 텍스트 추출 (annotations 포함)
+      let calloutText = "";
+      const richTexts = blockData.text || blockData.rich_text || [];
+      for (const content of richTexts) {
+        if (content.type === "equation") {
+          calloutText += `$${content.equation.expression}$`;
+          continue;
+        }
+        let plain_text = content.plain_text;
+        plain_text = n2m.annotatePlainText(plain_text, content.annotations);
+        if (content.href) plain_text = `[${plain_text}](${content.href})`;
+        calloutText += plain_text;
+      }
+
+      if (!block.has_children) {
+        return this.#formatCalloutMd(calloutText, blockData.icon);
+      }
+
+      // 자식 블록 조회 및 마크다운 변환 (toggle의 <details> 포함)
+      const resp = await this.notionClient.blocks.children.list({
+        block_id: block.id,
+        page_size: 100,
+      });
+      const childMdBlocks = await n2m.blocksToMarkdown(resp.results);
+      const childMdStr = n2m.toMarkdownString(childMdBlocks);
+
+      let fullContent = calloutText;
+      if (childMdStr.parent?.trim()) {
+        fullContent += "\n" + childMdStr.parent.trim();
+      }
+
+      // <details> 내부의 quote("> text") prefix를 제거
+      // #formatCalloutMd가 모든 줄에 "> "를 추가하므로 이중 prefix 방지
+      const processedContent = this.#stripQuoteMarkerInDetails(fullContent.trim());
+      return this.#formatCalloutMd(processedContent, blockData.icon);
     });
-    n2m.setCustomTransformer("bulleted_list_item", async (block) => {
+    n2m.setCustomTransformer("paragraph", async (block) => {
       return this.transformCommonBlock(block, existsPageMap);
     });
 
@@ -738,6 +774,69 @@ export class NotionExportService {
     } catch (e) {
       console.warn(`⚠️ Failed to set file time: ${e.message}`);
     }
+  }
+
+  // ── callout 포맷 헬퍼 ──
+
+  /**
+   * <details> 내부 인용절("> text")에 빈 줄을 추가해 Goldmark가 blockquote로 처리하게 함.
+   * "> " prefix는 유지 → #formatCalloutMd가 "> "를 추가해 "> > text"가 되고,
+   * Goldmark가 외부 blockquote의 "> "를 제거하면 "> text"(markdown blockquote)로 렌더링됨.
+   * 빈 줄이 없으면 <summary> HTML 블록에 흡수되어 raw text로 출력되므로 빈 줄 필수.
+   */
+  #stripQuoteMarkerInDetails(content) {
+    const lines = content.split("\n");
+    let depth = 0;
+    const result = [];
+    let inQuoteGroup = false;
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (/<details(\s|>)/.test(trimmed)) depth++;
+
+      if (depth > 0 && line.startsWith("> ")) {
+        // 인용 그룹 시작 전 빈 줄 (HTML 블록에서 분리)
+        if (!inQuoteGroup && result.length > 0 && result[result.length - 1] !== "") {
+          result.push("");
+        }
+        inQuoteGroup = true;
+        result.push(line); // "> " prefix 유지
+      } else {
+        // 인용 그룹 종료 후 빈 줄
+        if (inQuoteGroup && result.length > 0 && result[result.length - 1] !== "") {
+          result.push("");
+        }
+        inQuoteGroup = false;
+        result.push(line);
+      }
+
+      if (trimmed === "</details>") depth--;
+    }
+
+    return result.join("\n");
+  }
+
+
+  /**
+   * notion-to-md의 md.callout과 동일한 포맷으로 callout 마크다운 생성
+   * @param {string} text - callout 내용 (자식 블록 포함)
+   * @param {Object} icon - Notion icon 객체
+   * @returns {string} 마크다운 blockquote 문자열
+   */
+  #formatCalloutMd(text, icon) {
+    let emoji;
+    if (icon?.type === "emoji") {
+      emoji = icon.emoji;
+    }
+    const formattedText = text.replace(/\n/g, "  \n> ");
+    const formattedEmoji = emoji ? emoji + " " : "";
+    const headingMatch = formattedText.match(/^(#{1,6})\s+([.*\s\S]+)/);
+    if (headingMatch) {
+      const headingLevel = headingMatch[1].length;
+      const headingContent = headingMatch[2];
+      return `> ${"#".repeat(headingLevel)} ${formattedEmoji}${headingContent}`;
+    }
+    return `> ${formattedEmoji}${formattedText}`;
   }
 
   // ── 마크다운 후처리 ──
