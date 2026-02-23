@@ -5,8 +5,9 @@ on:
     branches:
       - master
     paths:
-      - "hugo/**"
       - ".github/workflows/**"
+      - "hugo/**"
+      - "content/**"
 
   workflow_dispatch:
 
