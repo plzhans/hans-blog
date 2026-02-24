@@ -3,11 +3,13 @@ id: "6"
 translationKey: "6"
 slug: "6-flush-dns-cache"
 title: "Windows/Linux/macOS DNS 캐시 지우기"
-description: "DNS 레코드를 변경했는데도 반영이 느릴 때, Windows, Linux, macOS에서 DNS 캐시를 비우는 방법을 정리했습니다. ipconfig /flushdns, resolvectl(systemd-resolved) 등 OS별 명령과 확인 방법을 포함하며, TTL 및 리졸버/네임서버 캐싱 정책으로 전파 지연이 발생할 수 있다는 점과 브라우저 재시작(전체 종료) 필요도 함께 안내합니다."
+description: "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요."
 categories:
-  - etc
+  - "infra"
+tags:
+  - "dns"
 date: 2026-02-22T16:11:00.000Z
-lastmod: 2026-02-22T16:13:00.000Z
+lastmod: 2026-02-24T15:39:00.000Z
 toc: true
 draft: false
 images:
