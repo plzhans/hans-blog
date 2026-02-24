@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-24T08:22:45.823Z",
+  "generated_at": "2026-02-24T09:06:42.623Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/posts/80-redis-dump-vs-aof/",
       "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 59
+      "count": 60
     },
     {
       "rank": 3,
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
+      "description": "",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 5
+    },
+    {
+      "rank": 6,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + Github 블로그 만들기",
       "description": "Hugo 정적 사이트 생성기와 GitHub Pages를 활용한 개인 블로그 구축 가이드입니다. Hugo 설치, m10c 테마 적용, 로컬 개발 환경 설정부터 GitHub Actions를 통한 자동 배포 파이프라인 구성까지 전체 과정을 단계별로 설명합니다. Jekyll 대비 빠른 빌드 속도와 노션-마크다운 기반 작성 워크플로우를 채택한 이유도 포함합니다.",
@@ -72,7 +85,7 @@
       "count": 4
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "hugo site 다국어 지원하기",
       "description": "Hugo 정적 사이트 생성기로 다국어 블로그를 구축할 때 필요한 SEO 최적화 및 다국어 설정 방법을 설명합니다. sitemap.xml, robots.txt, Schema.org JSON-LD, Open Graph, meta description 등 검색 엔진 최적화 설정을 자동화하고, HTML lang 속성, hreflang 태그, canonical URL을 통해 다국어 콘텐츠의 중복 문제를 방지하는 방법을 다룹니다. hugo.toml에서 defaultContentLanguageInSubdir 설정, translationKey로 언어 간 연결, 테마 baseof.html 오버라이드를 통한 SEO 태그 추가 방법을 설명하며, url 대신 slug 사용으로 언어별 URL 충돌을 해결하는 실전 트러블슈팅을 제공합니다.",
@@ -85,7 +98,7 @@
       "count": 3
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "88-github-gpg-commit-signing",
       "title": "Git에서 GPG로 커밋 서명하기",
       "description": "Git 커밋 서명을 GPG로 설정하는 과정을 단계별로 정리했습니다. GnuPG 설치부터 키 생성과 내보내기까지 다룹니다. Git에서 자동 서명을 설정하는 방법을 설명합니다. 로컬에서 서명 검증하는 방법을 안내합니다. GitHub에 공개키를 등록해 Verified 배지를 확인하는 흐름을 정리했습니다.",
@@ -98,7 +111,7 @@
       "count": 2
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
       "description": "HTTPS TLS/SSL 인증서 발급 방법(유료/무료/클라우드)과 실무 구현 전략을 정리한 가이드. 인증서 검증 흐름, 비대칭키와 대칭키를 조합한 암호화 방식, 발급 방법별 비교, TLS 종단 지점 최소화 전략 등 프로덕션 환경에서 HTTPS를 안전하고 효율적으로 구성하는 방법을 다룬다.",
@@ -108,19 +121,6 @@
       ],
       "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 1
-    },
-    {
-      "rank": 9,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
-      "description": "",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 1
     }
   ]

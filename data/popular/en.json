@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-24T08:22:45.826Z",
+  "generated_at": "2026-02-24T09:06:42.626Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/en/posts/80-redis-dump-vs-aof/",
       "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 59
+      "count": 60
     },
     {
       "rank": 3,
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "Encrypting .env Files with GPG for Safe Commits",
+      "description": "",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 5
+    },
+    {
+      "rank": 6,
       "slug": "94-hugo-github-blog",
       "title": "Building a Blog with Hugo + GitHub",
       "description": "A guide to building a personal blog using the Hugo static site generator and GitHub Pages. It covers the entire process step by step, from Hugo installation, m10c theme setup, and local development environment configuration to automated deployment pipeline setup with GitHub Actions. It also includes the reasons for choosing faster build speed compared to Jekyll and the Notion-Markdown based writing workflow.",
@@ -72,7 +85,7 @@
       "count": 4
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Supporting Multiple Languages on a Hugo Site",
       "description": "This guide explains SEO optimization and multilingual configuration for building a multilingual blog with the Hugo static site generator. It covers automating search engine optimization settings such as sitemap.xml, robots.txt, Schema.org JSON-LD, Open Graph, and meta description, as well as preventing duplicate content issues for multilingual content using HTML lang attributes, hreflang tags, and canonical URLs. It explains the defaultContentLanguageInSubdir setting in hugo.toml, linking languages with translationKey, overriding the theme's baseof.html to add SEO tags, and provides practical troubleshooting for resolving language-specific URL conflicts by using slug instead of url.",
@@ -85,7 +98,7 @@
       "count": 3
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "88-github-gpg-commit-signing",
       "title": "Signing Git Commits with GPG",
       "description": "A step-by-step guide to setting up GPG commit signing in Git. Covers GnuPG installation, key generation and export, configuring Git for automatic signing, verifying signatures locally, and registering your public key on GitHub to display the Verified badge.",
@@ -98,7 +111,7 @@
       "count": 2
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "A guide to HTTPS TLS/SSL certificate issuance methods (paid/free/cloud) and practical implementation strategies. Covers certificate verification flow, combined asymmetric and symmetric key encryption, comparison of issuance methods, TLS termination point minimization strategies, and how to configure HTTPS safely and efficiently in production environments.",
@@ -108,19 +121,6 @@
       ],
       "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 1
-    },
-    {
-      "rank": 9,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 1
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-24T08:22:45.828Z",
+  "generated_at": "2026-02-24T09:06:42.628Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/ja/posts/80-redis-dump-vs-aof/",
       "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 59
+      "count": 60
     },
     {
       "rank": 3,
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPGで.envファイルを暗号化して安全にコミットする",
+      "description": "",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 5
+    },
+    {
+      "rank": 6,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + GitHubでブログを作る",
       "description": "Hugo静的サイトジェネレーターとGitHub Pagesを活用した個人ブログ構築ガイドです。Hugoのインストール、m10cテーマの適用、ローカル開発環境の設定からGitHub Actionsによる自動デプロイパイプラインの構成まで、全プロセスをステップバイステップで説明します。Jekyllと比較して高速なビルド速度とNotion-Markdownベースの執筆ワークフローを採用した理由も含みます。",
@@ -72,7 +85,7 @@
       "count": 4
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Hugo サイトの多言語対応",
       "description": "Hugo 静的サイトジェネレーターで多言語ブログを構築する際に必要な SEO 最適化および多言語設定方法を説明します。sitemap.xml、robots.txt、Schema.org JSON-LD、Open Graph、meta description などの検索エンジン最適化設定を自動化し、HTML lang 属性、hreflang タグ、canonical URL を通じて多言語コンテンツの重複問題を防止する方法を扱います。hugo.toml での defaultContentLanguageInSubdir 設定、translationKey による言語間の連携、テーマの baseof.html オーバーライドによる SEO タグ追加方法を説明し、url の代わりに slug を使用して言語別 URL 衝突を解決する実践的なトラブルシューティングを提供します。",
@@ -85,7 +98,7 @@
       "count": 3
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "88-github-gpg-commit-signing",
       "title": "GitでGPGを使ってコミットに署名する",
       "description": "GitでGPGコミット署名を設定する手順をまとめました。GnuPGのインストールからキーの生成とエクスポートまでを説明します。Gitでの自動署名の設定方法も解説します。ローカルでの署名検証の方法も案内します。GitHubに公開鍵を登録してVerifiedバッジを確認する流れも整理しました。",
@@ -98,7 +111,7 @@
       "count": 2
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
       "description": "HTTPS TLS/SSL証明書発行方法(有料/無料/クラウド)と実務実装戦略をまとめたガイド。証明書検証フロー、非対称鍵と対称鍵を組み合わせた暗号化方式、発行方法別比較、TLS終端ポイント最小化戦略など、プロダクション環境でHTTPSを安全かつ効率的に構成する方法を扱う。",
@@ -108,19 +121,6 @@
       ],
       "url": "/ja/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 1
-    },
-    {
-      "rank": 9,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPGで.envファイルを暗号化して安全にコミットする",
-      "description": "",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 1
     }
   ]
