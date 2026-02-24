@@ -7,9 +7,9 @@ description: "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로
 categories:
   - "git"
 tags:
-  - "hugo"
   - "github-action"
   - "github-pages"
+  - "hugo"
 date: 2026-02-10T08:46:00.000Z
 lastmod: 2026-02-24T15:40:00.000Z
 toc: true

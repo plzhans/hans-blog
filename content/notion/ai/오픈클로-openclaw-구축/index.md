@@ -7,8 +7,8 @@ description: "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고
 categories:
   - "ai"
 tags:
-  - "OpenClaw"
   - "ai"
+  - "OpenClaw"
 date: 2026-02-23T10:10:00.000Z
 lastmod: 2026-02-24T15:40:00.000Z
 toc: true

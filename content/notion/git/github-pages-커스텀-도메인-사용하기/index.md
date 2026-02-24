@@ -7,9 +7,9 @@ description: "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA
 categories:
   - "git"
 tags:
+  - "domain"
   - "github"
   - "github-action"
-  - "domain"
   - "github-pages"
 date: 2026-02-10T07:34:00.000Z
 lastmod: 2026-02-24T15:40:00.000Z

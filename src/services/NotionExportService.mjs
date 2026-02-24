@@ -937,9 +937,10 @@ export class NotionExportService {
     } else {
       ws.write(`  - etc\n`);
     }
-    if(tags.length > 0){
+    const uniqueTags = [...new Set(tags)].sort();
+    if(uniqueTags.length > 0){
       ws.write("tags:\n");
-      for(const tag of tags){
+      for(const tag of uniqueTags){
         ws.write(`  - "${tag.replace(/"/g, '\\"')}"\n`);
       }
     }

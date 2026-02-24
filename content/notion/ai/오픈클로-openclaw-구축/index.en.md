@@ -7,8 +7,8 @@ description: "Install the OpenClaw AI agent framework locally, walk through the 
 categories:
   - "ai"
 tags:
-  - "OpenClaw"
   - "ai"
+  - "OpenClaw"
 date: 2026-02-23T10:10:00.000Z
 lastmod: 2026-02-23T15:30:00.000Z
 toc: true

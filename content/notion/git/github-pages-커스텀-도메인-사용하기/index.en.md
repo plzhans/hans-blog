@@ -5,10 +5,10 @@ slug: "86-github-pages-custom-domain"
 title: "Using a Custom Domain with GitHub Pages"
 description: "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast."
 tags:
+  - "domain"
   - "github"
   - "github-action"
   - "github-pages"
-  - "domain"
 categories:
   - "Git"
 date: 2026-02-04T18:07:00.000+09:00

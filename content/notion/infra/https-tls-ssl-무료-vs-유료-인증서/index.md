@@ -7,9 +7,9 @@ description: "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름
 categories:
   - "infra"
 tags:
+  - "acme"
   - "https"
   - "ssl"
-  - "acme"
 date: 2026-02-06T06:29:00.000Z
 lastmod: 2026-02-24T15:40:00.000Z
 toc: true
