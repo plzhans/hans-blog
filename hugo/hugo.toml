@@ -90,6 +90,20 @@ dataDir = "../data"
   category = "categories"
   tag = "tags"
 
+[related]
+  includeNewer = true
+  threshold = 50
+  toLower = false
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 70
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
 # URL 구조 설정 - slug만 사용
 [permalinks]
   notion = "/posts/:slug/"

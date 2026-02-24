@@ -13,6 +13,9 @@ other = "この記事は<a href=\"https://www.notion.so\" target=\"_blank\" rel=
 [related_posts_title]
 other = "{{ . }}カテゴリの他の記事"
 
+[hugo_related_posts_title]
+other = "おすすめ記事"
+
 [redirect_message]
 other = "ページが移動されました。自動的にリダイレクトされない場合は、以下のリンクをクリックしてください。"
 

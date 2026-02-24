@@ -103,16 +103,17 @@
         {{- end }}
         {{- end }}
         {{- $currentPage := . }}
+        {{- $currentLang := .Language.Lang }}
         {{- $categories := .GetTerms "categories" }}
+        {{- $categoryPosts := slice }}
         {{- if $categories }}
           {{- $firstCategory := index $categories 0 }}
-          {{- $relatedPosts := where $firstCategory.Pages "Permalink" "ne" $currentPage.Permalink }}
-          {{- $relatedPosts = first 5 $relatedPosts }}
-          {{- if $relatedPosts }}
+          {{- $categoryPosts = where $firstCategory.Pages "Permalink" "ne" $currentPage.Permalink | first 5 }}
+          {{- if $categoryPosts }}
         <div class="related-posts">
           <h3 class="related-posts-title">{{ i18n "related_posts_title" $firstCategory.Title }}</h3>
           <ul class="related-posts-list">
-            {{- range $relatedPosts }}
+            {{- range $categoryPosts }}
             <li>
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
               <span class="related-posts-date">{{ .PublishDate.Format "2006-01-02" }}</span>
@@ -121,6 +122,21 @@
           </ul>
         </div>
           {{- end }}
+        {{- end }}
+        {{- $hugoRelatedAll := (where .Site.RegularPages "Language.Lang" $currentLang).Related . }}
+        {{- $hugoRelated := complement $categoryPosts $hugoRelatedAll | first 5 }}
+        {{- if $hugoRelated }}
+        <div class="related-posts">
+          <h3 class="related-posts-title">{{ i18n "hugo_related_posts_title" }}</h3>
+          <ul class="related-posts-list">
+            {{- range $hugoRelated }}
+            <li>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              <span class="related-posts-date">{{ .PublishDate.Format "2006-01-02" }}</span>
+            </li>
+            {{- end }}
+          </ul>
+        </div>
         {{- end }}
         <div class="post-footer">
           {{- with .Site.Params.giscus }}

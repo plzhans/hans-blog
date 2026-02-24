@@ -13,6 +13,9 @@ other = "This post was written in <a href=\"https://www.notion.so\" target=\"_bl
 [related_posts_title]
 other = "Other posts in {{ . }}"
 
+[hugo_related_posts_title]
+other = "Recommended Posts"
+
 [redirect_message]
 other = "This page has moved. If you are not redirected automatically, please click the link below."
 
