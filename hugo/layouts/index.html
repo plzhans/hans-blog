@@ -1,8 +1,8 @@
 {{ define "main" }}
   <article>
-    <div class="posts-section-header">
-      <span class="posts-section-title">{{ i18n "latest_posts" }}</span>
-      <a class="posts-section-link" href="{{ "/popular/" | relLangURL }}">{{ i18n "popular_posts" }} →</a>
+    <div class="posts-tabs-nav">
+      <span class="posts-tab-nav-btn active">{{ i18n "latest_posts" }}</span>
+      <a class="posts-tab-nav-btn" href="{{ "/popular/" | relLangURL }}">{{ i18n "popular_posts" }}</a>
     </div>
 
     {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}

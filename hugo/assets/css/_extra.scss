@@ -427,30 +427,32 @@ body {
   }
 }
 
-// 섹션 헤더 (최신글 + 인기글 링크)
-.posts-section-header {
+// 페이지 탭 네비게이션
+.posts-tabs-nav {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  gap: 0;
   margin-bottom: 1em;
   border-bottom: 2px solid rgba($light-color, 0.12);
-  padding-bottom: 0.3em;
 }
 
-.posts-section-title {
+.posts-tab-nav-btn {
+  padding: 0.3em 0.8em 0.3em 0;
   font-size: 1.6em;
   font-weight: 700;
-  color: $lightest-color;
-}
-
-.posts-section-link {
-  font-size: 0.9em;
-  color: rgba($light-color, 0.5);
+  color: rgba($light-color, 0.35);
   text-decoration: none;
-  transition: color 0.2s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
 
   &:hover {
-    color: $primary-color;
+    color: rgba($lightest-color, 0.7);
+  }
+
+  &.active {
+    color: $lightest-color;
+    border-bottom-color: $primary-color;
+    cursor: default;
   }
 }
 
