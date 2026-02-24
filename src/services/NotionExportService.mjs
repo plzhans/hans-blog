@@ -196,7 +196,7 @@ export class NotionExportService {
 
     if (this.hugoBaseUrl && slug) {
       properties[this.propertyKeys.publishUrl] = {
-        url: `${this.hugoBaseUrl}/${postId}-${slug}/`,
+        url: `${this.hugoBaseUrl}/posts/${slug}/`,
       };
     }
 
@@ -677,10 +677,9 @@ export class NotionExportService {
 
     try {
       const meta = JSON.parse(fs.readFileSync(metaFilePath, "utf-8"));
-      const postId = this.#extractPagePostId(meta, this.propertyKeys.uniqueId);
       const slug = this.#extractTextProperty(meta.properties, this.propertyKeys.slug);
       if (!slug) return null;
-      return `../${postId}-${slug}/`;
+      return `../${slug}/`;
     } catch (e) {
       console.warn(`⚠️ Failed to resolve Notion link: ${url}`, e);
       return null;
@@ -924,7 +923,7 @@ export class NotionExportService {
     ws.write("---\n");
     ws.write(`id: "${uniqueId}"\n`);
     ws.write(`translationKey: "${uniqueId}"\n`);
-    ws.write(`slug: "${uniqueId}-${slug}"\n`);
+    ws.write(`slug: "${slug}"\n`);
     ws.write(`title: "${title.replace(/"/g, '\\"')}"\n`);
     if(summary){
       ws.write(`description: "${summary.replace(/"/g, '\\"')}"\n`);

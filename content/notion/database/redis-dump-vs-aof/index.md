@@ -1,7 +1,7 @@
 ---
 id: "80"
 translationKey: "80"
-slug: "80-80-redis-dump-vs-aof"
+slug: "80-redis-dump-vs-aof"
 title: "Redis dump vs aof"
 description: "Redis 퍼시스턴스에서 RDB(Dump), AOF, Hybrid AOF 차이와 redis.conf 핵심 설정을 비교 정리했습니다. BGSAVE·fsync·COW 영향과 선택 기준을 이해해 데이터 유실 위험과 재시작 시간을 균형 있게 최적화하세요."
 categories:
