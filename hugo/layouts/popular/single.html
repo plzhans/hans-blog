@@ -1,0 +1,28 @@
+{{ define "main" }}
+  {{ $lang := .Language.Lang }}
+  {{ $data := index .Site.Data.popular $lang }}
+  <article>
+    <h1 class="posts-section-title">{{ i18n "popular_posts" }}</h1>
+    {{ if $data }}
+    <div class="posts-card-grid">
+      {{ range $data.posts }}
+      <a class="post-card{{ if not .image }} post-card--no-thumb{{ end }}" href="{{ .url }}">
+        {{ with .image }}
+        <div class="post-card-thumbnail">
+          <img src="{{ . }}" alt="" loading="lazy">
+        </div>
+        {{ end }}
+        <div class="post-card-body">
+          <span class="post-card-title">{{ .title }}</span>
+          {{ with .description }}<span class="post-card-summary">{{ . }}</span>{{ end }}
+          <div class="post-card-footer">
+            {{ with index .categories 0 }}<span class="post-card-category">{{ . }}</span>{{ end }}
+            {{ with .date }}<span class="post-card-date">{{ . | time.AsTime | time.Format "2006-01-02" }}</span>{{ end }}
+          </div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </article>
+{{ end }}

@@ -43,6 +43,18 @@
       "args": ["page", "sync", "${input:pageId}"],
       "envFile": "${workspaceFolder}/.env",
       "console": "internalConsole"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "(debug) ga4 export",
+      "runtimeExecutable": "${env:NVM_DIR}/nvm-exec",
+      "runtimeArgs": ["node"],
+      "program": "${workspaceFolder}/src/GA4Cli.mjs",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "internalConsole",
+      "outputCapture": "std",
+      "cwd": "${workspaceFolder}"
     }
   ],
   "inputs": [

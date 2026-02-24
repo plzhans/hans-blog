@@ -427,6 +427,33 @@ body {
   }
 }
 
+// 섹션 헤더 (최신글 + 인기글 링크)
+.posts-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  border-bottom: 2px solid rgba($light-color, 0.12);
+  padding-bottom: 0.3em;
+}
+
+.posts-section-title {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: $lightest-color;
+}
+
+.posts-section-link {
+  font-size: 0.9em;
+  color: rgba($light-color, 0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
 // 카드형 그리드 목록
 .posts-card-grid {
   display: grid;

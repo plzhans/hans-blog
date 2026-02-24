@@ -17,6 +17,7 @@ defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 # 콘텐츠 디렉토리 경로 (기본값: content)
 contentDir = "../content"
+dataDir = "../data"
   
 # 다국어 설정
 [languages]

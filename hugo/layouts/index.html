@@ -1,9 +1,12 @@
 {{ define "main" }}
   <article>
-    <h1>{{ i18n "latest_posts" }}</h1>
-    {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
+    <div class="posts-section-header">
+      <span class="posts-section-title">{{ i18n "latest_posts" }}</span>
+      <a class="posts-section-link" href="{{ "/popular/" | relLangURL }}">{{ i18n "popular_posts" }} →</a>
+    </div>
 
-    {{ $allPages := where .Site.RegularPages "Type" "!=" "page" }}
+    {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
+    {{ $allPages := where .Site.RegularPages "Type" "notion" }}
     {{ $latestPages := first 20 $allPages }}
     {{ if $latestPages }}
     <div class="posts-card-grid">

@@ -1,0 +1,4 @@
+# Google Analytics 설정
+googleAnalytics:
+  # GA4 속성 ID (GA4 관리 → 속성 설정 → 속성 ID)
+  propertyId: "522883402"

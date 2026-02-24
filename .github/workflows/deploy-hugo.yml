@@ -8,6 +8,7 @@ on:
       - ".github/workflows/**"
       - "hugo/**"
       - "content/**"
+      - "data/**"
 
   workflow_dispatch:
 

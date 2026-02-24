@@ -20,6 +20,9 @@ logs
 .env
 *.env
 
+# google service account key
+config/google_service_account.json
+
 # OS
 .DS_Store
 

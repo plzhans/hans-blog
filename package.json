@@ -17,9 +17,11 @@
   "author": "plzhans",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hugo:watch": "hugo server -D -s ./hugo --noHTTPCache --logLevel debug"
+    "hugo:watch": "hugo server -D -s ./hugo --noHTTPCache --logLevel debug",
+    "ga4:export": "node src/GA4Cli.mjs"
   },
   "dependencies": {
+    "@google-analytics/data": "^5.2.1",
     "@notionhq/client": "^5.9.0",
     "dotenv": "^17.2.3",
     "js-yaml": "^4.1.1",
