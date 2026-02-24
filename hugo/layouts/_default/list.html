@@ -14,9 +14,7 @@
         <a class="post-card{{ if not $thumbPost.Params.images }} post-card--no-thumb{{ end }}" href="{{ $post.RelPermalink }}">
           {{- with $thumbPost.Params.images }}
           <div class="post-card-thumbnail">
-            {{- $imgBase := $post.RelPermalink | strings.TrimPrefix (printf "/%s/" $post.Language.Lang) -}}
-            {{- if not (strings.HasPrefix $imgBase "/") }}{{- $imgBase = printf "/%s" $imgBase }}{{- end -}}
-            <img src="{{ $imgBase }}{{ index . 0 }}" alt="" loading="lazy">
+            {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0)) }}
           </div>
           {{- end }}
           <div class="post-card-body">

@@ -1102,6 +1102,16 @@ table {
   }
 }
 
+.post-content picture {
+  display: block;
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 .post-content .mermaid {
   border-left: 0.4em solid rgba($primary-color, .8);
   background: #f8f9fa;

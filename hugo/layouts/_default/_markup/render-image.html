@@ -1,7 +1,22 @@
 {{- $src := .Destination -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
 {{- if strings.HasPrefix $src "./assets/" -}}
-  {{- $basePath := .Page.RelPermalink | strings.TrimPrefix (printf "/%s/" .Page.Language.Lang) -}}
-  {{- if not (strings.HasPrefix $basePath "/") }}{{- $basePath = printf "/%s" $basePath }}{{- end -}}
-  {{- $src = printf "%s%s" $basePath (strings.TrimPrefix "./" $src) -}}
+  {{- $resourcePath := strings.TrimPrefix "./" $src -}}
+  {{- $resource := .Page.Resources.GetMatch $resourcePath -}}
+  {{- if $resource -}}
+    {{- $webp := $resource.Resize "1200x webp" -}}
+    {{- $fallback := $resource.Resize "1200x" -}}
+    <picture>
+      <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+      <img src="{{ $fallback.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" loading="lazy">
+    </picture>
+  {{- else -}}
+    {{- $basePath := .Page.RelPermalink | strings.TrimPrefix (printf "/%s/" .Page.Language.Lang) -}}
+    {{- if not (strings.HasPrefix $basePath "/") }}{{- $basePath = printf "/%s" $basePath }}{{- end -}}
+    {{- $src = printf "%s%s" $basePath (strings.TrimPrefix "./" $src) -}}
+    <img src="{{ $src }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}>
+  {{- end -}}
+{{- else -}}
+  <img src="{{ $src }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}>
 {{- end -}}
-<img src="{{ $src }}"{{ with .Text }} alt="{{ . }}"{{ end }}{{ with .Title }} title="{{ . }}"{{ end }}>

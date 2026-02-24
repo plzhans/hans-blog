@@ -1,0 +1,15 @@
+{{- $page := .page -}}
+{{- $imgPath := .imgPath -}}
+{{- $resource := $page.Resources.GetMatch $imgPath -}}
+{{- if $resource -}}
+  {{- $webp := $resource.Resize "800x webp" -}}
+  {{- $fallback := $resource.Resize "800x" -}}
+  <picture>
+    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+    <img src="{{ $fallback.RelPermalink }}" alt="" loading="lazy" width="{{ $fallback.Width }}" height="{{ $fallback.Height }}">
+  </picture>
+{{- else -}}
+  {{- $imgBase := $page.RelPermalink | strings.TrimPrefix (printf "/%s/" $page.Language.Lang) -}}
+  {{- if not (strings.HasPrefix $imgBase "/") }}{{- $imgBase = printf "/%s" $imgBase }}{{- end -}}
+  <img src="{{ $imgBase }}{{ $imgPath }}" alt="" loading="lazy">
+{{- end -}}
