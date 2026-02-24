@@ -1,8 +1,7 @@
 ---
 id: "69"
-translationKey: "69"
-slug: "69-git-deleted-branch-recovery"
-redirect_to: "/posts/69-git-deleted-branch-recovery/"
+url: "/en/69-git-deleted-branch-recovery/"
+redirect_to: "/en/posts/69-git-deleted-branch-recovery/"
 title: "Git Deleted Branch Recovery"
 draft: false
 images:

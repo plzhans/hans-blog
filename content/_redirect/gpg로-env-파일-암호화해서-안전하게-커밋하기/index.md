@@ -1,7 +1,6 @@
 ---
 id: "89"
-translationKey: "89"
-slug: "89-gpg-encrypt-env-file"
+url: "/89-gpg-encrypt-env-file/"
 redirect_to: "/posts/89-gpg-encrypt-env-file/"
 title: "GPG로 .env 파일 암호화해서 안전하게 커밋하기"
 draft: false

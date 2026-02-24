@@ -1,8 +1,7 @@
 ---
 id: "89"
-translationKey: "89"
-slug: "89-gpg-encrypt-env-file"
-redirect_to: "/posts/89-gpg-encrypt-env-file/"
+url: "/en/89-gpg-encrypt-env-file/"
+redirect_to: "/en/posts/89-gpg-encrypt-env-file/"
 title: "Encrypting .env Files with GPG for Safe Commits"
 draft: false
 images:

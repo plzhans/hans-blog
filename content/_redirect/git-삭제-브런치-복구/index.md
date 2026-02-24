@@ -1,7 +1,6 @@
 ---
 id: "69"
-translationKey: "69"
-slug: "69-git-deleted-branch-recovery"
+url: "/69-git-deleted-branch-recovery/"
 redirect_to: "/posts/69-git-deleted-branch-recovery/"
 title: "Git 삭제 브런치 복구"
 draft: false

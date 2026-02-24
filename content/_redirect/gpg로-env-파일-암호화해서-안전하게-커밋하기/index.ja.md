@@ -1,8 +1,7 @@
 ---
 id: "89"
-translationKey: "89"
-slug: "89-gpg-encrypt-env-file"
-redirect_to: "/posts/89-gpg-encrypt-env-file/"
+url: "/ja/89-gpg-encrypt-env-file/"
+redirect_to: "/ja/posts/89-gpg-encrypt-env-file/"
 title: "GPGで.envファイルを暗号化して安全にコミットする"
 draft: false
 images:
