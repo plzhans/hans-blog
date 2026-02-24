@@ -3,6 +3,7 @@ id: "89"
 translationKey: "89"
 slug: "89-gpg-encrypt-env-file"
 title: "Encrypting .env Files with GPG for Safe Commits"
+description: "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure."
 categories:
   - "git"
 tags:

@@ -3,7 +3,7 @@ id: "86"
 translationKey: "86"
 slug: "86-github-pages-custom-domain"
 title: "GitHub Pagesでカスタムドメインを使用する"
-description: "GitHub PagesのデフォルトURL（username.github.io/repository）の代わりにカスタムドメインを設定する方法について説明します。ドメインのCNAMEレコード設定とGitHub Repository SettingsでのCustom domain構成方法を解説し、HTTPS証明書の適用オプションも含みます。"
+description: "GitHub Pagesにカスタムドメインを接続する際のCNAME・A/AAAAレコード設定とリポジトリのCustom domain適用手順を整理しました。Enforce HTTPS設定時の証明書伝播遅延も含め、ドメイン接続トラブルを素早く解決できます。"
 tags:
   - "github"
   - "github-action"

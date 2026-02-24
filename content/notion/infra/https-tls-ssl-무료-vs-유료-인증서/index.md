@@ -3,15 +3,15 @@ id: "39"
 translationKey: "39"
 slug: "39-https-tls-ssl-free-vs-paid-certificates"
 title: "HTTPS TLS/SSL 무료 vs 유료 인증서"
-description: "HTTPS TLS/SSL 인증서 발급 방법(유료/무료/클라우드)과 실무 구현 전략을 정리한 가이드. 인증서 검증 흐름, 비대칭키와 대칭키를 조합한 암호화 방식, 발급 방법별 비교, TLS 종단 지점 최소화 전략 등 프로덕션 환경에서 HTTPS를 안전하고 효율적으로 구성하는 방법을 다룬다."
+description: "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요."
+categories:
+  - "infra"
 tags:
   - "https"
   - "ssl"
   - "acme"
-categories:
-  - "Infra"
-date: 2022-03-17T16:48:00.000+09:00
-lastmod: 2026-02-06T06:28:00.000Z
+date: 2026-02-06T06:29:00.000Z
+lastmod: 2026-02-24T15:40:00.000Z
 toc: true
 draft: false
 images:

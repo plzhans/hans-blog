@@ -3,6 +3,7 @@ id: "89"
 translationKey: "89"
 slug: "89-gpg-encrypt-env-file"
 title: "GPGで.envファイルを暗号化して安全にコミットする"
+description: ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。"
 categories:
   - "git"
 tags:

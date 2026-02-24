@@ -3,7 +3,7 @@ id: "95"
 translationKey: "95"
 slug: "95-openclaw-setup"
 title: "Setting Up OpenClaw"
-description: "A guide to installing OpenClaw (OpenClaw AI agent framework) and completing initial setup with onboard. Covers step-by-step model, channel, and skill selection along with Telegram authentication to safely run agents locally."
+description: "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely."
 categories:
   - "ai"
 tags:

@@ -3,7 +3,7 @@ id: "6"
 translationKey: "6"
 slug: "6-flush-dns-cache"
 title: "Clearing DNS Cache on Windows/Linux/macOS"
-description: "When DNS record changes are slow to take effect, here is how to flush the DNS cache on Windows, Linux, and macOS. Includes OS-specific commands such as ipconfig /flushdns and resolvectl (systemd-resolved), along with notes on TTL-based propagation delays and the need to fully restart your browser."
+description: "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly."
 categories:
   - etc
 date: 2026-02-22T16:11:00.000Z

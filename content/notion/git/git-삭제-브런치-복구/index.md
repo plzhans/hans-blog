@@ -3,12 +3,13 @@ id: "69"
 translationKey: "69"
 slug: "69-git-deleted-branch-recovery"
 title: "Git 삭제 브런치 복구"
+description: "삭제한 Git 브랜치를 복구해야 할 때 reflog로 커밋 해시를 찾고 해당 시점으로 새 브랜치를 만드는 절차를 정리했습니다. checkout -b로 복구 후 브랜치 이동과 커밋 상태를 빠르게 확인하세요."
 categories:
   - "git"
 tags:
   - "git"
 date: 2026-02-06T06:30:00.000Z
-lastmod: 2026-02-17T17:08:00.000Z
+lastmod: 2026-02-24T15:40:00.000Z
 toc: true
 draft: false
 images:
@@ -22,13 +23,13 @@ images:
 ## 목표
 
 
-별도의 브런치에 **​삭제한 특정 커밋 시점으로 복구**​합니다.
+별도의 브런치에 <strong>삭제한 특정 커밋 시점으로 복구</strong>합니다.
 
 
 ## 상황
 
 
-브런치를 삭제한 뒤, **​해당 브런치에서 작업했던 커밋으로 다시 브런치를 복구**​해야 하는 경우가 있습니다.
+브런치를 삭제한 뒤, <strong>해당 브런치에서 작업했던 커밋으로 다시 브런치를 복구</strong>해야 하는 경우가 있습니다.
 
 
 ---
@@ -37,7 +38,7 @@ images:
 ## 1. reflog로 복구 지점(커밋 해시) 찾기
 
 
-`reflog`는 브런치를 삭제했더라도 **​로컬에서 HEAD가 이동했던 기록**​을 남겨두기 때문에, 복구할 커밋 해시를 찾는 데 유용합니다.
+`reflog`는 브런치를 삭제했더라도 <strong>로컬에서 HEAD가 이동했던 기록</strong>을 남겨두기 때문에, 복구할 커밋 해시를 찾는 데 유용합니다.
 
 
 ```shell
@@ -48,7 +49,7 @@ git reflog
 ### 복구 대상 선택
 
 
-reflog 출력에서 **​복구하려는 시점의 커밋 해시**​를 확인합니다.
+reflog 출력에서 <strong>복구하려는 시점의 커밋 해시</strong>를 확인합니다.
 
 
 ![](./assets/2_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)

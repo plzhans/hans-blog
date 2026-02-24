@@ -3,7 +3,7 @@ id: "88"
 translationKey: "88"
 slug: "88-github-gpg-commit-signing"
 title: "Signing Git Commits with GPG"
-description: "A step-by-step guide to setting up GPG commit signing in Git. Covers GnuPG installation, key generation and export, configuring Git for automatic signing, verifying signatures locally, and registering your public key on GitHub to display the Verified badge."
+description: "Learn how to apply GPG signatures to Git commits and earn the Verified badge - from installing GnuPG and generating or exporting keys to enabling automatic commit signing, verifying locally, registering your public key on GitHub, and fixing common errors."
 categories:
   - "git"
 tags:
@@ -432,4 +432,3 @@ git push origin main
 
 
 ![](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)
-

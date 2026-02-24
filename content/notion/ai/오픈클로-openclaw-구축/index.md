@@ -3,14 +3,14 @@ id: "95"
 translationKey: "95"
 slug: "95-openclaw-setup"
 title: "오픈클로(OpenClaw) 구축 "
-description: "OpenClaw(OpenClaw AI agent framework)를 설치하고 onboard로 초기 설정하는 과정을 정리했다. 모델·채널·스킬 선택과 Telegram 인증까지 단계별로 따라 하며 안전하게 로컬에서 에이전트를 실행하는 방법을 다룬다."
+description: "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요."
 categories:
   - "ai"
 tags:
   - "OpenClaw"
   - "ai"
 date: 2026-02-23T10:10:00.000Z
-lastmod: 2026-02-23T15:30:00.000Z
+lastmod: 2026-02-24T15:40:00.000Z
 toc: true
 draft: false
 images:

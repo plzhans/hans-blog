@@ -3,7 +3,7 @@ id: "80"
 translationKey: "80"
 slug: "80-redis-dump-vs-aof"
 title: "Redis dump vs aof"
-description: "Redisデータバックアップと永続化方法の完全ガイド。RDB(Dump)、AOF、Hybrid AOF方式のredis.conf設定、長所と短所の比較、性能最適化および選択基準を状況別に提示。BGSAVE、fork、fsync、Copy-on-Writeメモリ管理を含む"
+description: "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。"
 tags:
   - "database"
   - "redis"

@@ -3,7 +3,7 @@ id: "80"
 translationKey: "80"
 slug: "80-redis-dump-vs-aof"
 title: "Redis dump vs aof"
-description: "A complete guide to Redis data backup and persistence methods. Covers redis.conf configuration for RDB (Dump), AOF, and Hybrid AOF approaches, compares their pros and cons, and provides performance optimization tips and selection criteria by use case. Includes BGSAVE, fork, fsync, and Copy-on-Write memory management."
+description: "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time."
 tags:
   - "database"
   - "redis"

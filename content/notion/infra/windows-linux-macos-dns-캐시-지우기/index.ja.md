@@ -3,7 +3,7 @@ id: "6"
 translationKey: "6"
 slug: "6-flush-dns-cache"
 title: "Windows/Linux/macOSでDNSキャッシュをクリアする"
-description: "DNSレコードを変更しても反映が遅い場合に、Windows、Linux、macOSでDNSキャッシュをクリアする方法をまとめました。ipconfig /flushdns、resolvectl（systemd-resolved）などOSごとのコマンドと確認方法を含み、TTLやリゾルバー/ネームサーバーのキャッシュポリシーによる伝播遅延が発生する可能性と、ブラウザの再起動（完全終了）が必要な点も合わせて案内します。"
+description: "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。"
 categories:
   - etc
 date: 2026-02-22T16:11:00.000Z

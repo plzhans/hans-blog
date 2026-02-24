@@ -9,7 +9,7 @@ categories:
 tags:
   - "dns"
 date: 2026-02-22T16:11:00.000Z
-lastmod: 2026-02-24T15:39:00.000Z
+lastmod: 2026-02-24T15:41:00.000Z
 toc: true
 draft: false
 images:

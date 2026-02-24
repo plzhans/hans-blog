@@ -3,7 +3,7 @@ id: "86"
 translationKey: "86"
 slug: "86-github-pages-custom-domain"
 title: "Using a Custom Domain with GitHub Pages"
-description: "This guide covers how to set up a custom domain instead of the default GitHub Pages URL (username.github.io/repository). It explains CNAME record configuration for your domain and Custom domain setup in GitHub Repository Settings, including HTTPS certificate options."
+description: "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast."
 tags:
   - "github"
   - "github-action"

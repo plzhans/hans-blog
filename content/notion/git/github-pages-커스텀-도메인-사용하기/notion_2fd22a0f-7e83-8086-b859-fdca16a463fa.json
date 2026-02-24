@@ -2,7 +2,7 @@
   "object": "page",
   "id": "2fd22a0f-7e83-8086-b859-fdca16a463fa",
   "created_time": "2026-02-04T09:07:00.000Z",
-  "last_edited_time": "2026-02-17T17:08:00.000Z",
+  "last_edited_time": "2026-02-24T15:40:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -61,7 +61,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-02-17T17:08:00.000Z"
+      "last_edited_time": "2026-02-24T15:40:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -85,7 +85,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-02-18T02:08:00.000+09:00",
+        "start": "2026-02-25T00:40:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -94,9 +94,9 @@
       "id": "%5B~Jq",
       "type": "status",
       "status": {
-        "id": "DOao",
-        "name": "발행 완료",
-        "color": "green"
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
       }
     },
     "요약": {
@@ -106,7 +106,7 @@
         {
           "type": "text",
           "text": {
-            "content": "GitHub Pages의 기본 URL(",
+            "content": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
             "link": null
           },
           "annotations": {
@@ -117,43 +117,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "GitHub Pages의 기본 URL(",
-          "href": null
-        },
-        {
-          "type": "text",
-          "text": {
-            "content": "username.github.io/repository",
-            "link": {
-              "url": "http://username.github.io/repository"
-            }
-          },
-          "annotations": {
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          },
-          "plain_text": "username.github.io/repository",
-          "href": "http://username.github.io/repository"
-        },
-        {
-          "type": "text",
-          "text": {
-            "content": ") 대신 커스텀 도메인을 설정하는 방법을 다룹니다. 도메인의 CNAME 레코드 설정과 GitHub Repository Settings에서 Custom domain 구성 방법을 설명하며, HTTPS 인증서 적용 옵션도 포함합니다.",
-            "link": null
-          },
-          "annotations": {
-            "bold": false,
-            "italic": false,
-            "strikethrough": false,
-            "underline": false,
-            "code": false,
-            "color": "default"
-          },
-          "plain_text": ") 대신 커스텀 도메인을 설정하는 방법을 다룹니다. 도메인의 CNAME 레코드 설정과 GitHub Repository Settings에서 Custom domain 구성 방법을 설명하며, HTTPS 인증서 적용 옵션도 포함합니다.",
+          "plain_text": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
           "href": null
         }
       ]

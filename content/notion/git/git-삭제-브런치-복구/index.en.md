@@ -3,6 +3,7 @@ id: "69"
 translationKey: "69"
 slug: "69-git-deleted-branch-recovery"
 title: "Git Deleted Branch Recovery"
+description: "Recover a deleted Git branch by using reflog to find the commit hash, recreating the branch at that point with checkout -b, and verifying the branch and commit state in seconds."
 tags:
   - "git"
 categories:

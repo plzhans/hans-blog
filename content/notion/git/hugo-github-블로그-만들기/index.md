@@ -3,7 +3,7 @@ id: "94"
 translationKey: "94"
 slug: "94-hugo-github-blog"
 title: "Hugo + Github 블로그 만들기"
-description: "Hugo 정적 사이트 생성기와 GitHub Pages를 활용한 개인 블로그 구축 가이드입니다. Hugo 설치, m10c 테마 적용, 로컬 개발 환경 설정부터 GitHub Actions를 통한 자동 배포 파이프라인 구성까지 전체 과정을 단계별로 설명합니다. Jekyll 대비 빠른 빌드 속도와 노션-마크다운 기반 작성 워크플로우를 채택한 이유도 포함합니다."
+description: "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요."
 categories:
   - "git"
 tags:
@@ -11,7 +11,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-02-17T17:18:00.000Z
+lastmod: 2026-02-24T15:40:00.000Z
 toc: true
 draft: false
 images:
@@ -59,7 +59,6 @@ images:
 
 > 💡 **구축 환경**  
 > - 테스트 환경: Mac  
->   
 > - 배포 환경: GitHub Actions
 
 
@@ -261,7 +260,7 @@ Jekyll은 GitHub Pages가 자동으로 감지해서 배포하지만 Hugo는 GitH
 ## GitHub Pages 설정
 
 
-Repository → Settings → Pages → Source를 **GitHub Actions**로 설정
+Repository → Settings → Pages → Source를 <strong>GitHub Actions</strong>로 설정
 
 
 ## GitHub Actions 워크플로우 작성
@@ -370,5 +369,5 @@ GitHub Actions 탭에서 워크플로우 실행을 확인하고, Settings → Pa
 
 ## 관련 된 글 
 
-- 커스텀 도메인 설정 : [Github pages 커스텀 도메인 사용하기](../86-github-pages-custom-domain/)
+- 커스텀 도메인 설정 : [Github pages 커스텀 도메인 사용하기](https://www.notion.so/2fd22a0f7e838086b859fdca16a463fa)
 - (준비중) 노션에서 작성한 글 배포 자동화하여 Github pages 배포하기

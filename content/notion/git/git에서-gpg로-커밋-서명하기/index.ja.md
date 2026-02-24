@@ -3,7 +3,7 @@ id: "88"
 translationKey: "88"
 slug: "88-github-gpg-commit-signing"
 title: "GitでGPGを使ってコミットに署名する"
-description: "GitでGPGコミット署名を設定する手順をまとめました。GnuPGのインストールからキーの生成とエクスポートまでを説明します。Gitでの自動署名の設定方法も解説します。ローカルでの署名検証の方法も案内します。GitHubに公開鍵を登録してVerifiedバッジを確認する流れも整理しました。"
+description: "GitコミットにGPG署名を付けてVerifiedバッジを表示する方法をまとめました。GnuPGのインストール、鍵の生成とエクスポート、git commitの自動署名設定、ローカル検証、GitHubへの公開鍵登録とエラー対応まで一度に確認できます。"
 categories:
   - "git"
 tags:

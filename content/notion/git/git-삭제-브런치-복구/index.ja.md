@@ -3,6 +3,7 @@ id: "69"
 translationKey: "69"
 slug: "69-git-deleted-branch-recovery"
 title: "Git 削除ブランチ復旧"
+description: "削除したGitブランチを復元するときにreflogでコミットハッシュを探し、該当時点で新しいブランチを作成する手順をまとめました。checkout -bで復旧後にブランチ切り替えとコミット状態を素早く確認できます。"
 tags:
   - "git"
 categories:

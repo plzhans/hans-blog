@@ -3,7 +3,7 @@ id: "94"
 translationKey: "94"
 slug: "94-hugo-github-blog"
 title: "Hugo + GitHubでブログを作る"
-description: "Hugo静的サイトジェネレーターとGitHub Pagesを活用した個人ブログ構築ガイドです。Hugoのインストール、m10cテーマの適用、ローカル開発環境の設定からGitHub Actionsによる自動デプロイパイプラインの構成まで、全プロセスをステップバイステップで説明します。Jekyllと比較して高速なビルド速度とNotion-Markdownベースの執筆ワークフローを採用した理由も含みます。"
+description: "Notion→Markdown→Hugoビルド→GitHub Pagesデプロイの流れで個人ブログを構築する手順を整理しました。Hugoのインストールとm10cテーマ適用、GitHub Actionsによる自動デプロイ、baseURL設定の注意点まで追いながらデプロイエラーを減らせます。"
 tags:
   - "hugo"
   - "github-action"

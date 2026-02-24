@@ -3,7 +3,7 @@ id: "39"
 translationKey: "39"
 slug: "39-https-tls-ssl-free-vs-paid-certificates"
 title: "HTTPS TLS/SSL 無料 vs 有料証明書"
-description: "HTTPS TLS/SSL証明書発行方法(有料/無料/クラウド)と実務実装戦略をまとめたガイド。証明書検証フロー、非対称鍵と対称鍵を組み合わせた暗号化方式、発行方法別比較、TLS終端ポイント最小化戦略など、プロダクション環境でHTTPSを安全かつ効率的に構成する方法を扱う。"
+description: "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。"
 tags:
   - "https"
   - "ssl"

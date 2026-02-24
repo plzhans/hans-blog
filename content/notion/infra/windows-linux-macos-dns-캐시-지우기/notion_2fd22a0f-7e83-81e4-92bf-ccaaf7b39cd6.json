@@ -2,7 +2,7 @@
   "object": "page",
   "id": "2fd22a0f-7e83-81e4-92bf-ccaaf7b39cd6",
   "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-02-24T15:39:00.000Z",
+  "last_edited_time": "2026-02-24T15:41:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -46,7 +46,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-02-24T15:39:00.000Z"
+      "last_edited_time": "2026-02-24T15:41:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -59,7 +59,7 @@
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/ko/6-flush-dns-cache/"
+      "url": "https://blog.plzhans.com/6-flush-dns-cache/"
     },
     "toc": {
       "id": "ZR~A",
@@ -70,7 +70,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-02-25T00:39:00.000+09:00",
+        "start": "2026-02-25T00:41:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -210,6 +210,5 @@
     }
   },
   "url": "https://www.notion.so/Windows-Linux-macOS-DNS-2fd22a0f7e8381e492bfccaaf7b39cd6",
-  "public_url": null,
-  "request_id": "94346f78-a043-4232-ad68-6ec1568100b4"
+  "public_url": null
 }

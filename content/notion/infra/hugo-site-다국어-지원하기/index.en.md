@@ -3,7 +3,7 @@ id: "93"
 translationKey: "93"
 slug: "93-hugo-multilingual-seo-setup"
 title: "Supporting Multiple Languages on a Hugo Site"
-description: "This guide explains SEO optimization and multilingual configuration for building a multilingual blog with the Hugo static site generator. It covers automating search engine optimization settings such as sitemap.xml, robots.txt, Schema.org JSON-LD, Open Graph, and meta description, as well as preventing duplicate content issues for multilingual content using HTML lang attributes, hreflang tags, and canonical URLs. It explains the defaultContentLanguageInSubdir setting in hugo.toml, linking languages with translationKey, overriding the theme's baseof.html to add SEO tags, and provides practical troubleshooting for resolving language-specific URL conflicts by using slug instead of url."
+description: "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting."
 categories:
   - "Infra"
 tags:
