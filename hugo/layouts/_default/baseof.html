@@ -22,7 +22,7 @@
 
     {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
-    {{ template "_internal/opengraph.html" . }}
+    {{ partial "opengraph.html" . }}
 
     {{- with .Site.Params.adsense }}
     {{- if .publisherId }}
