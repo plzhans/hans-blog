@@ -1,0 +1,14 @@
+{{ define "main" }}
+  {{- with .Params.redirect_to }}
+  {{- $redirectTo := . | relLangURL }}
+  <div class="redirect-page">
+    <p class="redirect-message">{{ i18n "redirect_message" }}</p>
+    <a class="redirect-link" href="{{ $redirectTo }}">{{ i18n "redirect_link_label" }}</a>
+  </div>
+  {{- else }}
+  <div class="error-404">
+    <p>redirect_to is not configured.</p>
+    <a href="{{ "/" | relURL }}">Go home</a>
+  </div>
+  {{- end }}
+{{ end }}

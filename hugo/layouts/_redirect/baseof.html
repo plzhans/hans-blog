@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ .Title }} :: {{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex">
+    {{- with .Params.redirect_to }}
+    <meta http-equiv="refresh" content="0; url={{ . | absLangURL }}">
+    {{- end }}
+  </head>
+  <body>
+    {{ block "main" . }}{{ end }}
+  </body>
+</html>

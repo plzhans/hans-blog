@@ -9,3 +9,9 @@ other = "この記事は<a href=\"https://www.notion.so\" target=\"_blank\" rel=
 
 [related_posts_title]
 other = "{{ . }}カテゴリの他の記事"
+
+[redirect_message]
+other = "ページが移動されました。自動的にリダイレクトされない場合は、以下のリンクをクリックしてください。"
+
+[redirect_link_label]
+other = "ページへ移動 →"

@@ -6,3 +6,9 @@ other = "이 글은 <a href=\"https://www.notion.so\" target=\"_blank\" rel=\"no
 
 [related_posts_title]
 other = "{{ . }} 카테고리의 다른 글"
+
+[redirect_message]
+other = "페이지가 이동되었습니다. 자동으로 이동되지 않으면 아래 링크를 클릭하세요."
+
+[redirect_link_label]
+other = "이동하기 →"
