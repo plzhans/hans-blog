@@ -270,4 +270,12 @@
       block.appendChild(btn);
     });
   </script>
+  {{- if and .Site.Config.Services.GoogleAnalytics.ID .Params.slug }}
+  <script>
+    gtag('event', 'post_view', {
+      post_id: '{{ .Params.id }}',
+      post_slug: '{{ .Params.slug }}'
+    });
+  </script>
+  {{- end }}
 {{ end }}
