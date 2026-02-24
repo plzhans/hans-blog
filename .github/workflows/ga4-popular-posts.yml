@@ -12,6 +12,10 @@ on:
       - "src/services/PopularPostsService.mjs"
   workflow_dispatch:
 
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
 jobs:
   update-popular-posts:
     runs-on: ubuntu-latest
