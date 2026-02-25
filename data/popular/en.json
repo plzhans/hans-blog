@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-24T09:45:27.467Z",
+  "generated_at": "2026-02-25T00:56:38.089Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -10,117 +10,130 @@
       "rank": 1,
       "slug": "95-openclaw-setup",
       "title": "Setting Up OpenClaw",
-      "description": "A guide to installing OpenClaw (OpenClaw AI agent framework) and completing initial setup with onboard. Covers step-by-step model, channel, and skill selection along with Telegram authentication to safely run agents locally.",
+      "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
       "date": "2026-02-23T10:10:00.000Z",
       "categories": [
         "ai"
       ],
       "url": "/en/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 185
+      "count": 274
     },
     {
       "rank": 2,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
-      "description": "A complete guide to Redis data backup and persistence methods. Covers redis.conf configuration for RDB (Dump), AOF, and Hybrid AOF approaches, compares their pros and cons, and provides performance optimization tips and selection criteria by use case. Includes BGSAVE, fork, fsync, and Copy-on-Write memory management.",
+      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
       "date": "2025-06-10T07:16:00.000Z",
       "categories": [
         "Database"
       ],
       "url": "/en/posts/80-redis-dump-vs-aof/",
       "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 60
+      "count": 79
     },
     {
       "rank": 3,
-      "slug": "6-flush-dns-cache",
-      "title": "Clearing DNS Cache on Windows/Linux/macOS",
-      "description": "When DNS record changes are slow to take effect, here is how to flush the DNS cache on Windows, Linux, and macOS. Includes OS-specific commands such as ipconfig /flushdns and resolvectl (systemd-resolved), along with notes on TTL-based propagation delays and the need to fully restart your browser.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 14
-    },
-    {
-      "rank": 4,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Using a Custom Domain with GitHub Pages",
-      "description": "This guide covers how to set up a custom domain instead of the default GitHub Pages URL (username.github.io/repository). It explains CNAME record configuration for your domain and Custom domain setup in GitHub Repository Settings, including HTTPS certificate options.",
-      "date": "2026-02-04T09:07:00.000Z",
-      "categories": [
-        "Git"
-      ],
-      "url": "/en/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 10
-    },
-    {
-      "rank": 5,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 5
-    },
-    {
-      "rank": 6,
-      "slug": "94-hugo-github-blog",
-      "title": "Building a Blog with Hugo + GitHub",
-      "description": "A guide to building a personal blog using the Hugo static site generator and GitHub Pages. It covers the entire process step by step, from Hugo installation, m10c theme setup, and local development environment configuration to automated deployment pipeline setup with GitHub Actions. It also includes the reasons for choosing faster build speed compared to Jekyll and the Notion-Markdown based writing workflow.",
-      "date": "2026-01-29T01:44:00.000Z",
-      "categories": [
-        "Git"
-      ],
-      "url": "/en/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 4
-    },
-    {
-      "rank": 7,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "Supporting Multiple Languages on a Hugo Site",
-      "description": "This guide explains SEO optimization and multilingual configuration for building a multilingual blog with the Hugo static site generator. It covers automating search engine optimization settings such as sitemap.xml, robots.txt, Schema.org JSON-LD, Open Graph, and meta description, as well as preventing duplicate content issues for multilingual content using HTML lang attributes, hreflang tags, and canonical URLs. It explains the defaultContentLanguageInSubdir setting in hugo.toml, linking languages with translationKey, overriding the theme's baseof.html to add SEO tags, and provides practical troubleshooting for resolving language-specific URL conflicts by using slug instead of url.",
-      "date": "2026-02-06T02:34:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/en/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 3
-    },
-    {
-      "rank": 8,
-      "slug": "88-github-gpg-commit-signing",
-      "title": "Signing Git Commits with GPG",
-      "description": "A step-by-step guide to setting up GPG commit signing in Git. Covers GnuPG installation, key generation and export, configuring Git for automatic signing, verifying signatures locally, and registering your public key on GitHub to display the Verified badge.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/88-github-gpg-commit-signing/",
-      "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
-      "count": 2
-    },
-    {
-      "rank": 9,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
-      "description": "A guide to HTTPS TLS/SSL certificate issuance methods (paid/free/cloud) and practical implementation strategies. Covers certificate verification flow, combined asymmetric and symmetric key encryption, comparison of issuance methods, TLS termination point minimization strategies, and how to configure HTTPS safely and efficiently in production environments.",
+      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
       "date": "2022-03-17T07:48:00.000Z",
       "categories": [
         "Infra"
       ],
       "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 23
+    },
+    {
+      "rank": 4,
+      "slug": "6-flush-dns-cache",
+      "title": "Clearing DNS Cache on Windows/Linux/macOS",
+      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 21
+    },
+    {
+      "rank": 5,
+      "slug": "88-github-gpg-commit-signing",
+      "title": "Signing Git Commits with GPG",
+      "description": "Learn how to apply GPG signatures to Git commits and earn the Verified badge - from installing GnuPG and generating or exporting keys to enabling automatic commit signing, verifying locally, registering your public key on GitHub, and fixing common errors.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/88-github-gpg-commit-signing/",
+      "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
+      "count": 15
+    },
+    {
+      "rank": 6,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "Supporting Multiple Languages on a Hugo Site",
+      "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
+      "date": "2026-02-06T02:34:00.000Z",
+      "categories": [
+        "Infra"
+      ],
+      "url": "/en/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 14
+    },
+    {
+      "rank": 7,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Using a Custom Domain with GitHub Pages",
+      "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
+      "date": "2026-02-04T09:07:00.000Z",
+      "categories": [
+        "Git"
+      ],
+      "url": "/en/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 13
+    },
+    {
+      "rank": 8,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "Encrypting .env Files with GPG for Safe Commits",
+      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 12
+    },
+    {
+      "rank": 9,
+      "slug": "94-hugo-github-blog",
+      "title": "Building a Blog with Hugo + GitHub",
+      "description": "Build a personal blog with the Notion->Markdown->Hugo->GitHub Pages workflow: install Hugo, apply the m10c theme, automate deployments with GitHub Actions, and watch the baseURL gotchas to avoid release failures.",
+      "date": "2026-01-29T01:44:00.000Z",
+      "categories": [
+        "Git"
+      ],
+      "url": "/en/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 9
+    },
+    {
+      "rank": 10,
+      "slug": "69-git-deleted-branch-recovery",
+      "title": "Git Deleted Branch Recovery",
+      "description": "Recover a deleted Git branch by using reflog to find the commit hash, recreating the branch at that point with checkout -b, and verifying the branch and commit state in seconds.",
+      "date": "2025-01-08T09:42:00.000Z",
+      "categories": [
+        "Git"
+      ],
+      "url": "/en/posts/69-git-deleted-branch-recovery/",
+      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
       "count": 1
     }
   ]

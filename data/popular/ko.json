@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-24T09:45:27.464Z",
+  "generated_at": "2026-02-25T00:56:38.087Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -10,117 +10,130 @@
       "rank": 1,
       "slug": "95-openclaw-setup",
       "title": "오픈클로(OpenClaw) 구축 ",
-      "description": "OpenClaw(OpenClaw AI agent framework)를 설치하고 onboard로 초기 설정하는 과정을 정리했다. 모델·채널·스킬 선택과 Telegram 인증까지 단계별로 따라 하며 안전하게 로컬에서 에이전트를 실행하는 방법을 다룬다.",
+      "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",
       "date": "2026-02-23T10:10:00.000Z",
       "categories": [
         "ai"
       ],
       "url": "/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 185
+      "count": 274
     },
     {
       "rank": 2,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
-      "description": "Redis 데이터 백업 및 퍼시스턴스 방법 완벽 가이드. RDB(Dump), AOF, Hybrid AOF 방식의 redis.conf 설정, 장단점 비교, 성능 최적화 및 선택 기준을 상황별로 제시. BGSAVE, fork, fsync, Copy-on-Write 메모리 관리 포함",
+      "description": "Redis 퍼시스턴스에서 RDB(Dump), AOF, Hybrid AOF 차이와 redis.conf 핵심 설정을 비교 정리했습니다. BGSAVE·fsync·COW 영향과 선택 기준을 이해해 데이터 유실 위험과 재시작 시간을 균형 있게 최적화하세요.",
       "date": "2026-02-06T06:30:00.000Z",
       "categories": [
         "database"
       ],
       "url": "/posts/80-redis-dump-vs-aof/",
       "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 60
+      "count": 79
     },
     {
       "rank": 3,
-      "slug": "6-flush-dns-cache",
-      "title": "Windows/Linux/macOS DNS 캐시 지우기",
-      "description": "DNS 레코드를 변경했는데도 반영이 느릴 때, Windows, Linux, macOS에서 DNS 캐시를 비우는 방법을 정리했습니다. ipconfig /flushdns, resolvectl(systemd-resolved) 등 OS별 명령과 확인 방법을 포함하며, TTL 및 리졸버/네임서버 캐싱 정책으로 전파 지연이 발생할 수 있다는 점과 브라우저 재시작(전체 종료) 필요도 함께 안내합니다.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 14
-    },
-    {
-      "rank": 4,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Github pages 커스텀 도메인 사용하기",
-      "description": "GitHub Pages의 기본 URL(username.github.io/repository) 대신 커스텀 도메인을 설정하는 방법을 다룹니다. 도메인의 CNAME 레코드 설정과 GitHub Repository Settings에서 Custom domain 구성 방법을 설명하며, HTTPS 인증서 적용 옵션도 포함합니다.",
-      "date": "2026-02-10T07:34:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 10
-    },
-    {
-      "rank": 5,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
-      "description": "",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 5
-    },
-    {
-      "rank": 6,
-      "slug": "94-hugo-github-blog",
-      "title": "Hugo + Github 블로그 만들기",
-      "description": "Hugo 정적 사이트 생성기와 GitHub Pages를 활용한 개인 블로그 구축 가이드입니다. Hugo 설치, m10c 테마 적용, 로컬 개발 환경 설정부터 GitHub Actions를 통한 자동 배포 파이프라인 구성까지 전체 과정을 단계별로 설명합니다. Jekyll 대비 빠른 빌드 속도와 노션-마크다운 기반 작성 워크플로우를 채택한 이유도 포함합니다.",
-      "date": "2026-02-10T08:46:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 4
-    },
-    {
-      "rank": 7,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "hugo site 다국어 지원하기",
-      "description": "Hugo 정적 사이트 생성기로 다국어 블로그를 구축할 때 필요한 SEO 최적화 및 다국어 설정 방법을 설명합니다. sitemap.xml, robots.txt, Schema.org JSON-LD, Open Graph, meta description 등 검색 엔진 최적화 설정을 자동화하고, HTML lang 속성, hreflang 태그, canonical URL을 통해 다국어 콘텐츠의 중복 문제를 방지하는 방법을 다룹니다. hugo.toml에서 defaultContentLanguageInSubdir 설정, translationKey로 언어 간 연결, 테마 baseof.html 오버라이드를 통한 SEO 태그 추가 방법을 설명하며, url 대신 slug 사용으로 언어별 URL 충돌을 해결하는 실전 트러블슈팅을 제공합니다.",
-      "date": "2026-02-11T09:55:00.000Z",
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
+      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
+      "date": "2026-02-06T06:29:00.000Z",
       "categories": [
         "infra"
       ],
-      "url": "/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 3
+      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 23
     },
     {
-      "rank": 8,
+      "rank": 4,
+      "slug": "6-flush-dns-cache",
+      "title": "Windows/Linux/macOS DNS 캐시 지우기",
+      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 21
+    },
+    {
+      "rank": 5,
       "slug": "88-github-gpg-commit-signing",
       "title": "Git에서 GPG로 커밋 서명하기",
-      "description": "Git 커밋 서명을 GPG로 설정하는 과정을 단계별로 정리했습니다. GnuPG 설치부터 키 생성과 내보내기까지 다룹니다. Git에서 자동 서명을 설정하는 방법을 설명합니다. 로컬에서 서명 검증하는 방법을 안내합니다. GitHub에 공개키를 등록해 Verified 배지를 확인하는 흐름을 정리했습니다.",
+      "description": "Git 커밋에 GPG 서명을 적용해 Verified 배지를 표시하는 방법을 정리했습니다. GnuPG 설치와 키 생성·내보내기부터 git commit 자동 서명 설정, 로컬 서명 검증, GitHub 공개키 등록과 오류 해결까지 한 번에 확인하세요.",
       "date": "2026-02-16T17:42:00.000Z",
       "categories": [
         "git"
       ],
       "url": "/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
-      "count": 2
+      "count": 15
+    },
+    {
+      "rank": 6,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "hugo site 다국어 지원하기",
+      "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
+      "date": "2026-02-11T09:55:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 14
+    },
+    {
+      "rank": 7,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Github pages 커스텀 도메인 사용하기",
+      "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
+      "date": "2026-02-10T07:34:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 13
+    },
+    {
+      "rank": 8,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
+      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 12
     },
     {
       "rank": 9,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
-      "description": "HTTPS TLS/SSL 인증서 발급 방법(유료/무료/클라우드)과 실무 구현 전략을 정리한 가이드. 인증서 검증 흐름, 비대칭키와 대칭키를 조합한 암호화 방식, 발급 방법별 비교, TLS 종단 지점 최소화 전략 등 프로덕션 환경에서 HTTPS를 안전하고 효율적으로 구성하는 방법을 다룬다.",
-      "date": "2022-03-17T07:48:00.000Z",
+      "slug": "94-hugo-github-blog",
+      "title": "Hugo + Github 블로그 만들기",
+      "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
+      "date": "2026-02-10T08:46:00.000Z",
       "categories": [
-        "Infra"
+        "git"
       ],
-      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "url": "/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 9
+    },
+    {
+      "rank": 10,
+      "slug": "69-git-deleted-branch-recovery",
+      "title": "Git 삭제 브런치 복구",
+      "description": "삭제한 Git 브랜치를 복구해야 할 때 reflog로 커밋 해시를 찾고 해당 시점으로 새 브랜치를 만드는 절차를 정리했습니다. checkout -b로 복구 후 브랜치 이동과 커밋 상태를 빠르게 확인하세요.",
+      "date": "2026-02-06T06:30:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/69-git-deleted-branch-recovery/",
+      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
       "count": 1
     }
   ]
