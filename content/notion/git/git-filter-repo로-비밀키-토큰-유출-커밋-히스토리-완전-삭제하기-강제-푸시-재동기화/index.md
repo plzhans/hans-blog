@@ -8,11 +8,16 @@ categories:
   - "git"
 tags:
   - "git"
-date: 2019-05-08T05:48:00.000Z
-lastmod: 2026-02-25T16:31:00.000Z
+date: 2026-02-25T16:31:00.000Z
+lastmod: 2026-02-25T16:34:00.000Z
 toc: true
 draft: false
+images:
+  - "assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png"
 ---
+
+
+![](./assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png)
 
 
 ## 개요
