@@ -196,7 +196,7 @@ export class NotionExportService {
 
     if (this.hugoBaseUrl && slug) {
       properties[this.propertyKeys.publishUrl] = {
-        url: `${this.hugoBaseUrl}/posts/${slug}/`,
+        url: `${this.hugoBaseUrl}/posts/${postId}-${slug}/`,
       };
     }
 
@@ -677,9 +677,10 @@ export class NotionExportService {
 
     try {
       const meta = JSON.parse(fs.readFileSync(metaFilePath, "utf-8"));
+      const postId = this.#extractPagePostId(meta, this.propertyKeys.uniqueId);
       const slug = this.#extractTextProperty(meta.properties, this.propertyKeys.slug);
       if (!slug) return null;
-      return `../${slug}/`;
+      return `../${postId}-${slug}/`;
     } catch (e) {
       console.warn(`⚠️ Failed to resolve Notion link: ${url}`, e);
       return null;
@@ -923,7 +924,7 @@ export class NotionExportService {
     ws.write("---\n");
     ws.write(`id: "${uniqueId}"\n`);
     ws.write(`translationKey: "${uniqueId}"\n`);
-    ws.write(`slug: "${slug}"\n`);
+    ws.write(`slug: "${uniqueId}-${slug}"\n`);
     ws.write(`title: "${title.replace(/"/g, '\\"')}"\n`);
     if(summary){
       ws.write(`description: "${summary.replace(/"/g, '\\"')}"\n`);
@@ -936,7 +937,7 @@ export class NotionExportService {
     } else {
       ws.write(`  - etc\n`);
     }
-    const uniqueTags = [...new Set(tags)].sort();
+    const uniqueTags = [...new Set(tags)].sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
     if(uniqueTags.length > 0){
       ws.write("tags:\n");
       for(const tag of uniqueTags){
