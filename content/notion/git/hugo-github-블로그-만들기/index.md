@@ -11,7 +11,7 @@ tags:
   - "github-pages"
   - "hugo"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-02-24T15:40:00.000Z
+lastmod: 2026-02-24T15:42:00.000Z
 toc: true
 draft: false
 images:
