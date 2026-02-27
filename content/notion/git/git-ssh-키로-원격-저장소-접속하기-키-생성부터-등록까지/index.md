@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gitlab"
 date: 2025-02-16T09:15:00.000Z
-lastmod: 2026-02-27T10:01:00.000Z
+lastmod: 2026-02-27T15:14:00.000Z
 toc: true
 draft: false
 images:
@@ -222,5 +222,6 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 자세한 설정은 아래 문서에서 확인한다.
 
 
-> [link_to_page](https://www.notion.so/31422a0f-7e83-8073-a217-ffb2a9ecafd8)
+> [Git 멀티 계정 설정 방법 정리  
+> ssh config alias vs gitconfig includeIf](../7-git-multi-account-ssh-config-alias-gitconfig-includeif/)
 
