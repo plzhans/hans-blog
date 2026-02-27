@@ -5,8 +5,11 @@
   {{- $resourcePath := strings.TrimPrefix "./" $src -}}
   {{- $resource := .Page.Resources.GetMatch $resourcePath -}}
   {{- if $resource -}}
-    {{- $webp := $resource.Resize "1200x webp" -}}
-    {{- $fallback := $resource.Resize "1200x" -}}
+    {{- $maxWidth := 1200 -}}
+    {{- $targetWidth := $resource.Width -}}
+    {{- if gt $targetWidth $maxWidth -}}{{- $targetWidth = $maxWidth -}}{{- end -}}
+    {{- $webp := $resource.Resize (printf "%dx webp" $targetWidth) -}}
+    {{- $fallback := $resource.Resize (printf "%dx" $targetWidth) -}}
     <picture>
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
       <img src="{{ $fallback.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" loading="lazy">

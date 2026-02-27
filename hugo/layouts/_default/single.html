@@ -89,6 +89,7 @@
         <div class="post-content">
           {{ .Content }}
         </div>
+        <hr class="post-divider">
         <div class="post-notice">
           {{ i18n "post_notice" | safeHTML }}
           {{- with .Site.Params.CopyrightHTML }}

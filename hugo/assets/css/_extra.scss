@@ -862,8 +862,22 @@ body {
   color: rgba($light-color, 0.7);
 }
 
+// 본문 내 hr - 연한 색상
+.post-content hr {
+  border: none;
+  border-top: 1px solid rgba($light-color, 0.2);
+  margin: 1.5em 0;
+}
+
+// 본문과 notice 구분선
+.post-divider {
+  border: none;
+  border-top: 2px solid rgba($light-color, 0.15);
+  margin: 3.5em 0 0;
+}
+
 .post-notice {
-  margin-top: 2em;
+  margin-top: 0.5em;
   padding: 0.8em 1em;
   border: 1px solid rgba($light-color, 0.15);
   border-radius: 6px;
@@ -1107,7 +1121,7 @@ table {
   max-width: 100%;
 
   img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 }
