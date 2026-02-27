@@ -1,0 +1,221 @@
+{
+  "object": "page",
+  "id": "2fd22a0f-7e83-81a2-8853-efc5da491258",
+  "created_time": "2026-02-04T09:04:00.000Z",
+  "last_edited_time": "2026-02-27T09:15:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "00000000-0000-0000-0000-000000000003"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "data_source_id",
+    "data_source_id": "2fd22a0f-7e83-814c-9f88-000b7bdd1d4a",
+    "database_id": "2fd22a0f-7e83-81d7-82d0-cd0ed07cb7cb"
+  },
+  "archived": false,
+  "in_trash": false,
+  "is_locked": false,
+  "properties": {
+    "AI_번역": {
+      "id": "H%3BiO",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "created_at": {
+      "id": "Hhcd",
+      "type": "created_time",
+      "created_time": "2026-02-04T09:04:00.000Z"
+    },
+    "태그": {
+      "id": "NGeX",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "VXhL",
+          "name": "git",
+          "color": "blue"
+        },
+        {
+          "id": "c883a4a8-4839-4b1a-8cce-01c1a2779b11",
+          "name": "github",
+          "color": "purple"
+        },
+        {
+          "id": "9e2cc13a-251e-4c3a-bc28-26bb32d5f31b",
+          "name": "gitlab",
+          "color": "yellow"
+        }
+      ]
+    },
+    "updated_at": {
+      "id": "PeH%60",
+      "type": "last_edited_time",
+      "last_edited_time": "2026-02-27T09:15:00.000Z"
+    },
+    "AUTO_ID": {
+      "id": "WCbd",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null,
+        "number": 63
+      }
+    },
+    "발행 URL": {
+      "id": "Yx%3Ai",
+      "type": "url",
+      "url": null
+    },
+    "toc": {
+      "id": "ZR~A",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "수정일": {
+      "id": "ZlPk",
+      "type": "date",
+      "date": {
+        "start": "2026-02-27T18:15:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "상태": {
+      "id": "%5B~Jq",
+      "type": "status",
+      "status": {
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
+      }
+    },
+    "요약": {
+      "id": "bCTc",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Git 원격 저장소를 SSH로 접속하는 전체 흐름을 정리합니다. HTTPS와 차이점을 비교하고 Ed25519 키 생성과 chmod 권한 설정 그리고 GitHub·GitLab 공개키 등록과 ssh -T 테스트로 인증 문제를 빠르게 해결하세요.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Git 원격 저장소를 SSH로 접속하는 전체 흐름을 정리합니다. HTTPS와 차이점을 비교하고 Ed25519 키 생성과 chmod 권한 설정 그리고 GitHub·GitLab 공개키 등록과 ssh -T 테스트로 인증 문제를 빠르게 해결하세요.",
+          "href": null
+        }
+      ]
+    },
+    "POST_ID": {
+      "id": "ik%40%5C",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "13",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "13",
+          "href": null
+        }
+      ]
+    },
+    "slug": {
+      "id": "inig",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "git-ssh-key-setup-and-remote-access",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "git-ssh-key-setup-and-remote-access",
+          "href": null
+        }
+      ]
+    },
+    "동기화": {
+      "id": "keny",
+      "type": "button",
+      "button": {}
+    },
+    "발행일": {
+      "id": "nEEr",
+      "type": "date",
+      "date": null
+    },
+    "생성일": {
+      "id": "oe%60s",
+      "type": "date",
+      "date": {
+        "start": "2025-02-15T14:06:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "카테고리": {
+      "id": "vwVr",
+      "type": "select",
+      "select": {
+        "id": "9bdb5196-7014-4a83-9375-182716238338",
+        "name": "Git",
+        "color": "green"
+      }
+    },
+    "제목": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Git SSH 키로 원격 저장소 접속하기: 키 생성부터 등록까지",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Git SSH 키로 원격 저장소 접속하기: 키 생성부터 등록까지",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://www.notion.so/Git-SSH-2fd22a0f7e8381a28853efc5da491258",
+  "public_url": null,
+  "request_id": "cc395237-b6c3-465c-9b2d-5fac85aedad6"
+}
