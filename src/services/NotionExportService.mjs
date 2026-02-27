@@ -382,9 +382,6 @@ export class NotionExportService {
       const processedContent = this.#stripQuoteMarkerInDetails(fullContent.trim());
       return this.#formatCalloutMd(processedContent, blockData.icon);
     });
-    n2m.setCustomTransformer("paragraph", async (block) => {
-      return this.transformCommonBlock(block, existsPageMap);
-    });
     n2m.setCustomTransformer("link_to_page", async (block) => {
       const linkData = block.link_to_page;
       if (!linkData || linkData.type !== "page_id") return false;
@@ -416,6 +413,7 @@ export class NotionExportService {
         md = this.#convertDetailsToShortcode(md);
         md = this.#fixMarkdownTables(md);
         md = this.#fixKoreanBoldItalic(md);
+        md = this.#resolveNotionLinks(md, existsPageMap);
         ws.write(md);
       }
 
@@ -639,32 +637,6 @@ export class NotionExportService {
   // ── 링크 치환 헬퍼 ──
 
   /**
-   * 공통 블록 변환 — rich_text 내 Notion 링크를 Hugo 상대 경로로 치환
-   * @param {object} block - Notion 블록 객체
-   * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
-   * @returns {object} 변환된 블록
-   */
-  transformCommonBlock(block, existsPageMap) {
-    const blockData = block?.[block.type];
-    const richTexts = blockData?.rich_text;
-    if (!richTexts) return block;
-
-    // 노션 링크가 existsPageMap 에 있는 페이지인 경우 최종 링크로 대체하기
-    for (const rt of richTexts) {
-      if (rt.href && rt.href.includes("notion.so/")){
-        const resolved = this.#resolveNotionPageUrl(rt.href, existsPageMap);
-        if (resolved) {
-          rt.href = resolved;
-          if (rt.text?.link) {
-            rt.text.link.url = resolved;
-          }
-        }
-      }
-    }
-    return block;
-  }
-
-  /**
    * rawId(대시 제거된 페이지 ID)로 existsPageMap을 조회해 페이지 메타 정보를 반환
    * @param {string} rawId - 대시가 제거된 Notion 페이지 ID
    * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
@@ -700,6 +672,19 @@ export class NotionExportService {
   }
 
   /**
+   * 마크다운 문자열 내 notion.so 링크를 Hugo 상대 경로로 일괄 치환
+   * @param {string} md - 마크다운 문자열
+   * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
+   * @returns {string} 치환된 마크다운 문자열
+   */
+  #resolveNotionLinks(md, existsPageMap) {
+    return md.replace(NotionExportService.#NOTION_LINK_RE, (match, rawId) => {
+      const resolved = this.#resolvePageByRawId(rawId, existsPageMap);
+      return resolved ? `](${resolved.url})` : match;
+    });
+  }
+
+  /**
    * notion.so URL에서 페이지 ID를 추출해 Hugo 상대 경로로 변환
    * @param {string} url - notion.so를 포함한 URL
    * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
@@ -714,7 +699,9 @@ export class NotionExportService {
   // ── 파일 헬퍼 ──
 
   /** URL에서 확장자를 추출할 수 없을 때 블록 타입별 기본 확장자 */
-  static DEFAULT_EXT = { image: ".png", video: ".mp4", pdf: ".pdf", audio: ".mp3" };
+  static #DEFAULT_EXT = { image: ".png", video: ".mp4", pdf: ".pdf", audio: ".mp3" };
+  /** Notion 링크 정규식 */
+  static #NOTION_LINK_RE = /\]\(https?:\/\/(?:www\.)?notion\.so\/([0-9a-f]{32})\)/g;
 
   /**
    * Notion 파일 블록(image, file, pdf, video 등)을 로컬에 다운로드하고 Markdown 문법으로 변환
@@ -740,7 +727,7 @@ export class NotionExportService {
     }
 
     const u = new URL(url);
-    const extFromPath = path.extname(u.pathname) || NotionExportService.DEFAULT_EXT[type] || ".bin";
+    const extFromPath = path.extname(u.pathname) || NotionExportService.#DEFAULT_EXT[type] || ".bin";
     const filename = `${index}_${block.id}${extFromPath}`;
     const downloadPath = path.join(assetsDir, filename);
     const atime = block.created_time ? new Date(block.created_time) : new Date();
