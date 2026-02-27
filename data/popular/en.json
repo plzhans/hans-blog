@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-26T00:50:55.628Z",
+  "generated_at": "2026-02-27T00:53:16.778Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 284
+      "count": 287
     },
     {
       "rank": 2,
@@ -30,7 +30,7 @@
       ],
       "url": "/en/posts/80-redis-dump-vs-aof/",
       "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 80
+      "count": 86
     },
     {
       "rank": 3,
@@ -43,7 +43,7 @@
       ],
       "url": "/en/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 24
+      "count": 27
     },
     {
       "rank": 4,
@@ -56,7 +56,7 @@
       ],
       "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 23
+      "count": 25
     },
     {
       "rank": 5,
@@ -69,7 +69,7 @@
       ],
       "url": "/en/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
-      "count": 18
+      "count": 22
     },
     {
       "rank": 6,
@@ -82,23 +82,10 @@
       ],
       "url": "/en/posts/86-github-pages-custom-domain/",
       "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 14
+      "count": 18
     },
     {
       "rank": 7,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "Supporting Multiple Languages on a Hugo Site",
-      "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
-      "date": "2026-02-06T02:34:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/en/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 14
-    },
-    {
-      "rank": 8,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
@@ -108,7 +95,20 @@
       ],
       "url": "/en/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 13
+      "count": 18
+    },
+    {
+      "rank": 8,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "Supporting Multiple Languages on a Hugo Site",
+      "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
+      "date": "2026-02-06T02:34:00.000Z",
+      "categories": [
+        "Infra"
+      ],
+      "url": "/en/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 18
     },
     {
       "rank": 9,
@@ -121,7 +121,7 @@
       ],
       "url": "/en/posts/94-hugo-github-blog/",
       "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 13
+      "count": 14
     },
     {
       "rank": 10,
@@ -134,7 +134,7 @@
       ],
       "url": "/posts/3-git-svn-clone/",
       "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 10
+      "count": 11
     },
     {
       "rank": 11,
@@ -147,7 +147,7 @@
       ],
       "url": "/posts/4-git-filter-repo-remove-secrets-from-history/",
       "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
-      "count": 2
+      "count": 4
     },
     {
       "rank": 12,
@@ -160,6 +160,19 @@
       ],
       "url": "/en/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
+      "count": 4
+    },
+    {
+      "rank": 13,
+      "slug": "10-tortoisegit-clear-saved-authentication-data",
+      "title": "TortoiseGit 인증 오류 해결: 저장된 인증 정보 초기화(Clear) 방법",
+      "description": "Git 서버 변경 후 TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 점검까지 한 번에 해결하세요.",
+      "date": "2020-09-03T14:39:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/10-tortoisegit-clear-saved-authentication-data/",
+      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
       "count": 1
     }
   ]
