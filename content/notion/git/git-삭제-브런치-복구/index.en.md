@@ -2,14 +2,14 @@
 id: "69"
 translationKey: "69"
 slug: "69-git-deleted-branch-recovery"
-title: "Git Deleted Branch Recovery"
-description: "Recover a deleted Git branch by using reflog to find the commit hash, recreating the branch at that point with checkout -b, and verifying the branch and commit state in seconds."
+title: "Recovering a deleted Git branch"
+description: "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds."
+categories:
+  - "git"
 tags:
   - "git"
-categories:
-  - "Git"
-date: 2025-01-08T18:42:00.000+09:00
-lastmod: 2026-02-06T06:28:00.000Z
+date: 2025-01-09T06:30:00.000Z
+lastmod: 2026-02-27T10:07:00.000Z
 toc: true
 draft: false
 images:

@@ -2,115 +2,103 @@
 id: "94"
 translationKey: "94"
 slug: "94-hugo-github-blog"
-title: "Hugo + GitHubでブログを作る"
-description: "Notion→Markdown→Hugoビルド→GitHub Pagesデプロイの流れで個人ブログを構築する手順を整理しました。Hugoのインストールとm10cテーマ適用、GitHub Actionsによる自動デプロイ、baseURL設定の注意点まで追いながらデプロイエラーを減らせます。"
+title: "Hugo + GitHub でブログを構築する"
+description: "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。"
+categories:
+  - "git"
 tags:
   - "github-action"
   - "github-pages"
   - "hugo"
-categories:
-  - "Git"
-date: 2026-01-29T10:44:00.000+09:00
-lastmod: 2026-02-10T08:23:00.000Z
+date: 2026-02-10T08:46:00.000Z
+lastmod: 2026-02-27T16:08:00.000Z
 toc: true
+draft: false
 images:
   - "assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png"
-draft: false
 ---
 
 
 ![](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
 
 
-> 💡 **構築環境**
-> - テスト環境: Mac
->
+## 序論
+
+
+技術メモはこれまで Evernote や個人ドキュメントにまとめ、Notion のウェブサイト機能でブログ化する計画も立てていました。
+
+しかし Notion はカスタマイズに制限があり、カスタムドメインにも追加料金が必要なので迷っていました。
+
+代案として [velog](https://velog.io/) へ移るか、Markdown に書き直して Jekyll へ移行する案も検討しました。
+
+それでも執筆しやすい Notion を捨てられず、最終的に「Notion で書いて静的サイトとして配信する」方針に落ち着きました。
+
+## 目標
+
+- Markdown で書いた記事を Hugo でビルドする
+- GitHub Pages へのデプロイを自動化する
+
+> 💡 **環境**  
+> - テスト環境: Mac  
 > - デプロイ環境: GitHub Actions
 
+**Hugo を選んだ理由**
 
-# はじめに
+- GitHub Stars が多く活発に更新されている
+- 1,000 ページ超のビルドで Jekyll より速い
 
+**このブログは現在次のワークフローで運用しています（ソース: [https://github.com/plzhans/hans-blog](https://github.com/plzhans/hans-blog)）**
 
-技術関連の内容をEvernoteや個人ドキュメントに整理してきましたが、Notionのウェブサイト機能を活用してブログとして運営しようと準備していました。
+> Notion で執筆  
+> → Notion API で Markdown へ変換  
+>  
+> → Hugo で静的サイトをビルド  
+>  
+> → GitHub Pages へデプロイ
 
+## 事前準備
 
-しかし、Notionはカスタマイズに制約があり、カスタムドメインの使用にも追加費用が発生するため、悩むことになりました。
+### Hugo テーマを選ぶ
 
+まず [Hugo Themes](https://themes.gohugo.io/) でテーマを選定しました。
 
-代替案として、vlog形式に転換するか、Markdownで書き直してJekyllに移行するか検討しました。
+**採用テーマ:** [m10c](https://themes.gohugo.io/themes/hugo-theme-m10c/)
 
+**選定基準**
 
-しかし、執筆が便利なNotionを諦めることはできませんでした。結論はNotionで作成して静的ウェブサイトとしてデプロイすること！
+- SEO 最適化をサポート
+- 多言語サイトをサポート
 
+m10c は一部機能が不足していますが、Hugo のレイアウトオーバーライドで補えます。
 
-現在このブログは以下のような流れで運営しています。（ソース参考：[https://github.com/plzhans/hans-blog](https://github.com/plzhans/hans-blog)）
+### Hugo をインストール
 
+**インストール手順:** [Installation Guide](https://gohugo.io/installation/)
 
-> Notionで作成 → Notion APIでMarkdownに変換 → Hugo静的サイトビルド → GitLab Pagesデプロイ
+**ドキュメント:** [Documentation](https://gohugo.io/documentation/)
 
-
-# 目標
-
-- mdファイルで作成されたドキュメントをHugoでビルドする
-- GitHub Pagesへのデプロイを自動化する
-
-## Hugoを選んだ理由
-
-- GitHub Star数が多く、活発にアップデート中
-- 1000ページ以上をビルドする際、Jekyllより高速
-
-# Hugoテーマの選択
-
-
-[Hugo Themes](https://themes.gohugo.io/)からテーマを先に選びました。
-
-
-**選択したテーマ:** [m10c](https://themes.gohugo.io/themes/hugo-theme-m10c/)
-
-
-**テーマ選択基準**
-
-- SEO最適化機能のサポート
-- 多言語サイト機能のサポート
-
-m10cは一部の機能が完全にはサポートされていませんが、Hugoのレイアウトオーバーライドで補完可能です。
-
-
-# Hugoのインストール
-
-
-**インストールドキュメント:** [Installation Guide](https://gohugo.io/installation/)
-
-
-**Hugoドキュメント:** [Documentation](https://gohugo.io/documentation/)
-
-
-## Macでのインストール
-
+Mac 例:
 
 ```shell
-# Hugoのインストール
+# Hugo をインストール
 brew install hugo
 
-# インストール確認
+# バージョン確認
 hugo --version
 ```
 
+## Hugo サイトを作成
 
-# Hugoサイトの作成
-
-
-## プロジェクトの初期化
-
+### プロジェクト初期化
 
 ```shell
-# 作業ディレクトリの作成
+# 作業ディレクトリ作成
 mkdir hugo && cd hugo
 
-# Hugoサイトの作成
+# Hugo サイト生成
 hugo new site .
 
-# 作成結果の確認
+# 結果を確認
 tree
 # .
 # ├── archetypes
@@ -125,54 +113,44 @@ tree
 # └── themes
 ```
 
+### テーマをインストール
 
-## テーマのインストール
-
-
-Git submoduleを使用してテーマをインストールします。
-
+Git のサブモジュールとして追加します。
 
 ```shell
-# Gitリポジトリの初期化（必要な場合）
+# 必要なら Git リポジトリを初期化
 git init
 
-# テーマsubmoduleの追加
+# テーマをサブモジュール追加
 git submodule add https://github.com/vaga/hugo-theme-m10c.git themes/m10c
 
-# インストール確認
+# 確認
 ls -al themes/m10c
 ```
 
-
-## サンプルコンテンツのコピー（任意）
-
+### サンプルコンテンツをコピー（任意）
 
 ```shell
 # テーマのサンプルコンテンツをコピー
 cp -R themes/m10c/exampleSite/content ./content
 
-# 確認
+# 結果を確認
 ls -al ./content/
 ```
 
+### Hugo を設定
 
-## Hugo設定
-
-
-デフォルトの設定ファイル `hugo.toml` をテーマのサンプル設定に置き換えます。
-
+デフォルトの `hugo.toml` をテーマのサンプル設定に置き換えます。
 
 ```shell
-# 既存の設定を削除
+# 既存設定を削除
 rm hugo.toml
 
 # サンプル設定をコピー
 cp themes/m10c/exampleSite/config.toml ./hugo.toml
 ```
 
-
-`hugo.toml` ファイルを開いて基本設定を修正します。
-
+`hugo.toml` を開いて基本値を調整します。
 
 ```toml
 baseURL = "https://testblog.plzhans.com"
@@ -180,21 +158,16 @@ title = "Test blog"
 theme = "m10c"
 ```
 
+**メモ:** `themesDir` 設定は削除し、`theme` は実際のディレクトリ名に合わせます。
 
-**注意:** `themesDir` 設定は削除し、`theme` は実際のディレクトリ名と一致させます。
-
-
-## ローカルサーバーの実行
-
+### ローカルサーバーを起動
 
 ```shell
-# 開発サーバーの起動
+# 開発サーバーを起動
 hugo server -D
 ```
 
-
-実行結果の例:
-
+出力例:
 
 ```javascript
 Watching for changes in /Users/plzhans/temp/sample/hugo/...
@@ -207,59 +180,62 @@ Web Server is available at http://localhost:57264/
 Press Ctrl+C to stop
 ```
 
+表示された URL をブラウザーで開き、サイトを確認します。
 
-ブラウザで表示されたアドレスにアクセスして確認します。
+## GitHub Pages へデプロイ
 
+### リポジトリを作成
 
-# GitHub Pagesへのデプロイ
+GitHub で新しいリポジトリを用意します。
 
+### デプロイ戦略を選ぶ
 
-## リポジトリの作成
+Jekyll も Hugo も「ソース」と「ビルド成果物」を分けて管理します。
 
+GitHub Pages は Jekyll を自動ビルドしますが、Hugo は GitHub Actions で配信する必要があります。
 
-GitHubで新しいリポジトリを作成します。
+また、ソースリポジトリを公開にするか非公開にするかも合わせて判断します。
 
+**無料プラン**
 
-## デプロイ戦略の選択
+- 公開リポジトリのみ Pages を設定できます。
+- ソースを非公開にしたい場合は方法3でソースリポジトリを非公開にし、デプロイリポジトリだけ公開にします。
 
+**有料プラン**
 
-JekyllとHugoはどちらもソースとビルド成果物を分離して管理します。
-
-
-JekyllはGitHub Pagesが自動的に検出してデプロイしますが、HugoはGitHub Actionsを通じて直接デプロイする必要があります。
-
-
-このドキュメントでは方法1を使用してデプロイ戦略を構成しました。
-
+- リポジトリが非公開でも Pages を公開できます。
 
 ### 方法1: actions/deploy-pages
 
-- リポジトリ1つを使用
-- GitHub PagesのソースをGitHub Actionsに設定
-- mainブランチへpush → Hugoビルド → 成果物アップロード → 自動デプロイ
+- リポジトリ 1 つ
+- GitHub Pages のソースを GitHub Actions に設定
+- `main` へ push → Hugo ビルド → アーティファクトをアップロード → 自動デプロイ
 
 ### 方法2: peaceiris/actions-gh-pages
 
-- リポジトリ1つを使用
-- GitHub Pagesをgh-pagesブランチに接続
-- mainブランチへpush → Hugoビルド → gh-pagesブランチにコミット
+- リポジトリ 1 つ
+- GitHub Pages を `gh-pages` ブランチに接続
+- `main` へ push → Hugo ビルド → `gh-pages` へコミット
 
-### 方法3: デプロイリポジトリの分離
+### 方法3: デプロイ用リポジトリを分離
 
-- リポジトリ2つを使用（ソースリポジトリ、デプロイリポジトリ）
-- ビルド成果物をデプロイリポジトリにプッシュ
+- リポジトリ 2 つ（ソース用 + デプロイ用）
+- `public` ディレクトリの成果物をデプロイリポジトリへ push
 
-## GitHub Pages設定
+### 方法4: 外部へ成果物をアップロード
 
+- GitHub Pages にこだわる必要はなく、静的ファイルを置けるサーバーならよい
+- Hugo のビルド成果物はデフォルトで `/public` に出力
 
-Repository → Settings → Pages → Sourceを**GitHub Actions**に設定します
+> 本記事では方法1を採用します。
 
+### GitHub Pages を設定
 
-## GitHub Actionsワークフローの作成
+Repository → Settings → Pages → **Source** を **GitHub Actions** にします。
 
+## GitHub Actions ワークフローを作成
 
-`.github/workflows/deploy-hugo.yml` ファイルを作成します。
-
+`.github/workflows/deploy-hugo.yml` を作成します。
 
 ```yaml
 name: Deploy Hugo
@@ -267,7 +243,7 @@ name: Deploy Hugo
 on:
   push:
     branches: [ master ]
-
+   
 permissions:
   contents: read
   pages: write
@@ -302,8 +278,8 @@ jobs:
       - name: Cache Hugo
         uses: actions/cache@v4
         with:
-          path: $ env.HUGO_CACHEDIR
-          key: $ runner.os -hugomod-$ hashFiles('**/go.sum')
+          path: $ env.HUGO_CACHEDIR 
+          key: $ runner.os -hugomod-$ hashFiles('**/go.sum') 
           restore-keys: |
             $ runner.os -hugomod-
 
@@ -317,49 +293,39 @@ jobs:
       - uses: actions/deploy-pages@v4
 ```
 
-
-## Gitデプロイ
-
+## Git のデプロイ
 
 ```shell
-# リモートリポジトリの追加
+# リモートを追加
 git remote add origin git@github.com:plzhans/hugo-sample.git
 
-# .gitignoreの設定
+# ビルド成果物を除外
 echo "/public/" >> .gitignore
 
-# 全ファイルをコミット
-git add .
+# すべてコミット
+git add . 
 git commit -m "first commit"
 
-# ブランチの作成とプッシュ
+# ブランチ作成と push
 git branch -M master
 git push -u origin master
 ```
 
+## デプロイを確認
 
-## デプロイの確認
+GitHub Actions タブでワークフロー実行を確認し、Settings → Pages で公開 URL を確認します。
 
-
-GitHub Actionsタブでワークフローの実行を確認し、Settings → Pagesでデプロイされた URLを確認します。
-
-
-**例のURL:** [https://plzhans.github.io/hugo-sample/](https://plzhans.github.io/hugo-sample/)
-
+**例:** [https://plzhans.github.io/hugo-sample/](https://plzhans.github.io/hugo-sample/)
 
 ## 注意事項
 
+**baseURL 設定**
 
-### baseURL設定
+`hugo.toml` の `baseURL` やビルド時の `--baseURL` が正しくないと、CSS と画像パスが壊れます。
 
-
-`hugo.toml` の `baseURL` またはビルド時の `--baseURL` オプションが正確でない場合、CSSと画像パスが間違ってエラーが発生します。
-
-
-このガイドでは、GitHub Actionsワークフローの環境変数 `HUGO_BASEURL` にデプロイアドレスを設定しました。
-
+このガイドでは GitHub Actions ワークフロー内の `HUGO_BASEURL` 環境変数に配信 URL を設定しています。
 
 ## 関連記事
 
-- カスタムドメイン設定：[GitHub Pagesでカスタムドメインを使用する](../86-github-pages-custom-domain/)
-- （準備中）Notionで作成した記事をGitHub Pagesに自動デプロイする
+- カスタムドメイン設定: [Github pages カスタムドメイン使用](../86-github-pages-custom-domain/)
+- （準備中）Notion から GitHub Pages への自動デプロイ
