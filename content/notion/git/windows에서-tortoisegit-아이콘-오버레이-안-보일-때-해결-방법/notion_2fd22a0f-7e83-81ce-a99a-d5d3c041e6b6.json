@@ -9,7 +9,7 @@
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -64,18 +64,18 @@
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": null
+      "url": "https://blog.plzhans.com/posts/17-windows-tortoisegit-icon-overlay-fix/"
     },
     "toc": {
       "id": "ZR~A",
       "type": "checkbox",
-      "checkbox": false
+      "checkbox": true
     },
     "수정일": {
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-02-27T21:53:00.000+09:00",
+        "start": "2026-02-27T21:54:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -216,5 +216,5 @@
   },
   "url": "https://www.notion.so/Windows-TortoiseGit-2fd22a0f7e8381cea99ad5d3c041e6b6",
   "public_url": null,
-  "request_id": "933687f2-17d1-4455-9be7-f74cfffd4e3f"
+  "request_id": "541d94af-d41c-4832-bf24-d04739bd97dd"
 }

@@ -10,8 +10,8 @@ tags:
   - "git"
   - "TortoiseGit"
 date: 2021-02-27T02:00:00.000Z
-lastmod: 2026-02-27T12:53:00.000Z
-toc: false
+lastmod: 2026-02-27T12:54:00.000Z
+toc: true
 draft: false
 images:
   - "assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png"
