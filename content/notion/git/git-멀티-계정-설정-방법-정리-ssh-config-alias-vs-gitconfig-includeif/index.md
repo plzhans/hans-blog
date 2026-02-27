@@ -12,7 +12,7 @@ tags:
   - "github"
   - "gitlab"
 date: 2025-05-15T09:05:00.000Z
-lastmod: 2026-02-27T14:58:00.000Z
+lastmod: 2026-02-27T15:15:00.000Z
 toc: true
 draft: false
 images:

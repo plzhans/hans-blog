@@ -2,14 +2,14 @@
   "object": "page",
   "id": "2fd22a0f-7e83-81ed-b096-fbb1eeec1160",
   "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-02-27T15:41:00.000Z",
+  "last_edited_time": "2026-02-27T16:08:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-02-27T15:41:00.000Z"
+      "last_edited_time": "2026-02-27T16:08:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -69,7 +69,7 @@
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/94-hugo-github-blog/"
+      "url": "https://blog.plzhans.com/posts/94-hugo-github-blog/"
     },
     "toc": {
       "id": "ZR~A",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-02-28T00:35:00.000+09:00",
+        "start": "2026-02-28T01:08:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -220,6 +220,5 @@
     }
   },
   "url": "https://www.notion.so/Hugo-Github-2fd22a0f7e8381edb096fbb1eeec1160",
-  "public_url": null,
-  "request_id": "2f2f84ac-d447-4490-a372-f641f1d4d313"
+  "public_url": null
 }
