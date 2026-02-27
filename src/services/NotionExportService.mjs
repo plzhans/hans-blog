@@ -385,6 +385,13 @@ export class NotionExportService {
     n2m.setCustomTransformer("paragraph", async (block) => {
       return this.transformCommonBlock(block, existsPageMap);
     });
+    n2m.setCustomTransformer("link_to_page", async (block) => {
+      const linkData = block.link_to_page;
+      if (!linkData || linkData.type !== "page_id") return false;
+      const resolved = this.#resolvePageByRawId(linkData.page_id.replace(/-/g, ''), existsPageMap);
+      if (!resolved) return false;
+      return `[${resolved.title}](${resolved.url})`;
+    });
 
     const mdBlocks = await n2m.pageToMarkdown(pageId);
 
@@ -657,10 +664,13 @@ export class NotionExportService {
     return block;
   }
 
-  #resolveNotionPageUrl(url, existsPageMap) {
-    const rawId = url.split("notion.so/").pop().replace(/-/g, '');
-    if (!rawId) return null;
-
+  /**
+   * rawId(대시 제거된 페이지 ID)로 existsPageMap을 조회해 페이지 메타 정보를 반환
+   * @param {string} rawId - 대시가 제거된 Notion 페이지 ID
+   * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
+   * @returns {{ postId: string, slug: string, title: string, url: string } | null} 성공 시 메타 정보, 실패 시 null
+   */
+  #resolvePageByRawId(rawId, existsPageMap) {
     let pageId = null;
     let pageDir = null;
     for (const [key, dir] of existsPageMap) {
@@ -680,11 +690,25 @@ export class NotionExportService {
       const postId = this.#extractPagePostId(meta, this.propertyKeys.uniqueId);
       const slug = this.#extractTextProperty(meta.properties, this.propertyKeys.slug);
       if (!slug) return null;
-      return `../${postId}-${slug}/`;
+      const titleProp = Object.values(meta.properties || {}).find(p => p.type === "title");
+      const title = titleProp?.title?.map(t => t.plain_text).join("").trim() || slug;
+      return { postId, slug, title, url: `../${postId}-${slug}/` };
     } catch (e) {
-      console.warn(`⚠️ Failed to resolve Notion link: ${url}`, e);
+      console.warn(`⚠️ Failed to resolve Notion page: ${rawId}`, e);
       return null;
     }
+  }
+
+  /**
+   * notion.so URL에서 페이지 ID를 추출해 Hugo 상대 경로로 변환
+   * @param {string} url - notion.so를 포함한 URL
+   * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
+   * @returns {string | null} Hugo 상대 경로 (예: `../123-slug/`), 실패 시 null
+   */
+  #resolveNotionPageUrl(url, existsPageMap) {
+    const rawId = url.split("notion.so/").pop().replace(/-/g, '');
+    if (!rawId) return null;
+    return this.#resolvePageByRawId(rawId, existsPageMap)?.url ?? null;
   }
 
   // ── 파일 헬퍼 ──
