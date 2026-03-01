@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-28T00:47:35.561Z",
+  "generated_at": "2026-03-01T00:59:32.425Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/",
       "image": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png",
-      "count": 90
+      "count": 115
     },
     {
       "rank": 3,
@@ -47,6 +47,19 @@
     },
     {
       "rank": 4,
+      "slug": "94-hugo-github-blog",
+      "title": "Hugo + Github 블로그 만들기",
+      "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 32
+    },
+    {
+      "rank": 5,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOS DNS 캐시 지우기",
       "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
@@ -57,19 +70,6 @@
       "url": "/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
       "count": 31
-    },
-    {
-      "rank": 5,
-      "slug": "94-hugo-github-blog",
-      "title": "Hugo + Github 블로그 만들기",
-      "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
-      "date": "2026-02-10T08:46:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 27
     },
     {
       "rank": 6,
@@ -86,6 +86,19 @@
     },
     {
       "rank": 7,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Github pages 커스텀 도메인 사용하기",
+      "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
+      "date": "2026-02-10T07:34:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 25
+    },
+    {
+      "rank": 8,
       "slug": "88-github-gpg-commit-signing",
       "title": "Git에서 GPG로 커밋 서명하기",
       "description": "Git 커밋에 GPG 서명을 적용해 Verified 배지를 표시하는 방법을 정리했습니다. GnuPG 설치와 키 생성·내보내기부터 git commit 자동 서명 설정, 로컬 서명 검증, GitHub 공개키 등록과 오류 해결까지 한 번에 확인하세요.",
@@ -96,19 +109,6 @@
       "url": "/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
       "count": 24
-    },
-    {
-      "rank": 8,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Github pages 커스텀 도메인 사용하기",
-      "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
-      "date": "2026-02-10T07:34:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 23
     },
     {
       "rank": 9,
@@ -147,10 +147,23 @@
       ],
       "url": "/posts/13-git-ssh-key-setup-and-remote-access/",
       "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
-      "count": 16
+      "count": 20
     },
     {
       "rank": 12,
+      "slug": "17-windows-tortoisegit-icon-overlay-fix",
+      "title": "Windows에서 TortoiseGit 아이콘 오버레이 안 보일 때 해결 방법",
+      "description": "Windows 탐색기에서 TortoiseGit 상태 아이콘이 안 보이면 ShellIconOverlayIdentifiers 오버레이 제한과 우선순위를 점검해야 합니다. 레지스트리 정리와 Explorer 재시작으로 아이콘을 바로 복구합니다.",
+      "date": "2021-02-27T02:00:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/17-windows-tortoisegit-icon-overlay-fix/",
+      "image": "/posts/17-windows-tortoisegit-icon-overlay-fix/assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png",
+      "count": 14
+    },
+    {
+      "rank": 13,
       "slug": "3-git-svn-clone",
       "title": "SVN을 Git으로 이전하는 방법: git svn clone",
       "description": "SVN 저장소를 Git으로 이전할 때 git svn clone 사용법을 정리합니다. authors-file 작성과 -s(std-layout) 옵션 의미를 설명하고 설치 링크와 확인 명령으로 마이그레이션을 빠르게 시작하세요.",
@@ -163,19 +176,6 @@
       "count": 12
     },
     {
-      "rank": 13,
-      "slug": "17-windows-tortoisegit-icon-overlay-fix",
-      "title": "Windows에서 TortoiseGit 아이콘 오버레이 안 보일 때 해결 방법",
-      "description": "Windows 탐색기에서 TortoiseGit 상태 아이콘이 안 보이면 ShellIconOverlayIdentifiers 오버레이 제한과 우선순위를 점검해야 합니다. 레지스트리 정리와 Explorer 재시작으로 아이콘을 바로 복구합니다.",
-      "date": "2021-02-27T02:00:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/17-windows-tortoisegit-icon-overlay-fix/",
-      "image": "/posts/17-windows-tortoisegit-icon-overlay-fix/assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png",
-      "count": 11
-    },
-    {
       "rank": 14,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Git 삭제 브런치 복구",
@@ -186,7 +186,7 @@
       ],
       "url": "/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
-      "count": 10
+      "count": 11
     },
     {
       "rank": 15,
