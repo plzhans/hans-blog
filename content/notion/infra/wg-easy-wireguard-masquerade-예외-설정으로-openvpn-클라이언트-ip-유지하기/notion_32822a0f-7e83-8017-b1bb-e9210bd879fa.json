@@ -2,7 +2,7 @@
   "object": "page",
   "id": "32822a0f-7e83-8017-b1bb-e9210bd879fa",
   "created_time": "2026-03-19T05:07:00.000Z",
-  "last_edited_time": "2026-03-19T06:07:00.000Z",
+  "last_edited_time": "2026-03-19T06:08:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -46,7 +46,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-03-19T06:07:00.000Z"
+      "last_edited_time": "2026-03-19T06:08:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -70,7 +70,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-03-19T15:07:00.000+09:00",
+        "start": "2026-03-19T15:08:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -91,7 +91,7 @@
         {
           "type": "text",
           "text": {
-            "content": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 문제를 정리합니다. iptables NAT 규칙에 목적지 대역 예외를 추가해 OpenVPN 클라이언트 사설 IP를 로그에 남기세요.",
+            "content": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
             "link": null
           },
           "annotations": {
@@ -102,7 +102,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 문제를 정리합니다. iptables NAT 규칙에 목적지 대역 예외를 추가해 OpenVPN 클라이언트 사설 IP를 로그에 남기세요.",
+          "plain_text": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
           "href": null
         }
       ]
@@ -212,5 +212,5 @@
   "url": "https://www.notion.so/wg-easy-WireGuard-MASQUERADE-OpenVPN-IP-32822a0f7e838017b1bbe9210bd879fa",
   "public_url": null,
   "archived": false,
-  "request_id": "c90e31c9-3aa4-4672-a03d-58811132f009"
+  "request_id": "0aac1c80-cfb0-44a7-bb00-db562dd6f4b2"
 }

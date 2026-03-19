@@ -3,13 +3,13 @@ id: "98"
 translationKey: "98"
 slug: "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip"
 title: "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기"
-description: "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 문제를 정리합니다. iptables NAT 규칙에 목적지 대역 예외를 추가해 OpenVPN 클라이언트 사설 IP를 로그에 남기세요."
+description: "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다."
 categories:
   - "infra"
 tags:
   - "vpn"
 date: 2026-03-19T06:06:00.000Z
-lastmod: 2026-03-19T06:07:00.000Z
+lastmod: 2026-03-19T06:08:00.000Z
 toc: true
 draft: false
 images:
