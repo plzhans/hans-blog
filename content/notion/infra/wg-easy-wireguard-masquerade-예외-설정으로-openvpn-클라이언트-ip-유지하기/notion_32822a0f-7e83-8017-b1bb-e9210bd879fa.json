@@ -2,14 +2,14 @@
   "object": "page",
   "id": "32822a0f-7e83-8017-b1bb-e9210bd879fa",
   "created_time": "2026-03-19T05:07:00.000Z",
-  "last_edited_time": "2026-03-19T06:05:00.000Z",
+  "last_edited_time": "2026-03-19T06:07:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "00000000-0000-0000-0000-000000000003"
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "cover": null,
   "icon": null,
@@ -35,12 +35,18 @@
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
-      "multi_select": []
+      "multi_select": [
+        {
+          "id": "c4780975-8d5e-480a-90eb-a86270f15701",
+          "name": "vpn",
+          "color": "blue"
+        }
+      ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-03-19T06:05:00.000Z"
+      "last_edited_time": "2026-03-19T06:07:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -53,7 +59,7 @@
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": null
+      "url": "https://blog.plzhans.com/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/"
     },
     "toc": {
       "id": "ZR~A",
@@ -64,7 +70,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-03-19T15:05:00.000+09:00",
+        "start": "2026-03-19T15:07:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -155,7 +161,11 @@
     "발행일": {
       "id": "nEEr",
       "type": "date",
-      "date": null
+      "date": {
+        "start": "2026-03-19T06:06:00.000+00:00",
+        "end": null,
+        "time_zone": null
+      }
     },
     "생성일": {
       "id": "oe%60s",
@@ -169,7 +179,11 @@
     "카테고리": {
       "id": "vwVr",
       "type": "select",
-      "select": null
+      "select": {
+        "id": "8dc22ddc-fa45-4626-aed1-e37aafa0ed8e",
+        "name": "Infra",
+        "color": "blue"
+      }
     },
     "제목": {
       "id": "title",
@@ -198,5 +212,5 @@
   "url": "https://www.notion.so/wg-easy-WireGuard-MASQUERADE-OpenVPN-IP-32822a0f7e838017b1bbe9210bd879fa",
   "public_url": null,
   "archived": false,
-  "request_id": "072b4aa4-8ca6-4313-92cf-a740060b57a7"
+  "request_id": "c90e31c9-3aa4-4672-a03d-58811132f009"
 }
