@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T00:54:51.141Z",
+  "generated_at": "2026-03-26T00:58:13.236Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -95,7 +95,7 @@
       ],
       "url": "/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
-      "count": 26
+      "count": 27
     },
     {
       "rank": 8,
@@ -121,7 +121,7 @@
       ],
       "url": "/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 22
+      "count": 23
     },
     {
       "rank": 10,
@@ -216,6 +216,19 @@
     },
     {
       "rank": 17,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+      "date": "2026-03-24T06:22:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 5
+    },
+    {
+      "rank": 18,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
       "description": "",
@@ -225,20 +238,7 @@
       ],
       "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 1
-    },
-    {
-      "rank": 18,
-      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
-      "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
-      "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
-      "date": "2026-03-19T06:06:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
-      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
-      "count": 1
+      "count": 2
     }
   ]
 }
