@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-26T00:58:13.240Z",
+  "generated_at": "2026-03-27T00:58:22.958Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -8,19 +8,6 @@
   "posts": [
     {
       "rank": 1,
-      "slug": "95-openclaw-setup",
-      "title": "Setting Up OpenClaw",
-      "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
-      "date": "2026-02-23T10:10:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/95-openclaw-setup/",
-      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 292
-    },
-    {
-      "rank": 2,
       "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
       "title": "Setting up multiple Git accounts ssh config alias vs gitconfig includeIf",
       "description": "This guide explains how to route SSH keys with ~/.ssh/config aliases and how to split commit author settings per folder with ~/.gitconfig includeIf in a multi-account Git setup. Use it to reduce account mix-ups and authentication mistakes.",
@@ -33,33 +20,20 @@
       "count": 115
     },
     {
+      "rank": 2,
+      "slug": "95-openclaw-setup",
+      "title": "Setting Up OpenClaw",
+      "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
+      "date": "2026-02-23T10:10:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/95-openclaw-setup/",
+      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "count": 33
+    },
+    {
       "rank": 3,
-      "slug": "80-redis-dump-vs-aof",
-      "title": "Redis dump vs aof",
-      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
-      "date": "2025-06-10T07:16:00.000Z",
-      "categories": [
-        "Database"
-      ],
-      "url": "/en/posts/80-redis-dump-vs-aof/",
-      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 87
-    },
-    {
-      "rank": 4,
-      "slug": "6-flush-dns-cache",
-      "title": "Clearing DNS Cache on Windows/Linux/macOS",
-      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 32
-    },
-    {
-      "rank": 5,
       "slug": "94-hugo-github-blog",
       "title": "Building a Hugo + GitHub Blog",
       "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
@@ -69,23 +43,10 @@
       ],
       "url": "/en/posts/94-hugo-github-blog/",
       "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 32
+      "count": 28
     },
     {
-      "rank": 6,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
-      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
-      "date": "2022-03-17T07:48:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 27
-    },
-    {
-      "rank": 7,
+      "rank": 4,
       "slug": "88-github-gpg-commit-signing",
       "title": "Signing Git Commits with GPG",
       "description": "Learn how to apply GPG signatures to Git commits and earn the Verified badge - from installing GnuPG and generating or exporting keys to enabling automatic commit signing, verifying locally, registering your public key on GitHub, and fixing common errors.",
@@ -95,49 +56,23 @@
       ],
       "url": "/en/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
-      "count": 27
-    },
-    {
-      "rank": 8,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Using a Custom Domain with GitHub Pages",
-      "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
-      "date": "2026-02-04T09:07:00.000Z",
-      "categories": [
-        "Git"
-      ],
-      "url": "/en/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 25
-    },
-    {
-      "rank": 9,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 23
     },
     {
-      "rank": 10,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "Supporting Multiple Languages on a Hugo Site",
-      "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
-      "date": "2026-02-06T02:34:00.000Z",
+      "rank": 5,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
+      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
+      "date": "2022-03-17T07:48:00.000Z",
       "categories": [
         "Infra"
       ],
-      "url": "/en/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 21
+      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 22
     },
     {
-      "rank": 11,
+      "rank": 6,
       "slug": "13-git-ssh-key-setup-and-remote-access",
       "title": "Accessing Git remotes over SSH: from key generation to registration",
       "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
@@ -150,7 +85,20 @@
       "count": 20
     },
     {
-      "rank": 12,
+      "rank": 7,
+      "slug": "6-flush-dns-cache",
+      "title": "Clearing DNS Cache on Windows/Linux/macOS",
+      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 16
+    },
+    {
+      "rank": 8,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "How to fix missing TortoiseGit icon overlays on Windows",
       "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
@@ -163,7 +111,33 @@
       "count": 15
     },
     {
-      "rank": 13,
+      "rank": 9,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Using a Custom Domain with GitHub Pages",
+      "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
+      "date": "2026-02-04T09:07:00.000Z",
+      "categories": [
+        "Git"
+      ],
+      "url": "/en/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 15
+    },
+    {
+      "rank": 10,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "Encrypting .env Files with GPG for Safe Commits",
+      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 15
+    },
+    {
+      "rank": 11,
       "slug": "3-git-svn-clone",
       "title": "How to migrate SVN to Git: git svn clone",
       "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
@@ -176,7 +150,7 @@
       "count": 12
     },
     {
-      "rank": 14,
+      "rank": 12,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Recovering a deleted Git branch",
       "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
@@ -187,6 +161,32 @@
       "url": "/en/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
       "count": 11
+    },
+    {
+      "rank": 13,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/en/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 10
+    },
+    {
+      "rank": 14,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "Supporting Multiple Languages on a Hugo Site",
+      "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
+      "date": "2026-02-06T02:34:00.000Z",
+      "categories": [
+        "Infra"
+      ],
+      "url": "/en/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 8
     },
     {
       "rank": 15,
@@ -238,7 +238,20 @@
       ],
       "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 2
+      "count": 3
+    },
+    {
+      "rank": 19,
+      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
+      "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
+      "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
+      "date": "2026-03-19T06:06:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
+      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
+      "count": 1
     }
   ]
 }
