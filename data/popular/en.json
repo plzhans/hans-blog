@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-28T00:53:53.538Z",
+  "generated_at": "2026-03-29T01:01:29.154Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -43,7 +43,7 @@
       ],
       "url": "/en/posts/94-hugo-github-blog/",
       "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 19
+      "count": 18
     },
     {
       "rank": 4,
@@ -69,7 +69,7 @@
       ],
       "url": "/en/posts/86-github-pages-custom-domain/",
       "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 11
+      "count": 10
     },
     {
       "rank": 6,
@@ -82,7 +82,7 @@
       ],
       "url": "/en/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
-      "count": 10
+      "count": 9
     },
     {
       "rank": 7,
@@ -95,7 +95,7 @@
       ],
       "url": "/en/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 10
+      "count": 9
     },
     {
       "rank": 8,
@@ -108,7 +108,7 @@
       ],
       "url": "/en/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 9
+      "count": 8
     },
     {
       "rank": 9,
@@ -121,7 +121,7 @@
       ],
       "url": "/en/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
-      "count": 9
+      "count": 8
     },
     {
       "rank": 10,
@@ -134,36 +134,10 @@
       ],
       "url": "/en/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 8
+      "count": 7
     },
     {
       "rank": 11,
-      "slug": "4-git-filter-repo-remove-secrets-from-history",
-      "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
-      "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
-      "date": "2019-05-18T16:31:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/4-git-filter-repo-remove-secrets-from-history/",
-      "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
-      "count": 7
-    },
-    {
-      "rank": 12,
-      "slug": "80-redis-dump-vs-aof",
-      "title": "Redis dump vs aof",
-      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
-      "date": "2025-06-10T07:16:00.000Z",
-      "categories": [
-        "Database"
-      ],
-      "url": "/en/posts/80-redis-dump-vs-aof/",
-      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 7
-    },
-    {
-      "rank": 13,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Supporting Multiple Languages on a Hugo Site",
       "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
@@ -173,23 +147,10 @@
       ],
       "url": "/en/posts/93-hugo-multilingual-seo-setup/",
       "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 7
+      "count": 6
     },
     {
-      "rank": 14,
-      "slug": "10-tortoisegit-clear-saved-authentication-data",
-      "title": "TortoiseGit 인증 오류 해결: 저장된 인증 정보 초기화(Clear) 방법",
-      "description": "Git 서버 변경 후 TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 점검까지 한 번에 해결하세요.",
-      "date": "2020-09-03T16:46:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/10-tortoisegit-clear-saved-authentication-data/",
-      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
-      "count": 5
-    },
-    {
-      "rank": 15,
+      "rank": 12,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
@@ -202,7 +163,20 @@
       "count": 5
     },
     {
-      "rank": 16,
+      "rank": 13,
+      "slug": "10-tortoisegit-clear-saved-authentication-data",
+      "title": "TortoiseGit 인증 오류 해결: 저장된 인증 정보 초기화(Clear) 방법",
+      "description": "Git 서버 변경 후 TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 점검까지 한 번에 해결하세요.",
+      "date": "2020-09-03T16:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/10-tortoisegit-clear-saved-authentication-data/",
+      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
+      "count": 4
+    },
+    {
+      "rank": 14,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
@@ -215,20 +189,33 @@
       "count": 4
     },
     {
-      "rank": 17,
-      "slug": "3-git-svn-clone",
-      "title": "How to migrate SVN to Git: git svn clone",
-      "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
-      "date": "2019-12-01T10:03:00.000Z",
+      "rank": 15,
+      "slug": "4-git-filter-repo-remove-secrets-from-history",
+      "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
+      "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
+      "date": "2019-05-18T16:31:00.000Z",
       "categories": [
         "git"
       ],
-      "url": "/en/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
+      "url": "/en/posts/4-git-filter-repo-remove-secrets-from-history/",
+      "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
       "count": 3
     },
     {
-      "rank": 18,
+      "rank": 16,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/en/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 3
+    },
+    {
+      "rank": 17,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
       "description": "",
@@ -239,6 +226,19 @@
       "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
       "count": 3
+    },
+    {
+      "rank": 18,
+      "slug": "3-git-svn-clone",
+      "title": "How to migrate SVN to Git: git svn clone",
+      "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
+      "date": "2019-12-01T10:03:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
+      "count": 1
     },
     {
       "rank": 19,
