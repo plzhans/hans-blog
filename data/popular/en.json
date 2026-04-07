@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-06T01:01:44.349Z",
+  "generated_at": "2026-04-07T00:59:30.980Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 3
+      "count": 4
     },
     {
       "rank": 3,
