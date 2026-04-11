@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T00:59:50.763Z",
+  "generated_at": "2026-04-11T00:57:17.707Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 5
+      "count": 6
     },
     {
       "rank": 2,
@@ -30,10 +30,23 @@
       ],
       "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 4
+      "count": 5
     },
     {
       "rank": 3,
+      "slug": "6-flush-dns-cache",
+      "title": "Windows/Linux/macOS DNS 캐시 지우기",
+      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 2
+    },
+    {
+      "rank": 4,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
       "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
@@ -44,19 +57,6 @@
       "url": "/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 2
-    },
-    {
-      "rank": 4,
-      "slug": "6-flush-dns-cache",
-      "title": "Windows/Linux/macOS DNS 캐시 지우기",
-      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 1
     },
     {
       "rank": 5,

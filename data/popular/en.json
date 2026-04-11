@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T00:59:50.767Z",
+  "generated_at": "2026-04-11T00:57:17.710Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 5
+      "count": 6
     },
     {
       "rank": 2,
@@ -30,10 +30,23 @@
       ],
       "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 4
+      "count": 5
     },
     {
       "rank": 3,
+      "slug": "6-flush-dns-cache",
+      "title": "Clearing DNS Cache on Windows/Linux/macOS",
+      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 2
+    },
+    {
+      "rank": 4,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
@@ -44,19 +57,6 @@
       "url": "/en/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 2
-    },
-    {
-      "rank": 4,
-      "slug": "6-flush-dns-cache",
-      "title": "Clearing DNS Cache on Windows/Linux/macOS",
-      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 1
     },
     {
       "rank": 5,
