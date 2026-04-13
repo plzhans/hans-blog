@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T01:04:44.150Z",
+  "generated_at": "2026-04-13T01:05:55.700Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -34,6 +34,19 @@
     },
     {
       "rank": 3,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
+      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
+      "date": "2022-03-17T07:48:00.000Z",
+      "categories": [
+        "Infra"
+      ],
+      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 2
+    },
+    {
+      "rank": 4,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -46,7 +59,7 @@
       "count": 2
     },
     {
-      "rank": 4,
+      "rank": 5,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
@@ -59,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
       "title": "Setting up multiple Git accounts ssh config alias vs gitconfig includeIf",
       "description": "This guide explains how to route SSH keys with ~/.ssh/config aliases and how to split commit author settings per folder with ~/.gitconfig includeIf in a multi-account Git setup. Use it to reduce account mix-ups and authentication mistakes.",
@@ -72,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "88-github-gpg-commit-signing",
       "title": "Signing Git Commits with GPG",
       "description": "Learn how to apply GPG signatures to Git commits and earn the Verified badge - from installing GnuPG and generating or exporting keys to enabling automatic commit signing, verifying locally, registering your public key on GitHub, and fixing common errors.",
@@ -85,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
       "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",

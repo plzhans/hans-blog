@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T01:04:44.217Z",
+  "generated_at": "2026-04-13T01:05:55.703Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -34,6 +34,19 @@
     },
     {
       "rank": 3,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
+      "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
+      "date": "2022-03-17T07:48:00.000Z",
+      "categories": [
+        "Infra"
+      ],
+      "url": "/ja/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 2
+    },
+    {
+      "rank": 4,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
       "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
@@ -46,7 +59,7 @@
       "count": 2
     },
     {
-      "rank": 4,
+      "rank": 5,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする",
       "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
@@ -59,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
       "title": "Git 複数アカウント設定のまとめ ssh config alias と gitconfig includeIf",
       "description": "複数の Git アカウント環境で ~/.ssh/config のエイリアスで SSH キーを切り替え、~/.gitconfig includeIf でフォルダーごとにコミッター情報を自動分離する手順を整理しました。アカウント混線や認証ミスを減らす判断基準として活用してください。",
@@ -72,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "88-github-gpg-commit-signing",
       "title": "GitでGPGを使ってコミットに署名する",
       "description": "GitコミットにGPG署名を付けてVerifiedバッジを表示する方法をまとめました。GnuPGのインストール、鍵の生成とエクスポート、git commitの自動署名設定、ローカル検証、GitHubへの公開鍵登録とエラー対応まで一度に確認できます。",
@@ -85,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
       "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
