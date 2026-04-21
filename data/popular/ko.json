@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T01:06:01.602Z",
+  "generated_at": "2026-04-21T01:05:26.076Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -60,19 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
-      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 2
-    },
-    {
-      "rank": 6,
       "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
       "title": "Git 멀티 계정 설정 방법 정리 ssh config alias vs gitconfig includeIf",
       "description": "Git 멀티 계정 환경에서 ~/.ssh/config Alias로 SSH 키를 분기하고 ~/.gitconfig includeIf로 폴더별 커밋 사용자 정보를 자동 분리하는 방법을 정리했습니다. 계정 혼선과 인증 실수를 줄이는 기준을 확인하세요.",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "88-github-gpg-commit-signing",
       "title": "Git에서 GPG로 커밋 서명하기",
       "description": "Git 커밋에 GPG 서명을 적용해 Verified 배지를 표시하는 방법을 정리했습니다. GnuPG 설치와 키 생성·내보내기부터 git commit 자동 서명 설정, 로컬 서명 검증, GitHub 공개키 등록과 오류 해결까지 한 번에 확인하세요.",
@@ -95,6 +82,19 @@
       ],
       "url": "/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
+      "count": 1
+    },
+    {
+      "rank": 7,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
+      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 1
     }
   ]
