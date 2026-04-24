@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-23T01:07:06.238Z",
+  "generated_at": "2026-04-24T01:07:35.999Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -8,16 +8,16 @@
   "posts": [
     {
       "rank": 1,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
-      "date": "2026-03-24T06:22:00.000Z",
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
+      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
+      "date": "2026-02-06T06:29:00.000Z",
       "categories": [
-        "cloud"
+        "infra"
       ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 6
+      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 4
     },
     {
       "rank": 2,
@@ -30,23 +30,10 @@
       ],
       "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 4
+      "count": 3
     },
     {
       "rank": 3,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
-      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
-      "date": "2026-02-06T06:29:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 2
-    },
-    {
-      "rank": 4,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOS DNS 캐시 지우기",
       "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
@@ -56,6 +43,19 @@
       ],
       "url": "/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 2
+    },
+    {
+      "rank": 4,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+      "date": "2026-03-24T06:22:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 2
     },
     {
