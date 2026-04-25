@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T01:07:36.007Z",
+  "generated_at": "2026-04-25T01:01:22.572Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 3
+      "count": 2
     },
     {
       "rank": 3,
@@ -43,23 +43,10 @@
       ],
       "url": "/ja/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 2
+      "count": 1
     },
     {
       "rank": 4,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
-      "date": "2026-03-24T06:22:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 2
-    },
-    {
-      "rank": 5,
       "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
       "title": "Git 複数アカウント設定のまとめ ssh config alias と gitconfig includeIf",
       "description": "複数の Git アカウント環境で ~/.ssh/config のエイリアスで SSH キーを切り替え、~/.gitconfig includeIf でフォルダーごとにコミッター情報を自動分離する手順を整理しました。アカウント混線や認証ミスを減らす判断基準として活用してください。",
@@ -72,7 +59,7 @@
       "count": 1
     },
     {
-      "rank": 6,
+      "rank": 5,
       "slug": "88-github-gpg-commit-signing",
       "title": "GitでGPGを使ってコミットに署名する",
       "description": "GitコミットにGPG署名を付けてVerifiedバッジを表示する方法をまとめました。GnuPGのインストール、鍵の生成とエクスポート、git commitの自動署名設定、ローカル検証、GitHubへの公開鍵登録とエラー対応まで一度に確認できます。",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする",
       "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
@@ -95,6 +82,19 @@
       ],
       "url": "/ja/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 1
+    },
+    {
+      "rank": 7,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+      "date": "2026-03-24T06:22:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 1
     }
   ]
