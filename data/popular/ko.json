@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T01:16:50.699Z",
+  "generated_at": "2026-05-02T01:08:29.545Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -47,19 +47,6 @@
     },
     {
       "rank": 4,
-      "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
-      "title": "Git 멀티 계정 설정 방법 정리 ssh config alias vs gitconfig includeIf",
-      "description": "Git 멀티 계정 환경에서 ~/.ssh/config Alias로 SSH 키를 분기하고 ~/.gitconfig includeIf로 폴더별 커밋 사용자 정보를 자동 분리하는 방법을 정리했습니다. 계정 혼선과 인증 실수를 줄이는 기준을 확인하세요.",
-      "date": "2025-05-15T09:05:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/",
-      "image": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png",
-      "count": 1
-    },
-    {
-      "rank": 5,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
