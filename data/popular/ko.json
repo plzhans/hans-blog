@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T01:07:59.273Z",
+  "generated_at": "2026-05-07T01:12:25.754Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -21,19 +21,6 @@
     },
     {
       "rank": 2,
-      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
-      "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
-      "description": "",
-      "date": "2026-03-19T02:31:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
-      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 2
-    },
-    {
-      "rank": 3,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOS DNS 캐시 지우기",
       "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
@@ -43,6 +30,19 @@
       ],
       "url": "/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 1
+    },
+    {
+      "rank": 3,
+      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
+      "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
+      "description": "",
+      "date": "2026-03-19T02:31:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
+      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
       "count": 1
     },
     {

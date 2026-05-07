@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T01:07:59.276Z",
+  "generated_at": "2026-05-07T01:12:25.757Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -21,19 +21,6 @@
     },
     {
       "rank": 2,
-      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
-      "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
-      "description": "",
-      "date": "2026-03-19T02:31:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
-      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 2
-    },
-    {
-      "rank": 3,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -43,6 +30,19 @@
       ],
       "url": "/en/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 1
+    },
+    {
+      "rank": 3,
+      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
+      "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
+      "description": "",
+      "date": "2026-03-19T02:31:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
+      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
       "count": 1
     },
     {
