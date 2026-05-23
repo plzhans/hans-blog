@@ -1,23 +1,9 @@
 {
-  "generated_at": "2026-05-22T01:21:52.727Z",
+  "generated_at": "2026-05-23T01:17:02.716Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
     "end_date": "today"
   },
-  "posts": [
-    {
-      "rank": 1,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
-      "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
-      "date": "2022-03-17T07:48:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/ja/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 2
-    }
-  ]
+  "posts": []
 }

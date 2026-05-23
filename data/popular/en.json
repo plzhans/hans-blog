@@ -1,23 +1,9 @@
 {
-  "generated_at": "2026-05-22T01:21:52.723Z",
+  "generated_at": "2026-05-23T01:17:02.712Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
     "end_date": "today"
   },
-  "posts": [
-    {
-      "rank": 1,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
-      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
-      "date": "2022-03-17T07:48:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 2
-    }
-  ]
+  "posts": []
 }

@@ -1,23 +1,9 @@
 {
-  "generated_at": "2026-05-22T01:21:52.720Z",
+  "generated_at": "2026-05-23T01:17:02.708Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
     "end_date": "today"
   },
-  "posts": [
-    {
-      "rank": 1,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
-      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
-      "date": "2026-02-06T06:29:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 2
-    }
-  ]
+  "posts": []
 }
