@@ -1,9 +1,127 @@
 {
-  "generated_at": "2026-05-26T01:19:36.841Z",
+  "generated_at": "2026-05-27T01:24:28.372Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
     "end_date": "today"
   },
-  "posts": []
+  "posts": [
+    {
+      "rank": 1,
+      "slug": "6-flush-dns-cache",
+      "title": "Windows/Linux/macOS DNS 캐시 지우기",
+      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 2
+    },
+    {
+      "rank": 2,
+      "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
+      "title": "Git 멀티 계정 설정 방법 정리 ssh config alias vs gitconfig includeIf",
+      "description": "Git 멀티 계정 환경에서 ~/.ssh/config Alias로 SSH 키를 분기하고 ~/.gitconfig includeIf로 폴더별 커밋 사용자 정보를 자동 분리하는 방법을 정리했습니다. 계정 혼선과 인증 실수를 줄이는 기준을 확인하세요.",
+      "date": "2025-05-15T09:05:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/",
+      "image": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png",
+      "count": 2
+    },
+    {
+      "rank": 3,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "hugo site 다국어 지원하기",
+      "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
+      "date": "2026-02-11T09:55:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 2
+    },
+    {
+      "rank": 4,
+      "slug": "17-windows-tortoisegit-icon-overlay-fix",
+      "title": "Windows에서 TortoiseGit 아이콘 오버레이 안 보일 때 해결 방법",
+      "description": "Windows 탐색기에서 TortoiseGit 상태 아이콘이 안 보이면 ShellIconOverlayIdentifiers 오버레이 제한과 우선순위를 점검해야 합니다. 레지스트리 정리와 Explorer 재시작으로 아이콘을 바로 복구합니다.",
+      "date": "2021-02-27T02:00:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/17-windows-tortoisegit-icon-overlay-fix/",
+      "image": "/posts/17-windows-tortoisegit-icon-overlay-fix/assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png",
+      "count": 1
+    },
+    {
+      "rank": 5,
+      "slug": "3-git-svn-clone",
+      "title": "SVN을 Git으로 이전하는 방법: git svn clone",
+      "description": "SVN 저장소를 Git으로 이전할 때 git svn clone 사용법을 정리합니다. authors-file 작성과 -s(std-layout) 옵션 의미를 설명하고 설치 링크와 확인 명령으로 마이그레이션을 빠르게 시작하세요.",
+      "date": "2019-12-01T10:03:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
+      "count": 1
+    },
+    {
+      "rank": 6,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
+      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
+      "date": "2026-02-06T06:29:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 1
+    },
+    {
+      "rank": 7,
+      "slug": "69-git-deleted-branch-recovery",
+      "title": "Git 삭제 브런치 복구",
+      "description": "삭제한 Git 브랜치를 복구해야 할 때 reflog로 커밋 해시를 찾고 해당 시점으로 새 브랜치를 만드는 절차를 정리했습니다. checkout -b로 복구 후 브랜치 이동과 커밋 상태를 빠르게 확인하세요.",
+      "date": "2025-01-09T06:30:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/69-git-deleted-branch-recovery/",
+      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
+      "count": 1
+    },
+    {
+      "rank": 8,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
+      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 1
+    },
+    {
+      "rank": 9,
+      "slug": "95-openclaw-setup",
+      "title": "오픈클로(OpenClaw) 구축 ",
+      "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",
+      "date": "2026-02-23T10:10:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/posts/95-openclaw-setup/",
+      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "count": 1
+    }
+  ]
 }
