@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-27T01:24:28.380Z",
+  "generated_at": "2026-05-28T01:16:36.198Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -8,6 +8,19 @@
   "posts": [
     {
       "rank": 1,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "Hugo サイトの多言語対応",
+      "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
+      "date": "2026-02-06T02:34:00.000Z",
+      "categories": [
+        "Infra"
+      ],
+      "url": "/ja/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 4
+    },
+    {
+      "rank": 2,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
       "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
@@ -20,7 +33,7 @@
       "count": 2
     },
     {
-      "rank": 2,
+      "rank": 3,
       "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
       "title": "Git 複数アカウント設定のまとめ ssh config alias と gitconfig includeIf",
       "description": "複数の Git アカウント環境で ~/.ssh/config のエイリアスで SSH キーを切り替え、~/.gitconfig includeIf でフォルダーごとにコミッター情報を自動分離する手順を整理しました。アカウント混線や認証ミスを減らす判断基準として活用してください。",
@@ -30,19 +43,6 @@
       ],
       "url": "/ja/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/",
       "image": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png",
-      "count": 2
-    },
-    {
-      "rank": 3,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "Hugo サイトの多言語対応",
-      "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
-      "date": "2026-02-06T02:34:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/ja/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
       "count": 2
     },
     {
@@ -99,6 +99,19 @@
     },
     {
       "rank": 8,
+      "slug": "86-github-pages-custom-domain",
+      "title": "GitHub Pagesでカスタムドメインを使用する",
+      "description": "GitHub Pagesにカスタムドメインを接続する際のCNAME・A/AAAAレコード設定とリポジトリのCustom domain適用手順を整理しました。Enforce HTTPS設定時の証明書伝播遅延も含め、ドメイン接続トラブルを素早く解決できます。",
+      "date": "2026-02-04T09:07:00.000Z",
+      "categories": [
+        "Git"
+      ],
+      "url": "/ja/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 1
+    },
+    {
+      "rank": 9,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする",
       "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
@@ -111,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "95-openclaw-setup",
       "title": "OpenClaw（オープンクロー）の構築",
       "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",
@@ -121,6 +134,32 @@
       ],
       "url": "/ja/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "count": 1
+    },
+    {
+      "rank": 11,
+      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
+      "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
+      "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
+      "date": "2026-03-19T06:06:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
+      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
+      "count": 1
+    },
+    {
+      "rank": 12,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+      "date": "2026-03-24T06:22:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 1
     }
   ]
