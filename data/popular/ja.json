@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T01:34:09.466Z",
+  "generated_at": "2026-06-04T01:35:10.003Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+      "date": "2026-03-24T06:22:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 2
+    },
+    {
+      "rank": 6,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows で TortoiseGit のアイコンオーバーレイが消えたときの対処法",
       "description": "Windows エクスプローラーで TortoiseGit の状態アイコンが表示されない場合、ShellIconOverlayIdentifiers の上限と優先度を確認します。レジストリ整理と Explorer の再起動でアイコンをすぐに復旧できます。",
@@ -72,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "3-git-svn-clone",
       "title": "SVN から Git への移行方法: git svn clone",
       "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
@@ -85,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
       "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Git で削除したブランチを復旧する",
       "description": "削除した Git ブランチを復旧するときは reflog でコミットハッシュを調べ、該当時点で checkout -b してブランチを再作成し、ブランチとコミット状態をすぐに確認しましょう。",
@@ -111,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "86-github-pages-custom-domain",
       "title": "GitHub Pagesでカスタムドメインを使用する",
       "description": "GitHub Pagesにカスタムドメインを接続する際のCNAME・A/AAAAレコード設定とリポジトリのCustom domain適用手順を整理しました。Enforce HTTPS設定時の証明書伝播遅延も含め、ドメイン接続トラブルを素早く解決できます。",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする",
       "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
@@ -137,7 +150,7 @@
       "count": 1
     },
     {
-      "rank": 11,
+      "rank": 12,
       "slug": "95-openclaw-setup",
       "title": "OpenClaw（オープンクロー）の構築",
       "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",
@@ -147,19 +160,6 @@
       ],
       "url": "/ja/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 1
-    },
-    {
-      "rank": 12,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
-      "date": "2026-03-24T06:22:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 1
     }
   ]
