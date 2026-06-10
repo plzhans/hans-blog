@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T01:20:22.898Z",
+  "generated_at": "2026-06-10T01:25:19.829Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -47,6 +47,19 @@
     },
     {
       "rank": 4,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPGで.envファイルを暗号化して安全にコミットする",
+      "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 2
+    },
+    {
+      "rank": 5,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
       "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
@@ -59,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
@@ -72,7 +85,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows で TortoiseGit のアイコンオーバーレイが消えたときの対処法",
       "description": "Windows エクスプローラーで TortoiseGit の状態アイコンが表示されない場合、ShellIconOverlayIdentifiers の上限と優先度を確認します。レジストリ整理と Explorer の再起動でアイコンをすぐに復旧できます。",
@@ -85,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "3-git-svn-clone",
       "title": "SVN から Git への移行方法: git svn clone",
       "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
       "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
@@ -111,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Git で削除したブランチを復旧する",
       "description": "削除した Git ブランチを復旧するときは reflog でコミットハッシュを調べ、該当時点で checkout -b してブランチを再作成し、ブランチとコミット状態をすぐに確認しましょう。",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "86-github-pages-custom-domain",
       "title": "GitHub Pagesでカスタムドメインを使用する",
       "description": "GitHub Pagesにカスタムドメインを接続する際のCNAME・A/AAAAレコード設定とリポジトリのCustom domain適用手順を整理しました。Enforce HTTPS設定時の証明書伝播遅延も含め、ドメイン接続トラブルを素早く解決できます。",
@@ -134,19 +147,6 @@
       ],
       "url": "/ja/posts/86-github-pages-custom-domain/",
       "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 1
-    },
-    {
-      "rank": 11,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPGで.envファイルを暗号化して安全にコミットする",
-      "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 1
     },
     {

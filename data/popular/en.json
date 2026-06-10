@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T01:20:22.894Z",
+  "generated_at": "2026-06-10T01:25:19.825Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -47,6 +47,19 @@
     },
     {
       "rank": 4,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "Encrypting .env Files with GPG for Safe Commits",
+      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 2
+    },
+    {
+      "rank": 5,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
       "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
@@ -59,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
@@ -72,7 +85,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "How to fix missing TortoiseGit icon overlays on Windows",
       "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
@@ -85,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "3-git-svn-clone",
       "title": "How to migrate SVN to Git: git svn clone",
       "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
@@ -111,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Recovering a deleted Git branch",
       "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "86-github-pages-custom-domain",
       "title": "Using a Custom Domain with GitHub Pages",
       "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
@@ -134,19 +147,6 @@
       ],
       "url": "/en/posts/86-github-pages-custom-domain/",
       "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 1
-    },
-    {
-      "rank": 11,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 1
     },
     {
