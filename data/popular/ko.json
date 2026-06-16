@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T01:34:33.340Z",
+  "generated_at": "2026-06-16T01:34:32.447Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -8,6 +8,32 @@
   "posts": [
     {
       "rank": 1,
+      "slug": "3-git-svn-clone",
+      "title": "SVN을 Git으로 이전하는 방법: git svn clone",
+      "description": "SVN 저장소를 Git으로 이전할 때 git svn clone 사용법을 정리합니다. authors-file 작성과 -s(std-layout) 옵션 의미를 설명하고 설치 링크와 확인 명령으로 마이그레이션을 빠르게 시작하세요.",
+      "date": "2019-12-01T10:03:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
+      "count": 4
+    },
+    {
+      "rank": 2,
+      "slug": "6-flush-dns-cache",
+      "title": "Windows/Linux/macOS DNS 캐시 지우기",
+      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 4
+    },
+    {
+      "rank": 3,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "hugo site 다국어 지원하기",
       "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
@@ -20,33 +46,20 @@
       "count": 4
     },
     {
-      "rank": 2,
-      "slug": "3-git-svn-clone",
-      "title": "SVN을 Git으로 이전하는 방법: git svn clone",
-      "description": "SVN 저장소를 Git으로 이전할 때 git svn clone 사용법을 정리합니다. authors-file 작성과 -s(std-layout) 옵션 의미를 설명하고 설치 링크와 확인 명령으로 마이그레이션을 빠르게 시작하세요.",
-      "date": "2019-12-01T10:03:00.000Z",
+      "rank": 4,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Github pages 커스텀 도메인 사용하기",
+      "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
+      "date": "2026-02-10T07:34:00.000Z",
       "categories": [
         "git"
       ],
-      "url": "/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
+      "url": "/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
       "count": 3
     },
     {
-      "rank": 3,
-      "slug": "6-flush-dns-cache",
-      "title": "Windows/Linux/macOS DNS 캐시 지우기",
-      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 3
-    },
-    {
-      "rank": 4,
+      "rank": 5,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
       "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
@@ -59,7 +72,7 @@
       "count": 3
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
       "title": "Git 멀티 계정 설정 방법 정리 ssh config alias vs gitconfig includeIf",
       "description": "Git 멀티 계정 환경에서 ~/.ssh/config Alias로 SSH 키를 분기하고 ~/.gitconfig includeIf로 폴더별 커밋 사용자 정보를 자동 분리하는 방법을 정리했습니다. 계정 혼선과 인증 실수를 줄이는 기준을 확인하세요.",
@@ -69,19 +82,6 @@
       ],
       "url": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/",
       "image": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png",
-      "count": 2
-    },
-    {
-      "rank": 6,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Github pages 커스텀 도메인 사용하기",
-      "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
-      "date": "2026-02-10T07:34:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
       "count": 2
     },
     {
@@ -151,6 +151,19 @@
     },
     {
       "rank": 12,
+      "slug": "94-hugo-github-blog",
+      "title": "Hugo + Github 블로그 만들기",
+      "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 1
+    },
+    {
+      "rank": 13,
       "slug": "95-openclaw-setup",
       "title": "오픈클로(OpenClaw) 구축 ",
       "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",
