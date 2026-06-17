@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T01:34:32.447Z",
+  "generated_at": "2026-06-17T01:33:40.476Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -151,6 +151,19 @@
     },
     {
       "rank": 12,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Redis 퍼시스턴스에서 RDB(Dump), AOF, Hybrid AOF 차이와 redis.conf 핵심 설정을 비교 정리했습니다. BGSAVE·fsync·COW 영향과 선택 기준을 이해해 데이터 유실 위험과 재시작 시간을 균형 있게 최적화하세요.",
+      "date": "2026-02-06T06:30:00.000Z",
+      "categories": [
+        "database"
+      ],
+      "url": "/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 1
+    },
+    {
+      "rank": 13,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + Github 블로그 만들기",
       "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
@@ -163,7 +176,7 @@
       "count": 1
     },
     {
-      "rank": 13,
+      "rank": 14,
       "slug": "95-openclaw-setup",
       "title": "오픈클로(OpenClaw) 구축 ",
       "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",

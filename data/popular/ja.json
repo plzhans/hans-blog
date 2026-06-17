@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T01:34:32.455Z",
+  "generated_at": "2026-06-17T01:33:40.484Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -151,6 +151,19 @@
     },
     {
       "rank": 12,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/ja/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 1
+    },
+    {
+      "rank": 13,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + GitHub でブログを構築する",
       "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
@@ -163,7 +176,7 @@
       "count": 1
     },
     {
-      "rank": 13,
+      "rank": 14,
       "slug": "95-openclaw-setup",
       "title": "OpenClaw（オープンクロー）の構築",
       "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",

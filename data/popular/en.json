@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T01:34:32.451Z",
+  "generated_at": "2026-06-17T01:33:40.480Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -151,6 +151,19 @@
     },
     {
       "rank": 12,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/en/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 1
+    },
+    {
+      "rank": 13,
       "slug": "94-hugo-github-blog",
       "title": "Building a Hugo + GitHub Blog",
       "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
@@ -163,7 +176,7 @@
       "count": 1
     },
     {
-      "rank": 13,
+      "rank": 14,
       "slug": "95-openclaw-setup",
       "title": "Setting Up OpenClaw",
       "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
