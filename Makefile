@@ -25,6 +25,10 @@ notion-database-sync-draft:
 notion-page-sync:
 	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && node src/NotionCli.mjs page sync $(RUN_ARGS)
 
+.PHONY: translate
+translate:
+	claude -p "$$(cat prompts/translate-database-sync.md)" --permission-mode acceptEdits
+
 .PHONY: env
 env:
 ifeq ($(firstword $(RUN_ARGS)),enc)

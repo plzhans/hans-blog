@@ -41,6 +41,7 @@ hans-blog/
 | `make hugo` | Hugo 빌드 |
 | `make notion-database-sync` | Notion 데이터베이스 전체 동기화 |
 | `make notion-page-sync [page_id]` | 특정 Notion 페이지 동기화 |
+| `make translate` | 동기화된 글을 AI 에이전트로 영어·일본어 자동 번역 |
 
 ### Hugo 설치
 
@@ -84,6 +85,22 @@ Markdown 파일을 테마가 적용된 HTML로 변환합니다.
 ```bash
 hugo -s ./hugo --logLevel debug
 ```
+
+## 다국어 자동 번역
+
+Notion 동기화로 생성된 한국어 원문(`content/notion/**/index.md`)을 영어와 일본어로 자동 번역합니다.
+- 영어 : index.en.md
+- 일본어 : index.ja.md
+
+번역은 AI API를 호출해 자동화할 수도 있지만, 비용 절감을 위해 AI 에이전트에
+[`prompts/translate-database-sync.md`](prompts/translate-database-sync.md) 프롬프트를 직접 전달하는 방식을 사용합니다.
+번역 대상 선정과 세부 규칙은 프롬프트 파일에 정의되어 있습니다.
+
+```bash
+make translate
+```
+
+> ChatGPT, Claude 등 사용하는 AI 에이전트에 [`prompts/translate-database-sync.md`](prompts/translate-database-sync.md) 파일을 참조하도록 요청하면 됩니다.
 
 ## 배포
 
