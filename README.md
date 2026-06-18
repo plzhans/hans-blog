@@ -16,6 +16,8 @@
 hans-blog/
 ├── hugo/              # Hugo 프로젝트
 │   ├── content/       # 변환된 Markdown 콘텐츠
+│   ├── layouts/       # 테마 오버라이드 및 커스텀 레이아웃
+│   ├── themes/m10c/   # 테마 (git subtree로 vendoring, 아래 참고)
 │   └── public/        # 빌드 결과물 (GitHub Actions에서 배포)
 ├── src/
 │   └── NotionCli.mjs  # Notion → Hugo Markdown 변환 CLI
@@ -201,6 +203,23 @@ GitHub 저장소의 **Settings > Secrets and variables > Actions**에서 다음 
 | `GOOGLE_SERVICE_ACCOUNT_JSON` | Google 서비스 계정 키 JSON 전체 내용. GA4 인기글 데이터 추출에 사용 (`config/google_service_account.json` 파일 내용) |
 
 ## 기타 참고 사항
+
+### 테마 (m10c, vendoring)
+
+테마 [m10c](https://github.com/vaga/hugo-theme-m10c)는 업스트림 저장소가 더 이상
+업데이트되지 않아 서브모듈 대신 **git subtree로 vendoring**하여
+[`hugo/themes/m10c/`](hugo/themes/m10c/)에 일반 파일로 포함했습니다.
+업데이트되지 않는 저장소를 서브모듈로 두면 외부 의존만 남고 이점이 없으며 다수 레이아웃을
+[`hugo/layouts/`](hugo/layouts/)에서 오버라이드하고 있어 직접 관리하는 편이 단순하기 때문입니다.
+
+- **저장소 초기화**: 별도 작업 불필요. `git clone`만 하면 테마가 함께 받아집니다.
+  `git submodule update`는 필요 없습니다.
+- **업스트림 변경 반영(필요 시)**: subtree는 출처 url을 저장하지 않으므로 직접 지정해 pull 합니다.
+
+  ```bash
+  git subtree pull --prefix=hugo/themes/m10c \
+    https://github.com/vaga/hugo-theme-m10c.git master --squash
+  ```
 
 ### 코드 하이라이트 커스텀
 

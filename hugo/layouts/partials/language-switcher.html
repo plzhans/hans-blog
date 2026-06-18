@@ -1,11 +1,11 @@
 {{- $translations := .Translations -}}
 {{- if gt (len $translations) 0 -}}
 <div class="language-switcher">
-  <span class="language-current">{{ .Language.LanguageName }}</span>
+  <span class="language-current">{{ .Language.Label }}</span>
   <ul class="language-list">
     {{- range $translations }}
     <li>
-      <a href="{{ .RelPermalink }}" lang="{{ .Lang }}">{{ .Language.LanguageName }}</a>
+      <a href="{{ .RelPermalink }}" lang="{{ .Lang }}">{{ .Language.Label }}</a>
     </li>
     {{- end }}
   </ul>

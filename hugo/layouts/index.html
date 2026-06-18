@@ -13,9 +13,9 @@
       {{ range $latestPages }}
       {{- $post := . -}}
       {{- $thumbPost := $post -}}
-      {{- if ne $post.Language.Lang (index $.Site.Languages 0).Lang -}}
+      {{- if ne $post.Language.Lang (index hugo.Sites 0).Language.Lang -}}
         {{- range $post.AllTranslations -}}
-          {{- if eq .Language.Lang (index $.Site.Languages 0).Lang -}}{{- $thumbPost = . -}}{{- end -}}
+          {{- if eq .Language.Lang (index hugo.Sites 0).Language.Lang -}}{{- $thumbPost = . -}}{{- end -}}
         {{- end -}}
       {{- end -}}
       <a class="post-card{{ if not $thumbPost.Params.images }} post-card--no-thumb{{ end }}" href="{{ $post.RelPermalink }}">

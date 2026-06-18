@@ -19,7 +19,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PAT_TOKEN }}
-          submodules: recursive
           fetch-depth: 1
 
       - name: Setup Node.js

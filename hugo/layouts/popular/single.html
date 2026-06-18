@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ $lang := .Language.Lang }}
-  {{ $data := index .Site.Data.popular $lang }}
+  {{ $data := index hugo.Data.popular $lang }}
   <article>
     <div class="posts-tabs-nav">
       <a class="posts-tab-nav-btn" href="{{ "/" | relLangURL }}">{{ i18n "latest_posts" }}</a>

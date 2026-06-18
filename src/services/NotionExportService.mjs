@@ -259,7 +259,7 @@ export class NotionExportService {
     const createdTime = new Date(this.#extractCreatedTime(page));
     const lastEditedTime = new Date(page.last_edited_time);
 
-    // meta.json 비교: 변경 없고 index.md 존재하면 sk
+    // meta.json 비교: 변경 없고 index.md 존재하면
     if (fs.existsSync(metaFilePath) && fs.existsSync(mdFilePath)) {
       if (draft && !includeDraft) {
         fs.rmSync(finalPageDir, { recursive: true, force: true });
