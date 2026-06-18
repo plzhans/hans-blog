@@ -6,7 +6,7 @@ title: "GPG로 .env 파일 암호화해서 안전하게 커밋하기"
 draft: false
 images:
   - "assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png"
-_build:
+build:
   render: true
   list: false
 ---

@@ -7,7 +7,7 @@ description: "OpenClaw(OpenClaw AI agent framework)를 설치하고 onboard로 �
 draft: false
 images:
   - "assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png"
-_build:
+build:
   render: true
   list: false
 ---

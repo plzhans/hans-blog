@@ -7,7 +7,7 @@ description: "A guide to installing OpenClaw (OpenClaw AI agent framework) and c
 draft: false
 images:
   - "assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png"
-_build:
+build:
   render: true
   list: false
 ---

@@ -6,7 +6,7 @@ title: "Git 삭제 브런치 복구"
 draft: false
 images:
   - "assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png"
-_build:
+build:
   render: true
   list: false
 ---

@@ -7,7 +7,7 @@ description: "When DNS record changes are slow to take effect, here is how to fl
 draft: false
 images:
   - "assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png"
-_build:
+build:
   render: true
   list: false
 ---

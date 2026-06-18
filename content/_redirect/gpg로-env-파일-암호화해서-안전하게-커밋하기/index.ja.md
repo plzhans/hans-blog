@@ -6,7 +6,7 @@ title: "GPGで.envファイルを暗号化して安全にコミットする"
 draft: false
 images:
   - "assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png"
-_build:
+build:
   render: true
   list: false
 ---

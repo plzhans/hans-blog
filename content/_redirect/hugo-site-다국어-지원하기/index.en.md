@@ -7,7 +7,7 @@ description: "This guide explains SEO optimization and multilingual configuratio
 images:
   - "assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png"
 draft: false
-_build:
+build:
   render: true
   list: false
 ---

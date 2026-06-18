@@ -7,7 +7,7 @@ description: "Redis 데이터 백업 및 퍼시스턴스 방법 완벽 가이드
 draft: false
 images:
   - "assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png"
-_build:
+build:
   render: true
   list: false
 ---

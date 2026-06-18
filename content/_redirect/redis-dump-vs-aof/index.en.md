@@ -7,7 +7,7 @@ description: "A complete guide to Redis data backup and persistence methods. Cov
 draft: false
 images:
   - "assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png"
-_build:
+build:
   render: true
   list: false
 ---

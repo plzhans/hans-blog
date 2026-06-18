@@ -7,7 +7,7 @@ description: "This guide covers how to set up a custom domain instead of the def
 draft: false
 images:
   - "assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png"
-_build:
+build:
   render: true
   list: false
 ---

@@ -7,7 +7,7 @@ description: "GitでGPGコミット署名を設定する手順をまとめまし
 draft: false
 images:
   - "assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png"
-_build:
+build:
   render: true
   list: false
 ---

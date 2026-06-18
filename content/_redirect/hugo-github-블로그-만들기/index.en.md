@@ -7,7 +7,7 @@ description: "A guide to building a personal blog using the Hugo static site gen
 images:
   - "assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png"
 draft: false
-_build:
+build:
   render: true
   list: false
 ---

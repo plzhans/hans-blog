@@ -7,7 +7,7 @@ description: "A step-by-step guide to setting up GPG commit signing in Git. Cove
 draft: false
 images:
   - "assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png"
-_build:
+build:
   render: true
   list: false
 ---

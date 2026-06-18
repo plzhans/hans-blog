@@ -7,7 +7,7 @@ description: "GitHub Pages의 기본 URL(username.github.io/repository) 대신 �
 draft: false
 images:
   - "assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png"
-_build:
+build:
   render: true
   list: false
 ---

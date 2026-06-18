@@ -7,7 +7,7 @@ description: "DNS 레코드를 변경했는데도 반영이 느릴 때, Windows,
 draft: false
 images:
   - "assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png"
-_build:
+build:
   render: true
   list: false
 ---
