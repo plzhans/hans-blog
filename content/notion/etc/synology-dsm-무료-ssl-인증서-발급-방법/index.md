@@ -6,13 +6,16 @@ title: "Synology DSM 무료 SSL 인증서 발급 방법 | "
 description: "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다."
 categories:
   - etc
-date: 2026-05-15T04:19:00.000Z
-lastmod: 2026-06-18T05:02:00.000Z
+date: 2026-06-18T05:03:00.000Z
+lastmod: 2026-06-18T06:09:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png"
+  - "assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png"
 ---
+
+
+![](./assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png)
 
 
 ## 개요
@@ -50,7 +53,7 @@ DSM을 외부에서 직접 노출하는 방식은 위험하므로 Tailscale, Ope
 - DNS: Read, Edit
 - Zone: Read
 
-![](./assets/1_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
+![](./assets/2_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
 
 
 ---
@@ -188,7 +191,7 @@ acme.sh \
 DSM 확인
 
 
-![](./assets/2_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
+![](./assets/3_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
 
 
 ---
@@ -212,3 +215,8 @@ DSM 확인
 ## 참고
 
 - [https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide](https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide)
+
+전체 컨텐츠 확인하고 어울리는 대표이미지 만들어줘
+
+텍스트는 한글 안되고 영어만 가능해
+

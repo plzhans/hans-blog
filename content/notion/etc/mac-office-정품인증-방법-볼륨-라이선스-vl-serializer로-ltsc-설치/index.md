@@ -11,12 +11,15 @@ tags:
   - "office"
   - "office365"
 date: 2026-06-18T02:18:00.000Z
-lastmod: 2026-06-18T02:21:00.000Z
+lastmod: 2026-06-18T06:07:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_38222a0f-7e83-8081-a85a-e61f35929c9c.png"
+  - "assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png"
 ---
+
+
+![](./assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png)
 
 
 ## 개요
@@ -57,34 +60,34 @@ Microsoft 365 계정으로 활성화하거나 특정 버전 설치 후 시리얼
 설치
 
 
-![](./assets/1_38222a0f-7e83-8081-a85a-e61f35929c9c.png)
+![](./assets/2_38222a0f-7e83-8081-a85a-e61f35929c9c.png)
 
 
-![](./assets/2_38222a0f-7e83-80b8-b486-dfd635b44edc.png)
+![](./assets/3_38222a0f-7e83-80b8-b486-dfd635b44edc.png)
 
 
 사용자화
 
 
-![](./assets/3_38222a0f-7e83-80ec-9e5b-c15b8927d557.png)
+![](./assets/4_38222a0f-7e83-80ec-9e5b-c15b8927d557.png)
 
 
 필요한 것만 설치
 
 
-![](./assets/4_38222a0f-7e83-809a-bf31-eb6d73602517.png)
+![](./assets/5_38222a0f-7e83-809a-bf31-eb6d73602517.png)
 
 
 Serializer 다운로드
 
 
-![](./assets/5_38222a0f-7e83-80c6-89c5-fab1c527a4d6.png)
+![](./assets/6_38222a0f-7e83-80c6-89c5-fab1c527a4d6.png)
 
 
 실행 및 인증 확인
 
 
-![](./assets/6_38222a0f-7e83-80d9-9d7b-e4c4dab73d7d.png)
+![](./assets/7_38222a0f-7e83-80d9-9d7b-e4c4dab73d7d.png)
 
 
 ---

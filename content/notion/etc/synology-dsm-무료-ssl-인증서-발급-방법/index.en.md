@@ -3,28 +3,31 @@ id: "104"
 translationKey: "104"
 slug: "104-synology-dsm-acme-sh-letsencrypt"
 title: "How to Issue a Free SSL Certificate on Synology DSM | "
-description: "A guide on issuing and auto-renewing Let’s Encrypt free SSL certificates on Synology DSM using acme.sh and Cloudflare DNS authentication. It covers synology_dsm deploy-hook setup as well as resolving 2FA and Hostname errors."
+description: "A guide on how to issue and automatically renew a Let’s Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook configuration as well as resolving 2FA and Hostname errors."
 categories:
   - etc
-date: 2026-05-15T04:19:00.000Z
-lastmod: 2026-06-18T05:02:00.000Z
+date: 2026-06-18T05:03:00.000Z
+lastmod: 2026-06-18T06:09:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png"
+  - "assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png"
 ---
+
+
+![](./assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png)
 
 
 ## Overview
 
 
-Directly exposing DSM to the outside is risky, so using a VPN such as Tailscale, OpenVPN, or WireGuard is recommended.
+Exposing DSM directly to the outside is risky, so using a VPN such as Tailscale, OpenVPN, or WireGuard is recommended.
 
 
-In an environment where external access is blocked and the domain is matched to a private IP, it is difficult to register a free certificate via the HTTP authentication method.
+In an environment where external access is blocked and the domain is matched to a private IP, registering a free certificate via the HTTP validation method is difficult.
 
 
-This article summarizes **how to issue a Let’s Encrypt free SSL certificate with** [**acme.sh<strong>](http://acme.sh/)</strong>**on a Synology NAS (DSM) and automatically install it on DSM**.
+This article explains **how to issue a Let’s Encrypt free SSL certificate with** [**acme.sh<strong>](http://acme.sh/)</strong> on a **Synology NAS (DSM)** and automatically install it into DSM.
 
 
 ---
@@ -32,9 +35,9 @@ This article summarizes **how to issue a Let’s Encrypt free SSL certificate wi
 
 ## Prerequisites
 
-- Domain: e.g.) `plzhans.com`
+- Domain: e.g., `plzhans.com`
 - DNS: Cloudflare (recommended)
-- An account for DSM automatic installation (an account without 2FA is required, see below)
+- Account for DSM automatic installation (an account without 2FA is required, see below)
 
 ---
 
@@ -42,7 +45,7 @@ This article summarizes **how to issue a Let’s Encrypt free SSL certificate wi
 ## Issuing a Cloudflare API Token (Least Privilege)
 
 
-For security, create a token that grants only the minimum privileges to a specific domain.
+For security, create a token that grants only the minimum permissions for a specific domain.
 
 
 ### Minimum Required Permissions
@@ -50,7 +53,7 @@ For security, create a token that grants only the minimum privileges to a specif
 - DNS: Read, Edit
 - Zone: Read
 
-![](./assets/1_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
+![](./assets/2_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
 
 
 ---
@@ -59,13 +62,13 @@ For security, create a token that grants only the minimum privileges to a specif
 ## Issuing the Certificate ([acme.sh](http://acme.sh/))
 
 
-### Check with the Test Server First
+### Verify First with the Test Server
 
 
-Repeatedly sending requests to the Production server may get you blocked. Use the test server until you have established a successful cycle.
+Repeatedly sending requests to the Production server can get you blocked. Use the test server until you have established a successful cycle.
 
 - `--server letsencrypt_test`
-- Issuing requires the `--issue` option
+- The `--issue` option is required for issuance
 
 ```bash
 #!/bin/bash
@@ -115,20 +118,20 @@ acme.sh \
 Notes
 
 - The token information you used is stored in the `account.conf` file
-- The domain settings are stored, for example, in `~/ssl/plzhans.com_ecc/plzhans.com.conf`
+- The domain configuration is stored in, e.g., `~/ssl/plzhans.com_ecc/plzhans.com.conf`
 
 ---
 
 
-## Installing the Issued Certificate on DSM (deploy-hook)
+## Installing the Issued Certificate into DSM (deploy-hook)
 
 
 [acme.sh](http://acme.sh/) supports `synology_dsm` as a deploy-hook.
 
-- If there is no certificate on DSM, the `SYNO_Create="1"` value must be present for it to be created
+- If there is no certificate in DSM, the `SYNO_Create="1"` value must be set in order to create one
 - If a test certificate has already been issued, you may need to delete it or use the `--force` option
 
-### Removing the Existing Certificate (If Necessary)
+### Deleting the Existing Certificate (If Needed)
 
 
 ```bash
@@ -136,7 +139,7 @@ acme.sh --remove --home ~/ssl -d "plzhans.com"
 ```
 
 
-### DSM Automatic Installation Script Example
+### Example DSM Automatic Installation Script
 
 
 ```bash
@@ -171,7 +174,7 @@ acme.sh \
 ---
 
 
-## Issue: When Automation Is Blocked by 2FA
+## Issue: When 2FA Blocks Automation
 
 
 If 2FA is applied to the `SYNO_Username` account, it interferes with automation.
@@ -180,31 +183,31 @@ If 2FA is applied to the `SYNO_Username` account, it interferes with automation.
 Solution
 
 - Create a separate account (an administrator account is required)
-- Operate it with minimal security measures for automation
+- Operate it with minimal security measures for automation purposes
     - No external access
     - Grant only the necessary permissions
-- Disable 2FA for that account
+- Disable 2FA on that account
 
-DSM verification
+DSM Verification
 
 
-![](./assets/2_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
+![](./assets/3_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
 
 
 ---
 
 
-## FAQ: Hostname/Certificate Matching Problem
+## FAQ: Hostname/Certificate Matching Issues
 
 
-If external access is blocked and the primary domain cannot be reached (e.g., `wee-home.synology.me`), an error may occur due to a certificate matching failure. This is because when the command runs, it connects via `https://{Hostname}:{port}`.
+When external access is blocked and the main domain (e.g., `wee-home.synology.me`) cannot be reached, a certificate matching failure may cause errors. This is because the command accesses via `https://{Hostname}:{port}` when it runs.
 
 
-Choose one of the three solutions
+Choose one of the following three solutions
 
-1. Specify `SYNO_Hostname` as a reachable domain with a valid certificate
-2. Specify the domain in the `/etc/hosts` file to bypass the DNS query and connect to `127.0.0.1`
-3. Use the `http` method
+1. Specify `SYNO_Hostname` as a reachable domain that has a valid certificate
+2. Specify the domain in the `/etc/hosts` file to bypass DNS lookup and connect to `127.0.0.1`
+3. Use the `http` scheme
 
 ---
 
@@ -212,3 +215,7 @@ Choose one of the three solutions
 ## References
 
 - [https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide](https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide)
+
+전체 컨텐츠 확인하고 어울리는 대표이미지 만들어줘
+
+텍스트는 한글 안되고 영어만 가능해

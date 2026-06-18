@@ -2,14 +2,14 @@
   "object": "page",
   "id": "36122a0f-7e83-801b-96f8-d50f81368811",
   "created_time": "2026-05-15T04:19:00.000Z",
-  "last_edited_time": "2026-06-18T05:02:00.000Z",
+  "last_edited_time": "2026-06-18T06:09:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -40,7 +40,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-06-18T05:02:00.000Z"
+      "last_edited_time": "2026-06-18T06:09:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -53,7 +53,7 @@
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": null
+      "url": "https://blog.plzhans.com/posts/104-synology-dsm-acme-sh-letsencrypt/"
     },
     "toc": {
       "id": "ZR~A",
@@ -64,7 +64,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-06-18T14:02:00.000+09:00",
+        "start": "2026-06-18T15:09:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -191,7 +191,11 @@
     "발행일": {
       "id": "nEEr",
       "type": "date",
-      "date": null
+      "date": {
+        "start": "2026-06-18T05:03:00.000+00:00",
+        "end": null,
+        "time_zone": null
+      }
     },
     "생성일": {
       "id": "oe%60s",
@@ -269,6 +273,5 @@
   },
   "url": "https://app.notion.com/p/Synology-DSM-SSL-acme-sh-Cloudflare-DNS-Let-s-Encrypt-36122a0f7e83801b96f8d50f81368811",
   "public_url": null,
-  "archived": false,
-  "request_id": "849a0bc2-b454-44d4-9973-f02e348402aa"
+  "archived": false
 }
