@@ -11,8 +11,8 @@ tags:
   - "linux"
   - "mac"
   - "terraform"
-date: 2026-06-18T05:50:00.000Z
-lastmod: 2026-06-18T06:08:00.000Z
+date: 2026-05-06T13:52:00.000Z
+lastmod: 2026-06-18T07:13:00.000Z
 toc: true
 draft: false
 images:

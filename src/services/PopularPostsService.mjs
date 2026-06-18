@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "node:path";
 import yaml from "js-yaml";
 
-const CONTENT_DIR = path.resolve("content/notion");
+const CONTENT_DIR = path.resolve("content/posts");
 const OUTPUT_DIR = path.resolve("data/popular");
 
 // 언어 코드 → 파일 suffix 매핑
@@ -35,7 +35,7 @@ function parseFrontMatter(content) {
 }
 
 /**
- * content/notion 하위 index.{suffix}.md 전체 스캔 → slug 기준 맵 반환
+ * content/posts 하위 index.{suffix}.md 전체 스캔 → slug 기준 맵 반환
  * @param {string} lang - 언어 코드 ('ko' | 'en' | 'ja')
  * @returns {Map<string, object>}
  */
@@ -88,7 +88,7 @@ export class PopularPostsService {
   }
 
   /**
-   * GA4 결과와 content/notion 게시글 매칭
+   * GA4 결과와 content/posts 게시글 매칭
    * 번역 파일이 없으면 한국어 콘텐츠로 폴백 (URL은 한국어 기준)
    * @param {Array<{slug:string, count:number}>} ga4Results
    * @param {string} [lang='ko']

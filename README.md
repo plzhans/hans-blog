@@ -90,7 +90,7 @@ hugo -s ./hugo --logLevel debug
 
 ## 다국어 자동 번역
 
-Notion 동기화로 생성된 한국어 원문(`content/notion/**/index.md`)을 영어와 일본어로 자동 번역합니다.
+Notion 동기화로 생성된 한국어 원문(`content/posts/**/index.md`)을 영어와 일본어로 자동 번역합니다.
 - 영어 : index.en.md
 - 일본어 : index.ja.md
 

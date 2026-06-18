@@ -5,7 +5,7 @@ other = "최신글"
 other = "인기글"
 
 [post_notice]
-other = "이 글은 <a href=\"https://www.notion.so\" target=\"_blank\" rel=\"noopener\">Notion</a>에서 작성되었고 <a href=\"https://docs.github.com/ko/actions\" target=\"_blank\" rel=\"noopener\">Github Action</a>을 통해 <a href=\"https://gohugo.io\" target=\"_blank\" rel=\"noopener\">Hugo</a>로 변환되었습니다."
+other = "이 글은 <a href=\"https://www.notion.so\" target=\"_blank\" rel=\"noopener\">Notion</a>에서 작성되었고 <a href=\"{{ .ActionsURL }}\" target=\"_blank\" rel=\"noopener\">Github Action</a>을 통해 <a href=\"https://gohugo.io\" target=\"_blank\" rel=\"noopener\">Hugo</a>로 변환되었습니다."
 
 [related_posts_title]
 other = "{{ . }} 카테고리의 다른 글"
@@ -18,3 +18,6 @@ other = "페이지가 이동되었습니다. 자동으로 이동되지 않으면
 
 [redirect_link_label]
 other = "이동하기 →"
+
+[more_posts]
+other = "더 보기"

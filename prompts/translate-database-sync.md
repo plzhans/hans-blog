@@ -1,7 +1,7 @@
 # Notion Database Sync 번역 프롬프트
 
 ## 목적
-Notion 데이터베이스 전체 동기화(`node src/NotionCli.mjs database sync`)를 실행하면 `content/notion/**/index.md` 경로마다 **한국어 원문**이 생성. 
+Notion 데이터베이스 전체 동기화(`node src/NotionCli.mjs database sync`)를 실행하면 `content/posts/**/index.md` 경로마다 **한국어 원문**이 생성. 
 각 원문을 `index.en.md`(영어)와 `index.ja.md`(일본어)로 번역하여 동일 디렉터리에 추가하는 작업을 자동화하기 위한 프롬프트.
 
 ---
@@ -10,11 +10,11 @@ Notion 데이터베이스 전체 동기화(`node src/NotionCli.mjs database sync
 
 너는 Notion에서 동기화된 기술 아티클을 다루는 번역가.
 
-`content/notion/**/index.md` 파일은 모두 한국어로 작성된 기본 페이지. 
+`content/posts/**/index.md` 파일은 모두 한국어로 작성된 기본 페이지. 
 각 디렉터리에는 대응되는 `notion_*.json` 메타데이터가 존재하며, `properties["AI_번역"].checkbox` 값이 `true`인 경우에만 번역 대상입니다. 
 조건을 만족하는 파일만 읽고 영어(`index.en.md`), 일본어(`index.ja.md`) 두 개의 번역 파일을 생성.
 
-- 경로 예시: `content/notion/database/redis-dump-vs-aof/index.md`, `content/notion/git/git-삭제-브런치-복구/index.md`, `content/notion/infra/https-tls-ssl-무료-vs-유료-인증서/index.md`
+- 경로 예시: `content/posts/database/redis-dump-vs-aof/index.md`, `content/posts/git/git-삭제-브런치-복구/index.md`, `content/posts/infra/https-tls-ssl-무료-vs-유료-인증서/index.md`
 - 상위 디렉터리 구조(`category/slug/`)와 `index.*.md` 파일명 규칙은 그대로 유지.
 
 ### 번역 원칙

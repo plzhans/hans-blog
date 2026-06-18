@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "38222a0f-7e83-809f-a646-d90d0206444c",
-  "created_time": "2026-06-17T02:15:00.000Z",
-  "last_edited_time": "2026-06-18T06:07:00.000Z",
+  "id": "36122a0f-7e83-801b-96f8-d50f81368811",
+  "created_time": "2026-05-15T04:19:00.000Z",
+  "last_edited_time": "2026-06-18T07:16:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -30,46 +30,41 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-06-17T02:15:00.000Z"
+      "created_time": "2026-05-15T04:19:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "274b4a1e-9f23-461b-bb16-e7e9828d391d",
-          "name": "office365",
-          "color": "red"
+          "id": "8e4f8dec-ac6e-4fb0-84ad-f5ab62852cc1",
+          "name": "dsm",
+          "color": "blue"
         },
         {
-          "id": "43af453e-f967-4dd4-9831-712868adb1fe",
-          "name": "office",
-          "color": "green"
-        },
-        {
-          "id": "e6424f2b-5b46-48a8-ab47-a5b91968366a",
-          "name": "mac",
-          "color": "pink"
+          "id": "1e5e784f-06dd-4a6d-86ce-ce4e2622adaa",
+          "name": "synology-nas",
+          "color": "purple"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-06-18T06:07:00.000Z"
+      "last_edited_time": "2026-06-18T07:16:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 20
+        "number": 19
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/105-mac-office-activation/"
+      "url": "https://blog.plzhans.com/posts/104-synology-dsm-acme-sh-letsencrypt/"
     },
     "toc": {
       "id": "ZR~A",
@@ -80,7 +75,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-06-18T15:07:00.000+09:00",
+        "start": "2026-06-18T16:16:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +96,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
+            "content": "Synology DSM에서 ",
             "link": null
           },
           "annotations": {
@@ -112,7 +107,43 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
+          "plain_text": "Synology DSM에서 ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "acme.sh",
+            "link": {
+              "url": "http://acme.sh/"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "acme.sh",
+          "href": "http://acme.sh/"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
           "href": null
         }
       ]
@@ -124,7 +155,7 @@
         {
           "type": "text",
           "text": {
-            "content": "105",
+            "content": "104",
             "link": null
           },
           "annotations": {
@@ -135,7 +166,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "105",
+          "plain_text": "104",
           "href": null
         }
       ]
@@ -147,7 +178,7 @@
         {
           "type": "text",
           "text": {
-            "content": "mac-office-activation",
+            "content": "synology-dsm-acme-sh-letsencrypt",
             "link": null
           },
           "annotations": {
@@ -158,7 +189,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "mac-office-activation",
+          "plain_text": "synology-dsm-acme-sh-letsencrypt",
           "href": null
         }
       ]
@@ -172,7 +203,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-06-18T02:18:00.000+00:00",
+        "start": "2026-06-18T05:03:00.000+00:00",
         "end": null,
         "time_zone": null
       }
@@ -181,7 +212,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-06-17T11:15:00.000+09:00",
+        "start": "2026-05-15T13:19:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -202,7 +233,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
+            "content": "Synology DSM 무료 SSL 인증서 발급 방법 | ",
             "link": null
           },
           "annotations": {
@@ -213,13 +244,49 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
+          "plain_text": "Synology DSM 무료 SSL 인증서 발급 방법 | ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "acme.sh",
+            "link": {
+              "url": "http://acme.sh/"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "acme.sh",
+          "href": "http://acme.sh/"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/Mac-Office-VL-Serializer-LTSC-38222a0f7e83809fa646d90d0206444c",
+  "url": "https://app.notion.com/p/Synology-DSM-SSL-acme-sh-Cloudflare-DNS-Let-s-Encrypt-36122a0f7e83801b96f8d50f81368811",
   "public_url": null,
   "archived": false
 }

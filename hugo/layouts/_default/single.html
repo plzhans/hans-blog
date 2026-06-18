@@ -91,7 +91,7 @@
         </div>
         <hr class="post-divider">
         <div class="post-notice">
-          {{ i18n "post_notice" | safeHTML }}
+          {{ partial "build-notice.html" . }}
           {{- with .Site.Params.CopyrightHTML }}
           <div class="post-copyright">{{ . | safeHTML }}</div>
           {{- end }}

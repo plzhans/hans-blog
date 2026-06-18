@@ -5,9 +5,12 @@ slug: "104-synology-dsm-acme-sh-letsencrypt"
 title: "Synology DSM 무료 SSL 인증서 발급 방법 | "
 description: "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다."
 categories:
-  - etc
+  - "etc"
+tags:
+  - "dsm"
+  - "synology-nas"
 date: 2026-06-18T05:03:00.000Z
-lastmod: 2026-06-18T06:09:00.000Z
+lastmod: 2026-06-18T07:16:00.000Z
 toc: true
 draft: false
 images:
@@ -215,3 +218,8 @@ DSM 확인
 ## 참고
 
 - [https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide](https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide)
+
+전체 컨텐츠 확인하고 어울리는 대표이미지 만들어줘
+
+텍스트는 한글 안되고 영어만 가능해
+

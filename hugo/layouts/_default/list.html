@@ -11,7 +11,8 @@
             {{- if eq .Language.Lang (index hugo.Sites 0).Language.Lang -}}{{- $thumbPost = . -}}{{- end -}}
           {{- end -}}
         {{- end -}}
-        <a class="post-card{{ if not $thumbPost.Params.images }} post-card--no-thumb{{ end }}" href="{{ $post.RelPermalink }}">
+        <div class="post-card{{ if not $thumbPost.Params.images }} post-card--no-thumb{{ end }}">
+          <a class="post-card-link" href="{{ $post.RelPermalink }}" aria-label="{{ .Title }}"></a>
           {{- with $thumbPost.Params.images }}
           <div class="post-card-thumbnail">
             {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0)) }}
@@ -23,7 +24,7 @@
             <div class="post-card-footer">
               {{- with $post.GetTerms "categories" }}
               <span class="post-card-category">
-                {{- range . }}{{ .Title }}{{- end }}
+                {{- range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.Title }}</a>{{- end }}
               </span>
               {{- end }}
               <span class="post-card-date">
@@ -37,7 +38,7 @@
               </span>
             </div>
           </div>
-        </a>
+        </div>
       {{ end }}
     </div>
     {{ partial "pagination.html" $ }}

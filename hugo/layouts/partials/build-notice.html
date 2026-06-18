@@ -1,0 +1,6 @@
+{{- /* 빌드 안내 문구. Github Action 주소는 hugo.toml의 social "code"(Source) url + /actions 로 자동 생성 */ -}}
+{{- $repo := "" -}}
+{{- range site.Params.social -}}
+  {{- if eq .icon "code" -}}{{- $repo = .url -}}{{- end -}}
+{{- end -}}
+{{- i18n "post_notice" (dict "ActionsURL" (printf "%s/actions" $repo)) | safeHTML -}}

@@ -9,7 +9,8 @@
     {{ if $data }}
     <div class="posts-card-grid">
       {{ range $data.posts }}
-      <a class="post-card{{ if not .image }} post-card--no-thumb{{ end }}" href="{{ .url }}">
+      <div class="post-card{{ if not .image }} post-card--no-thumb{{ end }}">
+        <a class="post-card-link" href="{{ .url }}" aria-label="{{ .title }}"></a>
         {{ with .image }}
         <div class="post-card-thumbnail">
           <img src="{{ . }}" alt="" loading="lazy">
@@ -19,11 +20,11 @@
           <span class="post-card-title">{{ .title }}</span>
           {{ with .description }}<span class="post-card-summary">{{ . }}</span>{{ end }}
           <div class="post-card-footer">
-            {{ with index .categories 0 }}<span class="post-card-category">{{ . }}</span>{{ end }}
+            {{ with index .categories 0 }}<span class="post-card-category"><a href="{{ printf "/categories/%s/" (. | lower | urlize) | relLangURL }}">{{ . }}</a></span>{{ end }}
             {{ with .date }}<span class="post-card-date">{{ . | time.AsTime | time.Format "2006-01-02" }}</span>{{ end }}
           </div>
         </div>
-      </a>
+      </div>
       {{ end }}
     </div>
     {{ end }}

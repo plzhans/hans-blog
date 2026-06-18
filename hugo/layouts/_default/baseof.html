@@ -123,6 +123,14 @@
       {{ block "main" . }}
         {{ .Content }}
       {{ end }}
+      {{- if not (and (eq .Kind "page") (eq .Type "posts")) }}
+      <footer class="app-footer">
+        <p>{{ partial "build-notice.html" . }}</p>
+        {{- with .Site.Params.CopyrightHTML }}
+        <p class="app-footer-copyright">{{ . | safeHTML }}</p>
+        {{- end }}
+      </footer>
+      {{- end }}
     </main>
     <script>
     // 사이드 메뉴 내 링크 클릭 시 드로어 닫기

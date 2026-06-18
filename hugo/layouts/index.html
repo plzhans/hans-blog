@@ -6,7 +6,7 @@
     </div>
 
     {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
-    {{ $allPages := where .Site.RegularPages "Type" "notion" }}
+    {{ $allPages := where .Site.RegularPages "Type" "posts" }}
     {{ $latestPages := first 20 $allPages }}
     {{ if $latestPages }}
     <div class="posts-card-grid">
@@ -18,7 +18,8 @@
           {{- if eq .Language.Lang (index hugo.Sites 0).Language.Lang -}}{{- $thumbPost = . -}}{{- end -}}
         {{- end -}}
       {{- end -}}
-      <a class="post-card{{ if not $thumbPost.Params.images }} post-card--no-thumb{{ end }}" href="{{ $post.RelPermalink }}">
+      <div class="post-card{{ if not $thumbPost.Params.images }} post-card--no-thumb{{ end }}">
+        <a class="post-card-link" href="{{ $post.RelPermalink }}" aria-label="{{ .Title }}"></a>
         {{- with $thumbPost.Params.images }}
         <div class="post-card-thumbnail">
           {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0)) }}
@@ -30,7 +31,7 @@
           <div class="post-card-footer">
             {{- with $post.GetTerms "categories" }}
             <span class="post-card-category">
-              {{- range . }}{{ .Title }}{{- end }}
+              {{- range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.Title }}</a>{{- end }}
             </span>
             {{- end }}
             <span class="post-card-date">
@@ -44,9 +45,18 @@
             </span>
           </div>
         </div>
-      </a>
+      </div>
       {{ end }}
     </div>
+    {{ if gt (len $allPages) (len $latestPages) }}
+    {{ $morePath := "/posts/" }}
+    {{ with .Site.GetPage "/posts" }}
+      {{ if gt .Paginator.TotalPages 1 }}{{ $morePath = "/posts/page/2/" }}{{ end }}
+    {{ end }}
+    <div class="posts-more">
+      <a class="posts-more-link" href="{{ $morePath | relLangURL }}">{{ i18n "more_posts" }}</a>
+    </div>
+    {{ end }}
     {{ end }}
   </article>
 {{ end }}

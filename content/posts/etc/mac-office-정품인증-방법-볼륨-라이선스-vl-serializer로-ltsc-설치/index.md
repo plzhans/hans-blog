@@ -10,8 +10,8 @@ tags:
   - "mac"
   - "office"
   - "office365"
-date: 2026-06-18T02:18:00.000Z
-lastmod: 2026-06-18T06:07:00.000Z
+date: 2026-06-17T11:18:00.000Z
+lastmod: 2026-06-18T07:16:00.000Z
 toc: true
 draft: false
 images:
