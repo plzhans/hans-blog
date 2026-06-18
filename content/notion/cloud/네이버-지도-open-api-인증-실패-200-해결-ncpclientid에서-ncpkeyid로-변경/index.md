@@ -10,8 +10,8 @@ tags:
   - "maps"
   - "naver-api"
   - "ncloud"
-date: 2026-03-24T06:22:00.000Z
-lastmod: 2026-03-24T06:53:00.000Z
+date: 2026-03-24T06:54:00.000Z
+lastmod: 2026-03-24T06:54:00.000Z
 toc: true
 draft: false
 images:
