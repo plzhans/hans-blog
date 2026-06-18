@@ -10,8 +10,9 @@ tags:
   - "aws"
   - "linux"
   - "mac"
-date: 2026-04-06T02:39:00.000Z
-lastmod: 2026-06-18T05:49:00.000Z
+  - "terraform"
+date: 2026-06-18T05:50:00.000Z
+lastmod: 2026-06-18T05:57:00.000Z
 toc: true
 draft: false
 ---
