@@ -12,10 +12,15 @@ tags:
   - "mac"
   - "terraform"
 date: 2026-06-18T05:50:00.000Z
-lastmod: 2026-06-18T05:57:00.000Z
+lastmod: 2026-06-18T06:08:00.000Z
 toc: true
 draft: false
+images:
+  - "assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png"
 ---
+
+
+![](./assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png)
 
 
 ## 개요

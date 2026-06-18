@@ -215,8 +215,3 @@ DSM 확인
 ## 참고
 
 - [https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide](https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide)
-
-전체 컨텐츠 확인하고 어울리는 대표이미지 만들어줘
-
-텍스트는 한글 안되고 영어만 가능해
-

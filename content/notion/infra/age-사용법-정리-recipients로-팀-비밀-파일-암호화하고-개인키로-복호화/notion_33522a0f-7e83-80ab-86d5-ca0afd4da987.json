@@ -2,14 +2,14 @@
   "object": "page",
   "id": "33522a0f-7e83-80ab-86d5-ca0afd4da987",
   "created_time": "2026-04-01T04:57:00.000Z",
-  "last_edited_time": "2026-06-18T05:56:00.000Z",
+  "last_edited_time": "2026-06-18T06:08:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-06-18T05:56:00.000Z"
+      "last_edited_time": "2026-06-18T06:08:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -69,7 +69,7 @@
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": null
+      "url": "https://blog.plzhans.com/posts/102-age-recipients-team-encryption-guide/"
     },
     "toc": {
       "id": "ZR~A",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-06-18T14:56:00.000+09:00",
+        "start": "2026-06-18T15:08:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -171,7 +171,11 @@
     "발행일": {
       "id": "nEEr",
       "type": "date",
-      "date": null
+      "date": {
+        "start": "2026-06-18T05:57:00.000+00:00",
+        "end": null,
+        "time_zone": null
+      }
     },
     "생성일": {
       "id": "oe%60s",
@@ -217,6 +221,5 @@
   },
   "url": "https://app.notion.com/p/age-recipients-33522a0f7e8380ab86d5ca0afd4da987",
   "public_url": null,
-  "archived": false,
-  "request_id": "4d574036-6c16-47b7-8920-3334c3087fd2"
+  "archived": false
 }
