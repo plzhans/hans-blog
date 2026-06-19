@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T07:28:23.238Z",
+  "generated_at": "2026-06-19T01:36:12.145Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 14
+      "count": 17
     },
     {
       "rank": 2,
@@ -30,10 +30,23 @@
       ],
       "url": "/en/posts/102-age-recipients-team-encryption-guide/",
       "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
-      "count": 6
+      "count": 14
     },
     {
       "rank": 3,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "How to Issue a Free SSL Certificate on Synology DSM | ",
+      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 10
+    },
+    {
+      "rank": 4,
       "slug": "3-git-svn-clone",
       "title": "How to migrate SVN to Git: git svn clone",
       "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
@@ -43,10 +56,10 @@
       ],
       "url": "/en/posts/3-git-svn-clone/",
       "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 6
+      "count": 7
     },
     {
-      "rank": 4,
+      "rank": 5,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Supporting Multiple Languages on a Hugo Site",
       "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
@@ -56,20 +69,7 @@
       ],
       "url": "/en/posts/93-hugo-multilingual-seo-setup/",
       "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 6
-    },
-    {
-      "rank": 5,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "How to Issue a Free SSL Certificate on Synology DSM | ",
-      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
-      "date": "2026-06-18T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 5
+      "count": 7
     },
     {
       "rank": 6,
@@ -82,10 +82,75 @@
       ],
       "url": "/en/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 4
+      "count": 6
     },
     {
       "rank": 7,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Using a Custom Domain with GitHub Pages",
+      "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
+      "date": "2026-02-04T09:07:00.000Z",
+      "categories": [
+        "Git"
+      ],
+      "url": "/en/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 5
+    },
+    {
+      "rank": 8,
+      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
+      "title": "Keeping the OpenVPN Client IP with a wg-easy WireGuard MASQUERADE Exclusion Rule",
+      "description": "This post explains why the request IP gets replaced by the VPN server IP due to MASQUERADE in wg-easy WireGuard, and how to fix it. By excluding a specific destination range in the iptables NAT rule, the OpenVPN client's private IP is preserved in the logs as-is.",
+      "date": "2026-03-19T06:06:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/en/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
+      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
+      "count": 5
+    },
+    {
+      "rank": 9,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "Encrypting .env Files with GPG for Safe Commits",
+      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 4
+    },
+    {
+      "rank": 10,
+      "slug": "94-hugo-github-blog",
+      "title": "Building a Hugo + GitHub Blog",
+      "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 4
+    },
+    {
+      "rank": 11,
+      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
+      "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
+      "description": "",
+      "date": "2026-03-19T03:44:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
+      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
+      "count": 4
+    },
+    {
+      "rank": 12,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
@@ -98,7 +163,7 @@
       "count": 4
     },
     {
-      "rank": 8,
+      "rank": 13,
       "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
       "title": "Setting up multiple Git accounts ssh config alias vs gitconfig includeIf",
       "description": "This guide explains how to route SSH keys with ~/.ssh/config aliases and how to split commit author settings per folder with ~/.gitconfig includeIf in a multi-account Git setup. Use it to reduce account mix-ups and authentication mistakes.",
@@ -111,95 +176,30 @@
       "count": 3
     },
     {
-      "rank": 9,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Using a Custom Domain with GitHub Pages",
-      "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
-      "date": "2026-02-04T09:07:00.000Z",
-      "categories": [
-        "Git"
-      ],
-      "url": "/en/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 3
-    },
-    {
-      "rank": 10,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 3
-    },
-    {
-      "rank": 11,
-      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
-      "title": "Keeping the OpenVPN Client IP with a wg-easy WireGuard MASQUERADE Exclusion Rule",
-      "description": "This post explains why the request IP gets replaced by the VPN server IP due to MASQUERADE in wg-easy WireGuard, and how to fix it. By excluding a specific destination range in the iptables NAT rule, the OpenVPN client's private IP is preserved in the logs as-is.",
-      "date": "2026-03-19T06:06:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/en/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
-      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
-      "count": 3
-    },
-    {
-      "rank": 12,
-      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
-      "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
-      "description": "",
-      "date": "2026-03-19T03:44:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/en/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
-      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 2
-    },
-    {
-      "rank": 13,
-      "slug": "13-git-ssh-key-setup-and-remote-access",
-      "title": "Accessing Git remotes over SSH: from key generation to registration",
-      "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
-      "date": "2025-02-16T09:15:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/13-git-ssh-key-setup-and-remote-access/",
-      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
-      "count": 1
-    },
-    {
       "rank": 14,
-      "slug": "17-windows-tortoisegit-icon-overlay-fix",
-      "title": "How to fix missing TortoiseGit icon overlays on Windows",
-      "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
-      "date": "2021-02-27T02:00:00.000Z",
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
+      "date": "2025-06-10T07:16:00.000Z",
       "categories": [
-        "git"
+        "Database"
       ],
-      "url": "/en/posts/17-windows-tortoisegit-icon-overlay-fix/",
-      "image": "/posts/17-windows-tortoisegit-icon-overlay-fix/assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png",
-      "count": 1
+      "url": "/en/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 3
     },
     {
       "rank": 15,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
-      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
-      "date": "2022-03-17T07:48:00.000Z",
+      "slug": "95-openclaw-setup",
+      "title": "Setting Up OpenClaw",
+      "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
+      "date": "2026-02-23T10:10:00.000Z",
       "categories": [
-        "Infra"
+        "ai"
       ],
-      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 1
+      "url": "/en/posts/95-openclaw-setup/",
+      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "count": 3
     },
     {
       "rank": 16,
@@ -212,45 +212,58 @@
       ],
       "url": "/en/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
-      "count": 1
+      "count": 2
     },
     {
       "rank": 17,
-      "slug": "80-redis-dump-vs-aof",
-      "title": "Redis dump vs aof",
-      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
-      "date": "2025-06-10T07:16:00.000Z",
-      "categories": [
-        "Database"
-      ],
-      "url": "/en/posts/80-redis-dump-vs-aof/",
-      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 1
-    },
-    {
-      "rank": 18,
-      "slug": "94-hugo-github-blog",
-      "title": "Building a Hugo + GitHub Blog",
-      "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
-      "date": "2026-02-10T08:46:00.000Z",
+      "slug": "88-github-gpg-commit-signing",
+      "title": "Signing Git Commits with GPG",
+      "description": "Learn how to apply GPG signatures to Git commits and earn the Verified badge - from installing GnuPG and generating or exporting keys to enabling automatic commit signing, verifying locally, registering your public key on GitHub, and fixing common errors.",
+      "date": "2026-02-16T17:42:00.000Z",
       "categories": [
         "git"
       ],
-      "url": "/en/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "url": "/en/posts/88-github-gpg-commit-signing/",
+      "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
+      "count": 2
+    },
+    {
+      "rank": 18,
+      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
+      "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
+      "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
+      "date": "2026-05-06T13:52:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
+      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
       "count": 1
     },
     {
       "rank": 19,
-      "slug": "95-openclaw-setup",
-      "title": "Setting Up OpenClaw",
-      "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
-      "date": "2026-02-23T10:10:00.000Z",
+      "slug": "13-git-ssh-key-setup-and-remote-access",
+      "title": "Accessing Git remotes over SSH: from key generation to registration",
+      "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
+      "date": "2025-02-16T09:15:00.000Z",
       "categories": [
-        "ai"
+        "git"
       ],
-      "url": "/en/posts/95-openclaw-setup/",
-      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "url": "/en/posts/13-git-ssh-key-setup-and-remote-access/",
+      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
+      "count": 1
+    },
+    {
+      "rank": 20,
+      "slug": "17-windows-tortoisegit-icon-overlay-fix",
+      "title": "How to fix missing TortoiseGit icon overlays on Windows",
+      "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
+      "date": "2021-02-27T02:00:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/17-windows-tortoisegit-icon-overlay-fix/",
+      "image": "/posts/17-windows-tortoisegit-icon-overlay-fix/assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png",
       "count": 1
     }
   ]
