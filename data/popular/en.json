@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T01:36:12.145Z",
+  "generated_at": "2026-06-20T01:25:17.886Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/en/posts/102-age-recipients-team-encryption-guide/",
       "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
-      "count": 14
+      "count": 16
     },
     {
       "rank": 3,
@@ -43,23 +43,10 @@
       ],
       "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
       "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 10
+      "count": 12
     },
     {
       "rank": 4,
-      "slug": "3-git-svn-clone",
-      "title": "How to migrate SVN to Git: git svn clone",
-      "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
-      "date": "2019-12-01T10:03:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 7
-    },
-    {
-      "rank": 5,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Supporting Multiple Languages on a Hugo Site",
       "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
@@ -69,6 +56,19 @@
       ],
       "url": "/en/posts/93-hugo-multilingual-seo-setup/",
       "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 8
+    },
+    {
+      "rank": 5,
+      "slug": "3-git-svn-clone",
+      "title": "How to migrate SVN to Git: git svn clone",
+      "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
+      "date": "2019-12-01T10:03:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
       "count": 7
     },
     {

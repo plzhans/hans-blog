@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T01:36:12.150Z",
+  "generated_at": "2026-06-20T01:25:17.893Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/ja/posts/102-age-recipients-team-encryption-guide/",
       "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
-      "count": 14
+      "count": 16
     },
     {
       "rank": 3,
@@ -43,23 +43,10 @@
       ],
       "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
       "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 10
+      "count": 12
     },
     {
       "rank": 4,
-      "slug": "3-git-svn-clone",
-      "title": "SVN から Git への移行方法: git svn clone",
-      "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
-      "date": "2019-12-01T10:03:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 7
-    },
-    {
-      "rank": 5,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Hugo サイトの多言語対応",
       "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
@@ -69,6 +56,19 @@
       ],
       "url": "/ja/posts/93-hugo-multilingual-seo-setup/",
       "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 8
+    },
+    {
+      "rank": 5,
+      "slug": "3-git-svn-clone",
+      "title": "SVN から Git への移行方法: git svn clone",
+      "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
+      "date": "2019-12-01T10:03:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
       "count": 7
     },
     {
