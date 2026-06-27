@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T01:25:10.424Z",
+  "generated_at": "2026-06-27T01:20:12.882Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -60,45 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "hugo site 다국어 지원하기",
-      "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
-      "date": "2026-02-11T09:55:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 6
-    },
-    {
-      "rank": 6,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Github pages 커스텀 도메인 사용하기",
-      "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
-      "date": "2026-02-10T07:34:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 5
-    },
-    {
-      "rank": 7,
-      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
-      "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
-      "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
-      "date": "2026-03-19T06:06:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
-      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
-      "count": 5
-    },
-    {
-      "rank": 8,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOS DNS 캐시 지우기",
       "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
@@ -111,7 +72,33 @@
       "count": 4
     },
     {
-      "rank": 9,
+      "rank": 6,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Github pages 커스텀 도메인 사용하기",
+      "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
+      "date": "2026-02-10T07:34:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 4
+    },
+    {
+      "rank": 7,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "hugo site 다국어 지원하기",
+      "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
+      "date": "2026-02-11T09:55:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 4
+    },
+    {
+      "rank": 8,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + Github 블로그 만들기",
       "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
@@ -124,7 +111,7 @@
       "count": 4
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
       "description": "",
@@ -137,20 +124,7 @@
       "count": 4
     },
     {
-      "rank": 11,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 4
-    },
-    {
-      "rank": 12,
+      "rank": 10,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
       "description": "Redis 퍼시스턴스에서 RDB(Dump), AOF, Hybrid AOF 차이와 redis.conf 핵심 설정을 비교 정리했습니다. BGSAVE·fsync·COW 영향과 선택 기준을 이해해 데이터 유실 위험과 재시작 시간을 균형 있게 최적화하세요.",
@@ -163,7 +137,7 @@
       "count": 3
     },
     {
-      "rank": 13,
+      "rank": 11,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
       "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
@@ -173,6 +147,32 @@
       ],
       "url": "/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 3
+    },
+    {
+      "rank": 12,
+      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
+      "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
+      "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
+      "date": "2026-03-19T06:06:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
+      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
+      "count": 3
+    },
+    {
+      "rank": 13,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 3
     },
     {
