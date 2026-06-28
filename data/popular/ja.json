@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T01:20:12.893Z",
+  "generated_at": "2026-06-28T01:26:37.736Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -151,6 +151,19 @@
     },
     {
       "rank": 12,
+      "slug": "95-openclaw-setup",
+      "title": "OpenClaw（オープンクロー）の構築",
+      "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",
+      "date": "2026-02-23T10:10:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/ja/posts/95-openclaw-setup/",
+      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "count": 3
+    },
+    {
+      "rank": 13,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "wg-easy WireGuard の MASQUERADE 除外設定で OpenVPN クライアント IP を維持する",
       "description": "wg-easy WireGuard で MASQUERADE のせいでリクエスト IP が VPN サーバーに変わる原因と解決策をまとめます。iptables の NAT ルールで特定の宛先帯域を除外し、OpenVPN クライアントのプライベート IP をそのままログに残します。",
@@ -163,7 +176,7 @@
       "count": 3
     },
     {
-      "rank": 13,
+      "rank": 14,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
@@ -176,7 +189,7 @@
       "count": 3
     },
     {
-      "rank": 14,
+      "rank": 15,
       "slug": "88-github-gpg-commit-signing",
       "title": "GitでGPGを使ってコミットに署名する",
       "description": "GitコミットにGPG署名を付けてVerifiedバッジを表示する方法をまとめました。GnuPGのインストール、鍵の生成とエクスポート、git commitの自動署名設定、ローカル検証、GitHubへの公開鍵登録とエラー対応まで一度に確認できます。",
@@ -186,19 +199,6 @@
       ],
       "url": "/ja/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
-      "count": 2
-    },
-    {
-      "rank": 15,
-      "slug": "95-openclaw-setup",
-      "title": "OpenClaw（オープンクロー）の構築",
-      "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",
-      "date": "2026-02-23T10:10:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/ja/posts/95-openclaw-setup/",
-      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
       "count": 2
     },
     {
