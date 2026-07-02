@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T01:27:59.717Z",
+  "generated_at": "2026-07-02T01:21:37.249Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "94-hugo-github-blog",
+      "title": "Building a Hugo + GitHub Blog",
+      "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 5
+    },
+    {
+      "rank": 6,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -72,7 +85,7 @@
       "count": 4
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "86-github-pages-custom-domain",
       "title": "Using a Custom Domain with GitHub Pages",
       "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
@@ -85,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Supporting Multiple Languages on a Hugo Site",
       "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
@@ -95,19 +108,6 @@
       ],
       "url": "/en/posts/93-hugo-multilingual-seo-setup/",
       "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 4
-    },
-    {
-      "rank": 8,
-      "slug": "94-hugo-github-blog",
-      "title": "Building a Hugo + GitHub Blog",
-      "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
-      "date": "2026-02-10T08:46:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
       "count": 4
     },
     {

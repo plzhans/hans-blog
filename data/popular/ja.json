@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T01:27:59.723Z",
+  "generated_at": "2026-07-02T01:21:37.255Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "94-hugo-github-blog",
+      "title": "Hugo + GitHub でブログを構築する",
+      "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 5
+    },
+    {
+      "rank": 6,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
       "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
@@ -72,7 +85,7 @@
       "count": 4
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "86-github-pages-custom-domain",
       "title": "GitHub Pagesでカスタムドメインを使用する",
       "description": "GitHub Pagesにカスタムドメインを接続する際のCNAME・A/AAAAレコード設定とリポジトリのCustom domain適用手順を整理しました。Enforce HTTPS設定時の証明書伝播遅延も含め、ドメイン接続トラブルを素早く解決できます。",
@@ -85,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Hugo サイトの多言語対応",
       "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
@@ -95,19 +108,6 @@
       ],
       "url": "/ja/posts/93-hugo-multilingual-seo-setup/",
       "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 4
-    },
-    {
-      "rank": 8,
-      "slug": "94-hugo-github-blog",
-      "title": "Hugo + GitHub でブログを構築する",
-      "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
-      "date": "2026-02-10T08:46:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
       "count": 4
     },
     {

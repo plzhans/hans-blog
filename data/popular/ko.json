@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T01:27:59.713Z",
+  "generated_at": "2026-07-02T01:21:37.244Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "94-hugo-github-blog",
+      "title": "Hugo + Github 블로그 만들기",
+      "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 5
+    },
+    {
+      "rank": 6,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOS DNS 캐시 지우기",
       "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
@@ -72,7 +85,7 @@
       "count": 4
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "86-github-pages-custom-domain",
       "title": "Github pages 커스텀 도메인 사용하기",
       "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
@@ -85,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "hugo site 다국어 지원하기",
       "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
@@ -95,19 +108,6 @@
       ],
       "url": "/posts/93-hugo-multilingual-seo-setup/",
       "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 4
-    },
-    {
-      "rank": 8,
-      "slug": "94-hugo-github-blog",
-      "title": "Hugo + Github 블로그 만들기",
-      "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
-      "date": "2026-02-10T08:46:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
       "count": 4
     },
     {
