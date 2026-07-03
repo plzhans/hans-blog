@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T01:21:37.249Z",
+  "generated_at": "2026-07-03T04:13:45.743Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -43,7 +43,7 @@
       ],
       "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
       "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 12
+      "count": 13
     },
     {
       "rank": 4,
@@ -86,6 +86,19 @@
     },
     {
       "rank": 7,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/en/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 4
+    },
+    {
+      "rank": 8,
       "slug": "86-github-pages-custom-domain",
       "title": "Using a Custom Domain with GitHub Pages",
       "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
@@ -98,7 +111,7 @@
       "count": 4
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Supporting Multiple Languages on a Hugo Site",
       "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
@@ -111,7 +124,7 @@
       "count": 4
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
       "description": "",
@@ -122,19 +135,6 @@
       "url": "/en/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
       "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
       "count": 4
-    },
-    {
-      "rank": 10,
-      "slug": "80-redis-dump-vs-aof",
-      "title": "Redis dump vs aof",
-      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
-      "date": "2025-06-10T07:16:00.000Z",
-      "categories": [
-        "Database"
-      ],
-      "url": "/en/posts/80-redis-dump-vs-aof/",
-      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 3
     },
     {
       "rank": 11,
@@ -203,6 +203,19 @@
     },
     {
       "rank": 16,
+      "slug": "10-tortoisegit-clear-saved-authentication-data",
+      "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
+      "description": "I put together the steps to clear saved authentication data via Saved Data's Clear when Authentication failed keeps repeating in TortoiseGit after a Git server change. Resolve it all at once, down to checking the Windows Credential Manager.",
+      "date": "2020-09-03T16:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/10-tortoisegit-clear-saved-authentication-data/",
+      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
+      "count": 1
+    },
+    {
+      "rank": 17,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
       "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
@@ -215,7 +228,7 @@
       "count": 1
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "13-git-ssh-key-setup-and-remote-access",
       "title": "Accessing Git remotes over SSH: from key generation to registration",
       "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
@@ -228,7 +241,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
       "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Recovering a deleted Git branch",
       "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
@@ -251,19 +264,6 @@
       ],
       "url": "/en/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "7-git-multi-account-ssh-config-alias-gitconfig-includeif",
-      "title": "Setting up multiple Git accounts ssh config alias vs gitconfig includeIf",
-      "description": "This guide explains how to route SSH keys with ~/.ssh/config aliases and how to split commit author settings per folder with ~/.gitconfig includeIf in a multi-account Git setup. Use it to reduce account mix-ups and authentication mistakes.",
-      "date": "2025-05-15T09:05:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/",
-      "image": "/posts/7-git-multi-account-ssh-config-alias-gitconfig-includeif/assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png",
       "count": 1
     }
   ]
