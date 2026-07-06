@@ -1,0 +1,220 @@
+{
+  "object": "page",
+  "id": "2fd22a0f-7e83-81a9-8bc2-f45ee18c1489",
+  "created_time": "2026-02-04T09:04:00.000Z",
+  "last_edited_time": "2026-07-06T03:18:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "00000000-0000-0000-0000-000000000003"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "data_source_id",
+    "data_source_id": "2fd22a0f-7e83-814c-9f88-000b7bdd1d4a",
+    "database_id": "2fd22a0f-7e83-81d7-82d0-cd0ed07cb7cb"
+  },
+  "in_trash": false,
+  "is_archived": false,
+  "is_locked": false,
+  "properties": {
+    "AI_번역": {
+      "id": "H%3BiO",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "created_at": {
+      "id": "Hhcd",
+      "type": "created_time",
+      "created_time": "2026-02-04T09:04:00.000Z"
+    },
+    "태그": {
+      "id": "NGeX",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "b:zy",
+          "name": "database",
+          "color": "default"
+        },
+        {
+          "id": "rdWY",
+          "name": "mysql",
+          "color": "default"
+        }
+      ]
+    },
+    "updated_at": {
+      "id": "PeH%60",
+      "type": "last_edited_time",
+      "last_edited_time": "2026-07-06T03:18:00.000Z"
+    },
+    "AUTO_ID": {
+      "id": "WCbd",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null,
+        "number": 1
+      }
+    },
+    "발행 URL": {
+      "id": "Yx%3Ai",
+      "type": "url",
+      "url": null
+    },
+    "toc": {
+      "id": "ZR~A",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "수정일": {
+      "id": "ZlPk",
+      "type": "date",
+      "date": {
+        "start": "2026-07-06T12:18:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "상태": {
+      "id": "%5B~Jq",
+      "type": "status",
+      "status": {
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
+      }
+    },
+    "요약": {
+      "id": "bCTc",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "MySQL Workbench에서 탭 입력을 공백 4칸으로 바꾸는 설정 방법을 정리합니다. SQL 코드 정렬과 Git diff 품질을 개선하는 Indentation 설정을 설명합니다.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "MySQL Workbench에서 탭 입력을 공백 4칸으로 바꾸는 설정 방법을 정리합니다. SQL 코드 정렬과 Git diff 품질을 개선하는 Indentation 설정을 설명합니다.",
+          "href": null
+        }
+      ]
+    },
+    "POST_ID": {
+      "id": "ik%40%5C",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "5",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "5",
+          "href": null
+        }
+      ]
+    },
+    "slug": {
+      "id": "inig",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "mysql-workbench-tab-to-spaces",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "mysql-workbench-tab-to-spaces",
+          "href": null
+        }
+      ]
+    },
+    "동기화": {
+      "id": "keny",
+      "type": "button",
+      "button": {}
+    },
+    "발행일": {
+      "id": "nEEr",
+      "type": "date",
+      "date": {
+        "start": "2019-05-17",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "생성일": {
+      "id": "oe%60s",
+      "type": "date",
+      "date": {
+        "start": "2019-05-17T17:01:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "카테고리": {
+      "id": "vwVr",
+      "type": "select",
+      "select": {
+        "id": "b0522fae-732b-42b3-97e0-58ce220257a9",
+        "name": "Database",
+        "color": "yellow"
+      }
+    },
+    "제목": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "MySQL Workbench 탭을 공백 4칸으로 설정하는 방법",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "MySQL Workbench 탭을 공백 4칸으로 설정하는 방법",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://app.notion.com/p/MySQL-Workbench-4-2fd22a0f7e8381a98bc2f45ee18c1489",
+  "public_url": null,
+  "archived": false
+}

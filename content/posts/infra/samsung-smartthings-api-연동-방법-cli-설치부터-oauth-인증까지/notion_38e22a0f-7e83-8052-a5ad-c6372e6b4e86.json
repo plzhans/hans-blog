@@ -1,0 +1,225 @@
+{
+  "object": "page",
+  "id": "38e22a0f-7e83-8052-a5ad-c6372e6b4e86",
+  "created_time": "2026-06-29T09:47:00.000Z",
+  "last_edited_time": "2026-07-06T03:19:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "data_source_id",
+    "data_source_id": "2fd22a0f-7e83-814c-9f88-000b7bdd1d4a",
+    "database_id": "2fd22a0f-7e83-81d7-82d0-cd0ed07cb7cb"
+  },
+  "in_trash": false,
+  "is_archived": false,
+  "is_locked": false,
+  "properties": {
+    "AI_번역": {
+      "id": "H%3BiO",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "created_at": {
+      "id": "Hhcd",
+      "type": "created_time",
+      "created_time": "2026-06-29T09:47:00.000Z"
+    },
+    "태그": {
+      "id": "NGeX",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "e3c6a39a-142e-490c-8e05-82f543605224",
+          "name": "smartthing",
+          "color": "yellow"
+        },
+        {
+          "id": "3d44c81b-6f43-499d-8256-49a0ccbebf50",
+          "name": "iot",
+          "color": "default"
+        },
+        {
+          "id": "151ab0eb-9afd-4212-8eef-7367140a7b21",
+          "name": "OpenClaw",
+          "color": "pink"
+        }
+      ]
+    },
+    "updated_at": {
+      "id": "PeH%60",
+      "type": "last_edited_time",
+      "last_edited_time": "2026-07-06T03:19:00.000Z"
+    },
+    "AUTO_ID": {
+      "id": "WCbd",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null,
+        "number": 25
+      }
+    },
+    "발행 URL": {
+      "id": "Yx%3Ai",
+      "type": "url",
+      "url": null
+    },
+    "toc": {
+      "id": "ZR~A",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "수정일": {
+      "id": "ZlPk",
+      "type": "date",
+      "date": {
+        "start": "2026-07-06T11:42:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "상태": {
+      "id": "%5B~Jq",
+      "type": "status",
+      "status": {
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
+      }
+    },
+    "요약": {
+      "id": "bCTc",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
+          "href": null
+        }
+      ]
+    },
+    "POST_ID": {
+      "id": "ik%40%5C",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "110",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "110",
+          "href": null
+        }
+      ]
+    },
+    "slug": {
+      "id": "inig",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "samsung-smartthings-api-integration-cli-oauth",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "samsung-smartthings-api-integration-cli-oauth",
+          "href": null
+        }
+      ]
+    },
+    "동기화": {
+      "id": "keny",
+      "type": "button",
+      "button": {}
+    },
+    "발행일": {
+      "id": "nEEr",
+      "type": "date",
+      "date": {
+        "start": "2026-06-29",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "생성일": {
+      "id": "oe%60s",
+      "type": "date",
+      "date": {
+        "start": "2026-06-29T18:47:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "카테고리": {
+      "id": "vwVr",
+      "type": "select",
+      "select": {
+        "id": "8dc22ddc-fa45-4626-aed1-e37aafa0ed8e",
+        "name": "Infra",
+        "color": "blue"
+      }
+    },
+    "제목": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://app.notion.com/p/Samsung-SmartThings-API-CLI-OAuth-38e22a0f7e838052a5adc6372e6b4e86",
+  "public_url": null,
+  "archived": false
+}
