@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T04:36:25.874Z",
+  "generated_at": "2026-07-06T04:46:34.211Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -191,13 +191,13 @@
     {
       "rank": 15,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+      "title": "Fixing Naver Map Open API Authentication Failed (200): Change ncpClientId to ncpKeyId",
+      "description": "This post explains the cause of the Authentication Failed (200) error in Naver Map Open API. Confirm that the parameter has changed from ncpClientId to ncpKeyId, and fix the authentication failure by updating the script URL.",
       "date": "2026-03-24T06:54:00.000Z",
       "categories": [
         "cloud"
       ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 2
     },
