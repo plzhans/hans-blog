@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T04:46:34.211Z",
+  "generated_at": "2026-07-07T04:29:04.512Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
+      "title": "How to Use Claude Code with Ollama Local LLM",
+      "description": "Learn how to connect Claude Code to an Ollama local LLM. This guide covers the Claude-compatible API, environment variables, model selection, and when a LiteLLM proxy is needed.",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/",
+      "image": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 6
+    },
+    {
+      "rank": 6,
       "slug": "94-hugo-github-blog",
       "title": "Building a Hugo + GitHub Blog",
       "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
@@ -72,7 +85,7 @@
       "count": 5
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -85,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
       "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
@@ -98,7 +111,7 @@
       "count": 4
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "86-github-pages-custom-domain",
       "title": "Using a Custom Domain with GitHub Pages",
       "description": "Connect a custom domain to GitHub Pages by configuring CNAME and A/AAAA records, applying the Custom domain setting in your repository, and troubleshooting HTTPS (Enforce HTTPS) certificate propagation delays to fix domain issues fast.",
@@ -111,7 +124,7 @@
       "count": 4
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Supporting Multiple Languages on a Hugo Site",
       "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
@@ -124,7 +137,7 @@
       "count": 4
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
       "description": "",
@@ -137,7 +150,20 @@
       "count": 4
     },
     {
-      "rank": 11,
+      "rank": 12,
+      "slug": "69-git-deleted-branch-recovery",
+      "title": "Recovering a deleted Git branch",
+      "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
+      "date": "2025-01-09T06:30:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/69-git-deleted-branch-recovery/",
+      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
+      "count": 3
+    },
+    {
+      "rank": 13,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
@@ -150,7 +176,7 @@
       "count": 3
     },
     {
-      "rank": 12,
+      "rank": 14,
       "slug": "95-openclaw-setup",
       "title": "Setting Up OpenClaw",
       "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
@@ -163,7 +189,7 @@
       "count": 3
     },
     {
-      "rank": 13,
+      "rank": 15,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "Keeping the OpenVPN Client IP with a wg-easy WireGuard MASQUERADE Exclusion Rule",
       "description": "This post explains why the request IP gets replaced by the VPN server IP due to MASQUERADE in wg-easy WireGuard, and how to fix it. By excluding a specific destination range in the iptables NAT rule, the OpenVPN client's private IP is preserved in the logs as-is.",
@@ -176,7 +202,33 @@
       "count": 3
     },
     {
-      "rank": 14,
+      "rank": 16,
+      "slug": "111-tailscale-linux-install-secure-remote-vpn",
+      "title": "Tailscale Linux Installation - Setting Up a Secure Remote VPN",
+      "description": "This guide explains how to install Tailscale on a Linux server and set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel modes.",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/en/posts/111-tailscale-linux-install-secure-remote-vpn/",
+      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
+      "count": 2
+    },
+    {
+      "rank": 17,
+      "slug": "112-ollama-local-llm-server-setup",
+      "title": "How to Install Ollama and Build a Local LLM Server",
+      "description": "Learn how to run a local LLM on a Linux server with Ollama. This guide covers installation, external access configuration, model selection, and HTTP API call examples to set up your own personal AI server.",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/112-ollama-local-llm-server-setup/",
+      "image": "/posts/112-ollama-local-llm-server-setup/assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png",
+      "count": 2
+    },
+    {
+      "rank": 18,
       "slug": "88-github-gpg-commit-signing",
       "title": "Signing Git Commits with GPG",
       "description": "Learn how to apply GPG signatures to Git commits and earn the Verified badge - from installing GnuPG and generating or exporting keys to enabling automatic commit signing, verifying locally, registering your public key on GitHub, and fixing common errors.",
@@ -189,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 15,
+      "rank": 19,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Fixing Naver Map Open API Authentication Failed (200): Change ncpClientId to ncpKeyId",
       "description": "This post explains the cause of the Authentication Failed (200) error in Naver Map Open API. Confirm that the parameter has changed from ncpClientId to ncpKeyId, and fix the authentication failure by updating the script URL.",
@@ -202,7 +254,7 @@
       "count": 2
     },
     {
-      "rank": 16,
+      "rank": 20,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
       "description": "I put together the steps to clear saved authentication data via Saved Data's Clear when Authentication failed keeps repeating in TortoiseGit after a Git server change. Resolve it all at once, down to checking the Windows Credential Manager.",
@@ -212,58 +264,6 @@
       ],
       "url": "/en/posts/10-tortoisegit-clear-saved-authentication-data/",
       "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
-      "count": 1
-    },
-    {
-      "rank": 17,
-      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
-      "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
-      "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
-      "date": "2026-05-06T13:52:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
-      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 18,
-      "slug": "13-git-ssh-key-setup-and-remote-access",
-      "title": "Accessing Git remotes over SSH: from key generation to registration",
-      "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
-      "date": "2025-02-16T09:15:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/13-git-ssh-key-setup-and-remote-access/",
-      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
-      "count": 1
-    },
-    {
-      "rank": 19,
-      "slug": "4-git-filter-repo-remove-secrets-from-history",
-      "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
-      "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
-      "date": "2019-05-18T16:31:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/4-git-filter-repo-remove-secrets-from-history/",
-      "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "69-git-deleted-branch-recovery",
-      "title": "Recovering a deleted Git branch",
-      "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
-      "date": "2025-01-09T06:30:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/69-git-deleted-branch-recovery/",
-      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
       "count": 1
     }
   ]
