@@ -11,8 +11,8 @@ tags:
   - "mac"
   - "vpn"
   - "wireguard"
-date: 2026-07-10T04:40:00.000Z
-lastmod: 2026-07-10T08:20:00.000Z
+date: 2026-07-10T08:20:00.000Z
+lastmod: 2026-07-10T13:29:00.000Z
 toc: true
 draft: false
 images:
@@ -317,6 +317,34 @@ import
 ```bash
 nc -vz 10.200.0.1 22
 Connection to 10.200.0.1 port 22 [tcp/ssh] succeeded!
+```
+
+
+## IP 라우팅
+
+
+이제 로컬 클라이언트에서 VPN 서버를 경유해서 내부 네트워크에 접속하는 설정을 해야한다. (MASQUERADE 사용)
+
+
+아래 내용 가정
+
+- 서버의 사설 네트워크 : 10.200.0.0/24
+- 서버의 네트워크 인터페이스 : enp0s6
+
+```bash
+# /etc/wireguard/wg0.conf append
+[Interface]
+...
+
+# IP FORWARD
+PostUp = sysctl -w net.ipv4.ip_forward=1
+PostUp = iptables -t nat -A POSTROUTING -s 10.200.0.0/24 -o enp0s6 -j MASQUERADE
+PostUp = iptables -I FORWARD 1 -i %i -j ACCEPT
+PostUp = iptables -I FORWARD 1 -o %i -j ACCEPT
+
+PostDown = iptables -t nat -D POSTROUTING -s 10.200.0.0/24 -o enp0s6 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT
+PostDown = iptables -D FORWARD -o %i -j ACCEPT
 ```
 
 
