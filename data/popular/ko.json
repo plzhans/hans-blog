@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T04:25:58.815Z",
+  "generated_at": "2026-07-10T04:29:10.768Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -47,19 +47,6 @@
     },
     {
       "rank": 4,
-      "slug": "3-git-svn-clone",
-      "title": "SVN을 Git으로 이전하는 방법: git svn clone",
-      "description": "SVN 저장소를 Git으로 이전할 때 git svn clone 사용법을 정리합니다. authors-file 작성과 -s(std-layout) 옵션 의미를 설명하고 설치 링크와 확인 명령으로 마이그레이션을 빠르게 시작하세요.",
-      "date": "2019-12-01T10:03:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 6
-    },
-    {
-      "rank": 5,
       "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
       "title": "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법",
       "description": "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다.",
@@ -69,6 +56,19 @@
       ],
       "url": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/",
       "image": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 7
+    },
+    {
+      "rank": 5,
+      "slug": "3-git-svn-clone",
+      "title": "SVN을 Git으로 이전하는 방법: git svn clone",
+      "description": "SVN 저장소를 Git으로 이전할 때 git svn clone 사용법을 정리합니다. authors-file 작성과 -s(std-layout) 옵션 의미를 설명하고 설치 링크와 확인 명령으로 마이그레이션을 빠르게 시작하세요.",
+      "date": "2019-12-01T10:03:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
       "count": 6
     },
     {

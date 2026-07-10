@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T04:25:58.828Z",
+  "generated_at": "2026-07-10T04:29:10.781Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -47,19 +47,6 @@
     },
     {
       "rank": 4,
-      "slug": "3-git-svn-clone",
-      "title": "SVN から Git への移行方法: git svn clone",
-      "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
-      "date": "2019-12-01T10:03:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 6
-    },
-    {
-      "rank": 5,
       "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
       "title": "Claude CodeをOllamaローカルLLMで使用する方法",
       "description": "Claude CodeをOllamaローカルLLMに接続する方法を説明します。Claude互換API、環境変数、モデル選択、LiteLLMプロキシが必要な場合まで整理します。",
@@ -69,6 +56,19 @@
       ],
       "url": "/ja/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/",
       "image": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 7
+    },
+    {
+      "rank": 5,
+      "slug": "3-git-svn-clone",
+      "title": "SVN から Git への移行方法: git svn clone",
+      "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
+      "date": "2019-12-01T10:03:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
       "count": 6
     },
     {

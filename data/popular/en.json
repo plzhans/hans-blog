@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T04:25:58.822Z",
+  "generated_at": "2026-07-10T04:29:10.774Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -47,19 +47,6 @@
     },
     {
       "rank": 4,
-      "slug": "3-git-svn-clone",
-      "title": "How to migrate SVN to Git: git svn clone",
-      "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
-      "date": "2019-12-01T10:03:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 6
-    },
-    {
-      "rank": 5,
       "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLM",
       "description": "Learn how to connect Claude Code to an Ollama local LLM. This guide covers the Claude-compatible API, environment variables, model selection, and when a LiteLLM proxy is needed.",
@@ -69,6 +56,19 @@
       ],
       "url": "/en/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/",
       "image": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 7
+    },
+    {
+      "rank": 5,
+      "slug": "3-git-svn-clone",
+      "title": "How to migrate SVN to Git: git svn clone",
+      "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
+      "date": "2019-12-01T10:03:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
       "count": 6
     },
     {
