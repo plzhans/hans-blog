@@ -1,0 +1,227 @@
+{
+  "object": "page",
+  "id": "39922a0f-7e83-80f3-bd74-df71ef8469fc",
+  "created_time": "2026-07-10T04:40:00.000Z",
+  "last_edited_time": "2026-07-10T08:20:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "00000000-0000-0000-0000-000000000003"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "data_source_id",
+    "data_source_id": "2fd22a0f-7e83-814c-9f88-000b7bdd1d4a",
+    "database_id": "2fd22a0f-7e83-81d7-82d0-cd0ed07cb7cb"
+  },
+  "in_trash": false,
+  "is_archived": false,
+  "is_locked": false,
+  "properties": {
+    "AI_번역": {
+      "id": "H%3BiO",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "created_at": {
+      "id": "Hhcd",
+      "type": "created_time",
+      "created_time": "2026-07-10T04:40:00.000Z"
+    },
+    "태그": {
+      "id": "NGeX",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "c4780975-8d5e-480a-90eb-a86270f15701",
+          "name": "vpn",
+          "color": "blue"
+        },
+        {
+          "id": "7f0d9ede-bff3-49ec-b7dc-510b5866f5fb",
+          "name": "wireguard",
+          "color": "default"
+        },
+        {
+          "id": "e6424f2b-5b46-48a8-ab47-a5b91968366a",
+          "name": "mac",
+          "color": "pink"
+        },
+        {
+          "id": "d4a4aa54-ec5d-4582-a740-53a0875ce528",
+          "name": "linux",
+          "color": "yellow"
+        }
+      ]
+    },
+    "updated_at": {
+      "id": "PeH%60",
+      "type": "last_edited_time",
+      "last_edited_time": "2026-07-10T08:20:00.000Z"
+    },
+    "AUTO_ID": {
+      "id": "WCbd",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null,
+        "number": 31
+      }
+    },
+    "발행 URL": {
+      "id": "Yx%3Ai",
+      "type": "url",
+      "url": null
+    },
+    "toc": {
+      "id": "ZR~A",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "수정일": {
+      "id": "ZlPk",
+      "type": "date",
+      "date": {
+        "start": "2026-07-10T17:20:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "상태": {
+      "id": "%5B~Jq",
+      "type": "status",
+      "status": {
+        "id": "=rr:",
+        "name": "발행 요청",
+        "color": "purple"
+      }
+    },
+    "요약": {
+      "id": "bCTc",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+          "href": null
+        }
+      ]
+    },
+    "POST_ID": {
+      "id": "ik%40%5C",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "116",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "116",
+          "href": null
+        }
+      ]
+    },
+    "slug": {
+      "id": "inig",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "wireguard-install-client-setup",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "wireguard-install-client-setup",
+          "href": null
+        }
+      ]
+    },
+    "동기화": {
+      "id": "keny",
+      "type": "button",
+      "button": {}
+    },
+    "발행일": {
+      "id": "nEEr",
+      "type": "date",
+      "date": null
+    },
+    "생성일": {
+      "id": "oe%60s",
+      "type": "date",
+      "date": {
+        "start": "2026-07-10T13:40:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "카테고리": {
+      "id": "vwVr",
+      "type": "select",
+      "select": {
+        "id": "8dc22ddc-fa45-4626-aed1-e37aafa0ed8e",
+        "name": "Infra",
+        "color": "blue"
+      }
+    },
+    "제목": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "WireGuard 설치와 클라이언트 접속 설정 방법",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "WireGuard 설치와 클라이언트 접속 설정 방법",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://app.notion.com/p/WireGuard-39922a0f7e8380f3bd74df71ef8469fc",
+  "public_url": null,
+  "archived": false,
+  "request_id": "7ef158bd-c42b-4345-b810-cc4c7072aac6"
+}
