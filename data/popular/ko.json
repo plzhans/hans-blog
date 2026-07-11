@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T04:29:10.768Z",
+  "generated_at": "2026-07-11T03:48:23.703Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -60,6 +60,19 @@
     },
     {
       "rank": 5,
+      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
+      "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
+      "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
+      "date": "2026-03-19T06:06:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
+      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
+      "count": 7
+    },
+    {
+      "rank": 6,
       "slug": "3-git-svn-clone",
       "title": "SVN을 Git으로 이전하는 방법: git svn clone",
       "description": "SVN 저장소를 Git으로 이전할 때 git svn clone 사용법을 정리합니다. authors-file 작성과 -s(std-layout) 옵션 의미를 설명하고 설치 링크와 확인 명령으로 마이그레이션을 빠르게 시작하세요.",
@@ -69,10 +82,10 @@
       ],
       "url": "/posts/3-git-svn-clone/",
       "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 6
+      "count": 5
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + Github 블로그 만들기",
       "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
@@ -85,7 +98,7 @@
       "count": 5
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOS DNS 캐시 지우기",
       "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
@@ -98,7 +111,7 @@
       "count": 4
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
       "description": "Redis 퍼시스턴스에서 RDB(Dump), AOF, Hybrid AOF 차이와 redis.conf 핵심 설정을 비교 정리했습니다. BGSAVE·fsync·COW 영향과 선택 기준을 이해해 데이터 유실 위험과 재시작 시간을 균형 있게 최적화하세요.",
@@ -111,7 +124,7 @@
       "count": 4
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "86-github-pages-custom-domain",
       "title": "Github pages 커스텀 도메인 사용하기",
       "description": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
@@ -124,7 +137,7 @@
       "count": 4
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "hugo site 다국어 지원하기",
       "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
@@ -137,7 +150,7 @@
       "count": 4
     },
     {
-      "rank": 11,
+      "rank": 12,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
       "description": "",
@@ -150,7 +163,20 @@
       "count": 4
     },
     {
-      "rank": 12,
+      "rank": 13,
+      "slug": "116-wireguard-install-client-setup",
+      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
+      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+      "date": "2026-07-10T08:20:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/116-wireguard-install-client-setup/",
+      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
+      "count": 3
+    },
+    {
+      "rank": 14,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Git 삭제 브런치 복구",
       "description": "삭제한 Git 브랜치를 복구해야 할 때 reflog로 커밋 해시를 찾고 해당 시점으로 새 브랜치를 만드는 절차를 정리했습니다. checkout -b로 복구 후 브랜치 이동과 커밋 상태를 빠르게 확인하세요.",
@@ -163,20 +189,7 @@
       "count": 3
     },
     {
-      "rank": 13,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
-      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 3
-    },
-    {
-      "rank": 14,
+      "rank": 15,
       "slug": "95-openclaw-setup",
       "title": "오픈클로(OpenClaw) 구축 ",
       "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",
@@ -186,19 +199,6 @@
       ],
       "url": "/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 3
-    },
-    {
-      "rank": 15,
-      "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
-      "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
-      "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
-      "date": "2026-03-19T06:06:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
-      "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
       "count": 3
     },
     {
@@ -229,6 +229,19 @@
     },
     {
       "rank": 18,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
+      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
+      "date": "2026-07-10T01:11:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 2
+    },
+    {
+      "rank": 19,
       "slug": "88-github-gpg-commit-signing",
       "title": "Git에서 GPG로 커밋 서명하기",
       "description": "Git 커밋에 GPG 서명을 적용해 Verified 배지를 표시하는 방법을 정리했습니다. GnuPG 설치와 키 생성·내보내기부터 git commit 자동 서명 설정, 로컬 서명 검증, GitHub 공개키 등록과 오류 해결까지 한 번에 확인하세요.",
@@ -241,30 +254,17 @@
       "count": 2
     },
     {
-      "rank": 19,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 2
-    },
-    {
       "rank": 20,
-      "slug": "10-tortoisegit-clear-saved-authentication-data",
-      "title": "TortoiseGit 인증 오류 해결: 저장된 인증 정보 초기화(Clear) 방법",
-      "description": "Git 서버 변경 후 TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 점검까지 한 번에 해결하세요.",
-      "date": "2020-09-03T16:46:00.000Z",
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
+      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
+      "date": "2026-02-16T17:42:00.000Z",
       "categories": [
         "git"
       ],
-      "url": "/posts/10-tortoisegit-clear-saved-authentication-data/",
-      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
-      "count": 1
+      "url": "/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 2
     }
   ]
 }
