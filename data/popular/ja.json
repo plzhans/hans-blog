@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T03:48:23.716Z",
+  "generated_at": "2026-07-12T04:04:01.771Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -73,19 +73,6 @@
     },
     {
       "rank": 6,
-      "slug": "3-git-svn-clone",
-      "title": "SVN から Git への移行方法: git svn clone",
-      "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
-      "date": "2019-12-01T10:03:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 5
-    },
-    {
-      "rank": 7,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + GitHub でブログを構築する",
       "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
@@ -98,20 +85,20 @@
       "count": 5
     },
     {
-      "rank": 8,
-      "slug": "6-flush-dns-cache",
-      "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
-      "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
-      "date": "2026-02-22T16:11:00.000Z",
+      "rank": 7,
+      "slug": "3-git-svn-clone",
+      "title": "SVN から Git への移行方法: git svn clone",
+      "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
+      "date": "2019-12-01T10:03:00.000Z",
       "categories": [
-        "etc"
+        "git"
       ],
-      "url": "/ja/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "url": "/ja/posts/3-git-svn-clone/",
+      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
       "count": 4
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
       "description": "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。",
@@ -124,20 +111,7 @@
       "count": 4
     },
     {
-      "rank": 10,
-      "slug": "86-github-pages-custom-domain",
-      "title": "GitHub Pagesでカスタムドメインを使用する",
-      "description": "GitHub Pagesにカスタムドメインを接続する際のCNAME・A/AAAAレコード設定とリポジトリのCustom domain適用手順を整理しました。Enforce HTTPS設定時の証明書伝播遅延も含め、ドメイン接続トラブルを素早く解決できます。",
-      "date": "2026-02-04T09:07:00.000Z",
-      "categories": [
-        "Git"
-      ],
-      "url": "/ja/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 4
-    },
-    {
-      "rank": 11,
+      "rank": 9,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Hugo サイトの多言語対応",
       "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
@@ -150,7 +124,7 @@
       "count": 4
     },
     {
-      "rank": 12,
+      "rank": 10,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2でDockerとDocker Composeをインストールする",
       "description": "",
@@ -163,7 +137,7 @@
       "count": 4
     },
     {
-      "rank": 13,
+      "rank": 11,
       "slug": "116-wireguard-install-client-setup",
       "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
       "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
@@ -176,7 +150,20 @@
       "count": 3
     },
     {
-      "rank": 14,
+      "rank": 12,
+      "slug": "6-flush-dns-cache",
+      "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
+      "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 3
+    },
+    {
+      "rank": 13,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Git で削除したブランチを復旧する",
       "description": "削除した Git ブランチを復旧するときは reflog でコミットハッシュを調べ、該当時点で checkout -b してブランチを再作成し、ブランチとコミット状態をすぐに確認しましょう。",
@@ -186,6 +173,19 @@
       ],
       "url": "/ja/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
+      "count": 3
+    },
+    {
+      "rank": 14,
+      "slug": "86-github-pages-custom-domain",
+      "title": "GitHub Pagesでカスタムドメインを使用する",
+      "description": "GitHub Pagesにカスタムドメインを接続する際のCNAME・A/AAAAレコード設定とリポジトリのCustom domain適用手順を整理しました。Enforce HTTPS設定時の証明書伝播遅延も含め、ドメイン接続トラブルを素早く解決できます。",
+      "date": "2026-02-04T09:07:00.000Z",
+      "categories": [
+        "Git"
+      ],
+      "url": "/ja/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
       "count": 3
     },
     {
@@ -203,6 +203,19 @@
     },
     {
       "rank": 16,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "Naver Map Open API 認証失敗(200) 解決: ncpClientIdからncpKeyIdへ変更",
+      "description": "Naver Map Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。パラメータがncpClientIdからncpKeyIdに変更された点を確認し、スクリプトURLを修正して認証失敗を解決します。",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 3
+    },
+    {
+      "rank": 17,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux インストール - 安全なリモート VPN 構成",
       "description": "Linux サーバーに Tailscale をインストールして安全なリモート VPN 環境を構成する方法を説明します。アウトバウンドベースの接続、P2P 通信、DERP リレー、Serve と Funnel の活用方法もあわせて整理します。",
@@ -215,7 +228,7 @@
       "count": 2
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "OllamaのインストールとローカルLLMサーバー構築方法",
       "description": "Ollamaを使ってLinuxサーバーでローカルLLMを実行する方法を説明します。インストール、外部アクセス設定、モデル選択、HTTP API呼び出し例を通じて、個人AIサーバー構築の流れをまとめます。",
@@ -228,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -241,7 +254,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "88-github-gpg-commit-signing",
       "title": "GitでGPGを使ってコミットに署名する",
       "description": "GitコミットにGPG署名を付けてVerifiedバッジを表示する方法をまとめました。GnuPGのインストール、鍵の生成とエクスポート、git commitの自動署名設定、ローカル検証、GitHubへの公開鍵登録とエラー対応まで一度に確認できます。",
@@ -251,19 +264,6 @@
       ],
       "url": "/ja/posts/88-github-gpg-commit-signing/",
       "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
-      "count": 2
-    },
-    {
-      "rank": 20,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPGで.envファイルを暗号化して安全にコミットする",
-      "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 2
     }
   ]
