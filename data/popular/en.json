@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T03:41:10.246Z",
+  "generated_at": "2026-07-15T03:40:58.655Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -8,6 +8,19 @@
   "posts": [
     {
       "rank": 1,
+      "slug": "102-age-recipients-team-encryption-guide",
+      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
+      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
+      "date": "2026-05-01T22:57:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
+      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "count": 17
+    },
+    {
+      "rank": 2,
       "slug": "105-mac-office-activation",
       "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
       "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
@@ -18,19 +31,6 @@
       "url": "/en/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 17
-    },
-    {
-      "rank": 2,
-      "slug": "102-age-recipients-team-encryption-guide",
-      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
-      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
-      "date": "2026-05-01T22:57:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
-      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
-      "count": 16
     },
     {
       "rank": 3,
@@ -190,6 +190,19 @@
     },
     {
       "rank": 15,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "Encrypting .env Files with GPG for Safe Commits",
+      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 3
+    },
+    {
+      "rank": 16,
       "slug": "95-openclaw-setup",
       "title": "Setting Up OpenClaw",
       "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
@@ -202,7 +215,7 @@
       "count": 3
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Fixing Naver Map Open API Authentication Failed (200): Change ncpClientId to ncpKeyId",
       "description": "This post explains the cause of the Authentication Failed (200) error in Naver Map Open API. Confirm that the parameter has changed from ncpClientId to ncpKeyId, and fix the authentication failure by updating the script URL.",
@@ -215,7 +228,7 @@
       "count": 3
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux Installation - Setting Up a Secure Remote VPN",
       "description": "This guide explains how to install Tailscale on a Linux server and set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel modes.",
@@ -228,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "How to Install Ollama and Build a Local LLM Server",
       "description": "Learn how to run a local LLM on a Linux server with Ollama. This guide covers installation, external access configuration, model selection, and HTTP API call examples to set up your own personal AI server.",
@@ -241,7 +254,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -251,19 +264,6 @@
       ],
       "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
       "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
-      "count": 2
-    },
-    {
-      "rank": 20,
-      "slug": "88-github-gpg-commit-signing",
-      "title": "Signing Git Commits with GPG",
-      "description": "Learn how to apply GPG signatures to Git commits and earn the Verified badge - from installing GnuPG and generating or exporting keys to enabling automatic commit signing, verifying locally, registering your public key on GitHub, and fixing common errors.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/88-github-gpg-commit-signing/",
-      "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
       "count": 2
     }
   ]

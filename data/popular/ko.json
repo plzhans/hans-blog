@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T03:41:10.240Z",
+  "generated_at": "2026-07-15T03:40:58.648Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -8,6 +8,19 @@
   "posts": [
     {
       "rank": 1,
+      "slug": "102-age-recipients-team-encryption-guide",
+      "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
+      "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
+      "date": "2026-05-01T22:57:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/102-age-recipients-team-encryption-guide/",
+      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "count": 17
+    },
+    {
+      "rank": 2,
       "slug": "105-mac-office-activation",
       "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
       "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
@@ -18,19 +31,6 @@
       "url": "/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 17
-    },
-    {
-      "rank": 2,
-      "slug": "102-age-recipients-team-encryption-guide",
-      "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
-      "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
-      "date": "2026-05-01T22:57:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/102-age-recipients-team-encryption-guide/",
-      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
-      "count": 16
     },
     {
       "rank": 3,
@@ -190,6 +190,19 @@
     },
     {
       "rank": 15,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
+      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 3
+    },
+    {
+      "rank": 16,
       "slug": "95-openclaw-setup",
       "title": "오픈클로(OpenClaw) 구축 ",
       "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",
@@ -202,7 +215,7 @@
       "count": 3
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
@@ -215,7 +228,7 @@
       "count": 3
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
       "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
@@ -228,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "Ollama 설치와 로컬 LLM 서버 구축 방법",
       "description": "Ollama로 Linux 서버에서 로컬 LLM을 실행하는 방법을 설명합니다. 설치, 외부 접속 설정, 모델 선택, HTTP API 호출 예제로 개인 AI 서버 구축 흐름을 정리합니다.",
@@ -241,7 +254,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -251,19 +264,6 @@
       ],
       "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
       "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
-      "count": 2
-    },
-    {
-      "rank": 20,
-      "slug": "88-github-gpg-commit-signing",
-      "title": "Git에서 GPG로 커밋 서명하기",
-      "description": "Git 커밋에 GPG 서명을 적용해 Verified 배지를 표시하는 방법을 정리했습니다. GnuPG 설치와 키 생성·내보내기부터 git commit 자동 서명 설정, 로컬 서명 검증, GitHub 공개키 등록과 오류 해결까지 한 번에 확인하세요.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/88-github-gpg-commit-signing/",
-      "image": "/posts/88-github-gpg-commit-signing/assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png",
       "count": 2
     }
   ]
