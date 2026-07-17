@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T03:44:16.786Z",
+  "generated_at": "2026-07-17T03:44:13.690Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -73,19 +73,6 @@
     },
     {
       "rank": 6,
-      "slug": "80-redis-dump-vs-aof",
-      "title": "Redis dump vs aof",
-      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
-      "date": "2025-06-10T07:16:00.000Z",
-      "categories": [
-        "Database"
-      ],
-      "url": "/en/posts/80-redis-dump-vs-aof/",
-      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 4
-    },
-    {
-      "rank": 7,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Supporting Multiple Languages on a Hugo Site",
       "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
@@ -98,7 +85,7 @@
       "count": 4
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "94-hugo-github-blog",
       "title": "Building a Hugo + GitHub Blog",
       "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
@@ -111,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
       "description": "",
@@ -124,7 +111,7 @@
       "count": 4
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "116-wireguard-install-client-setup",
       "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
       "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
@@ -137,7 +124,7 @@
       "count": 3
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "3-git-svn-clone",
       "title": "How to migrate SVN to Git: git svn clone",
       "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
@@ -150,7 +137,7 @@
       "count": 3
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
       "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
@@ -163,7 +150,7 @@
       "count": 3
     },
     {
-      "rank": 13,
+      "rank": 12,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Recovering a deleted Git branch",
       "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
@@ -173,6 +160,19 @@
       ],
       "url": "/en/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
+      "count": 3
+    },
+    {
+      "rank": 13,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/en/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
       "count": 3
     },
     {

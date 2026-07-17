@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T03:44:16.792Z",
+  "generated_at": "2026-07-17T03:44:13.696Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -73,19 +73,6 @@
     },
     {
       "rank": 6,
-      "slug": "80-redis-dump-vs-aof",
-      "title": "Redis dump vs aof",
-      "description": "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。",
-      "date": "2025-06-10T07:16:00.000Z",
-      "categories": [
-        "Database"
-      ],
-      "url": "/ja/posts/80-redis-dump-vs-aof/",
-      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 4
-    },
-    {
-      "rank": 7,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Hugo サイトの多言語対応",
       "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
@@ -98,7 +85,7 @@
       "count": 4
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + GitHub でブログを構築する",
       "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
@@ -111,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2でDockerとDocker Composeをインストールする",
       "description": "",
@@ -124,7 +111,7 @@
       "count": 4
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "116-wireguard-install-client-setup",
       "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
       "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
@@ -137,7 +124,7 @@
       "count": 3
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "3-git-svn-clone",
       "title": "SVN から Git への移行方法: git svn clone",
       "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
@@ -150,7 +137,7 @@
       "count": 3
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）",
       "description": "git filter-repo を使って .env やシークレット、トークンを Git 履歴から完全に消し去る手順を整理しました。フィルター規則の定義、再書き換えの検証、強制プッシュとチーム全体の再同期、保護ブランチの確認まで一度で把握できます。",
@@ -163,7 +150,7 @@
       "count": 3
     },
     {
-      "rank": 13,
+      "rank": 12,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Git で削除したブランチを復旧する",
       "description": "削除した Git ブランチを復旧するときは reflog でコミットハッシュを調べ、該当時点で checkout -b してブランチを再作成し、ブランチとコミット状態をすぐに確認しましょう。",
@@ -173,6 +160,19 @@
       ],
       "url": "/ja/posts/69-git-deleted-branch-recovery/",
       "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
+      "count": 3
+    },
+    {
+      "rank": 13,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/ja/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
       "count": 3
     },
     {
