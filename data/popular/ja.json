@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T03:39:07.088Z",
+  "generated_at": "2026-07-19T04:02:12.883Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -8,45 +8,6 @@
   "posts": [
     {
       "rank": 1,
-      "slug": "102-age-recipients-team-encryption-guide",
-      "title": "age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する",
-      "description": "age でチームの秘密ファイルを公開鍵（recipients）で暗号化し、秘密鍵で復号する方法を整理します。鍵の生成、recipients の管理、GPG との違い、メンバー変更時に再暗号化が必要な理由まで併せて説明します。",
-      "date": "2026-05-01T22:57:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/ja/posts/102-age-recipients-team-encryption-guide/",
-      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
-      "count": 17
-    },
-    {
-      "rank": 2,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
-      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 17
-    },
-    {
-      "rank": 3,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "Synology DSM 無料 SSL 証明書の発行方法 | ",
-      "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 14
-    },
-    {
-      "rank": 4,
       "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
       "title": "Claude CodeをOllamaローカルLLMで使用する方法",
       "description": "Claude CodeをOllamaローカルLLMに接続する方法を説明します。Claude互換API、環境変数、モデル選択、LiteLLMプロキシが必要な場合まで整理します。",
@@ -59,7 +20,7 @@
       "count": 7
     },
     {
-      "rank": 5,
+      "rank": 2,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "wg-easy WireGuard の MASQUERADE 除外設定で OpenVPN クライアント IP を維持する",
       "description": "wg-easy WireGuard で MASQUERADE のせいでリクエスト IP が VPN サーバーに変わる原因と解決策をまとめます。iptables の NAT ルールで特定の宛先帯域を除外し、OpenVPN クライアントのプライベート IP をそのままログに残します。",
@@ -69,49 +30,10 @@
       ],
       "url": "/ja/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
       "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
-      "count": 7
-    },
-    {
-      "rank": 6,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "Hugo サイトの多言語対応",
-      "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
-      "date": "2026-02-06T02:34:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/ja/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
       "count": 4
     },
     {
-      "rank": 7,
-      "slug": "94-hugo-github-blog",
-      "title": "Hugo + GitHub でブログを構築する",
-      "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
-      "date": "2026-02-10T08:46:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 4
-    },
-    {
-      "rank": 8,
-      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
-      "title": "Amazon Linux 2023 ARM64 EC2でDockerとDocker Composeをインストールする",
-      "description": "",
-      "date": "2026-03-19T03:44:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/ja/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
-      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 4
-    },
-    {
-      "rank": 9,
+      "rank": 3,
       "slug": "116-wireguard-install-client-setup",
       "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
       "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
@@ -124,98 +46,20 @@
       "count": 3
     },
     {
-      "rank": 10,
-      "slug": "3-git-svn-clone",
-      "title": "SVN から Git への移行方法: git svn clone",
-      "description": "SVN リポジトリを Git へ移行するときに使う git svn clone の手順をまとめました。authors-file の作り方や -s（std-layout）オプションの意味、インストールリンクと確認コマンドを押さえて、すぐに移行を始めましょう。",
-      "date": "2019-12-01T10:03:00.000Z",
+      "rank": 4,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "Synology DSM 無料 SSL 証明書の発行方法 | ",
+      "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
+      "date": "2026-05-16T05:03:00.000Z",
       "categories": [
-        "git"
+        "etc"
       ],
-      "url": "/ja/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 3
+      "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 2
     },
     {
-      "rank": 11,
-      "slug": "4-git-filter-repo-remove-secrets-from-history",
-      "title": "git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）",
-      "description": "git filter-repo を使って .env やシークレット、トークンを Git 履歴から完全に消し去る手順を整理しました。フィルター規則の定義、再書き換えの検証、強制プッシュとチーム全体の再同期、保護ブランチの確認まで一度で把握できます。",
-      "date": "2019-05-18T16:31:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/4-git-filter-repo-remove-secrets-from-history/",
-      "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
-      "count": 3
-    },
-    {
-      "rank": 12,
-      "slug": "69-git-deleted-branch-recovery",
-      "title": "Git で削除したブランチを復旧する",
-      "description": "削除した Git ブランチを復旧するときは reflog でコミットハッシュを調べ、該当時点で checkout -b してブランチを再作成し、ブランチとコミット状態をすぐに確認しましょう。",
-      "date": "2025-01-09T06:30:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/69-git-deleted-branch-recovery/",
-      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
-      "count": 3
-    },
-    {
-      "rank": 13,
-      "slug": "80-redis-dump-vs-aof",
-      "title": "Redis dump vs aof",
-      "description": "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。",
-      "date": "2025-06-10T07:16:00.000Z",
-      "categories": [
-        "Database"
-      ],
-      "url": "/ja/posts/80-redis-dump-vs-aof/",
-      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 3
-    },
-    {
-      "rank": 14,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPGで.envファイルを暗号化して安全にコミットする",
-      "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 3
-    },
-    {
-      "rank": 15,
-      "slug": "95-openclaw-setup",
-      "title": "OpenClaw（オープンクロー）の構築",
-      "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",
-      "date": "2026-02-23T10:10:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/ja/posts/95-openclaw-setup/",
-      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 3
-    },
-    {
-      "rank": 16,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "Naver Map Open API 認証失敗(200) 解決: ncpClientIdからncpKeyIdへ変更",
-      "description": "Naver Map Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。パラメータがncpClientIdからncpKeyIdに変更された点を確認し、スクリプトURLを修正して認証失敗を解決します。",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 3
-    },
-    {
-      "rank": 17,
+      "rank": 5,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux インストール - 安全なリモート VPN 構成",
       "description": "Linux サーバーに Tailscale をインストールして安全なリモート VPN 環境を構成する方法を説明します。アウトバウンドベースの接続、P2P 通信、DERP リレー、Serve と Funnel の活用方法もあわせて整理します。",
@@ -228,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 6,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "OllamaのインストールとローカルLLMサーバー構築方法",
       "description": "Ollamaを使ってLinuxサーバーでローカルLLMを実行する方法を説明します。インストール、外部アクセス設定、モデル選択、HTTP API呼び出し例を通じて、個人AIサーバー構築の流れをまとめます。",
@@ -241,7 +85,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 7,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -254,17 +98,134 @@
       "count": 2
     },
     {
-      "rank": 20,
-      "slug": "6-flush-dns-cache",
-      "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
-      "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
-      "date": "2026-02-22T16:11:00.000Z",
+      "rank": 8,
+      "slug": "4-git-filter-repo-remove-secrets-from-history",
+      "title": "git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）",
+      "description": "git filter-repo を使って .env やシークレット、トークンを Git 履歴から完全に消し去る手順を整理しました。フィルター規則の定義、再書き換えの検証、強制プッシュとチーム全体の再同期、保護ブランチの確認まで一度で把握できます。",
+      "date": "2019-05-18T16:31:00.000Z",
       "categories": [
-        "etc"
+        "git"
       ],
-      "url": "/ja/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "url": "/ja/posts/4-git-filter-repo-remove-secrets-from-history/",
+      "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
       "count": 2
+    },
+    {
+      "rank": 9,
+      "slug": "69-git-deleted-branch-recovery",
+      "title": "Git で削除したブランチを復旧する",
+      "description": "削除した Git ブランチを復旧するときは reflog でコミットハッシュを調べ、該当時点で checkout -b してブランチを再作成し、ブランチとコミット状態をすぐに確認しましょう。",
+      "date": "2025-01-09T06:30:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/69-git-deleted-branch-recovery/",
+      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
+      "count": 2
+    },
+    {
+      "rank": 10,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPGで.envファイルを暗号化して安全にコミットする",
+      "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 2
+    },
+    {
+      "rank": 11,
+      "slug": "10-tortoisegit-clear-saved-authentication-data",
+      "title": "TortoiseGit 認証エラーの解決: 保存された認証情報の初期化（Clear）方法",
+      "description": "Git サーバー変更後に TortoiseGit で Authentication failed が繰り返される場合に、Saved Data の Clear で保存された認証情報を初期化する手順をまとめました。Windows 資格情報マネージャーの点検まで一度に解決しましょう。",
+      "date": "2020-09-03T16:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/10-tortoisegit-clear-saved-authentication-data/",
+      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
+      "count": 1
+    },
+    {
+      "rank": 12,
+      "slug": "102-age-recipients-team-encryption-guide",
+      "title": "age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する",
+      "description": "age でチームの秘密ファイルを公開鍵（recipients）で暗号化し、秘密鍵で復号する方法を整理します。鍵の生成、recipients の管理、GPG との違い、メンバー変更時に再暗号化が必要な理由まで併せて説明します。",
+      "date": "2026-05-01T22:57:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/ja/posts/102-age-recipients-team-encryption-guide/",
+      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "count": 1
+    },
+    {
+      "rank": 13,
+      "slug": "110-samsung-smartthings-api-integration-cli-oauth",
+      "title": "Samsung SmartThings API 連携方法 - CLI インストールから OAuth 認証まで",
+      "description": "Samsung SmartThings API 連携に必要な CLI インストール、OAuth アプリ作成、Redirect URI 設定、トークン発行、デバイス一覧取得の方法をステップごとに解説します。",
+      "date": "2026-06-29T00:00:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/ja/posts/110-samsung-smartthings-api-integration-cli-oauth/",
+      "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
+      "count": 1
+    },
+    {
+      "rank": 14,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/ja/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 1
+    },
+    {
+      "rank": 15,
+      "slug": "94-hugo-github-blog",
+      "title": "Hugo + GitHub でブログを構築する",
+      "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 1
+    },
+    {
+      "rank": 16,
+      "slug": "95-openclaw-setup",
+      "title": "OpenClaw（オープンクロー）の構築",
+      "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",
+      "date": "2026-02-23T10:10:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/ja/posts/95-openclaw-setup/",
+      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "count": 1
+    },
+    {
+      "rank": 17,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "Naver Map Open API 認証失敗(200) 解決: ncpClientIdからncpKeyIdへ変更",
+      "description": "Naver Map Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。パラメータがncpClientIdからncpKeyIdに変更された点を確認し、スクリプトURLを修正して認証失敗を解決します。",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 1
     }
   ]
 }

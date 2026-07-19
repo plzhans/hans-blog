@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T03:39:07.081Z",
+  "generated_at": "2026-07-19T04:02:12.877Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -8,45 +8,6 @@
   "posts": [
     {
       "rank": 1,
-      "slug": "102-age-recipients-team-encryption-guide",
-      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
-      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
-      "date": "2026-05-01T22:57:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
-      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
-      "count": 17
-    },
-    {
-      "rank": 2,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
-      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 17
-    },
-    {
-      "rank": 3,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "How to Issue a Free SSL Certificate on Synology DSM | ",
-      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 14
-    },
-    {
-      "rank": 4,
       "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLM",
       "description": "Learn how to connect Claude Code to an Ollama local LLM. This guide covers the Claude-compatible API, environment variables, model selection, and when a LiteLLM proxy is needed.",
@@ -59,7 +20,7 @@
       "count": 7
     },
     {
-      "rank": 5,
+      "rank": 2,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "Keeping the OpenVPN Client IP with a wg-easy WireGuard MASQUERADE Exclusion Rule",
       "description": "This post explains why the request IP gets replaced by the VPN server IP due to MASQUERADE in wg-easy WireGuard, and how to fix it. By excluding a specific destination range in the iptables NAT rule, the OpenVPN client's private IP is preserved in the logs as-is.",
@@ -69,49 +30,10 @@
       ],
       "url": "/en/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
       "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
-      "count": 7
-    },
-    {
-      "rank": 6,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "Supporting Multiple Languages on a Hugo Site",
-      "description": "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting.",
-      "date": "2026-02-06T02:34:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/en/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
       "count": 4
     },
     {
-      "rank": 7,
-      "slug": "94-hugo-github-blog",
-      "title": "Building a Hugo + GitHub Blog",
-      "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
-      "date": "2026-02-10T08:46:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/94-hugo-github-blog/",
-      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 4
-    },
-    {
-      "rank": 8,
-      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
-      "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
-      "description": "",
-      "date": "2026-03-19T03:44:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/en/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
-      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
-      "count": 4
-    },
-    {
-      "rank": 9,
+      "rank": 3,
       "slug": "116-wireguard-install-client-setup",
       "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
       "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
@@ -124,98 +46,20 @@
       "count": 3
     },
     {
-      "rank": 10,
-      "slug": "3-git-svn-clone",
-      "title": "How to migrate SVN to Git: git svn clone",
-      "description": "A quick guide to using git svn clone when migrating an SVN repository to Git. Learn how to prepare an authors file, what the -s (std-layout) option means, and which install links and verification commands to use so you can start the migration right away.",
-      "date": "2019-12-01T10:03:00.000Z",
+      "rank": 4,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "How to Issue a Free SSL Certificate on Synology DSM | ",
+      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
+      "date": "2026-05-16T05:03:00.000Z",
       "categories": [
-        "git"
+        "etc"
       ],
-      "url": "/en/posts/3-git-svn-clone/",
-      "image": "/posts/3-git-svn-clone/assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png",
-      "count": 3
+      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 2
     },
     {
-      "rank": 11,
-      "slug": "4-git-filter-repo-remove-secrets-from-history",
-      "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
-      "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
-      "date": "2019-05-18T16:31:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/4-git-filter-repo-remove-secrets-from-history/",
-      "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
-      "count": 3
-    },
-    {
-      "rank": 12,
-      "slug": "69-git-deleted-branch-recovery",
-      "title": "Recovering a deleted Git branch",
-      "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
-      "date": "2025-01-09T06:30:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/69-git-deleted-branch-recovery/",
-      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
-      "count": 3
-    },
-    {
-      "rank": 13,
-      "slug": "80-redis-dump-vs-aof",
-      "title": "Redis dump vs aof",
-      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
-      "date": "2025-06-10T07:16:00.000Z",
-      "categories": [
-        "Database"
-      ],
-      "url": "/en/posts/80-redis-dump-vs-aof/",
-      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
-      "count": 3
-    },
-    {
-      "rank": 14,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 3
-    },
-    {
-      "rank": 15,
-      "slug": "95-openclaw-setup",
-      "title": "Setting Up OpenClaw",
-      "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
-      "date": "2026-02-23T10:10:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/95-openclaw-setup/",
-      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 3
-    },
-    {
-      "rank": 16,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "Fixing Naver Map Open API Authentication Failed (200): Change ncpClientId to ncpKeyId",
-      "description": "This post explains the cause of the Authentication Failed (200) error in Naver Map Open API. Confirm that the parameter has changed from ncpClientId to ncpKeyId, and fix the authentication failure by updating the script URL.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 3
-    },
-    {
-      "rank": 17,
+      "rank": 5,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux Installation - Setting Up a Secure Remote VPN",
       "description": "This guide explains how to install Tailscale on a Linux server and set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel modes.",
@@ -228,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 6,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "How to Install Ollama and Build a Local LLM Server",
       "description": "Learn how to run a local LLM on a Linux server with Ollama. This guide covers installation, external access configuration, model selection, and HTTP API call examples to set up your own personal AI server.",
@@ -241,7 +85,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 7,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -254,17 +98,134 @@
       "count": 2
     },
     {
-      "rank": 20,
-      "slug": "6-flush-dns-cache",
-      "title": "Clearing DNS Cache on Windows/Linux/macOS",
-      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
-      "date": "2026-02-22T16:11:00.000Z",
+      "rank": 8,
+      "slug": "4-git-filter-repo-remove-secrets-from-history",
+      "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
+      "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
+      "date": "2019-05-18T16:31:00.000Z",
       "categories": [
-        "etc"
+        "git"
       ],
-      "url": "/en/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "url": "/en/posts/4-git-filter-repo-remove-secrets-from-history/",
+      "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
       "count": 2
+    },
+    {
+      "rank": 9,
+      "slug": "69-git-deleted-branch-recovery",
+      "title": "Recovering a deleted Git branch",
+      "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
+      "date": "2025-01-09T06:30:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/69-git-deleted-branch-recovery/",
+      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
+      "count": 2
+    },
+    {
+      "rank": 10,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "Encrypting .env Files with GPG for Safe Commits",
+      "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 2
+    },
+    {
+      "rank": 11,
+      "slug": "10-tortoisegit-clear-saved-authentication-data",
+      "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
+      "description": "I put together the steps to clear saved authentication data via Saved Data's Clear when Authentication failed keeps repeating in TortoiseGit after a Git server change. Resolve it all at once, down to checking the Windows Credential Manager.",
+      "date": "2020-09-03T16:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/10-tortoisegit-clear-saved-authentication-data/",
+      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
+      "count": 1
+    },
+    {
+      "rank": 12,
+      "slug": "102-age-recipients-team-encryption-guide",
+      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
+      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
+      "date": "2026-05-01T22:57:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
+      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "count": 1
+    },
+    {
+      "rank": 13,
+      "slug": "110-samsung-smartthings-api-integration-cli-oauth",
+      "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
+      "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
+      "date": "2026-06-29T00:00:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/en/posts/110-samsung-smartthings-api-integration-cli-oauth/",
+      "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
+      "count": 1
+    },
+    {
+      "rank": 14,
+      "slug": "80-redis-dump-vs-aof",
+      "title": "Redis dump vs aof",
+      "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
+      "date": "2025-06-10T07:16:00.000Z",
+      "categories": [
+        "Database"
+      ],
+      "url": "/en/posts/80-redis-dump-vs-aof/",
+      "image": "/posts/80-redis-dump-vs-aof/assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png",
+      "count": 1
+    },
+    {
+      "rank": 15,
+      "slug": "94-hugo-github-blog",
+      "title": "Building a Hugo + GitHub Blog",
+      "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
+      "count": 1
+    },
+    {
+      "rank": 16,
+      "slug": "95-openclaw-setup",
+      "title": "Setting Up OpenClaw",
+      "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
+      "date": "2026-02-23T10:10:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/95-openclaw-setup/",
+      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "count": 1
+    },
+    {
+      "rank": 17,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "Fixing Naver Map Open API Authentication Failed (200): Change ncpClientId to ncpKeyId",
+      "description": "This post explains the cause of the Authentication Failed (200) error in Naver Map Open API. Confirm that the parameter has changed from ncpClientId to ncpKeyId, and fix the authentication failure by updating the script URL.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 1
     }
   ]
 }
