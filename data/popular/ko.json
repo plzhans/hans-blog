@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T04:02:12.870Z",
+  "generated_at": "2026-07-20T04:11:34.713Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -21,6 +21,19 @@
     },
     {
       "rank": 2,
+      "slug": "116-wireguard-install-client-setup",
+      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
+      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+      "date": "2026-07-10T08:20:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/116-wireguard-install-client-setup/",
+      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
+      "count": 4
+    },
+    {
+      "rank": 3,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기",
       "description": "wg-easy WireGuard에서 MASQUERADE 때문에 요청 IP가 VPN 서버로 바뀌는 원인과 해결책을 정리합니다. iptables NAT 규칙에서 특정 목적지 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 로그에 남깁니다.",
@@ -31,19 +44,6 @@
       "url": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/",
       "image": "/posts/98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png",
       "count": 4
-    },
-    {
-      "rank": 3,
-      "slug": "116-wireguard-install-client-setup",
-      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
-      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
-      "date": "2026-07-10T08:20:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/116-wireguard-install-client-setup/",
-      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 3
     },
     {
       "rank": 4,
