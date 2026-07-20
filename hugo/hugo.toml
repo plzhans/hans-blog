@@ -125,10 +125,11 @@ dataDir = "../data"
   theme = "light"
   lang = "ko"
 
-[params.adsense]
-  publisherId = "ca-pub-6229891888422992"
-  adSlotArticleBottom = "8636834920"
-  adSlotSidebar = "3576079939"
+# AdSense 승인 전까지 임시 비활성화 (주석 해제 시 스크립트/광고 렌더링 재개)
+# [params.adsense]
+#   publisherId = "ca-pub-6229891888422992"
+#   adSlotArticleBottom = "8636834920"
+#   adSlotSidebar = "3576079939"
 
 [services]
   [services.googleAnalytics]
