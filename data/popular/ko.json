@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20T04:11:34.713Z",
+  "generated_at": "2026-07-21T03:52:15.374Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -47,6 +47,19 @@
     },
     {
       "rank": 4,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
+      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
+      "date": "2026-07-10T01:11:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 3
+    },
+    {
+      "rank": 5,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "Synology DSM 무료 SSL 인증서 발급 방법 | ",
       "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
@@ -59,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
       "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
@@ -72,7 +85,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "Ollama 설치와 로컬 LLM 서버 구축 방법",
       "description": "Ollama로 Linux 서버에서 로컬 LLM을 실행하는 방법을 설명합니다. 설치, 외부 접속 설정, 모델 선택, HTTP API 호출 예제로 개인 AI 서버 구축 흐름을 정리합니다.",
@@ -82,19 +95,6 @@
       ],
       "url": "/posts/112-ollama-local-llm-server-setup/",
       "image": "/posts/112-ollama-local-llm-server-setup/assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png",
-      "count": 2
-    },
-    {
-      "rank": 7,
-      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
-      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
-      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
-      "date": "2026-07-10T01:11:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
-      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
       "count": 2
     },
     {
