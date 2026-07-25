@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T03:50:20.535Z",
+  "generated_at": "2026-07-25T03:44:18.700Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -164,6 +164,19 @@
     },
     {
       "rank": 13,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
+      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 1
+    },
+    {
+      "rank": 14,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "Samsung SmartThings API 連携方法 - CLI インストールから OAuth 認証まで",
       "description": "Samsung SmartThings API 連携に必要な CLI インストール、OAuth アプリ作成、Redirect URI 設定、トークン発行、デバイス一覧取得の方法をステップごとに解説します。",
@@ -176,7 +189,7 @@
       "count": 1
     },
     {
-      "rank": 14,
+      "rank": 15,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
       "description": "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。",
@@ -189,7 +202,7 @@
       "count": 1
     },
     {
-      "rank": 15,
+      "rank": 16,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + GitHub でブログを構築する",
       "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
@@ -202,7 +215,7 @@
       "count": 1
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "95-openclaw-setup",
       "title": "OpenClaw（オープンクロー）の構築",
       "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",
@@ -215,7 +228,7 @@
       "count": 1
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Naver Map Open API 認証失敗(200) 解決: ncpClientIdからncpKeyIdへ変更",
       "description": "Naver Map Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。パラメータがncpClientIdからncpKeyIdに変更された点を確認し、スクリプトURLを修正して認証失敗を解決します。",
