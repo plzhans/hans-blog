@@ -3,7 +3,7 @@ id: "118"
 translationKey: "118"
 slug: "118-telegram-chat-backup"
 title: "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기"
-description: "텔레그램 대화 기록을 설치 없이 브라우저에서 zip으로 백업하는 방법을 소개합니다. 서버를 거치지 않아 로그인 정보가 외부로 나가지 않으며 내보낸 파일은 오프라인에서도 그대로 읽을 수 있습니다."
+description: "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다."
 categories:
   - "develop"
 tags:
@@ -13,8 +13,8 @@ tags:
   - "mtproto"
   - "nodejs"
   - "telegram"
-date: 2026-07-25T01:10:00.000Z
-lastmod: 2026-07-27T05:14:00.000Z
+date: 2026-07-27T05:15:00.000Z
+lastmod: 2026-07-27T07:31:00.000Z
 toc: true
 draft: false
 images:
@@ -39,12 +39,25 @@ images:
 - 바로 쓰기: [https://telegram-exporter.plzhans.com](https://telegram-exporter.plzhans.com/)
 - zip 다운로드: [https://github.com/plzhans/telegram-chat-exporter/releases/latest/download/telegram-exporter.zip](https://github.com/plzhans/telegram-chat-exporter/releases/latest/download/telegram-exporter.zip)
 
-이 글에서 다루는 내용
+텔레그램 공식 내보내기도 전체 백업과 방별 내보내기를 잘 지원한다.
 
-- 봇 API로는 과거 대화를 못 읽는다. 그래서 사람 계정으로 로그인하는 방식을 썼다.
-- 설치 없이 브라우저만으로 백업한다. 로컬 zip을 받아 `index.html`을 열어도 된다.
-- 내보낸 zip을 풀면 인터넷 없이도 대화를 그대로 다시 볼 수 있다.
-- 여러 방을 한 번에 고르거나 이름 익명 처리도 할 수 있다.
+
+이 도구는 그걸 대체하려는 게 아니라 <strong>공식 내보내기가 덜 편한 지점</strong>을 메우기 위해 만들었다.
+
+
+차별점은 이렇다.
+
+- <strong>날짜 기간을 지정</strong>해 필요한 구간만 내보낼 수 있다.
+- **고른 특정 방만** 골라 내보낼 수 있다. 여러 방을 한꺼번에 골라도 된다.
+- 내보낸 결과가 <strong>대화 말풍선 형태</strong>로 읽힌다. 오프라인에서도 그대로 다시 볼 수 있다.
+- <strong>익명 처리</strong>를 켤 수 있다. 이름·회원번호·프로필 사진을 가린 채 파일을 남길 수 있다.
+- <strong>소스가 전부 공개</strong>돼 있다. 코드를 직접 확인하고 그대로 빌드할 수 있다.
+
+설치 없이 브라우저에서 바로 쓸 수 있고 로컬 zip을 받아 `index.html`을 열어도 된다.
+
+
+중간에 우리 서버가 없어 전화번호와 로그인 코드가 외부로 나가지 않는다.
+
 
 구현 세부와 소스는 깃허브에 전부 공개돼 있다.
 
@@ -150,10 +163,23 @@ index.html 을 열면 대화가 그대로 재현된다 — 도구도 인터넷�
 ## 왜 만들었나
 
 
-세 가지 요구가 동시에 걸려 있었다.
+공식 내보내기로 전체·방별 백업은 이미 된다.
 
 
-### 봇으로는 안 된다
+내가 막힌 지점은 다른 데 있었다.
+
+- 특정 기간만 잘라 내고 싶을 때
+- 방 몇 개만 골라 빠르게 남기고 싶을 때
+- 내보낸 파일을 대화처럼 다시 읽고 싶을 때
+- 증거·공유용으로 이름과 얼굴을 가리고 싶을 때
+
+그 네 가지를 브라우저에서 바로 되게 만드는 게 목표였다.
+
+
+설치도 가입도 없고 결과물은 zip 하나로 떨어진다.
+
+
+### 사람 계정으로 붙여야 한다
 
 
 텔레그램에는 두 종류의 API가 있다. 흔히 쓰는 <strong>Bot API</strong>와 텔레그램 앱들이 실제로 쓰는 <strong>MTProto 클라이언트 API</strong>다.
