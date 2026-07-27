@@ -14,7 +14,7 @@ tags:
   - "nodejs"
   - "telegram"
 date: 2026-07-27T05:15:00.000Z
-lastmod: 2026-07-27T07:31:00.000Z
+lastmod: 2026-07-27T07:36:00.000Z
 toc: true
 draft: false
 images:
@@ -52,6 +52,7 @@ images:
 - 내보낸 결과가 <strong>대화 말풍선 형태</strong>로 읽힌다. 오프라인에서도 그대로 다시 볼 수 있다.
 - <strong>익명 처리</strong>를 켤 수 있다. 이름·회원번호·프로필 사진을 가린 채 파일을 남길 수 있다.
 - <strong>소스가 전부 공개</strong>돼 있다. 코드를 직접 확인하고 그대로 빌드할 수 있다.
+- <strong>HTML 파일 기반</strong>이라 PC·모바일 브라우저가 있는 환경이면 어디서든 쓸 수 있다.
 
 설치 없이 브라우저에서 바로 쓸 수 있고 로컬 zip을 받아 `index.html`을 열어도 된다.
 
