@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T04:10:08.394Z",
+  "generated_at": "2026-07-28T03:43:01.969Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -34,6 +34,32 @@
     },
     {
       "rank": 3,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
+      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
+      "date": "2026-07-10T01:11:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 4
+    },
+    {
+      "rank": 4,
+      "slug": "118-telegram-chat-backup",
+      "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
+      "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
+      "date": "2026-07-27T05:15:00.000Z",
+      "categories": [
+        "develop"
+      ],
+      "url": "/posts/118-telegram-chat-backup/",
+      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 4
+    },
+    {
+      "rank": 5,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "Keeping the OpenVPN Client IP with a wg-easy WireGuard MASQUERADE Exclusion Rule",
       "description": "This post explains why the request IP gets replaced by the VPN server IP due to MASQUERADE in wg-easy WireGuard, and how to fix it. By excluding a specific destination range in the iptables NAT rule, the OpenVPN client's private IP is preserved in the logs as-is.",
@@ -46,20 +72,20 @@
       "count": 4
     },
     {
-      "rank": 4,
-      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
-      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
-      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
-      "date": "2026-07-10T01:11:00.000Z",
+      "rank": 6,
+      "slug": "102-age-recipients-team-encryption-guide",
+      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
+      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
+      "date": "2026-05-01T22:57:00.000Z",
       "categories": [
-        "cloud"
+        "infra"
       ],
-      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
-      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
-      "count": 3
+      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
+      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "count": 2
     },
     {
-      "rank": 5,
+      "rank": 7,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "How to Issue a Free SSL Certificate on Synology DSM | ",
       "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
@@ -72,7 +98,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 8,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux Installation - Setting Up a Secure Remote VPN",
       "description": "This guide explains how to install Tailscale on a Linux server and set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel modes.",
@@ -85,7 +111,7 @@
       "count": 2
     },
     {
-      "rank": 7,
+      "rank": 9,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "How to Install Ollama and Build a Local LLM Server",
       "description": "Learn how to run a local LLM on a Linux server with Ollama. This guide covers installation, external access configuration, model selection, and HTTP API call examples to set up your own personal AI server.",
@@ -98,7 +124,7 @@
       "count": 2
     },
     {
-      "rank": 8,
+      "rank": 10,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
       "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
@@ -111,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 9,
+      "rank": 11,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Recovering a deleted Git branch",
       "description": "When you remove a Git branch, use reflog to grab the commit hash, recreate the branch at that point with checkout -b, and confirm the branch and commit state in seconds.",
@@ -124,7 +150,7 @@
       "count": 2
     },
     {
-      "rank": 10,
+      "rank": 12,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
@@ -137,7 +163,7 @@
       "count": 2
     },
     {
-      "rank": 11,
+      "rank": 13,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
       "description": "I put together the steps to clear saved authentication data via Saved Data's Clear when Authentication failed keeps repeating in TortoiseGit after a Git server change. Resolve it all at once, down to checking the Windows Credential Manager.",
@@ -150,20 +176,7 @@
       "count": 1
     },
     {
-      "rank": 12,
-      "slug": "102-age-recipients-team-encryption-guide",
-      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
-      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
-      "date": "2026-05-01T22:57:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
-      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
-      "count": 1
-    },
-    {
-      "rank": 13,
+      "rank": 14,
       "slug": "105-mac-office-activation",
       "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
       "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
@@ -176,7 +189,7 @@
       "count": 1
     },
     {
-      "rank": 14,
+      "rank": 15,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
       "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
@@ -189,7 +202,7 @@
       "count": 1
     },
     {
-      "rank": 15,
+      "rank": 16,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
       "description": "Compare Redis persistence options (RDB/Dump, AOF, and Hybrid AOF) along with key redis.conf settings, BGSAVE/fsync/COW impacts, and selection criteria that balance data loss risk with restart time.",
@@ -202,7 +215,7 @@
       "count": 1
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "94-hugo-github-blog",
       "title": "Building a Hugo + GitHub Blog",
       "description": "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy.",
@@ -215,7 +228,7 @@
       "count": 1
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "95-openclaw-setup",
       "title": "Setting Up OpenClaw",
       "description": "Install the OpenClaw AI agent framework locally, walk through the onboard flow to configure models, channels, and skills, and follow the Telegram bot authentication and security checkpoints to run agents safely.",
@@ -228,7 +241,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Fixing Naver Map Open API Authentication Failed (200): Change ncpClientId to ncpKeyId",
       "description": "This post explains the cause of the Authentication Failed (200) error in Naver Map Open API. Confirm that the parameter has changed from ncpClientId to ncpKeyId, and fix the authentication failure by updating the script URL.",
