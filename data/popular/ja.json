@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T03:43:01.976Z",
+  "generated_at": "2026-07-29T03:46:33.969Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -164,6 +164,19 @@
     },
     {
       "rank": 13,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "Naver Map Open API 認証失敗(200) 解決: ncpClientIdからncpKeyIdへ変更",
+      "description": "Naver Map Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。パラメータがncpClientIdからncpKeyIdに変更された点を確認し、スクリプトURLを修正して認証失敗を解決します。",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 2
+    },
+    {
+      "rank": 14,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "TortoiseGit 認証エラーの解決: 保存された認証情報の初期化（Clear）方法",
       "description": "Git サーバー変更後に TortoiseGit で Authentication failed が繰り返される場合に、Saved Data の Clear で保存された認証情報を初期化する手順をまとめました。Windows 資格情報マネージャーの点検まで一度に解決しましょう。",
@@ -176,7 +189,7 @@
       "count": 1
     },
     {
-      "rank": 14,
+      "rank": 15,
       "slug": "105-mac-office-activation",
       "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
       "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
@@ -189,7 +202,7 @@
       "count": 1
     },
     {
-      "rank": 15,
+      "rank": 16,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "Samsung SmartThings API 連携方法 - CLI インストールから OAuth 認証まで",
       "description": "Samsung SmartThings API 連携に必要な CLI インストール、OAuth アプリ作成、Redirect URI 設定、トークン発行、デバイス一覧取得の方法をステップごとに解説します。",
@@ -202,7 +215,7 @@
       "count": 1
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "80-redis-dump-vs-aof",
       "title": "Redis dump vs aof",
       "description": "Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFの違いとredis.confの主要設定を比較整理しました。BGSAVE・fsync・COWの影響と選定基準を理解し、データ損失リスクと再起動時間をバランス良く最適化しましょう。",
@@ -215,7 +228,20 @@
       "count": 1
     },
     {
-      "rank": 17,
+      "rank": 18,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "Hugo サイトの多言語対応",
+      "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
+      "date": "2026-02-06T02:34:00.000Z",
+      "categories": [
+        "Infra"
+      ],
+      "url": "/ja/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
+      "count": 1
+    },
+    {
+      "rank": 19,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + GitHub でブログを構築する",
       "description": "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。",
@@ -225,32 +251,6 @@
       ],
       "url": "/ja/posts/94-hugo-github-blog/",
       "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
-      "count": 1
-    },
-    {
-      "rank": 18,
-      "slug": "95-openclaw-setup",
-      "title": "OpenClaw（オープンクロー）の構築",
-      "description": "OpenClaw AIエージェントフレームワークをローカルにインストールし、onboardでモデル・チャンネル・スキルを設定する手順を整理しました。Telegramボット認証とセキュリティチェックを辿りながら安全にエージェントを実行できます。",
-      "date": "2026-02-23T10:10:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/ja/posts/95-openclaw-setup/",
-      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 1
-    },
-    {
-      "rank": 19,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "Naver Map Open API 認証失敗(200) 解決: ncpClientIdからncpKeyIdへ変更",
-      "description": "Naver Map Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。パラメータがncpClientIdからncpKeyIdに変更された点を確認し、スクリプトURLを修正して認証失敗を解決します。",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 1
     }
   ]
