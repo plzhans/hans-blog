@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T03:44:10.564Z",
+  "generated_at": "2026-08-05T03:40:50.287Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -112,6 +112,19 @@
     },
     {
       "rank": 9,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "Synology DSM 無料 SSL 証明書の発行方法 | ",
+      "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 2
+    },
+    {
+      "rank": 10,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux インストール - 安全なリモート VPN 構成",
       "description": "Linux サーバーに Tailscale をインストールして安全なリモート VPN 環境を構成する方法を説明します。アウトバウンドベースの接続、P2P 通信、DERP リレー、Serve と Funnel の活用方法もあわせて整理します。",
@@ -124,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）",
       "description": "git filter-repo を使って .env やシークレット、トークンを Git 履歴から完全に消し去る手順を整理しました。フィルター規則の定義、再書き換えの検証、強制プッシュとチーム全体の再同期、保護ブランチの確認まで一度で把握できます。",
@@ -137,7 +150,7 @@
       "count": 2
     },
     {
-      "rank": 11,
+      "rank": 12,
       "slug": "69-git-deleted-branch-recovery",
       "title": "Git で削除したブランチを復旧する",
       "description": "削除した Git ブランチを復旧するときは reflog でコミットハッシュを調べ、該当時点で checkout -b してブランチを再作成し、ブランチとコミット状態をすぐに確認しましょう。",
@@ -150,7 +163,7 @@
       "count": 2
     },
     {
-      "rank": 12,
+      "rank": 13,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする",
       "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
@@ -163,7 +176,7 @@
       "count": 2
     },
     {
-      "rank": 13,
+      "rank": 14,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 実務ガイド: インストール、plan/apply、AWS SSO・AssumeRole、state backend",
       "description": "Terraform のインストールから init・plan・apply の基本フローとプロジェクト構成を整理します。AWS 資格情報における SSO と AssumeRole の違い、state 共有のための backend の概念と AWS（S3）の例、最小 IAM 権限と運用のコツまでまとめて確認します。",
@@ -173,19 +186,6 @@
       ],
       "url": "/ja/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 14,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "Synology DSM 無料 SSL 証明書の発行方法 | ",
-      "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
       "count": 1
     },
     {
