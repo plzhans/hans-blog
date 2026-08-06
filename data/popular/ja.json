@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T03:40:50.287Z",
+  "generated_at": "2026-08-06T03:46:08.672Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -21,19 +21,6 @@
     },
     {
       "rank": 2,
-      "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
-      "title": "Claude CodeをOllamaローカルLLMで使用する方法",
-      "description": "Claude CodeをOllamaローカルLLMに接続する方法を説明します。Claude互換API、環境変数、モデル選択、LiteLLMプロキシが必要な場合まで整理します。",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/ja/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/",
-      "image": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
-      "count": 7
-    },
-    {
-      "rank": 3,
       "slug": "118-telegram-chat-backup",
       "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
       "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
@@ -46,7 +33,7 @@
       "count": 6
     },
     {
-      "rank": 4,
+      "rank": 3,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -59,7 +46,7 @@
       "count": 4
     },
     {
-      "rank": 5,
+      "rank": 4,
       "slug": "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip",
       "title": "wg-easy WireGuard の MASQUERADE 除外設定で OpenVPN クライアント IP を維持する",
       "description": "wg-easy WireGuard で MASQUERADE のせいでリクエスト IP が VPN サーバーに変わる原因と解決策をまとめます。iptables の NAT ルールで特定の宛先帯域を除外し、OpenVPN クライアントのプライベート IP をそのままログに残します。",
@@ -72,20 +59,7 @@
       "count": 4
     },
     {
-      "rank": 6,
-      "slug": "112-ollama-local-llm-server-setup",
-      "title": "OllamaのインストールとローカルLLMサーバー構築方法",
-      "description": "Ollamaを使ってLinuxサーバーでローカルLLMを実行する方法を説明します。インストール、外部アクセス設定、モデル選択、HTTP API呼び出し例を通じて、個人AIサーバー構築の流れをまとめます。",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/ja/posts/112-ollama-local-llm-server-setup/",
-      "image": "/posts/112-ollama-local-llm-server-setup/assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png",
-      "count": 3
-    },
-    {
-      "rank": 7,
+      "rank": 5,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Naver Map Open API 認証失敗(200) 解決: ncpClientIdからncpKeyIdへ変更",
       "description": "Naver Map Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。パラメータがncpClientIdからncpKeyIdに変更された点を確認し、スクリプトURLを修正して認証失敗を解決します。",
@@ -98,7 +72,7 @@
       "count": 3
     },
     {
-      "rank": 8,
+      "rank": 6,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する",
       "description": "age でチームの秘密ファイルを公開鍵（recipients）で暗号化し、秘密鍵で復号する方法を整理します。鍵の生成、recipients の管理、GPG との違い、メンバー変更時に再暗号化が必要な理由まで併せて説明します。",
@@ -111,7 +85,7 @@
       "count": 2
     },
     {
-      "rank": 9,
+      "rank": 7,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "Synology DSM 無料 SSL 証明書の発行方法 | ",
       "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
@@ -124,20 +98,7 @@
       "count": 2
     },
     {
-      "rank": 10,
-      "slug": "111-tailscale-linux-install-secure-remote-vpn",
-      "title": "Tailscale Linux インストール - 安全なリモート VPN 構成",
-      "description": "Linux サーバーに Tailscale をインストールして安全なリモート VPN 環境を構成する方法を説明します。アウトバウンドベースの接続、P2P 通信、DERP リレー、Serve と Funnel の活用方法もあわせて整理します。",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/ja/posts/111-tailscale-linux-install-secure-remote-vpn/",
-      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
-      "count": 2
-    },
-    {
-      "rank": 11,
+      "rank": 8,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）",
       "description": "git filter-repo を使って .env やシークレット、トークンを Git 履歴から完全に消し去る手順を整理しました。フィルター規則の定義、再書き換えの検証、強制プッシュとチーム全体の再同期、保護ブランチの確認まで一度で把握できます。",
@@ -150,20 +111,7 @@
       "count": 2
     },
     {
-      "rank": 12,
-      "slug": "69-git-deleted-branch-recovery",
-      "title": "Git で削除したブランチを復旧する",
-      "description": "削除した Git ブランチを復旧するときは reflog でコミットハッシュを調べ、該当時点で checkout -b してブランチを再作成し、ブランチとコミット状態をすぐに確認しましょう。",
-      "date": "2025-01-09T06:30:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/69-git-deleted-branch-recovery/",
-      "image": "/posts/69-git-deleted-branch-recovery/assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png",
-      "count": 2
-    },
-    {
-      "rank": 13,
+      "rank": 9,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする",
       "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
@@ -176,7 +124,7 @@
       "count": 2
     },
     {
-      "rank": 14,
+      "rank": 10,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 実務ガイド: インストール、plan/apply、AWS SSO・AssumeRole、state backend",
       "description": "Terraform のインストールから init・plan・apply の基本フローとプロジェクト構成を整理します。AWS 資格情報における SSO と AssumeRole の違い、state 共有のための backend の概念と AWS（S3）の例、最小 IAM 権限と運用のコツまでまとめて確認します。",
@@ -189,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 15,
+      "rank": 11,
       "slug": "105-mac-office-activation",
       "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
       "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
@@ -202,20 +150,33 @@
       "count": 1
     },
     {
-      "rank": 16,
-      "slug": "110-samsung-smartthings-api-integration-cli-oauth",
-      "title": "Samsung SmartThings API 連携方法 - CLI インストールから OAuth 認証まで",
-      "description": "Samsung SmartThings API 連携に必要な CLI インストール、OAuth アプリ作成、Redirect URI 設定、トークン発行、デバイス一覧取得の方法をステップごとに解説します。",
-      "date": "2026-06-29T00:00:00.000Z",
+      "rank": 12,
+      "slug": "112-ollama-local-llm-server-setup",
+      "title": "OllamaのインストールとローカルLLMサーバー構築方法",
+      "description": "Ollamaを使ってLinuxサーバーでローカルLLMを実行する方法を説明します。インストール、外部アクセス設定、モデル選択、HTTP API呼び出し例を通じて、個人AIサーバー構築の流れをまとめます。",
+      "date": "2026-07-03T00:00:00.000Z",
       "categories": [
-        "infra"
+        "ai"
       ],
-      "url": "/ja/posts/110-samsung-smartthings-api-integration-cli-oauth/",
-      "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
+      "url": "/ja/posts/112-ollama-local-llm-server-setup/",
+      "image": "/posts/112-ollama-local-llm-server-setup/assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png",
       "count": 1
     },
     {
-      "rank": 17,
+      "rank": 13,
+      "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
+      "title": "Claude CodeをOllamaローカルLLMで使用する方法",
+      "description": "Claude CodeをOllamaローカルLLMに接続する方法を説明します。Claude互換API、環境変数、モデル選択、LiteLLMプロキシが必要な場合まで整理します。",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/ja/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/",
+      "image": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 1
+    },
+    {
+      "rank": 14,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
       "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
@@ -228,7 +189,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 15,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Hugo サイトの多言語対応",
       "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
