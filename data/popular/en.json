@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T02:25:22.068Z",
+  "generated_at": "2026-08-09T02:32:55.184Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -99,6 +99,19 @@
     },
     {
       "rank": 8,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
+      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 2
+    },
+    {
+      "rank": 9,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
       "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
@@ -111,7 +124,7 @@
       "count": 2
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
@@ -124,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
       "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
@@ -134,19 +147,6 @@
       ],
       "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 11,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
-      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 1
     },
     {
@@ -164,15 +164,15 @@
     },
     {
       "rank": 13,
-      "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
-      "title": "How to Use Claude Code with Ollama Local LLM",
-      "description": "Learn how to connect Claude Code to an Ollama local LLM. This guide covers the Claude-compatible API, environment variables, model selection, and when a LiteLLM proxy is needed.",
-      "date": "2026-07-03T00:00:00.000Z",
+      "slug": "13-git-ssh-key-setup-and-remote-access",
+      "title": "Accessing Git remotes over SSH: from key generation to registration",
+      "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
+      "date": "2025-02-16T09:15:00.000Z",
       "categories": [
-        "ai"
+        "git"
       ],
-      "url": "/en/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/",
-      "image": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "url": "/en/posts/13-git-ssh-key-setup-and-remote-access/",
+      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
       "count": 1
     },
     {

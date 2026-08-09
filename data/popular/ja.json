@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T02:25:22.075Z",
+  "generated_at": "2026-08-09T02:32:55.189Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -99,6 +99,19 @@
     },
     {
       "rank": 8,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
+      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 2
+    },
+    {
+      "rank": 9,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）",
       "description": "git filter-repo を使って .env やシークレット、トークンを Git 履歴から完全に消し去る手順を整理しました。フィルター規則の定義、再書き換えの検証、強制プッシュとチーム全体の再同期、保護ブランチの確認まで一度で把握できます。",
@@ -111,7 +124,7 @@
       "count": 2
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする",
       "description": ".envファイルをGitにコミットしなければならないときにGPGで暗号化して秘密情報の漏えいを防ぐ方法をまとめました。.gitignoreの扱いからgpg encrypt/decryptコマンド、recipientデフォルト設定まで適用して安全にリポジトリを運用しましょう。",
@@ -124,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 実務ガイド: インストール、plan/apply、AWS SSO・AssumeRole、state backend",
       "description": "Terraform のインストールから init・plan・apply の基本フローとプロジェクト構成を整理します。AWS 資格情報における SSO と AssumeRole の違い、state 共有のための backend の概念と AWS（S3）の例、最小 IAM 権限と運用のコツまでまとめて確認します。",
@@ -134,19 +147,6 @@
       ],
       "url": "/ja/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 11,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
-      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 1
     },
     {
@@ -164,15 +164,15 @@
     },
     {
       "rank": 13,
-      "slug": "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm",
-      "title": "Claude CodeをOllamaローカルLLMで使用する方法",
-      "description": "Claude CodeをOllamaローカルLLMに接続する方法を説明します。Claude互換API、環境変数、モデル選択、LiteLLMプロキシが必要な場合まで整理します。",
-      "date": "2026-07-03T00:00:00.000Z",
+      "slug": "13-git-ssh-key-setup-and-remote-access",
+      "title": "Git リモートへ SSH で接続する: キー生成から登録まで",
+      "description": "Git リモートに SSH で接続する手順をまとめました。HTTPS と SSH の違いを比較し、Ed25519 キー生成、chmod 権限調整、GitHub/GitLab への公開鍵登録、ssh -T での動作確認までを一気に把握できます。",
+      "date": "2025-02-16T09:15:00.000Z",
       "categories": [
-        "ai"
+        "git"
       ],
-      "url": "/ja/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/",
-      "image": "/posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "url": "/ja/posts/13-git-ssh-key-setup-and-remote-access/",
+      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
       "count": 1
     },
     {
