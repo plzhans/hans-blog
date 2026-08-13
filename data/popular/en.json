@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T03:00:33.898Z",
+  "generated_at": "2026-08-13T03:03:38.736Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -34,6 +34,19 @@
     },
     {
       "rank": 3,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "Fixing Naver Map Open API Authentication Failed (200): Change ncpClientId to ncpKeyId",
+      "description": "This post explains the cause of the Authentication Failed (200) error in Naver Map Open API. Confirm that the parameter has changed from ncpClientId to ncpKeyId, and fix the authentication failure by updating the script URL.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 3
+    },
+    {
+      "rank": 4,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -46,7 +59,7 @@
       "count": 2
     },
     {
-      "rank": 4,
+      "rank": 5,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "How to Issue a Free SSL Certificate on Synology DSM | ",
       "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
@@ -59,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "105-mac-office-activation",
       "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
       "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
@@ -72,7 +85,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 7,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -85,7 +98,7 @@
       "count": 2
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
       "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
@@ -98,7 +111,7 @@
       "count": 2
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "When you must commit a .env file, encrypt it with GPG to block secret leaks: set up .gitignore rules, run gpg encrypt/decrypt commands, and define a default recipient so the repository stays secure.",
@@ -108,19 +121,6 @@
       ],
       "url": "/en/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 2
-    },
-    {
-      "rank": 9,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "Fixing Naver Map Open API Authentication Failed (200): Change ncpClientId to ncpKeyId",
-      "description": "This post explains the cause of the Authentication Failed (200) error in Naver Map Open API. Confirm that the parameter has changed from ncpClientId to ncpKeyId, and fix the authentication failure by updating the script URL.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 2
     },
     {
