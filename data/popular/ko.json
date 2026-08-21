@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T01:55:33.295Z",
+  "generated_at": "2026-08-21T02:02:02.135Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -34,19 +34,6 @@
     },
     {
       "rank": 3,
-      "slug": "116-wireguard-install-client-setup",
-      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
-      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
-      "date": "2026-07-10T08:20:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/116-wireguard-install-client-setup/",
-      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 3
-    },
-    {
-      "rank": 4,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "Synology DSM 무료 SSL 인증서 발급 방법 | ",
       "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
@@ -59,7 +46,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 4,
       "slug": "105-mac-office-activation",
       "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
       "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
@@ -69,6 +56,19 @@
       ],
       "url": "/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 2
+    },
+    {
+      "rank": 5,
+      "slug": "116-wireguard-install-client-setup",
+      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
+      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+      "date": "2026-07-10T08:20:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/116-wireguard-install-client-setup/",
+      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
       "count": 2
     },
     {
