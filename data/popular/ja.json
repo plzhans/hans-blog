@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T02:02:02.146Z",
+  "generated_at": "2026-08-22T01:54:40.712Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -60,19 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "116-wireguard-install-client-setup",
-      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
-      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
-      "date": "2026-07-10T08:20:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/116-wireguard-install-client-setup/",
-      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 2
-    },
-    {
-      "rank": 6,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Hugo サイトの多言語対応",
       "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
@@ -85,7 +72,7 @@
       "count": 2
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する",
       "description": "age でチームの秘密ファイルを公開鍵（recipients）で暗号化し、秘密鍵で復号する方法を整理します。鍵の生成、recipients の管理、GPG との違い、メンバー変更時に再暗号化が必要な理由まで併せて説明します。",
@@ -98,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 実務ガイド: インストール、plan/apply、AWS SSO・AssumeRole、state backend",
       "description": "Terraform のインストールから init・plan・apply の基本フローとプロジェクト構成を整理します。AWS 資格情報における SSO と AssumeRole の違い、state 共有のための backend の概念と AWS（S3）の例、最小 IAM 権限と運用のコツまでまとめて確認します。",
@@ -111,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "OllamaのインストールとローカルLLMサーバー構築方法",
       "description": "Ollamaを使ってLinuxサーバーでローカルLLMを実行する方法を説明します。インストール、外部アクセス設定、モデル選択、HTTP API呼び出し例を通じて、個人AIサーバー構築の流れをまとめます。",
@@ -124,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -137,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "13-git-ssh-key-setup-and-remote-access",
       "title": "Git リモートへ SSH で接続する: キー生成から登録まで",
       "description": "Git リモートに SSH で接続する手順をまとめました。HTTPS と SSH の違いを比較し、Ed25519 キー生成、chmod 権限調整、GitHub/GitLab への公開鍵登録、ssh -T での動作確認までを一気に把握できます。",
@@ -150,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）",
       "description": "git filter-repo を使って .env やシークレット、トークンを Git 履歴から完全に消し去る手順を整理しました。フィルター規則の定義、再書き換えの検証、強制プッシュとチーム全体の再同期、保護ブランチの確認まで一度で把握できます。",
@@ -163,7 +150,7 @@
       "count": 1
     },
     {
-      "rank": 13,
+      "rank": 12,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
       "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
