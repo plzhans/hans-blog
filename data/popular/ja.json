@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T02:05:53.177Z",
+  "generated_at": "2026-08-24T02:01:47.031Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -47,19 +47,6 @@
     },
     {
       "rank": 4,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
-      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 2
-    },
-    {
-      "rank": 5,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Hugo サイトの多言語対応",
       "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
@@ -72,7 +59,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 5,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する",
       "description": "age でチームの秘密ファイルを公開鍵（recipients）で暗号化し、秘密鍵で復号する方法を整理します。鍵の生成、recipients の管理、GPG との違い、メンバー変更時に再暗号化が必要な理由まで併せて説明します。",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 実務ガイド: インストール、plan/apply、AWS SSO・AssumeRole、state backend",
       "description": "Terraform のインストールから init・plan・apply の基本フローとプロジェクト構成を整理します。AWS 資格情報における SSO と AssumeRole の違い、state 共有のための backend の概念と AWS（S3）の例、最小 IAM 権限と運用のコツまでまとめて確認します。",
@@ -95,6 +82,19 @@
       ],
       "url": "/ja/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 1
+    },
+    {
+      "rank": 7,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
+      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 1
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T02:05:53.163Z",
+  "generated_at": "2026-08-24T02:01:46.975Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -47,19 +47,6 @@
     },
     {
       "rank": 4,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
-      "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 2
-    },
-    {
-      "rank": 5,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "hugo site 다국어 지원하기",
       "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
@@ -72,7 +59,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 5,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
       "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
       "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
@@ -95,6 +82,19 @@
       ],
       "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 1
+    },
+    {
+      "rank": 7,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
+      "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 1
     },
     {
