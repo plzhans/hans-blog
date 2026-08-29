@@ -9,7 +9,7 @@ categories:
 tags:
   - "git"
 date: 2019-05-18T16:31:00.000Z
-lastmod: 2026-02-27T10:05:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -195,3 +195,9 @@ However, `filter-branch` is slow and error-prone, so `git filter-repo` has effec
 | Performance | Slow | Fast |
 | Safe workflow | Requires lots of cleanup afterward | Streamlined process |
 | Current recommendation | Legacy; avoid when possible | Recommended |
+
+## Related Posts
+
+- [Encrypting .env Files with GPG for Safe Commits](../89-gpg-encrypt-env-file/)
+- [Signing Git Commits with GPG](../88-github-gpg-commit-signing/)
+- [age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys](../102-age-recipients-team-encryption-guide/)

@@ -9,7 +9,7 @@ categories:
 tags:
   - "git"
 date: 2019-05-18T16:31:00.000Z
-lastmod: 2026-02-27T10:05:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -195,3 +195,9 @@ git push --force --tags
 | パフォーマンス | 遅い | 速い |
 | 安全なワークフロー | 後処理が頻繁に必要 | 流れがシンプル |
 | 現在の推奨度 | レガシーなので非推奨 | 推奨 |
+
+## 関連記事
+
+- [GPGで.envファイルを暗号化して安全にコミットする方法](../89-gpg-encrypt-env-file/)
+- [GitでGPGを使ってコミットに署名する](../88-github-gpg-commit-signing/)
+- [age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する](../102-age-recipients-team-encryption-guide/)

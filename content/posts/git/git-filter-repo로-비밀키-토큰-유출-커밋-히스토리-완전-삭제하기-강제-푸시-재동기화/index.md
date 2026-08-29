@@ -9,7 +9,7 @@ categories:
 tags:
   - "git"
 date: 2019-05-18T16:31:00.000Z
-lastmod: 2026-08-29T10:52:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -200,3 +200,9 @@ git push --force --tags
 | 안전한 워크플로    | 후처리(정리)가 자주 필요하다  | 작업 흐름이 단순하다     |
 | 현재 권장 여부    | 레거시라서 가급적 지양한다    | 권장한다            |
 
+
+## 관련 글
+
+- [GPG로 .env 파일 암호화해서 안전하게 커밋하기](../89-gpg-encrypt-env-file/)
+- [Git에서 GPG로 커밋 서명하기](../88-github-gpg-commit-signing/)
+- [age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화](../102-age-recipients-team-encryption-guide/)
