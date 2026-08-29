@@ -13,7 +13,7 @@
   {{- end }}
   {{- $person := dict
       "@type" "Person"
-      "name" .Site.Params.author
+      "name" (printf "%s (%s)" .Site.Params.authorRealName .Site.Params.author)
       "url" .Permalink
       "image" (.Site.Params.avatar | absURL)
       "jobTitle" (.Params.job_title | default "")
