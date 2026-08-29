@@ -1,7 +1,7 @@
 ---
-id: "39222a0f-7e83-80fe-8b4d-ee6466d71c77"
-translationKey: "39222a0f-7e83-80fe-8b4d-ee6466d71c77"
-slug: "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm"
+id: "113"
+translationKey: "113"
+slug: "113-claude-code-ollama-local-llm"
 title: "How to Use Claude Code with Ollama Local LLM"
 description: "Learn how to connect Claude Code to an Ollama local LLM. This guide covers the Claude-compatible API, environment variables, model selection, and when a LiteLLM proxy is needed."
 categories:

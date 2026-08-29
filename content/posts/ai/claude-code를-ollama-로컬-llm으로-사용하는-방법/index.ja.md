@@ -1,7 +1,7 @@
 ---
-id: "39222a0f-7e83-80fe-8b4d-ee6466d71c77"
-translationKey: "39222a0f-7e83-80fe-8b4d-ee6466d71c77"
-slug: "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm"
+id: "113"
+translationKey: "113"
+slug: "113-claude-code-ollama-local-llm"
 title: "Claude CodeをOllamaローカルLLMで使用する方法"
 description: "Claude CodeをOllamaローカルLLMに接続する方法を説明します。Claude互換API、環境変数、モデル選択、LiteLLMプロキシが必要な場合まで整理します。"
 categories:

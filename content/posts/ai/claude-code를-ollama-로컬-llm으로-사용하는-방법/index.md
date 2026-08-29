@@ -1,7 +1,7 @@
 ---
-id: "39222a0f-7e83-80fe-8b4d-ee6466d71c77"
-translationKey: "39222a0f-7e83-80fe-8b4d-ee6466d71c77"
-slug: "39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm"
+id: "113"
+translationKey: "113"
+slug: "113-claude-code-ollama-local-llm"
 title: "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법"
 description: "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다."
 categories:
@@ -11,7 +11,7 @@ tags:
   - "ollama"
   - "visual-code"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-07-06T02:15:00.000Z
+lastmod: 2026-07-10T01:19:00.000Z
 toc: true
 draft: false
 images:
