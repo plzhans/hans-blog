@@ -92,6 +92,12 @@
           </a>
       </div>
       {{- end }}
+      {{- with .Site.Menus.main }}
+      <hr />
+      {{- range . }}
+      <a class="app-header-label" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+      {{- end }}
+      {{- end }}
       <hr />
       <a class="app-header-label" href="{{ "/categories/" | relLangURL }}">Categories</a>
       <nav class="app-header-categories">

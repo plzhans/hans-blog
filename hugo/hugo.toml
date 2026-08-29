@@ -54,6 +54,10 @@ dataDir = "../data"
     name = "Github"
     url = "https://github.com/plzhans"
   [[params.social]]
+    icon = "brand-linkedin"
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/plzhans"
+  [[params.social]]
     icon = "code"
     name = "Source"
     url = "https://github.com/plzhans/hans-blog"
@@ -84,11 +88,11 @@ dataDir = "../data"
     lineNumbersInTable = false
 
 [menu]
-#   [[menu.main]]
-#     identifier = "about"
-#     name = "About"
-#     url = "/about/"
-#     weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 1
 
 [taxonomies]
   category = "categories"

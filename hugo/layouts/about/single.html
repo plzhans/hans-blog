@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <article class="post about-page">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+    </header>
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+  </article>
+  {{- $sameAs := slice }}
+  {{- range where .Site.Params.social "name" "in" (slice "Github" "LinkedIn") }}
+    {{- $sameAs = $sameAs | append .url }}
+  {{- end }}
+  {{- $person := dict
+      "@type" "Person"
+      "name" .Site.Params.author
+      "url" .Permalink
+      "image" (.Site.Params.avatar | absURL)
+      "jobTitle" (.Params.job_title | default "")
+      "sameAs" $sameAs
+  -}}
+  {{- $jsonLd := dict "@context" "https://schema.org" "@type" "ProfilePage" "mainEntity" $person -}}
+  {{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($jsonLd | jsonify (dict "indent" "  ")) | safeHTML }}
+{{ end }}
