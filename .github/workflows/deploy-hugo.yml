@@ -64,3 +64,25 @@ jobs:
 
       - name: Print deployed URL
         run: echo "Deployed to ${{ steps.deploy.outputs.page_url }}"
+
+      - name: Submit URLs to IndexNow
+        env:
+          INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
+        run: |
+          set -euo pipefail
+          urls=$(grep -ohE '<loc>[^<]+</loc>' \
+            hugo/public/ko/sitemap.xml \
+            hugo/public/en/sitemap.xml \
+            hugo/public/ja/sitemap.xml \
+            | sed -E 's#</?loc>##g')
+          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
+          payload=$(jq -n \
+            --arg host "blog.plzhans.com" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "https://blog.plzhans.com/${INDEXNOW_KEY}.txt" \
+            --argjson urlList "$url_list" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$payload" \
+            -w "\nIndexNow response: %{http_code}\n"
