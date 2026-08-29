@@ -33,6 +33,9 @@ export class NotionExportService {
       publishUrl: "발행 URL",
       toc: "toc",
       modifiedDate: "수정일",
+      // 주의: 위 기본값들은 생성자 인자로 전달된 propertyKeys(notion.yml 설정)로 덮어써짐.
+      // 이 프로젝트는 notion.yml에서 항상 값을 주입하므로, 위 기본값은 실제로 쓰이지 않는
+      // 안전장치일 뿐 - 값을 바꾸려면 여기가 아니라 notion.yml을 수정할 것.
       ...propertyKeys,
     };
     this.statusValues = {
@@ -222,10 +225,25 @@ export class NotionExportService {
     const draft = !(currentStatus === this.statusValues.publishRequest || currentStatus === this.statusValues.published);
     const prevPageDir = existsPageMap.get(pageId);
 
-    // 발행 요청 시 slug 검증
+    // 발행 요청 시 필수 메타데이터 검증
+    // (title/slug/category/POST_ID 중 하나라도 비어있으면 폴백 값(untitled, UUID, etc 카테고리 등)이
+    // 그대로 발행되어버리는 문제가 있었음 (POST_ID 누락 시 UUID가 slug/URL에 노출된 실제 사례로 확인됨)
+    // - 여기서 미리 차단하고 사용자가 노션에서 채워넣도록 유도
     if (currentStatus === this.statusValues.publishRequest) {
+      if (!this.#hasValidTitle(page)) {
+        console.error(`❌ Publish request rejected: title is empty for page (${pageId})`);
+        return false;
+      }
       if (!this.#hasTextProperty(page.properties, this.propertyKeys.slug)) {
         console.error(`❌ Publish request rejected: slug property is empty for page "${title}" (${pageId})`);
+        return false;
+      }
+      if (this.#extractPageCategory(page.properties, this.propertyKeys.category).length === 0) {
+        console.error(`❌ Publish request rejected: category is empty for page "${title}" (${pageId})`);
+        return false;
+      }
+      if (!this.#hasValidPostId(page, this.propertyKeys.uniqueId)) {
+        console.error(`❌ Publish request rejected: ${this.propertyKeys.uniqueId} property is empty for page "${title}" (${pageId})`);
         return false;
       }
     }
@@ -454,6 +472,24 @@ export class NotionExportService {
   }
 
   /**
+   * Notion 페이지에 실제 제목 텍스트가 채워져 있는지 확인
+   * #extractPageTitle과 달리 "untitled" 폴백 없이, 값이 실제로 채워져 있는지만 판단
+   * @param {Object} page - Notion 페이지 객체
+   * @returns {boolean} 제목이 비어있지 않으면 true
+   */
+  #hasValidTitle(page) {
+    const prop = page?.properties?.title;
+    if (prop?.type === "title") return !!prop.title?.[0]?.plain_text?.trim();
+
+    const firstTitleKey = Object.keys(page?.properties || {}).find(
+      (k) => page.properties[k]?.type === "title"
+    );
+    if (firstTitleKey) return !!page.properties[firstTitleKey].title?.[0]?.plain_text?.trim();
+
+    return false;
+  }
+
+  /**
    * Notion 속성에서 포스트 ID를 추출 (unique_id, number, rich_text, title 타입 지원)
    * 속성이 없거나 값이 비어 있으면 page.id를 fallback으로 반환
    * @param {Object} page - Notion 페이지 객체
@@ -476,6 +512,30 @@ export class NotionExportService {
         return prop.title?.map((t) => t.plain_text).join("").trim() || page.id;
       default:
         return page.id;
+    }
+  }
+
+  /**
+   * Notion 속성에 유효한 포스트 ID 값이 채워져 있는지 확인 (unique_id, number, rich_text, title 타입 지원)
+   * #extractPagePostId와 달리 page.id로 폴백하지 않고, 값이 실제로 채워져 있는지만 판단
+   * @param {Object} page - Notion 페이지 객체
+   * @param {string} key - 포스트 ID 속성 키
+   * @returns {boolean} 값이 채워져 있으면 true
+   */
+  #hasValidPostId(page, key) {
+    const prop = page?.properties?.[key];
+    if (!prop) return false;
+    switch (prop.type) {
+      case "unique_id":
+        return prop.unique_id?.number != null;
+      case "number":
+        return prop.number != null;
+      case "rich_text":
+        return !!prop.rich_text?.map((t) => t.plain_text).join("").trim();
+      case "title":
+        return !!prop.title?.map((t) => t.plain_text).join("").trim();
+      default:
+        return false;
     }
   }
 
