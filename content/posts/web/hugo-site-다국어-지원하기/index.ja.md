@@ -5,7 +5,7 @@ slug: "93-hugo-multilingual-seo-setup"
 title: "Hugo サイトの多言語対応"
 description: "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。"
 categories:
-  - "hugo"
+  - "web"
 tags:
   - "hugo"
   - "seo"

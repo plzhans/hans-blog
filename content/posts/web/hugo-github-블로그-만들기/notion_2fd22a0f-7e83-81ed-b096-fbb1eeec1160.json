@@ -2,7 +2,7 @@
   "object": "page",
   "id": "2fd22a0f-7e83-81ed-b096-fbb1eeec1160",
   "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-08-29T06:54:00.000Z",
+  "last_edited_time": "2026-08-29T07:16:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T06:54:00.000Z"
+      "last_edited_time": "2026-08-29T07:16:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T15:54:00.000+09:00",
+        "start": "2026-08-29T16:16:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -190,9 +190,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "6966f599-16c1-463d-8a67-d59bd3ff2bcd",
-        "name": "Hugo",
-        "color": "purple"
+        "id": "f8a45a20-5dfa-4116-b3ba-1a002de30df6",
+        "name": "Web",
+        "color": "pink"
       }
     },
     "제목": {
@@ -222,5 +222,5 @@
   "url": "https://app.notion.com/p/Hugo-Github-2fd22a0f7e8381edb096fbb1eeec1160",
   "public_url": null,
   "archived": false,
-  "request_id": "b31adcaf-6ce7-4808-b059-52ab51f642d2"
+  "request_id": "16edfe5b-fb1c-427b-ba4d-8a0eeae9d5fc"
 }

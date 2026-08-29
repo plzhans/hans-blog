@@ -5,13 +5,13 @@ slug: "94-hugo-github-blog"
 title: "Hugo + Github 블로그 만들기"
 description: "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요."
 categories:
-  - "hugo"
+  - "web"
 tags:
   - "github-action"
   - "github-pages"
   - "hugo"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-08-29T06:54:00.000Z
+lastmod: 2026-08-29T07:16:00.000Z
 toc: true
 draft: false
 images:

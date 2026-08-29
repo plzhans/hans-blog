@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "2fd22a0f-7e83-8086-b859-fdca16a463fa",
-  "created_time": "2026-02-04T09:07:00.000Z",
-  "last_edited_time": "2026-08-29T06:54:00.000Z",
+  "id": "2ff22a0f-7e83-80db-9fb4-c19d6e4469cf",
+  "created_time": "2026-02-06T02:34:00.000Z",
+  "last_edited_time": "2026-08-29T07:16:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -30,51 +30,41 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-02-04T09:07:00.000Z"
+      "created_time": "2026-02-06T02:34:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "c883a4a8-4839-4b1a-8cce-01c1a2779b11",
-          "name": "github",
-          "color": "purple"
+          "id": "e3126427-d60a-43ac-84f8-0b7a28091e25",
+          "name": "hugo",
+          "color": "pink"
         },
         {
-          "id": "c317d7e0-321b-4f64-a8ad-f26ff9113757",
-          "name": "github-action",
-          "color": "gray"
-        },
-        {
-          "id": "c8635470-24e8-485c-a6d9-c79c71688cb2",
-          "name": "domain",
+          "id": "11687b98-a492-430b-8b26-0a74227dbee0",
+          "name": "seo",
           "color": "red"
-        },
-        {
-          "id": "0579ade5-617f-4ef1-bf35-7d996cb2a24f",
-          "name": "github-pages",
-          "color": "orange"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T06:54:00.000Z"
+      "last_edited_time": "2026-08-29T07:16:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 87
+        "number": 3
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/86-github-pages-custom-domain/"
+      "url": "https://blog.plzhans.com/93-hugo-multilingual-seo-setup/"
     },
     "toc": {
       "id": "ZR~A",
@@ -85,7 +75,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T15:54:00.000+09:00",
+        "start": "2026-08-29T16:16:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -106,7 +96,7 @@
         {
           "type": "text",
           "text": {
-            "content": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
+            "content": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
             "link": null
           },
           "annotations": {
@@ -117,7 +107,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "GitHub Pages에 커스텀 도메인을 연결할 때 CNAME·A/AAAA 레코드 설정과 Repository Pages의 Custom domain 적용 절차를 정리했습니다. HTTPS(Enforce HTTPS) 인증서 전파 지연까지 포함해 도메인 연결 문제를 빠르게 해결하세요.",
+          "plain_text": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
           "href": null
         }
       ]
@@ -129,7 +119,7 @@
         {
           "type": "text",
           "text": {
-            "content": "86",
+            "content": "93",
             "link": null
           },
           "annotations": {
@@ -140,7 +130,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "86",
+          "plain_text": "93",
           "href": null
         }
       ]
@@ -152,7 +142,7 @@
         {
           "type": "text",
           "text": {
-            "content": "github-pages-custom-domain",
+            "content": "hugo-multilingual-seo-setup",
             "link": null
           },
           "annotations": {
@@ -163,7 +153,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "github-pages-custom-domain",
+          "plain_text": "hugo-multilingual-seo-setup",
           "href": null
         }
       ]
@@ -177,7 +167,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-02-10T07:34:00.000+00:00",
+        "start": "2026-02-11T09:55:00.000+00:00",
         "end": null,
         "time_zone": null
       }
@@ -186,7 +176,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-02-04T18:07:00.000+09:00",
+        "start": "2026-02-06T11:34:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -195,9 +185,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "6966f599-16c1-463d-8a67-d59bd3ff2bcd",
-        "name": "Hugo",
-        "color": "purple"
+        "id": "f8a45a20-5dfa-4116-b3ba-1a002de30df6",
+        "name": "Web",
+        "color": "pink"
       }
     },
     "제목": {
@@ -207,7 +197,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Github pages 커스텀 도메인 사용하기",
+            "content": "hugo site 다국어 지원하기",
             "link": null
           },
           "annotations": {
@@ -218,14 +208,14 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Github pages 커스텀 도메인 사용하기",
+          "plain_text": "hugo site 다국어 지원하기",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/Github-pages-2fd22a0f7e838086b859fdca16a463fa",
+  "url": "https://app.notion.com/p/hugo-site-2ff22a0f7e8380db9fb4c19d6e4469cf",
   "public_url": null,
   "archived": false,
-  "request_id": "8d111127-dd1a-4a5d-931b-2cd69f3f55bd"
+  "request_id": "161793ab-5d62-4ca5-9e87-0e45aec21542"
 }

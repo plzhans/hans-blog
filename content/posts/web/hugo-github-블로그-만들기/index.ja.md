@@ -5,7 +5,7 @@ slug: "94-hugo-github-blog"
 title: "Hugo + GitHub でブログを構築する"
 description: "Notion → Markdown → Hugo ビルド → GitHub Pages 配信の流れで個人ブログを構築します。Hugo の導入と m10c テーマ適用、GitHub Actions による自動デプロイ、baseURL 設定の注意点まで押さえてデプロイエラーを防ぎましょう。"
 categories:
-  - "hugo"
+  - "web"
 tags:
   - "github-action"
   - "github-pages"

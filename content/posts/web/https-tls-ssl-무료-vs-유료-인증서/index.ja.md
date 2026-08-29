@@ -9,7 +9,7 @@ tags:
   - "https"
   - "ssl"
 categories:
-  - "Infra"
+  - "web"
 date: 2022-03-17T16:48:00.000+09:00
 lastmod: 2026-02-06T06:28:00.000Z
 toc: true
