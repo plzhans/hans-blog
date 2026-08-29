@@ -170,6 +170,16 @@ export class NotionExportService {
       const currentStatus = page.properties[this.propertyKeys.status]?.status?.name;
       if(currentStatus === this.statusValues.publishRequest){
         await this.#notionPageStatusPublished(page);
+        // 상태 전환 자체가 last_edited_time을 다시 바꾸므로, 전환 이후의 최신 페이지를
+        // 다시 조회해서 메타 캐시를 갱신 (그래야 다음 동기화 때 변경 감지가 정확함 -
+        // 캐시가 전환 *전* 시각으로 남아있으면 다음 실행에서 실제로는 안 바뀐 걸
+        // "바뀌었다"고 오판해 불필요하게 재생성하게 됨)
+        const freshPage = await this.notionApiClient.retrievePage(page.id);
+        const pageDir = existsPageMap.get(page.id);
+        if (pageDir) {
+          const metaFilePath = path.join(pageDir, `notion_${page.id}.json`);
+          fs.writeFileSync(metaFilePath, JSON.stringify(freshPage, null, 2), { encoding: "utf-8" });
+        }
       }
     }
   }
@@ -288,11 +298,7 @@ export class NotionExportService {
         const prevMetaRaw = fs.readFileSync(metaFilePath, "utf-8");
         const prevMeta = JSON.parse(prevMetaRaw);
 
-        // 수정일 프로퍼티 우선, 없으면 last_edited_time 폴백
-        const currentModified = this.#extractModifiedTime(page);
-        const prevModified = this.#extractModifiedTime(prevMeta);
-
-        // 수정일 프로퍼티가 비어 있으면 last_edited_time 값으로 Notion에 업데이트
+        // 수정일 프로퍼티가 비어 있으면 last_edited_time 값으로 Notion에 업데이트 (사람이 보는 용도)
         if (!this.#extractDateValue(page.properties, this.propertyKeys.modifiedDate)) {
           await this.notionApiClient.updatePageProperties(page.id, {
             [this.propertyKeys.modifiedDate]: {
@@ -302,26 +308,21 @@ export class NotionExportService {
           console.log(`  📅 Updated modifiedDate property: ${page.last_edited_time}`);
         }
 
-        // 수정일이 동일한 경우: 변경 없음
-        if (prevModified === currentModified) {
+        // 변경 감지: 캐시에 저장된 page.last_edited_time(우리가 마지막으로 동기화를
+        // 끝냈을 때의 시각, #internalSyncPage에서 상태 전환 후 값까지 반영해 기록됨)과
+        // 지금 노션의 last_edited_time을 직접 비교. 상태값 조합으로 "이 변경은 우리
+        // 자신이 만든 부작용일 것"이라고 추측하던 방식은 실제 수정까지 걸러버리는
+        // 문제가 있어서 제거 (예: 이미 발행 완료된 글의 카테고리만 고쳐도 상태는 그대로라
+        // 영구히 무시되던 버그).
+        if (prevMeta.last_edited_time === page.last_edited_time) {
           // 아직 발행 완료가 아니면 상태 업데이트만 필요 (컨텐츠 재생성은 스킵)
           if (currentStatus !== this.statusValues.published) {
             console.log(`  ⏭️ Skipped (not modified), status update needed`);
             return true;
           }
           // 이미 발행 완료 상태면 아무 작업도 필요 없음
-          console.log(`  ⏭️ Skipped (not modified) (status: ${currentStatus}, modified: ${currentModified})`);
+          console.log(`  ⏭️ Skipped (not modified) (status: ${currentStatus})`);
           return false;
-        } else {
-          // 수정일이 다른 경우: 변경 있음
-          // 발행 완료 후 Notion에 상태를 "발행 완료"로 업데이트하면
-          // last_edited_time과 status가 변경되어 다음 sync 에서 수정된 것으로 인식됨.
-          // 이전/현재 모두 발행 완료 상태라면 이 변경은 상태 업데이트에 의한 것이므로 스킵.
-          const prevStatus = prevMeta.properties[this.propertyKeys.status]?.status?.name;
-          if (prevStatus === this.statusValues.published && currentStatus === this.statusValues.published) {
-            console.log(`  ⏭️ Skipped (already published) (status: ${currentStatus}, modified: ${prevModified} -> ${currentModified})`);
-            return false;
-          }
         }
       } catch (e) {
         console.error(`❌ Failed to parse meta.json: ${metaFilePath}`, e);
