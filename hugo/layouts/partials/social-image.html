@@ -1,9 +1,14 @@
 {{- /*
-  Hugo 내장 _partials/_funcs/get-page-images.html 오버라이드.
-  og:image/twitter:image가 AI로 생성한 커버 이미지 원본(500KB대 PNG, 1200px 초과)을
-  리사이즈 없이 그대로 링크하던 문제 수정. 내부 리소스로 매칭된 이미지만 최대 1200px +
-  JPEG(q80)로 재인코딩해서 반환하고, 나머지 로직(외부 이미지/미매칭 경로/사이트 폴백
-  이미지)은 원본 그대로 유지.
+  이 프로젝트 전용 소셜/스키마 이미지 헬퍼.
+  Hugo 내장 _partials/_funcs/get-page-images.html과 로직은 동일하되, 그 파일은
+  Hugo 공식 오버라이드 지원 목록(gohugo.io/templates/embedded/)에 없는 비공식
+  내부 구현이라 직접 덮어쓰지 않고, 우리 소유의 partial로 분리했다.
+  대신 공식 지원 대상인 opengraph.html/twitter_cards.html을 오버라이드해서 이 partial을
+  쓰도록 연결한다 (layouts/_partials/opengraph.html, layouts/_partials/twitter_cards.html).
+
+  원본과의 차이: 내부 리소스로 매칭된 이미지는 최대 1200px + JPEG(q80)로 리사이즈해서
+  반환한다. AI로 생성한 커버 이미지 원본(500KB대 PNG)이 og:image/twitter:image/
+  JSON-LD image에 리사이즈 없이 그대로 노출되던 문제 해결이 목적.
 */ -}}
 {{- $imgs := slice }}
 {{- $imgParams := .Params.images }}
@@ -13,10 +18,13 @@
 	{{- $featured := $resources.GetMatch "*feature*" -}}
 	{{- if not $featured }}{{ $featured = $resources.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 	{{- with $featured }}
+		{{- $targetWidth := .Width }}
+		{{- if gt $targetWidth 1200 }}{{- $targetWidth = 1200 }}{{- end }}
+		{{- $og := .Resize (printf "%dx jpg q80" $targetWidth) }}
 		{{- $imgs = $imgs | append (dict
-			"Image" .
-			"RelPermalink" .RelPermalink
-			"Permalink" .Permalink
+			"Image" $og
+			"RelPermalink" $og.RelPermalink
+			"Permalink" $og.Permalink
 			)
 		}}
 	{{- end }}

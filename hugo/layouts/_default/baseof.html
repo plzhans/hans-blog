@@ -23,8 +23,11 @@
     {{ end }}
 
     {{ template "_internal/google_analytics.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-    {{ template "_internal/opengraph.html" . }}
+    {{/* opengraph.html/twitter_cards.html은 layouts/_partials/에서 오버라이드했으므로,
+         옛 template "_internal/..." 호출 방식(오버라이드를 인식하지 못함) 대신
+         공식 문서가 안내하는 partial 호출 방식 사용 */}}
+    {{ partial "twitter_cards.html" . }}
+    {{ partial "opengraph.html" . }}
 
     {{- with .Site.Params.adsense }}
     {{- if .publisherId }}

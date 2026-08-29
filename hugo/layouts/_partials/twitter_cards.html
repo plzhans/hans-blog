@@ -1,0 +1,34 @@
+{{- /*
+  Hugo 공식 오버라이드 지원 대상(gohugo.io/templates/embedded/) - 내장 twitter_cards.html
+  원본 그대로이며, 이미지 조회만 partial "_funcs/get-page-images" 대신 이 프로젝트
+  소유의 partial "social-image.html"을 쓰도록 한 줄 변경 (최대 1200px + JPEG(q80)
+  리사이즈 적용). 나머지 로직은 원본과 동일하게 유지.
+*/ -}}
+{{- $images := partial "social-image.html" . }}
+{{- with index $images 0 }}
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="{{ .Permalink }}">
+{{- else }}
+	<meta name="twitter:card" content="summary">
+{{- end }}
+
+{{- with or .Title site.Title site.Params.title | plainify }}
+	<meta name="twitter:title" content="{{ . }}">
+{{- end }}
+
+{{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
+	<meta name="twitter:description" content="{{ trim . "\n\r\t " }}">
+{{- end }}
+
+{{- $twitterSite := "" }}
+{{- with site.Params.social }}
+	{{- if reflect.IsMap . }}
+		{{- with .twitter }}
+			{{- $content := . }}
+			{{- if not (strings.HasPrefix . "@") }}
+				{{- $content = printf "@%v" . }}
+			{{- end }}
+			<meta name="twitter:site" content="{{ $content }}">
+		{{- end }}
+	{{- end }}
+{{- end }}

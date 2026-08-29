@@ -190,9 +190,9 @@
         "logo" (dict "@type" "ImageObject" "url" (.Site.Params.avatar | absURL))
       )
   -}}
-  {{- /* og:image/twitter:image와 동일한 리사이즈 로직(_funcs/get-page-images 오버라이드)을
+  {{- /* og:image/twitter:image와 동일한 리사이즈 로직(partials/social-image.html)을
        재사용해 원본 대용량 이미지가 아닌 최적화된 버전의 URL을 사용 */ -}}
-  {{- with partial "_funcs/get-page-images" . -}}
+  {{- with partial "social-image.html" . -}}
     {{- with index . 0 -}}
       {{- $jsonLd = merge $jsonLd (dict "image" .Permalink) -}}
     {{- end -}}
