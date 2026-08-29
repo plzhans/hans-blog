@@ -325,18 +325,23 @@ $top-header-height: 3rem;
 }
 
 // Noto Sans KR 폰트 (한국어/일본어/영어 통합)
+// 전체 글리프(한중일 한자 포함) 대신 현대 한글 완성형 전체 + 라틴/기호만 남긴
+// 서브셋 WOFF2 (5.9MB 원본 TTF → 약 640KB). font-display: swap으로
+// 폰트 로딩 중에도 폴백 폰트로 텍스트를 즉시 표시.
 @font-face {
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/NotoSansKR-Regular.ttf') format('truetype');
+  font-display: swap;
+  src: url('/fonts/NotoSansKR-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 700;
-  src: url('/fonts/NotoSansKR-Bold.ttf') format('truetype');
+  font-display: swap;
+  src: url('/fonts/NotoSansKR-Bold.woff2') format('woff2');
 }
 
 body {

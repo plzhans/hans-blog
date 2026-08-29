@@ -44,7 +44,7 @@ dataDir = "../data"
   # 사이트 설명
   description = "개발자 블로그"
   # 프로필 이미지 경로
-  avatar = "/avatar-plzhans.png"
+  avatar = "/avatar-plzhans.webp"
   # 저작권 표시 HTML
   CopyrightHTML = 'Copyright &#xA9; plzhans. All Rights Reserved. | Powered by <a href="https://github.com/plzhans/hans-blog" target="_blank">github.com/plzhans/hans-blog</a>'
   # 메뉴 아이템 구분자
