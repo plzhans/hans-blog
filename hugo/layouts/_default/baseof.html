@@ -10,6 +10,10 @@
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} :: {{ .Site.Title }}{{ end }}</title>
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | default "/favicon.ico" }}" />
     <meta charset="utf-8" />
+    {{/* meta 태그 CSP는 frame-ancestors/report-uri를 지원하지 않아 클릭재킹 방어는 Cloudflare의 X-Frame-Options로 별도 처리.
+         adsense.publisherId는 현재 비활성이지만, 활성화 시 재수정 없도록 관련 도메인 미리 반영해둠.
+         실제 켤 때는 광고주별 크리에이티브 도메인이 다양해 콘솔에서 추가 위반 여부 재확인 필요. */}}
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://giscus.app https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; style-src 'self' https://giscus.app; img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://giscus.app https://pagead2.googlesyndication.com; frame-src https://giscus.app https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; base-uri 'self'; form-action 'self'; object-src 'none'" />
     {{ hugo.Generator }}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
