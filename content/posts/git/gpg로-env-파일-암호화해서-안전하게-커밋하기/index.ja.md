@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -140,3 +140,9 @@ default-recipient {pub uuid}
 # 必ず含めるrecipient（必要な場合のみ）
 #encrypt-to {pub uuid}
 ```
+
+## 関連記事
+
+- [GitでGPGを使ってコミットに署名する](../88-github-gpg-commit-signing/)
+- [age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する](../102-age-recipients-team-encryption-guide/)
+- [git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）](../4-git-filter-repo-remove-secrets-from-history/)

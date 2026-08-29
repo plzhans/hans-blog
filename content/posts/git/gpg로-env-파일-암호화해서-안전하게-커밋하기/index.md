@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -140,3 +140,9 @@ default-recipient {pub uuid}
 #encrypt-to {pub uuid}
 ```
 
+
+## 관련 글
+
+- [Git에서 GPG로 커밋 서명하기](../88-github-gpg-commit-signing/)
+- [age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화](../102-age-recipients-team-encryption-guide/)
+- [git filter-repo로 비밀키·토큰 유출 커밋 히스토리 완전 삭제하기 (강제 푸시·재동기화)](../4-git-filter-repo-remove-secrets-from-history/)

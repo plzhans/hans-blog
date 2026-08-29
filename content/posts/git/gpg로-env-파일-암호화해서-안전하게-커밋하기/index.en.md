@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -139,3 +139,9 @@ default-recipient {pub uuid}
 # Recipient to always include (only if needed)
 #encrypt-to {pub uuid}
 ```
+
+## Related Posts
+
+- [Signing Git Commits with GPG](../88-github-gpg-commit-signing/)
+- [age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys](../102-age-recipients-team-encryption-guide/)
+- [Completely removing leaked secrets from Git history with git filter-repo (force push and resync)](../4-git-filter-repo-remove-secrets-from-history/)
