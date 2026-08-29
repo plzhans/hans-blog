@@ -1,6 +1,11 @@
 {{- $src := .Destination -}}
 {{- $alt := .Text -}}
 {{- $title := .Title -}}
+{{- /* 포스트 본문의 첫 번째 이미지는 대부분 LCP(Largest Contentful Paint) 후보라
+     lazy loading을 걸면 오히려 발견/로딩이 늦어짐. Page.Store로 페이지당 1회만
+     감지해 첫 이미지는 eager+fetchpriority=high, 이후 이미지는 기존대로 lazy 처리 */ -}}
+{{- $isFirstImage := not (.Page.Store.Get "renderedFirstImage") -}}
+{{- if $isFirstImage -}}{{- .Page.Store.Set "renderedFirstImage" true -}}{{- end -}}
 {{- if strings.HasPrefix $src "./assets/" -}}
   {{- $resourcePath := strings.TrimPrefix "./" $src -}}
   {{- $resource := .Page.Resources.GetMatch $resourcePath -}}
@@ -12,7 +17,7 @@
     {{- $fallback := $resource.Resize (printf "%dx" $targetWidth) -}}
     <picture>
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-      <img src="{{ $fallback.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" loading="lazy">
+      <img src="{{ $fallback.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
     </picture>
   {{- else -}}
     {{- $basePath := .Page.RelPermalink | strings.TrimPrefix (printf "/%s/" .Page.Language.Lang) -}}
