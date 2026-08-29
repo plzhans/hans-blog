@@ -19,7 +19,7 @@
     <priority>{{ .Sitemap.Priority }}</priority>{{ end }}{{ if .IsTranslated }}{{ range .AllTranslations }}
     <xhtml:link
                 rel="alternate"
-                hreflang="{{ .Language.Locale }}"
+                hreflang="{{ .Language.Lang }}"
                 href="{{ .Permalink }}"
                 />{{ end }}{{ $defaultLangPermalink := .Permalink }}{{ if ne .Language.Lang (index hugo.Sites 0).Language.Lang }}{{ range .AllTranslations }}{{ if eq .Language.Lang (index hugo.Sites 0).Language.Lang }}{{ $defaultLangPermalink = .Permalink }}{{ end }}{{ end }}{{ end }}
     <xhtml:link
