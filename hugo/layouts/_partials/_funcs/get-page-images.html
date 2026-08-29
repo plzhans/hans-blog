@@ -1,0 +1,62 @@
+{{- /*
+  Hugo 내장 _partials/_funcs/get-page-images.html 오버라이드.
+  og:image/twitter:image가 AI로 생성한 커버 이미지 원본(500KB대 PNG, 1200px 초과)을
+  리사이즈 없이 그대로 링크하던 문제 수정. 내부 리소스로 매칭된 이미지만 최대 1200px +
+  JPEG(q80)로 재인코딩해서 반환하고, 나머지 로직(외부 이미지/미매칭 경로/사이트 폴백
+  이미지)은 원본 그대로 유지.
+*/ -}}
+{{- $imgs := slice }}
+{{- $imgParams := .Params.images }}
+{{- $resources := .Resources.ByType "image" -}}
+{{/* Find featured image resources if the images parameter is empty. */}}
+{{- if not $imgParams }}
+	{{- $featured := $resources.GetMatch "*feature*" -}}
+	{{- if not $featured }}{{ $featured = $resources.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+	{{- with $featured }}
+		{{- $imgs = $imgs | append (dict
+			"Image" .
+			"RelPermalink" .RelPermalink
+			"Permalink" .Permalink
+			)
+		}}
+	{{- end }}
+{{- end }}
+{{/* Use the first one of site images as the fallback. */}}
+{{- if and (not $imgParams) (not $imgs) }}
+	{{- with site.Params.images }}
+		{{- $imgParams = first 1 . }}
+	{{- end }}
+{{- end }}
+{{/* Parse page's images parameter. */}}
+{{- range $imgParams }}
+	{{- $img := . }}
+	{{- $url := urls.Parse $img }}
+	{{- if eq $url.Scheme "" }}
+		{{/* Internal image: check page resources first, then global resources. */}}
+		{{- with or ($resources.GetMatch $img) (resources.GetMatch $img) -}}
+			{{- $targetWidth := .Width }}
+			{{- if gt $targetWidth 1200 }}{{- $targetWidth = 1200 }}{{- end }}
+			{{- $og := .Resize (printf "%dx jpg q80" $targetWidth) }}
+			{{- $imgs = $imgs | append (dict
+				"Image" $og
+				"RelPermalink" $og.RelPermalink
+				"Permalink" $og.Permalink
+				)
+			}}
+		{{- else }}
+			{{- $imgs = $imgs | append (dict
+				"RelPermalink" (relURL $img)
+				"Permalink" (absURL $img)
+				)
+			}}
+		{{- end }}
+	{{- else }}
+		{{/* External image */}}
+		{{- $imgs = $imgs | append (dict
+			"RelPermalink" $img
+			"Permalink" $img
+			)
+		}}
+	{{- end }}
+{{- end }}
+{{- return $imgs }}
