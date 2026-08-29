@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-07-10T13:29:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png)
+![Linux 서버에 WireGuard VPN을 구축하고 클라이언트를 연결하는 구성을 나타난 대표 이미지](./assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png)
 
 
 ## 개요
@@ -293,19 +293,19 @@ wg
 import
 
 
-![](./assets/2_39922a0f-7e83-80c1-ad8d-df9d68816cd4.png)
+![WireGuard GUI 클라이언트에서 클라이언트 conf 파일을 import하는 화면](./assets/2_39922a0f-7e83-80c1-ad8d-df9d68816cd4.png)
 
 
 등록 확인
 
 
-![](./assets/3_39922a0f-7e83-804b-a53f-e609694788ff.png)
+![import한 터널이 GUI 클라이언트 목록에 등록된 것을 확인하는 화면](./assets/3_39922a0f-7e83-804b-a53f-e609694788ff.png)
 
 
 접속 확인
 
 
-![](./assets/4_39922a0f-7e83-8053-94f8-de82008e95e9.png)
+![GUI 클라이언트에서 VPN 터널이 연결된 상태를 확인하는 화면](./assets/4_39922a0f-7e83-8053-94f8-de82008e95e9.png)
 
 
 ## 사설 서버 접속 확인

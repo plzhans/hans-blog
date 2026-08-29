@@ -11,7 +11,7 @@ tags:
   - "naver-api"
   - "ncloud"
 date: 2026-03-24T06:54:00.000Z
-lastmod: 2026-03-24T06:54:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png)
+![네이버 지도 Open API 인증 실패(200) 문제와 ncpKeyId로의 파라미터 변경을 나타난 대표 이미지](./assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png)
 
 
 ## 네이버 지도 인증 오류
@@ -33,10 +33,10 @@ images:
 > 네이버 지도 Open API 인증이 실패하였습니다. 클라이언트 아이디와 웹 서비스 URL을 확인해 주세요.,  * Error Code / Error Message: 200 / Authentication Failed,  * Client ID: xxxxx,  * URI: [http://localhost:8030/](http://localhost:8030/hospitals/1050/edit/basic)xxxxx  
 > 
 >
-> ![](./assets/2_32d22a0f-7e83-8053-a2b0-fd791f882d47.png)
+> ![브라우저에 표시된 Authentication Failed(200) 인증 실패 메시지](./assets/2_32d22a0f-7e83-8053-a2b0-fd791f882d47.png)
 >
 >
-> ![](./assets/3_32d22a0f-7e83-8041-8b4c-f2442ad47ca3.png)
+> ![서비스 URL을 정상 등록해둔 애플리케이션 설정 화면](./assets/3_32d22a0f-7e83-8041-8b4c-f2442ad47ca3.png)
 >
 >
 

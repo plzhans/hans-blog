@@ -10,7 +10,7 @@ tags:
   - "database"
   - "mysql"
 date: 2019-05-17T00:00:00.000Z
-lastmod: 2026-07-06T03:18:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_39522a0f-7e83-8007-b294-f7bfa76d8399.png)
+![MySQL Workbench에서 탭 입력을 공백 4칸으로 바꾸는 설정을 나타난 대표 이미지](./assets/1_39522a0f-7e83-8007-b294-f7bfa76d8399.png)
 
 
 ## 개요
@@ -41,7 +41,7 @@ Edit -> Preferences
 ```
 
 
-![](./assets/2_2fd22a0f-7e83-81d0-bb9b-c695f5677785.png)
+![MySQL Workbench의 Edit → Preferences 메뉴로 이동하는 화면](./assets/2_2fd22a0f-7e83-81d0-bb9b-c695f5677785.png)
 
 
 Preferences 창에서 `General Editors` 항목을 선택한 뒤 `Indentation` 설정을 변경합니다.
@@ -56,7 +56,7 @@ Tab width: 4
 ```
 
 
-![](./assets/3_2fd22a0f-7e83-81e1-a5cc-c18e6e106923.png)
+![General Editors의 Indentation에서 탭 대신 공백을 쓰도록 설정하는 화면](./assets/3_2fd22a0f-7e83-81e1-a5cc-c18e6e106923.png)
 
 
 설정을 저장한 뒤 SQL 편집창에서 탭 키를 입력하면 탭 문자가 아니라 공백 4칸이 입력됩니다. 바로 적용되지 않는 경우에는 열려 있는 편집창을 닫았다가 다시 열거나 MySQL Workbench를 재시작합니다.

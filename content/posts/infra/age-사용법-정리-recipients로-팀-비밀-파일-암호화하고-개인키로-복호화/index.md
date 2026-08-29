@@ -11,7 +11,7 @@ tags:
   - "env"
   - "image"
 date: 2026-05-01T22:57:00.000Z
-lastmod: 2026-06-18T07:17:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png)
+![age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 흐름을 나타난 대표 이미지](./assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png)
 
 
 ## 개요

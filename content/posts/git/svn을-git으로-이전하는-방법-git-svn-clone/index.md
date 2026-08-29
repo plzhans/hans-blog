@@ -9,7 +9,7 @@ categories:
 tags:
   - "git"
 date: 2019-12-01T10:03:00.000Z
-lastmod: 2026-02-27T10:04:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png)
+![git svn clone으로 SVN 저장소의 trunk·branches·tags를 Git으로 이전하는 과정을 나타난 대표 이미지](./assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png)
 
 
 ## 개요

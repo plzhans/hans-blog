@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gitlab"
 date: 2025-02-16T09:15:00.000Z
-lastmod: 2026-02-27T15:15:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png)
+![SSH 키를 생성해 원격 저장소에 등록하고 Git을 SSH로 접속하는 흐름을 나타난 대표 이미지](./assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png)
 
 
 ## 개요

@@ -11,7 +11,7 @@ tags:
   - "gitlab"
   - "TortoiseGit"
 date: 2020-09-03T16:46:00.000Z
-lastmod: 2026-06-18T02:47:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png)
+![TortoiseGit에 저장된 인증 정보를 초기화해 Authentication failed 오류를 해결하는 내용을 나타난 대표 이미지](./assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png)
 
 
 ## 개요
@@ -56,7 +56,7 @@ Git 서버 주소가 바뀌었거나 계정을 변경했는데도 인증 실패�
 2. 폴더에서 마우스 오른쪽 버튼을 클릭합니다.
 3. **TortoiseGit → Settings** 로 이동합니다.
 
-    ![](./assets/2_2fd22a0f-7e83-81f2-a7bc-c7bc5c867533.png)
+    ![탐색기 우클릭 메뉴에서 TortoiseGit → Settings로 이동하는 화면](./assets/2_2fd22a0f-7e83-81f2-a7bc-c7bc5c867533.png)
 
 4. 왼쪽 메뉴에서 **Saved Data** 를 선택합니다.
 5. **Authentication data** 영역에서 **Clear** 를 클릭합니다.
@@ -64,7 +64,7 @@ Git 서버 주소가 바뀌었거나 계정을 변경했는데도 인증 실패�
     이 작업으로 기존에 저장된 인증 정보가 삭제됩니다.
 
 
-    ![](./assets/3_2fd22a0f-7e83-8185-97b3-f0be61b614d4.png)
+    ![Settings의 Saved Data에서 Authentication data를 Clear하는 화면](./assets/3_2fd22a0f-7e83-8185-97b3-f0be61b614d4.png)
 
 6. 다시 `Pull` 또는 `Push` 를 실행합니다.
 7. 아이디와 비밀번호 또는 토큰을 다시 입력합니다.

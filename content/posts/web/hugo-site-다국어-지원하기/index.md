@@ -10,7 +10,7 @@ tags:
   - "hugo"
   - "seo"
 date: 2026-02-11T09:55:00.000Z
-lastmod: 2026-08-29T07:16:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png)
+![Hugo 블로그에 다국어 지원과 hreflang·canonical 등 SEO 설정을 적용하는 구성을 나타난 대표 이미지](./assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png)
 
 
 ## 목표

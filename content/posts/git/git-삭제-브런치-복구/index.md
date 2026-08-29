@@ -9,7 +9,7 @@ categories:
 tags:
   - "git"
 date: 2025-01-09T06:30:00.000Z
-lastmod: 2026-02-27T10:07:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png)
+![삭제한 Git 브런치를 reflog로 찾아 복구하는 과정을 나타난 대표 이미지](./assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png)
 
 
 ## 목표
@@ -52,7 +52,7 @@ git reflog
 reflog 출력에서 <strong>복구하려는 시점의 커밋 해시</strong>를 확인합니다.
 
 
-![](./assets/2_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)
+![git reflog 출력에서 복구할 시점의 커밋 해시를 찾는 화면](./assets/2_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)
 
 
 ---
@@ -79,5 +79,5 @@ git checkout -b repair-1234 f730c6ea10
 브런치가 정상적으로 생성되고 해당 커밋으로 이동했는지 확인합니다.
 
 
-![](./assets/3_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png)
+![새 브런치가 생성되고 해당 커밋으로 이동한 것을 확인하는 화면](./assets/3_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png)
 

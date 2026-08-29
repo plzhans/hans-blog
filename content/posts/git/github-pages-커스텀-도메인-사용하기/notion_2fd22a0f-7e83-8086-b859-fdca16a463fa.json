@@ -2,7 +2,7 @@
   "object": "page",
   "id": "2fd22a0f-7e83-8086-b859-fdca16a463fa",
   "created_time": "2026-02-04T09:07:00.000Z",
-  "last_edited_time": "2026-08-29T10:28:00.000Z",
+  "last_edited_time": "2026-08-29T11:03:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -61,7 +61,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T10:28:00.000Z"
+      "last_edited_time": "2026-08-29T11:03:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -74,7 +74,7 @@
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/WRONG-URL-TEST/"
+      "url": "https://blog.plzhans.com/posts/86-github-pages-custom-domain/"
     },
     "toc": {
       "id": "ZR~A",
@@ -85,7 +85,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T10:28:00.000+00:00",
+        "start": "2026-08-29T19:52:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -106,7 +106,7 @@
         {
           "type": "text",
           "text": {
-            "content": "❌ 실패 (2026-08-29T08:48:54.332Z): 이미지 3개에 캡션이 없습니다: 1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png, 2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png, 3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png",
+            "content": "✅ 발행 완료 (2026-08-29T11:03:24.671Z)",
             "link": null
           },
           "annotations": {
@@ -117,7 +117,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "❌ 실패 (2026-08-29T08:48:54.332Z): 이미지 3개에 캡션이 없습니다: 1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png, 2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png, 3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png",
+          "plain_text": "✅ 발행 완료 (2026-08-29T11:03:24.671Z)",
           "href": null
         }
       ]
@@ -250,5 +250,5 @@
   "url": "https://app.notion.com/p/Github-pages-2fd22a0f7e838086b859fdca16a463fa",
   "public_url": null,
   "archived": false,
-  "request_id": "12f43069-e3cb-4826-8606-228d0562a602"
+  "request_id": "c835dabc-1166-4b57-a47e-49da3336d6ac"
 }

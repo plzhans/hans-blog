@@ -10,7 +10,7 @@ tags:
   - "ai"
   - "OpenClaw"
 date: 2026-02-23T10:10:00.000Z
-lastmod: 2026-02-24T15:43:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png)
+![OpenClaw 설치와 onboard 설정 과정을 보여주는 화면](./assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png)
 
 
 ## 개요
@@ -104,7 +104,7 @@ openclaw gateway start
 ### 기본 설치 화면
 
 
-![](./assets/2_30d22a0f-7e83-80f1-9217-fccc404257dc.png)
+![설치 스크립트를 실행한 기본 설치 화면](./assets/2_30d22a0f-7e83-80f1-9217-fccc404257dc.png)
 
 
 ## 초기 설정(onboard)
@@ -128,7 +128,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 ### 1. 보안 경고 동의
 
 
-![](./assets/3_30d22a0f-7e83-808b-b444-f99cdc23c20e.png)
+![onboard 첫 단계의 보안 경고 동의 화면](./assets/3_30d22a0f-7e83-808b-b444-f99cdc23c20e.png)
 
 
 > <details>  
@@ -151,7 +151,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 예를 들어 챗봇에게 파일을 읽어 달라고 하면 그대로 출력할 수 있다.  
 >   
 >   
-> ![](./assets/4_31022a0f-7e83-80dc-a51c-c26d7be8c0f0.png)  
+> ![챗봇에게 파일을 요청하자 내용을 그대로 출력하는 예시 화면](./assets/4_31022a0f-7e83-80dc-a51c-c26d7be8c0f0.png)  
 >   
 >   
 > </details>
@@ -160,10 +160,10 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 ### 2. 설치 모드 선택
 
 
-![](./assets/5_30d22a0f-7e83-8014-b12d-d1e1b342ba91.png)
+![onboard에서 설치 모드를 고르는 화면](./assets/5_30d22a0f-7e83-8014-b12d-d1e1b342ba91.png)
 
 
-![](./assets/6_30d22a0f-7e83-80a8-a129-f6a2ad9dbd00.png)
+![OpenClaw 설치와 onboard 설정 과정을 보여주는 화면](./assets/6_30d22a0f-7e83-80a8-a129-f6a2ad9dbd00.png)
 
 
 > <details>  
@@ -172,7 +172,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > **게이트웨이 선택(보통 로컬 머신)**  
 >   
 >   
-> ![](./assets/7_30d22a0f-7e83-803c-ad18-f3beec531690.png)  
+> ![Manual 모드에서 게이트웨이를 직접 지정하는 화면](./assets/7_30d22a0f-7e83-803c-ad18-f3beec531690.png)  
 >   
 >   
 > **워크스페이스 경로 지정**  
@@ -181,7 +181,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 기본 경로는 `~/.openclaw/workspace`  
 >   
 >   
-> ![](./assets/8_30d22a0f-7e83-8045-8f43-f8e216bb19b0.png)  
+> ![워크스페이스 경로를 지정하는 화면](./assets/8_30d22a0f-7e83-8045-8f43-f8e216bb19b0.png)  
 >   
 >   
 > </details>
@@ -190,7 +190,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 ### 3. 모델 및 인증 공급자 선택
 
 
-![](./assets/9_30d22a0f-7e83-804c-aba4-d28f3ce24fa0.png)
+![사용할 모델과 인증 공급자를 고르는 화면](./assets/9_30d22a0f-7e83-804c-aba4-d28f3ce24fa0.png)
 
 
 > 필요한 공급자를 활성화하면 된다.  
@@ -205,7 +205,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 수동 설치가 필요한 경우도 있다.  
 >   
 >   
-> ![](./assets/10_31022a0f-7e83-80d8-bbd1-c82743ef6e3e.png)  
+> ![Claude 에이전트를 설치하는 화면](./assets/10_31022a0f-7e83-80d8-bbd1-c82743ef6e3e.png)  
 >   
 >   
 > 토큰 확인  
@@ -216,7 +216,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > ```  
 >   
 >   
-> ![](./assets/11_31022a0f-7e83-80f4-a282-d0d5d905b104.png)  
+> ![claude setup-token으로 발급한 토큰을 확인하는 화면](./assets/11_31022a0f-7e83-80f4-a282-d0d5d905b104.png)  
 >   
 >   
 > 모델 선택은 보통 기본값을 유지해도 된다.  
@@ -225,7 +225,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 필요하면 언제든 변경할 수 있다.  
 >   
 >   
-> ![](./assets/12_31022a0f-7e83-80d3-a320-ec6f7664dcab.png)  
+> ![사용할 모델을 선택하는 화면](./assets/12_31022a0f-7e83-80d3-a320-ec6f7664dcab.png)  
 >   
 >   
 > </details>
@@ -242,10 +242,10 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 ### 4. 채널 선택
 
 
-![](./assets/13_30d22a0f-7e83-807b-978a-fc624c5ddcf8.png)
+![연결할 메신저 채널을 고르는 화면](./assets/13_30d22a0f-7e83-807b-978a-fc624c5ddcf8.png)
 
 
-![](./assets/14_30d22a0f-7e83-8064-9991-fa23e5a937f4.png)
+![OpenClaw 설치와 onboard 설정 과정을 보여주는 화면](./assets/14_30d22a0f-7e83-8064-9991-fa23e5a937f4.png)
 
 
 > 원하는 메신저 채널을 선택한다.  
@@ -257,13 +257,13 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 텔레그램 봇은 관리자 콘솔이 아니라 `@BotFather` 와 대화해서 생성하고 관리한다.  
 >   
 >   
-> ![](./assets/15_30d22a0f-7e83-80a3-9025-e1fc0a7cdeb9.png)  
+> ![텔레그램 @BotFather와 대화해 봇을 생성하는 화면](./assets/15_30d22a0f-7e83-80a3-9025-e1fc0a7cdeb9.png)  
 >   
 >   
-> ![](./assets/16_30d22a0f-7e83-80c8-b4f8-edaa3a69552e.png)  
+> ![OpenClaw 설치와 onboard 설정 과정을 보여주는 화면](./assets/16_30d22a0f-7e83-80c8-b4f8-edaa3a69552e.png)  
 >   
 >   
-> ![](./assets/17_30d22a0f-7e83-8020-a48d-dd2be45089ca.png)  
+> ![OpenClaw 설치와 onboard 설정 과정을 보여주는 화면](./assets/17_30d22a0f-7e83-8020-a48d-dd2be45089ca.png)  
 >   
 >   
 > </details>
@@ -272,10 +272,10 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 ### 5. 스킬 선택
 
 
-![](./assets/18_30d22a0f-7e83-802c-9003-d2e265d919f2.png)
+![사용할 스킬을 고르는 화면](./assets/18_30d22a0f-7e83-802c-9003-d2e265d919f2.png)
 
 
-![](./assets/19_30d22a0f-7e83-803a-a434-d99e4a626ff4.png)
+![OpenClaw 설치와 onboard 설정 과정을 보여주는 화면](./assets/19_30d22a0f-7e83-803a-a434-d99e4a626ff4.png)
 
 
 > OpenClaw는 부가 기능을 스킬, 플러그인 같은 형태로 제공한다.  
@@ -304,7 +304,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 예: "서울 강남구에서 점수 높은 맛집 추천해줘"  
 >   
 >   
-> ![](./assets/20_30d22a0f-7e83-80ea-bec0-f2092ffd730c.png)  
+> ![장소 검색용 Google Places API 키를 설정하는 화면](./assets/20_30d22a0f-7e83-80ea-bec0-f2092ffd730c.png)  
 >   
 >   
 > **이미지 생성(Gemini, Nano Banana)**  
@@ -313,7 +313,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > Gemini 기반 이미지 생성 기능을 사용할 때 설정한다.  
 >   
 >   
-> ![](./assets/21_30d22a0f-7e83-8057-aeeb-cab0cf88d3b0.png)  
+> ![Gemini(Nano Banana) 이미지 생성 스킬을 설정하는 화면](./assets/21_30d22a0f-7e83-8057-aeeb-cab0cf88d3b0.png)  
 >   
 >   
 > **Notion**  
@@ -322,13 +322,13 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 노션 페이지에서 데이터를 참조할 때 사용한다.  
 >   
 >   
-> ![](./assets/22_30d22a0f-7e83-8006-a59f-c428e0ba5bcb.png)  
+> ![노션 연동 스킬을 설정하는 화면](./assets/22_30d22a0f-7e83-8006-a59f-c428e0ba5bcb.png)  
 >   
 >   
 > **이미지 생성(OpenAI)**  
 >   
 >   
-> ![](./assets/23_30d22a0f-7e83-809c-8b87-cd499c42219d.png)  
+> ![OpenAI 이미지 생성 스킬을 설정하는 화면](./assets/23_30d22a0f-7e83-809c-8b87-cd499c42219d.png)  
 >   
 >   
 > **Whisper(STT)**  
@@ -340,7 +340,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 텔레그램에서 음성으로 메시지를 보내면 이를 텍스트로 바꿔서 처리할 수 있다.  
 >   
 >   
-> ![](./assets/24_30d22a0f-7e83-809b-a7bb-d0ac4824e529.png)  
+> ![음성을 텍스트로 변환하는 Whisper(STT) 설정 화면](./assets/24_30d22a0f-7e83-809b-a7bb-d0ac4824e529.png)  
 >   
 >   
 > **ElevenLabs(TTS)**  
@@ -349,7 +349,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 텍스트를 음성으로 변환할 때 사용한다.  
 >   
 >   
-> ![](./assets/25_30d22a0f-7e83-801d-b123-e98305c4cc29.png)  
+> ![텍스트를 음성으로 변환하는 ElevenLabs(TTS) 설정 화면](./assets/25_30d22a0f-7e83-801d-b123-e98305c4cc29.png)  
 >   
 >   
 > </details>
@@ -358,7 +358,7 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 ### 6. Hook 설정
 
 
-![](./assets/26_30d22a0f-7e83-80f4-ba8e-f046b7b530b2.png)
+![사용할 Hook을 고르는 화면](./assets/26_30d22a0f-7e83-80f4-ba8e-f046b7b530b2.png)
 
 
 > 항목별 참고  
@@ -384,13 +384,13 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 ### 7. 봇 실행
 
 
-![](./assets/27_30d22a0f-7e83-80da-b680-e7e95ec284d6.png)
+![onboard 설정을 마치고 봇을 실행하는 화면](./assets/27_30d22a0f-7e83-80da-b680-e7e95ec284d6.png)
 
 
 > 💡 <details>  
 > <summary>macOS에서 실행 허용이 필요한 경우</summary>  
 >   
-> ![](./assets/28_30d22a0f-7e83-80da-9cba-fe9769b0baf1.png)  
+> ![macOS에서 실행 허용을 요구하는 화면](./assets/28_30d22a0f-7e83-80da-9cba-fe9769b0baf1.png)  
 >   
 >   
 > TUI로 실행할지 Web UI로 실행할지 선택한다.  
@@ -405,13 +405,13 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 실행 화면
 
 
-![](./assets/29_30d22a0f-7e83-80e0-aa50-dc0df8e91829.png)
+![게이트웨이가 실행된 화면](./assets/29_30d22a0f-7e83-80e0-aa50-dc0df8e91829.png)
 
 
 ### 8. 텔레그램 유저 인증
 
 
-![](./assets/30_31022a0f-7e83-80ba-a460-ff3c09092256.png)
+![텔레그램 봇에 메시지를 보내 유저 인증을 시작하는 화면](./assets/30_31022a0f-7e83-80ba-a460-ff3c09092256.png)
 
 
 > 봇을 만든 뒤 메시지를 보내면 유저 인증을 진행한다.  
@@ -424,13 +424,13 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 > 안내된 명령어를 복사해서 터미널에서 수동으로 실행하면 된다.  
 >   
 >   
-> ![](./assets/31_30d22a0f-7e83-8056-af82-d77955b2432a.png)
+> ![텔레그램으로 받은 인증 코드를 터미널에서 입력하는 화면](./assets/31_30d22a0f-7e83-8056-af82-d77955b2432a.png)
 
 
 ### 9. 내 호칭과 봇 이름 정하기
 
 
-![](./assets/32_31022a0f-7e83-80a0-b6de-e328656450d4.png)
+![사용자 호칭과 봇 이름을 정하는 화면](./assets/32_31022a0f-7e83-80a0-b6de-e328656450d4.png)
 
 
 > 💡 봇이 사용자를 부를 이름과 사용자가 봇을 부를 이름을 정한다.  
@@ -440,8 +440,55 @@ onboard를 중간에 끊어도 다시 실행하면 이어서 편집할 수 있�
 ### 10. 예시
 
 
-![](./assets/33_31022a0f-7e83-8083-89cd-ea0433d6ff7a.png)
+![설정을 마친 봇과 실제로 대화하는 예시 화면](./assets/33_31022a0f-7e83-8083-89cd-ea0433d6ff7a.png)
 
 
-![](./assets/34_31022a0f-7e83-8012-aede-f808b1d235e5.png)
+![OpenClaw 설치와 onboard 설정 과정을 보여주는 화면](./assets/34_31022a0f-7e83-8012-aede-f808b1d235e5.png)
+
+
+## 오류 및 해결책
+
+
+---
+
+
+### node 요구사항 변동
+
+
+원인 : 22.12 이상 사용해야하는데 20.11 사용중
+
+
+```bash
+❯ openclaw help
+openclaw requires Node >=22.12.0.
+Detected: node 20.11.1 (exec: /Users/plzhans/.nvm/versions/node/v20.11.1/bin/node).
+```
+
+
+해결책
+
+- 글로벌 영역에 설치했는데 글로벌 node 버전이 20.11 사용중
+- 글로벌 영역 기준 해결책
+
+```bash
+# 버전 확인
+❯ node -v
+
+# 실행 프로세스 확인
+ps -ef | grep openclaw
+
+# 참고로 프로세스를 죽여도 서비스나 런처로 등록되어 있으면 자동 재시작됨
+# 서비스나 런처로 등록된 경우 런처를 중단 시켜야함
+# mac 기준 : 실행중인 openclaw 찾기
+launchctl list | grep openclaw
+
+# 실행중인 openclaw 중지
+launchctl unload ~/Library/LaunchAgents/ai.openclaw.gateway.plist
+
+
+# 새버전 설치하고 기본 버전 변경
+nvm install 22
+nvm use 22
+nvm alias default 22
+```
 

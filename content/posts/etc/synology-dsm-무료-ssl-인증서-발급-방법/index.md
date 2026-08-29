@@ -10,7 +10,7 @@ tags:
   - "dsm"
   - "synology-nas"
 date: 2026-05-16T05:03:00.000Z
-lastmod: 2026-06-18T08:02:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png)
+![Synology DSM에서  acme.sh 와 Cloudflare DNS로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 구성을 나타난 대표 이미지](./assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png)
 
 
 ## 개요
@@ -56,7 +56,7 @@ DSM을 외부에서 직접 노출하는 방식은 위험하므로 Tailscale, Ope
 - DNS: Read, Edit
 - Zone: Read
 
-![](./assets/2_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
+![Cloudflare에서 DNS Read·Edit과 Zone Read 최소 권한만 부여해 API 토큰을 만드는 화면](./assets/2_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
 
 
 ---
@@ -194,7 +194,7 @@ acme.sh \
 DSM 확인
 
 
-![](./assets/3_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
+![DSM 사용자 설정에서 자동화용 계정의 2FA가 비활성화된 것을 확인하는 화면](./assets/3_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
 
 
 ---
@@ -218,8 +218,3 @@ DSM 확인
 ## 참고
 
 - [https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide](https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide)
-
-전체 컨텐츠 확인하고 어울리는 대표이미지 만들어줘
-
-텍스트는 한글 안되고 영어만 가능해
-

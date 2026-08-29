@@ -10,7 +10,7 @@ tags:
   - "database"
   - "redis"
 date: 2026-02-06T06:30:00.000Z
-lastmod: 2026-02-25T10:07:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png)
+![Redis 퍼시스턴스 방식인 RDB(Dump), AOF, Hybrid AOF를 비교하는 내용을 나타난 대표 이미지](./assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png)
 
 
 ## 📌 개요

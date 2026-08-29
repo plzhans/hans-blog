@@ -9,7 +9,7 @@ categories:
 tags:
   - "vpn"
 date: 2026-03-19T06:06:00.000Z
-lastmod: 2026-03-19T06:09:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png)
+![WireGuard MASQUERADE에서 특정 대역을 제외해 OpenVPN 클라이언트 사설 IP를 그대로 유지하는 구성을 나타난 대표 이미지](./assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png)
 
 
 ## 요약

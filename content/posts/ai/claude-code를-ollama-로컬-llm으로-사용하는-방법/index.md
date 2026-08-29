@@ -11,7 +11,7 @@ tags:
   - "ollama"
   - "visual-code"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-07-10T01:19:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png)
+![Claude Code에서 Ollama 로컬 LLM을 사용하는 구성을 나타낸 대표 이미지](./assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png)
 
 
 ## 개요

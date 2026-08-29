@@ -11,7 +11,7 @@ tags:
   - "office"
   - "office365"
 date: 2026-06-17T11:18:00.000Z
-lastmod: 2026-06-18T07:16:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png)
+![Mac에 Office LTSC를 설치하고 볼륨 라이선스 VL Serializer로 정품 인증하는 과정을 나타난 대표 이미지](./assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png)
 
 
 ## 개요
@@ -60,34 +60,34 @@ Microsoft 365 계정으로 활성화하거나 특정 버전 설치 후 시리얼
 설치
 
 
-![](./assets/2_38222a0f-7e83-8081-a85a-e61f35929c9c.png)
+![Office LTSC 설치 패키지를 실행한 설치 시작 화면](./assets/2_38222a0f-7e83-8081-a85a-e61f35929c9c.png)
 
 
-![](./assets/3_38222a0f-7e83-80b8-b486-dfd635b44edc.png)
+![설치 진행 단계를 보여주는 화면](./assets/3_38222a0f-7e83-80b8-b486-dfd635b44edc.png)
 
 
 사용자화
 
 
-![](./assets/4_38222a0f-7e83-80ec-9e5b-c15b8927d557.png)
+![설치 구성을 사용자화로 지정하는 화면](./assets/4_38222a0f-7e83-80ec-9e5b-c15b8927d557.png)
 
 
 필요한 것만 설치
 
 
-![](./assets/5_38222a0f-7e83-809a-bf31-eb6d73602517.png)
+![Word·Excel 등 필요한 앱만 골라 설치하는 화면](./assets/5_38222a0f-7e83-809a-bf31-eb6d73602517.png)
 
 
 Serializer 다운로드
 
 
-![](./assets/6_38222a0f-7e83-80c6-89c5-fab1c527a4d6.png)
+![Office VL Serializer 패키지를 내려받는 화면](./assets/6_38222a0f-7e83-80c6-89c5-fab1c527a4d6.png)
 
 
 실행 및 인증 확인
 
 
-![](./assets/7_38222a0f-7e83-80d9-9d7b-e4c4dab73d7d.png)
+![VL Serializer 적용 후 Office 앱에서 정품 인증 상태를 확인하는 화면](./assets/7_38222a0f-7e83-80d9-9d7b-e4c4dab73d7d.png)
 
 
 ---

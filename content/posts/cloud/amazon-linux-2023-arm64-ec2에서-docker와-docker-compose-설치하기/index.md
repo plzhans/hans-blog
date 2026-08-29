@@ -3,6 +3,7 @@ id: "97"
 translationKey: "97"
 slug: "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install"
 title: "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기"
+description: "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 설정하는 방법을 정리합니다. docker compose가 함께 설치되지 않았을 때 CLI 플러그인을 직접 내려받아 구성하는 절차도 함께 다룹니다."
 categories:
   - "cloud"
 tags:
@@ -10,7 +11,7 @@ tags:
   - "docker"
   - "linux"
 date: 2026-03-19T03:44:00.000Z
-lastmod: 2026-03-19T03:44:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -18,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png)
+![Amazon Linux 2023 ARM64 EC2에 Docker와 Docker Compose를 설치하는 과정을 나타난 대표 이미지](./assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png)
 
 
 ## 개요

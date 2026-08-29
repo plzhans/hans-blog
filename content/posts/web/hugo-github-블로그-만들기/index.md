@@ -11,7 +11,7 @@ tags:
   - "github-pages"
   - "hugo"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-08-29T07:16:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
+![노션 작성 → Markdown 변환 → Hugo 빌드 → GitHub Pages 배포로 이어지는 블로그 구축 흐름을 나타난 대표 이미지](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
 
 
 ## 서론
@@ -52,7 +52,7 @@ images:
 - GitHub Star 수가 많고 활발하게 업데이트 중
 - 1000개 이상의 페이지를 빌드할 때 Jekyll보다 빠름
 
-**현재 이 블로그는 다음과 같은 흐름으로 운영하고 있다. (소스 참고 :** [**https://github.com/plzhans/hans-blog**](https://github.com/plzhans/hans-blog)**)**
+**현재 이 블로그는 다음과 같은 흐름으로 운영하고 있다. (소스 참고 : )**
 
 
 > 노션 작성   

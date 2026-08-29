@@ -9,7 +9,7 @@ categories:
 tags:
   - "dns"
 date: 2026-02-22T16:11:00.000Z
-lastmod: 2026-02-24T15:42:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png)
+![Windows·Linux·macOS에서 로컬 DNS 캐시를 비워 변경된 레코드를 반영하는 과정을 나타난 대표 이미지](./assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png)
 
 
 ## 개요

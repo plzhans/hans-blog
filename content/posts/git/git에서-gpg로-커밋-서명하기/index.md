@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-02-24T15:42:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png)
+![Git 커밋에 GPG 서명을 적용하고 GitHub에 공개키를 등록해 Verified 배지를 받는 과정을 나타난 이미지](./assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png)
 
 
 ## 개요
@@ -137,7 +137,7 @@ gpg --full-generate-key
 >
 >
 
-![](./assets/2_30922a0f-7e83-8051-b1f7-d7a544c8425e.png)
+![gpg --full-generate-key로 키 생성을 진행하는 터미널 화면](./assets/2_30922a0f-7e83-8051-b1f7-d7a544c8425e.png)
 
 
 ### 키 생성 확인
@@ -332,7 +332,7 @@ gpg: signing failed: Inappropriate ioctl for device
 > `gpgconf --launch gpg-agent`
 > 6. 다시 커밋 : 암호 입력창 활성화
 >
-> ![](./assets/3_30922a0f-7e83-8047-9f1b-ec157d7d9f09.png)
+> ![pinentry-mac 설정 후 커밋 시 GPG 암호 입력창이 뜼는 화면](./assets/3_30922a0f-7e83-8047-9f1b-ec157d7d9f09.png)
 >
 >
 {{< /details >}}
@@ -412,10 +412,10 @@ gpg --armor --export 7XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX6
 ### GitHub GPG 키 등록
 
 
-![](./assets/4_30922a0f-7e83-80df-b1bf-db8d4f984ac7.png)
+![GitHub 설정의 SSH and GPG keys에서 New GPG key로 공개키를 등록하는 화면](./assets/4_30922a0f-7e83-80df-b1bf-db8d4f984ac7.png)
 
 
-![](./assets/5_30922a0f-7e83-80d1-b6c1-ce0f86256467.png)
+![Git 커밋에 GPG 서명을 적용하고 GitHub에 공개키를 등록해 Verified 배지를 받는 과정을 나타난 이미지](./assets/5_30922a0f-7e83-80d1-b6c1-ce0f86256467.png)
 
 
 ### 저장소 푸시
@@ -432,5 +432,5 @@ git push origin main
 ### 서명된 커밋과 태그 확인
 
 
-![](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)
+![푸시한 커밋에 Verified 배지가 표시된 화면](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)
 

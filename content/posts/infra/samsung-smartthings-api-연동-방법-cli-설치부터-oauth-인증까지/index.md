@@ -11,7 +11,7 @@ tags:
   - "OpenClaw"
   - "smartthing"
 date: 2026-06-29T00:00:00.000Z
-lastmod: 2026-07-06T02:42:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png)
+![SmartThings CLI 설치부터 OAuth 인증까지 거쳐 스마트 홈 기기를 API로 연동하는 구성을 나타난 대표 이미지](./assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png)
 
 
 ## 개요

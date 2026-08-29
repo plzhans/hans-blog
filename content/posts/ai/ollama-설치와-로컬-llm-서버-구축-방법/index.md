@@ -11,7 +11,7 @@ tags:
   - "infra"
   - "ollama"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-07-03T10:45:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
+![Ollama를 설치해 Linux 서버에서 로컬 LLM을 직접 운영하는 구성을 나타난 대표 이미지](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
 
 
 ## 개요

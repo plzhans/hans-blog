@@ -10,7 +10,7 @@ tags:
   - "ai"
   - "OpenClaw"
 date: 2026-06-29T00:00:00.000Z
-lastmod: 2026-07-03T10:51:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png)
+![OpenClaw 노드 모드로 원격 서버를 게이트웨이에 연결해 인프라를 제어하는 구성을 나타난 대표 이미지](./assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png)
 
 
 ## 개요

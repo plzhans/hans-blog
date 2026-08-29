@@ -12,7 +12,7 @@ tags:
   - "github"
   - "gitlab"
 date: 2025-05-15T09:05:00.000Z
-lastmod: 2026-02-27T15:15:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png)
+![Git 멀티 계정 환경을 ssh config 별칭과 gitconfig includeIf로 분리하는 구성을 나타난 대표 이미지](./assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png)
 
 
 ## 개요

@@ -12,7 +12,7 @@ tags:
   - "mac"
   - "terraform"
 date: 2026-05-06T13:52:00.000Z
-lastmod: 2026-06-18T07:16:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png)
+![Terraform으로 인프라를 코드로 선언하고 AWS 자격증명과 원격 state를 구성해 운영하는 흐름을 나타난 대표 이미지](./assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png)
 
 
 ## 개요

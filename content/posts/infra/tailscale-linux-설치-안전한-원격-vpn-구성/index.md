@@ -11,7 +11,7 @@ tags:
   - "tailscale"
   - "vpn"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-07-03T10:39:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png)
+![Tailscale로 여러 장치를 하나의 개인 네트워크로 묶어 안전하게 원격 접속하는 구성을 나타난 대표 이미지](./assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png)
 
 
 ## 개요
@@ -96,7 +96,7 @@ sudo tailscale up
 Tailscale 계정 로그인
 
 
-![](./assets/2_39122a0f-7e83-80f3-bd3f-ff3b63b6482c.png)
+![터미널에 출력된 인증 주소로 접속해 Tailscale 계정으로 로그인하는 화면](./assets/2_39122a0f-7e83-80f3-bd3f-ff3b63b6482c.png)
 
 
 ### 장치 연결
@@ -105,10 +105,10 @@ Tailscale 계정 로그인
 Connect 버튼을 클릭하여 서비스 접속
 
 
-![](./assets/3_39122a0f-7e83-8005-91b2-d1f1a9a5967e.png)
+![Connect 버튼을 눌러 서버를 tailnet에 연결하는 화면](./assets/3_39122a0f-7e83-8005-91b2-d1f1a9a5967e.png)
 
 
-![](./assets/4_39122a0f-7e83-80da-a100-ceea15213754.png)
+![장치가 tailnet에 정상 등록된 것을 보여주는 화면](./assets/4_39122a0f-7e83-80da-a100-ceea15213754.png)
 
 
 ### 장치 등록 완료
@@ -161,7 +161,7 @@ tailnet에 연결 되면 기본적으로 tailnet 전용 사설 ip가 생긴다
 
 - tune 모드를 이용하기 때문에 내부에 tailscale0 가상 라우터가 생겨있다고 가정
 
-![](./assets/5_39222a0f-7e83-8039-8753-d1d39530060e.png)
+![tailnet 전용 사설 IP와 tailscale0 가상 인터페이스가 생성된 것을 확인하는 화면](./assets/5_39222a0f-7e83-8039-8753-d1d39530060e.png)
 
 
 ## VPN : accept-routes  방식
@@ -175,7 +175,7 @@ tailscale 인프라를 쓰지 않고 내부 통신을 하기 때문에 트래픽
 1. 콘솔 이동 : [https://login.tailscale.com/admin](https://login.tailscale.com/admin)
 2. Subnet 확인
 
-![](./assets/6_39122a0f-7e83-8041-bf0e-e29819c42c91.png)
+![Tailscale 관리 콘솔에서 장치가 광고하는 Subnet 라우트를 확인하는 화면](./assets/6_39122a0f-7e83-8041-bf0e-e29819c42c91.png)
 
 
 ### 머신 설정

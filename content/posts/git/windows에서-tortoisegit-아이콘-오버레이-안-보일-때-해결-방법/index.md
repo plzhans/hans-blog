@@ -10,7 +10,7 @@ tags:
   - "git"
   - "TortoiseGit"
 date: 2021-02-27T02:00:00.000Z
-lastmod: 2026-02-27T15:15:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png)
+![Windows 탐색기에서 TortoiseGit 상태 아이콘 오버레이가 안 보일 때 레지스트리로 해결하는 내용을 나타난 대표 이미지](./assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png)
 
 
 > 💡 Windows 탐색기 상태 아이콘이 안 보이면  
@@ -39,7 +39,7 @@ images:
 파일과 폴더에 정상적으로 떠야 하는 Git 상태 아이콘이 보이지 않는다
 
 
-![](./assets/2_2fd22a0f-7e83-8139-99e5-f498ff24f63f.png)
+![파일과 폴더에 Git 상태 아이콘이 표시되지 않는 증상 화면](./assets/2_2fd22a0f-7e83-8139-99e5-f498ff24f63f.png)
 
 
 ## 원인
@@ -56,7 +56,7 @@ images:
 
 - 시작 → 실행 → `regedit`
 
-![](./assets/3_2fd22a0f-7e83-81aa-a4e9-dcc8b9fff247.png)
+![실행 창에서 regedit를 입력해 레지스트리 편집기를 실행하는 화면](./assets/3_2fd22a0f-7e83-81aa-a4e9-dcc8b9fff247.png)
 
 
 2) 대상 경로로 이동
@@ -76,7 +76,7 @@ images:
 > ⚠️ 키 삭제는 되돌리기 어렵다. 백업 파일로 복구할 수 있게 먼저 내보내기를 해둔다
 
 
-![](./assets/4_2fd22a0f-7e83-81b2-a6c1-e8329429fbc3.png)
+![ShellIconOverlayIdentifiers 키를 우클릭해 내보내기로 백업하는 화면](./assets/4_2fd22a0f-7e83-81b2-a6c1-e8329429fbc3.png)
 
 
 4) 우선순위 조정
@@ -91,13 +91,13 @@ images:
 수정 전
 
 
-![](./assets/5_2fd22a0f-7e83-81e0-b5b5-e2890b7f55bf.png)
+![TortoiseGit 항목이 목록 아래쪽에 있는 수정 전 레지스트리 화면](./assets/5_2fd22a0f-7e83-81e0-b5b5-e2890b7f55bf.png)
 
 
 수정 후
 
 
-![](./assets/6_2fd22a0f-7e83-81f2-af8d-e782336c5850.png)
+![키 이름 앞에 공백을 붙여 TortoiseGit 항목을 상단으로 올린 수정 후 화면](./assets/6_2fd22a0f-7e83-81f2-af8d-e782336c5850.png)
 
 
 ## 적용 방법
@@ -110,14 +110,14 @@ Explorer 재시작
 
 - 작업 관리자에서 `Windows Explorer` 작업을 끝낸다
 
-    ![](./assets/7_2fd22a0f-7e83-81f0-b48a-c9aa3b417a97.png)
+    ![작업 관리자에서 Windows Explorer 프로세스를 종료하는 화면](./assets/7_2fd22a0f-7e83-81f0-b48a-c9aa3b417a97.png)
 
 - `C:\Windows\explorer.exe`를 실행해서 다시 띄운다
 
-    ![](./assets/8_2fd22a0f-7e83-817d-a1b1-f5e99bab2c4f.png)
+    ![작업 관리자의 새 작업 실행으로 explorer.exe를 다시 실행하는 화면](./assets/8_2fd22a0f-7e83-817d-a1b1-f5e99bab2c4f.png)
 
 
-    ![](./assets/9_2fd22a0f-7e83-8120-b5ac-facca1d24ad1.png)
+    ![explorer.exe 경로를 입력해 탐색기를 다시 실행하는 화면](./assets/9_2fd22a0f-7e83-8120-b5ac-facca1d24ad1.png)
 
 
 ### 확인
@@ -125,5 +125,5 @@ Explorer 재시작
 - 탐색기에서 새로 고침 `F5`
 - Git 상태 아이콘이 정상 표시되는지 확인한다
 
-    ![](./assets/10_2fd22a0f-7e83-81cc-9f4c-c4d185928c75.png)
+    ![탐색기에 TortoiseGit 상태 아이콘이 정상 표시된 화면](./assets/10_2fd22a0f-7e83-81cc-9f4c-c4d185928c75.png)
 

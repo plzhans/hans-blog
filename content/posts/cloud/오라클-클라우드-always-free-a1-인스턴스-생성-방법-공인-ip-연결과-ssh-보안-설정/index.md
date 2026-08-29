@@ -10,8 +10,8 @@ tags:
   - "infra"
   - "linux"
   - "oracle"
-date: 2026-07-10T01:11:00.000Z
-lastmod: 2026-07-10T03:44:00.000Z
+date: 2026-07-10T03:44:00.000Z
+lastmod: 2026-08-29T10:51:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png)
+![Oracle Cloud Always Free A1 인스턴스를 생성하고 공인 IP와 SSH 보안을 설정하는 과정을 나타낸 대표 이미지](./assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png)
 
 
 ## 개요
@@ -46,7 +46,7 @@ OCPU 한도를 나눠 인스턴스를 2대로 구성해도 무료 범위 안에�
 ## 오라클 서버 만들기
 
 
-![](./assets/2_39922a0f-7e83-8092-ac0b-ccd0d183d2c0.png)
+![오라클 클라우드 콘솔의 Compute 인스턴스 화면](./assets/2_39922a0f-7e83-8092-ac0b-ccd0d183d2c0.png)
 
 
 인스턴스 생성
@@ -55,13 +55,13 @@ OCPU 한도를 나눠 인스턴스를 2대로 구성해도 무료 범위 안에�
 Compute → Instacnes → [Create instance]
 
 
-![](./assets/3_39922a0f-7e83-80d7-bdee-dd7bd3c068ad.png)
+![Compute → Instances 목록에서 Create instance 버튼을 누르는 화면](./assets/3_39922a0f-7e83-80d7-bdee-dd7bd3c068ad.png)
 
 
 인스턴스 기본 정보
 
 
-![](./assets/4_39922a0f-7e83-8085-974b-eec35383e592.png)
+![인스턴스 이름과 배치 등 기본 정보를 입력하는 화면](./assets/4_39922a0f-7e83-8085-974b-eec35383e592.png)
 
 
 운영체제 선택
@@ -70,7 +70,7 @@ Compute → Instacnes → [Create instance]
 운영체제 선택은 자유지만 A1 은 ARM 프로세스이기 때문에 aarch64 중에 골라야 함.
 
 
-![](./assets/5_39922a0f-7e83-8027-8a3e-f1c19be54abe.png)
+![A1(ARM)용 aarch64 이미지를 고르는 운영체제 선택 화면](./assets/5_39922a0f-7e83-8027-8a3e-f1c19be54abe.png)
 
 
 사양 선택
@@ -78,32 +78,32 @@ Compute → Instacnes → [Create instance]
 - 작성일(2026-07-10) 기준 상시 무료 스팩 : 2 OCPU + Memory 12Gb + Disk 200GB
 - 최대 사용량 제한이기 떄문에 OCPU를 1개만 사용하고 인스턴스를 2개를 만들어서 사용해도 무료임
 
-![](./assets/6_39922a0f-7e83-80b6-90f5-f2dfaadd2f0b.png)
+![상시 무료 범위인 2 OCPU·메모리 12GB로 사양을 지정하는 화면](./assets/6_39922a0f-7e83-80b6-90f5-f2dfaadd2f0b.png)
 
 
 다음 단계
 
 
-![](./assets/7_39922a0f-7e83-803b-b753-d669fe860de4.png)
+![기본 설정을 마치고 다음 단계로 넘어가는 화면](./assets/7_39922a0f-7e83-803b-b753-d669fe860de4.png)
 
 
 보안 설정은 별도 진행
 
 
-![](./assets/8_39922a0f-7e83-80a7-b5eb-d5d66f805a56.png)
+![생성 단계의 보안 설정은 건너뛰고 나중에 별도로 진행하는 화면](./assets/8_39922a0f-7e83-80a7-b5eb-d5d66f805a56.png)
 
 
 네트워크 생성
 
 
-![](./assets/9_39922a0f-7e83-8022-a00e-c41cfd3f8511.png)
+![인스턴스에 연결할 VCN과 서브넷을 생성하는 네트워크 설정 화면](./assets/9_39922a0f-7e83-8022-a00e-c41cfd3f8511.png)
 
 
 SSH 생성 및 다운로드
 
 - 서버 접속을 위한 SSH 비밀키를 다운로드하고 공개키도 같이 다운로드
 
-![](./assets/10_39922a0f-7e83-80d4-8e2e-c03f64f47e4f.png)
+![서버 접속에 사용할 SSH 키 쌀을 생성하고 내려받는 화면](./assets/10_39922a0f-7e83-80d4-8e2e-c03f64f47e4f.png)
 
 
 볼륨(디스크) 생성
@@ -114,31 +114,31 @@ SSH 생성 및 다운로드
 - 부트 볼륨 : 메인 디스크
 - 블록 볼륨 : 확장 디스크
 
-![](./assets/11_39922a0f-7e83-80f8-b602-ed06022271ce.png)
+![무료 한도 200GB 안에서 부트 볼륨 용량을 지정하는 화면](./assets/11_39922a0f-7e83-80f8-b602-ed06022271ce.png)
 
 
 리뷰 확인 후 생성
 
 
-![](./assets/12_39922a0f-7e83-8026-8a1d-fc6fd073bc0e.png)
+![생성 직전에 설정 내용을 확인하는 리뷰 화면](./assets/12_39922a0f-7e83-8026-8a1d-fc6fd073bc0e.png)
 
 
 생성 중
 
 
-![](./assets/13_39922a0f-7e83-8096-82b8-d4d26d3c693e.png)
+![인스턴스가 프로비저닝되고 있는 화면](./assets/13_39922a0f-7e83-8096-82b8-d4d26d3c693e.png)
 
 
 생성 완료
 
 
-![](./assets/14_39922a0f-7e83-809e-a220-c3e4da1c9bc5.png)
+![생성이 완료된 것을 확인하는 화면](./assets/14_39922a0f-7e83-809e-a220-c3e4da1c9bc5.png)
 
 
 인스턴스 보기
 
 
-![](./assets/15_39922a0f-7e83-8084-bc4a-e238dceadb28.png)
+![생성된 인스턴스의 상세 정보를 확인하는 화면](./assets/15_39922a0f-7e83-8084-bc4a-e238dceadb28.png)
 
 
 ### 인터넷 외부 연결 - Public network 설정
@@ -147,37 +147,37 @@ SSH 생성 및 다운로드
 인스턴스 → 네트워킹 → VNIC 이동
 
 
-![](./assets/16_39922a0f-7e83-8046-b637-df411681e5aa.png)
+![인스턴스 상세에서 네트워킹의 VNIC 설정으로 이동하는 화면](./assets/16_39922a0f-7e83-8046-b637-df411681e5aa.png)
 
 
 VNIC 의 IP 수정
 
 
-![](./assets/17_39922a0f-7e83-8085-98ab-ced4237b5b2a.png)
+![VNIC에 연결된 공인 IP를 수정하는 화면](./assets/17_39922a0f-7e83-8085-98ab-ced4237b5b2a.png)
 
 
 고정 IP 생성 후 연결
 
 
-![](./assets/18_39922a0f-7e83-8071-906a-cd2bbb3a9d22.png)
+![예약된 고정 공인 IP를 생성해 VNIC에 연결하는 화면](./assets/18_39922a0f-7e83-8071-906a-cd2bbb3a9d22.png)
 
 
 생성 완료
 
 
-![](./assets/19_39922a0f-7e83-80bf-9719-d95fd3530508.png)
+![생성이 완료된 것을 확인하는 화면](./assets/19_39922a0f-7e83-80bf-9719-d95fd3530508.png)
 
 
 빠른 이동
 
 
-![](./assets/20_39922a0f-7e83-80b1-8b6d-e6ddb88534eb.png)
+![인스턴스 화면에서 VCN 설정으로 바로 이동하는 경로](./assets/20_39922a0f-7e83-80b1-8b6d-e6ddb88534eb.png)
 
 
 또는 메뉴 이동
 
 
-![](./assets/21_39922a0f-7e83-8077-b36b-feca3cc6e23d.png)
+![콘솔 메뉴를 통해 VCN 설정으로 이동하는 경로](./assets/21_39922a0f-7e83-8077-b36b-feca3cc6e23d.png)
 
 
 ## 보안 설정
@@ -195,14 +195,14 @@ VCN 의 SecurityList 에 기본 설정으로 원격 접속 22번 포트가 Any�
 인스턴스에서 VCN 설정 이동
 
 
-![](./assets/22_39922a0f-7e83-80f8-8e86-c0a34468835e.png)
+![인스턴스 화면에서 해당 VCN의 Security List로 이동하는 화면](./assets/22_39922a0f-7e83-80f8-8e86-c0a34468835e.png)
 
 
 Any 개방 된것 삭제
 
 - ICMP 삭제는 필요시 진행
 
-![](./assets/23_39922a0f-7e83-80cf-a851-e0104b75f69e.png)
+![Security List에서 Any(0.0.0.0/0)로 열려 있는 인바운드 규칙을 삭제하는 화면](./assets/23_39922a0f-7e83-80cf-a851-e0104b75f69e.png)
 
 
 ### 접속 허용 설정
@@ -220,22 +220,22 @@ Any 개방 된것 삭제
 해당 VCN 에서 진행
 
 
-![](./assets/24_39922a0f-7e83-8023-8e15-ea2368a12db7.png)
+![VCN 화면에서 Network Security Group을 생성하는 화면](./assets/24_39922a0f-7e83-8023-8e15-ea2368a12db7.png)
 
 
-![](./assets/25_39922a0f-7e83-8049-b8e1-c5f68ce25858.png)
+![Network Security Group에 접속을 허용할 IP와 22 포트 규칙을 등록하는 화면](./assets/25_39922a0f-7e83-8049-b8e1-c5f68ce25858.png)
 
 
 해당 인스턴스 Primary VNIC 설정으로 이동
 
 
-![](./assets/26_39922a0f-7e83-8003-a815-d7739c3286c1.png)
+![인스턴스의 Primary VNIC 설정으로 이동하는 화면](./assets/26_39922a0f-7e83-8003-a815-d7739c3286c1.png)
 
 
 연결 후 저장
 
 
-![](./assets/27_39922a0f-7e83-80bc-b2f6-c9ec9d2d82d5.png)
+![Primary VNIC에 Network Security Group을 연결하고 저장하는 화면](./assets/27_39922a0f-7e83-80bc-b2f6-c9ec9d2d82d5.png)
 
 
 ## 접속확인

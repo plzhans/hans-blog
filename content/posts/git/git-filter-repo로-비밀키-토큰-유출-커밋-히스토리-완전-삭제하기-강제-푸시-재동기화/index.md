@@ -9,7 +9,7 @@ categories:
 tags:
   - "git"
 date: 2019-05-18T16:31:00.000Z
-lastmod: 2026-02-27T10:05:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:
@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png)
+![git filter-repo로 비밀키·토큰이 담긴 커밋 히스토리를 제거하고 강제 푸시하는 과정을 나타난 대표 이미지](./assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png)
 
 
 ## 개요
