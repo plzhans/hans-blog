@@ -10,8 +10,7 @@
     {{ $latestPages := first 20 $allPages }}
     {{ if $latestPages }}
     <div class="posts-card-grid">
-      {{ range $latestPages }}
-      {{- $post := . -}}
+      {{ range $i, $post := $latestPages }}
       {{- $thumbPost := $post -}}
       {{- if ne $post.Language.Lang (index hugo.Sites 0).Language.Lang -}}
         {{- range $post.AllTranslations -}}
@@ -22,7 +21,7 @@
         <a class="post-card-link" href="{{ $post.RelPermalink }}" aria-label="{{ .Title }}"></a>
         {{- with $thumbPost.Params.images }}
         <div class="post-card-thumbnail">
-          {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0)) }}
+          {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0) "alt" $post.Title "first" (eq $i 0)) }}
         </div>
         {{- end }}
         <div class="post-card-body">

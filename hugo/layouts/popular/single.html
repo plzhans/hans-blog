@@ -8,12 +8,12 @@
     </div>
     {{ if $data }}
     <div class="posts-card-grid">
-      {{ range $data.posts }}
-      <div class="post-card{{ if not .image }} post-card--no-thumb{{ end }}">
-        <a class="post-card-link" href="{{ .url }}" aria-label="{{ .title }}"></a>
-        {{ with .image }}
+      {{ range $i, $p := $data.posts }}
+      <div class="post-card{{ if not $p.image }} post-card--no-thumb{{ end }}">
+        <a class="post-card-link" href="{{ $p.url }}" aria-label="{{ $p.title }}"></a>
+        {{ with $p.image }}
         <div class="post-card-thumbnail">
-          <img src="{{ . }}" alt="" loading="lazy">
+          <img src="{{ . }}" alt="{{ $p.title }}" loading="{{ if eq $i 0 }}eager{{ else }}lazy{{ end }}"{{ if eq $i 0 }} fetchpriority="high"{{ end }}>
         </div>
         {{ end }}
         <div class="post-card-body">
