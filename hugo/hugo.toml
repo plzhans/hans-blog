@@ -42,7 +42,7 @@ dataDir = "../data"
   # 작성자 이름
   author = "plzhans"
   # 사이트 설명
-  description = "개발자 블로그"
+  description = "리눅스/클라우드 인프라, 로컬 LLM, 보안·네트워킹을 직접 구축하고 트러블슈팅한 기록을 남기는 서버 엔지니어의 기술 블로그입니다."
   # 프로필 이미지 경로
   avatar = "/avatar-plzhans.webp"
   # 저작권 표시 HTML

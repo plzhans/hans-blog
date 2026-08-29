@@ -124,6 +124,11 @@ $top-header-height: 3rem;
   margin-left: 0.8em;
   flex-direction: column;
   gap: 5px;
+  // 터치 타깃 48x48px 확보 (기존엔 아이콘+패딩만으로 약 33x27px)
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
 
   span {
     display: block;
@@ -937,6 +942,12 @@ body {
   border-radius: 0 4px 4px 0;
   font-size: 0.85em;
   color: rgba($light-color, 0.7);
+}
+
+// 본문 내 긴 URL 등 줄바꿈 없는 텍스트로 인한 모바일 가로 스크롤 방지
+.post-content {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 // 본문 내 hr - 연한 색상
