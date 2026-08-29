@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png)
+![GitコミットにGPG署名を適用し、GitHubに公開鍵を登録してVerifiedバッジを受け取る過程を表した画像](./assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png)
 
 
 ## 概要
@@ -137,7 +137,7 @@ gpg --full-generate-key
 >
 >
 
-![](./assets/2_30922a0f-7e83-8051-b1f7-d7a544c8425e.png)
+![gpg --full-generate-keyで鍵を生成するターミナル画面](./assets/2_30922a0f-7e83-8051-b1f7-d7a544c8425e.png)
 
 
 ### キー生成の確認
@@ -332,7 +332,7 @@ gpg: signing failed: Inappropriate ioctl for device
 > `gpgconf --launch gpg-agent`
 > 6. 再度コミット：パスフレーズ入力ウィンドウが表示されます
 >
-> ![](./assets/3_30922a0f-7e83-8047-9f1b-ec157d7d9f09.png)
+> ![pinentry-mac設定後、コミット時にGPGパスフレーズ入力画面が表示される画面](./assets/3_30922a0f-7e83-8047-9f1b-ec157d7d9f09.png)
 >
 >
 {{< /details >}}
@@ -411,10 +411,10 @@ gpg --armor --export 7XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX6
 ### GitHub GPGキーの登録
 
 
-![](./assets/4_30922a0f-7e83-80df-b1bf-db8d4f984ac7.png)
+![GitHub設定のSSH and GPG keysでNew GPG keyから公開鍵を登録する画面](./assets/4_30922a0f-7e83-80df-b1bf-db8d4f984ac7.png)
 
 
-![](./assets/5_30922a0f-7e83-80d1-b6c1-ce0f86256467.png)
+![GitコミットにGPG署名を適用し、GitHubに公開鍵を登録してVerifiedバッジを受け取る過程を表した画像](./assets/5_30922a0f-7e83-80d1-b6c1-ce0f86256467.png)
 
 
 ### リポジトリへのプッシュ
@@ -431,5 +431,5 @@ git push origin main
 ### 署名されたコミットとタグの確認
 
 
-![](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)
+![プッシュしたコミットにVerifiedバッジが表示された画面](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)
 

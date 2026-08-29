@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png)
+![Screen showing the OpenClaw installation and onboard setup process](./assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png)
 
 
 ## Overview
@@ -104,7 +104,7 @@ openclaw gateway start
 ### Default Installation Screen
 
 
-![](./assets/2_30d22a0f-7e83-80f1-9217-fccc404257dc.png)
+![Basic installation screen after running the install script](./assets/2_30d22a0f-7e83-80f1-9217-fccc404257dc.png)
 
 
 ## Initial Setup (onboard)
@@ -128,7 +128,7 @@ You can also reset and reconfigure if needed.
 ### 1. Security Warning Acknowledgment
 
 
-![](./assets/3_30d22a0f-7e83-808b-b444-f99cdc23c20e.png)
+![Security warning consent screen at the first step of onboard](./assets/3_30d22a0f-7e83-808b-b444-f99cdc23c20e.png)
 
 
 > <details>
@@ -151,7 +151,7 @@ You can also reset and reconfigure if needed.
 > For example, if you ask the chatbot to read a file, it can output it directly.
 >
 >
-> ![](./assets/4_31022a0f-7e83-80dc-a51c-c26d7be8c0f0.png)
+> ![Example screen where the chatbot prints file contents verbatim when asked for a file](./assets/4_31022a0f-7e83-80dc-a51c-c26d7be8c0f0.png)
 >
 >
 > </details>
@@ -160,10 +160,10 @@ You can also reset and reconfigure if needed.
 ### 2. Select Installation Mode
 
 
-![](./assets/5_30d22a0f-7e83-8014-b12d-d1e1b342ba91.png)
+![Screen choosing the installation mode in onboard](./assets/5_30d22a0f-7e83-8014-b12d-d1e1b342ba91.png)
 
 
-![](./assets/6_30d22a0f-7e83-80a8-a129-f6a2ad9dbd00.png)
+![Screen showing the OpenClaw installation and onboard setup process](./assets/6_30d22a0f-7e83-80a8-a129-f6a2ad9dbd00.png)
 
 
 > <details>
@@ -172,7 +172,7 @@ You can also reset and reconfigure if needed.
 > **Gateway selection (usually the local machine)**
 >
 >
-> ![](./assets/7_30d22a0f-7e83-803c-ad18-f3beec531690.png)
+> ![Screen manually specifying the gateway in Manual mode](./assets/7_30d22a0f-7e83-803c-ad18-f3beec531690.png)
 >
 >
 > **Specify workspace path**
@@ -181,7 +181,7 @@ You can also reset and reconfigure if needed.
 > Default path is `~/.openclaw/workspace`
 >
 >
-> ![](./assets/8_30d22a0f-7e83-8045-8f43-f8e216bb19b0.png)
+> ![Screen specifying the workspace path](./assets/8_30d22a0f-7e83-8045-8f43-f8e216bb19b0.png)
 >
 >
 > </details>
@@ -190,7 +190,7 @@ You can also reset and reconfigure if needed.
 ### 3. Select Model and Authentication Provider
 
 
-![](./assets/9_30d22a0f-7e83-804c-aba4-d28f3ce24fa0.png)
+![Screen choosing the model and authentication provider to use](./assets/9_30d22a0f-7e83-804c-aba4-d28f3ce24fa0.png)
 
 
 > Enable the providers you need.
@@ -205,7 +205,7 @@ You can also reset and reconfigure if needed.
 > Manual installation may be required in some cases.
 >
 >
-> ![](./assets/10_31022a0f-7e83-80d8-bbd1-c82743ef6e3e.png)
+> ![Screen installing the Claude agent](./assets/10_31022a0f-7e83-80d8-bbd1-c82743ef6e3e.png)
 >
 >
 > Token verification
@@ -216,7 +216,7 @@ You can also reset and reconfigure if needed.
 > ```
 >
 >
-> ![](./assets/11_31022a0f-7e83-80f4-a282-d0d5d905b104.png)
+> ![Screen checking the token issued via claude setup-token](./assets/11_31022a0f-7e83-80f4-a282-d0d5d905b104.png)
 >
 >
 > Model selection usually works fine with default values.
@@ -225,7 +225,7 @@ You can also reset and reconfigure if needed.
 > You can change it anytime as needed.
 >
 >
-> ![](./assets/12_31022a0f-7e83-80d3-a320-ec6f7664dcab.png)
+> ![Screen selecting the model to use](./assets/12_31022a0f-7e83-80d3-a320-ec6f7664dcab.png)
 >
 >
 > </details>
@@ -242,10 +242,10 @@ You can also reset and reconfigure if needed.
 ### 4. Select Channel
 
 
-![](./assets/13_30d22a0f-7e83-807b-978a-fc624c5ddcf8.png)
+![Screen choosing the messenger channel to connect](./assets/13_30d22a0f-7e83-807b-978a-fc624c5ddcf8.png)
 
 
-![](./assets/14_30d22a0f-7e83-8064-9991-fa23e5a937f4.png)
+![Screen showing the OpenClaw installation and onboard setup process](./assets/14_30d22a0f-7e83-8064-9991-fa23e5a937f4.png)
 
 
 > Select the messenger channel you want.
@@ -257,13 +257,13 @@ You can also reset and reconfigure if needed.
 > Telegram bots are created and managed by chatting with `@BotFather`, not through an admin console.
 >
 >
-> ![](./assets/15_30d22a0f-7e83-80a3-9025-e1fc0a7cdeb9.png)
+> ![Screen creating a bot by chatting with Telegram's @BotFather](./assets/15_30d22a0f-7e83-80a3-9025-e1fc0a7cdeb9.png)
 >
 >
-> ![](./assets/16_30d22a0f-7e83-80c8-b4f8-edaa3a69552e.png)
+> ![Screen showing the OpenClaw installation and onboard setup process](./assets/16_30d22a0f-7e83-80c8-b4f8-edaa3a69552e.png)
 >
 >
-> ![](./assets/17_30d22a0f-7e83-8020-a48d-dd2be45089ca.png)
+> ![Screen showing the OpenClaw installation and onboard setup process](./assets/17_30d22a0f-7e83-8020-a48d-dd2be45089ca.png)
 >
 >
 > </details>
@@ -272,10 +272,10 @@ You can also reset and reconfigure if needed.
 ### 5. Select Skills
 
 
-![](./assets/18_30d22a0f-7e83-802c-9003-d2e265d919f2.png)
+![Screen choosing the skills to use](./assets/18_30d22a0f-7e83-802c-9003-d2e265d919f2.png)
 
 
-![](./assets/19_30d22a0f-7e83-803a-a434-d99e4a626ff4.png)
+![Screen showing the OpenClaw installation and onboard setup process](./assets/19_30d22a0f-7e83-803a-a434-d99e4a626ff4.png)
 
 
 > OpenClaw provides additional features in the form of skills and plugins.
@@ -304,7 +304,7 @@ You can also reset and reconfigure if needed.
 > Example: "Recommend highly rated restaurants in Gangnam, Seoul"
 >
 >
-> ![](./assets/20_30d22a0f-7e83-80ea-bec0-f2092ffd730c.png)
+> ![Screen setting up the Google Places API key for place search](./assets/20_30d22a0f-7e83-80ea-bec0-f2092ffd730c.png)
 >
 >
 > **Image Generation (Gemini, Nano Banana)**
@@ -313,7 +313,7 @@ You can also reset and reconfigure if needed.
 > Configure when using the Gemini-based image generation feature.
 >
 >
-> ![](./assets/21_30d22a0f-7e83-8057-aeeb-cab0cf88d3b0.png)
+> ![Screen setting up the Gemini (Nano Banana) image generation skill](./assets/21_30d22a0f-7e83-8057-aeeb-cab0cf88d3b0.png)
 >
 >
 > **Notion**
@@ -322,13 +322,13 @@ You can also reset and reconfigure if needed.
 > Used when referencing data from Notion pages.
 >
 >
-> ![](./assets/22_30d22a0f-7e83-8006-a59f-c428e0ba5bcb.png)
+> ![Screen setting up the Notion integration skill](./assets/22_30d22a0f-7e83-8006-a59f-c428e0ba5bcb.png)
 >
 >
 > **Image Generation (OpenAI)**
 >
 >
-> ![](./assets/23_30d22a0f-7e83-809c-8b87-cd499c42219d.png)
+> ![Screen setting up the OpenAI image generation skill](./assets/23_30d22a0f-7e83-809c-8b87-cd499c42219d.png)
 >
 >
 > **Whisper (STT)**
@@ -340,7 +340,7 @@ You can also reset and reconfigure if needed.
 > Sending a voice message on Telegram allows it to be converted to text and processed.
 >
 >
-> ![](./assets/24_30d22a0f-7e83-809b-a7bb-d0ac4824e529.png)
+> ![Whisper (STT) setup screen for converting speech to text](./assets/24_30d22a0f-7e83-809b-a7bb-d0ac4824e529.png)
 >
 >
 > **ElevenLabs (TTS)**
@@ -349,7 +349,7 @@ You can also reset and reconfigure if needed.
 > Used when converting text to speech.
 >
 >
-> ![](./assets/25_30d22a0f-7e83-801d-b123-e98305c4cc29.png)
+> ![ElevenLabs (TTS) setup screen for converting text to speech](./assets/25_30d22a0f-7e83-801d-b123-e98305c4cc29.png)
 >
 >
 > </details>
@@ -358,7 +358,7 @@ You can also reset and reconfigure if needed.
 ### 6. Hook Configuration
 
 
-![](./assets/26_30d22a0f-7e83-80f4-ba8e-f046b7b530b2.png)
+![Screen choosing the Hook to use](./assets/26_30d22a0f-7e83-80f4-ba8e-f046b7b530b2.png)
 
 
 > Reference for each item
@@ -384,13 +384,13 @@ You can also reset and reconfigure if needed.
 ### 7. Running the Bot
 
 
-![](./assets/27_30d22a0f-7e83-80da-b680-e7e95ec284d6.png)
+![Screen running the bot after completing onboard setup](./assets/27_30d22a0f-7e83-80da-b680-e7e95ec284d6.png)
 
 
 > 💡 <details>
 > <summary>If execution permission is required on macOS</summary>
 >
-> ![](./assets/28_30d22a0f-7e83-80da-9cba-fe9769b0baf1.png)
+> ![Screen requesting permission to run on macOS](./assets/28_30d22a0f-7e83-80da-9cba-fe9769b0baf1.png)
 >
 >
 > Choose whether to run with TUI or Web UI.
@@ -405,13 +405,13 @@ You can also reset and reconfigure if needed.
 Execution screen
 
 
-![](./assets/29_30d22a0f-7e83-80e0-aa50-dc0df8e91829.png)
+![Screen showing the gateway running](./assets/29_30d22a0f-7e83-80e0-aa50-dc0df8e91829.png)
 
 
 ### 8. Telegram User Authentication
 
 
-![](./assets/30_31022a0f-7e83-80ba-a460-ff3c09092256.png)
+![Screen starting user authentication by sending a message to the Telegram bot](./assets/30_31022a0f-7e83-80ba-a460-ff3c09092256.png)
 
 
 > After creating the bot and sending a message, user authentication is performed.
@@ -424,13 +424,13 @@ Execution screen
 > Copy the provided command and run it manually in the terminal.
 >
 >
-> ![](./assets/31_30d22a0f-7e83-8056-af82-d77955b2432a.png)
+> ![Screen entering the verification code received via Telegram into the terminal](./assets/31_30d22a0f-7e83-8056-af82-d77955b2432a.png)
 
 
 ### 9. Setting Your Name and Bot Name
 
 
-![](./assets/32_31022a0f-7e83-80a0-b6de-e328656450d4.png)
+![Screen setting the user's form of address and the bot's name](./assets/32_31022a0f-7e83-80a0-b6de-e328656450d4.png)
 
 
 > 💡 Set the name the bot will call you and the name you will call the bot.
@@ -440,8 +440,8 @@ Execution screen
 ### 10. Examples
 
 
-![](./assets/33_31022a0f-7e83-8083-89cd-ea0433d6ff7a.png)
+![Example screen of an actual conversation with the fully configured bot](./assets/33_31022a0f-7e83-8083-89cd-ea0433d6ff7a.png)
 
 
-![](./assets/34_31022a0f-7e83-8012-aede-f808b1d235e5.png)
+![Screen showing the OpenClaw installation and onboard setup process](./assets/34_31022a0f-7e83-8012-aede-f808b1d235e5.png)
 

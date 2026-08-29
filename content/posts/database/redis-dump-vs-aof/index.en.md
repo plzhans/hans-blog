@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png)
+![Cover image comparing Redis persistence methods: RDB (Dump), AOF, and Hybrid AOF](./assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png)
 
 
 ## 📌 Overview

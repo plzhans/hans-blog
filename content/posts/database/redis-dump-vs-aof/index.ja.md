@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png)
+![Redisの永続化方式であるRDB(Dump)、AOF、Hybrid AOFを比較する内容を表したカバー画像](./assets/1_30a22a0f-7e83-80cb-9a95-d16bdf73a662.png)
 
 
 ## 📌 概要

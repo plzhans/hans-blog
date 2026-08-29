@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png)
+![WindowsエクスプローラーでTortoiseGitのステータスアイコンオーバーレイが表示されない時にレジストリで解決する内容を表したカバー画像](./assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png)
 
 
 > 💡 Windows エクスプローラーの状態アイコンが消えたら、オーバーレイハンドラーの登録数制限と優先順位の競合を疑います。  
@@ -35,7 +35,7 @@ images:
 ファイルやフォルダーに表示されるはずの Git 状態アイコンが見えません。
 
 
-![](./assets/2_2fd22a0f-7e83-8139-99e5-f498ff24f63f.png)
+![ファイルとフォルダにGitステータスアイコンが表示されない症状の画面](./assets/2_2fd22a0f-7e83-8139-99e5-f498ff24f63f.png)
 
 
 ## 原因
@@ -52,7 +52,7 @@ images:
 - スタート → ファイル名を指定して実行 → `regedit`
 
 
-![](./assets/3_2fd22a0f-7e83-81aa-a4e9-dcc8b9fff247.png)
+![ファイル名を指定して実行でregeditと入力しレジストリエディタを起動する画面](./assets/3_2fd22a0f-7e83-81aa-a4e9-dcc8b9fff247.png)
 
 
 2) 対象パスへ移動
@@ -70,7 +70,7 @@ images:
 > ⚠️ キーを削除すると元に戻しにくいので、復元用にバックアップを必ず残します。
 
 
-![](./assets/4_2fd22a0f-7e83-81b2-a6c1-e8329429fbc3.png)
+![ShellIconOverlayIdentifiersキーを右クリックしてエクスポートでバックアップする画面](./assets/4_2fd22a0f-7e83-81b2-a6c1-e8329429fbc3.png)
 
 
 4) 優先順位を調整
@@ -84,13 +84,13 @@ TortoiseGit のエントリを一覧の上部へ移動させます。
 変更前
 
 
-![](./assets/5_2fd22a0f-7e83-81e0-b5b5-e2890b7f55bf.png)
+![TortoiseGit項目がリストの下の方にある修正前のレジストリ画面](./assets/5_2fd22a0f-7e83-81e0-b5b5-e2890b7f55bf.png)
 
 
 変更後
 
 
-![](./assets/6_2fd22a0f-7e83-81f2-af8d-e782336c5850.png)
+![キー名の前にスペースを付けてTortoiseGit項目を上部に移動させた修正後の画面](./assets/6_2fd22a0f-7e83-81f2-af8d-e782336c5850.png)
 
 
 ## 適用手順
@@ -101,14 +101,14 @@ Explorer を再起動
 
 - タスクマネージャーで `Windows Explorer` タスクを終了
 
-    ![](./assets/7_2fd22a0f-7e83-81f0-b48a-c9aa3b417a97.png)
+    ![タスクマネージャーでWindows Explorerプロセスを終了する画面](./assets/7_2fd22a0f-7e83-81f0-b48a-c9aa3b417a97.png)
 
 - `C:\Windows\explorer.exe` を実行して再度起動
 
-    ![](./assets/8_2fd22a0f-7e83-817d-a1b1-f5e99bab2c4f.png)
+    ![タスクマネージャーの新しいタスクの実行でexplorer.exeを再起動する画面](./assets/8_2fd22a0f-7e83-817d-a1b1-f5e99bab2c4f.png)
 
 
-    ![](./assets/9_2fd22a0f-7e83-8120-b5ac-facca1d24ad1.png)
+    ![explorer.exeのパスを入力してエクスプローラーを再起動する画面](./assets/9_2fd22a0f-7e83-8120-b5ac-facca1d24ad1.png)
 
 
 ### 確認
@@ -116,4 +116,4 @@ Explorer を再起動
 - エクスプローラーで `F5` を押して更新
 - Git 状態アイコンが正常表示になるか確認します
 
-    ![](./assets/10_2fd22a0f-7e83-81cc-9f4c-c4d185928c75.png)
+    ![エクスプローラーにTortoiseGitのステータスアイコンが正常に表示された画面](./assets/10_2fd22a0f-7e83-81cc-9f4c-c4d185928c75.png)

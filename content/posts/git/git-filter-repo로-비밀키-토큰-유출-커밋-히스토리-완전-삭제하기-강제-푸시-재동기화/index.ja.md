@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png)
+![git filter-repoで秘密鍵・トークンが含まれるコミット履歴を削除し、強制プッシュする過程を表したカバー画像](./assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png)
 
 
 ## 概要

@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png)
+![削除したGitブランチをreflogで見つけて復元する過程を表したカバー画像](./assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png)
 
 
 ## 目標
@@ -52,7 +52,7 @@ git reflog
 reflog出力から**復旧したい時点のコミットハッシュ**を確認します。
 
 
-![](./assets/2_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)
+![git reflogの出力から復元したい時点のコミットハッシュを探す画面](./assets/2_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)
 
 
 ---
@@ -79,4 +79,4 @@ git checkout -b repair-1234 f730c6ea10
 ブランチが正常に生成され、該当コミットに移動したかを確認します。
 
 
-![](./assets/3_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png)
+![新しいブランチが作成され、該当コミットに移動したことを確認する画面](./assets/3_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png)

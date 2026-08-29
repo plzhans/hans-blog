@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png)
+![Cover image showing a configuration that separates a Git multi-account setup using ssh config aliases and gitconfig includeIf](./assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png)
 
 
 ## Overview

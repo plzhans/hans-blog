@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png)
+![Image showing the process of applying a GPG signature to Git commits and registering the public key on GitHub to receive the Verified badge](./assets/1_30922a0f-7e83-8009-8ece-df4294bd3d5c.png)
 
 
 ## Overview
@@ -137,7 +137,7 @@ gpg --full-generate-key
 >
 >
 
-![](./assets/2_30922a0f-7e83-8051-b1f7-d7a544c8425e.png)
+![Terminal screen generating a key with gpg --full-generate-key](./assets/2_30922a0f-7e83-8051-b1f7-d7a544c8425e.png)
 
 
 ### Verifying Key Generation
@@ -332,7 +332,7 @@ gpg: signing failed: Inappropriate ioctl for device
 > `gpgconf --launch gpg-agent`
 > 6. Commit again: the passphrase input window will appear
 >
-> ![](./assets/3_30922a0f-7e83-8047-9f1b-ec157d7d9f09.png)
+> ![Screen showing the GPG passphrase prompt appearing on commit after configuring pinentry-mac](./assets/3_30922a0f-7e83-8047-9f1b-ec157d7d9f09.png)
 >
 >
 {{< /details >}}
@@ -411,10 +411,10 @@ gpg --armor --export 7XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX6
 ### Registering a GPG Key on GitHub
 
 
-![](./assets/4_30922a0f-7e83-80df-b1bf-db8d4f984ac7.png)
+![Screen registering the public key via New GPG key under SSH and GPG keys in GitHub settings](./assets/4_30922a0f-7e83-80df-b1bf-db8d4f984ac7.png)
 
 
-![](./assets/5_30922a0f-7e83-80d1-b6c1-ce0f86256467.png)
+![Image showing the process of applying a GPG signature to Git commits and registering the public key on GitHub to receive the Verified badge](./assets/5_30922a0f-7e83-80d1-b6c1-ce0f86256467.png)
 
 
 ### Pushing to Repository
@@ -431,4 +431,4 @@ git push origin main
 ### Verifying Signed Commits and Tags
 
 
-![](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)
+![Screen showing the Verified badge displayed on a pushed commit](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)

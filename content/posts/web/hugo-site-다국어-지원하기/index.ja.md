@@ -18,7 +18,7 @@ draft: false
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png)
+![Hugoブログに多言語対応とhreflang・canonicalなどのSEO設定を適用する構成を表したカバー画像](./assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png)
 
 
 ## 目標

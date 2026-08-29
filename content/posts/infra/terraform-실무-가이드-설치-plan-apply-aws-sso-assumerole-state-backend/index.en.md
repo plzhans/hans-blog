@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png)
+![Cover image showing the flow of declaring infrastructure as code with Terraform and operating it with AWS credentials and remote state](./assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png)
 
 
 ## Overview

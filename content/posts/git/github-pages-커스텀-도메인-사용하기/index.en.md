@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png)
+![Cover image showing the process of connecting a custom domain to GitHub Pages and applying HTTPS](./assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png)
 
 
 # Overview
@@ -43,7 +43,7 @@ This is for cases where you want to use a subdomain like `hugosample.plzhans.com
 Add a CNAME record in your domain's DNS settings.
 
 
-![](./assets/2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png)
+![Screen registering a CNAME record that points the subdomain to {account}.github.io](./assets/2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png)
 
 
 **Configuration Example**
@@ -61,7 +61,7 @@ Go to Repository → Settings → Pages → Custom domain and enter your custom 
 **Example input:** hugosample.plzhans.com
 
 
-![](./assets/3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png)
+![Screen entering the domain into Custom domain under Repository Settings → Pages](./assets/3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png)
 
 
 # Using an Apex Domain

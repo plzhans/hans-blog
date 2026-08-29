@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png)
+![Naver地図Open APIの認証失敗(200)問題とncpKeyIdへのパラメータ変更を表したカバー画像](./assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png)
 
 
 ## Naver Map 認証エラー
@@ -33,10 +33,10 @@ images:
 > 네이버 지도 Open API 인증이 실패하였습니다. 클라이언트 아이디와 웹 서비스 URL을 확인해 주세요.,  * Error Code / Error Message: 200 / Authentication Failed,  * Client ID: xxxxx,  * URI: [http://localhost:8030/](http://localhost:8030/hospitals/1050/edit/basic)xxxxx
 >
 >
-> ![](./assets/2_32d22a0f-7e83-8053-a2b0-fd791f882d47.png)
+> ![ブラウザに表示されたAuthentication Failed(200)認証失敗メッセージ](./assets/2_32d22a0f-7e83-8053-a2b0-fd791f882d47.png)
 >
 >
-> ![](./assets/3_32d22a0f-7e83-8041-8b4c-f2442ad47ca3.png)
+> ![サービスURLを正常に登録したアプリケーション設定画面](./assets/3_32d22a0f-7e83-8041-8b4c-f2442ad47ca3.png)
 >
 >
 

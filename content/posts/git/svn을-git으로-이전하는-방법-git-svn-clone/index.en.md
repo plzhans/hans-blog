@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png)
+![Cover image showing the process of migrating an SVN repository's trunk, branches, and tags to Git using git svn clone](./assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png)
 
 
 ## Overview

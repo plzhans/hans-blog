@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png)
+![Claude CodeでOllamaのローカルLLMを使用する構成を表したカバー画像](./assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png)
 
 
 ## 概要

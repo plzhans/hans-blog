@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_39522a0f-7e83-8007-b294-f7bfa76d8399.png)
+![Cover image showing how to change tab input to 4 spaces in MySQL Workbench](./assets/1_39522a0f-7e83-8007-b294-f7bfa76d8399.png)
 
 
 ## Overview
@@ -41,7 +41,7 @@ Edit -> Preferences
 ```
 
 
-![](./assets/2_2fd22a0f-7e83-81d0-bb9b-c695f5677785.png)
+![Screen navigating to the Edit → Preferences menu in MySQL Workbench](./assets/2_2fd22a0f-7e83-81d0-bb9b-c695f5677785.png)
 
 
 In the Preferences window, select the `General Editors` section and change the `Indentation` settings.
@@ -56,7 +56,7 @@ Tab width: 4
 ```
 
 
-![](./assets/3_2fd22a0f-7e83-81e1-a5cc-c18e6e106923.png)
+![Screen configuring Indentation under General Editors to use spaces instead of tabs](./assets/3_2fd22a0f-7e83-81e1-a5cc-c18e6e106923.png)
 
 
 After saving the settings, pressing the tab key in the SQL editor will insert 4 spaces instead of a tab character. If the change does not take effect immediately, close and reopen any open editor tabs or restart MySQL Workbench.

@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png)
+![Cover image showing a configuration that issues and auto-renews a free Let's Encrypt SSL certificate on Synology DSM using acme.sh and Cloudflare DNS](./assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png)
 
 
 ## Overview
@@ -56,7 +56,7 @@ For security, create a token with minimum permissions scoped to a specific domai
 - DNS: Read, Edit
 - Zone: Read
 
-![](./assets/2_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
+![Screen creating a Cloudflare API token with only the minimum DNS Read/Edit and Zone Read permissions](./assets/2_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
 
 
 ---
@@ -194,7 +194,7 @@ Solution
 DSM Verification
 
 
-![](./assets/3_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
+![Screen confirming that 2FA is disabled for the automation account in DSM user settings](./assets/3_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
 
 
 ---

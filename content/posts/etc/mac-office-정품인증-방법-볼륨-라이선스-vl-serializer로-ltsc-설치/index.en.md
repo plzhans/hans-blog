@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png)
+![Cover image showing the process of installing Office LTSC on a Mac and activating it with the volume license VL Serializer](./assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png)
 
 
 ## Overview
@@ -60,34 +60,34 @@ Source: [https://github.com/alsyundawy/Microsoft-Office-For-MacOS](https://githu
 Installation
 
 
-![](./assets/2_38222a0f-7e83-8081-a85a-e61f35929c9c.png)
+![Installation start screen after running the Office LTSC installer package](./assets/2_38222a0f-7e83-8081-a85a-e61f35929c9c.png)
 
 
-![](./assets/3_38222a0f-7e83-80b8-b486-dfd635b44edc.png)
+![Screen showing the installation progress](./assets/3_38222a0f-7e83-80b8-b486-dfd635b44edc.png)
 
 
 Customization
 
 
-![](./assets/4_38222a0f-7e83-80ec-9e5b-c15b8927d557.png)
+![Screen setting the installation configuration to Customize](./assets/4_38222a0f-7e83-80ec-9e5b-c15b8927d557.png)
 
 
 Install only what you need
 
 
-![](./assets/5_38222a0f-7e83-809a-bf31-eb6d73602517.png)
+![Screen selecting only the needed apps, such as Word and Excel, for installation](./assets/5_38222a0f-7e83-809a-bf31-eb6d73602517.png)
 
 
 Download the Serializer
 
 
-![](./assets/6_38222a0f-7e83-80c6-89c5-fab1c527a4d6.png)
+![Screen downloading the Office VL Serializer package](./assets/6_38222a0f-7e83-80c6-89c5-fab1c527a4d6.png)
 
 
 Run and verify activation
 
 
-![](./assets/7_38222a0f-7e83-80d9-9d7b-e4c4dab73d7d.png)
+![Screen checking the activation status in an Office app after applying VL Serializer](./assets/7_38222a0f-7e83-80d9-9d7b-e4c4dab73d7d.png)
 
 
 ---

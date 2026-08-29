@@ -22,7 +22,7 @@ Hugo 블로그의 index.md 파일을 index.en.md (영어), index.ja.md (일본�
 8. 이미지 경로, 링크 등은 변경하면 안됨
 9. front matter의 title, description, summary 등 메타데이터는 번역
 10. slug, date, categories, tags 등 시스템 필드는 변경하지 안됨
-11. 이미지 마크업은 번역없고 경로 유지한체 그대로 옮겨
+11. 이미지 경로는 절대 변경하지 말 것. 단, alt 텍스트(대괄호 `[]` 안의 캡션)는 해당 언어로 번역할 것 - alt가 비어있으면(`![]`) 그대로 비워둘 것
 
 
 ### 언어별 스타일

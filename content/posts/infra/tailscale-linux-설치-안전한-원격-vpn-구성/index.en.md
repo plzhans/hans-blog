@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png)
+![Cover image showing a configuration where Tailscale connects multiple devices into one private network for secure remote access](./assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png)
 
 
 ## Overview
@@ -96,7 +96,7 @@ sudo tailscale up
 Log in to your Tailscale account
 
 
-![](./assets/2_39122a0f-7e83-80f3-bd3f-ff3b63b6482c.png)
+![Screen logging into a Tailscale account by visiting the authentication URL printed in the terminal](./assets/2_39122a0f-7e83-80f3-bd3f-ff3b63b6482c.png)
 
 
 ### Device Connection
@@ -105,10 +105,10 @@ Log in to your Tailscale account
 Click the Connect button to access the service
 
 
-![](./assets/3_39122a0f-7e83-8005-91b2-d1f1a9a5967e.png)
+![Screen clicking the Connect button to join the server to the tailnet](./assets/3_39122a0f-7e83-8005-91b2-d1f1a9a5967e.png)
 
 
-![](./assets/4_39122a0f-7e83-80da-a100-ceea15213754.png)
+![Screen showing the device successfully registered on the tailnet](./assets/4_39122a0f-7e83-80da-a100-ceea15213754.png)
 
 
 ### Device Registration Complete
@@ -161,7 +161,7 @@ This is automatically set up during the default installation.
 
 - Since it uses tun mode, it is assumed that a tailscale0 virtual router has been created internally.
 
-![](./assets/5_39222a0f-7e83-8039-8753-d1d39530060e.png)
+![Screen confirming that a tailnet-only private IP and the tailscale0 virtual interface have been created](./assets/5_39222a0f-7e83-8039-8753-d1d39530060e.png)
 
 
 ## VPN: accept-routes Method
@@ -175,7 +175,7 @@ Since internal communication does not go through Tailscale infrastructure, there
 1. Go to the console: [https://login.tailscale.com/admin](https://login.tailscale.com/admin)
 2. Check Subnet
 
-![](./assets/6_39122a0f-7e83-8041-bf0e-e29819c42c91.png)
+![Screen checking the subnet routes advertised by the device in the Tailscale admin console](./assets/6_39122a0f-7e83-8041-bf0e-e29819c42c91.png)
 
 
 ### Machine Configuration

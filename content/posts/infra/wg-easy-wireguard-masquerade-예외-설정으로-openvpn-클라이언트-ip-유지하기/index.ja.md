@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png)
+![WireGuardのMASQUERADEで特定の帯域を除外し、OpenVPNクライアントのプライベートIPをそのまま維持する構成を表したカバー画像](./assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png)
 
 
 ## 概要

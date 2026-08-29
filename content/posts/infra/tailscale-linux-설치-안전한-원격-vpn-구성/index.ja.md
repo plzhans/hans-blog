@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png)
+![Tailscaleで複数のデバイスを1つのプライベートネットワークにまとめ、安全にリモート接続する構成を表したカバー画像](./assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png)
 
 
 ## 概要
@@ -96,7 +96,7 @@ sudo tailscale up
 Tailscale アカウントにログインします。
 
 
-![](./assets/2_39122a0f-7e83-80f3-bd3f-ff3b63b6482c.png)
+![ターミナルに出力された認証用URLにアクセスしてTailscaleアカウントにログインする画面](./assets/2_39122a0f-7e83-80f3-bd3f-ff3b63b6482c.png)
 
 
 ### デバイスの接続
@@ -105,10 +105,10 @@ Tailscale アカウントにログインします。
 Connect ボタンをクリックしてサービスに接続します。
 
 
-![](./assets/3_39122a0f-7e83-8005-91b2-d1f1a9a5967e.png)
+![Connectボタンを押してサーバーをtailnetに接続する画面](./assets/3_39122a0f-7e83-8005-91b2-d1f1a9a5967e.png)
 
 
-![](./assets/4_39122a0f-7e83-80da-a100-ceea15213754.png)
+![デバイスがtailnetに正常に登録されたことを示す画面](./assets/4_39122a0f-7e83-80da-a100-ceea15213754.png)
 
 
 ### デバイス登録完了
@@ -161,7 +161,7 @@ tailnet に接続すると、基本的に tailnet 専用のプライベート IP
 
 - tun モードを使用するため、内部に tailscale0 仮想ルーターが作成されていることを前提とします。
 
-![](./assets/5_39222a0f-7e83-8039-8753-d1d39530060e.png)
+![tailnet専用のプライベートIPとtailscale0仮想インターフェースが作成されたことを確認する画面](./assets/5_39222a0f-7e83-8039-8753-d1d39530060e.png)
 
 
 ## VPN: accept-routes 方式
@@ -175,7 +175,7 @@ Tailscale インフラを使用せず内部通信を行うため、トラフィ�
 1. コンソールに移動: [https://login.tailscale.com/admin](https://login.tailscale.com/admin)
 2. Subnet の確認
 
-![](./assets/6_39122a0f-7e83-8041-bf0e-e29819c42c91.png)
+![Tailscale管理コンソールでデバイスがアドバタイズするSubnetルートを確認する画面](./assets/6_39122a0f-7e83-8041-bf0e-e29819c42c91.png)
 
 
 ### マシン設定

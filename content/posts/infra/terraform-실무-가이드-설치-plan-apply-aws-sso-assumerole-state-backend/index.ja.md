@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png)
+![Terraformでインフラをコードとして宣言し、AWS認証情報とリモートstateを構成して運用する流れを表したカバー画像](./assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png)
 
 
 ## 概要

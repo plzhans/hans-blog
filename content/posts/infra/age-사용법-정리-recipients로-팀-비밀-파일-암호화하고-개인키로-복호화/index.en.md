@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png)
+![Cover image showing the flow of encrypting a team's secret file with age using public keys (recipients) and decrypting it with a private key](./assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png)
 
 
 ## Overview

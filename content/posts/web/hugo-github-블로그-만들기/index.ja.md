@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
+![Notionでの執筆からMarkdown変換、Hugoビルド、GitHub Pagesデプロイへとつながるブログ構築の流れを表したカバー画像](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
 
 
 ## 序論

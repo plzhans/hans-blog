@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png)
+![Cover image showing the flow of generating an SSH key, registering it with a remote repository, and connecting to Git via SSH](./assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png)
 
 
 ## Overview

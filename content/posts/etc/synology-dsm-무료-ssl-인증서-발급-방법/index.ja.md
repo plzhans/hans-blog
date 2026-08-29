@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png)
+![Synology DSMでacme.shとCloudflare DNSを使ってLet's Encrypt無料SSL証明書を発行し、自動更新する構成を表したカバー画像](./assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png)
 
 
 ## 概要
@@ -56,7 +56,7 @@ DSM を外部に直接公開する方式は危険なため、Tailscale、OpenVPN
 - DNS: Read, Edit
 - Zone: Read
 
-![](./assets/2_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
+![CloudflareでDNS Read・EditとZone Readの最小権限のみを付与してAPIトークンを作成する画面](./assets/2_36122a0f-7e83-80e6-9c56-c0c62fc2aa95.png)
 
 
 ---
@@ -194,7 +194,7 @@ acme.sh \
 DSM 確認
 
 
-![](./assets/3_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
+![DSMのユーザー設定で自動化用アカウントの2FAが無効になっていることを確認する画面](./assets/3_36122a0f-7e83-808e-9e19-d5de5cd0c5e1.png)
 
 
 ---

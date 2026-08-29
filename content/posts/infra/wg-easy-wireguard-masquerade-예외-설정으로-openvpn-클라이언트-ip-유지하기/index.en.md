@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png)
+![Cover image showing a configuration that excludes a specific range from WireGuard MASQUERADE to preserve the OpenVPN client's private IP](./assets/1_32822a0f-7e83-8086-99d3-e8f53af5998c.png)
 
 
 ## Summary

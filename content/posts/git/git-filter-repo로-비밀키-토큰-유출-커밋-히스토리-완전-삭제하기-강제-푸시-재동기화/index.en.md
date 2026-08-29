@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png)
+![Cover image showing the process of removing commit history containing secret keys/tokens with git filter-repo and force-pushing](./assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png)
 
 
 ## Overview

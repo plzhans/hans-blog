@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png)
+![Cover image showing a configuration that connects a remote server to the gateway in OpenClaw node mode to control infrastructure](./assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png)
 
 
 ## Overview

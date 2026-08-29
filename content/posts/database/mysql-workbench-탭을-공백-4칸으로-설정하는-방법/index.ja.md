@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_39522a0f-7e83-8007-b294-f7bfa76d8399.png)
+![MySQL Workbenchでタブ入力をスペース4つに変更する設定を表したカバー画像](./assets/1_39522a0f-7e83-8007-b294-f7bfa76d8399.png)
 
 
 ## 概要
@@ -41,7 +41,7 @@ Edit -> Preferences
 ```
 
 
-![](./assets/2_2fd22a0f-7e83-81d0-bb9b-c695f5677785.png)
+![MySQL WorkbenchのEdit → Preferencesメニューに移動する画面](./assets/2_2fd22a0f-7e83-81d0-bb9b-c695f5677785.png)
 
 
 Preferences ウィンドウで `General Editors` 項目を選択し、`Indentation` 設定を変更します。
@@ -56,7 +56,7 @@ Tab width: 4
 ```
 
 
-![](./assets/3_2fd22a0f-7e83-81e1-a5cc-c18e6e106923.png)
+![General EditorsのIndentationでタブの代わりにスペースを使うよう設定する画面](./assets/3_2fd22a0f-7e83-81e1-a5cc-c18e6e106923.png)
 
 
 設定を保存した後、SQL エディタでタブキーを入力するとタブ文字ではなくスペース4つが入力されます。すぐに反映されない場合は、開いているエディタを閉じてから再度開くか、MySQL Workbench を再起動します。

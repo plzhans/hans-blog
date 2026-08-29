@@ -18,7 +18,7 @@ draft: false
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png)
+![Cover image showing a configuration that adds multilingual support and SEO settings such as hreflang and canonical to a Hugo blog](./assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png)
 
 
 ## Goal

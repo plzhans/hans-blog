@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png)
+![TortoiseGitに保存された認証情報をリセットしてAuthentication failedエラーを解決する内容を表したカバー画像](./assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png)
 
 
 ## 概要
@@ -56,7 +56,7 @@ Git サーバーのアドレスが変わったり、アカウントを変更し�
 2. フォルダー内で右クリックします。
 3. **TortoiseGit → Settings** に移動します。
 
-    ![](./assets/2_2fd22a0f-7e83-81f2-a7bc-c7bc5c867533.png)
+    ![エクスプローラーの右クリックメニューからTortoiseGit → Settingsに移動する画面](./assets/2_2fd22a0f-7e83-81f2-a7bc-c7bc5c867533.png)
 
 4. 左側のメニューから **Saved Data** を選択します。
 5. **Authentication data** 領域で **Clear** をクリックします。
@@ -64,7 +64,7 @@ Git サーバーのアドレスが変わったり、アカウントを変更し�
     この操作で、既存に保存されていた認証情報が削除されます。
 
 
-    ![](./assets/3_2fd22a0f-7e83-8185-97b3-f0be61b614d4.png)
+    ![SettingsのSaved DataでAuthentication dataをClearする画面](./assets/3_2fd22a0f-7e83-8185-97b3-f0be61b614d4.png)
 
 6. 再度 `Pull` または `Push` を実行します。
 7. ID とパスワードまたはトークンを再入力します。

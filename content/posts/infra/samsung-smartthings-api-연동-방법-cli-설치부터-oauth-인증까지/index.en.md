@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png)
+![Cover image showing a configuration that integrates smart home devices via API, from installing the SmartThings CLI through OAuth authentication](./assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png)
 
 
 ## Overview

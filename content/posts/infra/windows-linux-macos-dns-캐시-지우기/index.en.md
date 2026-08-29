@@ -15,7 +15,7 @@ images:
 ---
 
 
-![](./assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png)
+![Cover image showing the process of flushing the local DNS cache on Windows, Linux, and macOS to apply updated records](./assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png)
 
 
 ## Overview

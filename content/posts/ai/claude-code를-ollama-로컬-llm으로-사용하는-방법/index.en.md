@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png)
+![Cover image showing a configuration for using an Ollama local LLM with Claude Code](./assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png)
 
 
 ## Overview

@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
+![Ollamaをインストールし、LinuxサーバーでローカルLLMを直接運用する構成を表したカバー画像](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
 
 
 ## 概要

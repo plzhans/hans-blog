@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
+![Cover image showing the blog-building flow from writing in Notion to converting to Markdown, building with Hugo, and deploying to GitHub Pages](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
 
 
 ## Introduction

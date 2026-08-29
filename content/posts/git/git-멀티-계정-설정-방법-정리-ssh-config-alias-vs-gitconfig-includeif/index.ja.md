@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png)
+![Gitのマルチアカウント環境をssh configのエイリアスとgitconfigのincludeIfで分離する構成を表したカバー画像](./assets/1_31422a0f-7e83-8067-a237-f9c049b42ff3.png)
 
 
 ## 概要

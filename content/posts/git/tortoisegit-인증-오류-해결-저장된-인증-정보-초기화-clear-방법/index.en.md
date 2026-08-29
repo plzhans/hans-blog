@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png)
+![Cover image showing how to fix an Authentication failed error by resetting the credentials stored in TortoiseGit](./assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png)
 
 
 ## Overview
@@ -56,7 +56,7 @@ The following procedure clears the saved authentication data so that the login p
 2. Right-click inside the folder.
 3. Go to **TortoiseGit → Settings**.
 
-    ![](./assets/2_2fd22a0f-7e83-81f2-a7bc-c7bc5c867533.png)
+    ![Screen navigating to TortoiseGit → Settings from the Explorer right-click menu](./assets/2_2fd22a0f-7e83-81f2-a7bc-c7bc5c867533.png)
 
 4. Select **Saved Data** from the left menu.
 5. Click **Clear** in the **Authentication data** area.
@@ -64,7 +64,7 @@ The following procedure clears the saved authentication data so that the login p
     This action deletes the previously saved authentication data.
 
 
-    ![](./assets/3_2fd22a0f-7e83-8185-97b3-f0be61b614d4.png)
+    ![Screen clearing Authentication data under Saved Data in Settings](./assets/3_2fd22a0f-7e83-8185-97b3-f0be61b614d4.png)
 
 6. Run `Pull` or `Push` again.
 7. Re-enter your ID and password or token.

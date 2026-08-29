@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png)
+![Cover image showing the Naver Maps Open API authentication failure (200) issue and the parameter change to ncpKeyId](./assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png)
 
 
 ## Naver Map Authentication Error
@@ -33,10 +33,10 @@ Authentication fails despite correctly registering the service URL in the applic
 > 네이버 지도 Open API 인증이 실패하였습니다. 클라이언트 아이디와 웹 서비스 URL을 확인해 주세요.,  * Error Code / Error Message: 200 / Authentication Failed,  * Client ID: xxxxx,  * URI: [http://localhost:8030/](http://localhost:8030/hospitals/1050/edit/basic)xxxxx
 >
 >
-> ![](./assets/2_32d22a0f-7e83-8053-a2b0-fd791f882d47.png)
+> ![Authentication Failed (200) error message shown in the browser](./assets/2_32d22a0f-7e83-8053-a2b0-fd791f882d47.png)
 >
 >
-> ![](./assets/3_32d22a0f-7e83-8041-8b4c-f2442ad47ca3.png)
+> ![Application settings screen with the service URL correctly registered](./assets/3_32d22a0f-7e83-8041-8b4c-f2442ad47ca3.png)
 >
 >
 

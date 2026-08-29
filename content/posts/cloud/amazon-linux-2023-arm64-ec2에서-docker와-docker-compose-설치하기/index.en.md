@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png)
+![Cover image showing the process of installing Docker and Docker Compose on an Amazon Linux 2023 ARM64 EC2 instance](./assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png)
 
 
 ## Overview

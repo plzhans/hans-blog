@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png)
+![Cover image showing the process of finding and recovering a deleted Git branch using reflog](./assets/1_30922a0f-7e83-80bb-9097-fc089c9b2d99.png)
 
 
 ## Goal
@@ -52,7 +52,7 @@ git reflog
 In the reflog output, identify the **commit hash of the point you want to recover**.
 
 
-![](./assets/2_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)
+![Screen finding the commit hash to restore from the git reflog output](./assets/2_2fd22a0f-7e83-8115-be9b-f7fde3548b1d.png)
 
 
 ---
@@ -79,4 +79,4 @@ git checkout -b repair-1234 f730c6ea10
 Confirm that the branch was created normally and moved to that commit.
 
 
-![](./assets/3_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png)
+![Screen confirming that a new branch was created and moved to that commit](./assets/3_2fd22a0f-7e83-8139-80f5-f2d88f8baee1.png)

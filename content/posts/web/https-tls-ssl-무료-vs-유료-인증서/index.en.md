@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png)
+![Cover image comparing free, paid, and cloud-managed options for the TLS/SSL certificates required for HTTPS](./assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png)
 
 
 ## Overview

@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png)
+![MacにOffice LTSCをインストールし、ボリュームライセンスのVL Serializerでライセンス認証する過程を表したカバー画像](./assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png)
 
 
 ## 概要
@@ -60,34 +60,34 @@ Microsoft 365 アカウントで有効化する方法と、特定バージョン
 インストール
 
 
-![](./assets/2_38222a0f-7e83-8081-a85a-e61f35929c9c.png)
+![Office LTSCのインストールパッケージを実行したインストール開始画面](./assets/2_38222a0f-7e83-8081-a85a-e61f35929c9c.png)
 
 
-![](./assets/3_38222a0f-7e83-80b8-b486-dfd635b44edc.png)
+![インストールの進行状況を示す画面](./assets/3_38222a0f-7e83-80b8-b486-dfd635b44edc.png)
 
 
 カスタマイズ
 
 
-![](./assets/4_38222a0f-7e83-80ec-9e5b-c15b8927d557.png)
+![インストール構成をカスタマイズに指定する画面](./assets/4_38222a0f-7e83-80ec-9e5b-c15b8927d557.png)
 
 
 必要なものだけインストール
 
 
-![](./assets/5_38222a0f-7e83-809a-bf31-eb6d73602517.png)
+![Word・Excelなど必要なアプリのみを選んでインストールする画面](./assets/5_38222a0f-7e83-809a-bf31-eb6d73602517.png)
 
 
 Serializer のダウンロード
 
 
-![](./assets/6_38222a0f-7e83-80c6-89c5-fab1c527a4d6.png)
+![Office VL Serializerパッケージをダウンロードする画面](./assets/6_38222a0f-7e83-80c6-89c5-fab1c527a4d6.png)
 
 
 実行と認証確認
 
 
-![](./assets/7_38222a0f-7e83-80d9-9d7b-e4c4dab73d7d.png)
+![VL Serializer適用後、Officeアプリでライセンス認証状態を確認する画面](./assets/7_38222a0f-7e83-80d9-9d7b-e4c4dab73d7d.png)
 
 
 ---

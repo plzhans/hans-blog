@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png)
+![Cover image showing the flow of encrypting a .env file with GPG and committing it to Git without exposing secret values](./assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png)
 
 
 # Overview

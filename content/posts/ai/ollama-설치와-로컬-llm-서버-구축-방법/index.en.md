@@ -19,7 +19,7 @@ images:
 ---
 
 
-![](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
+![Cover image showing a configuration that installs Ollama to run a local LLM directly on a Linux server](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
 
 
 ## Overview

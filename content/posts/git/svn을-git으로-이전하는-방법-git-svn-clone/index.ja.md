@@ -17,7 +17,7 @@ images:
 ---
 
 
-![](./assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png)
+![git svn cloneでSVNリポジトリのtrunk・branches・tagsをGitに移行する過程を表したカバー画像](./assets/1_31222a0f-7e83-80a0-8b33-d762b23a0011.png)
 
 
 ## 概要

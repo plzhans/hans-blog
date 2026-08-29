@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png)
+![Amazon Linux 2023 ARM64 EC2にDockerとDocker Composeをインストールする過程を表したカバー画像](./assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png)
 
 
 ## 概要

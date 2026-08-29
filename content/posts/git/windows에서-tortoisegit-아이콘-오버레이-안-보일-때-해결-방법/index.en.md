@@ -18,7 +18,7 @@ images:
 ---
 
 
-![](./assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png)
+![Cover image showing how to fix missing TortoiseGit status icon overlays in Windows Explorer via the registry](./assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png)
 
 
 > 💡 When Windows Explorer loses the status icons, suspect the icon overlay handler cap and priority conflict.  
@@ -35,7 +35,7 @@ images:
 Git status icons that should appear on files and folders remain hidden.
 
 
-![](./assets/2_2fd22a0f-7e83-8139-99e5-f498ff24f63f.png)
+![Screen showing the symptom where Git status icons are not displayed on files and folders](./assets/2_2fd22a0f-7e83-8139-99e5-f498ff24f63f.png)
 
 
 ## Cause
@@ -52,7 +52,7 @@ Git status icons that should appear on files and folders remain hidden.
 - Start → Run → `regedit`
 
 
-![](./assets/3_2fd22a0f-7e83-81aa-a4e9-dcc8b9fff247.png)
+![Screen launching the Registry Editor by typing regedit in the Run dialog](./assets/3_2fd22a0f-7e83-81aa-a4e9-dcc8b9fff247.png)
 
 
 2) Move to the target path
@@ -70,7 +70,7 @@ Navigate to:
 > ⚠️ Deleting keys is hard to undo. Keep the backup so you can restore the list if necessary.
 
 
-![](./assets/4_2fd22a0f-7e83-81b2-a6c1-e8329429fbc3.png)
+![Screen right-clicking the ShellIconOverlayIdentifiers key and backing it up via Export](./assets/4_2fd22a0f-7e83-81b2-a6c1-e8329429fbc3.png)
 
 
 4) Adjust priority
@@ -84,13 +84,13 @@ The goal is to move the TortoiseGit entries toward the top:
 Before
 
 
-![](./assets/5_2fd22a0f-7e83-81e0-b5b5-e2890b7f55bf.png)
+![Registry screen before the fix, showing the TortoiseGit entry near the bottom of the list](./assets/5_2fd22a0f-7e83-81e0-b5b5-e2890b7f55bf.png)
 
 
 After
 
 
-![](./assets/6_2fd22a0f-7e83-81f2-af8d-e782336c5850.png)
+![Screen after the fix, showing the TortoiseGit entry moved to the top by adding a space before the key name](./assets/6_2fd22a0f-7e83-81f2-af8d-e782336c5850.png)
 
 
 ## Apply the change
@@ -101,14 +101,14 @@ You do not need to reboot. Restarting Explorer is enough.
 
 - Use Task Manager to end the `Windows Explorer` task
 
-    ![](./assets/7_2fd22a0f-7e83-81f0-b48a-c9aa3b417a97.png)
+    ![Screen ending the Windows Explorer process in Task Manager](./assets/7_2fd22a0f-7e83-81f0-b48a-c9aa3b417a97.png)
 
 - Run `C:\Windows\explorer.exe` to launch it again
 
-    ![](./assets/8_2fd22a0f-7e83-817d-a1b1-f5e99bab2c4f.png)
+    ![Screen relaunching explorer.exe via Task Manager's Run new task](./assets/8_2fd22a0f-7e83-817d-a1b1-f5e99bab2c4f.png)
 
 
-    ![](./assets/9_2fd22a0f-7e83-8120-b5ac-facca1d24ad1.png)
+    ![Screen relaunching Explorer by entering the explorer.exe path](./assets/9_2fd22a0f-7e83-8120-b5ac-facca1d24ad1.png)
 
 
 ### Verification
@@ -116,4 +116,4 @@ You do not need to reboot. Restarting Explorer is enough.
 - Press `F5` in Explorer
 - Confirm that Git status icons appear again
 
-    ![](./assets/10_2fd22a0f-7e83-81cc-9f4c-c4d185928c75.png)
+    ![Screen showing TortoiseGit status icons displaying correctly in Explorer](./assets/10_2fd22a0f-7e83-81cc-9f4c-c4d185928c75.png)

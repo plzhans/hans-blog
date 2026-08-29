@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png)
+![GitHub Pagesにカスタムドメインを接続し、HTTPSを適用する過程を表したカバー画像](./assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png)
 
 
 # 概要
@@ -43,7 +43,7 @@ GitHub Pagesはデフォルトで `https://{アカウント名}.`[`github.io/{�
 ドメインのDNS設定でCNAMEレコードを追加します。
 
 
-![](./assets/2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png)
+![サブドメインを{アカウント名}.github.ioに接続するCNAMEレコード登録画面](./assets/2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png)
 
 
 **設定例**
@@ -61,7 +61,7 @@ Repository → Settings → Pages → Custom domainでカスタムドメイン�
 **入力例:** hugosample.plzhans.com
 
 
-![](./assets/3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png)
+![Repository Settings → PagesのCustom domainにドメインを入力する画面](./assets/3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png)
 
 
 # Apexドメインの使用
