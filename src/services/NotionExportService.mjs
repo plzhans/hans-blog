@@ -31,6 +31,7 @@ export class NotionExportService {
       createdDate: "생성일",
       publishedDate: "발행일",
       publishUrl: "발행 URL",
+      publishResult: "발행 결과",
       toc: "toc",
       modifiedDate: "수정일",
       // 주의: 위 기본값들은 생성자 인자로 전달된 propertyKeys(notion.yml 설정)로 덮어써짐.
@@ -213,8 +214,34 @@ export class NotionExportService {
       };
     }
 
+    properties[this.propertyKeys.publishResult] = {
+      rich_text: [{ text: { content: `✅ 발행 완료 (${now})` } }],
+    };
+
     const res = await this.notionApiClient.updatePageProperties(page.id, properties);
     return res;
+  }
+
+  /**
+   * 발행 요청을 거부하고 사유를 콘솔과 노션 "발행 결과" 컬럼에 기록
+   * CI가 무인 실행되어 콘솔 로그를 볼 수 없으므로, 노션에서 바로 실패 사유를
+   * 확인할 수 있게 함. 상태는 "발행 요청"에 그대로 두어(사람이 고치고 다시 시도),
+   * 재동기화 스킵 가드는 last_edited_time 비교라 이 업데이트 자체가 다음 실행에
+   * 영향을 주지 않음.
+   * @param {Object} page - Notion 페이지 객체
+   * @param {string} reason - 거부 사유
+   * @returns {Promise<boolean>} 항상 false (호출부에서 그대로 반환하도록)
+   */
+  async #rejectPublish(page, reason) {
+    const title = this.#extractPageTitle(page);
+    console.error(`❌ Publish request rejected: ${reason} for page "${title}" (${page.id})`);
+    const now = new Date().toISOString();
+    await this.notionApiClient.updatePageProperties(page.id, {
+      [this.propertyKeys.publishResult]: {
+        rich_text: [{ text: { content: `❌ 실패 (${now}): ${reason}` } }],
+      },
+    });
+    return false;
   }
 
   /**
@@ -238,23 +265,20 @@ export class NotionExportService {
     // 발행 요청 시 필수 메타데이터 검증
     // (title/slug/category/POST_ID 중 하나라도 비어있으면 폴백 값(untitled, UUID, etc 카테고리 등)이
     // 그대로 발행되어버리는 문제가 있었음 (POST_ID 누락 시 UUID가 slug/URL에 노출된 실제 사례로 확인됨)
-    // - 여기서 미리 차단하고 사용자가 노션에서 채워넣도록 유도
+    // - 여기서 미리 차단하고 사용자가 노션에서 채워넣도록 유도. CI가 무인 실행되어 콘솔 로그를
+    // 못 보므로, 실패 사유를 노션 "발행 결과" 컬럼에도 남김 (#rejectPublish)
     if (currentStatus === this.statusValues.publishRequest) {
       if (!this.#hasValidTitle(page)) {
-        console.error(`❌ Publish request rejected: title is empty for page (${pageId})`);
-        return false;
+        return await this.#rejectPublish(page, "title이 비어있습니다");
       }
       if (!this.#hasTextProperty(page.properties, this.propertyKeys.slug)) {
-        console.error(`❌ Publish request rejected: slug property is empty for page "${title}" (${pageId})`);
-        return false;
+        return await this.#rejectPublish(page, "slug이 비어있습니다");
       }
       if (this.#extractPageCategory(page.properties, this.propertyKeys.category).length === 0) {
-        console.error(`❌ Publish request rejected: category is empty for page "${title}" (${pageId})`);
-        return false;
+        return await this.#rejectPublish(page, "카테고리가 비어있습니다");
       }
       if (!this.#hasValidPostId(page, this.propertyKeys.uniqueId)) {
-        console.error(`❌ Publish request rejected: ${this.propertyKeys.uniqueId} property is empty for page "${title}" (${pageId})`);
-        return false;
+        return await this.#rejectPublish(page, `${this.propertyKeys.uniqueId}가 비어있습니다`);
       }
     }
 
@@ -351,14 +375,20 @@ export class NotionExportService {
     // 이미지 블록을 로컬 다운로드 + 링크 치환으로 커스텀
     let fileIndex = 0;
     let firstImagePath = null;
+    const missingCaptionImages = [];
     n2m.setCustomTransformer("image", async (block) => {
       const result = await this.#transformFileBlock(block, assetsDir, ++fileIndex);
       if (!result) {
         return false;
       }
       orphanedAssets.delete(result.filename);
-      if (!firstImagePath && result.type === "image") {
-        firstImagePath = `assets/${result.filename}`;
+      if (result.type === "image") {
+        if (!firstImagePath) {
+          firstImagePath = `assets/${result.filename}`;
+        }
+        if (!result.caption?.trim()) {
+          missingCaptionImages.push(result.filename);
+        }
       }
       return result.markdown;
     });
@@ -410,6 +440,15 @@ export class NotionExportService {
     });
 
     const mdBlocks = await n2m.pageToMarkdown(pageId);
+
+    // 발행 요청 시 이미지 캡션 검증 - 캡션이 alt 텍스트로 그대로 쓰이는데(#transformFileBlock),
+    // 캡션 없이 빈 alt로 발행되는 걸 막기 위함. 대표이미지(본문 첫 번째 이미지)도 예외 없이 검증
+    if (currentStatus === this.statusValues.publishRequest && missingCaptionImages.length > 0) {
+      return await this.#rejectPublish(
+        page,
+        `이미지 ${missingCaptionImages.length}개에 캡션이 없습니다: ${missingCaptionImages.join(", ")}`
+      );
+    }
 
     // Notion에서 참조하지 않는 로컬 파일 삭제
     for (const file of orphanedAssets) {
@@ -807,7 +846,7 @@ export class NotionExportService {
       } else {
         markdown = `[${caption || filename}](./assets/${filename})`;
       }
-      return { markdown, filename, type };
+      return { markdown, filename, type, caption };
     } catch (e) {
       console.error(`Failed to download file: ${url} -> ${downloadPath}`, e);
       return null;

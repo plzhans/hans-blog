@@ -16,6 +16,9 @@ propertyKeys:
   publishedDate: "발행일"
   # 발행 URL (url 타입). 발행 완료 시 실제 발행된 URL로 자동 업데이트
   publishUrl: "발행 URL"
+  # 발행 결과 (rich_text 타입). 발행 성공/실패 시 결과 메시지 기록 (CI가 무인 실행되어
+  # 콘솔 로그를 못 보므로, 노션에서 바로 확인할 수 있게 함)
+  publishResult: "발행 결과"
 
 # Hugo 사이트 기본 URL. 발행 URL 생성에 사용 (baseURL/{POST_ID}-{slug}/)
 hugoBaseUrl: "https://blog.plzhans.com"
