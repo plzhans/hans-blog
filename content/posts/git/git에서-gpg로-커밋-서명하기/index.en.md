@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-02-19T01:31:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -432,3 +432,9 @@ git push origin main
 
 
 ![Screen showing the Verified badge displayed on a pushed commit](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)
+
+## Related Posts
+
+- [Encrypting .env Files with GPG for Safe Commits](../89-gpg-encrypt-env-file/)
+- [age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys](../102-age-recipients-team-encryption-guide/)
+- [Completely removing leaked secrets from Git history with git filter-repo (force push and resync)](../4-git-filter-repo-remove-secrets-from-history/)

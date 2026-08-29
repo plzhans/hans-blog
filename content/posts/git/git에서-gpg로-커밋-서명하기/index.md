@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -434,3 +434,9 @@ git push origin main
 
 ![푸시한 커밋에 Verified 배지가 표시된 화면](./assets/6_30922a0f-7e83-806f-a583-f3ce282e27fb.png)
 
+
+## 관련 글
+
+- [GPG로 .env 파일 암호화해서 안전하게 커밋하기](../89-gpg-encrypt-env-file/)
+- [age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화](../102-age-recipients-team-encryption-guide/)
+- [git filter-repo로 비밀키·토큰 유출 커밋 히스토리 완전 삭제하기 (강제 푸시·재동기화)](../4-git-filter-repo-remove-secrets-from-history/)
