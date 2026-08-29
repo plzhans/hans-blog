@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "2fd22a0f-7e83-81ed-b096-fbb1eeec1160",
-  "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-02-27T16:10:00.000Z",
+  "id": "2ff22a0f-7e83-80db-9fb4-c19d6e4469cf",
+  "created_time": "2026-02-06T02:34:00.000Z",
+  "last_edited_time": "2026-08-29T06:54:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -30,7 +30,7 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-02-04T09:04:00.000Z"
+      "created_time": "2026-02-06T02:34:00.000Z"
     },
     "태그": {
       "id": "NGeX",
@@ -42,34 +42,29 @@
           "color": "pink"
         },
         {
-          "id": "c317d7e0-321b-4f64-a8ad-f26ff9113757",
-          "name": "github-action",
-          "color": "gray"
-        },
-        {
-          "id": "0579ade5-617f-4ef1-bf35-7d996cb2a24f",
-          "name": "github-pages",
-          "color": "orange"
+          "id": "11687b98-a492-430b-8b26-0a74227dbee0",
+          "name": "seo",
+          "color": "red"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-02-27T16:10:00.000Z"
+      "last_edited_time": "2026-08-29T06:54:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 35
+        "number": 3
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/94-hugo-github-blog/"
+      "url": "https://blog.plzhans.com/93-hugo-multilingual-seo-setup/"
     },
     "toc": {
       "id": "ZR~A",
@@ -80,7 +75,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-02-28T01:10:00.000+09:00",
+        "start": "2026-08-29T15:54:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +96,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
+            "content": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
             "link": null
           },
           "annotations": {
@@ -112,7 +107,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",
+          "plain_text": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
           "href": null
         }
       ]
@@ -124,7 +119,7 @@
         {
           "type": "text",
           "text": {
-            "content": "94",
+            "content": "93",
             "link": null
           },
           "annotations": {
@@ -135,7 +130,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "94",
+          "plain_text": "93",
           "href": null
         }
       ]
@@ -147,7 +142,7 @@
         {
           "type": "text",
           "text": {
-            "content": "hugo-github-blog",
+            "content": "hugo-multilingual-seo-setup",
             "link": null
           },
           "annotations": {
@@ -158,7 +153,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "hugo-github-blog",
+          "plain_text": "hugo-multilingual-seo-setup",
           "href": null
         }
       ]
@@ -172,7 +167,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-02-10T08:46:00.000+00:00",
+        "start": "2026-02-11T09:55:00.000+00:00",
         "end": null,
         "time_zone": null
       }
@@ -181,7 +176,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-01-29T10:44:00.000+09:00",
+        "start": "2026-02-06T11:34:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -190,9 +185,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "9bdb5196-7014-4a83-9375-182716238338",
-        "name": "Git",
-        "color": "green"
+        "id": "6966f599-16c1-463d-8a67-d59bd3ff2bcd",
+        "name": "Hugo",
+        "color": "purple"
       }
     },
     "제목": {
@@ -202,7 +197,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Hugo + Github 블로그 만들기",
+            "content": "hugo site 다국어 지원하기",
             "link": null
           },
           "annotations": {
@@ -213,13 +208,14 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Hugo + Github 블로그 만들기",
+          "plain_text": "hugo site 다국어 지원하기",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/Hugo-Github-2fd22a0f7e8381edb096fbb1eeec1160",
+  "url": "https://app.notion.com/p/hugo-site-2ff22a0f7e8380db9fb4c19d6e4469cf",
   "public_url": null,
-  "archived": false
+  "archived": false,
+  "request_id": "4dfb8247-08db-4763-81eb-4b6fde8b15d4"
 }

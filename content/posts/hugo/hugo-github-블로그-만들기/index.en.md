@@ -5,7 +5,7 @@ slug: "94-hugo-github-blog"
 title: "Building a Hugo + GitHub Blog"
 description: "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy."
 categories:
-  - "git"
+  - "hugo"
 tags:
   - "github-action"
   - "github-pages"

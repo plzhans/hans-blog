@@ -5,7 +5,7 @@ slug: "93-hugo-multilingual-seo-setup"
 title: "Supporting Multiple Languages on a Hugo Site"
 description: "Optimize a Hugo multilingual blog by configuring baseURL, sitemap, robots, JSON-LD, Open Graph, and meta descriptions, then prevent duplicate issues with hreflang and canonical tags plus slug and translationKey troubleshooting."
 categories:
-  - "Infra"
+  - "hugo"
 tags:
   - "hugo"
   - "seo"

@@ -10,7 +10,7 @@ tags:
   - "github-action"
   - "github-pages"
 categories:
-  - "Git"
+  - "hugo"
 date: 2026-02-04T18:07:00.000+09:00
 lastmod: 2026-02-10T07:36:00.000Z
 toc: true

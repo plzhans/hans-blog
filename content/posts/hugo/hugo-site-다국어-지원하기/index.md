@@ -5,12 +5,12 @@ slug: "93-hugo-multilingual-seo-setup"
 title: "hugo site 다국어 지원하기"
 description: "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요."
 categories:
-  - "infra"
+  - "hugo"
 tags:
   - "hugo"
   - "seo"
 date: 2026-02-11T09:55:00.000Z
-lastmod: 2026-02-24T15:42:00.000Z
+lastmod: 2026-08-29T06:54:00.000Z
 toc: true
 draft: false
 images:
