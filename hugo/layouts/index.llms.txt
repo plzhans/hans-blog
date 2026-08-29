@@ -4,7 +4,7 @@
 
 > {{ .Site.Params.description }}
 
-이 사이트는 리눅스/클라우드 인프라, 로컬 LLM, 보안·네트워킹을 직접 구축하고 트러블슈팅한 기록을 남기는 개인 기술 블로그입니다. 저자: {{ .Site.Params.author }}{{ with .Site.GetPage "/about" }} ({{ .Permalink }}){{ end }}
+Author: {{ .Site.Params.author }}{{ with .Site.GetPage "/about" }} ({{ .Permalink }}){{ end }}
 
 ## Posts
 

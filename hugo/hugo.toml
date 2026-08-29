@@ -42,10 +42,14 @@ dataDir = "../data"
   [languages.en]
     weight = 2
     label = "English"
+    [languages.en.params]
+      description = "A technical blog by a server engineer documenting hands-on infrastructure builds and troubleshooting — Linux/cloud infrastructure, local LLMs, security, and networking."
 
   [languages.ja]
     weight = 3
     label = "日本語"
+    [languages.ja.params]
+      description = "Linux/クラウドインフラ、ローカルLLM、セキュリティ・ネットワーキングを自ら構築しトラブルシューティングした記録を残す、サーバーエンジニアの技術ブログです。"
 
 # 사이트 파라미터 설정
 [params]
