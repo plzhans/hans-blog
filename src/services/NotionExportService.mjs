@@ -524,13 +524,17 @@ export class NotionExportService {
    */
   #extractPageTitle(page) {
     const prop = page?.properties?.title;
-    if (prop?.type === "title") return prop.title?.[0]?.plain_text || "untitled";
+    if (prop?.type === "title") {
+      return prop.title?.map((t) => t.plain_text).join("").trim() || "untitled";
+    }
 
     // 일반 페이지는 title 속성이 "Name" 등으로 올 수도 있어서 첫 title 타입을 찾아봄
     const firstTitleKey = Object.keys(page?.properties || {}).find(
       (k) => page.properties[k]?.type === "title"
     );
-    if (firstTitleKey) return page.properties[firstTitleKey].title?.[0]?.plain_text || "untitled";
+    if (firstTitleKey) {
+      return page.properties[firstTitleKey].title?.map((t) => t.plain_text).join("").trim() || "untitled";
+    }
 
     return "untitled";
   }
@@ -543,12 +547,16 @@ export class NotionExportService {
    */
   #hasValidTitle(page) {
     const prop = page?.properties?.title;
-    if (prop?.type === "title") return !!prop.title?.[0]?.plain_text?.trim();
+    if (prop?.type === "title") {
+      return !!prop.title?.map((t) => t.plain_text).join("").trim();
+    }
 
     const firstTitleKey = Object.keys(page?.properties || {}).find(
       (k) => page.properties[k]?.type === "title"
     );
-    if (firstTitleKey) return !!page.properties[firstTitleKey].title?.[0]?.plain_text?.trim();
+    if (firstTitleKey) {
+      return !!page.properties[firstTitleKey].title?.map((t) => t.plain_text).join("").trim();
+    }
 
     return false;
   }

@@ -2,7 +2,7 @@
 id: "104"
 translationKey: "104"
 slug: "104-synology-dsm-acme-sh-letsencrypt"
-title: "How to Issue a Free SSL Certificate on Synology DSM | "
+title: "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS"
 description: "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors."
 categories:
   - "etc"

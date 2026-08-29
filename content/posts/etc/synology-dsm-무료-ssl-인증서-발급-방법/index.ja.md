@@ -2,7 +2,7 @@
 id: "104"
 translationKey: "104"
 slug: "104-synology-dsm-acme-sh-letsencrypt"
-title: "Synology DSM 無料 SSL 証明書の発行方法 | "
+title: "Synology DSM 無料 SSL 証明書の発行方法 | acme.sh + Cloudflare DNS で Let’s Encrypt を自動更新"
 description: "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。"
 categories:
   - "etc"
