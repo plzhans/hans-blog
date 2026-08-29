@@ -260,35 +260,3 @@ Apply the service
 sudo systemctl daemon-reload && sudo systemctl restart ollama
 ```
 
-
-Create a clean modern tech blog cover image about installing Ollama on a Linux server and building a local LLM server.
-
-
-Main concept:
-A Linux server running a local AI language model through Ollama. Show a compact server rack or cloud server node connected to an AI brain or neural network. Include subtle terminal and API elements such as command lines, HTTP request symbols, and port 11434. Emphasize local execution, private AI, infrastructure, and developer workflow.
-
-
-Visual style:
-Modern developer blog thumbnail, clean vector-style digital illustration, dark navy background, green and cyan accent colors, soft glow, high contrast, minimal but detailed, professional infrastructure diagram feel, sharp edges, balanced composition.
-
-
-Key elements:
-
-- Linux server or terminal window
-- Local LLM model blocks
-- Ollama-inspired llama silhouette or abstract llama icon
-- Secure network connection
-- API endpoint visualization
-- Small cloud/server label style elements
-- Developer-friendly technical atmosphere
-
-Composition:
-16:9 wide cover image. Center the Linux server and AI model. Place network lines around it. Keep the left and right sides visually balanced. Leave some clean negative space for possible title text overlay.
-
-
-Text:
-No text, no letters, no numbers, no logo, no watermark.
-
-
-Negative prompt:
-photorealistic, human face, messy UI, unreadable text, excessive details, brand logo, low resolution, blurry, distorted server, random letters, watermark
