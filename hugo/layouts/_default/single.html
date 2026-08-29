@@ -175,13 +175,17 @@
   </article>
   {{- if ne .Type "page" }}
   {{- $description := .Description | default (.Summary | plainify | truncate 160) -}}
+  {{- $authorSameAs := slice }}
+  {{- range where .Site.Params.social "name" "in" (slice "Github" "LinkedIn") }}
+    {{- $authorSameAs = $authorSameAs | append .url }}
+  {{- end }}
   {{- $jsonLd := dict
       "@context" "https://schema.org"
       "@type" "BlogPosting"
       "headline" .Title
       "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")
       "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
-      "author" (dict "@type" "Person" "name" .Site.Params.author)
+      "author" (dict "@type" "Person" "name" .Site.Params.author "sameAs" $authorSameAs)
       "description" $description
       "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
       "publisher" (dict
@@ -198,6 +202,20 @@
     {{- end -}}
   {{- end -}}
   {{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($jsonLd | jsonify (dict "indent" "  ")) | safeHTML }}
+  {{- /* 카테고리 기반 BreadcrumbList - 검색결과에 홈>카테고리>글제목 경로 표시 */ -}}
+  {{- with .GetTerms "categories" }}
+    {{- $firstCategory := index . 0 }}
+    {{- $breadcrumbLd := dict
+        "@context" "https://schema.org"
+        "@type" "BreadcrumbList"
+        "itemListElement" (slice
+          (dict "@type" "ListItem" "position" 1 "name" $.Site.Title "item" $.Site.BaseURL)
+          (dict "@type" "ListItem" "position" 2 "name" $firstCategory.Title "item" $firstCategory.Permalink)
+          (dict "@type" "ListItem" "position" 3 "name" $.Title "item" $.Permalink)
+        )
+    -}}
+    {{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($breadcrumbLd | jsonify (dict "indent" "  ")) | safeHTML }}
+  {{- end }}
   {{- end }}
 
   {{ if .Store.Get "hasMermaid" }}
