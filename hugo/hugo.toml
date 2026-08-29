@@ -22,7 +22,17 @@ dataDir = "../data"
 # 목록 페이지 페이지네이션 (페이지당 글 수)
 [pagination]
   pagerSize = 20
-  
+
+# llms.txt 생성용 커스텀 output format (홈페이지에 연결, 게시물 추가 시 자동 반영)
+[outputFormats.LLMS]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "LLMS"]
+
 # 다국어 설정
 [languages]
   [languages.ko]
