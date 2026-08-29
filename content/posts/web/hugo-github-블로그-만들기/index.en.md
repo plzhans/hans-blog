@@ -2,8 +2,8 @@
 id: "94"
 translationKey: "94"
 slug: "94-hugo-github-blog"
-title: "Building a Hugo + GitHub Blog"
-description: "Follow the Notion → Markdown → Hugo build → GitHub Pages deployment flow to stand up a personal blog. Install Hugo, apply the m10c theme, ship with GitHub Actions, and keep an eye on the baseURL setting so releases stay healthy."
+title: "Building a Blog with Hugo + GitHub"
+description: "A walkthrough of building a personal blog using the Notion → Markdown conversion → Hugo build → GitHub Pages deployment flow. Follow along with Hugo installation, applying the m10c theme, automated deployment with GitHub Actions, and baseURL configuration pitfalls to reduce deployment errors."
 categories:
   - "web"
 tags:
@@ -11,7 +11,7 @@ tags:
   - "github-pages"
   - "hugo"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-02-27T16:08:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -19,86 +19,107 @@ images:
 ---
 
 
-![Cover image showing the blog-building flow from writing in Notion to converting to Markdown, building with Hugo, and deploying to GitHub Pages](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
+![Featured image showing the blog-building flow: writing in Notion → converting to Markdown → building with Hugo → deploying to GitHub Pages](./assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png)
 
 
 ## Introduction
 
 
-I have been collecting technical notes in Evernote and personal documents, and at one point I considered running a blog through Notion’s website feature.
+I had been keeping technical notes in Evernote and personal documents, and was preparing to run a blog using Notion's website feature.
 
-Notion, however, has customization limits and charges more for custom domains, so I hesitated.
 
-I weighed alternatives such as moving to [velog](https://velog.io/) or rewriting everything in Markdown to migrate to Jekyll.
+However, Notion had limitations on customization, and using a custom domain came with extra costs, which gave me pause.
 
-In the end, I could not give up the convenience of drafting inside Notion. The conclusion: keep writing in Notion and deploy the finished content as a static site.
 
-## Goal
+As an alternative, I considered switching to [velog](https://velog.io/) or rewriting everything in Markdown and moving to Jekyll.
 
-- Build Markdown-based posts with Hugo
-- Automate deployment to GitHub Pages
 
-> 💡 **Environment**  
-> - Test platform: Mac  
-> - Deployment platform: GitHub Actions
+But I couldn't give up Notion, which is so convenient to write in. My conclusion: write in Notion and deploy it as a static website!
 
-**Why Hugo**
 
-- Popular project with many GitHub stars and active updates
-- Faster than Jekyll when you build 1,000+ pages
+## Goals
 
-**This blog currently runs with the following workflow (source: [https://github.com/plzhans/hans-blog](https://github.com/plzhans/hans-blog))**
+- Build documents written as md files with Hugo
+- Automate deployment with GitHub Pages
 
-> Write in Notion  
+> 💡 **Build Environment**  
+> - Test environment: Mac  
+> - Deployment environment: GitHub Actions
+
+
+**Why I Chose Hugo**
+
+- Has a large number of GitHub stars and is actively updated
+- Faster than Jekyll when building over 1,000 pages
+
+**This blog currently runs on the following flow. (Source reference: )**
+
+
+> Write in Notion   
 > → Convert to Markdown via the Notion API  
->  
+>   
+>   
 > → Build a static site with Hugo  
->  
+>   
+>   
 > → Deploy to GitHub Pages
 
-## Prerequisites
 
-### Picking a Hugo theme
+## Preparation
 
-I started by choosing a theme from [Hugo Themes](https://themes.gohugo.io/).
 
-**Theme of choice:** [m10c](https://themes.gohugo.io/themes/hugo-theme-m10c/)
+### Choosing a Hugo Theme
 
-**Selection criteria**
 
-- SEO features
-- Multilingual site support
+I first picked a theme from [Hugo Themes](https://themes.gohugo.io/).
 
-m10c does not offer every feature out of the box, but Hugo’s layout overrides fill the gaps.
+
+**Chosen theme:** [m10c](https://themes.gohugo.io/themes/hugo-theme-m10c/)
+
+
+**Theme selection criteria**
+
+- Supports SEO optimization features
+- Supports multilingual site features
+
+Some features aren't fully supported in m10c, but this can be addressed with Hugo's layout overrides.
+
 
 ### Installing Hugo
 
-**Installation guide:** [Installation Guide](https://gohugo.io/installation/)
 
-**Reference docs:** [Documentation](https://gohugo.io/documentation/)
+**Installation docs:** [Installation Guide](https://gohugo.io/installation/)
 
-Mac example:
+
+**Hugo docs:** [Documentation](https://gohugo.io/documentation/)
+
+
+Mac example
+
 
 ```shell
 # Install Hugo
 brew install hugo
 
-# Verify the version
+# Verify installation
 hugo --version
 ```
 
-## Creating the Hugo site
 
-### Initialize the project
+## Creating a Hugo Site
+
+
+### Initializing the Project
+
 
 ```shell
-# Create the working directory
+# Create a working directory
 mkdir hugo && cd hugo
 
-# Scaffold the Hugo site
+# Create a Hugo site
 hugo new site .
 
-# Inspect the result
+# Check the result
 tree
 # .
 # ├── archetypes
@@ -113,44 +134,54 @@ tree
 # └── themes
 ```
 
-### Install the theme
 
-Install the theme as a Git submodule.
+### Installing the Theme
+
+
+Install the theme using a Git submodule.
+
 
 ```shell
-# Initialize Git if necessary
+# Initialize the Git repository (if needed)
 git init
 
 # Add the theme submodule
 git submodule add https://github.com/vaga/hugo-theme-m10c.git themes/m10c
 
-# Verify
+# Verify installation
 ls -al themes/m10c
 ```
 
-### Copy sample content (optional)
+
+### Copying Sample Content (Optional)
+
 
 ```shell
-# Copy sample content from the theme
+# Copy the theme's sample content
 cp -R themes/m10c/exampleSite/content ./content
 
-# Check the result
+# Check
 ls -al ./content/
 ```
 
-### Configure Hugo
 
-Replace the default `hugo.toml` with the theme’s sample config.
+### Hugo Configuration
+
+
+Replace the default `hugo.toml` config file with the theme's sample configuration.
+
 
 ```shell
-# Remove the default config
+# Delete the existing configuration
 rm hugo.toml
 
-# Copy the sample config
+# Copy the sample configuration
 cp themes/m10c/exampleSite/config.toml ./hugo.toml
 ```
 
-Open `hugo.toml` and adjust the basics.
+
+Open the `hugo.toml` file and edit the basic settings.
+
 
 ```toml
 baseURL = "https://testblog.plzhans.com"
@@ -158,16 +189,21 @@ title = "Test blog"
 theme = "m10c"
 ```
 
-**Note:** Remove `themesDir` and make sure `theme` matches the actual directory name.
 
-### Run the local server
+**Note:** Remove the `themesDir` setting, and make sure `theme` matches the actual directory name.
+
+
+### Running the Local Server
+
 
 ```shell
-# Start the dev server
+# Start the development server
 hugo server -D
 ```
 
-Sample output:
+
+Example output:
+
 
 ```javascript
 Watching for changes in /Users/plzhans/temp/sample/hugo/...
@@ -180,62 +216,81 @@ Web Server is available at http://localhost:57264/
 Press Ctrl+C to stop
 ```
 
-Visit the printed URL in your browser to verify the site.
+
+Open the address shown in your browser to check the result.
+
+> http://localhost:57264
 
 ## Deploying to GitHub Pages
 
-### Create the repository
 
-Start with a new GitHub repository.
+### Creating a Repository
 
-### Choose a deployment strategy
 
-Both Jekyll and Hugo keep the source tree separate from the build output.
+Create a new repository on GitHub.
 
-GitHub Pages builds Jekyll automatically, but Hugo needs a GitHub Actions workflow.
 
-Also consider the visibility of the source repository when you pick a strategy.
+### Choosing a Deployment Strategy
 
-**Free plan**
 
-- Only public repositories can be configured for Pages.
-- If you want the source to stay private, use Method 3 so the source repo remains private while only the deployment repo is public.
+Both Jekyll and Hugo manage source and build output separately.
 
-**Paid plan**
 
-- Pages can stay public even when the repository is private.
+Jekyll is automatically detected and deployed by GitHub Pages, but Hugo must be deployed directly through GitHub Actions.
+
+
+When choosing a deployment strategy, pay attention to whether the source repository is public or private.
+
+
+If you want the source repository to be private, keep the following in mind.
+
+
+Free plan
+
+- Only public repositories can enable Pages.
+- So if you want to keep the source private, use Method 3 to keep the source repository private while making only the deployment repository public.
+
+Paid plan
+
+- Pages can be public even if the repository is private.
 
 ### Method 1: actions/deploy-pages
 
-- Single repository
+- Uses 1 repository
 - Set the GitHub Pages source to GitHub Actions
-- Push to `main` → Hugo build → Upload artifact → Auto deploy
+- Push to the main branch → Hugo build → upload artifact → automatic deployment
 
 ### Method 2: peaceiris/actions-gh-pages
 
-- Single repository
-- Wire GitHub Pages to the `gh-pages` branch
-- Push to `main` → Hugo build → Commit to `gh-pages`
+- Uses 1 repository
+- Connect GitHub Pages to the gh-pages branch
+- Push to the main branch → Hugo build → commit to the gh-pages branch
 
-### Method 3: Separate deployment repository
+### Method 3: Separate Deployment Repository
 
-- Two repositories (source + deployment)
-- Push the `public` build output to the deployment repository
+- Uses 2 repositories (source repository, deployment repository)
+- Push the build output to the deployment repository
 
-### Method 4: Upload the artifacts elsewhere
+### Method 4: Uploading Build Output Elsewhere
 
-- GitHub Pages is optional. Any web server that can host static files works.
-- By default, Hugo writes build artifacts to `/public`.
+- You don't have to use GitHub Pages.
+- You can simply upload the build output to a directory connected to a web server.
+- By default, the output is generated in the `/public` directory.
 
-> This guide uses Method 1 for the deployment workflow.
+> This document uses Method 1 to establish the deployment strategy.
 
-### Configure GitHub Pages
 
-In Repository → Settings → Pages, set **Source** to **GitHub Actions**.
+### Configuring GitHub Pages
 
-## Write the GitHub Actions workflow
 
-Create `.github/workflows/deploy-hugo.yml`.
+Repository → Settings → Pages → set Source to <strong>GitHub Actions</strong>
+
+
+## Writing the GitHub Actions Workflow
+
+
+Create a `.github/workflows/deploy-hugo.yml` file.
+
 
 ```yaml
 name: Deploy Hugo
@@ -293,39 +348,50 @@ jobs:
       - uses: actions/deploy-pages@v4
 ```
 
-## Git deployment
+
+## Deploying with Git
+
 
 ```shell
-# Add the remote
+# Add the remote repository
 git remote add origin git@github.com:plzhans/hugo-sample.git
 
-# Ignore build artifacts
+# Set up .gitignore
 echo "/public/" >> .gitignore
 
-# Commit everything
+# Commit all files
 git add . 
 git commit -m "first commit"
 
-# Create branch and push
+# Create the branch and push
 git branch -M master
 git push -u origin master
 ```
 
-## Verify the deployment
 
-Check the workflow run under the GitHub Actions tab, then confirm the deployed URL under Settings → Pages.
+## Verifying the Deployment
 
-**Example:** [https://plzhans.github.io/hugo-sample/](https://plzhans.github.io/hugo-sample/)
+
+Check the workflow run under the GitHub Actions tab, and check the deployed URL under Settings → Pages.
+
+
+**Example address:** [https://plzhans.github.io/hugo-sample/](https://plzhans.github.io/hugo-sample/)
+
 
 ## Notes
 
-**baseURL**
 
-If the `baseURL` in `hugo.toml` or the `--baseURL` build option is wrong, CSS and asset paths will fail.
+**baseURL configuration**
 
-In this guide, the deployment URL comes from the `HUGO_BASEURL` environment variable inside the GitHub Actions workflow.
 
-## Related articles
+If the `baseURL` in `hugo.toml` or the `--baseURL` option at build time is incorrect, the CSS and image paths will be wrong and errors will occur.
+
+
+In this guide, the deployment address is set via the `HUGO_BASEURL` environment variable in the GitHub Actions workflow.
+
+
+## Related Posts
 
 - Custom domain setup: [Using a Custom Domain with GitHub Pages](../86-github-pages-custom-domain/)
-- (Work in progress) Automating Notion-to-GitHub Pages deployments
+- Multilingual (i18n) support setup: [Setting Up Multilingual Support for a Hugo Site](../93-hugo-multilingual-seo-setup/)
+- (Coming soon) Automating the deployment of Notion-written posts to GitHub Pages

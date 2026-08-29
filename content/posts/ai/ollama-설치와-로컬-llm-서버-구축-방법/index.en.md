@@ -2,8 +2,8 @@
 id: "112"
 translationKey: "112"
 slug: "112-ollama-local-llm-server-setup"
-title: "How to Install Ollama and Build a Local LLM Server"
-description: "Learn how to run a local LLM on a Linux server with Ollama. This guide covers installation, external access configuration, model selection, and HTTP API call examples to set up your own personal AI server."
+title: "How to Install Ollama and Set Up a Local LLM Server"
+description: "This explains how to run a local LLM on a Linux server using Ollama. It covers installation, external access configuration, model selection, and HTTP API call examples to outline the process of building a personal AI server."
 categories:
   - "ai"
 tags:
@@ -11,7 +11,7 @@ tags:
   - "infra"
   - "ollama"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-07-03T10:45:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -19,34 +19,34 @@ images:
 ---
 
 
-![Cover image showing a configuration that installs Ollama to run a local LLM directly on a Linux server](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
+![Representative image showing a configuration for installing Ollama and running a local LLM directly on a Linux server](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
 
 
 ## Overview
 
 
-Ollama is a local AI execution tool that allows you to run LLMs directly on your personal server or PC.
+Ollama is a local AI execution tool that lets you run an LLM directly on your own server or PC.
 
 
-Since you download the models you need and run them in your own environment, you can set up chatbots, document summarization, and code assistance features without sending data to external AI services.
+Since you download the model you need and run it in your own environment, you can build chatbot, document summarization, and code assistance features without sending data to an external AI service.
 
 
 This post covers how to install Ollama on a Linux server and allow external access.
 
 
-It also includes model selection criteria suitable for Oracle Cloud A1 ARM environments and HTTP API call examples.
+It also covers criteria for choosing a model suitable for an Oracle Cloud A1 ARM environment, along with HTTP API call examples.
 
 
-### Things to Keep in Mind
+### Points to note
 
 
-Ollama is primarily used via HTTP API.
+Ollama is mainly used via an HTTP API.
 
 
-If you allow external access, model calls may become possible from outside your network, so access control is necessary.
+If you allow external access, model calls may become possible from outside the same network, so access control is required.
 
 
-When exposing it directly to the internet, you should configure protective measures such as firewalls, VPNs, reverse proxy authentication, and IP whitelisting.
+When exposing it directly to the internet, you should also set up protective measures such as a firewall, VPN, reverse proxy authentication, and allowed IP restrictions.
 
 
 Personally, I recommend tailscale
@@ -63,7 +63,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 ```
 
 
-Verify installation
+Verify execution
 
 
 ```bash
@@ -71,7 +71,7 @@ ollama --version
 ```
 
 
-Check service status
+Check the service
 
 
 ```bash
@@ -79,7 +79,7 @@ systemctl status ollama
 ```
 
 
-Enable auto-start
+Enable auto-start for the service
 
 
 ```bash
@@ -87,7 +87,7 @@ sudo systemctl enable ollama
 ```
 
 
-Check logs
+Check the logs
 
 
 ```bash
@@ -95,13 +95,13 @@ journalctl -u ollama -f
 ```
 
 
-### Allowing External Access
+### Allowing external access
 
 
-Check bind IP
+Check the bind IP
 
-- In the example below, it is bound to 127.0.0.1
-- This means it is only accessible locally
+- Based on the example below, it is bound to 127.0.0.1
+- This means it can only be accessed locally
 
 ```bash
 ss -tlnp | grep 11434
@@ -111,7 +111,7 @@ ss -tlnp | grep 11434
 ```
 
 
-Create configuration directory
+Create the configuration directory
 
 
 ```bash
@@ -119,7 +119,7 @@ sudo mkdir -p /etc/systemd/system/ollama.service.d
 ```
 
 
-Edit environment configuration file
+Edit the environment configuration file
 
 
 ```bash
@@ -145,7 +145,7 @@ sudo systemctl restart ollama
 ```
 
 
-Verify binding again
+Check the binding again
 
 - *:11434 allows connections from all IPs
 
@@ -165,18 +165,18 @@ Based on Oracle Cloud A1 ARM 2OCPU / 12 RAM
 
 | **Purpose<strong>          | </strong>Model<strong>          | </strong>Recommendation<strong> | </strong>Speed** | **Tool Calling<strong> | </strong>Korean<strong> | </strong>Memory<strong> | </strong>Notes**     |
 | --------------- | --------------- | ------- | ------ | ---------------- | ------- | ------- | ---------- |
-| 🥇 Chat + Tool combined | **Qwen3:4B**    | ⭐⭐⭐⭐⭐   | ★★★★☆  | ★★★★★            | ★★★★★   | 4~5GB   | Most recommended      |
+| 🥇 Chat + Tool combined use | **Qwen3:4B**    | ⭐⭐⭐⭐⭐   | ★★★★☆  | ★★★★★            | ★★★★★   | 4~5GB   | Most recommended      |
 | Chat only           | **Gemma3:4B**   | ⭐⭐⭐⭐☆   | ★★★★★  | ★★★☆☆            | ★★★★☆   | 4GB     | Fast response      |
 | Lightweight              | **Llama3.2:3B** | ⭐⭐⭐⭐☆   | ★★★★★  | ★★★☆☆            | ★★★★☆   | 3GB     | Lightest     |
 | High quality (slow)         | **Qwen3:8B**    | ⭐⭐⭐☆☆   | ★★☆☆☆  | ★★★★★            | ★★★★★   | 8~10GB  | Slow on CPU  |
-| Dev/Coding specialized        | **Qwen3-Coder** | ⭐⭐⭐⭐☆   | ★★☆☆☆  | ★★★★★            | ★★★★★   | Large       | Almost coding-only |
+| Development/coding specialized        | **Qwen3-Coder** | ⭐⭐⭐⭐☆   | ★★☆☆☆  | ★★★★★            | ★★★★★   | Large       | Close to coding-only use |
 
-- No GPU, always-free instance
-- **Tried using Qwen3:4B on the above specs,** but it was too slow to use...
+- No GPU, an always-free instance
+- **On the spec above I used Qwen3:4B**, but it was too slow to be usable…
     - Without a GPU, the limitations are clear
-    - Only usable for batch scheduling at best
+    - It's about only usable for batch scheduling
 
-## LLM Model Installation
+## Installing an LLM Model
 
 
 ```bash
@@ -210,7 +210,7 @@ curl -s \
 ```
 
 
-### Running a Prompt
+### Running a prompt
 
 
 ```bash
@@ -225,7 +225,7 @@ curl -s \
         "content":"한국어로 대답해줘. 1+1?"
       }
     ],
-    "think": false,
+    "think": false,    
     "stream":false
   }'
 ```
@@ -234,7 +234,7 @@ curl -s \
 ## Additional Configuration
 
 
-Edit environment settings
+Edit the environment configuration
 
 
 ```bash
@@ -242,13 +242,13 @@ sudo systemctl edit ollama
 ```
 
 
-Add necessary environment variables
+Add the required environment variable
 
 
 ```bash
-# Default keep alive time
-# -1: Unlimited
-# example: 10m, 1h, ...
+# default keep alive time
+# -1: unlimited
+# example: 10m, 1h, ... 
 Environment="OLLAMA_KEEP_ALIVE=-1"
 ```
 
@@ -260,3 +260,9 @@ Apply the service
 sudo systemctl daemon-reload && sudo systemctl restart ollama
 ```
 
+
+## Related Posts
+
+- [Setting up OpenClaw](../95-openclaw-setup/)
+- [How to Install OpenClaw Node Mode and Connect Remote Infrastructure](../107-openclaw-node-mode-remote-infra-setup/)
+- [How to Use Claude Code with an Ollama Local LLM](../113-claude-code-ollama-local-llm/)

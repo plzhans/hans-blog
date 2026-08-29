@@ -3,14 +3,14 @@ id: "107"
 translationKey: "107"
 slug: "107-openclaw-node-mode-remote-infra-setup"
 title: "How to Install OpenClaw Node Mode and Connect Remote Infrastructure"
-description: "This guide explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the workflow from installation, run verification, device approval, to systemd service registration."
+description: "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration."
 categories:
   - "ai"
 tags:
   - "ai"
   - "OpenClaw"
 date: 2026-06-29T00:00:00.000Z
-lastmod: 2026-07-03T10:51:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -18,22 +18,22 @@ images:
 ---
 
 
-![Cover image showing a configuration that connects a remote server to the gateway in OpenClaw node mode to control infrastructure](./assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png)
+![A representative image showing a configuration where OpenClaw node mode connects a remote server to a gateway to control infrastructure](./assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png)
 
 
 ## Overview
 
 
-An OpenClaw node is a runtime environment for directly controlling remote infrastructure connected to a gateway.
+OpenClaw node is a runtime environment for directly controlling remote infrastructure connected to a gateway.
 
 
-By installing a node on a separate server, you can approve and connect that machine from the OpenClaw gateway, then perform remote operations.
+By installing a node on a separate server, the OpenClaw gateway can approve and connect to that machine, and then perform remote operations on it.
 
 
-This post covers the OpenClaw node installation process using npm, running in run mode, gateway approval, and registering a systemd user service.
+This post covers how to install OpenClaw node using npm, run it in run mode, approve it on the gateway, and register it as a systemd user service.
 
 
-This is useful when you need OS-level control while running AI tools like Stable Diffusion or Ollama, or API servers on a separate machine.
+This can be useful when you operate AI tools like Stable Diffusion or Ollama, or API servers, on a separate machine and also need OS-level control.
 
 
 ## Installation
@@ -55,13 +55,13 @@ openclaw --version
 ```
 
 
-## Manual Execution
+## Direct Execution
 
 
-### Running in run Mode
+### Running in run mode
 
 
-We will use install mode later, but first let's verify everything works properly using run mode.
+We'll be using install mode, but let's first check with run mode that it runs correctly in advance.
 
 
 ```bash
@@ -71,7 +71,7 @@ openclaw node run --host wee-home.synology.me --port 18788 --tls --display-name 
 
 Result
 
-- The device is in a pending state and needs to be approved from the gateway.
+- It's in a pending state; it needs to be approved on the gateway.
 
 ```bash
 OpenClaw 2026.6.11 (e085fa1) — Your personal assistant, minus the passive-aggressive calendar reminders.
@@ -84,13 +84,13 @@ Warning: Detected unsettled top-level await at file:///home/ubuntu/.local/share/
 ```
 
 
-### Gateway Approval
+### Approving on the gateway
 
 
-This step must be performed on the gateway, not on the current machine.
+This step must be done on the gateway, not on the current machine.
 
 
-Check the device list
+Check the list
 
 
 ```bash
@@ -108,7 +108,7 @@ Pending (1)
 ```
 
 
-Approve the device
+Approve it
 
 
 ```bash
@@ -121,7 +121,7 @@ Approved a4d8a6a6a62ec1e14a2a1622df746710aea0405631e1ebd69e6ef33e768748e2 (525b5
 ```
 
 
-### Verify Machine Node Connection
+### Verifying the machine node connection
 
 
 Run in run mode
@@ -135,10 +135,10 @@ openclaw node run --host wee-home.synology.me --port 18788 --tls --display-name 
 ## Service Registration
 
 
-If you set the OPENCLAW_GATEWAY_TOKEN environment variable before running install, the value will be written to the ~/.openclaw/node.systemd.env file.
+If you set the OPENCLAW_GATEWAY_TOKEN environment variable before running install, its value is recorded in the ~/.openclaw/node.systemd.env file.
 
 
-If you are working in the same shell after running in run mode, the variable is already set. If not, set it again.
+If you're already working in the same shell after going through run mode, this is already set; if not, set it again.
 
 
 ```bash
@@ -150,17 +150,17 @@ openclaw node install --host {host} --port {port} --tls --display-name "node-xxx
 ```
 
 
-Verify the environment variables after execution
+Check the environment variable after running it
 
 
 ```bash
-# Check the environment file path used by the service
+# Check the location of the environment file used by the service
 cat ~/.config/systemd/user/openclaw-node.service | grep EnvironmentFile
 EnvironmentFile=-/home/ubuntu/.openclaw/node.systemd.env
 ```
 
 
-### Start the Service
+### Starting the service
 
 
 Install and start the service
@@ -171,9 +171,16 @@ systemctl --user start openclaw-node
 ```
 
 
-### Check the Service
+### Checking the service
 
 
 ```bash
 openclaw nodes status
 ```
+
+
+## Related Posts
+
+- [Building OpenClaw](../95-openclaw-setup/)
+- [How to Install Ollama and Build a Local LLM Server](../112-ollama-local-llm-server-setup/)
+- [How to Use Claude Code with Ollama Local LLM](../113-claude-code-ollama-local-llm/)

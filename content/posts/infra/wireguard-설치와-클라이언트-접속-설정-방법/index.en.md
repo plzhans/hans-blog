@@ -2,8 +2,8 @@
 id: "116"
 translationKey: "116"
 slug: "116-wireguard-install-client-setup"
-title: "How to Install WireGuard and Set Up Client Access"
-description: "This article explains how to install WireGuard VPN on a Linux server and configure key generation, firewall access, and service registration. It also covers Mac client conf configuration and GUI connection verification, so you can build a secure remote access environment."
+title: "How to Install WireGuard and Set Up Client Connections"
+description: "Explains how to install WireGuard VPN on a Linux server, covering key generation, firewall opening, and service registration. Includes Mac client conf setup and GUI connection verification steps to help you build a secure remote access environment."
 categories:
   - "infra"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -20,19 +20,19 @@ images:
 ---
 
 
-![A representative image showing WireGuard VPN being built on a Linux server and a client connecting to it](./assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png)
+![A representative image showing the setup of building a WireGuard VPN on a Linux server and connecting a client](./assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png)
 
 
 ## Overview
 
 
-WireGuard is a tool that lets you set up a peer-to-peer VPN with a concise configuration and lightweight performance.
+WireGuard is a tool that lets you configure a peer-to-peer VPN with simple setup and lightweight performance.
 
 
-This article walks through the entire flow of installing WireGuard on a Linux server, setting up the server key, firewall, and service, and then connecting from a Mac client.
+This article covers the entire flow of installing WireGuard on a Linux server, configuring the server key, firewall, and service, and then connecting from a Mac client.
 
 
-It covers, in order, server key generation, wg0 configuration, opening UDP port 51820, registering the client Peer, and verifying the connection, so you can follow the same steps to set it up.
+It goes through server key generation, wg0 configuration, opening UDP port 51820, client Peer registration, and connection verification in order, so you can follow the same steps to set it up.
 
 
 ## Server Installation
@@ -49,7 +49,7 @@ apt install wireguard
 ```
 
 
-Verify the installation
+Verify installation
 
 
 ```bash
@@ -57,7 +57,7 @@ wg --version
 ```
 
 
-### Generating the Server Key
+### Generate Server Key
 
 
 ```bash
@@ -69,10 +69,10 @@ chmod 600 /etc/wireguard/server.key
 ```
 
 
-### Environment Configuration
+### Configuration
 
 
-Create the config file in advance
+Create the configuration file in advance
 
 
 ```bash
@@ -81,11 +81,11 @@ chmod 600 /etc/wireguard/wg0.conf
 ```
 
 
-Configure the interface in the config file
+Set up the interface in the configuration file
 
 - Register the server key
-- If SaveConfig is enabled, editing this file and then stopping the server will overwrite the server state
-- If you use SaveConfig mode, you need to control it via `wg set` and similar commands
+- If SaveConfig is enabled, editing this file and then stopping the server will cause the server state to overwrite it
+- If you use SaveConfig mode, you should control it via `wg set` etc.
 
 ```bash
 # /etc/wireguard/wg0.conf
@@ -100,7 +100,7 @@ SaveConfig = false
 ### Inbound Configuration (Firewall Setup)
 
 
-Even though this is peer-to-peer, the UDP server port must be open initially for the handshake.
+Even though it's peer-to-peer, the UDP server port must be open for the initial handshake.
 
 
 Additionally, if you use iptables, you also need to open the port.
@@ -118,7 +118,7 @@ iptables -I INPUT 1 -p udp --dport 51820 -j ACCEPT
 ```
 
 
-## Running the Server
+## Start the Server
 
 
 Register and start the service
@@ -130,7 +130,7 @@ systemctl start wg-quick@wg0
 ```
 
 
-Check with wg
+Check wg
 
 
 ```bash
@@ -160,13 +160,13 @@ ip addr show wg0
 ## Client Installation
 
 
-### Generating the User Client Key (local client work)
+### Generate the User Client Key (local client work)
 
-- You can generate the user's private key on the server, but it must not be left there after generation
+- The user's private key can be generated on the server, but it must not be left on the server afterward
 - The server only needs to know the public key text
-- After moving the generated private key to the client, delete it
+- Delete the generated private key after moving it to the client
 
-If you're installing locally on a Mac and wg is not installed, you need to install it.
+If installing locally on a Mac, you'll need to install wg if it isn't already present.
 
 
 ```bash
@@ -174,15 +174,15 @@ brew install wireguard-tools
 ```
 
 
-### Generating the Key
+### Generate Key
 
 
 ```bash
-# Create and move into the directory
+# Create the directory and move into it
 mkdir -p ~/.wireguard
 cd ~/.wireguard
 
-# Generate the key: wg genkey | tee {KeyName}.key | wg pubkey > {KeyName}.pub
+# Generate key: wg genkey | tee {KeyName}.key | wg pubkey > {KeyName}.pub
 wg genkey | tee user.key | wg pubkey > user.pub
 ```
 
@@ -192,8 +192,8 @@ wg genkey | tee user.key | wg pubkey > user.pub
 
 Register the peer information in the wg0.conf file
 
-- You can configure multiple Peers
-- AllowedIPs forwards requests sent to it to the corresponding Peer
+- Multiple Peers can be configured
+- Requests sent to AllowedIPs are forwarded to that Peer
 
 ```bash
 # /etc/wireguard/wg0.conf append
@@ -213,16 +213,16 @@ systemctl restart wg-quick@wg0
 ```
 
 
-## Client Connecting to the Server
+## Client-Server Connection
 
 
-Understanding this as characteristic of peer-to-peer communication, you can just set up the reverse of the server configuration.
+Understand this as a characteristic of peer-to-peer communication, and simply reverse the server configuration.
 
 
-### WireGuard Client Configuration
+### Configuring the WireGuard Client
 
 
-Verify the installation
+Verify installation
 
 
 ```bash
@@ -233,7 +233,7 @@ wg-quick --version
 
 ### User Client Connection (local client work)
 
-- Endpoint: External public IP
+- Endpoint: External public ip
 - PersistentKeepalive: Keep alive time
 
 ```bash
@@ -251,7 +251,7 @@ PersistentKeepalive = 25
 ```
 
 
-### Running the Client
+### Run the Client
 
 
 ```bash
@@ -262,9 +262,9 @@ sudo wg-quick down ~/.wireguard/xx-server.conf
 ```
 
 
-### Checking the Client Status
+### Check Client Status
 
-- If you see this line, the connection is finally established: latest handshake: 5 seconds ago
+- If this line appears, the connection is finally established: latest handshake: 5 seconds ago
 
 ```bash
 wg
@@ -284,34 +284,34 @@ wg
 ```
 
 
-### Using a Client GUI Tool
+### When Using a Client GUI Tool
 
 
-Import the client conf file you created earlier.
+Import the client conf file you created.
 
 
 import
 
 
-![A screen showing the client conf file being imported into the WireGuard GUI client](./assets/2_39922a0f-7e83-80c1-ad8d-df9d68816cd4.png)
+![Screen showing the import of the client conf file in the WireGuard GUI client](./assets/2_39922a0f-7e83-80c1-ad8d-df9d68816cd4.png)
 
 
 Verify the registration
 
 
-![A screen showing that the imported tunnel is registered in the GUI client list](./assets/3_39922a0f-7e83-804b-a53f-e609694788ff.png)
+![Screen showing the imported tunnel registered in the GUI client's list](./assets/3_39922a0f-7e83-804b-a53f-e609694788ff.png)
 
 
 Verify the connection
 
 
-![A screen showing that the VPN tunnel is connected in the GUI client](./assets/4_39922a0f-7e83-8053-94f8-de82008e95e9.png)
+![Screen showing the VPN tunnel connected in the GUI client](./assets/4_39922a0f-7e83-8053-94f8-de82008e95e9.png)
 
 
-## Verifying Access to the Private Server
+## Verify Access to the Private Server
 
 
-### Checking VPN IP SSH Access
+### Verify SSH Access via VPN IP
 
 
 ```bash
@@ -323,13 +323,13 @@ Connection to 10.200.0.1 port 22 [tcp/ssh] succeeded!
 ## IP Routing
 
 
-Now you need to configure access from the local client, via the VPN server, to the internal network (using MASQUERADE).
+Now you need to set up access to the internal network from the local client via the VPN server (using MASQUERADE).
 
 
-The following assumes:
+Assume the following:
 
-- The server's private network: 10.200.0.0/24
-- The server's network interface: enp0s6
+- Server's private network: 10.200.0.0/24
+- Server's network interface: enp0s6
 
 ```bash
 # /etc/wireguard/wg0.conf append
@@ -348,16 +348,22 @@ PostDown = iptables -D FORWARD -o %i -j ACCEPT
 ```
 
 
-## Wrap-up
+## Conclusion
 
 
-Once you've completed everything from server installation to client connection verification, you can access internal services such as SSH via the VPN IP.
+Once you've finished everything from server installation to client connection verification, you can access internal services such as SSH via the VPN IP.
 
 
 When adding a Peer, you only need to register the public key and AllowedIPs on the server, and keep the private key only on the client.
 
 
-With a GUI client, simply importing the generated conf file allows you to connect the same way.
+If you use a GUI client, you can achieve the same connection simply by importing the conf file you created.
 
 
 The SaveConfig option and the firewall's UDP port are common sources of mistakes during operation, so it's a good idea to double-check them before configuring.
+
+
+## Related Posts
+
+- [Installing Tailscale on Linux - Building a Secure Remote VPN](../111-tailscale-linux-install-secure-remote-vpn/)
+- [Keeping the OpenVPN Client IP with wg-easy WireGuard MASQUERADE Exclusion Settings](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)

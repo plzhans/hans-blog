@@ -2,7 +2,7 @@
   "object": "page",
   "id": "32d22a0f-7e83-80b5-a493-dab4fc5022f0",
   "created_time": "2026-03-24T06:22:00.000Z",
-  "last_edited_time": "2026-08-29T11:02:00.000Z",
+  "last_edited_time": "2026-08-29T16:09:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T11:02:00.000Z"
+      "last_edited_time": "2026-08-29T16:09:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T19:51:00.000+09:00",
+        "start": "2026-08-30T01:07:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T11:02:38.450Z)",
+            "content": "✅ 발행 완료 (2026-08-29T16:09:46.097Z)",
             "link": null
           },
           "annotations": {
@@ -112,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T11:02:38.450Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-29T16:09:46.097Z)",
           "href": null
         }
       ]
@@ -124,7 +124,7 @@
         {
           "type": "text",
           "text": {
-            "content": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+            "content": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
             "link": null
           },
           "annotations": {
@@ -135,7 +135,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+          "plain_text": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
           "href": null
         }
       ]
@@ -245,5 +245,5 @@
   "url": "https://app.notion.com/p/Open-API-200-ncpClientId-ncpKeyId-32d22a0f7e8380b5a493dab4fc5022f0",
   "public_url": null,
   "archived": false,
-  "request_id": "3a753a5b-93f6-460d-b7e0-6037d0d2ae6b"
+  "request_id": "1f93a32a-ec0f-41b3-897b-9ca4704b09ba"
 }

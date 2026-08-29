@@ -11,7 +11,7 @@ tags:
   - "github"
   - "gpg"
 date: 2026-02-16T17:42:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -53,7 +53,7 @@ GitHub 커밋/태그 서명 때문에 이미 GPG를 쓰는 경우가 많습니�
 동일한 키로 파일 암호화까지 이어갈 수 있다는 점이 장점입니다.
 
 
-설치/키 생성은 [Git에서 GPG로 커밋 서명하기](https://app.notion.com/p/30922a0f7e838081983ad8ba3c21ba28) 문서를 참고하세요.
+설치/키 생성은 [Git에서 GPG로 커밋 서명하기](../88-github-gpg-commit-signing/) 문서를 참고하세요.
 
 
 파일 암호화만 목적이라면 age가 더 단순하게 느껴질 수도 있습니다.

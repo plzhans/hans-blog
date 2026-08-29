@@ -2,8 +2,8 @@
 id: "112"
 translationKey: "112"
 slug: "112-ollama-local-llm-server-setup"
-title: "OllamaのインストールとローカルLLMサーバー構築方法"
-description: "Ollamaを使ってLinuxサーバーでローカルLLMを実行する方法を説明します。インストール、外部アクセス設定、モデル選択、HTTP API呼び出し例を通じて、個人AIサーバー構築の流れをまとめます。"
+title: "Ollamaのインストールとローカルllmサーバー構築方法"
+description: "OllamaでLinuxサーバー上にローカルLLMを実行する方法を説明します。インストール、外部接続設定、モデル選定、HTTP API呼び出し例を通じて、個人用AIサーバー構築の流れをまとめます。"
 categories:
   - "ai"
 tags:
@@ -11,7 +11,7 @@ tags:
   - "infra"
   - "ollama"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-07-03T10:45:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -19,7 +19,7 @@ images:
 ---
 
 
-![Ollamaをインストールし、LinuxサーバーでローカルLLMを直接運用する構成を表したカバー画像](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
+![OllamaをインストールしてLinuxサーバーでローカルLLMを直接運用する構成を示す代表画像](./assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png)
 
 
 ## 概要
@@ -28,13 +28,13 @@ images:
 Ollamaは、個人サーバーやPCでLLMを直接実行できるローカルAI実行ツールです。
 
 
-必要なモデルをダウンロードして自分の環境で実行するため、外部AIサービスにデータを送信せずにチャットボット、文書要約、コード補助機能を構成できます。
+必要なモデルをダウンロードして自分の環境で実行するため、外部のAIサービスにデータを送信することなく、チャットボット、文書要約、コード補助機能を構成できます。
 
 
-この記事では、LinuxサーバーにOllamaをインストールし、外部アクセスを許可する方法をまとめます。
+この記事では、LinuxサーバーにOllamaをインストールし、外部接続を許可する方法をまとめます。
 
 
-Oracle Cloud A1 ARM環境で使用できるモデルの選択基準とHTTP API呼び出し例も合わせて取り上げます。
+Oracle Cloud A1 ARM環境で使えそうなモデル選定の基準と、HTTP API呼び出し例についても併せて扱います。
 
 
 ### 注意点
@@ -43,10 +43,10 @@ Oracle Cloud A1 ARM環境で使用できるモデルの選択基準とHTTP API�
 Ollamaは主にHTTP API方式で使用されます。
 
 
-外部アクセスを許可すると、同じネットワーク外からもモデル呼び出しが可能になるため、アクセス制御が必要です。
+外部接続を許可すると、同じネットワークの外からもモデル呼び出しが可能になる場合があるため、アクセス制御が必要です。
 
 
-インターネットに直接公開する場合は、ファイアウォール、VPN、リバースプロキシ認証、許可IP制限などの保護手段を合わせて構成する必要があります。
+インターネットに直接公開する場合は、ファイアウォール、VPN、リバースプロキシ認証、許可IP制限といった保護策も併せて構成する必要があります。
 
 
 個人的にはtailscaleをおすすめします
@@ -95,13 +95,13 @@ journalctl -u ollama -f
 ```
 
 
-### 外部アクセスの許可
+### 外部接続の許可
 
 
-bind IPの確認
+bind ipの確認
 
-- 以下の例では127.0.0.1にバインドされています
-- ローカルからのみアクセス可能という意味です
+- 下記の例では127.0.0.1にバインドされています
+- ローカルからのみアクセスできるという意味です
 
 ```bash
 ss -tlnp | grep 11434
@@ -136,7 +136,7 @@ Environment="OLLAMA_HOST=0.0.0.0:11434"
 ```
 
 
-サービスの適用
+サービスへの適用
 
 
 ```bash
@@ -145,9 +145,9 @@ sudo systemctl restart ollama
 ```
 
 
-バインディングの再確認
+バインドの再確認
 
-- *:11434で全てのIPからの接続を許可
+- *:11434により、すべてのIPからの接続が許可されます
 
 ```bash
 ubuntu@a1-free:~$ ss -tlnp | grep 11434
@@ -157,26 +157,26 @@ ubuntu@a1-free:~$ ss -tlnp | grep 11434
 ```
 
 
-## LLM Modelのおすすめ
+## LLMモデルのおすすめ
 
 
 Oracle Cloud A1 ARM 2OCPU / 12 RAM基準
 
 
-| **用途<strong>          | </strong>モデル<strong>          | </strong>おすすめ度<strong> | </strong>速度** | **Tool Calling<strong> | </strong>韓国語<strong> | </strong>メモリ<strong> | </strong>備考**     |
+| **用途<strong>          | </strong>モデル<strong>          | </strong>推奨度<strong> | </strong>速度** | **Tool Calling<strong> | </strong>韓国語<strong> | </strong>メモリ<strong> | </strong>備考**     |
 | --------------- | --------------- | ------- | ------ | ---------------- | ------- | ------- | ---------- |
-| 🥇 チャット + Tool兼用 | **Qwen3:4B**    | ⭐⭐⭐⭐⭐   | ★★★★☆  | ★★★★★            | ★★★★★   | 4~5GB   | 最もおすすめ      |
-| チャット専用           | **Gemma3:4B**   | ⭐⭐⭐⭐☆   | ★★★★★  | ★★★☆☆            | ★★★★☆   | 4GB     | 高速レスポンス      |
+| 🥇 チャット+Tool兼用 | **Qwen3:4B**    | ⭐⭐⭐⭐⭐   | ★★★★☆  | ★★★★★            | ★★★★★   | 4~5GB   | 最もおすすめ      |
+| チャット専用           | **Gemma3:4B**   | ⭐⭐⭐⭐☆   | ★★★★★  | ★★★☆☆            | ★★★★☆   | 4GB     | 高速応答      |
 | 軽量              | **Llama3.2:3B** | ⭐⭐⭐⭐☆   | ★★★★★  | ★★★☆☆            | ★★★★☆   | 3GB     | 最も軽量     |
-| 高品質（低速）         | **Qwen3:8B**    | ⭐⭐⭐☆☆   | ★★☆☆☆  | ★★★★★            | ★★★★★   | 8~10GB  | CPUでは低速  |
+| 高品質（遅い）         | **Qwen3:8B**    | ⭐⭐⭐☆☆   | ★★☆☆☆  | ★★★★★            | ★★★★★   | 8~10GB  | CPUでは遅い  |
 | 開発/コーディング特化        | **Qwen3-Coder** | ⭐⭐⭐⭐☆   | ★★☆☆☆  | ★★★★★            | ★★★★★   | 大       | コーディング専用に近い |
 
 - GPUなし、常時無料インスタンス
-- **上記スペックではQwen3:4Bを使用しましたが、**遅すぎて使えませんでした...
-    - GPUがなければ限界は明確です
-    - バッチスケジュールでのみ使用すべきレベルです
+- **上記スペックでQwen3:4Bを使用しましたが**、遅すぎて使い物になりませんでした…
+    - GPUがないと限界が明確です
+    - バッチスケジュールでしか使えないレベルです
 
-## LLM Modelのインストール
+## LLMモデルのインストール
 
 
 ```bash
@@ -225,7 +225,7 @@ curl -s \
         "content":"한국어로 대답해줘. 1+1?"
       }
     ],
-    "think": false,
+    "think": false,    
     "stream":false
   }'
 ```
@@ -248,15 +248,21 @@ sudo systemctl edit ollama
 ```bash
 # デフォルトのkeep alive時間
 # -1: 無制限
-# example: 10m, 1h, ...
+# example: 10m, 1h, ... 
 Environment="OLLAMA_KEEP_ALIVE=-1"
 ```
 
 
-サービスの適用
+サービスへの適用
 
 
 ```bash
 sudo systemctl daemon-reload && sudo systemctl restart ollama
 ```
 
+
+## 関連記事
+
+- [オープンクロー(OpenClaw)構築](../95-openclaw-setup/)
+- [OpenClawノードモードのインストールとリモートインフラ接続方法](../107-openclaw-node-mode-remote-infra-setup/)
+- [Claude CodeをOllamaローカルLLMとして使用する方法](../113-claude-code-ollama-local-llm/)

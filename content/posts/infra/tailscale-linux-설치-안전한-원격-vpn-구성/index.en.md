@@ -2,8 +2,8 @@
 id: "111"
 translationKey: "111"
 slug: "111-tailscale-linux-install-secure-remote-vpn"
-title: "Tailscale Linux Installation - Setting Up a Secure Remote VPN"
-description: "This guide explains how to install Tailscale on a Linux server and set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel modes."
+title: "Installing Tailscale on Linux - Secure Remote VPN Setup"
+description: "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel."
 categories:
   - "infra"
 tags:
@@ -11,7 +11,7 @@ tags:
   - "tailscale"
   - "vpn"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-07-03T10:39:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -19,31 +19,31 @@ images:
 ---
 
 
-![Cover image showing a configuration where Tailscale connects multiple devices into one private network for secure remote access](./assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png)
+![Featured image showing multiple devices connected securely for remote access through a single private network using Tailscale](./assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png)
 
 
 ## Overview
 
 
-Tailscale is a VPN service that connects multiple devices as if they were on a single private network. Even if your Linux servers, NAS, laptops, and smartphones are in different locations, they can be connected as though they are on the same internal network.
+Tailscale is a VPN service that ties multiple devices together as if they were on a single private network. Even when a Linux server, NAS, laptop, and smartphone are in different locations, they can be connected as though they were on the same internal network.
 
 
-Typical server access requires opening inbound ports from the outside to the server. This approach requires router port forwarding, firewall rules, and public IP configuration, and misconfiguration can directly expose the server to the internet.
+A typical server connection requires opening an inbound port from the outside into the server. This approach requires router port forwarding, firewall permissions, and a public IP, and if misconfigured it can expose the server directly to the internet.
 
 
-Tailscale works the opposite way by using outbound connections from devices. This allows it to work in most environments without opening any ports. However, in corporate networks or environments where security appliances heavily restrict outbound traffic, it may be affected by outbound firewall policies.
+Tailscale instead uses outbound connections that go from the device to the outside. This means it can be used in most environments without opening any additional ports. However, in a corporate network or environment with security equipment that strongly restricts outbound traffic, it may still be affected by the firewall's outbound policy.
 
 
-The way it works is simple. Install the Tailscale client on each device and register it to the same account's tailnet. Registered devices receive a unique tailnet IP and communicate directly via P2P whenever possible. In NAT or firewall environments where direct connections are difficult, communication is relayed through Tailscale's relay server called DERP.
+The way it works is simple. You install the Tailscale client on each device and register it to the tailnet of the same account. A registered device receives a unique tailnet IP, and devices communicate directly with each other via P2P whenever possible. In NAT or firewall environments where a direct connection is difficult, communication is relayed through DERP, Tailscale's relay server.
 
 
-Tailscale also provides device name-based domains.
+Tailscale also provides device-name-based domains.
 
 
-Similar to an nginx reverse proxy, you can connect to internal services using addresses in the format `https://{device}.{tailnet}.ts.net`.
+Like an nginx reverse proxy, you can connect to an internal service using an address in the form `https://{device}.{tailnet}.ts.net`.
 
 
-Serve mode provides a proxy accessible only within the tailnet, while Funnel mode is used to expose services to the internet.
+Serve mode provides a proxy that is only accessible within the tailnet, and Funnel mode is used when you need to expose a service to the internet.
 
 
 ## Installation
@@ -60,7 +60,7 @@ curl -fsSL https://tailscale.com/install.sh | sudo sh
 ### Starting the Service
 
 
-Enable and start immediately with --now
+Enable it with `enable` and start it immediately with `--now`
 
 
 ```bash
@@ -71,13 +71,13 @@ sudo systemctl enable --now tailscaled
 ## Running
 
 
-### Device Registration
+### Registering the Device
 
 
-Connect the current machine to the specified account's Tailscale network
+Connect the current machine to the Tailscale network of the specified account
 
 
-ex) https://login.tailscale.com/a/xxxxxxxxxxxxx
+e.g.) https://login.tailscale.com/a/xxxxxxxxxxxxx
 
 
 ```bash
@@ -85,7 +85,7 @@ sudo tailscale up
 
 # Result
 # To authenticate, visit:
-#
+# 
 #         https://login.tailscale.com/a/xxxxxxxxxxxxx
 ```
 
@@ -96,25 +96,25 @@ sudo tailscale up
 Log in to your Tailscale account
 
 
-![Screen logging into a Tailscale account by visiting the authentication URL printed in the terminal](./assets/2_39122a0f-7e83-80f3-bd3f-ff3b63b6482c.png)
+![Screen showing login to a Tailscale account by visiting the authentication URL printed in the terminal](./assets/2_39122a0f-7e83-80f3-bd3f-ff3b63b6482c.png)
 
 
-### Device Connection
+### Connecting the Device
 
 
 Click the Connect button to access the service
 
 
-![Screen clicking the Connect button to join the server to the tailnet](./assets/3_39122a0f-7e83-8005-91b2-d1f1a9a5967e.png)
+![Screen showing the server being connected to the tailnet by clicking the Connect button](./assets/3_39122a0f-7e83-8005-91b2-d1f1a9a5967e.png)
 
 
-![Screen showing the device successfully registered on the tailnet](./assets/4_39122a0f-7e83-80da-a100-ceea15213754.png)
+![Screen showing that the device has been successfully registered to the tailnet](./assets/4_39122a0f-7e83-80da-a100-ceea15213754.png)
 
 
 ### Device Registration Complete
 
 
-The device is registered, but the --accept-routes option is set to false, meaning routing between peers has not been established.
+The device has been registered, but the `--accept-routes` option is false, which means routing between peers has not been set up
 
 
 ```bash
@@ -131,10 +131,10 @@ Check status
 ubuntu@a1-free:~$ tailscale status
 
 # result
-# xx.xx.184.107  a1-free           plzhans@        linux    -
-# xx.xx.46.27    iphone-14-pro     plzhans@        iOS      -
-# xx.xx.192.32   plzhanss-macbook  plzhans@        macOS    -
-# xx.xx.23.68    wee-home          tagged-devices  linux    -
+# xx.xx.184.107  a1-free           plzhans@        linux    -                            
+# xx.xx.46.27    iphone-14-pro     plzhans@        iOS      -                                  
+# xx.xx.192.32   plzhanss-macbook  plzhans@        macOS    -                           
+# xx.xx.23.68    wee-home          tagged-devices  linux    -                            
 
 # Health check:
 #     - Some peers are advertising routes but --accept-routes is false
@@ -144,22 +144,22 @@ ubuntu@a1-free:~$ tailscale status
 ## VPN Communication
 
 
-There are roughly 3 methods available.
+There are broadly 3 methods.
 
-1. Use tailnet internal IP
-2. Communicate between VPN device nodes through routing via accept-routes
-3. Communicate between VPN device nodes using Serve mode
-4. Allow anyone on the internet to connect using Funnel mode (HTTP / HTTPS only)
+1. Using the internal tailnet IP
+2. Communicating between VPN device nodes via routing with accept-routes
+3. Communicating between VPN device nodes using serve mode
+4. Allowing anyone on the internet to connect using funnel mode (however, only HTTP / HTTPS)
 
-## VPN: tailnet IP Method
-
-
-Once connected to the tailnet, a private IP dedicated to the tailnet is automatically assigned.
+## VPN: Tailnet IP Method
 
 
-This is automatically set up during the default installation.
+When connected to the tailnet, a tailnet-only private IP is assigned by default
 
-- Since it uses tun mode, it is assumed that a tailscale0 virtual router has been created internally.
+
+It is installed automatically during the basic installation
+
+- Assumes a tailscale0 virtual router has been created internally, since tune mode is used
 
 ![Screen confirming that a tailnet-only private IP and the tailscale0 virtual interface have been created](./assets/5_39222a0f-7e83-8039-8753-d1d39530060e.png)
 
@@ -167,31 +167,31 @@ This is automatically set up during the default installation.
 ## VPN: accept-routes Method
 
 
-Since internal communication does not go through Tailscale infrastructure, there are no traffic limitations.
+Since it communicates internally without using Tailscale's infrastructure, there is no restriction on traffic
 
 
 ### Tailscale Configuration
 
 1. Go to the console: [https://login.tailscale.com/admin](https://login.tailscale.com/admin)
-2. Check Subnet
+2. Check the subnet
 
-![Screen checking the subnet routes advertised by the device in the Tailscale admin console](./assets/6_39122a0f-7e83-8041-bf0e-e29819c42c91.png)
+![Screen showing the subnet routes advertised by a device in the Tailscale admin console](./assets/6_39122a0f-7e83-8041-bf0e-e29819c42c91.png)
 
 
 ### Machine Configuration
 
-1. Accept Tailscale peer routing
+1. Accept tailscale peer routing
 
-From now on, routing information will be fetched and synchronized from the Tailscale admin.
+From now on, routing information is retrieved from the Tailscale admin and synced
 
 
 ```bash
 tailscale set --accept-routes=true
 ```
 
-1. Check routing
+1. Check the routing
 
-If the NAS private IP is 192.168.35.x:
+If the NAS's private IP is 192.168.35.x
 
 
 ```bash
@@ -203,10 +203,10 @@ ip route show table all | grep 192.168.35
 
 1. Verify connection to other devices
 
-Since Tailscale uses a P2P approach, connections are affected by outbound policies rather than inbound policies between devices.
+Since tailscale uses a P2P method, it is affected by the outbound policy between devices, not the inbound policy.
 
 
-Typically, hole punching is attempted first, and if it fails, it falls back to relay.
+Hole punching is usually attempted first, and if it fails, it falls back to relay.
 
 
 ```bash
@@ -223,7 +223,7 @@ nc -vz 192.168.35.3 1022
 Accessible via {device-name}.tailnet.ts.net
 
 
-Traffic is limited because it uses Tailscale servers.
+Since it uses Tailscale's servers, there is a traffic limit
 
 
 Reference: [https://tailscale.com/docs/reference/tailscale-cli/serve](https://tailscale.com/docs/reference/tailscale-cli/serve)
@@ -247,7 +247,7 @@ sudo tailscale serve --tcp=1111 tcp://127.0.0.1:2222
 Accessible via https://{device-name}.tailnet.ts.net
 
 
-Traffic is limited because it uses Tailscale servers.
+Since it uses Tailscale's servers, there is a traffic limit
 
 
 Reference: [https://tailscale.com/docs/reference/tailscale-cli/funnel](https://tailscale.com/docs/reference/tailscale-cli/funnel?utm_source=chatgpt.com)
@@ -267,17 +267,17 @@ sudo tailscale funnel 3000
 ## Notes
 
 
-### When Using the Built-in Tailscale Package on Synology DSM
+### When Using the Tailscale Package Built into Synology DSM
 
 
-As of the time of writing (2006.07.03), the built-in tailnet package does not activate the tun server.
+As of the writing date (2006.07.03), the built-in tailnet package does not enable the tune server
 
 
-Solution: Force enable
+Solution: force it on
 
 
 ```bash
-# Enable tun
+# Enable tune
 sudo /var/packages/Tailscale/target/bin/tailscale configure-host
 
 # Restart
@@ -285,14 +285,20 @@ sudo synosystemctl restart pkgctl-Tailscale.service
 ```
 
 
-Since it may be lost after a restart or update, register it in the DSM Task Scheduler.
+Since it may be reset after a restart or update, register it in the DSM Task Scheduler
 
-- Control Panel -> Task Scheduler -> Create -> Triggered Task -> User-Defined Script
+- Control Panel → Task Scheduler → Create → Triggered Task → User-defined script
     - User: root
     - Event: Boot-up
-    - User-Defined Script
+    - User-defined script
 
         ```bash
         /var/packages/Tailscale/target/bin/tailscale configure-host
         synosystemctl restart pkgctl-Tailscale.service
         ```
+
+
+## Related Posts
+
+- [How to Install WireGuard and Configure Client Access](../116-wireguard-install-client-setup/)
+- [Keeping the OpenVPN Client IP with wg-easy WireGuard MASQUERADE Exception Settings](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)

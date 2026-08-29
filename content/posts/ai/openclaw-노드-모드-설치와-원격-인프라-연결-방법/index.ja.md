@@ -2,15 +2,15 @@
 id: "107"
 translationKey: "107"
 slug: "107-openclaw-node-mode-remote-infra-setup"
-title: "OpenClaw ノードモードのインストールとリモートインフラ接続方法"
-description: "OpenClaw ノードモードでリモートサーバーをゲートウェイに接続する方法を説明します。インストール、実行確認、デバイス承認、systemd サービス登録までのインフラ制御フローをまとめます。"
+title: "OpenClawノードモードのインストールとリモートインフラ接続方法"
+description: "OpenClawノードモードでリモートサーバーをゲートウェイに接続する方法を説明します。インストール、実行確認、デバイス承認、systemdサービス登録までのインフラ制御フローをまとめます。"
 categories:
   - "ai"
 tags:
   - "ai"
   - "OpenClaw"
 date: 2026-06-29T00:00:00.000Z
-lastmod: 2026-07-03T10:51:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -18,22 +18,22 @@ images:
 ---
 
 
-![OpenClawのノードモードでリモートサーバーをゲートウェイに接続し、インフラを制御する構成を表したカバー画像](./assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png)
+![OpenClawノードモードでリモートサーバーをゲートウェイに接続し、インフラを制御する構成を示す代表画像](./assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png)
 
 
 ## 概要
 
 
-OpenClaw ノードは、ゲートウェイに接続されたリモートインフラを直接制御するための実行環境です。
+OpenClawノードは、ゲートウェイに接続されたリモートインフラを直接制御するための実行環境です。
 
 
-別のサーバーにノードをインストールすると、OpenClaw ゲートウェイからそのマシンを承認・接続し、リモート操作を実行できます。
+別のサーバーにノードをインストールすると、OpenClawゲートウェイでそのマシンを承認・接続した後、リモート作業を行うことができます。
 
 
-この記事では、npm を使った OpenClaw ノードのインストール方法、run モードでの実行、ゲートウェイでの承認、systemd ユーザーサービスの登録フローについてまとめます。
+この記事では、npmを利用したOpenClawノードのインストール方法と、runモードでの実行、ゲートウェイでの承認、systemdユーザーサービスの登録の流れをまとめます。
 
 
-Stable Diffusion や Ollama などの AI ツールや API サーバーを別のマシンで運用しながら、OS レベルの制御まで必要な場合に活用できます。
+Stable Diffusion、Ollamaのようなツールや APIサーバーを別マシンで運用しつつ、OSレベルの制御まで必要な状況で活用できます。
 
 
 ## インストール
@@ -47,7 +47,7 @@ npm install -g openclaw@latest
 ```
 
 
-インストールの確認
+インストール確認
 
 
 ```bash
@@ -55,13 +55,13 @@ openclaw --version
 ```
 
 
-## 手動実行
+## 直接実行
 
 
-### run モードの実行
+### runモードでの実行
 
 
-install モードを使用しますが、まず run モードで正常に動作するか確認します。
+installモードを使用しますが、まずはrunモードで事前にきちんと動作するか確認します。
 
 
 ```bash
@@ -71,7 +71,7 @@ openclaw node run --host wee-home.synology.me --port 18788 --tls --display-name 
 
 結果
 
-- ペンディング状態です。gateway で承認する必要があります。
+- ペンディング状態です。gatewayで承認する必要があります。
 
 ```bash
 OpenClaw 2026.6.11 (e085fa1) — Your personal assistant, minus the passive-aggressive calendar reminders.
@@ -90,7 +90,7 @@ Warning: Detected unsettled top-level await at file:///home/ubuntu/.local/share/
 この作業は現在のマシンではなく、ゲートウェイで行う必要があります。
 
 
-デバイス一覧の確認
+一覧の確認
 
 
 ```bash
@@ -124,7 +124,7 @@ Approved a4d8a6a6a62ec1e14a2a1622df746710aea0405631e1ebd69e6ef33e768748e2 (525b5
 ### マシンノードの接続確認
 
 
-run モードで実行します。
+runモードでの実行
 
 
 ```bash
@@ -135,26 +135,26 @@ openclaw node run --host wee-home.synology.me --port 18788 --tls --display-name 
 ## サービス登録
 
 
-install を実行する前に OPENCLAW_GATEWAY_TOKEN 環境変数を設定しておくと、~/.openclaw/node.systemd.env ファイルに環境変数の値が記録されます。
+installを実行する前にOPENCLAW_GATEWAY_TOKEN環境変数を事前に設定しておくと、~/.openclaw/node.systemd.envファイルに環境変数の値が記録されます。
 
 
-run モードを実行した後、同じシェルで作業している場合はすでに設定されています。設定されていない場合は再度指定してください。
+runモードを実行した状態のまま同じシェルで作業している場合はすでに設定済みです。設定されていない場合は再度指定してください。
 
 
 ```bash
 # トークン環境変数の設定
 export OPENCLAW_GATEWAY_TOKEN={openclaw remote gateway token}
 
-# node サービスのインストール
+# nodeサービスのインストール
 openclaw node install --host {host} --port {port} --tls --display-name "node-xxxx"
 ```
 
 
-実行後の環境変数の確認
+実行後の環境変数確認
 
 
 ```bash
-# サービスが使用する環境ファイルのパスを確認
+# サービスで使用する環境ファイルの場所を確認
 cat ~/.config/systemd/user/openclaw-node.service | grep EnvironmentFile
 EnvironmentFile=-/home/ubuntu/.openclaw/node.systemd.env
 ```
@@ -163,7 +163,7 @@ EnvironmentFile=-/home/ubuntu/.openclaw/node.systemd.env
 ### サービスの開始
 
 
-サービスをインストールして開始します。
+サービスをインストールして開始
 
 
 ```bash
@@ -177,3 +177,10 @@ systemctl --user start openclaw-node
 ```bash
 openclaw nodes status
 ```
+
+
+## 関連記事
+
+- [OpenClawの構築](../95-openclaw-setup/)
+- [Ollamaのインストールとローカル LLMサーバー構築方法](../112-ollama-local-llm-server-setup/)
+- [Claude CodeをOllamaローカルLLMとして使用する方法](../113-claude-code-ollama-local-llm/)

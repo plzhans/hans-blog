@@ -2,8 +2,8 @@
 id: "113"
 translationKey: "113"
 slug: "113-claude-code-ollama-local-llm"
-title: "How to Use Claude Code with Ollama Local LLM"
-description: "Learn how to connect Claude Code to an Ollama local LLM. This guide covers the Claude-compatible API, environment variables, model selection, and when a LiteLLM proxy is needed."
+title: "How to Use Claude Code with Ollama Local LLMs"
+description: "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy."
 categories:
   - "ai"
 tags:
@@ -11,7 +11,7 @@ tags:
   - "ollama"
   - "visual-code"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-07-06T02:15:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -19,46 +19,46 @@ images:
 ---
 
 
-![Cover image showing a configuration for using an Ollama local LLM with Claude Code](./assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png)
+![A representative image showing a configuration for using an Ollama local LLM in Claude Code](./assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png)
 
 
 ## Overview
 
 
-Claude Code is a development CLI tool that helps with writing code, editing files, and running commands from the terminal.
+Claude Code is a developer CLI tool that helps you write code, edit files, and run commands from the terminal.
 
 
-It provides a convenient development workflow, but continuous use of the Claude API or subscription-based environments incurs costs.
+It offers a convenient development workflow, but continuously using the Claude API or a subscription-based environment incurs cost.
 
 
-For personal projects or repetitive experimentation, these costs can become a burden.
+For personal projects or repeated experimentation environments, this cost can become a burden.
 
 
-This article explains how to replace the actual model execution with an Ollama local LLM while maintaining the Claude Code workflow.
+This article summarizes how to keep Claude Code's usage flow while replacing the actual model execution with an Ollama local LLM.
 
 
-The latest Ollama provides a controller compatible with the API paths used by Claude CLI, so it can directly receive Claude Code requests without a separate proxy.
+Recent versions of Ollama provide a controller compatible with the API path used by the Claude CLI, so it can receive Claude Code requests directly without a separate proxy.
 
 
-The key settings are specifying the Claude-compatible API address, configuring authentication values, and mapping model names.
+The core settings are specifying the Claude-compatible API address, setting the authentication value, and mapping the model name.
 
 
-Model selection can be handled through environment variables, Ollama model aliases, or the CLI's `--model` parameter.
+Model selection can be handled via environment variables, Ollama model aliases, or the CLI's `--model` parameter.
 
 
-When using tools that lack a compatible API or when you need to combine multiple model providers, a proxy like LiteLLM can be used optionally.
+If you're using a tool that doesn't support a compatible API, or you need to combine multiple model providers, you can optionally use a proxy such as LiteLLM.
 
 
 ## Installation
 
 
-The installation process consists of four main steps.
+The installation process consists of roughly four steps.
 
 
-### Installing the Local LLM Runtime
+### Install a local LLM runtime
 
 
-First, install a runtime that can run models locally. Ollama is a popular choice.
+First, install a runtime that can run models locally. Ollama is a representative option.
 
 
 ```bash
@@ -74,10 +74,10 @@ ollama --version
 ```
 
 
-### Downloading a Model
+### Download the model to use
 
 
-Download a model to use as a Claude Code replacement. For tasks that require code writing and command understanding, Qwen Coder series or Llama series models are good candidates to consider first.
+Download the model you'll use as a replacement for Claude Code. For tasks that require code writing and command comprehension, you can first consider models in the Qwen Coder or Llama families.
 
 
 ```bash
@@ -85,7 +85,7 @@ ollama pull qwen2.5-coder:7b
 ```
 
 
-Run a quick test to verify that the model works correctly.
+Do a quick test to confirm the model runs correctly.
 
 
 ```bash
@@ -93,59 +93,59 @@ ollama run qwen2.5-coder:7b
 ```
 
 
-## Claude Tool Integration
+## Integrating with Claude tools
 
 
-### Preparing a Claude-Compatible API Endpoint
+### Prepare a Claude-compatible API endpoint
 
 
-To use a local LLM with Claude Code or the VS Code Claude extension, you need an endpoint compatible with the API paths that Claude CLI calls.
+To use a local LLM with Claude Code or the Claude extension for VS Code, you need an endpoint compatible with the API path called by the Claude CLI.
 
 
-Previously, Ollama's default API paths differed from the API structure expected by Claude tools.
+Previously, Ollama's default API path differed from the API structure expected by Claude tools.
 
 
-This required either building a separate translation API or placing a proxy like LiteLLM in front to convert Claude-format requests into local LLM calls.
+So you had to either build a separate conversion API yourself or put a proxy like LiteLLM in front to convert Claude-format requests into local LLM calls.
 
 
-However, the latest Ollama now includes a built-in compatible API controller that operates identically to the API paths used by Claude CLI.
+However, recent versions of Ollama come with a built-in compatible API controller that behaves identically to the API path used by the Claude CLI.
 
 
-Therefore, with the latest Ollama, you can send Claude Code requests directly to Ollama without configuring a separate proxy.
+So with a recent version of Ollama, you can send Claude Code's requests directly to Ollama without configuring a separate proxy.
 
 
-This simplifies the setup and makes it easier to integrate a local LLM into the Claude development tool workflow.
+This simplifies the configuration and makes it easier to attach a local LLM to the Claude development tool workflow.
 
 
-Conversely, if the tool you are using does not support the Claude-compatible API or requires an API format that Ollama does not provide, proxy configuration is necessary.
+Conversely, if the tool you're using doesn't support the Claude-compatible API, or requires an API format that Ollama doesn't provide, you'll need a proxy configuration.
 
 
-In that case, you can use a tool like LiteLLM to convert request and response formats.
+In that case, you can use a tool like LiteLLM to convert the request and response formats.
 
 
-In summary, based on the latest Ollama, you should primarily use the `Claude tool -> Ollama Claude-compatible API` structure.
+In summary, with a recent version of Ollama, prefer the `Claude tool → Ollama Claude-compatible API` structure.
 
 
-If the tool cannot use the Claude-compatible API provided by Ollama, choose the `tool -> LiteLLM or translation proxy -> model API required by the tool` structure.
+For a tool that can't use the Claude-compatible API provided by Ollama, choose the `tool → LiteLLM or a conversion proxy → the model API required by that tool` structure.
 
 
-### Changing the API Path
+### Changing the API path
 
 
-When using a Claude-compatible API endpoint, first configure the API address and authentication values.
+When using the Claude-compatible API endpoint, first align the API address and authentication value.
 
 
-This setting determines which API server the Claude tool sends requests to, independent of which model you use.
+This setting, independent of which model you use, determines which API server the Claude tool sends requests to.
 
 
-| Environment Variable | Description                                                                                       |
-| -------------------- | ------------------------------------------------------------------------------------------------- |
-| ANTHROPIC_BASE_URL   | Specifies the Ollama Claude-compatible API address instead of the Claude API.                      |
-| ANTHROPIC_AUTH_TOKEN | Used in gateway or proxy environments that require token-based authentication.                     |
-| ANTHROPIC_API_KEY    | Used in environments that require API key-based authentication. A dummy value can be used with local Ollama. |
+| Environment variable | Description |
+| -------------------- | ----------------------------------------------------- |
+| ANTHROPIC_BASE_URL   | Specifies Ollama's Claude-compatible API address instead of the Claude API. |
+| ANTHROPIC_AUTH_TOKEN | Used in gateway or proxy environments that require a token-based auth method. |
+| ANTHROPIC_API_KEY    | Used in environments that require an API key method. With a local Ollama, you can use a dummy value. |
 
 
-A simple configuration for direct connection to local Ollama is typically set up as follows.
+A simple configuration that connects directly to a local Ollama is usually set up as follows.
 
 
 ```bash
@@ -154,109 +154,109 @@ export ANTHROPIC_API_KEY=dummy-key
 ```
 
 
-Choose between `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_API_KEY` depending on your gateway or compatible API implementation.
+Choose between `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_API_KEY` depending on the gateway or compatible API implementation you're using.
 
 
-For a configuration that connects directly to local Ollama, assigning a dummy value to `ANTHROPIC_API_KEY` is usually sufficient.
+For a configuration that connects directly to a local Ollama, it's usually enough to set a dummy value for `ANTHROPIC_API_KEY`.
 
 
-### Model Selection Issue
+### The model selection problem
 
 
-After configuring the API address and authentication values, the next step is to match the model name.
+Once the API address and authentication value are aligned, you next need to align the model name.
 
 
-In Claude CLI or VS Code Claude settings, change the request target to Ollama's Claude-compatible API, and specify the actual execution model as a locally installed Ollama model.
+In the Claude CLI or the Claude-related settings in VS Code, change the request target to Ollama's Claude-compatible API, and specify the actual model to run as a locally installed Ollama model.
 
 
-Claude CLI sends requests based on Claude model names or model aliases by default.
+By default, the Claude CLI sends requests based on a Claude model name or a model alias.
 
 
-For example, Ollama does not have models with the same names as Claude models.
+For example, Ollama doesn't have a model with the exact same name as a Claude model.
 
 
-Therefore, you need to match the model name sent by Claude tools to the local model name installed in Ollama.
+So you need to align the model name that the Claude tool passes with the local model name installed in Ollama.
 
 
-In practice, the environment variable names and API paths may vary depending on the Claude CLI version and VS Code extension settings you are using.
+In practice, the environment variable names or API path may differ depending on the version of the Claude CLI you use and how the VS Code extension is configured.
 
 
-A proxy like LiteLLM should only be used selectively when using an older version of Ollama or when you need to combine multiple model providers into a single endpoint.
+A proxy like LiteLLM should only be used selectively, when you're using an older version of Ollama or need to combine multiple model providers behind a single endpoint.
 
 
-The model selection issue can be addressed in three main ways.
+The model selection problem can generally be organized into the following three approaches.
 
 
-CASE 1 : Controlling via Environment Variables
+CASE 1: Controlling via environment variables
 
 
-The first approach to consider is controlling Claude Code's API address, authentication values, and model selection through environment variables.
+The first approach to consider is controlling Claude Code's API address, authentication value, and model selection through environment variables.
 
 
-Without arbitrarily copying Ollama model names, you can directly specify the target and model name that Claude tools will request.
+Instead of arbitrarily copying an Ollama model name, you can directly specify the target and model name the Claude tool will request.
 
 
-The environment variables primarily used for model selection are as follows.
+The environment variables mainly used for model selection are as follows.
 
 
-| Environment Variable           | Description                                                                                                                            |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| ANTHROPIC_MODEL                | Specifies the default model for the current session.                                                                                   |
-| ANTHROPIC_DEFAULT_SONNET_MODEL | Specifies the model to use when a Sonnet series alias is called.                                                                       |
-| ANTHROPIC_DEFAULT_OPUS_MODEL   | Specifies the model to use when an Opus series alias is called.                                                                        |
-| ANTHROPIC_DEFAULT_HAIKU_MODEL  | Specifies the model to use for Haiku series aliases or quick auxiliary tasks.                                                           |
-| ANTHROPIC_SMALL_FAST_MODEL     | Previously used to specify the model for quick auxiliary tasks. In the latest configuration, ANTHROPIC_DEFAULT_HAIKU_MODEL is preferred. |
+| Environment variable | Description |
+| ------------------------------ | ------------------------------------------------------------------------------- |
+| ANTHROPIC_MODEL                | Specifies the default model to use in the current session. |
+| ANTHROPIC_DEFAULT_SONNET_MODEL | Specifies the model to use when the Sonnet-family alias is called. |
+| ANTHROPIC_DEFAULT_OPUS_MODEL   | Specifies the model to use when the Opus-family alias is called. |
+| ANTHROPIC_DEFAULT_HAIKU_MODEL  | Specifies the model to use for the Haiku-family alias or fast auxiliary tasks. |
+| ANTHROPIC_SMALL_FAST_MODEL     | Previously used to specify the fast auxiliary task model. In a recent setup, ANTHROPIC_DEFAULT_HAIKU_MODEL is preferred. |
 
 
 ```bash
-# Default session model
+# default session model
 export ANTHROPIC_MODEL=qwen2.5-coder:7b
 
-# Sonnet series alias model
+# Sonnet-family alias model
 export ANTHROPIC_DEFAULT_SONNET_MODEL=qwen2.5-coder:7b
 
-# Opus series alias model
+# Opus-family alias model
 export ANTHROPIC_DEFAULT_OPUS_MODEL=qwen2.5-coder:14b
 
-# Haiku series alias model
+# Haiku-family alias model
 export ANTHROPIC_DEFAULT_HAIKU_MODEL=qwen2.5-coder:3b
 ```
 
 
-With this setup, when Claude tools internally distinguish and call model aliases, each can use a different Ollama model.
+With this setup, when the Claude tool internally distinguishes model aliases in its calls, it can use a different Ollama model for each.
 
 
-For example, regular code editing and refactoring can be handled by `qwen2.5-coder:7b`, while simple summaries and quick auxiliary tasks can be handled by `qwen2.5-coder:3b`.
+For example, general code edits and refactoring are handled by `qwen2.5-coder:7b`, while simple summaries or fast auxiliary tasks are handled by `qwen2.5-coder:3b`.
 
 
-The legacy `ANTHROPIC_SMALL_FAST_MODEL` was previously used to specify the model for quick auxiliary tasks.
+The previous `ANTHROPIC_SMALL_FAST_MODEL` was used to specify the fast auxiliary task model.
 
 
-The latest documentation has consolidated this to use `ANTHROPIC_DEFAULT_HAIKU_MODEL`.
+The recent documentation is organized around using `ANTHROPIC_DEFAULT_HAIKU_MODEL` instead.
 
 
-Therefore, for new configurations, use `ANTHROPIC_DEFAULT_HAIKU_MODEL` first, and only check `ANTHROPIC_SMALL_FAST_MODEL` when needed for older versions of Claude Code.
+So for a new setup, prefer `ANTHROPIC_DEFAULT_HAIKU_MODEL` first, and only check `ANTHROPIC_SMALL_FAST_MODEL` alongside it when it's needed for an older version of Claude Code.
 
 
 The environment variable approach makes the configuration intent clear.
 
 
-Since it uses the Ollama model names as installed locally, there is no need to create separate model aliases.
+Since it uses the locally installed Ollama model name as-is, there's no need to create a separate model alias.
 
 
-It is also easy to test different model combinations across multiple terminals.
+It's also easy to test different model combinations across multiple terminals.
 
 
-CASE 2 : Matching Model Names When Using Ollama
+CASE 2: Aligning the same model name when using Ollama
 
 
-If controlling model names via environment variables is difficult, or if the tool calls Claude model names as fixed values, you can match the model names on the Ollama side.
+If it's difficult to control the model name via environment variables, or a tool always calls a fixed Claude model name, you can align the same model name on the Ollama side.
 
 
-For example, if the Claude tool always calls `claude-3-5-sonnet`, create a model alias with the same name in Ollama.
+For example, if a Claude tool always calls `claude-3-5-sonnet`, you create an Ollama model alias with the same name.
 
 
-The actual execution model uses Qwen Coder, but only the externally exposed name matches the Claude model name.
+The actual model that runs is Qwen Coder, but only the name exposed externally is aligned with the Claude model name.
 
 
 ```bash
@@ -264,28 +264,28 @@ ollama cp qwen2.5-coder:7b claude-3-5-sonnet
 ```
 
 
-With this setup, the Claude tool requests with the original model name as-is.
+This way, the Claude tool still requests the original model name.
 
 
 Ollama finds and runs the local model registered under the same name.
 
 
-This is useful when it is difficult to change the tool's model selection UI or settings.
+This is useful when it's difficult to change the tool's model selection UI or settings.
 
 
-The downside is that as model aliases increase, you have more names to manage.
+The downside is that as the number of model aliases grows, there are more names to manage.
 
 
-Therefore, in personal development environments, it is best to use the environment variable approach first and only use the Ollama alias approach when you cannot directly control the model name.
+So in a personal development environment, it's better to prefer the environment variable approach first, and use the Ollama alias approach only when you can't directly control the model name.
 
 
-CASE 3 : Specifying the model Parameter Directly at CLI Execution
+CASE 3: Specifying the model parameter directly at CLI runtime
 
 
-If you need to switch models for a one-time execution, you can specify the `--model` parameter directly when running Claude CLI.
+If you need to change the model for a one-off run, you can specify the `--model` parameter directly when running the Claude CLI.
 
 
-This approach is useful when you want to use a different model for a specific execution without changing environment variables.
+This approach is useful when you want to use a different model for a specific run only, without changing the environment variables.
 
 
 ```bash
@@ -293,7 +293,7 @@ claude --model qwen2.5-coder:7b
 ```
 
 
-For example, if you normally have a default model set via environment variables but want to use a larger model for a specific task, run it as follows.
+For example, if you normally specify the default model via an environment variable but want to use a larger model only for a specific task, you would run it as follows.
 
 
 ```bash
@@ -301,28 +301,35 @@ claude --model qwen2.5-coder:14b
 ```
 
 
-The `--model` parameter applies only to that execution session.
+The `--model` parameter applies only to that run session.
 
 
 It can also be used to test different models simultaneously across multiple terminals.
 
 
-However, if you plan to use the same model repeatedly, specifying it via environment variables is easier to manage.
+However, if you plan to repeatedly use the same model, specifying it via an environment variable is easier to manage.
 
 
-## Conclusion
+## Wrap-up
 
 
-Claude Code and the VS Code Claude environment provide a tool workflow that developers are already familiar with.
+Claude Code and the VS Code Claude environment provide a tool usage flow developers are already familiar with.
 
 
-By replacing only the model execution part with a local LLM in this environment, you can reduce Claude infrastructure costs while maintaining a similar development workflow.
+By replacing only the model execution part of this environment with a local LLM, you can reduce Claude infrastructure costs while maintaining a similar development workflow.
 
 
-However, with local LLMs, response quality and speed vary depending on model size and hardware performance.
+However, a local LLM's response quality and speed vary depending on the model size and hardware performance.
 
 
-Complex refactoring or tasks requiring long context may produce lower quality results than Claude.
+For complex refactoring or tasks that require long context, the quality may be lower than Claude's.
 
 
-Therefore, it is practical to start applying this to repetitive tasks and personal projects where cost savings are important.
+So it's realistic to start applying this to repetitive tasks and personal projects where cost reduction matters.
+
+
+## Related Posts
+
+- [Setting Up OpenClaw](../95-openclaw-setup/)
+- [How to Install OpenClaw Node Mode and Connect to Remote Infrastructure](../107-openclaw-node-mode-remote-infra-setup/)
+- [How to Install Ollama and Set Up a Local LLM Server](../112-ollama-local-llm-server-setup/)

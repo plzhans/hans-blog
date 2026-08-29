@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -362,3 +362,8 @@ GUI 클라이언트를 쓰면 생성한 conf 파일을 import하는 것만으로
 
 SaveConfig 옵션과 방화벽 UDP 포트는 운영 중 잦은 실수를 만들기 쉬우니 설정 전에 한 번 더 확인하는 것이 좋다.
 
+
+## 관련 글
+
+- [Tailscale Linux 설치 - 안전한 원격 VPN 구성](../111-tailscale-linux-install-secure-remote-vpn/)
+- [wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)

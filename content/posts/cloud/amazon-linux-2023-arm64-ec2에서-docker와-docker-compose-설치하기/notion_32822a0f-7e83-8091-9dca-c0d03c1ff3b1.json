@@ -2,7 +2,7 @@
   "object": "page",
   "id": "32822a0f-7e83-8091-9dca-c0d03c1ff3b1",
   "created_time": "2026-03-19T02:30:00.000Z",
-  "last_edited_time": "2026-08-29T11:02:00.000Z",
+  "last_edited_time": "2026-08-29T15:51:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T11:02:00.000Z"
+      "last_edited_time": "2026-08-29T15:51:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T19:51:00.000+09:00",
+        "start": "2026-08-29T23:40:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T11:02:49.045Z)",
+            "content": "✅ 발행 완료 (2026-08-29T15:51:42.053Z)",
             "link": null
           },
           "annotations": {
@@ -112,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T11:02:49.045Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-29T15:51:42.053Z)",
           "href": null
         }
       ]
@@ -124,7 +124,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 설정하는 방법을 정리합니다. docker compose가 함께 설치되지 않았을 때 CLI 플러그인을 직접 내려받아 구성하는 절차도 함께 다룹니다.",
+            "content": "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 구성하는 방법을 정리합니다. Docker Compose 플러그인 설치와 버전 고정, permission denied·arm64 manifest 오류 해결, 로그 용량 제한과 디스크 정리까지 함께 다룹니다.",
             "link": null
           },
           "annotations": {
@@ -135,7 +135,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 설정하는 방법을 정리합니다. docker compose가 함께 설치되지 않았을 때 CLI 플러그인을 직접 내려받아 구성하는 절차도 함께 다룹니다.",
+          "plain_text": "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 구성하는 방법을 정리합니다. Docker Compose 플러그인 설치와 버전 고정, permission denied·arm64 manifest 오류 해결, 로그 용량 제한과 디스크 정리까지 함께 다룹니다.",
           "href": null
         }
       ]
@@ -245,5 +245,5 @@
   "url": "https://app.notion.com/p/Amazon-Linux-2023-ARM64-EC2-Docker-Docker-Compose-32822a0f7e8380919dcac0d03c1ff3b1",
   "public_url": null,
   "archived": false,
-  "request_id": "20099316-7e01-422c-9fb7-d8836e8aab2b"
+  "request_id": "f0335df5-353d-4463-aab1-b5683f7d7086"
 }

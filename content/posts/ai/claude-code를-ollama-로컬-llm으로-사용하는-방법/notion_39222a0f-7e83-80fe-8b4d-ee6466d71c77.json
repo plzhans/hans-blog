@@ -2,7 +2,7 @@
   "object": "page",
   "id": "39222a0f-7e83-80fe-8b4d-ee6466d71c77",
   "created_time": "2026-07-03T10:52:00.000Z",
-  "last_edited_time": "2026-08-29T11:02:00.000Z",
+  "last_edited_time": "2026-08-29T16:03:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T11:02:00.000Z"
+      "last_edited_time": "2026-08-29T16:03:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T19:51:00.000+09:00",
+        "start": "2026-08-30T01:02:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T11:02:08.315Z)",
+            "content": "✅ 발행 완료 (2026-08-29T16:03:37.932Z)",
             "link": null
           },
           "annotations": {
@@ -112,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T11:02:08.315Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-29T16:03:37.932Z)",
           "href": null
         }
       ]
@@ -245,5 +245,5 @@
   "url": "https://app.notion.com/p/Claude-Code-Ollama-LLM-39222a0f7e8380fe8b4dee6466d71c77",
   "public_url": null,
   "archived": false,
-  "request_id": "9a79da9a-0492-4c9e-bdb9-bbe925a4eb2c"
+  "request_id": "bb54b68d-1514-45ee-8288-d02a8116dfe4"
 }

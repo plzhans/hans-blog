@@ -3,7 +3,7 @@ id: "116"
 translationKey: "116"
 slug: "116-wireguard-install-client-setup"
 title: "WireGuardのインストールとクライアント接続設定方法"
-description: "Linuxサーバーに WireGuard VPN をインストールし、鍵生成、ファイアウォール開放、サービス登録までを構成する方法を説明します。Mac クライアントの conf 設定と GUI 接続確認の手順を含め、安全なリモートアクセス環境を構築できます。"
+description: "LinuxサーバーにWireGuard VPNをインストールし、キー生成・ファイアウォール開放・サービス登録までを構成する方法を説明します。Macクライアントのconf設定とGUI接続確認手順を含め、安全なリモートアクセス環境を構築できます。"
 categories:
   - "infra"
 tags:
@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T16:02:00.000Z
 toc: true
 draft: false
 images:
@@ -20,25 +20,25 @@ images:
 ---
 
 
-![Linuxサーバーに WireGuard VPN を構築し、クライアントを接続する構成を示す代表画像](./assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png)
+![LinuxサーバーにWireGuard VPNを構築し、クライアントを接続する構成を示す代表画像](./assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png)
 
 
 ## 概要
 
 
-WireGuardは、簡潔な設定と軽量なパフォーマンスで peer-to-peer VPN を構成できるツールです。
+WireGuardは、簡潔な設定と軽量なパフォーマンスでpeer-to-peer VPNを構成できるツールです。
 
 
-この記事では、Linuxサーバーに WireGuard をインストールし、サーバー鍵・ファイアウォール・サービスを整えた後、Mac クライアントから接続するまでの一連の流れをまとめます。
+この記事では、LinuxサーバーにWireGuardをインストールし、サーバーキー・ファイアウォール・サービスを整えたうえで、Macクライアントから接続するまでの一連の流れをまとめます。
 
 
-サーバー鍵の生成、wg0 の設定、UDP 51820 ポートの開放、クライアント Peer の登録、接続確認までを順番に扱うため、同じ手順に従って設定できます。
+サーバーキーの生成、wg0の設定、UDP 51820ポートの開放、クライアントPeerの登録、接続確認までを順番に扱うため、同じ手順で設定できます。
 
 
 ## サーバーのインストール
 
 
-システムサービスとして動作するため、root で進めてください。
+システムサービスとして動作するため、rootで進めてください。
 
 
 ### 基本インストール
@@ -57,7 +57,7 @@ wg --version
 ```
 
 
-### サーバー鍵の生成
+### サーバーキーの生成
 
 
 ```bash
@@ -72,7 +72,7 @@ chmod 600 /etc/wireguard/server.key
 ### 環境設定
 
 
-設定ファイルを事前に作成
+設定ファイルをあらかじめ作成します。
 
 
 ```bash
@@ -83,9 +83,9 @@ chmod 600 /etc/wireguard/wg0.conf
 
 設定ファイルにインターフェースを設定
 
-- サーバー鍵を登録
-- SaveConfig が有効になっている場合、このファイルを編集してからサーバーを停止すると、サーバーの状態が上書きされてしまいます
-- SaveConfig モードで使用する場合は、`wg set` などで制御する必要があります
+- サーバーキーを登録
+- SaveConfigが有効になっている場合、このファイルを編集した後にサーバーを停止すると、サーバーの状態で上書きされてしまいます
+- SaveConfigモードで使用する場合は、`wg set`などで制御する必要があります
 
 ```bash
 # /etc/wireguard/wg0.conf
@@ -97,13 +97,13 @@ SaveConfig = false
 ```
 
 
-### Inbound 設定(ファイアウォール設定)
+### Inbound設定(ファイアウォール設定)
 
 
-Peer to Peer ではありますが、最初のハンドシェイクのために UDP のサーバーポートが開いている必要があります。
+Peer to Peerではありますが、最初のハンドシェイクのためにUDPサーバーポートを開放しておく必要があります。
 
 
-さらに、iptables を使用している場合はポートも開放する必要があります。
+さらにiptablesを使用している場合は、ポートも開放する必要があります。
 
 
 ```bash
@@ -130,7 +130,7 @@ systemctl start wg-quick@wg0
 ```
 
 
-wg での確認
+wgの確認
 
 
 ```bash
@@ -160,13 +160,13 @@ ip addr show wg0
 ## クライアントのインストール
 
 
-### ユーザークライアント鍵の生成(ローカルクライアント作業)
+### ユーザークライアントキーの生成(ローカルクライアント作業)
 
 - ユーザーの秘密鍵はサーバー上で生成しても構いませんが、生成後にサーバーに残しておいてはいけません
 - サーバーは公開鍵のテキストさえ分かれば十分です
-- 生成した秘密鍵はクライアントに移動した後、削除してください
+- 生成した秘密鍵は、クライアントに移動した後に削除してください
 
-ローカルの Mac にインストールする場合、wg がなければインストールする必要があります。
+ローカルのMacにインストールする場合、wgがなければインストールが必要です。
 
 
 ```bash
@@ -174,7 +174,7 @@ brew install wireguard-tools
 ```
 
 
-### 鍵の生成
+### キーの生成
 
 
 ```bash
@@ -182,18 +182,18 @@ brew install wireguard-tools
 mkdir -p ~/.wireguard
 cd ~/.wireguard
 
-# 鍵の生成 : wg genkey | tee {KeyName}.key | wg pubkey > {KeyName}.pub
+# キー生成: wg genkey | tee {KeyName}.key | wg pubkey > {KeyName}.pub
 wg genkey | tee user.key | wg pubkey > user.pub
 ```
 
 
-### 重要!サーバーへのユーザー鍵の登録
+### 重要!サーバーへのユーザーキー登録
 
 
-wg0.conf ファイルに peer 情報を登録します
+wg0.confファイルにpeer情報を登録します。
 
-- Peer は複数設定できます
-- AllowedIPs で送られたリクエストを該当の Peer に転送します
+- Peerは複数設定できます
+- AllowedIPs宛てに送られたリクエストは、該当のPeerに転送されます
 
 ```bash
 # /etc/wireguard/wg0.conf append
@@ -216,10 +216,10 @@ systemctl restart wg-quick@wg0
 ## クライアントからサーバーへの接続
 
 
-peer to peer 通信の特性だと理解し、サーバー設定を反対にすればよいです。
+peer to peer通信の特性だと理解し、サーバーの設定を逆にすればよいです。
 
 
-### WireGuard クライアントの設定
+### WireGuardクライアントの設定
 
 
 インストール確認
@@ -257,14 +257,14 @@ PersistentKeepalive = 25
 ```bash
 sudo wg-quick up ~/.wireguard/xx-server.conf
 
-# 停止
+# stop
 sudo wg-quick down ~/.wireguard/xx-server.conf
 ```
 
 
 ### クライアントの状態確認
 
-- この部分が表示されたら最終的に接続完了です : latest handshake: 5 seconds ago
+- この部分が表示されれば最終的に接続完了です: latest handshake: 5 seconds ago
 
 ```bash
 wg
@@ -284,34 +284,34 @@ wg
 ```
 
 
-### クライアント GUI ツールを使用する場合
+### クライアントGUIツールを使用する場合
 
 
-作成しておいたクライアント conf ファイルを import します。
+作成したクライアントconfファイルをimportします。
 
 
 import
 
 
-![WireGuard GUI クライアントでクライアント conf ファイルをインポートする画面](./assets/2_39922a0f-7e83-80c1-ad8d-df9d68816cd4.png)
+![WireGuard GUIクライアントでクライアントconfファイルをimportする画面](./assets/2_39922a0f-7e83-80c1-ad8d-df9d68816cd4.png)
 
 
-登録の確認
+登録確認
 
 
-![インポートしたトンネルが GUI クライアントの一覧に登録されたことを確認する画面](./assets/3_39922a0f-7e83-804b-a53f-e609694788ff.png)
+![importしたトンネルがGUIクライアントの一覧に登録されたことを確認する画面](./assets/3_39922a0f-7e83-804b-a53f-e609694788ff.png)
 
 
-接続の確認
+接続確認
 
 
-![GUI クライアントで VPN トンネルが接続された状態を確認する画面](./assets/4_39922a0f-7e83-8053-94f8-de82008e95e9.png)
+![GUIクライアントでVPNトンネルが接続された状態を確認する画面](./assets/4_39922a0f-7e83-8053-94f8-de82008e95e9.png)
 
 
-## プライベートサーバーへの接続確認
+## 社内サーバーへの接続確認
 
 
-### VPN IP での SSH アクセス確認
+### VPN IPでのSSHアクセス確認
 
 
 ```bash
@@ -320,16 +320,16 @@ Connection to 10.200.0.1 port 22 [tcp/ssh] succeeded!
 ```
 
 
-## IP ルーティング
+## IPルーティング
 
 
-次に、ローカルクライアントから VPN サーバーを経由して内部ネットワークに接続するための設定を行う必要があります(MASQUERADE を使用)。
+次に、ローカルクライアントからVPNサーバーを経由して内部ネットワークにアクセスできるよう設定する必要があります(MASQUERADEを使用)。
 
 
-以下の内容を前提とします
+以下の内容を前提とします。
 
-- サーバーのプライベートネットワーク : 10.200.0.0/24
-- サーバーのネットワークインターフェース : enp0s6
+- サーバーのプライベートネットワーク: 10.200.0.0/24
+- サーバーのネットワークインターフェース: enp0s6
 
 ```bash
 # /etc/wireguard/wg0.conf append
@@ -351,13 +351,19 @@ PostDown = iptables -D FORWARD -o %i -j ACCEPT
 ## まとめ
 
 
-サーバーのインストールからクライアント接続確認まで完了すれば、VPN IP を使って SSH などの内部サービスにアクセスできます。
+サーバーのインストールからクライアント接続確認までを終えたら、VPN IPを使ってSSHなどの内部サービスにアクセスできるようになります。
 
 
-Peer を追加する際は、公開鍵と AllowedIPs だけをサーバーに登録し、秘密鍵はクライアントにのみ保管しておけばよいです。
+Peerを追加する際は、公開鍵とAllowedIPsだけをサーバーに登録し、秘密鍵はクライアントにのみ保管しておけば問題ありません。
 
 
-GUI クライアントを使えば、生成した conf ファイルを import するだけで同じように接続できます。
+GUIクライアントを使えば、作成したconfファイルをimportするだけで同じように接続できます。
 
 
-SaveConfig オプションとファイアウォールの UDP ポートは、運用中によくミスが起きやすい部分なので、設定前にもう一度確認しておくとよいでしょう。
+SaveConfigオプションとファイアウォールのUDPポートは運用中によくミスが起きやすい部分なので、設定前にもう一度確認しておくことをおすすめします。
+
+
+## 関連記事
+
+- [Tailscale Linuxインストール - 安全なリモートVPN構成](../111-tailscale-linux-install-secure-remote-vpn/)
+- [wg-easy WireGuardのMASQUERADE除外設定でOpenVPNクライアントIPを維持する](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)
