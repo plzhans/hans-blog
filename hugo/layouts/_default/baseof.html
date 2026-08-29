@@ -53,7 +53,17 @@
       {{- range .AllTranslations }}
       <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
       {{- end }}
-      <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+      {{- /* x-default는 페이지마다 자기 자신이 아니라, 클러스터 전체가 합의한 단일
+           기본값(기본 언어 = 사이트 첫 번째 language, ko)을 가리켜야 함 */ -}}
+      {{- $defaultLangPermalink := .Permalink }}
+      {{- if ne .Language.Lang (index hugo.Sites 0).Language.Lang }}
+        {{- range .AllTranslations }}
+          {{- if eq .Language.Lang (index hugo.Sites 0).Language.Lang }}
+            {{- $defaultLangPermalink = .Permalink }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
+      <link rel="alternate" hreflang="x-default" href="{{ $defaultLangPermalink }}" />
     {{ end }}
 
     {{- if .IsHome }}

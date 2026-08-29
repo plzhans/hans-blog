@@ -1,0 +1,33 @@
+{{/* gotmplfmt-ignore-all */ -}}
+{{/*
+  Hugo 공식 오버라이드 지원 대상(gohugo.io/templates/sitemap/) - 내장 sitemap.xml
+  원본에 x-default hreflang 항목만 추가. HTML <head>(baseof.html)에는 이미
+  x-default가 있는데 sitemap.xml에는 없었음 - 사이트맵에도 동일하게 추가해서
+  구글이 크롤링 전에도 폴백 언어 신호를 받을 수 있게 함.
+  x-default는 페이지마다 자기 자신이 아니라, 클러스터 전체가 합의한 단일 기본값
+  (기본 언어 = 사이트 첫 번째 language, ko)을 가리켜야 함 (baseof.html과 동일 로직).
+*/ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{ range where .Pages "Sitemap.Disable" "ne" true }}
+    {{- if .Permalink -}}
+  <url>
+    <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}{{ with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>{{ end }}{{ if ge .Sitemap.Priority 0.0 }}
+    <priority>{{ .Sitemap.Priority }}</priority>{{ end }}{{ if .IsTranslated }}{{ range .AllTranslations }}
+    <xhtml:link
+                rel="alternate"
+                hreflang="{{ .Language.Locale }}"
+                href="{{ .Permalink }}"
+                />{{ end }}{{ $defaultLangPermalink := .Permalink }}{{ if ne .Language.Lang (index hugo.Sites 0).Language.Lang }}{{ range .AllTranslations }}{{ if eq .Language.Lang (index hugo.Sites 0).Language.Lang }}{{ $defaultLangPermalink = .Permalink }}{{ end }}{{ end }}{{ end }}
+    <xhtml:link
+                rel="alternate"
+                hreflang="x-default"
+                href="{{ $defaultLangPermalink }}"
+                />{{ end }}
+  </url>
+    {{- end -}}
+  {{ end }}
+</urlset>
