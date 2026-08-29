@@ -23,8 +23,8 @@
     {{- $basePath := .Page.RelPermalink | strings.TrimPrefix (printf "/%s/" .Page.Language.Lang) -}}
     {{- if not (strings.HasPrefix $basePath "/") }}{{- $basePath = printf "/%s" $basePath }}{{- end -}}
     {{- $src = printf "%s%s" $basePath (strings.TrimPrefix "./" $src) -}}
-    <img src="{{ $src }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}>
+    <img src="{{ $src }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
   {{- end -}}
 {{- else -}}
-  <img src="{{ $src }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}>
+  <img src="{{ $src }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
 {{- end -}}
