@@ -11,7 +11,7 @@ tags:
   - "infra"
   - "ollama"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-08-29T18:41:00.000Z
 toc: true
 draft: false
 images:
@@ -46,10 +46,12 @@ Ollama is mainly used via an HTTP API.
 If you allow external access, model calls may become possible from outside the same network, so access control is required.
 
 
-When exposing it directly to the internet, you should also set up protective measures such as a firewall, VPN, reverse proxy authentication, and allowed IP restrictions.
+When exposing it directly to the internet, it is recommended to set up the protective measures below together.
 
-
-Personally, I recommend tailscale
+1. Allow the 11434 port only for trusted IP ranges via a firewall.
+2. Bypass direct access using a VPN. Personally, I recommend [Tailscale](../111-tailscale-linux-install-secure-remote-vpn/).
+3. Put it behind a reverse proxy (such as nginx) and add authentication.
+4. Explicitly restrict the allowed IPs.
 
 
 ## Installation
