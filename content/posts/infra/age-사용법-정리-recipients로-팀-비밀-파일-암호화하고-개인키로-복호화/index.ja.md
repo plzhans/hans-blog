@@ -11,7 +11,7 @@ tags:
   - "env"
   - "image"
 date: 2026-05-01T22:57:00.000Z
-lastmod: 2026-06-18T07:17:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -182,3 +182,9 @@ age -d -i ~/.config/age/key.txt -o secrets.env secrets.env.age
 
 
 > :white_check_mark: まとめ: 「自分の公開鍵をどこに登録する？」は、通常リポジトリの recipients ファイルに追加することで解決します。
+
+## 関連記事
+
+- [GPGで.envファイルを暗号化して安全にコミットする方法](../89-gpg-encrypt-env-file/)
+- [GitでGPGを使ってコミットに署名する](../88-github-gpg-commit-signing/)
+- [git filter-repo で秘密鍵・トークン流出コミットの履歴を完全削除する（強制プッシュと再同期）](../4-git-filter-repo-remove-secrets-from-history/)

@@ -11,7 +11,7 @@ tags:
   - "env"
   - "image"
 date: 2026-05-01T22:57:00.000Z
-lastmod: 2026-06-18T07:17:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -182,3 +182,9 @@ age -d -i ~/.config/age/key.txt -o secrets.env secrets.env.age
 
 
 > :white_check_mark: Summary: "Where do I register my public key?" is usually resolved by adding it to the recipients file in the repository.
+
+## Related Posts
+
+- [Encrypting .env Files with GPG for Safe Commits](../89-gpg-encrypt-env-file/)
+- [Signing Git Commits with GPG](../88-github-gpg-commit-signing/)
+- [Completely removing leaked secrets from Git history with git filter-repo (force push and resync)](../4-git-filter-repo-remove-secrets-from-history/)

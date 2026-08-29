@@ -11,7 +11,7 @@ tags:
   - "env"
   - "image"
 date: 2026-05-01T22:57:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T18:49:00.000Z
 toc: true
 draft: false
 images:
@@ -183,3 +183,9 @@ age -d -i ~/.config/age/key.txt -o secrets.env secrets.env.age
 
 > ✅ 요약: “내 공개키를 어디에 등록?”은 보통 레포의 recipients 파일에 추가하는 것으로 해결한다.
 
+
+## 관련 글
+
+- [GPG로 .env 파일 암호화해서 안전하게 커밋하기](../89-gpg-encrypt-env-file/)
+- [Git에서 GPG로 커밋 서명하기](../88-github-gpg-commit-signing/)
+- [git filter-repo로 비밀키·토큰 유출 커밋 히스토리 완전 삭제하기 (강제 푸시·재동기화)](../4-git-filter-repo-remove-secrets-from-history/)
