@@ -12,7 +12,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-02-10T07:34:00.000Z
-lastmod: 2026-08-29T08:36:00.000Z
+lastmod: 2026-08-29T10:28:00.000Z
 toc: true
 draft: false
 images:
@@ -20,7 +20,7 @@ images:
 ---
 
 
-![](./assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png)
+![GitHub Pages에 커스텀 도메인을 연결하고 HTTPS를 적용하는 과정을 나타난 대표 이미지](./assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png)
 
 
 # 개요
@@ -44,7 +44,7 @@ GitHub Pages는 기본적으로 `https://{계정명}.`[`github.io/{저장소명}
 도메인 DNS 설정에서 CNAME 레코드를 추가한다.
 
 
-![](./assets/2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png)
+![서브도메인을 {계정명}. github.io 로 연결하는 CNAME 레코드 등록 화면](./assets/2_30222a0f-7e83-80d2-8bf8-df6ddbcd2239.png)
 
 
 **설정 예시**
@@ -62,7 +62,7 @@ Repository → Settings → Pages → Custom domain에서 커스텀 도메인을
 **입력 예시:** hugosample.plzhans.com
 
 
-![](./assets/3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png)
+![Repository Settings → Pages의 Custom domain에 도메인을 입력하는 화면](./assets/3_30222a0f-7e83-80fe-875c-c3b270a89dd1.png)
 
 
 # Apex 도메인 사용

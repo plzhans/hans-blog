@@ -186,13 +186,23 @@ export class NotionExportService {
   }
 
   /**
+   * 현재 postId/slug 기준으로 정확한 발행 URL을 계산
+   * @param {Object} page - Notion 페이지 객체
+   * @returns {string|null} 발행 URL, hugoBaseUrl/slug가 없으면 null
+   */
+  #computePublishUrl(page) {
+    const postId = this.#extractPagePostId(page, this.propertyKeys.uniqueId);
+    const slug = this.#extractTextProperty(page.properties, this.propertyKeys.slug);
+    if (!this.hugoBaseUrl || !slug) return null;
+    return `${this.hugoBaseUrl}/posts/${postId}-${slug}/`;
+  }
+
+  /**
    * Notion 페이지 상태를 "발행 완료"로 변경
    * @param {Object} page - Notion 페이지 객체
    */
   async #notionPageStatusPublished(page) {
     const now = new Date().toISOString();
-    const postId = this.#extractPagePostId(page, this.propertyKeys.uniqueId);
-    const slug = this.#extractTextProperty(page.properties, this.propertyKeys.slug);
     const properties = {
       [this.propertyKeys.status]: {
         status: {
@@ -208,10 +218,9 @@ export class NotionExportService {
       };
     }
 
-    if (this.hugoBaseUrl && slug) {
-      properties[this.propertyKeys.publishUrl] = {
-        url: `${this.hugoBaseUrl}/posts/${postId}-${slug}/`,
-      };
+    const publishUrl = this.#computePublishUrl(page);
+    if (publishUrl) {
+      properties[this.propertyKeys.publishUrl] = { url: publishUrl };
     }
 
     properties[this.propertyKeys.publishResult] = {
@@ -485,6 +494,21 @@ export class NotionExportService {
 
     fs.writeFileSync(metaFilePath, JSON.stringify(page, null, 2), { encoding: "utf-8" });
     this.#trySetFileTime(metaFilePath, createdTime, lastEditedTime);
+
+    // 이미 발행 완료된 글이 이후에 수정되어 재생성된 경우, "발행 URL"이 최신 슬러그와
+    // 어긋나지 않는지 확인. 이 컬럼은 #notionPageStatusPublished(발행 요청->완료 전환
+    // 시점)에서만 쓰여서, 발행 후 슬러그/카테고리가 바뀌어도 영원히 갱신 안 되고 옛
+    // URL(UUID, 구조 변경 전 경로 등)로 박제되는 문제가 있었음 (실제 사례로 확인됨)
+    if (currentStatus === this.statusValues.published) {
+      const correctUrl = this.#computePublishUrl(page);
+      const cachedUrl = page.properties[this.propertyKeys.publishUrl]?.url;
+      if (correctUrl && correctUrl !== cachedUrl) {
+        await this.notionApiClient.updatePageProperties(page.id, {
+          [this.propertyKeys.publishUrl]: { url: correctUrl },
+        });
+        console.log(`  🔗 Updated publishUrl property: ${correctUrl}`);
+      }
+    }
 
     console.log(`  ✅ Exported: ${mdFilePath}`);
 
