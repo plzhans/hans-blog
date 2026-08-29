@@ -11,7 +11,7 @@ tags:
   - "infra"
   - "ollama"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T16:03:00.000Z
 toc: true
 draft: false
 images:
@@ -260,3 +260,9 @@ Environment="OLLAMA_KEEP_ALIVE=-1"
 sudo systemctl daemon-reload && sudo systemctl restart ollama
 ```
 
+
+## 관련 글
+
+- [오픈클로(OpenClaw) 구축](https://app.notion.com/p/30c22a0f7e8380d7b08bd025111a6f36)
+- [OpenClaw 노드 모드 설치와 원격 인프라 연결 방법](https://app.notion.com/p/38e22a0f7e83807cb20ec6f12d4d3cbc)
+- [Claude Code를 Ollama 로컬 LLM으로 사용하는 방법](https://app.notion.com/p/39222a0f7e8380fe8b4dee6466d71c77)

@@ -10,7 +10,7 @@ tags:
   - "ai"
   - "OpenClaw"
 date: 2026-06-29T00:00:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T16:03:00.000Z
 toc: true
 draft: false
 images:
@@ -178,3 +178,9 @@ systemctl --user start openclaw-node
 openclaw nodes status
 ```
 
+
+## 관련 글
+
+- [오픈클로(OpenClaw) 구축](https://app.notion.com/p/30c22a0f7e8380d7b08bd025111a6f36)
+- [Ollama 설치와 로컬 LLM 서버 구축 방법](https://app.notion.com/p/39222a0f7e8380588a74d4c61eae8125)
+- [Claude Code를 Ollama 로컬 LLM으로 사용하는 방법](https://app.notion.com/p/39222a0f7e8380fe8b4dee6466d71c77)

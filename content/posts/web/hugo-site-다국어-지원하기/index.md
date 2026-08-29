@@ -10,7 +10,7 @@ tags:
   - "hugo"
   - "seo"
 date: 2026-02-11T09:55:00.000Z
-lastmod: 2026-08-29T10:52:00.000Z
+lastmod: 2026-08-29T16:03:00.000Z
 toc: true
 draft: false
 images:
@@ -264,3 +264,8 @@ Hugo에서 게시물 주소를 설정할 때 `url` 대신 `slug`를 사용해야
 ## 참조
 
 - [Multi-language Website SEO with Hugo](https://www.glukhov.org/de/post/2025/10/multi-language-website-seo-with-hugo/)
+
+## 관련 글
+
+- [Hugo + Github 블로그 만들기](https://app.notion.com/p/2fd22a0f7e8381edb096fbb1eeec1160)
+- [Github pages 커스텀 도메인 사용하기](https://app.notion.com/p/2fd22a0f7e838086b859fdca16a463fa)

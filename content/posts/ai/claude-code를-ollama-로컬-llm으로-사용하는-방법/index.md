@@ -11,7 +11,7 @@ tags:
   - "ollama"
   - "visual-code"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T16:03:00.000Z
 toc: true
 draft: false
 images:
@@ -327,3 +327,9 @@ Claude Code와 VS Code Claude 환경은 개발자가 이미 익숙한 도구 사
 
 따라서 비용 절감이 중요한 반복 작업과 개인 프로젝트부터 적용하는 것이 현실적이다.
 
+
+## 관련 글
+
+- [오픈클로(OpenClaw) 구축](https://app.notion.com/p/30c22a0f7e8380d7b08bd025111a6f36)
+- [OpenClaw 노드 모드 설치와 원격 인프라 연결 방법](https://app.notion.com/p/38e22a0f7e83807cb20ec6f12d4d3cbc)
+- [Ollama 설치와 로컬 LLM 서버 구축 방법](https://app.notion.com/p/39222a0f7e8380588a74d4c61eae8125)

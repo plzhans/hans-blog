@@ -3,14 +3,14 @@ id: "5"
 translationKey: "5"
 slug: "5-mysql-workbench-tab-to-spaces"
 title: "MySQL Workbench 탭을 공백 4칸으로 설정하는 방법"
-description: "MySQL Workbench에서 탭 입력을 공백 4칸으로 바꾸는 설정 방법을 정리합니다. SQL 코드 정렬과 Git diff 품질을 개선하는 Indentation 설정을 설명합니다."
+description: "MySQL Workbench에서 탭 입력을 공백 4칸으로 바꾸는 Indentation 설정 방법을 정리합니다. 이미 탭이 들어간 SQL 파일을 expand로 일괄 변환하는 방법과 .editorconfig로 팀 규칙을 고정하는 방법, diff·blame에 미치는 영향까지 함께 다룹니다."
 categories:
   - "database"
 tags:
   - "database"
   - "mysql"
 date: 2019-05-17T00:00:00.000Z
-lastmod: 2026-08-29T10:52:00.000Z
+lastmod: 2026-08-29T15:51:00.000Z
 toc: true
 draft: false
 images:
@@ -66,4 +66,73 @@ Tab width: 4
 
 
 참고 문서: [MySQL Workbench General Editors Preferences](https://dev.mysql.com/doc/workbench/en/wb-preferences-general-editors.html)
+
+
+## 이미 탭이 들어간 파일 정리하기
+
+
+이 설정은 앞으로 입력하는 탭에만 적용됩니다. 이미 저장된 SQL 파일 안의 탭 문자는 그대로 남아 있습니다.
+
+
+명령줄에서 한 번에 바꾸려면 `expand`를 사용합니다.
+
+
+```bash
+# 파일 하나 변환
+expand -t 4 old.sql > new.sql
+
+# 디렉터리 전체 변환 (실행 전 백업 권장)
+find . -name "*.sql" -exec bash -c 'expand -t 4 "$1" > "$1.tmp" && mv "$1.tmp" "$1"' _ {} \;
+```
+
+
+Windows에서 작업한다면 VS Code로 파일을 열고 명령 팔레트에서 `Convert Indentation to Spaces`를 실행하는 방법도 있습니다.
+
+
+## .editorconfig로 팀 규칙 고정하기
+
+
+Workbench의 Preferences는 그 PC에만 적용됩니다. 팀원마다 쓰는 편집기가 다르다면 저장소 루트에 `.editorconfig`를 두는 편이 확실합니다.
+
+
+```plain text
+# .editorconfig
+root = true
+
+[*.sql]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+```
+
+
+VS Code, IntelliJ, Vim 등 대부분의 편집기가 이 파일을 인식합니다. 다만 **MySQL Workbench는** **`.editorconfig`****를 읽지 않습니다.** Workbench 쪽은 앞에서 설명한 Preferences 설정으로 따로 맞춰야 합니다.
+
+
+## 들여쓰기가 diff에 미치는 영향
+
+
+탭과 공백이 섞이면 로직은 그대로인데 들여쓰기만 바뀐 줄이 diff에 잔뜩 잡힙니다. 리뷰할 때 실제 변경점이 묻히고 `git blame`도 엉뚱한 커밋을 가리키게 됩니다.
+
+
+이미 섞여버린 파일을 정리한다면 <strong>들여쓰기 정리만 하는 커밋을 따로 분리</strong>하는 편이 좋습니다. 기능 변경과 섞이면 리뷰가 어려워집니다.
+
+
+```bash
+git commit -m "chore: SQL 들여쓰기를 공백 4칸으로 통일"
+```
+
+
+공백 변경을 무시하고 보고 싶을 때는 아래 옵션을 사용합니다.
+
+
+```bash
+# 공백 변경을 무시한 diff
+git diff -w
+
+# 공백 변경을 무시한 blame
+git blame -w
+```
 

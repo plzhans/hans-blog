@@ -10,7 +10,7 @@ tags:
   - "claude"
   - "mac"
 date: 2026-03-26T00:00:00.000Z
-lastmod: 2026-08-29T09:31:00.000Z
+lastmod: 2026-08-29T11:02:00.000Z
 toc: true
 draft: false
 images:

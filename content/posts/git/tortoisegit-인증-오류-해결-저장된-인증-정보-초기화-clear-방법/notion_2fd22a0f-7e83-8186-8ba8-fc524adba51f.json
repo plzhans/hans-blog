@@ -2,14 +2,14 @@
   "object": "page",
   "id": "2fd22a0f-7e83-8186-8ba8-fc524adba51f",
   "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-08-29T11:04:00.000Z",
+  "last_edited_time": "2026-08-29T16:04:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T11:04:00.000Z"
+      "last_edited_time": "2026-08-29T16:04:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T19:52:00.000+09:00",
+        "start": "2026-08-30T01:04:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T11:04:05.225Z)",
+            "content": "✅ 발행 완료 (2026-08-29T16:03:55.064Z)",
             "link": null
           },
           "annotations": {
@@ -112,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T11:04:05.225Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-29T16:03:55.064Z)",
           "href": null
         }
       ]
@@ -124,7 +124,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Git 서버 변경 후 TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 점검까지 한 번에 해결하세요.",
+            "content": "TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 정리, credential.helper 확인, PAT 준비와 SSH 전환까지 다룹니다.",
             "link": null
           },
           "annotations": {
@@ -135,7 +135,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Git 서버 변경 후 TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 점검까지 한 번에 해결하세요.",
+          "plain_text": "TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 정리, credential.helper 확인, PAT 준비와 SSH 전환까지 다룹니다.",
           "href": null
         }
       ]
@@ -244,6 +244,5 @@
   },
   "url": "https://app.notion.com/p/TortoiseGit-Clear-2fd22a0f7e8381868ba8fc524adba51f",
   "public_url": null,
-  "archived": false,
-  "request_id": "f49f2dcc-5908-4ccb-a359-e0e1ccfbc7a3"
+  "archived": false
 }

@@ -9,7 +9,7 @@ categories:
 tags:
   - "vpn"
 date: 2026-03-19T06:06:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-29T16:03:00.000Z
 toc: true
 draft: false
 images:
@@ -132,3 +132,8 @@ iptables -t nat -D POSTROUTING -s ipv4Cidr ! -d 172.31.0.0/20 -o device -j MASQU
 >   
 > # IPv6 포워딩 허용 (외부 → VPN)  
 > ip6tables -A FORWARD -o wg0 -j ACCEPT;
+
+## 관련 글
+
+- [WireGuard 설치와 클라이언트 접속 설정 방법](https://app.notion.com/p/39922a0f7e8380f3bd74df71ef8469fc)
+- [Tailscale Linux 설치 - 안전한 원격 VPN 구성](https://app.notion.com/p/39222a0f7e838082a2ece8312bac7863)
