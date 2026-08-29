@@ -184,7 +184,18 @@
       "author" (dict "@type" "Person" "name" .Site.Params.author)
       "description" $description
       "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+      "publisher" (dict
+        "@type" "Organization"
+        "name" .Site.Params.author
+        "logo" (dict "@type" "ImageObject" "url" (.Site.Params.avatar | absURL))
+      )
   -}}
+  {{- /* front matter images(상대 경로)를 실제 페이지 리소스로 찾아 절대 URL로 변환 */ -}}
+  {{- with .Params.images -}}
+    {{- with $.Resources.GetMatch (index . 0) -}}
+      {{- $jsonLd = merge $jsonLd (dict "image" .Permalink) -}}
+    {{- end -}}
+  {{- end -}}
   {{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($jsonLd | jsonify (dict "indent" "  ")) | safeHTML }}
   {{- end }}
 

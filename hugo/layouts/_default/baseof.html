@@ -53,6 +53,22 @@
       <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
     {{ end }}
 
+    {{- if .IsHome }}
+    {{- $websiteLd := dict
+        "@context" "https://schema.org"
+        "@type" "WebSite"
+        "name" .Site.Title
+        "url" .Site.BaseURL
+        "description" .Site.Params.description
+        "publisher" (dict
+          "@type" "Organization"
+          "name" .Site.Params.author
+          "logo" (dict "@type" "ImageObject" "url" (.Site.Params.avatar | absURL))
+        )
+    -}}
+    {{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($websiteLd | jsonify (dict "indent" "  ")) | safeHTML }}
+    {{- end }}
+
   </head>
   <body>
     <div class="top-header">
