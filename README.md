@@ -153,6 +153,26 @@ Notion 데이터베이스에 버튼 속성을 추가하고, 버튼 클릭 시 �
 
 > 자세한 내용은 [`docs/seo.md`](docs/seo.md)를 참고하세요.
 
+### claude-seo (SEO 감사 도구)
+
+[claude-seo](https://claude-seo.md/)는 Claude Code용 SEO 감사 플러그인으로, 기술 SEO/콘텐츠 품질(E-E-A-T)/스키마 마크업/성능(Core Web Vitals)/AI 검색 준비도(GEO) 등을 병렬 서브에이전트로 분석해 우선순위가 매겨진 액션 플랜을 생성합니다. 이 블로그의 SEO 개선 작업(보안 헤더, 스키마, 성능, 콘텐츠 등)은 이 도구의 감사 결과를 기반으로 진행되었습니다.
+
+**설치**:
+```bash
+/plugin marketplace add AgriciDaniel/claude-seo
+/plugin install claude-seo@agricidaniel-claude-seo
+/seo setup
+```
+
+**사용법**:
+```bash
+/seo audit https://blog.plzhans.com   # 전체 사이트 감사
+/seo page <url>                       # 단일 페이지 분석
+/seo schema <url>                     # 스키마 마크업 검증
+```
+
+> API 키/서비스 계정 등 상세 설정 방법은 [`docs/claude-seo.md`](docs/claude-seo.md)를 참고하세요.
+
 ## 댓글 시스템 (giscus)
 
 [giscus](https://giscus.app/ko)를 사용하여 블로그 포스트에 댓글 기능을 제공합니다.
