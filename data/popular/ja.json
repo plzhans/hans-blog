@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T11:32:52.564Z",
+  "generated_at": "2026-08-29T07:11:24.418Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -60,19 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "Hugo サイトの多言語対応",
-      "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
-      "date": "2026-02-06T02:34:00.000Z",
-      "categories": [
-        "Infra"
-      ],
-      "url": "/ja/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
-      "count": 2
-    },
-    {
-      "rank": 6,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 実務ガイド: インストール、plan/apply、AWS SSO・AssumeRole、state backend",
       "description": "Terraform のインストールから init・plan・apply の基本フローとプロジェクト構成を整理します。AWS 資格情報における SSO と AssumeRole の違い、state 共有のための backend の概念と AWS（S3）の例、最小 IAM 権限と運用のコツまでまとめて確認します。",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "105-mac-office-activation",
       "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
       "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
@@ -98,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "OllamaのインストールとローカルLLMサーバー構築方法",
       "description": "Ollamaを使ってLinuxサーバーでローカルLLMを実行する方法を説明します。インストール、外部アクセス設定、モデル選択、HTTP API呼び出し例を通じて、個人AIサーバー構築の流れをまとめます。",
@@ -108,6 +95,19 @@
       ],
       "url": "/ja/posts/112-ollama-local-llm-server-setup/",
       "image": "/posts/112-ollama-local-llm-server-setup/assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png",
+      "count": 1
+    },
+    {
+      "rank": 8,
+      "slug": "116-wireguard-install-client-setup",
+      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
+      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+      "date": "2026-07-10T08:20:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/posts/116-wireguard-install-client-setup/",
+      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
       "count": 1
     },
     {
@@ -147,6 +147,19 @@
       ],
       "url": "/ja/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 1
+    },
+    {
+      "rank": 12,
+      "slug": "93-hugo-multilingual-seo-setup",
+      "title": "Hugo サイトの多言語対応",
+      "description": "Hugo多言語ブログでbaseURL、sitemap、robots、JSON-LD、Open Graph、meta descriptionを設定し、hreflangやcanonicalで重複問題を防ぐ方法をまとめました。slugとtranslationKeyのトラブルシューティングまで一度に確認できます。",
+      "date": "2026-02-06T02:34:00.000Z",
+      "categories": [
+        "Infra"
+      ],
+      "url": "/ja/posts/93-hugo-multilingual-seo-setup/",
+      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
       "count": 1
     }
   ]
