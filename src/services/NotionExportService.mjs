@@ -796,7 +796,8 @@ export class NotionExportService {
   }
 
   /**
-   * 마크다운 문자열 내 notion.so 링크를 Hugo 상대 경로로 일괄 치환
+   * 마크다운 문자열 내 Notion 페이지 링크(notion.so, app.notion.com 형식 모두)를
+   * Hugo 상대 경로로 일괄 치환
    * @param {string} md - 마크다운 문자열
    * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
    * @returns {string} 치환된 마크다운 문자열
@@ -808,24 +809,12 @@ export class NotionExportService {
     });
   }
 
-  /**
-   * notion.so URL에서 페이지 ID를 추출해 Hugo 상대 경로로 변환
-   * @param {string} url - notion.so를 포함한 URL
-   * @param {Map<string, string>} existsPageMap - pageId → 디렉토리 경로 맵
-   * @returns {string | null} Hugo 상대 경로 (예: `../123-slug/`), 실패 시 null
-   */
-  #resolveNotionPageUrl(url, existsPageMap) {
-    const rawId = url.split("notion.so/").pop().replace(/-/g, '');
-    if (!rawId) return null;
-    return this.#resolvePageByRawId(rawId, existsPageMap)?.url ?? null;
-  }
-
   // ── 파일 헬퍼 ──
 
   /** URL에서 확장자를 추출할 수 없을 때 블록 타입별 기본 확장자 */
   static #DEFAULT_EXT = { image: ".png", video: ".mp4", pdf: ".pdf", audio: ".mp3" };
-  /** Notion 링크 정규식 */
-  static #NOTION_LINK_RE = /\]\(https?:\/\/(?:www\.)?notion\.so\/([0-9a-f]{32})\)/g;
+  /** Notion 링크 정규식 (notion.so 레거시 형식과 app.notion.com 현재 형식 모두 지원) */
+  static #NOTION_LINK_RE = /\]\(https?:\/\/(?:www\.)?(?:notion\.so|app\.notion\.com\/p)\/([0-9a-f]{32})(?:\?[^)]*)?\)/g;
 
   /**
    * Notion 파일 블록(image, file, pdf, video 등)을 로컬에 다운로드하고 Markdown 문법으로 변환
