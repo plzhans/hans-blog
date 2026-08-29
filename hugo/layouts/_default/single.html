@@ -312,11 +312,9 @@
     });
   </script>
   {{- if and .Site.Config.Services.GoogleAnalytics.ID .Params.slug }}
-  <script>
-    gtag('event', 'post_view', {
-      post_id: '{{ .Params.id }}',
-      post_slug: '{{ .Params.slug }}'
-    });
-  </script>
+  {{- /* GA 스크립트를 body 끝으로 옮겨서(baseof.html), gtag 함수가 아직 정의되기 전인
+       여기서 바로 호출하면 에러가 남 - Page.Store로 값만 전달하고 실제 호출은
+       GA 스크립트 다음(baseof.html)에서 수행 */}}
+  {{- .Store.Set "postView" (dict "id" .Params.id "slug" .Params.slug) }}
   {{- end }}
 {{ end }}
