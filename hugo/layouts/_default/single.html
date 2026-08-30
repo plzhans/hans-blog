@@ -124,9 +124,17 @@
         </div>
           {{- end }}
         {{- end }}
+        {{- /* 본문에 수동 큐레이션된 관련 글 섹션이 이미 있으면(예: "## 관련 글") Hugo 자동
+              추천("추천 글") 위젯은 생략 - 같은 페이지에 관련 포스트 목록이 중복 노출되는 것을 방지.
+              카테고리 기준 위젯(위)은 성격이 달라(단순 카테고리 탐색) 유지함. */}}
+        {{- $manualRelatedMarkers := slice "## 관련 글" "## Related Posts" "## 関連記事" }}
+        {{- $hasManualRelated := false }}
+        {{- range $manualRelatedMarkers }}
+          {{- if in $currentPage.RawContent . }}{{- $hasManualRelated = true }}{{- end }}
+        {{- end }}
         {{- $hugoRelatedAll := (where .Site.RegularPages "Language.Lang" $currentLang).Related . }}
         {{- $hugoRelated := complement $categoryPosts $hugoRelatedAll | first 5 }}
-        {{- if $hugoRelated }}
+        {{- if and $hugoRelated (not $hasManualRelated) }}
         <div class="related-posts">
           <h3 class="related-posts-title">{{ i18n "hugo_related_posts_title" }}</h3>
           <ul class="related-posts-list">
