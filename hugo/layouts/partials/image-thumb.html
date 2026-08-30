@@ -5,13 +5,16 @@
 {{- $loading := "lazy" -}}
 {{- if $isFirst }}{{- $loading = "eager" }}{{- end -}}
 {{- $resource := $page.Resources.GetMatch $imgPath -}}
-{{- if $resource -}}
+{{- if and $resource (reflect.IsImageResourceProcessable $resource) -}}
   {{- $webp := $resource.Resize "800x webp" -}}
   {{- $fallback := $resource.Resize "800x" -}}
   <picture>
     <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
     <img src="{{ $fallback.RelPermalink }}" alt="{{ $alt }}" loading="{{ $loading }}"{{ if $isFirst }} fetchpriority="high"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}">
   </picture>
+{{- else if $resource -}}
+  {{- /* SVG 등 래스터 리사이즈가 불가능한 리소스는 원본 그대로 출력 */}}
+  <img src="{{ $resource.RelPermalink }}" alt="{{ $alt }}" loading="{{ $loading }}"{{ if $isFirst }} fetchpriority="high"{{ end }}>
 {{- else -}}
   {{- $imgBase := $page.RelPermalink | strings.TrimPrefix (printf "/%s/" $page.Language.Lang) -}}
   {{- if not (strings.HasPrefix $imgBase "/") }}{{- $imgBase = printf "/%s" $imgBase }}{{- end -}}

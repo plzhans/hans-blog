@@ -18,15 +18,25 @@
 	{{- $featured := $resources.GetMatch "*feature*" -}}
 	{{- if not $featured }}{{ $featured = $resources.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 	{{- with $featured }}
-		{{- $targetWidth := .Width }}
-		{{- if gt $targetWidth 1200 }}{{- $targetWidth = 1200 }}{{- end }}
-		{{- $og := .Resize (printf "%dx jpg q80" $targetWidth) }}
-		{{- $imgs = $imgs | append (dict
-			"Image" $og
-			"RelPermalink" $og.RelPermalink
-			"Permalink" $og.Permalink
-			)
-		}}
+		{{- if reflect.IsImageResourceProcessable . }}
+			{{- $targetWidth := .Width }}
+			{{- if gt $targetWidth 1200 }}{{- $targetWidth = 1200 }}{{- end }}
+			{{- $og := .Resize (printf "%dx jpg q80" $targetWidth) }}
+			{{- $imgs = $imgs | append (dict
+				"Image" $og
+				"RelPermalink" $og.RelPermalink
+				"Permalink" $og.Permalink
+				)
+			}}
+		{{- else }}
+			{{- /* SVG 등 리사이즈 불가능한 리소스는 원본 그대로 사용 */}}
+			{{- $imgs = $imgs | append (dict
+				"Image" .
+				"RelPermalink" .RelPermalink
+				"Permalink" .Permalink
+				)
+			}}
+		{{- end }}
 	{{- end }}
 {{- end }}
 {{/* Use the first one of site images as the fallback. */}}
@@ -42,15 +52,25 @@
 	{{- if eq $url.Scheme "" }}
 		{{/* Internal image: check page resources first, then global resources. */}}
 		{{- with or ($resources.GetMatch $img) (resources.GetMatch $img) -}}
-			{{- $targetWidth := .Width }}
-			{{- if gt $targetWidth 1200 }}{{- $targetWidth = 1200 }}{{- end }}
-			{{- $og := .Resize (printf "%dx jpg q80" $targetWidth) }}
-			{{- $imgs = $imgs | append (dict
-				"Image" $og
-				"RelPermalink" $og.RelPermalink
-				"Permalink" $og.Permalink
-				)
-			}}
+			{{- if reflect.IsImageResourceProcessable . }}
+				{{- $targetWidth := .Width }}
+				{{- if gt $targetWidth 1200 }}{{- $targetWidth = 1200 }}{{- end }}
+				{{- $og := .Resize (printf "%dx jpg q80" $targetWidth) }}
+				{{- $imgs = $imgs | append (dict
+					"Image" $og
+					"RelPermalink" $og.RelPermalink
+					"Permalink" $og.Permalink
+					)
+				}}
+			{{- else }}
+				{{- /* SVG 등 리사이즈 불가능한 리소스는 원본 그대로 사용 */}}
+				{{- $imgs = $imgs | append (dict
+					"Image" .
+					"RelPermalink" .RelPermalink
+					"Permalink" .Permalink
+					)
+				}}
+			{{- end }}
 		{{- else }}
 			{{- $imgs = $imgs | append (dict
 				"RelPermalink" (relURL $img)

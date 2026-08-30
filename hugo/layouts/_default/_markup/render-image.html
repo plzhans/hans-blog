@@ -9,7 +9,7 @@
 {{- if strings.HasPrefix $src "./assets/" -}}
   {{- $resourcePath := strings.TrimPrefix "./" $src -}}
   {{- $resource := .Page.Resources.GetMatch $resourcePath -}}
-  {{- if $resource -}}
+  {{- if and $resource (reflect.IsImageResourceProcessable $resource) -}}
     {{- $maxWidth := 1200 -}}
     {{- $targetWidth := $resource.Width -}}
     {{- if gt $targetWidth $maxWidth -}}{{- $targetWidth = $maxWidth -}}{{- end -}}
@@ -19,6 +19,9 @@
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
       <img src="{{ $fallback.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
     </picture>
+  {{- else if $resource -}}
+    {{- /* SVG 등 래스터 리사이즈가 불가능한 리소스는 원본 그대로 출력 */}}
+    <img src="{{ $resource.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
   {{- else -}}
     {{- $basePath := .Page.RelPermalink | strings.TrimPrefix (printf "/%s/" .Page.Language.Lang) -}}
     {{- if not (strings.HasPrefix $basePath "/") }}{{- $basePath = printf "/%s" $basePath }}{{- end -}}
