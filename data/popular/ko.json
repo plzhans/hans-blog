@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T07:11:24.406Z",
+  "generated_at": "2026-08-30T05:33:11.435Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -8,6 +8,58 @@
   "posts": [
     {
       "rank": 1,
+      "slug": "113-claude-code-ollama-local-llm",
+      "title": "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법",
+      "description": "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다.",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/posts/113-claude-code-ollama-local-llm/",
+      "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 23
+    },
+    {
+      "rank": 2,
+      "slug": "116-wireguard-install-client-setup",
+      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
+      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+      "date": "2026-07-10T08:20:00.000Z",
+      "categories": [
+        "networking"
+      ],
+      "url": "/posts/116-wireguard-install-client-setup/",
+      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
+      "count": 8
+    },
+    {
+      "rank": 3,
+      "slug": "110-samsung-smartthings-api-integration-cli-oauth",
+      "title": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
+      "description": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
+      "date": "2026-06-29T00:00:00.000Z",
+      "categories": [
+        "iot"
+      ],
+      "url": "/posts/110-samsung-smartthings-api-integration-cli-oauth/",
+      "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
+      "count": 4
+    },
+    {
+      "rank": 4,
+      "slug": "118-telegram-chat-backup",
+      "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
+      "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
+      "date": "2026-07-27T05:15:00.000Z",
+      "categories": [
+        "develop"
+      ],
+      "url": "/posts/118-telegram-chat-backup/",
+      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 4
+    },
+    {
+      "rank": 5,
       "slug": "95-openclaw-setup",
       "title": "오픈클로(OpenClaw) 구축 ",
       "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",
@@ -20,23 +72,23 @@
       "count": 4
     },
     {
-      "rank": 2,
-      "slug": "118-telegram-chat-backup",
-      "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
-      "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
-      "date": "2026-07-27T05:15:00.000Z",
+      "rank": 6,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
+      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
+      "date": "2026-07-10T03:44:00.000Z",
       "categories": [
-        "develop"
+        "cloud"
       ],
-      "url": "/posts/118-telegram-chat-backup/",
-      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
       "count": 3
     },
     {
-      "rank": 3,
+      "rank": 7,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 발생하는 원인을 정리합니다. 파라미터가 ncpClientId에서 ncpKeyId로 바뀐 점을 확인하고 스크립트 URL을 수정해 인증 실패를 해결합니다.",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
       "date": "2026-03-24T06:54:00.000Z",
       "categories": [
         "cloud"
@@ -46,9 +98,22 @@
       "count": 3
     },
     {
-      "rank": 4,
+      "rank": 8,
+      "slug": "102-age-recipients-team-encryption-guide",
+      "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
+      "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
+      "date": "2026-05-01T22:57:00.000Z",
+      "categories": [
+        "security"
+      ],
+      "url": "/posts/102-age-recipients-team-encryption-guide/",
+      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "count": 2
+    },
+    {
+      "rank": 9,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "Synology DSM 무료 SSL 인증서 발급 방법 | ",
+      "title": "Synology DSM 무료 SSL 인증서 발급 방법 | acme.sh + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
       "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
       "date": "2026-05-16T05:03:00.000Z",
       "categories": [
@@ -59,20 +124,7 @@
       "count": 2
     },
     {
-      "rank": 5,
-      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
-      "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
-      "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
-      "date": "2026-05-06T13:52:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
-      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 6,
+      "rank": 10,
       "slug": "105-mac-office-activation",
       "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
       "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
@@ -82,10 +134,23 @@
       ],
       "url": "/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 2
+    },
+    {
+      "rank": 11,
+      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
+      "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
+      "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
+      "date": "2026-05-06T13:52:00.000Z",
+      "categories": [
+        "devops"
+      ],
+      "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
+      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 12,
       "slug": "112-ollama-local-llm-server-setup",
       "title": "Ollama 설치와 로컬 LLM 서버 구축 방법",
       "description": "Ollama로 Linux 서버에서 로컬 LLM을 실행하는 방법을 설명합니다. 설치, 외부 접속 설정, 모델 선택, HTTP API 호출 예제로 개인 AI 서버 구축 흐름을 정리합니다.",
@@ -98,20 +163,7 @@
       "count": 1
     },
     {
-      "rank": 8,
-      "slug": "116-wireguard-install-client-setup",
-      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
-      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
-      "date": "2026-07-10T08:20:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/posts/116-wireguard-install-client-setup/",
-      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 1
-    },
-    {
-      "rank": 9,
+      "rank": 13,
       "slug": "13-git-ssh-key-setup-and-remote-access",
       "title": "Git SSH 키로 원격 저장소 접속하기: 키 생성부터 등록까지",
       "description": "Git 원격 저장소를 SSH로 접속하는 전체 흐름을 정리합니다. HTTPS와 차이점을 비교하고 Ed25519 키 생성과 chmod 권한 설정 그리고 GitHub·GitLab 공개키 등록과 ssh -T 테스트로 인증 문제를 빠르게 해결하세요.",
@@ -124,7 +176,20 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 14,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
+      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
+      "date": "2026-02-06T06:29:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 1
+    },
+    {
+      "rank": 15,
       "slug": "4-git-filter-repo-remove-secrets-from-history",
       "title": "git filter-repo로 비밀키·토큰 유출 커밋 히스토리 완전 삭제하기 (강제 푸시·재동기화)",
       "description": "git filter-repo로 .env, 비밀키, 토큰을 Git 히스토리에서 완전히 제거하는 절차를 정리한다. 필터 규칙 정의, 재작성 검증, 강제 푸시와 팀 전체 재동기화, 보호 브랜치 점검까지 한 번에 정리한다.",
@@ -137,26 +202,52 @@
       "count": 1
     },
     {
-      "rank": 11,
+      "rank": 16,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOS DNS 캐시 지우기",
       "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
       "date": "2026-02-22T16:11:00.000Z",
       "categories": [
-        "infra"
+        "networking"
       ],
       "url": "/posts/6-flush-dns-cache/",
       "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
       "count": 1
     },
     {
-      "rank": 12,
+      "rank": 17,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Github pages 커스텀 도메인 사용하기",
+      "description": "GitHub Pages에 커스텀 도메인을 연결할 때 필요한 CNAME·A/AAAA 레코드 설정과 Pages의 Custom domain 적용 절차를 정리했습니다. Actions와 브랜치 배포의 CNAME 파일 처리 차이, dig로 DNS 확인, CAA 레코드 때문에 Enforce HTTPS가 안 켜지는 원인까지 다룹니다.",
+      "date": "2026-02-10T07:34:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 1
+    },
+    {
+      "rank": 18,
+      "slug": "89-gpg-encrypt-env-file",
+      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
+      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
+      "date": "2026-02-16T17:42:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/89-gpg-encrypt-env-file/",
+      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 1
+    },
+    {
+      "rank": 19,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "hugo site 다국어 지원하기",
       "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
       "date": "2026-02-11T09:55:00.000Z",
       "categories": [
-        "infra"
+        "web"
       ],
       "url": "/posts/93-hugo-multilingual-seo-setup/",
       "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
