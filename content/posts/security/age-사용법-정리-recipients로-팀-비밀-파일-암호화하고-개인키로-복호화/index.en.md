@@ -5,7 +5,7 @@ slug: "102-age-recipients-team-encryption-guide"
 title: "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys"
 description: "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change."
 categories:
-  - "infra"
+  - "security"
 tags:
   - "encrypt"
   - "env"

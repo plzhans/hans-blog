@@ -5,7 +5,7 @@ slug: "102-age-recipients-team-encryption-guide"
 title: "age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する"
 description: "age でチームの秘密ファイルを公開鍵（recipients）で暗号化し、秘密鍵で復号する方法を整理します。鍵の生成、recipients の管理、GPG との違い、メンバー変更時に再暗号化が必要な理由まで併せて説明します。"
 categories:
-  - "infra"
+  - "security"
 tags:
   - "encrypt"
   - "env"

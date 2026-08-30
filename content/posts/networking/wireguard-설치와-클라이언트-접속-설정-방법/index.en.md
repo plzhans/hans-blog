@@ -5,7 +5,7 @@ slug: "116-wireguard-install-client-setup"
 title: "How to Install WireGuard and Set Up Client Connections"
 description: "Explains how to install WireGuard VPN on a Linux server, covering key generation, firewall opening, and service registration. Includes Mac client conf setup and GUI connection verification steps to help you build a secure remote access environment."
 categories:
-  - "infra"
+  - "networking"
 tags:
   - "linux"
   - "mac"

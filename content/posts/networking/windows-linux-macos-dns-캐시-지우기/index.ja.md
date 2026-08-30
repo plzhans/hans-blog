@@ -5,7 +5,7 @@ slug: "6-flush-dns-cache"
 title: "Windows/Linux/macOSでDNSキャッシュをクリアする"
 description: "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。"
 categories:
-  - etc
+  - "networking"
 date: 2026-02-22T16:11:00.000Z
 lastmod: 2026-02-22T16:13:00.000Z
 toc: true

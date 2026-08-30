@@ -5,7 +5,7 @@ slug: "111-tailscale-linux-install-secure-remote-vpn"
 title: "Installing Tailscale on Linux - Secure Remote VPN Setup"
 description: "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel."
 categories:
-  - "infra"
+  - "networking"
 tags:
   - "linux"
   - "tailscale"

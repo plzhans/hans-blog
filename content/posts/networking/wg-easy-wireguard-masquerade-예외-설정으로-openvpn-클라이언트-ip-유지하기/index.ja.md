@@ -5,7 +5,7 @@ slug: "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip"
 title: "wg-easy WireGuard MASQUERADE 除外設定でOpenVPNクライアントIPを維持する方法"
 description: "wg-easy WireGuardでMASQUERADEによりリクエストIPがVPNサーバーIPに置き換わる原因と解決策をまとめます。iptables NATルールで特定の宛先帯域を除外し、OpenVPNクライアントのプライベートIPをそのままログに残します。"
 categories:
-  - "infra"
+  - "networking"
 tags:
   - "vpn"
 date: 2026-03-19T06:06:00.000Z

@@ -5,7 +5,7 @@ slug: "98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip"
 title: "Keeping the OpenVPN Client IP with a wg-easy WireGuard MASQUERADE Exception"
 description: "This post explains why the request IP gets replaced with the VPN server IP due to MASQUERADE in wg-easy WireGuard, and how to fix it. By excluding a specific destination range from the iptables NAT rule, the OpenVPN client's private IP is preserved as-is in the logs."
 categories:
-  - "infra"
+  - "networking"
 tags:
   - "vpn"
 date: 2026-03-19T06:06:00.000Z

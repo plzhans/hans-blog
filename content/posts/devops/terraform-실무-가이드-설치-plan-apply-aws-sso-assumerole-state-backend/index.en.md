@@ -5,7 +5,7 @@ slug: "103-terraform-practical-guide-aws-sso-assumerole-state-backend"
 title: "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend"
 description: "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips."
 categories:
-  - "infra"
+  - "devops"
 tags:
   - "aws"
   - "linux"

@@ -5,7 +5,7 @@ slug: "116-wireguard-install-client-setup"
 title: "WireGuardのインストールとクライアント接続設定方法"
 description: "LinuxサーバーにWireGuard VPNをインストールし、キー生成・ファイアウォール開放・サービス登録までを構成する方法を説明します。Macクライアントのconf設定とGUI接続確認手順を含め、安全なリモートアクセス環境を構築できます。"
 categories:
-  - "infra"
+  - "networking"
 tags:
   - "linux"
   - "mac"
