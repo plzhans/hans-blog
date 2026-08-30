@@ -5,13 +5,13 @@ slug: "102-age-recipients-team-encryption-guide"
 title: "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화"
 description: "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다."
 categories:
-  - "infra"
+  - "security"
 tags:
   - "encrypt"
   - "env"
   - "image"
 date: 2026-05-01T22:57:00.000Z
-lastmod: 2026-08-29T18:49:00.000Z
+lastmod: 2026-08-30T01:18:00.000Z
 toc: true
 draft: false
 images:

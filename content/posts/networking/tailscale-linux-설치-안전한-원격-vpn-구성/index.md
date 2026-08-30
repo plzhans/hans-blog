@@ -5,13 +5,13 @@ slug: "111-tailscale-linux-install-secure-remote-vpn"
 title: "Tailscale Linux 설치 - 안전한 원격 VPN 구성"
 description: "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다."
 categories:
-  - "infra"
+  - "networking"
 tags:
   - "linux"
   - "tailscale"
   - "vpn"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-08-30T01:20:00.000Z
 toc: true
 draft: false
 images:

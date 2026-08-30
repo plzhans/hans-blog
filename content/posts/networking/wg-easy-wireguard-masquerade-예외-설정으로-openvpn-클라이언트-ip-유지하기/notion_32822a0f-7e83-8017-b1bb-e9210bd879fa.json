@@ -2,7 +2,7 @@
   "object": "page",
   "id": "32822a0f-7e83-8017-b1bb-e9210bd879fa",
   "created_time": "2026-03-19T05:07:00.000Z",
-  "last_edited_time": "2026-08-29T16:03:00.000Z",
+  "last_edited_time": "2026-08-30T01:26:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -46,7 +46,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T16:03:00.000Z"
+      "last_edited_time": "2026-08-30T01:26:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -70,7 +70,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-30T01:02:00.000+09:00",
+        "start": "2026-08-30T10:20:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -91,7 +91,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T16:03:06.626Z)",
+            "content": "✅ 발행 완료 (2026-08-30T01:26:17.835Z)",
             "link": null
           },
           "annotations": {
@@ -102,7 +102,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T16:03:06.626Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-30T01:26:17.835Z)",
           "href": null
         }
       ]
@@ -203,9 +203,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "8dc22ddc-fa45-4626-aed1-e37aafa0ed8e",
-        "name": "Infra",
-        "color": "blue"
+        "id": "867be476-ec09-42f7-9b62-5d3bcd73c1fe",
+        "name": "Networking",
+        "color": "pink"
       }
     },
     "제목": {
@@ -235,5 +235,5 @@
   "url": "https://app.notion.com/p/wg-easy-WireGuard-MASQUERADE-OpenVPN-IP-32822a0f7e838017b1bbe9210bd879fa",
   "public_url": null,
   "archived": false,
-  "request_id": "d33a695b-6151-45df-8a26-c007106ab1ee"
+  "request_id": "4604f6ec-a0c9-4037-9a60-b7022ba3a084"
 }

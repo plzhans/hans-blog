@@ -1,15 +1,15 @@
 {
   "object": "page",
-  "id": "2fd22a0f-7e83-81e4-92bf-ccaaf7b39cd6",
-  "created_time": "2026-02-04T09:04:00.000Z",
-  "last_edited_time": "2026-08-29T11:03:00.000Z",
+  "id": "33522a0f-7e83-80ab-86d5-ca0afd4da987",
+  "created_time": "2026-04-01T04:57:00.000Z",
+  "last_edited_time": "2026-08-30T01:18:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -30,36 +30,46 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-02-04T09:04:00.000Z"
+      "created_time": "2026-04-01T04:57:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "6abc2658-d9f9-45d7-81b1-207788482465",
-          "name": "dns",
-          "color": "red"
+          "id": "4c75d307-3995-4fbb-b853-c0b80b3b08f6",
+          "name": "image",
+          "color": "green"
+        },
+        {
+          "id": "e5130c70-63c4-422d-809f-7c5812d0c9d6",
+          "name": "encrypt",
+          "color": "yellow"
+        },
+        {
+          "id": "fc6fbb14-327c-453f-8301-6f80db2dabaf",
+          "name": "env",
+          "color": "brown"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T11:03:00.000Z"
+      "last_edited_time": "2026-08-30T01:18:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 72
+        "number": 17
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/6-flush-dns-cache/"
+      "url": "https://blog.plzhans.com/posts/102-age-recipients-team-encryption-guide/"
     },
     "toc": {
       "id": "ZR~A",
@@ -70,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T19:51:00.000+09:00",
+        "start": "2026-08-30T10:18:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -91,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T11:03:30.999Z)",
+            "content": "✅ 발행 완료 (2026-08-29T18:49:27.641Z)",
             "link": null
           },
           "annotations": {
@@ -102,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T11:03:30.999Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-29T18:49:27.641Z)",
           "href": null
         }
       ]
@@ -114,7 +124,7 @@
         {
           "type": "text",
           "text": {
-            "content": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
+            "content": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
             "link": null
           },
           "annotations": {
@@ -125,7 +135,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
+          "plain_text": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
           "href": null
         }
       ]
@@ -137,7 +147,7 @@
         {
           "type": "text",
           "text": {
-            "content": "6",
+            "content": "102",
             "link": null
           },
           "annotations": {
@@ -148,7 +158,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "6",
+          "plain_text": "102",
           "href": null
         }
       ]
@@ -160,7 +170,7 @@
         {
           "type": "text",
           "text": {
-            "content": "flush-dns-cache",
+            "content": "age-recipients-team-encryption-guide",
             "link": null
           },
           "annotations": {
@@ -171,7 +181,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "flush-dns-cache",
+          "plain_text": "age-recipients-team-encryption-guide",
           "href": null
         }
       ]
@@ -185,7 +195,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-02-22T16:11:00.000+00:00",
+        "start": "2026-05-01T22:57:00.000+00:00",
         "end": null,
         "time_zone": null
       }
@@ -194,7 +204,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2019-06-19T11:14:00.000+09:00",
+        "start": "2026-04-01T13:57:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -203,9 +213,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "8dc22ddc-fa45-4626-aed1-e37aafa0ed8e",
-        "name": "Infra",
-        "color": "blue"
+        "id": "0eefe212-a642-4598-aece-315d48029bbc",
+        "name": "Security",
+        "color": "default"
       }
     },
     "제목": {
@@ -215,7 +225,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Windows/Linux/macOS DNS 캐시 지우기",
+            "content": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
             "link": null
           },
           "annotations": {
@@ -226,14 +236,13 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Windows/Linux/macOS DNS 캐시 지우기",
+          "plain_text": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/Windows-Linux-macOS-DNS-2fd22a0f7e8381e492bfccaaf7b39cd6",
+  "url": "https://app.notion.com/p/age-recipients-33522a0f7e8380ab86d5ca0afd4da987",
   "public_url": null,
-  "archived": false,
-  "request_id": "4d7e03b3-bbc5-4134-91d4-f96ac383569f"
+  "archived": false
 }

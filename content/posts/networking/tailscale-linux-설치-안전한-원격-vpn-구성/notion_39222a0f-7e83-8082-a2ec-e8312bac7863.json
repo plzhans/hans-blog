@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "39922a0f-7e83-80f3-bd74-df71ef8469fc",
-  "created_time": "2026-07-10T04:40:00.000Z",
-  "last_edited_time": "2026-08-29T16:03:00.000Z",
+  "id": "39222a0f-7e83-8082-a2ec-e8312bac7863",
+  "created_time": "2026-07-03T01:11:00.000Z",
+  "last_edited_time": "2026-08-30T01:26:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -30,26 +30,21 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-07-10T04:40:00.000Z"
+      "created_time": "2026-07-03T01:11:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
+          "id": "412b7d1f-6898-40ba-82cb-23bddfc9ac64",
+          "name": "tailscale",
+          "color": "gray"
+        },
+        {
           "id": "c4780975-8d5e-480a-90eb-a86270f15701",
           "name": "vpn",
           "color": "blue"
-        },
-        {
-          "id": "7f0d9ede-bff3-49ec-b7dc-510b5866f5fb",
-          "name": "wireguard",
-          "color": "default"
-        },
-        {
-          "id": "e6424f2b-5b46-48a8-ab47-a5b91968366a",
-          "name": "mac",
-          "color": "pink"
         },
         {
           "id": "d4a4aa54-ec5d-4582-a740-53a0875ce528",
@@ -61,20 +56,20 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T16:03:00.000Z"
+      "last_edited_time": "2026-08-30T01:26:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 31
+        "number": 26
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/116-wireguard-install-client-setup/"
+      "url": "https://blog.plzhans.com/posts/111-tailscale-linux-install-secure-remote-vpn/"
     },
     "toc": {
       "id": "ZR~A",
@@ -85,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-30T01:02:00.000+09:00",
+        "start": "2026-08-30T10:20:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -106,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T16:02:59.492Z)",
+            "content": "✅ 발행 완료 (2026-08-30T01:26:06.791Z)",
             "link": null
           },
           "annotations": {
@@ -117,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T16:02:59.492Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-30T01:26:06.791Z)",
           "href": null
         }
       ]
@@ -129,7 +124,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+            "content": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
             "link": null
           },
           "annotations": {
@@ -140,7 +135,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+          "plain_text": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
           "href": null
         }
       ]
@@ -152,7 +147,7 @@
         {
           "type": "text",
           "text": {
-            "content": "116",
+            "content": "111",
             "link": null
           },
           "annotations": {
@@ -163,7 +158,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "116",
+          "plain_text": "111",
           "href": null
         }
       ]
@@ -175,7 +170,7 @@
         {
           "type": "text",
           "text": {
-            "content": "wireguard-install-client-setup",
+            "content": "tailscale-linux-install-secure-remote-vpn",
             "link": null
           },
           "annotations": {
@@ -186,7 +181,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "wireguard-install-client-setup",
+          "plain_text": "tailscale-linux-install-secure-remote-vpn",
           "href": null
         }
       ]
@@ -200,7 +195,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-07-10T08:20:00.000+00:00",
+        "start": "2026-07-03",
         "end": null,
         "time_zone": null
       }
@@ -209,7 +204,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-07-10T13:40:00.000+09:00",
+        "start": "2026-07-03T10:11:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -218,9 +213,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "8dc22ddc-fa45-4626-aed1-e37aafa0ed8e",
-        "name": "Infra",
-        "color": "blue"
+        "id": "867be476-ec09-42f7-9b62-5d3bcd73c1fe",
+        "name": "Networking",
+        "color": "pink"
       }
     },
     "제목": {
@@ -230,7 +225,7 @@
         {
           "type": "text",
           "text": {
-            "content": "WireGuard 설치와 클라이언트 접속 설정 방법",
+            "content": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
             "link": null
           },
           "annotations": {
@@ -241,14 +236,14 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "WireGuard 설치와 클라이언트 접속 설정 방법",
+          "plain_text": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/WireGuard-39922a0f7e8380f3bd74df71ef8469fc",
+  "url": "https://app.notion.com/p/Tailscale-Linux-VPN-39222a0f7e838082a2ece8312bac7863",
   "public_url": null,
   "archived": false,
-  "request_id": "30f53074-f27a-4a11-b224-d32d245c39a4"
+  "request_id": "49551017-4daa-4fec-83fc-549488fae02a"
 }

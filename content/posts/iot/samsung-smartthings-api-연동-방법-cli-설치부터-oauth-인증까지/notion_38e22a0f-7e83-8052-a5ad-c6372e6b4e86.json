@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "33a22a0f-7e83-80fb-9bff-ea4763ed7efe",
-  "created_time": "2026-04-06T02:39:00.000Z",
-  "last_edited_time": "2026-08-29T11:02:00.000Z",
+  "id": "38e22a0f-7e83-8052-a5ad-c6372e6b4e86",
+  "created_time": "2026-06-29T09:47:00.000Z",
+  "last_edited_time": "2026-08-30T01:26:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -30,30 +30,25 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-04-06T02:39:00.000Z"
+      "created_time": "2026-06-29T09:47:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "OOQM",
-          "name": "aws",
-          "color": "red"
-        },
-        {
-          "id": "d4a4aa54-ec5d-4582-a740-53a0875ce528",
-          "name": "linux",
+          "id": "e3c6a39a-142e-490c-8e05-82f543605224",
+          "name": "smartthing",
           "color": "yellow"
         },
         {
-          "id": "e6424f2b-5b46-48a8-ab47-a5b91968366a",
-          "name": "mac",
-          "color": "pink"
+          "id": "3d44c81b-6f43-499d-8256-49a0ccbebf50",
+          "name": "iot",
+          "color": "default"
         },
         {
-          "id": "679afefe-6767-4444-af7d-af9695f2e0e2",
-          "name": "terraform",
+          "id": "151ab0eb-9afd-4212-8eef-7367140a7b21",
+          "name": "OpenClaw",
           "color": "pink"
         }
       ]
@@ -61,20 +56,20 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T11:02:00.000Z"
+      "last_edited_time": "2026-08-30T01:26:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 18
+        "number": 25
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/"
+      "url": "https://blog.plzhans.com/posts/110-samsung-smartthings-api-integration-cli-oauth/"
     },
     "toc": {
       "id": "ZR~A",
@@ -85,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T19:51:00.000+09:00",
+        "start": "2026-08-30T10:21:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -106,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T11:02:31.050Z)",
+            "content": "✅ 발행 완료 (2026-08-30T01:26:08.909Z)",
             "link": null
           },
           "annotations": {
@@ -117,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T11:02:31.050Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-30T01:26:08.909Z)",
           "href": null
         }
       ]
@@ -129,7 +124,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
+            "content": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
             "link": null
           },
           "annotations": {
@@ -140,7 +135,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
+          "plain_text": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
           "href": null
         }
       ]
@@ -152,7 +147,7 @@
         {
           "type": "text",
           "text": {
-            "content": "103",
+            "content": "110",
             "link": null
           },
           "annotations": {
@@ -163,7 +158,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "103",
+          "plain_text": "110",
           "href": null
         }
       ]
@@ -175,7 +170,7 @@
         {
           "type": "text",
           "text": {
-            "content": "terraform-practical-guide-aws-sso-assumerole-state-backend",
+            "content": "samsung-smartthings-api-integration-cli-oauth",
             "link": null
           },
           "annotations": {
@@ -186,7 +181,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "terraform-practical-guide-aws-sso-assumerole-state-backend",
+          "plain_text": "samsung-smartthings-api-integration-cli-oauth",
           "href": null
         }
       ]
@@ -200,7 +195,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-05-06T22:52:00.000+09:00",
+        "start": "2026-06-29",
         "end": null,
         "time_zone": null
       }
@@ -209,7 +204,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-04-06T11:39:00.000+09:00",
+        "start": "2026-06-29T18:47:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -218,9 +213,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "8dc22ddc-fa45-4626-aed1-e37aafa0ed8e",
-        "name": "Infra",
-        "color": "blue"
+        "id": "ced4314f-a7b5-4ed6-a37d-5d339c4a67b5",
+        "name": "IoT",
+        "color": "orange"
       }
     },
     "제목": {
@@ -230,7 +225,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
+            "content": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
             "link": null
           },
           "annotations": {
@@ -241,14 +236,14 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
+          "plain_text": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/Terraform-plan-apply-AWS-SSO-AssumeRole-state-backend-33a22a0f7e8380fb9bffea4763ed7efe",
+  "url": "https://app.notion.com/p/Samsung-SmartThings-API-CLI-OAuth-38e22a0f7e838052a5adc6372e6b4e86",
   "public_url": null,
   "archived": false,
-  "request_id": "52d61e12-f95d-4651-9471-6199092f360e"
+  "request_id": "0b40b4ab-4298-404a-b393-472385389840"
 }

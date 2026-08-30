@@ -5,14 +5,14 @@ slug: "103-terraform-practical-guide-aws-sso-assumerole-state-backend"
 title: "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend"
 description: "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다."
 categories:
-  - "infra"
+  - "devops"
 tags:
   - "aws"
   - "linux"
   - "mac"
   - "terraform"
 date: 2026-05-06T13:52:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-08-30T01:20:00.000Z
 toc: true
 draft: false
 images:

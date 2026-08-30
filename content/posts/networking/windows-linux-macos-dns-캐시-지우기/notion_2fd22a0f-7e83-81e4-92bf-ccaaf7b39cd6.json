@@ -1,8 +1,8 @@
 {
   "object": "page",
-  "id": "33522a0f-7e83-80ab-86d5-ca0afd4da987",
-  "created_time": "2026-04-01T04:57:00.000Z",
-  "last_edited_time": "2026-08-29T18:49:00.000Z",
+  "id": "2fd22a0f-7e83-81e4-92bf-ccaaf7b39cd6",
+  "created_time": "2026-02-04T09:04:00.000Z",
+  "last_edited_time": "2026-08-30T01:26:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -30,46 +30,36 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-04-01T04:57:00.000Z"
+      "created_time": "2026-02-04T09:04:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "4c75d307-3995-4fbb-b853-c0b80b3b08f6",
-          "name": "image",
-          "color": "green"
-        },
-        {
-          "id": "e5130c70-63c4-422d-809f-7c5812d0c9d6",
-          "name": "encrypt",
-          "color": "yellow"
-        },
-        {
-          "id": "fc6fbb14-327c-453f-8301-6f80db2dabaf",
-          "name": "env",
-          "color": "brown"
+          "id": "6abc2658-d9f9-45d7-81b1-207788482465",
+          "name": "dns",
+          "color": "red"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T18:49:00.000Z"
+      "last_edited_time": "2026-08-30T01:26:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 17
+        "number": 72
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/102-age-recipients-team-encryption-guide/"
+      "url": "https://blog.plzhans.com/posts/6-flush-dns-cache/"
     },
     "toc": {
       "id": "ZR~A",
@@ -80,7 +70,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-30T03:49:00.000+09:00",
+        "start": "2026-08-30T10:20:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +91,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T18:49:27.641Z)",
+            "content": "✅ 발행 완료 (2026-08-30T01:26:25.638Z)",
             "link": null
           },
           "annotations": {
@@ -112,7 +102,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T18:49:27.641Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-30T01:26:25.638Z)",
           "href": null
         }
       ]
@@ -124,7 +114,7 @@
         {
           "type": "text",
           "text": {
-            "content": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
+            "content": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
             "link": null
           },
           "annotations": {
@@ -135,7 +125,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
+          "plain_text": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
           "href": null
         }
       ]
@@ -147,7 +137,7 @@
         {
           "type": "text",
           "text": {
-            "content": "102",
+            "content": "6",
             "link": null
           },
           "annotations": {
@@ -158,7 +148,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "102",
+          "plain_text": "6",
           "href": null
         }
       ]
@@ -170,7 +160,7 @@
         {
           "type": "text",
           "text": {
-            "content": "age-recipients-team-encryption-guide",
+            "content": "flush-dns-cache",
             "link": null
           },
           "annotations": {
@@ -181,7 +171,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "age-recipients-team-encryption-guide",
+          "plain_text": "flush-dns-cache",
           "href": null
         }
       ]
@@ -195,7 +185,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-05-01T22:57:00.000+00:00",
+        "start": "2026-02-22T16:11:00.000+00:00",
         "end": null,
         "time_zone": null
       }
@@ -204,7 +194,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-04-01T13:57:00.000+09:00",
+        "start": "2019-06-19T11:14:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -213,9 +203,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "8dc22ddc-fa45-4626-aed1-e37aafa0ed8e",
-        "name": "Infra",
-        "color": "blue"
+        "id": "867be476-ec09-42f7-9b62-5d3bcd73c1fe",
+        "name": "Networking",
+        "color": "pink"
       }
     },
     "제목": {
@@ -225,7 +215,7 @@
         {
           "type": "text",
           "text": {
-            "content": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
+            "content": "Windows/Linux/macOS DNS 캐시 지우기",
             "link": null
           },
           "annotations": {
@@ -236,14 +226,14 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
+          "plain_text": "Windows/Linux/macOS DNS 캐시 지우기",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/age-recipients-33522a0f7e8380ab86d5ca0afd4da987",
+  "url": "https://app.notion.com/p/Windows-Linux-macOS-DNS-2fd22a0f7e8381e492bfccaaf7b39cd6",
   "public_url": null,
   "archived": false,
-  "request_id": "fdff11ef-efc3-425d-b9ae-415d079d613d"
+  "request_id": "51a1a390-b36a-4c9e-9f36-6d32b7b6779e"
 }
