@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#0A1020"/><stop offset="55%" stop-color="#101B30"/>
+    <stop offset="100%" stop-color="#16233D"/>
+  </linearGradient>
+  <radialGradient id="glowC"><stop offset="0%" stop-color="#38BDF8" stop-opacity="0.20"/>
+    <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/></radialGradient>
+  <radialGradient id="glowO"><stop offset="0%" stop-color="#FB923C" stop-opacity="0.16"/>
+    <stop offset="100%" stop-color="#FB923C" stop-opacity="0"/></radialGradient>
+  <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1" fill="#FFFFFF" fill-opacity="0.05"/>
+  </pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<ellipse cx="300" cy="230" rx="360" ry="240" fill="url(#glowC)"/>
+<ellipse cx="900" cy="230" rx="360" ry="240" fill="url(#glowO)"/>
+
+<text x="600" y="58" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, TeX Gyre Heros, Liberation Sans, DejaVu Sans, sans-serif" font-size="20"
+      font-weight="bold" letter-spacing="7" fill="#38BDF8" fill-opacity="0.85">HTTP SECURITY HEADERS</text>
+
+<rect x="100" y="90" width="440" height="328" rx="20" fill="#FFFFFF" fill-opacity="0.035" stroke="#FFFFFF" stroke-opacity="0.10"/><rect x="100" y="90" width="4" height="328" rx="2" fill="#38BDF8" fill-opacity="0.85"/><g fill="#38BDF8" fill-opacity="0.9"><circle cx="140" cy="131" r="7"/><circle cx="149" cy="128" r="9"/><circle cx="157" cy="132" r="6"/><rect x="139" y="132" width="19" height="6" rx="3"/></g><text x="176" y="141" font-family="Helvetica Neue, Helvetica, Arial, TeX Gyre Heros, Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="bold" letter-spacing="2.4" fill="#E6EDF7">CDN EDGE</text><text x="130" y="170" font-family="Helvetica Neue, Helvetica, Arial, TeX Gyre Heros, Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#8296B0">Fixed values, set once</text><line x1="130" y1="190" x2="510" y2="190" stroke="#FFFFFF" stroke-opacity="0.09"/><rect x="130" y="208" width="380" height="38" rx="10" fill="#38BDF8" fill-opacity="0.10" stroke="#38BDF8" stroke-opacity="0.32"/><circle cx="152" cy="227" r="3.5" fill="#38BDF8"/><text x="168" y="233" font-family="SF Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono, monospace" font-size="16" fill="#E6EDF7">Strict-Transport-Security</text><rect x="130" y="254" width="380" height="38" rx="10" fill="#38BDF8" fill-opacity="0.10" stroke="#38BDF8" stroke-opacity="0.32"/><circle cx="152" cy="273" r="3.5" fill="#38BDF8"/><text x="168" y="279" font-family="SF Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono, monospace" font-size="16" fill="#E6EDF7">X-Content-Type-Options</text><rect x="130" y="300" width="380" height="38" rx="10" fill="#38BDF8" fill-opacity="0.10" stroke="#38BDF8" stroke-opacity="0.32"/><circle cx="152" cy="319" r="3.5" fill="#38BDF8"/><text x="168" y="325" font-family="SF Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono, monospace" font-size="16" fill="#E6EDF7">Referrer-Policy</text><rect x="130" y="346" width="380" height="38" rx="10" fill="#38BDF8" fill-opacity="0.10" stroke="#38BDF8" stroke-opacity="0.32"/><circle cx="152" cy="365" r="3.5" fill="#38BDF8"/><text x="168" y="371" font-family="SF Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono, monospace" font-size="16" fill="#E6EDF7">X-Frame-Options</text>
+<rect x="660" y="90" width="440" height="328" rx="20" fill="#FFFFFF" fill-opacity="0.035" stroke="#FFFFFF" stroke-opacity="0.10"/><rect x="660" y="90" width="4" height="328" rx="2" fill="#FB923C" fill-opacity="0.85"/><g stroke="#FB923C" stroke-opacity="0.9" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="699,123 692,131 699,139"/><polyline points="711,123 718,131 711,139"/><line x1="707" y1="122" x2="703" y2="140"/></g><text x="736" y="141" font-family="Helvetica Neue, Helvetica, Arial, TeX Gyre Heros, Liberation Sans, DejaVu Sans, sans-serif" font-size="21" font-weight="bold" letter-spacing="2.4" fill="#E6EDF7">HTML META</text><text x="690" y="170" font-family="Helvetica Neue, Helvetica, Arial, TeX Gyre Heros, Liberation Sans, DejaVu Sans, sans-serif" font-size="15" fill="#8296B0">Changes with the site</text><line x1="690" y1="190" x2="1070" y2="190" stroke="#FFFFFF" stroke-opacity="0.09"/><rect x="690" y="208" width="380" height="38" rx="10" fill="#FB923C" fill-opacity="0.10" stroke="#FB923C" stroke-opacity="0.32"/><circle cx="712" cy="227" r="3.5" fill="#FB923C"/><text x="728" y="233" font-family="SF Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono, monospace" font-size="16" fill="#E6EDF7">Content-Security-Policy</text><rect x="690" y="268" width="380" height="34" rx="8" fill="#000000" fill-opacity="0.22"/><text x="704" y="290" font-family="SF Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono, monospace" font-size="12.5" fill="#8296B0">&lt;meta http-equiv=&quot;Content-Security-Policy&quot;&gt;</text><text x="690" y="336" font-family="Helvetica Neue, Helvetica, Arial, TeX Gyre Heros, Liberation Sans, DejaVu Sans, sans-serif" font-size="14.5" fill="#8296B0">Not available here:</text><text x="690" y="362" font-family="SF Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono, monospace" font-size="14" fill="#8296B0" fill-opacity="0.85">frame-ancestors &#183; Report-Only</text>
+
+<path d="M320 418 C 320 460, 520 452, 560 472" stroke="#38BDF8"
+      stroke-opacity="0.45" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+<path d="M880 418 C 880 460, 680 452, 640 472" stroke="#FB923C"
+      stroke-opacity="0.45" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+
+<rect x="400" y="476" width="400" height="106" rx="14" fill="#FFFFFF" fill-opacity="0.05"
+      stroke="#FFFFFF" stroke-opacity="0.13"/>
+<line x1="400" y1="512" x2="800" y2="512" stroke="#FFFFFF" stroke-opacity="0.10"/>
+<circle cx="424" cy="494" r="4.5" fill="#FFFFFF" fill-opacity="0.22"/>
+<circle cx="442" cy="494" r="4.5" fill="#FFFFFF" fill-opacity="0.22"/>
+<circle cx="460" cy="494" r="4.5" fill="#FFFFFF" fill-opacity="0.22"/>
+<rect x="486" y="484" width="290" height="21" rx="10.5" fill="#FFFFFF" fill-opacity="0.07"/>
+<text x="502" y="500" font-family="SF Mono, Menlo, Consolas, DejaVu Sans Mono, Liberation Mono, monospace" font-size="13" fill="#8296B0">https://</text>
+<text x="600" y="555" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, TeX Gyre Heros, Liberation Sans, DejaVu Sans, sans-serif" font-size="19"
+      font-weight="bold" letter-spacing="1.5" fill="#E6EDF7">ONE SITE, TWO LAYERS</text>
+</svg>
