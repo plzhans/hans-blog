@@ -1,0 +1,7 @@
+{
+  "type": "TXT",
+  "name": "_github-pages-challenge-plzhans.blog.plzhans.com",
+  "content": "c44e574394ff8070f4f7163bb873c2",
+  "ttl": 1800,
+  "comment": "GitHub Pages 커스텀 도메인 소유권 확인 (Repository Settings > Pages 에서 발급) - cloudflare/manage-dns.sh 관리"
+}

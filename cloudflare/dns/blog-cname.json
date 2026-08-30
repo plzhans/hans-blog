@@ -1,0 +1,8 @@
+{
+  "type": "CNAME",
+  "name": "blog.plzhans.com",
+  "content": "plzhans.github.io",
+  "proxied": true,
+  "ttl": 1,
+  "comment": "GitHub Pages 커스텀 도메인 - cloudflare/manage-dns.sh 관리"
+}

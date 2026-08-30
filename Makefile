@@ -29,6 +29,14 @@ notion-page-sync:
 translate:
 	claude -p "$$(cat prompts/translate-database-sync.md)" --permission-mode acceptEdits
 
+.PHONY: cloudflare-rules
+cloudflare-rules:
+	./cloudflare/manage-rules.sh
+
+.PHONY: cloudflare-dns
+cloudflare-dns:
+	./cloudflare/manage-dns.sh
+
 .PHONY: env
 env:
 ifeq ($(firstword $(RUN_ARGS)),enc)

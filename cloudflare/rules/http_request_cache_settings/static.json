@@ -1,0 +1,11 @@
+{
+  "ref": "static",
+  "description": "[static] URL이 고정되어 재발급되지 않는 정적 파일",
+  "expression": "(http.host eq \"blog.plzhans.com\") and (http.request.uri.path wildcard \"/favicon.ico\" or http.request.uri.path wildcard \"/assets/*\")",
+  "action": "set_cache_settings",
+  "action_parameters": {
+    "cache": true,
+    "edge_ttl": { "mode": "override_origin", "default": 2592000 },
+    "browser_ttl": { "mode": "override_origin", "default": 2592000 }
+  }
+}

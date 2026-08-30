@@ -44,6 +44,8 @@ hans-blog/
 | `make notion-database-sync` | Notion 데이터베이스 전체 동기화 |
 | `make notion-page-sync [page_id]` | 특정 Notion 페이지 동기화 |
 | `make translate` | 동기화된 글을 AI 에이전트로 영어·일본어 자동 번역 |
+| `make cloudflare-rules` | blog.plzhans.com Cache Rules/응답 헤더 규칙을 [`cloudflare/rules/`](cloudflare/rules/) 정의대로 적용 |
+| `make cloudflare-dns` | blog.plzhans.com DNS 레코드를 [`cloudflare/dns/`](cloudflare/dns/) 정의대로 적용 |
 
 ### Hugo 설치
 

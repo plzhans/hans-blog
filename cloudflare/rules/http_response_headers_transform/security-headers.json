@@ -1,0 +1,13 @@
+{
+  "ref": "security-headers",
+  "description": "[security-headers] blog.plzhans.com 응답에 보안 헤더 강제 세팅",
+  "expression": "(http.host eq \"blog.plzhans.com\")",
+  "action": "rewrite",
+  "action_parameters": {
+    "headers": {
+      "Referrer-Policy": { "operation": "set", "value": "strict-origin-when-cross-origin" },
+      "X-Content-Type-Options": { "operation": "set", "value": "nosniff" },
+      "X-Frame-Options": { "operation": "set", "value": "SAMEORIGIN" }
+    }
+  }
+}

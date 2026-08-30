@@ -33,9 +33,3 @@ hugo/public
 
 # claude-seo audit output
 blog.plzhans.com-audit/
-
-# terraform
-terraform/.terraform/
-terraform/*.tfstate
-terraform/*.tfstate.*
-terraform/*.tfplan
