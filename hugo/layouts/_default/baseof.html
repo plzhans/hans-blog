@@ -128,9 +128,20 @@
       {{- with .Site.Params.social }}
       <div class="app-header-social">
         {{ range . }}
+          {{- if strings.HasPrefix .url "mailto:" }}
+          {{/* 평문 mailto: 링크가 HTML에 노출되면 Cloudflare Email Obfuscation이
+               모든 페이지에 email-decode.min.js를 렌더 차단 스크립트로 주입함.
+               base64로 감춰 클릭 시에만 디코딩해 그 주입을 회피 - 완벽한 보호는
+               아니지만 Cloudflare 자체 방식도 동일 수준의 클라이언트 디코딩이라 보호
+               수준은 동등하고, 매 페이지 렌더 차단 스크립트가 사라지는 이득이 큼. */}}
+          <a href="#" class="js-obfmail" data-mail="{{ .url | base64Encode }}" target="_blank" rel="noreferrer noopener me">
+            {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
+          </a>
+          {{- else }}
           <a href="{{ .url }}" target="_blank" rel="noreferrer noopener me">
             {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
           </a>
+          {{- end }}
         {{ end }}
           <a href="{{ "index.xml" | absLangURL }}" target="_blank" rel="noreferrer noopener me">
             {{ partial "icon.html" (dict "ctx" $ "name" "rss" "title" "RSS") }}
@@ -201,6 +212,14 @@
          네트워크 대역폭을 두고 경쟁함. 분석 스크립트는 렌더링에 필요 없으므로
          본문 뒤로 미뤄 우선순위를 낮춤 (async라 실행 시점 자체는 거의 동일,
          브라우저가 이 요청을 "발견"하는 시점만 늦춤) */}}
+    <script>
+    document.querySelectorAll('.js-obfmail').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = atob(el.dataset.mail);
+      });
+    });
+    </script>
     {{ template "_internal/google_analytics.html" . }}
     {{- with .Store.Get "postView" }}
     <script>
