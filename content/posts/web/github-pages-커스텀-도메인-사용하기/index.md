@@ -5,14 +5,14 @@ slug: "86-github-pages-custom-domain"
 title: "Github pages 커스텀 도메인 사용하기"
 description: "GitHub Pages에 커스텀 도메인을 연결할 때 필요한 CNAME·A/AAAA 레코드 설정과 Pages의 Custom domain 적용 절차를 정리했습니다. Actions와 브랜치 배포의 CNAME 파일 처리 차이, dig로 DNS 확인, CAA 레코드 때문에 Enforce HTTPS가 안 켜지는 원인까지 다룹니다."
 categories:
-  - "git"
+  - "web"
 tags:
   - "domain"
   - "github"
   - "github-action"
   - "github-pages"
 date: 2026-02-10T07:34:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-08-30T01:16:00.000Z
 toc: true
 draft: false
 images:

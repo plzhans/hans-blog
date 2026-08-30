@@ -2,7 +2,7 @@
   "object": "page",
   "id": "2fd22a0f-7e83-8086-b859-fdca16a463fa",
   "created_time": "2026-02-04T09:07:00.000Z",
-  "last_edited_time": "2026-08-29T16:03:00.000Z",
+  "last_edited_time": "2026-08-30T01:16:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
@@ -61,7 +61,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T16:03:00.000Z"
+      "last_edited_time": "2026-08-30T01:16:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -85,7 +85,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-30T01:02:00.000+09:00",
+        "start": "2026-08-30T10:16:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -106,7 +106,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T16:03:51.245Z)",
+            "content": "✅ 발행 완료 (2026-08-30T01:16:50.556Z)",
             "link": null
           },
           "annotations": {
@@ -117,7 +117,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T16:03:51.245Z)",
+          "plain_text": "✅ 발행 완료 (2026-08-30T01:16:50.556Z)",
           "href": null
         }
       ]
@@ -218,9 +218,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "9bdb5196-7014-4a83-9375-182716238338",
-        "name": "Git",
-        "color": "green"
+        "id": "f8a45a20-5dfa-4116-b3ba-1a002de30df6",
+        "name": "Web",
+        "color": "pink"
       }
     },
     "제목": {
@@ -250,5 +250,5 @@
   "url": "https://app.notion.com/p/Github-pages-2fd22a0f7e838086b859fdca16a463fa",
   "public_url": null,
   "archived": false,
-  "request_id": "d862ccfa-3711-4ffc-b082-3195beaf0cfd"
+  "request_id": "25c73a78-35a2-4e39-8724-6136312e96c8"
 }
