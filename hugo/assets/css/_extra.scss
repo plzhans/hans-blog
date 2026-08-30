@@ -338,7 +338,7 @@ $top-header-height: 3rem;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/NotoSansKR-Regular.woff2') format('woff2');
+  src: url('/assets/fonts/NotoSansKR-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -346,7 +346,7 @@ $top-header-height: 3rem;
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/NotoSansKR-Bold.woff2') format('woff2');
+  src: url('/assets/fonts/NotoSansKR-Bold.woff2') format('woff2');
 }
 
 body {

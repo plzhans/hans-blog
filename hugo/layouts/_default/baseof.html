@@ -19,8 +19,8 @@
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
     {{/* 본문 대부분이 이 굵기라 LCP에 가장 크게 관여 - CSS 파싱을 기다리지 않고 바로 받기 시작하도록 preload */}}
-    <link rel="preload" href="/fonts/NotoSansKR-Regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/NotoSansKR-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/NotoSansKR-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/NotoSansKR-Bold.woff2" as="font" type="font/woff2" crossorigin />
     {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | css.Sass | resources.Minify | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
     {{ with .OutputFormats.Get "rss" -}}
