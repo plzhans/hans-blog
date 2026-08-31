@@ -63,6 +63,8 @@ dataDir = "../data"
   description = "리눅스/클라우드 인프라, 로컬 LLM, 보안·네트워킹을 직접 구축하고 트러블슈팅한 기록을 남기는 서버 엔지니어의 기술 블로그입니다."
   # 프로필 이미지 경로
   avatar = "/assets/img/avatar-plzhans.webp"
+  # 홈/목록 등 자체 이미지가 없는 페이지의 기본 og:image (social-image.html 폴백)
+  images = ["/assets/img/og-default.jpg"]
   # 저작권 표시 HTML
   CopyrightHTML = 'Copyright &#xA9; plzhans. All Rights Reserved. | Powered by <a href="https://github.com/plzhans/hans-blog" target="_blank">github.com/plzhans/hans-blog</a>'
   # 메뉴 아이템 구분자
