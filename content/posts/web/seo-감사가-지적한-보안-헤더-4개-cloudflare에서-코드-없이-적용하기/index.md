@@ -12,18 +12,15 @@ tags:
   - "https"
   - "seo"
 date: 2026-08-30T01:25:00.000Z
-lastmod: 2026-08-30T01:26:00.000Z
+lastmod: 2026-08-31T00:39:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_701d659f-3d7c-4a91-b244-e22e9ba8c778.svg"
+  - "assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png"
 ---
 
 
-![Cloudflare와 HTML meta 태그로 보안 헤더를 나눠 적용하는 구성을 나타낸 대표 이미지](./assets/1_701d659f-3d7c-4a91-b244-e22e9ba8c778.svg)
-
-
-![Cloudflare와 HTML meta 태그로 보안 헤더를 나눠 적용하는 구성을 나타낸 대표 이미지](./assets/2_3cb22a0f-7e83-805e-96d1-eef71485d603.png)
+![Cloudflare와 HTML meta 태그로 보안 헤더를 나눠 적용하는 구성을 나타낸 대표 이미지](./assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png)
 
 
 ## 개요

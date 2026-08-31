@@ -16,11 +16,11 @@ lastmod: 2026-08-30T01:26:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_701d659f-3d7c-4a91-b244-e22e9ba8c778.svg"
+  - "assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png"
 ---
 
 
-![CloudflareとHTMLのmetaタグでセキュリティヘッダーを分けて適用する構成を示した代表画像](./assets/1_701d659f-3d7c-4a91-b244-e22e9ba8c778.svg)
+![CloudflareとHTMLのmetaタグでセキュリティヘッダーを分けて適用する構成を示した代表画像](./assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png)
 
 
 ![CloudflareとHTMLのmetaタグでセキュリティヘッダーを分けて適用する構成を示した代表画像](./assets/2_3cb22a0f-7e83-805e-96d1-eef71485d603.png)
