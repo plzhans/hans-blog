@@ -217,7 +217,7 @@
         "@context" "https://schema.org"
         "@type" "BreadcrumbList"
         "itemListElement" (slice
-          (dict "@type" "ListItem" "position" 1 "name" $.Site.Title "item" $.Site.BaseURL)
+          (dict "@type" "ListItem" "position" 1 "name" $.Site.Title "item" $.Site.Home.Permalink)
           (dict "@type" "ListItem" "position" 2 "name" $firstCategory.Title "item" $firstCategory.Permalink)
           (dict "@type" "ListItem" "position" 3 "name" $.Title "item" $.Permalink)
         )
