@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T05:48:36.837Z",
+  "generated_at": "2026-09-01T05:21:19.650Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -43,10 +43,23 @@
       ],
       "url": "/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 5
+      "count": 6
     },
     {
       "rank": 4,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 6
+    },
+    {
+      "rank": 5,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
       "description": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
@@ -59,7 +72,7 @@
       "count": 4
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "95-openclaw-setup",
       "title": "오픈클로(OpenClaw) 구축 ",
       "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",
@@ -69,19 +82,6 @@
       ],
       "url": "/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 4
-    },
-    {
-      "rank": 6,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 4
     },
     {

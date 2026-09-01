@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T05:48:36.843Z",
+  "generated_at": "2026-09-01T05:21:19.653Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -43,10 +43,23 @@
       ],
       "url": "/en/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 5
+      "count": 6
     },
     {
       "rank": 4,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
+      "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 6
+    },
+    {
+      "rank": 5,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
       "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
@@ -59,7 +72,7 @@
       "count": 4
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "95-openclaw-setup",
       "title": "Setting Up OpenClaw ",
       "description": "A summary of installing OpenClaw (OpenClaw AI agent framework) locally and configuring the model, channel, and skills through onboard. Follow along with the Telegram bot authentication and security warning checkpoints to run the agent safely.",
@@ -69,19 +82,6 @@
       ],
       "url": "/en/posts/95-openclaw-setup/",
       "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 4
-    },
-    {
-      "rank": 6,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
-      "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 4
     },
     {
