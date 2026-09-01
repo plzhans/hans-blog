@@ -7,7 +7,8 @@
     "headers": {
       "Referrer-Policy": { "operation": "set", "value": "strict-origin-when-cross-origin" },
       "X-Content-Type-Options": { "operation": "set", "value": "nosniff" },
-      "X-Frame-Options": { "operation": "set", "value": "SAMEORIGIN" }
+      "X-Frame-Options": { "operation": "set", "value": "SAMEORIGIN" },
+      "Strict-Transport-Security": { "operation": "set", "value": "max-age=31536000; includeSubDomains" }
     }
   }
 }
