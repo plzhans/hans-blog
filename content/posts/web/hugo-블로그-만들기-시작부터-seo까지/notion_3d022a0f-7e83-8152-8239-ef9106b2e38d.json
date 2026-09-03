@@ -2,14 +2,14 @@
   "object": "page",
   "id": "3d022a0f-7e83-8152-8239-ef9106b2e38d",
   "created_time": "2026-09-03T08:50:00.000Z",
-  "last_edited_time": "2026-09-03T08:50:00.000Z",
+  "last_edited_time": "2026-09-03T11:04:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "00000000-0000-0000-0000-000000000003"
+    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "cover": null,
   "icon": null,
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-09-03T08:50:00.000Z"
+      "last_edited_time": "2026-09-03T11:04:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -69,7 +69,7 @@
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": null
+      "url": "https://blog.plzhans.com/posts/123-hugo-blog-guide/"
     },
     "toc": {
       "id": "ZR~A",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-09-03T17:50:00.000+09:00",
+        "start": "2026-09-03T20:03:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -89,15 +89,33 @@
       "id": "%5B~Jq",
       "type": "status",
       "status": {
-        "id": "=rr:",
-        "name": "발행 요청",
-        "color": "purple"
+        "id": "DOao",
+        "name": "발행 완료",
+        "color": "green"
       }
     },
     "발행 결과": {
       "id": "_xvq",
       "type": "rich_text",
-      "rich_text": []
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "✅ 발행 완료 (2026-09-03T11:03:00.290Z)",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "✅ 발행 완료 (2026-09-03T11:03:00.290Z)",
+          "href": null
+        }
+      ]
     },
     "요약": {
       "id": "bCTc",
@@ -227,5 +245,5 @@
   "url": "https://app.notion.com/p/Hugo-SEO-3d022a0f7e8381528239ef9106b2e38d",
   "public_url": null,
   "archived": false,
-  "request_id": "4d899762-9bc7-46e9-9f63-94362734fd2b"
+  "request_id": "81edcf38-e8fd-4011-a992-8cf1fb476ccb"
 }

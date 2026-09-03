@@ -2,14 +2,14 @@
   "object": "page",
   "id": "3d022a0f-7e83-81ad-9c40-d21316a45cd1",
   "created_time": "2026-09-03T08:50:00.000Z",
-  "last_edited_time": "2026-09-03T08:54:00.000Z",
+  "last_edited_time": "2026-09-03T11:02:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
   },
   "cover": null,
   "icon": null,
@@ -56,7 +56,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-09-03T08:54:00.000Z"
+      "last_edited_time": "2026-09-03T11:02:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -80,7 +80,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-09-03T17:50:00.000+09:00",
+        "start": "2026-09-03T20:02:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +101,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-09-03T08:50:37.577Z)",
+            "content": "✅ 발행 완료 (2026-09-03T11:02:48.479Z)",
             "link": null
           },
           "annotations": {
@@ -112,7 +112,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-09-03T08:50:37.577Z)",
+          "plain_text": "✅ 발행 완료 (2026-09-03T11:02:48.479Z)",
           "href": null
         }
       ]
@@ -245,5 +245,5 @@
   "url": "https://app.notion.com/p/VPN-3d022a0f7e8381ad9c40d21316a45cd1",
   "public_url": null,
   "archived": false,
-  "request_id": "e8b2b3da-14af-4563-bbbc-0f40d2343c7d"
+  "request_id": "317a8c31-37ea-4e02-b151-5e027079c0e0"
 }
