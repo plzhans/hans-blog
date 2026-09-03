@@ -11,7 +11,7 @@ tags:
   - "tailscale"
   - "vpn"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -300,5 +300,6 @@ Since it may be reset after a restart or update, register it in the DSM Task Sch
 
 ## Related Posts
 
+- [VPN/Remote Access Guide - Which One Should You Pick](../121-vpn-remote-access-guide/)
 - [How to Install WireGuard and Configure Client Access](../116-wireguard-install-client-setup/)
 - [Keeping the OpenVPN Client IP with wg-easy WireGuard MASQUERADE Exception Settings](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)

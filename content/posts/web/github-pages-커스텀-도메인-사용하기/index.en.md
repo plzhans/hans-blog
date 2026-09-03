@@ -12,7 +12,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-02-10T07:34:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -246,5 +246,6 @@ Reference
 
 ## Related Posts
 
+- Overview: [Building a Hugo Blog - From Start to SEO](../123-hugo-blog-guide/)
 - [Building a Hugo + GitHub Blog](../94-hugo-github-blog/)
 - [Adding Multilingual Support to a Hugo Site](../93-hugo-multilingual-seo-setup/)

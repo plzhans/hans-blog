@@ -10,7 +10,7 @@ tags:
   - "ai"
   - "ollama"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T18:41:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -264,6 +264,7 @@ sudo systemctl daemon-reload && sudo systemctl restart ollama
 
 ## 関連記事
 
+- [ローカルAI/LLMインフラ構築ガイド](../122-local-ai-llm-infra-guide/)
 - [オープンクロー(OpenClaw)構築](../95-openclaw-setup/)
 - [OpenClawノードモードのインストールとリモートインフラ接続方法](../107-openclaw-node-mode-remote-infra-setup/)
 - [Claude CodeをOllamaローカルLLMとして使用する方法](../113-claude-code-ollama-local-llm/)

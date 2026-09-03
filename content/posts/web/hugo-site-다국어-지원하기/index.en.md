@@ -10,7 +10,7 @@ tags:
   - "hugo"
   - "seo"
 date: 2026-02-11T09:55:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -267,5 +267,6 @@ In Hugo, you should use `slug` instead of `url` to set a post's address.
 
 ## Related Posts
 
+- Overview: [Building a Hugo Blog - From Start to SEO](../123-hugo-blog-guide/)
 - [Building a Hugo + Github Blog](../94-hugo-github-blog/)
 - [Using a Custom Domain with Github Pages](../86-github-pages-custom-domain/)

@@ -11,7 +11,7 @@ tags:
   - "tailscale"
   - "vpn"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -300,5 +300,6 @@ sudo synosystemctl restart pkgctl-Tailscale.service
 
 ## 関連記事
 
+- [VPN・リモートアクセスガイド - 何を選べばいいか](../121-vpn-remote-access-guide/)
 - [WireGuardのインストールとクライアント接続の設定方法](../116-wireguard-install-client-setup/)
 - [wg-easy WireGuardのMASQUERADE例外設定でOpenVPNクライアントIPを維持する方法](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)

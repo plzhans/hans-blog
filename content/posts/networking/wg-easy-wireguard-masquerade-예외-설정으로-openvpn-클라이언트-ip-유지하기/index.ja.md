@@ -9,7 +9,7 @@ categories:
 tags:
   - "vpn"
 date: 2026-03-19T06:06:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -135,5 +135,6 @@ iptables -t nat -D POSTROUTING -s ipv4Cidr ! -d 172.31.0.0/20 -o device -j MASQU
 
 ## 関連記事
 
+- [VPN・リモートアクセスガイド - 何を選べばいいか](../121-vpn-remote-access-guide/)
 - [WireGuardのインストールとクライアント接続設定方法](../116-wireguard-install-client-setup/)
 - [Tailscale Linuxインストール - 安全なリモートVPN構成](../111-tailscale-linux-install-secure-remote-vpn/)

@@ -12,7 +12,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-02-10T07:34:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -246,5 +246,6 @@ Repository → Settings → Pages → Custom domain に `plzhans.com` のみ入�
 
 ## 関連記事
 
+- 全体の概観: [Hugoブログを作る - 始め方からSEOまで](../123-hugo-blog-guide/)
 - [Hugo + Githubでブログを作る](../94-hugo-github-blog/)
 - [hugoサイトの多言語対応](../93-hugo-multilingual-seo-setup/)

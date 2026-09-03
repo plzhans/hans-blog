@@ -9,7 +9,7 @@ categories:
 tags:
   - "vpn"
 date: 2026-03-19T06:06:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -135,5 +135,6 @@ Below is a view of the full setup so you can see where the change point fits in 
 
 ## Related Posts
 
+- [VPN/Remote Access Guide - Which One Should You Pick](../121-vpn-remote-access-guide/)
 - [How to Install WireGuard and Set Up Client Connections](../116-wireguard-install-client-setup/)
 - [Installing Tailscale on Linux - Building a Secure Remote VPN](../111-tailscale-linux-install-secure-remote-vpn/)

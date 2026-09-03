@@ -11,7 +11,7 @@ tags:
   - "github-pages"
   - "hugo"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -392,6 +392,7 @@ GitHub Actionsタブでワークフローの実行を確認し、Settings → Pa
 
 ## 関連記事
 
+- 全体の概観: [Hugoブログを作る - 始め方からSEOまで](../123-hugo-blog-guide/)
 - カスタムドメインの設定: [GitHub Pagesでカスタムドメインを使う](../86-github-pages-custom-domain/)
 - 多言語(i18n)対応の設定: [Hugoサイトを多言語対応にする](../93-hugo-multilingual-seo-setup/)
 - (準備中) Notionで書いた記事のデプロイを自動化してGitHub Pagesにデプロイする

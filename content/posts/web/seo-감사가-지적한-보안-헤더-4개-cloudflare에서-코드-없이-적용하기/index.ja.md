@@ -12,7 +12,7 @@ tags:
   - "https"
   - "seo"
 date: 2026-08-30T01:25:00.000Z
-lastmod: 2026-08-30T01:26:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -326,3 +326,9 @@ CSPはレスポンスヘッダーではなくHTML内に入るため、ページ�
 - [X-Content-Type-Options - MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options)
 - [meta name="referrer" - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/referrer)
 - [Content Security Policy Level 3 - W3C](https://w3c.github.io/webappsec-csp/)
+
+## 関連記事
+
+- 全体の概観: [Hugoブログを作る - 始め方からSEOまで](../123-hugo-blog-guide/)
+- [Hugo + Githubでブログを作る](../94-hugo-github-blog/)
+- [hugoサイトの多言語対応](../93-hugo-multilingual-seo-setup/)

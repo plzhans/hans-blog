@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-09-03T07:31:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -369,5 +369,6 @@ The SaveConfig option and the firewall's UDP port are common sources of mistakes
 
 ## Related Posts
 
+- [VPN/Remote Access Guide - Which One Should You Pick](../121-vpn-remote-access-guide/)
 - [Installing Tailscale on Linux - Building a Secure Remote VPN](../111-tailscale-linux-install-secure-remote-vpn/)
 - [Keeping the OpenVPN Client IP with wg-easy WireGuard MASQUERADE Exclusion Settings](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)

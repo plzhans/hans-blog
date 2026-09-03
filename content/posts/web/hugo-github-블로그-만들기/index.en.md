@@ -11,7 +11,7 @@ tags:
   - "github-pages"
   - "hugo"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -392,6 +392,7 @@ In this guide, the deployment address is set via the `HUGO_BASEURL` environment 
 
 ## Related Posts
 
+- Overview: [Building a Hugo Blog - From Start to SEO](../123-hugo-blog-guide/)
 - Custom domain setup: [Using a Custom Domain with GitHub Pages](../86-github-pages-custom-domain/)
 - Multilingual (i18n) support setup: [Setting Up Multilingual Support for a Hugo Site](../93-hugo-multilingual-seo-setup/)
 - (Coming soon) Automating the deployment of Notion-written posts to GitHub Pages

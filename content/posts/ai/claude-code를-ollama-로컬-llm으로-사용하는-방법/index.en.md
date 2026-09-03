@@ -11,7 +11,7 @@ tags:
   - "ollama"
   - "visual-code"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -330,6 +330,7 @@ So it's realistic to start applying this to repetitive tasks and personal projec
 
 ## Related Posts
 
+- [Local AI/LLM Infrastructure Guide](../122-local-ai-llm-infra-guide/)
 - [Setting Up OpenClaw](../95-openclaw-setup/)
 - [How to Install OpenClaw Node Mode and Connect to Remote Infrastructure](../107-openclaw-node-mode-remote-infra-setup/)
 - [How to Install Ollama and Set Up a Local LLM Server](../112-ollama-local-llm-server-setup/)

@@ -10,7 +10,7 @@ tags:
   - "hugo"
   - "seo"
 date: 2026-02-11T09:55:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -267,5 +267,6 @@ Hugoで投稿のアドレスを設定する際は、`url`ではなく`slug`を�
 
 ## 関連記事
 
+- 全体の概観: [Hugoブログを作る - 始め方からSEOまで](../123-hugo-blog-guide/)
 - [Hugo + Githubでブログを作る](../94-hugo-github-blog/)
 - [Github Pagesでカスタムドメインを使う](../86-github-pages-custom-domain/)

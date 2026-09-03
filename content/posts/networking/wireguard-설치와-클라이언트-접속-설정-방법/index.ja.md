@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-09-03T07:31:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -369,5 +369,6 @@ SaveConfigオプションとファイアウォールのUDPポートは運用中�
 
 ## 関連記事
 
+- [VPN・リモートアクセスガイド - 何を選べばいいか](../121-vpn-remote-access-guide/)
 - [Tailscale Linuxインストール - 安全なリモートVPN構成](../111-tailscale-linux-install-secure-remote-vpn/)
 - [wg-easy WireGuardのMASQUERADE除外設定でOpenVPNクライアントIPを維持する](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)
