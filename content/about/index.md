@@ -12,6 +12,14 @@ draft: false
 
 이 블로그는 실제 운영 환경에서 부딪힌 문제와 해결 과정을 기록하는 공간입니다.
 
+## 만든 것들
+
+취미로 만든 것들입니다.
+
+- [HansApp](https://plzhans.com) — 자주 쓰는 API들을 모아 플랫폼화한 개인 서비스 허브
+- [Medifinder](https://medifinder.kr) — HansApp의 API를 기반으로 만든 병원 검색 페이지
+- [Telegram Exporter](https://telegram-exporter.plzhans.com) — 설치·서버 없이 브라우저에서 바로 텔레그램 대화를 백업하는 도구
+
 ## 더 알아보기
 
 - [GitHub](https://github.com/plzhans)

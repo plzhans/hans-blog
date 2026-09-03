@@ -12,6 +12,14 @@ I've been working as a server engineer on game and platform backends and infrast
 
 This blog is where I document real problems I've run into in production and how I solved them.
 
+## Things I've Built
+
+Small side projects I made for fun.
+
+- [HansApp](https://plzhans.com) — a personal hub that turns the APIs I use often into a platform
+- [Medifinder](https://medifinder.kr) — a hospital search page built on HansApp's API
+- [Telegram Exporter](https://telegram-exporter.plzhans.com) — a browser-based tool for backing up Telegram chats, no install or server required
+
 ## More
 
 - [GitHub](https://github.com/plzhans)

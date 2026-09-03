@@ -192,7 +192,7 @@
         {{- with .Site.Params.CopyrightHTML }}
         <p class="app-footer-copyright">{{ . | safeHTML }}</p>
         {{- end }}
-        <p class="app-footer-legal"><a href="{{ "/privacy/" | relLangURL }}">{{ i18n "privacy_policy_link" }}</a></p>
+        <p class="app-footer-legal"><a href="{{ "/about/" | relLangURL }}">{{ i18n "about_link" }}</a>{{ .Site.Params.menu_item_separator | default " - " | safeHTML }}<a href="{{ "/privacy/" | relLangURL }}">{{ i18n "privacy_policy_link" }}</a></p>
       </footer>
       {{- end }}
     </main>

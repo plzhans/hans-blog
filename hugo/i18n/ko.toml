@@ -25,5 +25,8 @@ other = "더 보기"
 [privacy_policy_link]
 other = "Privacy"
 
+[about_link]
+other = "About"
+
 [tldr_label]
 other = "요약"

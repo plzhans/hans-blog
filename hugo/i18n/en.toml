@@ -28,5 +28,8 @@ other = "View All Posts"
 [privacy_policy_link]
 other = "Privacy"
 
+[about_link]
+other = "About"
+
 [tldr_label]
 other = "Summary"

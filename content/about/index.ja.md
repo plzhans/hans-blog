@@ -12,6 +12,14 @@ draft: false
 
 このブログは、実際の運用環境で直面した問題とその解決過程を記録する場所です。
 
+## 作ったもの
+
+趣味で作った個人プロジェクトです。
+
+- [HansApp](https://plzhans.com) — よく使うAPIをまとめてプラットフォーム化した個人サービスハブ
+- [Medifinder](https://medifinder.kr) — HansAppのAPIをベースに作った病院検索ページ
+- [Telegram Exporter](https://telegram-exporter.plzhans.com) — インストールやサーバー不要でブラウザから直接Telegramのトーク履歴をバックアップできるツール
+
 ## リンク
 
 - [GitHub](https://github.com/plzhans)
