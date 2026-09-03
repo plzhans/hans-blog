@@ -24,3 +24,6 @@ other = "더 보기"
 
 [privacy_policy_link]
 other = "Privacy"
+
+[tldr_label]
+other = "요약"

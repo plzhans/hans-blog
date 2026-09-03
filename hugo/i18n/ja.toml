@@ -27,3 +27,6 @@ other = "もっと見る"
 
 [privacy_policy_link]
 other = "Privacy"
+
+[tldr_label]
+other = "要約"

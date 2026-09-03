@@ -944,6 +944,22 @@ body {
   color: rgba($light-color, 0.7);
 }
 
+// 포스트 상단 한 줄 요약(TL;DR)
+.post-summary {
+  margin: 1em 0 1.5em;
+  padding: 0.8em 1.1em;
+  background: rgba($light-color, 0.06);
+  border-left: 3px solid $primary-color;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: rgba($light-color, 0.85);
+
+  strong {
+    color: $primary-color;
+  }
+}
+
 // 본문 내 긴 URL 등 줄바꿈 없는 텍스트로 인한 모바일 가로 스크롤 방지
 .post-content {
   overflow-wrap: anywhere;

@@ -79,6 +79,18 @@
           {{- end }}
           {{- end }}
         </header>
+        {{- if ne .Type "page" }}
+        {{- with .Description }}
+        {{- /* AI 답변엔진은 메타 description(눈에 안 보임)보다 실제 렌더된 본문
+              텍스트에서 인용 문장을 뽑아가는 경우가 많음. 이미 모든 포스트가
+              메타태그용으로 갖고 있는 description을 본문 상단에도 그대로
+              노출해 AI 인용 준비도를 높임 - 포스트마다 별도 판단 불필요한
+              100% 자동화 규칙. */}}
+        <div class="post-summary">
+          <strong>{{ i18n "tldr_label" }}:</strong> {{ . }}
+        </div>
+        {{- end }}
+        {{- end }}
         {{- if ne .Language.Lang "ko" }}
         {{- with i18n "translation_notice" }}
         <div class="post-translation-notice">
