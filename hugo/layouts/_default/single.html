@@ -95,6 +95,7 @@
           {{- with .Site.Params.CopyrightHTML }}
           <div class="post-copyright">{{ . | safeHTML }}</div>
           {{- end }}
+          <div class="post-legal"><a href="{{ "/privacy/" | relLangURL }}">{{ i18n "privacy_policy_link" }}</a></div>
         </div>
         {{- with .Site.Params.adsense }}
         {{- if and .publisherId .adSlotArticleBottom }}

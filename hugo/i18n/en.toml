@@ -24,3 +24,6 @@ other = "Go to page →"
 
 [more_posts]
 other = "View All Posts"
+
+[privacy_policy_link]
+other = "Privacy"

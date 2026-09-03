@@ -24,3 +24,6 @@ other = "ページへ移動 →"
 
 [more_posts]
 other = "もっと見る"
+
+[privacy_policy_link]
+other = "Privacy"

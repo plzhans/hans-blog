@@ -191,6 +191,7 @@
         {{- with .Site.Params.CopyrightHTML }}
         <p class="app-footer-copyright">{{ . | safeHTML }}</p>
         {{- end }}
+        <p class="app-footer-legal"><a href="{{ "/privacy/" | relLangURL }}">{{ i18n "privacy_policy_link" }}</a></p>
       </footer>
       {{- end }}
     </main>
