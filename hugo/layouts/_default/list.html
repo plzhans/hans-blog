@@ -3,18 +3,6 @@
     {{ with .Title -}}<h1>{{- . -}}</h1>{{- end }}
     {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
     {{ $pagePosts := (where .Paginator.Pages "Type" "!=" "page") }}
-    {{ $firstThumbIndex := -1 }}
-    {{ range $idx, $p := $pagePosts }}
-      {{- if eq $firstThumbIndex -1 -}}
-        {{- $tp := $p -}}
-        {{- if ne $p.Language.Lang (index hugo.Sites 0).Language.Lang -}}
-          {{- range $p.AllTranslations -}}
-            {{- if eq .Language.Lang (index hugo.Sites 0).Language.Lang -}}{{- $tp = . -}}{{- end -}}
-          {{- end -}}
-        {{- end -}}
-        {{- if $tp.Params.images -}}{{- $firstThumbIndex = $idx -}}{{- end -}}
-      {{- end -}}
-    {{ end }}
     <div class="posts-card-grid">
       {{ range $i, $post := $pagePosts }}
         {{- $thumbPost := $post -}}
@@ -23,16 +11,18 @@
             {{- if eq .Language.Lang (index hugo.Sites 0).Language.Lang -}}{{- $thumbPost = . -}}{{- end -}}
           {{- end -}}
         {{- end -}}
-        <div class="post-card{{ if not $thumbPost.Params.images }} post-card--no-thumb{{ end }}">
+        {{- $cardImages := $thumbPost.Params.images -}}
+        {{- if not $cardImages }}{{ $cardImages = site.Params.images }}{{ end -}}
+        <div class="post-card{{ if not $cardImages }} post-card--no-thumb{{ end }}">
           <a class="post-card-link" href="{{ $post.RelPermalink }}" aria-label="{{ .Title }}"></a>
-          {{- with $thumbPost.Params.images }}
+          {{- with $cardImages }}
           <div class="post-card-thumbnail">
-            {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0) "alt" $post.Title "first" (eq $i $firstThumbIndex)) }}
+            {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0) "alt" $post.Title "first" (eq $i 0)) }}
           </div>
           {{- end }}
           <div class="post-card-body">
             <span class="post-card-title">{{- .Title -}}</span>
-            {{ with .Description | default .Summary }}<span class="post-card-summary">{{ . | plainify | truncate (cond (not $post.Params.images) 500 200) }}</span>{{ end }}
+            {{ with .Description | default .Summary }}<span class="post-card-summary">{{ . | plainify | truncate (cond (not $cardImages) 500 200) }}</span>{{ end }}
             <div class="post-card-footer">
               {{- with $post.GetTerms "categories" }}
               <span class="post-card-category">
