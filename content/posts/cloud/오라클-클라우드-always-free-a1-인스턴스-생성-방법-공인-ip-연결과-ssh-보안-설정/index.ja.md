@@ -7,7 +7,6 @@ description: "Oracle Cloud Always Free A1(ARM)インスタンスを作成する�
 categories:
   - "cloud"
 tags:
-  - "infra"
   - "linux"
   - "oracle"
 date: 2026-07-10T03:44:00.000Z

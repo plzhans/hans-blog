@@ -7,7 +7,6 @@ description: "A step-by-step guide to creating an Oracle Cloud Always Free A1 (A
 categories:
   - "cloud"
 tags:
-  - "infra"
   - "linux"
   - "oracle"
 date: 2026-07-10T03:44:00.000Z
