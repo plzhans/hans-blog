@@ -93,9 +93,12 @@
               메타태그용으로 갖고 있는 description을 본문 상단에도 그대로
               노출해 AI 인용 준비도를 높임 - 포스트마다 별도 판단 불필요한
               100% 자동화 규칙. */}}
-        <div class="post-summary">
+        {{- /* trafilatura 등 AI 크롤러가 쓰는 텍스트 추출기는 본문 후보를 <p> 단위로 인식하고
+              <div>로만 감싼 텍스트는 본문 밖(레이아웃 요소)으로 오인해 건너뛰는 경우가 있음
+              (직접 재현 확인, class/label 유무와 무관하게 div→p 전환만으로 해결됨) */}}
+        <p class="post-summary">
           <strong>{{ i18n "tldr_label" }}:</strong> {{ . }}
-        </div>
+        </p>
         {{- end }}
         {{- end }}
         <div class="post-content">
