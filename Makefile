@@ -37,6 +37,10 @@ cloudflare-rules:
 cloudflare-dns:
 	./cloudflare/manage-dns.sh
 
+.PHONY: cloudflare-purge
+cloudflare-purge:
+	./cloudflare/purge-cache.sh
+
 .PHONY: env
 env:
 ifeq ($(firstword $(RUN_ARGS)),enc)
