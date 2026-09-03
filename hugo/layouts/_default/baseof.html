@@ -17,7 +17,10 @@
     {{ hugo.Generator }}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ if .Site.Params.authorRealName }}{{ printf "%s (%s)" .Site.Params.authorRealName .Site.Params.author }}{{ else }}{{ .Site.Params.author | default "John Doe" }}{{ end }}" />
-    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
+    {{/* .Description(Notion "개요")은 본문 TL;DR 블록/JSON-LD에도 그대로 쓰여 AI 인용용으로는
+         길게(134~167단어) 쓰는 게 유리하지만, 구글 SERP 메타 description은 길면 잘리거나
+         무시되므로 여기서만 별도로 ~155자로 잘라 짧게 유지 */}}
+    <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | plainify | truncate 155 }}{{ end }}" />
     {{/* 본문 대부분이 이 굵기라 LCP에 가장 크게 관여 - CSS 파싱을 기다리지 않고 바로 받기 시작하도록 preload */}}
     <link rel="preload" href="/assets/fonts/NotoSansKR-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/NotoSansKR-Bold.woff2" as="font" type="font/woff2" crossorigin />
