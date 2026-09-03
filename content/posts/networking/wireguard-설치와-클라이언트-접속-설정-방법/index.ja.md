@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T07:31:00.000Z
 toc: true
 draft: false
 images:
