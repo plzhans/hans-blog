@@ -8,9 +8,9 @@ draft: false
 
 ## Hi, I'm Wonchul Son (plzhans)
 
-I've been working as a server engineer on game and platform backends and infrastructure.
+I'm a server engineer who has worked across backend and infrastructure for game and platform services.
 
-This blog is where I document real problems I've run into in production and how I solved them.
+This blog is where I record what I come across while developing.
 
 ## Things I've Built
 
