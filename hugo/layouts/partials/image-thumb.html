@@ -4,13 +4,32 @@
 {{- $isFirst := .first -}}
 {{- $loading := "lazy" -}}
 {{- if $isFirst }}{{- $loading = "eager" }}{{- end -}}
+{{- /* 카드 썸네일은 그리드 컬럼 수(1~5단)에 따라 실제 표시 폭이 약 220~350px로 계속 바뀌는데,
+     지금까지는 폭 상관없이 항상 800px짜리를 내려보내서 표시 크기보다 훨씬 큰 이미지를
+     그냥 CSS로 축소해서 쓰고 있었음(성능 감사에서 지적, 카드 개수에 따라 67~133KB 낭비).
+     srcset으로 여러 폭을 만들어 브라우저가 화면 크기에 맞는 걸 고르게 함. */}}
 {{- $resource := $page.Resources.GetMatch $imgPath -}}
 {{- if and $resource (reflect.IsImageResourceProcessable $resource) -}}
-  {{- $webp := $resource.Resize "800x webp" -}}
-  {{- $fallback := $resource.Resize "800x" -}}
+  {{- $maxW := $resource.Width -}}
+  {{- if gt $maxW 800 }}{{- $maxW = 800 }}{{- end -}}
+  {{- $widths := slice -}}
+  {{- range $w := (slice 400 600 800) -}}
+    {{- if le $w $maxW }}{{- $widths = $widths | append $w -}}{{- end -}}
+  {{- end -}}
+  {{- if not (in $widths $maxW) }}{{- $widths = $widths | append $maxW -}}{{- end -}}
+  {{- $sizes := "(max-width: 599px) 100vw, (max-width: 767px) 50vw, (max-width: 939px) 33vw, (max-width: 1199px) 25vw, 20vw" -}}
+  {{- $webpSrcset := slice -}}
+  {{- $fallbackSrcset := slice -}}
+  {{- range $w := $widths -}}
+    {{- $webp := $resource.Resize (printf "%dx webp" $w) -}}
+    {{- $fb := $resource.Resize (printf "%dx" $w) -}}
+    {{- $webpSrcset = $webpSrcset | append (printf "%s %dw" $webp.RelPermalink $w) -}}
+    {{- $fallbackSrcset = $fallbackSrcset | append (printf "%s %dw" $fb.RelPermalink $w) -}}
+  {{- end -}}
+  {{- $fallback := $resource.Resize (printf "%dx" $maxW) -}}
   <picture>
-    <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-    <img src="{{ $fallback.RelPermalink }}" alt="{{ $alt }}" loading="{{ $loading }}"{{ if $isFirst }} fetchpriority="high"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}">
+    <source srcset="{{ delimit $webpSrcset ", " }}" sizes="{{ $sizes }}" type="image/webp">
+    <img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $fallbackSrcset ", " }}" sizes="{{ $sizes }}" alt="{{ $alt }}" loading="{{ $loading }}"{{ if $isFirst }} fetchpriority="high"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}">
   </picture>
 {{- else if $resource -}}
   {{- /* SVG 등 래스터 리사이즈가 불가능한 리소스는 원본 그대로 출력 */}}
