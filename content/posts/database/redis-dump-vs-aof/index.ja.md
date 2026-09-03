@@ -8,9 +8,9 @@ tags:
   - "database"
   - "redis"
 categories:
-  - "Database"
+  - "database"
 date: 2025-06-10T16:16:00.000+09:00
-lastmod: 2026-02-06T06:28:00.000Z
+lastmod: 2026-08-29T10:52:00.000Z
 toc: true
 draft: false
 images:

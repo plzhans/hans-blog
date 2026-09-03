@@ -5,7 +5,7 @@ slug: "86-github-pages-custom-domain"
 title: "Using a Custom Domain with GitHub Pages"
 description: "This post summarizes the CNAME/A/AAAA record settings and the Pages Custom domain setup steps needed to connect a custom domain to GitHub Pages. It also covers the difference in how the CNAME file is handled between Actions and branch deployments, verifying DNS with dig, and why Enforce HTTPS fails to turn on because of a CAA record."
 categories:
-  - "git"
+  - "web"
 tags:
   - "domain"
   - "github"

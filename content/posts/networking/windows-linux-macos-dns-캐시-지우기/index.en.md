@@ -7,7 +7,7 @@ description: "When DNS changes fail to appear, flush the cache on Windows, Linux
 categories:
   - "networking"
 date: 2026-02-22T16:11:00.000Z
-lastmod: 2026-02-22T16:13:00.000Z
+lastmod: 2026-08-30T01:20:00.000Z
 toc: true
 draft: false
 images:

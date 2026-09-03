@@ -5,7 +5,7 @@ slug: "86-github-pages-custom-domain"
 title: "GitHub Pagesでカスタムドメインを使う方法"
 description: "GitHub Pagesにカスタムドメインを接続する際に必要なCNAME・A/AAAAレコードの設定と、PagesのCustom domain適用手順をまとめました。ActionsとブランチデプロイでのCNAMEファイルの扱いの違い、digによるDNS確認、CAAレコードが原因でEnforce HTTPSがオンにならない理由まで扱います。"
 categories:
-  - "git"
+  - "web"
 tags:
   - "domain"
   - "github"

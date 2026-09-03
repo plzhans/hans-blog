@@ -10,7 +10,7 @@ tags:
   - "dsm"
   - "synology-nas"
 date: 2026-05-16T05:03:00.000Z
-lastmod: 2026-06-18T08:02:00.000Z
+lastmod: 2026-09-03T02:14:00.000Z
 toc: true
 draft: false
 images:
