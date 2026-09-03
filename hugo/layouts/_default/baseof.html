@@ -7,7 +7,10 @@
 <!doctype html>
 <html lang="{{ .Site.Language.Locale | default "en-us" }}">
   <head>
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} :: {{ .Site.Title }}{{ end }}</title>
+    {{/* 개별 페이지는 " :: plzhans blog" 접미사(16자) 없이 제목만 사용 - title 태그도
+         meta description처럼 픽셀 폭 기준으로 잘리는데, 브랜드 접미사가 검색 관련성에
+         기여하는 바 없이 글자 수만 차지해 상당수 포스트 제목이 잘리는 원인이었음 */}}
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</title>
     <link rel="shortcut icon" href="{{ .Site.Params.favicon | default "/favicon.ico" }}" />
     <meta charset="utf-8" />
     {{/* meta 태그 CSP는 frame-ancestors/report-uri를 지원하지 않아 클릭재킹 방어는 Cloudflare의 X-Frame-Options로 별도 처리.
