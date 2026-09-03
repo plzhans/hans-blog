@@ -2,8 +2,21 @@
   <article>
     {{ with .Title -}}<h1>{{- . -}}</h1>{{- end }}
     {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
+    {{ $pagePosts := (where .Paginator.Pages "Type" "!=" "page") }}
+    {{ $firstThumbIndex := -1 }}
+    {{ range $idx, $p := $pagePosts }}
+      {{- if eq $firstThumbIndex -1 -}}
+        {{- $tp := $p -}}
+        {{- if ne $p.Language.Lang (index hugo.Sites 0).Language.Lang -}}
+          {{- range $p.AllTranslations -}}
+            {{- if eq .Language.Lang (index hugo.Sites 0).Language.Lang -}}{{- $tp = . -}}{{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $tp.Params.images -}}{{- $firstThumbIndex = $idx -}}{{- end -}}
+      {{- end -}}
+    {{ end }}
     <div class="posts-card-grid">
-      {{ range $i, $post := (where .Paginator.Pages "Type" "!=" "page") }}
+      {{ range $i, $post := $pagePosts }}
         {{- $thumbPost := $post -}}
         {{- if ne $post.Language.Lang (index hugo.Sites 0).Language.Lang -}}
           {{- range $post.AllTranslations -}}
@@ -14,7 +27,7 @@
           <a class="post-card-link" href="{{ $post.RelPermalink }}" aria-label="{{ .Title }}"></a>
           {{- with $thumbPost.Params.images }}
           <div class="post-card-thumbnail">
-            {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0) "alt" $post.Title "first" (eq $i 0)) }}
+            {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0) "alt" $post.Title "first" (eq $i $firstThumbIndex)) }}
           </div>
           {{- end }}
           <div class="post-card-body">

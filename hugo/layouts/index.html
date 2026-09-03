@@ -9,6 +9,18 @@
     {{ $allPages := where .Site.RegularPages "Type" "posts" }}
     {{ $latestPages := first 20 $allPages }}
     {{ if $latestPages }}
+    {{ $firstThumbIndex := -1 }}
+    {{ range $idx, $p := $latestPages }}
+      {{- if eq $firstThumbIndex -1 -}}
+        {{- $tp := $p -}}
+        {{- if ne $p.Language.Lang (index hugo.Sites 0).Language.Lang -}}
+          {{- range $p.AllTranslations -}}
+            {{- if eq .Language.Lang (index hugo.Sites 0).Language.Lang -}}{{- $tp = . -}}{{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if $tp.Params.images -}}{{- $firstThumbIndex = $idx -}}{{- end -}}
+      {{- end -}}
+    {{ end }}
     <div class="posts-card-grid">
       {{ range $i, $post := $latestPages }}
       {{- $thumbPost := $post -}}
@@ -21,7 +33,7 @@
         <a class="post-card-link" href="{{ $post.RelPermalink }}" aria-label="{{ .Title }}"></a>
         {{- with $thumbPost.Params.images }}
         <div class="post-card-thumbnail">
-          {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0) "alt" $post.Title "first" (eq $i 0)) }}
+          {{ partial "image-thumb.html" (dict "page" $thumbPost "imgPath" (index . 0) "alt" $post.Title "first" (eq $i $firstThumbIndex)) }}
         </div>
         {{- end }}
         <div class="post-card-body">
