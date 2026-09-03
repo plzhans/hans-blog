@@ -159,7 +159,8 @@
       <nav class="app-header-categories">
         {{- with .Site.Taxonomies.categories }}
         {{- range .Alphabetical }}
-          <a class="app-header-menu-item" href="{{ "/categories/" | relLangURL }}{{ .Name | urlize }}/">{{ .Name }}</a>
+          {{- $termPage := $.Site.GetPage (printf "/categories/%s" (.Name | urlize)) }}
+          <a class="app-header-menu-item" href="{{ "/categories/" | relLangURL }}{{ .Name | urlize }}/">{{ if $termPage }}{{ $termPage.Title }}{{ else }}{{ .Name }}{{ end }}</a>
         {{- end }}
         {{- end }}
       </nav>
