@@ -362,6 +362,10 @@ If you use a GUI client, you can achieve the same connection simply by importing
 
 The SaveConfig option and the firewall's UDP port are common sources of mistakes during operation, so it's a good idea to double-check them before configuring.
 
+## References
+
+- [WireGuard official site](https://www.wireguard.com/)
+- [WireGuard Quick Start (official docs)](https://www.wireguard.com/quickstart/)
 
 ## Related Posts
 

@@ -282,3 +282,8 @@ SSHキーは安全に保管し、外部に公開される22番ポートは最小
 
 
 ここまで進めれば、A1サーバーの作成から安全な接続経路までを備えた状態になります。
+
+## 参考
+
+- [Oracle Cloud Always Freeリソース(公式ドキュメント)](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
+- [Security Lists(公式ドキュメント)](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm)

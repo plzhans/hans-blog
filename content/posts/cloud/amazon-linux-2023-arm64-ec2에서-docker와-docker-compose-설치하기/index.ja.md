@@ -273,3 +273,8 @@ docker system prune -a
 
 
 `prune -a`は、実行中でないコンテナが参照しているイメージまで削除します。運用サーバーでは、削除対象を確認してから実行してください。
+
+## 参考
+
+- [Amazon Linux 2023でDockerをデプロイする(AWS公式ドキュメント)](https://docs.aws.amazon.com/linux/al2023/ug/docker.html)
+- [Docker Composeのインストール(Docker公式ドキュメント)](https://docs.docker.com/compose/install/linux/)

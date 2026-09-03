@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-08-30T01:20:00.000Z
+lastmod: 2026-09-03T07:31:00.000Z
 toc: true
 draft: false
 images:
@@ -362,6 +362,11 @@ GUI 클라이언트를 쓰면 생성한 conf 파일을 import하는 것만으로
 
 SaveConfig 옵션과 방화벽 UDP 포트는 운영 중 잦은 실수를 만들기 쉬우니 설정 전에 한 번 더 확인하는 것이 좋다.
 
+
+## 참고
+
+- [WireGuard 공식 사이트](https://www.wireguard.com/)
+- [WireGuard Quick Start(공식 문서)](https://www.wireguard.com/quickstart/)
 
 ## 관련 글
 

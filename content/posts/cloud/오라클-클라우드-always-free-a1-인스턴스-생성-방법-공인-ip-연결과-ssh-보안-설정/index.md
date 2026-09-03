@@ -10,7 +10,7 @@ tags:
   - "linux"
   - "oracle"
 date: 2026-07-10T03:44:00.000Z
-lastmod: 2026-09-03T02:14:00.000Z
+lastmod: 2026-09-03T07:31:00.000Z
 toc: true
 draft: false
 images:
@@ -283,3 +283,8 @@ SSH 키는 안전하게 보관하고 공개 노출된 22 포트는 최소화하�
 
 여기까지 진행하면 A1 서버 생성부터 안전한 접속 경로까지 갖춘 상태가 된다.
 
+
+## 참고
+
+- [Oracle Cloud Always Free 리소스(공식 문서)](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
+- [Security Lists(공식 문서)](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm)

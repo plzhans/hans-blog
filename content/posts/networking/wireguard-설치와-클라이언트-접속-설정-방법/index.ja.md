@@ -362,6 +362,10 @@ GUIクライアントを使えば、作成したconfファイルをimportする�
 
 SaveConfigオプションとファイアウォールのUDPポートは運用中によくミスが起きやすい部分なので、設定前にもう一度確認しておくことをおすすめします。
 
+## 参考
+
+- [WireGuard公式サイト](https://www.wireguard.com/)
+- [WireGuard Quick Start(公式ドキュメント)](https://www.wireguard.com/quickstart/)
 
 ## 関連記事
 

@@ -273,3 +273,8 @@ docker system prune -a
 
 
 `prune -a` also deletes images referenced only by non-running containers. On a production server, check what will be removed before running it.
+
+## References
+
+- [Deploy Docker containers on Amazon Linux 2023 (AWS official docs)](https://docs.aws.amazon.com/linux/al2023/ug/docker.html)
+- [Install Docker Compose (Docker official docs)](https://docs.docker.com/compose/install/linux/)

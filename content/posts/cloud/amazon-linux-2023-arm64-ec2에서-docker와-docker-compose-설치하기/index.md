@@ -11,7 +11,7 @@ tags:
   - "docker"
   - "linux"
 date: 2026-03-19T03:44:00.000Z
-lastmod: 2026-08-29T14:40:00.000Z
+lastmod: 2026-09-03T07:31:00.000Z
 toc: true
 draft: false
 images:
@@ -274,3 +274,8 @@ docker system prune -a
 
 `prune -a`는 실행 중이 아닌 컨테이너가 참조하는 이미지까지 삭제한다. 운영 서버에서는 삭제 대상을 확인한 뒤 실행한다.
 
+
+## 참고
+
+- [Amazon Linux 2023에서 Docker 배포하기(AWS 공식 문서)](https://docs.aws.amazon.com/linux/al2023/ug/docker.html)
+- [Docker Compose 설치(Docker 공식 문서)](https://docs.docker.com/compose/install/linux/)

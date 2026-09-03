@@ -282,3 +282,8 @@ Keep your SSH key stored safely, and minimizing exposure of port 22 to the publi
 
 
 Once you've completed these steps, you'll have gone from creating the A1 server to having a secure access path in place.
+
+## References
+
+- [Oracle Cloud Always Free resources (official docs)](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
+- [Security Lists (official docs)](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/securitylists.htm)
