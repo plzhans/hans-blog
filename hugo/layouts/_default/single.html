@@ -79,6 +79,13 @@
           {{- end }}
           {{- end }}
         </header>
+        {{- if ne .Language.Lang "ko" }}
+        {{- with i18n "translation_notice" }}
+        <div class="post-translation-notice">
+          {{ . }}
+        </div>
+        {{- end }}
+        {{- end }}
         {{- if ne .Type "page" }}
         {{- with .Description }}
         {{- /* AI 답변엔진은 메타 description(눈에 안 보임)보다 실제 렌더된 본문
@@ -88,13 +95,6 @@
               100% 자동화 규칙. */}}
         <div class="post-summary">
           <strong>{{ i18n "tldr_label" }}:</strong> {{ . }}
-        </div>
-        {{- end }}
-        {{- end }}
-        {{- if ne .Language.Lang "ko" }}
-        {{- with i18n "translation_notice" }}
-        <div class="post-translation-notice">
-          {{ . }}
         </div>
         {{- end }}
         {{- end }}
