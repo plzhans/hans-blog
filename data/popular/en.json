@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T04:47:09.072Z",
+  "generated_at": "2026-09-03T04:44:26.351Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -43,7 +43,7 @@
       ],
       "url": "/en/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 8
+      "count": 6
     },
     {
       "rank": 4,
@@ -73,6 +73,19 @@
     },
     {
       "rank": 6,
+      "slug": "6-flush-dns-cache",
+      "title": "Clearing DNS Cache on Windows/Linux/macOS",
+      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "networking"
+      ],
+      "url": "/en/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 4
+    },
+    {
+      "rank": 7,
       "slug": "95-openclaw-setup",
       "title": "Setting Up OpenClaw ",
       "description": "A summary of installing OpenClaw (OpenClaw AI agent framework) locally and configuring the model, channel, and skills through onboard. Follow along with the Telegram bot authentication and security warning checkpoints to run the agent safely.",
@@ -85,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -98,7 +111,7 @@
       "count": 3
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
       "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
@@ -111,7 +124,7 @@
       "count": 3
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
       "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
@@ -124,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "105-mac-office-activation",
       "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
       "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
@@ -137,46 +150,7 @@
       "count": 2
     },
     {
-      "rank": 11,
-      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
-      "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
-      "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
-      "date": "2026-05-06T13:52:00.000Z",
-      "categories": [
-        "devops"
-      ],
-      "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
-      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
       "rank": 12,
-      "slug": "112-ollama-local-llm-server-setup",
-      "title": "How to Install Ollama and Set Up a Local LLM Server",
-      "description": "This explains how to run a local LLM on a Linux server using Ollama. It covers installation, external access configuration, model selection, and HTTP API call examples to outline the process of building a personal AI server.",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/112-ollama-local-llm-server-setup/",
-      "image": "/posts/112-ollama-local-llm-server-setup/assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png",
-      "count": 1
-    },
-    {
-      "rank": 13,
-      "slug": "13-git-ssh-key-setup-and-remote-access",
-      "title": "Accessing Git remotes over SSH: from key generation to registration",
-      "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
-      "date": "2025-02-16T09:15:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/13-git-ssh-key-setup-and-remote-access/",
-      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
-      "count": 1
-    },
-    {
-      "rank": 14,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
@@ -186,6 +160,32 @@
       ],
       "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 2
+    },
+    {
+      "rank": 13,
+      "slug": "111-tailscale-linux-install-secure-remote-vpn",
+      "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
+      "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "networking"
+      ],
+      "url": "/en/posts/111-tailscale-linux-install-secure-remote-vpn/",
+      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
+      "count": 1
+    },
+    {
+      "rank": 14,
+      "slug": "13-git-ssh-key-setup-and-remote-access",
+      "title": "Accessing Git remotes over SSH: from key generation to registration",
+      "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
+      "date": "2025-02-16T09:15:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/en/posts/13-git-ssh-key-setup-and-remote-access/",
+      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
       "count": 1
     },
     {
@@ -203,19 +203,6 @@
     },
     {
       "rank": 16,
-      "slug": "6-flush-dns-cache",
-      "title": "Clearing DNS Cache on Windows/Linux/macOS",
-      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/en/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 1
-    },
-    {
-      "rank": 17,
       "slug": "86-github-pages-custom-domain",
       "title": "Using a Custom Domain with GitHub Pages",
       "description": "This post summarizes the CNAME/A/AAAA record settings and the Pages Custom domain setup steps needed to connect a custom domain to GitHub Pages. It also covers the difference in how the CNAME file is handled between Actions and branch deployments, verifying DNS with dig, and why Enforce HTTPS fails to turn on because of a CAA record.",
@@ -228,7 +215,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 17,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "A guide to encrypting .env files with GPG to prevent secret exposure when you need to commit them to Git. Covers everything from .gitignore handling to gpg encrypt/decrypt commands and setting a default recipient, so you can start operating a secure repository.",
@@ -241,7 +228,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "Adding Multilingual Support to a Hugo Site",
       "description": "A summary of how to configure baseURL, sitemap, robots, JSON-LD, Open Graph, and meta description in a Hugo multilingual blog, and how to prevent duplicate-content issues with hreflang and canonical. Includes slug/translationKey troubleshooting.",

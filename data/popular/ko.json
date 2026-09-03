@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T04:47:09.065Z",
+  "generated_at": "2026-09-03T04:44:26.345Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -43,7 +43,7 @@
       ],
       "url": "/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 8
+      "count": 6
     },
     {
       "rank": 4,
@@ -73,6 +73,19 @@
     },
     {
       "rank": 6,
+      "slug": "6-flush-dns-cache",
+      "title": "Windows/Linux/macOS DNS 캐시 지우기",
+      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "networking"
+      ],
+      "url": "/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 4
+    },
+    {
+      "rank": 7,
       "slug": "95-openclaw-setup",
       "title": "오픈클로(OpenClaw) 구축 ",
       "description": "OpenClaw(OpenClaw AI agent framework)를 로컬에서 설치하고 onboard로 모델·채널·스킬을 설정하는 과정을 정리했습니다. 텔레그램 봇 인증과 보안 경고 체크 포인트를 따라 하며 안전하게 에이전트를 실행하세요.",
@@ -85,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 7,
+      "rank": 8,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
       "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
@@ -98,7 +111,7 @@
       "count": 3
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -111,7 +124,7 @@
       "count": 3
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "Synology DSM 무료 SSL 인증서 발급 방법 | acme.sh + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
       "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
@@ -124,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "105-mac-office-activation",
       "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
       "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
@@ -137,46 +150,7 @@
       "count": 2
     },
     {
-      "rank": 11,
-      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
-      "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
-      "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
-      "date": "2026-05-06T13:52:00.000Z",
-      "categories": [
-        "devops"
-      ],
-      "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
-      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
       "rank": 12,
-      "slug": "112-ollama-local-llm-server-setup",
-      "title": "Ollama 설치와 로컬 LLM 서버 구축 방법",
-      "description": "Ollama로 Linux 서버에서 로컬 LLM을 실행하는 방법을 설명합니다. 설치, 외부 접속 설정, 모델 선택, HTTP API 호출 예제로 개인 AI 서버 구축 흐름을 정리합니다.",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/posts/112-ollama-local-llm-server-setup/",
-      "image": "/posts/112-ollama-local-llm-server-setup/assets/1_39222a0f-7e83-8032-b786-dfe04c1d2efb.png",
-      "count": 1
-    },
-    {
-      "rank": 13,
-      "slug": "13-git-ssh-key-setup-and-remote-access",
-      "title": "Git SSH 키로 원격 저장소 접속하기: 키 생성부터 등록까지",
-      "description": "Git 원격 저장소를 SSH로 접속하는 전체 흐름을 정리합니다. HTTPS와 차이점을 비교하고 Ed25519 키 생성과 chmod 권한 설정 그리고 GitHub·GitLab 공개키 등록과 ssh -T 테스트로 인증 문제를 빠르게 해결하세요.",
-      "date": "2025-02-16T09:15:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/13-git-ssh-key-setup-and-remote-access/",
-      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
-      "count": 1
-    },
-    {
-      "rank": 14,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
       "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
@@ -186,6 +160,32 @@
       ],
       "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 2
+    },
+    {
+      "rank": 13,
+      "slug": "111-tailscale-linux-install-secure-remote-vpn",
+      "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
+      "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "networking"
+      ],
+      "url": "/posts/111-tailscale-linux-install-secure-remote-vpn/",
+      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
+      "count": 1
+    },
+    {
+      "rank": 14,
+      "slug": "13-git-ssh-key-setup-and-remote-access",
+      "title": "Git SSH 키로 원격 저장소 접속하기: 키 생성부터 등록까지",
+      "description": "Git 원격 저장소를 SSH로 접속하는 전체 흐름을 정리합니다. HTTPS와 차이점을 비교하고 Ed25519 키 생성과 chmod 권한 설정 그리고 GitHub·GitLab 공개키 등록과 ssh -T 테스트로 인증 문제를 빠르게 해결하세요.",
+      "date": "2025-02-16T09:15:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/posts/13-git-ssh-key-setup-and-remote-access/",
+      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
       "count": 1
     },
     {
@@ -203,19 +203,6 @@
     },
     {
       "rank": 16,
-      "slug": "6-flush-dns-cache",
-      "title": "Windows/Linux/macOS DNS 캐시 지우기",
-      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 1
-    },
-    {
-      "rank": 17,
       "slug": "86-github-pages-custom-domain",
       "title": "Github pages 커스텀 도메인 사용하기",
       "description": "GitHub Pages에 커스텀 도메인을 연결할 때 필요한 CNAME·A/AAAA 레코드 설정과 Pages의 Custom domain 적용 절차를 정리했습니다. Actions와 브랜치 배포의 CNAME 파일 처리 차이, dig로 DNS 확인, CAA 레코드 때문에 Enforce HTTPS가 안 켜지는 원인까지 다룹니다.",
@@ -228,7 +215,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 17,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
       "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
@@ -241,7 +228,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "93-hugo-multilingual-seo-setup",
       "title": "hugo site 다국어 지원하기",
       "description": "Hugo 다국어 블로그에서 baseURL, sitemap, robots, JSON-LD, Open Graph, meta description을 설정하고 hreflang·canonical로 중복 이슈를 막는 방법을 정리했습니다. slug·translationKey 트러블슈팅까지 한 번에 확인하세요.",
