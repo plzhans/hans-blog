@@ -12,7 +12,7 @@ tags:
   - "vpn"
   - "wireguard"
 date: 2026-07-10T08:20:00.000Z
-lastmod: 2026-09-03T07:31:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -370,5 +370,6 @@ SaveConfig 옵션과 방화벽 UDP 포트는 운영 중 잦은 실수를 만들�
 
 ## 관련 글
 
+- [VPN/원격 접속 가이드 - 뭘 골라야 하나](../121-vpn-remote-access-guide/)
 - [Tailscale Linux 설치 - 안전한 원격 VPN 구성](../111-tailscale-linux-install-secure-remote-vpn/)
 - [wg-easy WireGuard MASQUERADE 예외 설정으로 OpenVPN 클라이언트 IP 유지하기](../98-wg-easy-wireguard-masquerade-exclude-openvpn-client-ip/)

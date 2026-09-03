@@ -9,7 +9,7 @@ categories:
 tags:
   - "vpn"
 date: 2026-03-19T06:06:00.000Z
-lastmod: 2026-08-30T01:20:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -135,5 +135,6 @@ iptables -t nat -D POSTROUTING -s ipv4Cidr ! -d 172.31.0.0/20 -o device -j MASQU
 
 ## 관련 글
 
+- [VPN/원격 접속 가이드 - 뭘 골라야 하나](../121-vpn-remote-access-guide/)
 - [WireGuard 설치와 클라이언트 접속 설정 방법](../116-wireguard-install-client-setup/)
 - [Tailscale Linux 설치 - 안전한 원격 VPN 구성](../111-tailscale-linux-install-secure-remote-vpn/)

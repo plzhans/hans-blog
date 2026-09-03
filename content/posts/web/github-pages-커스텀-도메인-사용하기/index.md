@@ -12,7 +12,7 @@ tags:
   - "github-action"
   - "github-pages"
 date: 2026-02-10T07:34:00.000Z
-lastmod: 2026-08-30T01:20:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -246,5 +246,6 @@ Repository → Settings → Pages → Custom domain 에 `plzhans.com`만 입력�
 
 ## 관련 글
 
+- 전체 개관 : [Hugo 블로그 만들기 - 시작부터 SEO까지](../123-hugo-blog-guide/)
 - [Hugo + Github 블로그 만들기](../94-hugo-github-blog/)
 - [hugo site 다국어 지원하기](../93-hugo-multilingual-seo-setup/)

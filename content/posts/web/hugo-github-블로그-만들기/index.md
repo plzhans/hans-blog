@@ -11,7 +11,7 @@ tags:
   - "github-pages"
   - "hugo"
 date: 2026-02-10T08:46:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -392,6 +392,7 @@ GitHub Actions 탭에서 워크플로우 실행을 확인하고, Settings → Pa
 
 ## 관련 글
 
+- 전체 개관 : [Hugo 블로그 만들기 - 시작부터 SEO까지](../123-hugo-blog-guide/)
 - 커스텀 도메인 설정 : [Github pages 커스텀 도메인 사용하기](../86-github-pages-custom-domain/)
 - 다국어(i18n) 지원 설정 : [hugo site 다국어 지원하기](../93-hugo-multilingual-seo-setup/)
 - (준비중) 노션에서 작성한 글 배포 자동화하여 Github pages 배포하기

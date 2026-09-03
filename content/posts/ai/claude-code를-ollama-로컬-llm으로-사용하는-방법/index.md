@@ -11,7 +11,7 @@ tags:
   - "ollama"
   - "visual-code"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T16:02:00.000Z
+lastmod: 2026-09-03T11:08:00.000Z
 toc: true
 draft: false
 images:
@@ -330,6 +330,7 @@ Claude Code와 VS Code Claude 환경은 개발자가 이미 익숙한 도구 사
 
 ## 관련 글
 
+- [로컬 AI/LLM 인프라 구축 가이드](../122-local-ai-llm-infra-guide/)
 - [오픈클로(OpenClaw) 구축](../95-openclaw-setup/)
 - [OpenClaw 노드 모드 설치와 원격 인프라 연결 방법](../107-openclaw-node-mode-remote-infra-setup/)
 - [Ollama 설치와 로컬 LLM 서버 구축 방법](../112-ollama-local-llm-server-setup/)
