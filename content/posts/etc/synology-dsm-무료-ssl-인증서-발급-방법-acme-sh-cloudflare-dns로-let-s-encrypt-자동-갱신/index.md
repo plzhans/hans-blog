@@ -10,7 +10,7 @@ tags:
   - "dsm"
   - "synology-nas"
 date: 2026-05-16T05:03:00.000Z
-lastmod: 2026-08-29T11:02:00.000Z
+lastmod: 2026-09-03T02:14:00.000Z
 toc: true
 draft: false
 images:
@@ -218,3 +218,4 @@ DSM 확인
 ## 참고
 
 - [https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide](https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide)
+- 무료 인증서와 유료 인증서의 근본적인 차이는 [HTTPS TLS/SSL 무료 vs 유료 인증서](../39-https-tls-ssl-free-vs-paid-certificates/) 글 참고

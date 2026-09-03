@@ -250,7 +250,7 @@ Accessible via https://{device-name}.tailnet.ts.net
 Since it uses Tailscale's servers, there is a traffic limit
 
 
-Reference: [https://tailscale.com/docs/reference/tailscale-cli/funnel](https://tailscale.com/docs/reference/tailscale-cli/funnel?utm_source=chatgpt.com)
+Reference: [https://tailscale.com/docs/reference/tailscale-cli/funnel](https://tailscale.com/docs/reference/tailscale-cli/funnel)
 
 
 ```bash

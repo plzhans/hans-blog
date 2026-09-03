@@ -7,11 +7,10 @@ description: "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법�
 categories:
   - "cloud"
 tags:
-  - "infra"
   - "linux"
   - "oracle"
 date: 2026-07-10T03:44:00.000Z
-lastmod: 2026-08-29T10:51:00.000Z
+lastmod: 2026-09-03T02:14:00.000Z
 toc: true
 draft: false
 images:

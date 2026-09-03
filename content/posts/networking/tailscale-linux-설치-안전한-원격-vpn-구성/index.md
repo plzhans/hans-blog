@@ -11,7 +11,7 @@ tags:
   - "tailscale"
   - "vpn"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-30T01:20:00.000Z
+lastmod: 2026-09-03T02:14:00.000Z
 toc: true
 draft: false
 images:
@@ -250,7 +250,7 @@ https://{장비이름}.tailnet.ts.net 통해서 접근 가능
 tailscale 서버를 사용하기 때문에 트래픽 제한이 있음
 
 
-참고 : [https://tailscale.com/docs/reference/tailscale-cli/funnel](https://tailscale.com/docs/reference/tailscale-cli/funnel?utm_source=chatgpt.com)
+참고 : [https://tailscale.com/docs/reference/tailscale-cli/funnel](https://tailscale.com/docs/reference/tailscale-cli/funnel)
 
 
 ```bash

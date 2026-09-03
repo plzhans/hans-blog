@@ -8,10 +8,9 @@ categories:
   - "ai"
 tags:
   - "ai"
-  - "infra"
   - "ollama"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-08-29T18:44:00.000Z
+lastmod: 2026-09-03T02:14:00.000Z
 toc: true
 draft: false
 images:

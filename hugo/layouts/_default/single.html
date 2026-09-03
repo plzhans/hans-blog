@@ -132,7 +132,15 @@
         {{- range $manualRelatedMarkers }}
           {{- if in $currentPage.RawContent . }}{{- $hasManualRelated = true }}{{- end }}
         {{- end }}
-        {{- $hugoRelatedAll := (where .Site.RegularPages "Language.Lang" $currentLang).Related . }}
+        {{- /* 특정 글은 태그가 없어도 카테고리 가중치(70)만으로 추천 임계값(20)을 넘어
+              성격이 다른 클러스터(예: DNS 캐시 글이 VPN 설치 글들 사이)에 억지로 끼어듦.
+              카테고리 위젯(위)은 유지하되, 이 "추천 글" 후보군에서만 제외 */}}
+        {{- $relatedExemptIds := slice "6" }}
+        {{- $relatedCandidates := where .Site.RegularPages "Language.Lang" $currentLang }}
+        {{- range $relatedExemptIds }}
+          {{- $relatedCandidates = where $relatedCandidates "Params.id" "ne" . }}
+        {{- end }}
+        {{- $hugoRelatedAll := $relatedCandidates.Related . }}
         {{- $hugoRelated := complement $categoryPosts $hugoRelatedAll | first 5 }}
         {{- if and $hugoRelated (not $hasManualRelated) }}
         <div class="related-posts">

@@ -9,10 +9,9 @@ categories:
 tags:
   - "acme"
   - "https"
-  - "infra"
   - "ssl"
 date: 2026-02-06T06:29:00.000Z
-lastmod: 2026-08-29T10:52:00.000Z
+lastmod: 2026-09-03T02:14:00.000Z
 toc: true
 draft: false
 images:
@@ -249,3 +248,9 @@ AWS ACM, Azure 관리형 인증서, GCP 관리형 인증서는 무료이며 자�
 - 인증서 교체 시 배포 포인트 최소화
 - 내부 서버는 인증서 관리 불필요
 - 운영 복잡도 감소
+
+### 참고: 로컬 DNS 캐시로 인한 확인 지연
+
+
+도메인 DNS 레코드를 바꾼 직후인데도 브라우저에서 여전히 예전 서버로 붙는 것처럼 보인다면, 실제 설정 문제가 아니라 PC에 남아있는 로컬 DNS 캐시 때문일 수 있다. 이때는 캐시를 지우면 바로 해결되는 경우가 많다. 방법은 [Windows/Linux/macOS DNS 캐시 지우기](../6-flush-dns-cache/) 참고.
+

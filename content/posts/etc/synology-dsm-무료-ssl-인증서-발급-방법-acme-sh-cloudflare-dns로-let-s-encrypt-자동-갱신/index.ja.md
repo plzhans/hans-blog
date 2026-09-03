@@ -218,3 +218,4 @@ DSM 確認
 ## 参考
 
 - [https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide](https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide)
+- 無料証明書と有料証明書の根本的な違いは[HTTPS TLS/SSL 無料 vs 有料証明書](../39-https-tls-ssl-free-vs-paid-certificates/)を参照

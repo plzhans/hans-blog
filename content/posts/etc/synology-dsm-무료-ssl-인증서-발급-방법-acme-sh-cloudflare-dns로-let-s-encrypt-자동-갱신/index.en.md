@@ -218,3 +218,4 @@ Choose one of three solutions
 ## References
 
 - [https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide](https://github.com/acmesh-official/acme.sh/wiki/Synology-NAS-Guide)
+- For the fundamental difference between free and paid certificates, see [HTTPS TLS/SSL Free vs Paid Certificates](../39-https-tls-ssl-free-vs-paid-certificates/)

@@ -255,3 +255,8 @@ recommend communicating via HTTP for internal reverse proxy sections.
 - Minimize deployment points when replacing certificates
 - Internal servers do not need certificate management
 - Reduced operational complexity
+
+### Note: Delayed Verification Due to Local DNS Cache
+
+
+If a browser still seems to connect to the old server right after you change a DNS record, it may not be a server configuration problem at all — it could just be a local DNS cache still held on your PC. Clearing the cache often resolves this immediately. See [Flushing the DNS Cache on Windows/Linux/macOS](../6-flush-dns-cache/) for how.

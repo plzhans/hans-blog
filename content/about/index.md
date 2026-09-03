@@ -2,6 +2,7 @@
 title: "소개"
 description: "서버 엔지니어 손원철(plzhans)의 경력, 기술 스택, 주요 프로젝트를 소개합니다."
 job_title: "서버 엔지니어"
+lastmod: 2026-08-29T14:49:56+09:00
 draft: false
 ---
 

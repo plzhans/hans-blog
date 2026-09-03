@@ -2,14 +2,14 @@
   "object": "page",
   "id": "39222a0f-7e83-8058-8a74-d4c61eae8125",
   "created_time": "2026-07-03T02:42:00.000Z",
-  "last_edited_time": "2026-08-29T18:44:00.000Z",
+  "last_edited_time": "2026-09-03T02:15:00.000Z",
   "created_by": {
     "object": "user",
     "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "00000000-0000-0000-0000-000000000003"
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
   },
   "cover": null,
   "icon": null,
@@ -45,18 +45,13 @@
           "id": "3f22fa87-e04e-4433-b7e9-ff065be29d8f",
           "name": "ollama",
           "color": "green"
-        },
-        {
-          "id": "201aa5b4-e4ba-47dc-b694-b6b34e71b5fd",
-          "name": "infra",
-          "color": "brown"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-29T18:44:00.000Z"
+      "last_edited_time": "2026-09-03T02:15:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -80,7 +75,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-30T03:44:00.000+09:00",
+        "start": "2026-09-03T11:14:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +96,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-29T18:43:58.102Z)",
+            "content": "✅ 발행 완료 (2026-09-03T02:15:22.281Z)",
             "link": null
           },
           "annotations": {
@@ -112,7 +107,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-29T18:43:58.102Z)",
+          "plain_text": "✅ 발행 완료 (2026-09-03T02:15:22.281Z)",
           "href": null
         }
       ]
@@ -244,5 +239,6 @@
   },
   "url": "https://app.notion.com/p/Ollama-LLM-39222a0f7e8380588a74d4c61eae8125",
   "public_url": null,
-  "archived": false
+  "archived": false,
+  "request_id": "d5708629-2e4c-4fc6-902b-2efca05e01a2"
 }

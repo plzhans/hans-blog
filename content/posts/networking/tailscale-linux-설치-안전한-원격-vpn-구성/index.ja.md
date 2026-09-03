@@ -250,7 +250,7 @@ https://{デバイス名}.tailnet.ts.net でアクセス可能です
 Tailscaleのサーバーを使用するため、トラフィック制限があります
 
 
-参考: [https://tailscale.com/docs/reference/tailscale-cli/funnel](https://tailscale.com/docs/reference/tailscale-cli/funnel?utm_source=chatgpt.com)
+参考: [https://tailscale.com/docs/reference/tailscale-cli/funnel](https://tailscale.com/docs/reference/tailscale-cli/funnel)
 
 
 ```bash

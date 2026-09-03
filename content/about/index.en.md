@@ -2,6 +2,7 @@
 title: "About"
 description: "Wonchul Son (plzhans), a server engineer with 15+ years of experience — background, tech stack, and featured projects."
 job_title: "Server Engineer"
+lastmod: 2026-08-29T14:49:56+09:00
 draft: false
 ---
 
