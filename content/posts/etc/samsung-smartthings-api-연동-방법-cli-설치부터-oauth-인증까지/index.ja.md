@@ -5,7 +5,7 @@ slug: "110-samsung-smartthings-api-integration-cli-oauth"
 title: "Samsung SmartThings API 連携方法 - CLI インストールから OAuth 認証まで"
 description: "Samsung SmartThings API 連携に必要な CLI インストール、OAuth アプリ作成、Redirect URI 設定、トークン発行、デバイス一覧取得の方法をステップごとに解説します。"
 categories:
-  - "iot"
+  - "etc"
 tags:
   - "iot"
   - "OpenClaw"

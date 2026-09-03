@@ -1,11 +1,11 @@
 {
   "object": "page",
-  "id": "38e22a0f-7e83-8052-a5ad-c6372e6b4e86",
-  "created_time": "2026-06-29T09:47:00.000Z",
-  "last_edited_time": "2026-08-30T01:26:00.000Z",
+  "id": "3a822a0f-7e83-81d0-8cb5-cd1f45da6a1e",
+  "created_time": "2026-07-25T01:10:00.000Z",
+  "last_edited_time": "2026-09-03T07:25:00.000Z",
   "created_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
   },
   "last_edited_by": {
     "object": "user",
@@ -30,46 +30,61 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-06-29T09:47:00.000Z"
+      "created_time": "2026-07-25T01:10:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "e3c6a39a-142e-490c-8e05-82f543605224",
-          "name": "smartthing",
-          "color": "yellow"
+          "id": "5c76e740-3091-49f8-9641-cdfe3d18c5ae",
+          "name": "telegram",
+          "color": "green"
         },
         {
-          "id": "3d44c81b-6f43-499d-8256-49a0ccbebf50",
-          "name": "iot",
-          "color": "default"
+          "id": "7e77152a-87e7-4d5c-b3bf-59174dcf040a",
+          "name": "mtproto",
+          "color": "orange"
         },
         {
-          "id": "151ab0eb-9afd-4212-8eef-7367140a7b21",
-          "name": "OpenClaw",
-          "color": "pink"
+          "id": "11f66747-4c24-478e-86b2-bfa51d47d47f",
+          "name": "csp",
+          "color": "red"
+        },
+        {
+          "id": "75d96651-3822-4c98-818e-e5b6f3fd3496",
+          "name": "nodejs",
+          "color": "green"
+        },
+        {
+          "id": "c317d7e0-321b-4f64-a8ad-f26ff9113757",
+          "name": "github-action",
+          "color": "gray"
+        },
+        {
+          "id": "0579ade5-617f-4ef1-bf35-7d996cb2a24f",
+          "name": "github-pages",
+          "color": "orange"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-08-30T01:26:00.000Z"
+      "last_edited_time": "2026-09-03T07:25:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 25
+        "number": 34
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/110-samsung-smartthings-api-integration-cli-oauth/"
+      "url": "https://blog.plzhans.com/posts/118-telegram-chat-backup/"
     },
     "toc": {
       "id": "ZR~A",
@@ -80,7 +95,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-30T10:21:00.000+09:00",
+        "start": "2026-09-03T16:24:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -101,7 +116,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-08-30T01:26:08.909Z)",
+            "content": "✅ 발행 완료 (2026-09-03T07:25:00.412Z)",
             "link": null
           },
           "annotations": {
@@ -112,7 +127,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-08-30T01:26:08.909Z)",
+          "plain_text": "✅ 발행 완료 (2026-09-03T07:25:00.412Z)",
           "href": null
         }
       ]
@@ -124,7 +139,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
+            "content": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
             "link": null
           },
           "annotations": {
@@ -135,7 +150,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
+          "plain_text": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
           "href": null
         }
       ]
@@ -147,7 +162,7 @@
         {
           "type": "text",
           "text": {
-            "content": "110",
+            "content": "118",
             "link": null
           },
           "annotations": {
@@ -158,7 +173,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "110",
+          "plain_text": "118",
           "href": null
         }
       ]
@@ -170,7 +185,7 @@
         {
           "type": "text",
           "text": {
-            "content": "samsung-smartthings-api-integration-cli-oauth",
+            "content": "telegram-chat-backup",
             "link": null
           },
           "annotations": {
@@ -181,7 +196,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "samsung-smartthings-api-integration-cli-oauth",
+          "plain_text": "telegram-chat-backup",
           "href": null
         }
       ]
@@ -195,7 +210,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-06-29",
+        "start": "2026-07-27T05:15:00.000+00:00",
         "end": null,
         "time_zone": null
       }
@@ -204,7 +219,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-06-29T18:47:00.000+09:00",
+        "start": "2026-07-25T10:10:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -213,9 +228,9 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "ced4314f-a7b5-4ed6-a37d-5d339c4a67b5",
-        "name": "IoT",
-        "color": "orange"
+        "id": "0dafa6eb-ed7d-4b79-8f8f-8070db05a249",
+        "name": "Etc",
+        "color": "brown"
       }
     },
     "제목": {
@@ -225,7 +240,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
+            "content": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
             "link": null
           },
           "annotations": {
@@ -236,14 +251,14 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
+          "plain_text": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/Samsung-SmartThings-API-CLI-OAuth-38e22a0f7e838052a5adc6372e6b4e86",
+  "url": "https://app.notion.com/p/zip-3a822a0f7e8381d08cb5cd1f45da6a1e",
   "public_url": null,
   "archived": false,
-  "request_id": "0b40b4ab-4298-404a-b393-472385389840"
+  "request_id": "8d57d857-a691-4eaf-a465-e00a64736528"
 }

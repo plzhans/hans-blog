@@ -5,13 +5,13 @@ slug: "110-samsung-smartthings-api-integration-cli-oauth"
 title: "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지"
 description: "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다."
 categories:
-  - "iot"
+  - "etc"
 tags:
   - "iot"
   - "OpenClaw"
   - "smartthing"
 date: 2026-06-29T00:00:00.000Z
-lastmod: 2026-08-30T01:21:00.000Z
+lastmod: 2026-09-03T07:24:00.000Z
 toc: true
 draft: false
 images:

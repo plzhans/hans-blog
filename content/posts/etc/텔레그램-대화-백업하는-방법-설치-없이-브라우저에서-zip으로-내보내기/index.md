@@ -5,7 +5,7 @@ slug: "118-telegram-chat-backup"
 title: "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기"
 description: "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다."
 categories:
-  - "develop"
+  - "etc"
 tags:
   - "csp"
   - "github-action"
@@ -14,7 +14,7 @@ tags:
   - "nodejs"
   - "telegram"
 date: 2026-07-27T05:15:00.000Z
-lastmod: 2026-08-29T11:01:00.000Z
+lastmod: 2026-09-03T07:24:00.000Z
 toc: true
 draft: false
 images:

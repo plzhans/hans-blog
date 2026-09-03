@@ -5,7 +5,7 @@ slug: "118-telegram-chat-backup"
 title: "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required"
 description: "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser."
 categories:
-  - "develop"
+  - "etc"
 tags:
   - "csp"
   - "github-action"
