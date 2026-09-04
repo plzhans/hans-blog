@@ -28,9 +28,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     env:
-      HUGO_BASEURL: https://blog.plzhans.com
       HUGO_CACHEDIR: /tmp/hugo_cache
-      WRANGLER_VERSION: 4.129.0
 
     steps:
       - name: Checkout
@@ -53,6 +51,8 @@ jobs:
             ${{ runner.os }}-hugomod-
 
       - name: Build
+        env:
+          HUGO_BASEURL: https://blog.plzhans.com
         run: hugo -s ./hugo --baseURL $HUGO_BASEURL --minify --gc --cleanDestinationDir
 
       - name: Upload artifact
@@ -72,9 +72,9 @@ jobs:
       - name: Copy latest/popular posts data for landing
         run: cp hugo/public/index.json landing/data/blog_posts.json
 
-      # HUGO_BASEURL(잡 레벨 env, blog.plzhans.com용)이 --baseURL 플래그보다 우선순위가 높아
-      # 이 스텝에서 재정의하지 않으면 랜딩 빌드가 blog.plzhans.com을 baseURL로 써버린다
-      # (canonical/og:url/sitemap이 전부 blog 도메인으로 나가던 버그의 원인).
+      # HUGO_BASEURL 환경변수는 --baseURL CLI 플래그보다 우선순위가 높다. 잡 레벨에 두면
+      # 다른 빌드 스텝에 값이 새어 들어갈 수 있어(실제로 blog용 값이 랜딩 빌드에 새어 들어가
+      # canonical/og:url/sitemap이 전부 blog 도메인으로 나가는 버그가 있었다) 스텝별로 국지화한다.
       - name: Build landing
         env:
           HUGO_BASEURL: https://plzhans.com
@@ -84,6 +84,8 @@ jobs:
       # 버전을 고정하는 이유는 hugo.toml의 compatibility_date를 고정하는 이유와 같다:
       # 배포할 때마다 다른 버전이 잡히면 같은 산출물을 다시 올려도 동작이 달라질 수 있다.
       - name: Cache npm (wrangler)
+        env:
+          WRANGLER_VERSION: 4.129.0
         uses: actions/cache@v4
         with:
           path: ~/.npm
@@ -94,6 +96,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          WRANGLER_VERSION: 4.129.0
         run: |
           cd landing
           CI=true WRANGLER_SEND_METRICS=false npx "wrangler@$WRANGLER_VERSION" deploy \
