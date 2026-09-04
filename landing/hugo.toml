@@ -19,3 +19,7 @@ disableKinds = ["taxonomy", "term", "section", "rss"]
   [[params.social]]
     name = "LinkedIn"
     url = "https://www.linkedin.com/in/plzhans"
+
+[services]
+  [services.googleAnalytics]
+    ID = "G-3MLM9NWMK8"

@@ -262,5 +262,21 @@
     </div>
   </footer>
 
+  {{- /* blog.plzhans.com과 동일한 방식: 본문 렌더링을 막지 않도록 </body> 바로 앞에
+        배치, gtag.js는 async 로드. GA4는 그대로 쓰기로 한 결정 유지(경량화 대안은
+        검토했으나 데이터 신뢰성/벤더 락인 우려로 보류 - blog 쪽과 동일한 판단). */}}
+  {{- with .Site.Config.Services.GoogleAnalytics.ID }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+  <script>
+  var doNotTrack = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+  if (!(doNotTrack === "1" || doNotTrack === "yes")) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "{{ . }}");
+  }
+  </script>
+  {{- end }}
+
 </body>
 </html>
