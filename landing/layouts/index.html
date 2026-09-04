@@ -27,20 +27,40 @@
   {{- range .Site.Params.social }}
     {{- $sameAs = $sameAs | append .url }}
   {{- end }}
+  {{- /* blog.plzhans.com/about/에도 별도 Person 노드가 있는데 서로 sameAs로
+        연결돼 있지 않아 동일 인물이라는 신호가 기계에는 암묵적이었음(SEO 감사
+        지적) - about 링크를 추가해 두 도메인의 Person을 명시적으로 묶음 */}}
+  {{- $sameAs = $sameAs | append (printf "%s/about/" .Site.Params.blogURL) }}
+  {{- $personID := printf "%s#person" .Site.BaseURL }}
+  {{- $services := slice }}
+  {{- range $i, $s := .Params.services }}
+    {{- $services = $services | append (dict "@type" "ListItem" "position" (add $i 1) "url" $s.url "name" $s.name) }}
+  {{- end }}
   {{- $jsonLd := dict
       "@context" "https://schema.org"
       "@graph" (slice
         (dict
           "@type" "WebSite"
+          "@id" (printf "%s#website" .Site.BaseURL)
           "url" .Site.BaseURL
           "name" .Site.Title
           "description" .Description
+          "inLanguage" "ko-KR"
+          "publisher" (dict "@id" $personID)
         )
         (dict
           "@type" "Person"
+          "@id" $personID
           "name" "손원철 (plzhans)"
           "url" .Site.BaseURL
+          "image" (printf "%s/assets/img/avatar-plzhans.webp" .Site.Params.blogURL)
           "sameAs" $sameAs
+        )
+        (dict
+          "@type" "ItemList"
+          "@id" (printf "%s#services" .Site.BaseURL)
+          "name" "손원철이 만든 서비스들"
+          "itemListElement" $services
         )
       )
   }}
@@ -48,8 +68,10 @@
 
   <style>
     :root {
-      --primary: #2b8a5e;
-      --primary-dark: #226e4b;
+      /* 기존 #2b8a5e는 흰 배경 대비 4.29:1로 WCAG AA(4.5:1) 미달(SEO 감사 지적) -
+         CTA/링크/라벨에 공통으로 쓰여서 토큰 자체를 6.18:1 통과하는 톤으로 교체 */
+      --primary: #226e4b;
+      --primary-dark: #1c5c3e;
       --text: #16202a;
       --muted: #57636e;
       --bg: #ffffff;
@@ -142,7 +164,8 @@
     .post-card .summary { font-size: 0.9rem; color: var(--muted); margin: 0; flex: 1; }
     .post-card .more { font-size: 0.85rem; font-weight: 700; color: var(--primary); }
     .see-all { text-align: center; margin-top: 2rem; }
-    .see-all a { font-weight: 700; color: var(--primary); text-decoration: none; }
+    /* 모바일 터치 기준(44px) 미달 지적(SEO 감사) - padding으로 탭 영역 확보 */
+    .see-all a { display: inline-block; padding: 0.7rem 0.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
     .see-all a:hover { text-decoration: underline; }
 
     /* ---- Services (secondary) ---- */
@@ -171,7 +194,8 @@
     /* ---- Footer ---- */
     footer { padding: 2.5rem 0; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); }
     footer .links { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
-    footer a { text-decoration: none; }
+    /* 모바일 터치 기준(44px) 미달 지적(SEO 감사) - padding으로 탭 영역 확보 */
+    footer a { display: inline-block; padding: 0.65rem 0.15rem; margin: -0.65rem -0.15rem; text-decoration: none; }
     footer a:hover { color: var(--primary); }
   </style>
 </head>
@@ -247,6 +271,12 @@
         <img class="avatar" src="{{ .Site.Params.blogURL }}/assets/img/avatar-plzhans.webp" alt="손원철" loading="lazy">
         <div class="about-text">
           {{ .Content }}
+          {{- /* 채용담당자/기술 연락처가 About을 읽고 행동하려 해도 마찰 없는
+                수단이 안 보인다는 지적(SXO 감사) - 이력서 콘텐츠 추가 없이
+                기존 소셜 링크를 재사용한 한 줄만 추가 */}}
+          {{- $gh := index .Site.Params.social 0 }}
+          {{- $li := index .Site.Params.social 1 }}
+          <p class="contact-note">협업 제안이나 채용 문의는 <a href="{{ $gh.url }}" target="_blank" rel="noopener">GitHub</a> 또는 <a href="{{ $li.url }}" target="_blank" rel="noopener">LinkedIn</a>으로 편하게 연락 주세요.</p>
         </div>
       </div>
     </div>

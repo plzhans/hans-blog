@@ -7,33 +7,12 @@
 {{- $allPosts := where .Site.RegularPages "Type" "posts" -}}
 {{- $ogDefault := ("/assets/img/og-default.jpg" | absURL) -}}
 
-{{- /* 최신 글: 실제 Page 객체 기준. 대표 이미지가 없으면 사이트 기본 og 이미지로 대체.
-      3열 그리드에서 마지막 줄이 비어 보이지 않도록 3의 배수(6개)로 맞춤 */ -}}
-{{- $latest := first 6 $allPosts -}}
-{{- $latestOut := slice -}}
-{{- range $latest -}}
-  {{- $page := . -}}
-  {{- $thumb := "" -}}
-  {{- with $page.Params.images -}}
-    {{- $resource := $page.Resources.GetMatch (index . 0) -}}
-    {{- if and $resource (reflect.IsImageResourceProcessable $resource) -}}
-      {{- $thumb = ($resource.Resize "480x webp").Permalink -}}
-    {{- end -}}
-  {{- end -}}
-  {{- if not $thumb -}}
-    {{- $thumb = $ogDefault -}}
-  {{- end -}}
-  {{- $latestOut = $latestOut | append (dict
-    "title" $page.Title
-    "url" $page.Permalink
-    "date" ($page.Date.Format "2006-01-02")
-    "summary" ($page.Description | default "")
-    "thumbnail" $thumb) -}}
-{{- end -}}
-
-{{- /* 인기글: data/popular/ko.json (GA4 동기화 산출물) - 파일이 없거나 posts가 비어도 안전.
-      3열 그리드 기준 6개(2줄)로 최신 글과 동일하게 맞춤 */ -}}
+{{- /* 인기글을 먼저 계산한다 - 랜딩 페이지에서 인기글 섹션이 최신글보다 위에
+      렌더링되는데, 최신글에 인기글과 같은 글이 섞여 있으면(6개 중 4개가 겹치는
+      경우도 있었음, SXO 감사 지적) 스크롤해서 내려가도 방금 본 카드가 또 나와
+      낭비처럼 느껴짐 - 인기글에 이미 나온 URL은 최신글에서 제외 */ -}}
 {{- $popularOut := slice -}}
+{{- $popularURLs := slice -}}
 {{- with .Site.Data.popular -}}
   {{- with .ko -}}
     {{- with .posts -}}
@@ -59,6 +38,7 @@
         {{- if not $thumb -}}
           {{- $thumb = $ogDefault -}}
         {{- end -}}
+        {{- $popularURLs = $popularURLs | append ($post.url | absURL) -}}
         {{- $popularOut = $popularOut | append (dict
           "title" $post.title
           "url" ($post.url | absURL)
@@ -66,6 +46,36 @@
           "summary" ($post.description | default "")
           "thumbnail" $thumb) -}}
       {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* 최신 글: 실제 Page 객체 기준. 대표 이미지가 없으면 사이트 기본 og 이미지로 대체.
+      인기글에 이미 나온 글은 건너뛰고, 3열 그리드에서 마지막 줄이 비어 보이지
+      않도록 3의 배수(6개)로 맞춤 */ -}}
+{{- $latestOut := slice -}}
+{{- $latestCount := 0 -}}
+{{- range $allPosts -}}
+  {{- if lt $latestCount 6 -}}
+    {{- $page := . -}}
+    {{- if not (in $popularURLs $page.Permalink) -}}
+      {{- $thumb := "" -}}
+      {{- with $page.Params.images -}}
+        {{- $resource := $page.Resources.GetMatch (index . 0) -}}
+        {{- if and $resource (reflect.IsImageResourceProcessable $resource) -}}
+          {{- $thumb = ($resource.Resize "480x webp").Permalink -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $thumb -}}
+        {{- $thumb = $ogDefault -}}
+      {{- end -}}
+      {{- $latestOut = $latestOut | append (dict
+        "title" $page.Title
+        "url" $page.Permalink
+        "date" ($page.Date.Format "2006-01-02")
+        "summary" ($page.Description | default "")
+        "thumbnail" $thumb) -}}
+      {{- $latestCount = add $latestCount 1 -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
