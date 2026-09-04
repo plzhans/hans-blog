@@ -1,7 +1,7 @@
 {
   "ref": "security-headers",
-  "description": "[security-headers] blog.plzhans.com 응답에 보안 헤더 강제 세팅",
-  "expression": "(http.host eq \"blog.plzhans.com\")",
+  "description": "[security-headers] blog.plzhans.com, plzhans.com 응답에 보안 헤더 강제 세팅",
+  "expression": "(http.host eq \"blog.plzhans.com\") or (http.host eq \"plzhans.com\")",
   "action": "rewrite",
   "action_parameters": {
     "headers": {
