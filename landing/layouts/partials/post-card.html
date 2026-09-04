@@ -1,6 +1,10 @@
 {{- /* 카드 하나 렌더링. 인자: {url, thumbnail, date, title, summary} 형태의 dict/map */ -}}
+{{- /* 포스트에 전용 커버 이미지가 없으면 blog_posts.json의 thumbnail이 사이트 공용
+      og-default.jpg(1200x630, 소셜 공유용 대형 이미지)로 폴백됨 - 이 카드(9rem 높이)에
+      쓰기엔 과대 용량이라, 그 경우 이미지 없이 텍스트만 보여줌 */ -}}
+{{- $isFallbackImage := and .thumbnail (in .thumbnail "og-default.jpg") -}}
 <a class="post-card" href="{{ .url }}">
-  {{ with .thumbnail }}<img class="thumb" src="{{ . }}" alt="" loading="lazy">{{ end }}
+  {{ if and .thumbnail (not $isFallbackImage) }}<img class="thumb" src="{{ .thumbnail }}" alt="{{ .title }}" loading="lazy">{{ end }}
   <div class="post-card-body">
     <span class="date">{{ .date }}</span>
     <span class="title">{{ .title }}</span>
