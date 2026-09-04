@@ -7,14 +7,17 @@
   <meta name="description" content="{{ .Description }}">
   <link rel="canonical" href="{{ .Permalink }}">
 
+  {{- $ogImage := printf "%s/assets/img/og-default.jpg" .Site.Params.blogURL }}
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ .Site.Title }}">
   <meta property="og:title" content="{{ .Params.hero_title }}">
   <meta property="og:description" content="{{ .Description }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{{ $ogImage }}">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ .Params.hero_title }}">
   <meta name="twitter:description" content="{{ .Description }}">
+  <meta name="twitter:image" content="{{ $ogImage }}">
 
   <script type="application/ld+json">
   {
