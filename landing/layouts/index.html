@@ -178,11 +178,13 @@
     .services-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 640px) { .services-grid { grid-template-columns: 1fr; } }
     .service-card {
-      display: block; padding: 1.2rem 1.4rem; background: var(--bg);
-      border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: inherit;
-      transition: border-color .15s;
+      display: flex; flex-direction: column; overflow: hidden;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+      text-decoration: none; color: inherit; transition: border-color .15s;
     }
     .service-card:hover { border-color: var(--primary); }
+    .service-card .shot { width: 100%; height: 8rem; object-fit: cover; object-position: left top; display: block; background: var(--bg-alt); }
+    .service-card-body { padding: 1.2rem 1.4rem; }
     .service-card .name { font-weight: 700; color: var(--primary); margin-bottom: 0.3rem; display: block; }
     .service-card .summary { font-size: 0.88rem; color: var(--muted); margin: 0; }
 
@@ -257,10 +259,13 @@
         <p>{{ .Params.services_subtitle }}</p>
       </div>
       <div class="services-grid">
-        {{ range .Params.services }}
-        <a class="service-card" href="{{ .url }}">
-          <span class="name">{{ .name }}</span>
-          <p class="summary">{{ .summary }}</p>
+        {{ range $s := .Params.services }}
+        <a class="service-card" href="{{ $s.url }}">
+          {{ with $s.image }}<img class="shot" src="{{ . }}" alt="{{ $s.name }} 화면" loading="lazy">{{ end }}
+          <div class="service-card-body">
+            <span class="name">{{ $s.name }}</span>
+            <p class="summary">{{ $s.summary }}</p>
+          </div>
         </a>
         {{ end }}
       </div>
