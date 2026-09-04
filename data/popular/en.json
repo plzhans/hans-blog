@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T04:44:26.351Z",
+  "generated_at": "2026-09-04T04:46:44.263Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -8,19 +8,6 @@
   "posts": [
     {
       "rank": 1,
-      "slug": "113-claude-code-ollama-local-llm",
-      "title": "How to Use Claude Code with Ollama Local LLMs",
-      "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/113-claude-code-ollama-local-llm/",
-      "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
-      "count": 27
-    },
-    {
-      "rank": 2,
       "slug": "116-wireguard-install-client-setup",
       "title": "How to Install WireGuard and Set Up Client Connections",
       "description": "Explains how to install WireGuard VPN on a Linux server, covering key generation, firewall opening, and service registration. Includes Mac client conf setup and GUI connection verification steps to help you build a secure remote access environment.",
@@ -30,20 +17,33 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 8
+      "count": 95
+    },
+    {
+      "rank": 2,
+      "slug": "122-local-ai-llm-infra-guide",
+      "title": "Local AI/LLM Infrastructure Guide",
+      "description": "A guide to setting up a local LLM server with Ollama, then connecting Claude Code you already use to run on top of it.",
+      "date": "2026-09-03T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/122-local-ai-llm-infra-guide/",
+      "image": null,
+      "count": 47
     },
     {
       "rank": 3,
-      "slug": "118-telegram-chat-backup",
-      "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
-      "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
-      "date": "2026-07-27T05:15:00.000Z",
+      "slug": "113-claude-code-ollama-local-llm",
+      "title": "How to Use Claude Code with Ollama Local LLMs",
+      "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
+      "date": "2026-07-03T00:00:00.000Z",
       "categories": [
-        "develop"
+        "ai"
       ],
-      "url": "/en/posts/118-telegram-chat-backup/",
-      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 6
+      "url": "/en/posts/113-claude-code-ollama-local-llm/",
+      "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 29
     },
     {
       "rank": 4,
@@ -56,23 +56,88 @@
       ],
       "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 6
+      "count": 9
     },
     {
       "rank": 5,
+      "slug": "118-telegram-chat-backup",
+      "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
+      "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
+      "date": "2026-07-27T05:15:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/118-telegram-chat-backup/",
+      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 8
+    },
+    {
+      "rank": 6,
+      "slug": "120-cloudflare-security-headers-hsts-csp",
+      "title": "4 Security Headers Flagged by an SEO Audit — Applying Them on Cloudflare Without Code",
+      "description": "Explains why SEO audit reports flag HSTS, CSP, X-Content-Type-Options, and Referrer-Policy, and what each header actually does. Covers splitting fixed-value headers into Cloudflare Transform Rules while managing the frequently-changing CSP via an HTML meta tag, and why X-Frame-Options is still needed since meta can't handle frame-ancestors.",
+      "date": "2026-08-30T01:25:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/120-cloudflare-security-headers-hsts-csp/",
+      "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
+      "count": 8
+    },
+    {
+      "rank": 7,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
+      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 7
+    },
+    {
+      "rank": 8,
+      "slug": "95-openclaw-setup",
+      "title": "Setting Up OpenClaw ",
+      "description": "A summary of installing OpenClaw (OpenClaw AI agent framework) locally and configuring the model, channel, and skills through onboard. Follow along with the Telegram bot authentication and security warning checkpoints to run the agent safely.",
+      "date": "2026-02-23T10:10:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/95-openclaw-setup/",
+      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
+      "count": 6
+    },
+    {
+      "rank": 9,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
       "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
       "date": "2026-06-29T00:00:00.000Z",
       "categories": [
-        "iot"
+        "etc"
       ],
       "url": "/en/posts/110-samsung-smartthings-api-integration-cli-oauth/",
       "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
       "count": 4
     },
     {
-      "rank": 6,
+      "rank": 10,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
+      "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
+      "date": "2026-07-10T03:44:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 4
+    },
+    {
+      "rank": 11,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -85,20 +150,20 @@
       "count": 4
     },
     {
-      "rank": 7,
-      "slug": "95-openclaw-setup",
-      "title": "Setting Up OpenClaw ",
-      "description": "A summary of installing OpenClaw (OpenClaw AI agent framework) locally and configuring the model, channel, and skills through onboard. Follow along with the Telegram bot authentication and security warning checkpoints to run the agent safely.",
-      "date": "2026-02-23T10:10:00.000Z",
+      "rank": 12,
+      "slug": "10-tortoisegit-clear-saved-authentication-data",
+      "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
+      "description": "A walkthrough of how to fix repeated Authentication failed errors in TortoiseGit by clearing saved authentication data via Clear in Saved Data. Covers cleaning up the Windows Credential Manager, checking credential.helper, preparing a PAT, and switching to SSH.",
+      "date": "2020-09-03T16:46:00.000Z",
       "categories": [
-        "ai"
+        "git"
       ],
-      "url": "/en/posts/95-openclaw-setup/",
-      "image": "/posts/95-openclaw-setup/assets/1_30c22a0f-7e83-80ee-9c2c-c2ff88b811d4.png",
-      "count": 4
+      "url": "/en/posts/10-tortoisegit-clear-saved-authentication-data/",
+      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
+      "count": 3
     },
     {
-      "rank": 8,
+      "rank": 13,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -111,33 +176,33 @@
       "count": 3
     },
     {
-      "rank": 9,
-      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
-      "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
-      "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
-      "date": "2026-07-10T03:44:00.000Z",
+      "rank": 14,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
+      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
+      "date": "2022-03-17T07:48:00.000Z",
       "categories": [
-        "cloud"
+        "web"
       ],
-      "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
-      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
       "count": 3
     },
     {
-      "rank": 10,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
-      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
-      "date": "2026-05-16T05:03:00.000Z",
+      "rank": 15,
+      "slug": "101-claude-code-account-switch-macos-keychain",
+      "title": "Automating Claude Account Switching",
+      "description": "This post summarizes how to quickly switch between Claude Code accounts without logging out. It covers an automation script that backs up and swaps macOS Keychain credentials using the security command, along with how to use dedicated tools like claudini and CCSwitcher.",
+      "date": "2026-03-26T00:00:00.000Z",
       "categories": [
-        "etc"
+        "ai"
       ],
-      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "url": "/en/posts/101-claude-code-account-switch-macos-keychain/",
+      "image": "/posts/101-claude-code-account-switch-macos-keychain/assets/1_39522a0f-7e83-8009-a988-e146d610f764.png",
       "count": 2
     },
     {
-      "rank": 11,
+      "rank": 16,
       "slug": "105-mac-office-activation",
       "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
       "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
@@ -150,20 +215,46 @@
       "count": 2
     },
     {
-      "rank": 12,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
-      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
-      "date": "2022-03-17T07:48:00.000Z",
+      "rank": 17,
+      "slug": "123-hugo-blog-guide",
+      "title": "Building a Hugo Blog - From Start to SEO",
+      "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
+      "date": "2026-09-03T00:00:00.000Z",
       "categories": [
         "web"
       ],
-      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "url": "/en/posts/123-hugo-blog-guide/",
+      "image": null,
       "count": 2
     },
     {
-      "rank": 13,
+      "rank": 18,
+      "slug": "86-github-pages-custom-domain",
+      "title": "Using a Custom Domain with GitHub Pages",
+      "description": "This post summarizes the CNAME/A/AAAA record settings and the Pages Custom domain setup steps needed to connect a custom domain to GitHub Pages. It also covers the difference in how the CNAME file is handled between Actions and branch deployments, verifying DNS with dig, and why Enforce HTTPS fails to turn on because of a CAA record.",
+      "date": "2026-02-10T07:34:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/86-github-pages-custom-domain/",
+      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
+      "count": 2
+    },
+    {
+      "rank": 19,
+      "slug": "107-openclaw-node-mode-remote-infra-setup",
+      "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
+      "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
+      "date": "2026-06-29T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/107-openclaw-node-mode-remote-infra-setup/",
+      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
+      "count": 1
+    },
+    {
+      "rank": 20,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
       "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
@@ -173,71 +264,6 @@
       ],
       "url": "/en/posts/111-tailscale-linux-install-secure-remote-vpn/",
       "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
-      "count": 1
-    },
-    {
-      "rank": 14,
-      "slug": "13-git-ssh-key-setup-and-remote-access",
-      "title": "Accessing Git remotes over SSH: from key generation to registration",
-      "description": "A complete walkthrough for connecting to Git remotes via SSH. Compare HTTPS vs SSH, generate Ed25519 keys, set proper chmod permissions, register the public key on GitHub/GitLab, and verify with ssh -T so you can eliminate authentication issues quickly.",
-      "date": "2025-02-16T09:15:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/13-git-ssh-key-setup-and-remote-access/",
-      "image": "/posts/13-git-ssh-key-setup-and-remote-access/assets/1_31422a0f-7e83-80d2-875f-dc4e50a32f38.png",
-      "count": 1
-    },
-    {
-      "rank": 15,
-      "slug": "4-git-filter-repo-remove-secrets-from-history",
-      "title": "Completely removing leaked secrets from Git history with git filter-repo (force push and resync)",
-      "description": "Step-by-step procedure for wiping .env files, secrets, and tokens from Git history with git filter-repo. Define filter rules, validate the rewritten history, force-push the new graph, resync every collaborator, and review protected branch settings in one go.",
-      "date": "2019-05-18T16:31:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/4-git-filter-repo-remove-secrets-from-history/",
-      "image": "/posts/4-git-filter-repo-remove-secrets-from-history/assets/1_31222a0f-7e83-809b-aad5-cbc7bafe531f.png",
-      "count": 1
-    },
-    {
-      "rank": 16,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Using a Custom Domain with GitHub Pages",
-      "description": "This post summarizes the CNAME/A/AAAA record settings and the Pages Custom domain setup steps needed to connect a custom domain to GitHub Pages. It also covers the difference in how the CNAME file is handled between Actions and branch deployments, verifying DNS with dig, and why Enforce HTTPS fails to turn on because of a CAA record.",
-      "date": "2026-02-10T07:34:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 1
-    },
-    {
-      "rank": 17,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "A guide to encrypting .env files with GPG to prevent secret exposure when you need to commit them to Git. Covers everything from .gitignore handling to gpg encrypt/decrypt commands and setting a default recipient, so you can start operating a secure repository.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 1
-    },
-    {
-      "rank": 18,
-      "slug": "93-hugo-multilingual-seo-setup",
-      "title": "Adding Multilingual Support to a Hugo Site",
-      "description": "A summary of how to configure baseURL, sitemap, robots, JSON-LD, Open Graph, and meta description in a Hugo multilingual blog, and how to prevent duplicate-content issues with hreflang and canonical. Includes slug/translationKey troubleshooting.",
-      "date": "2026-02-11T09:55:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/93-hugo-multilingual-seo-setup/",
-      "image": "/posts/93-hugo-multilingual-seo-setup/assets/1_30a22a0f-7e83-80a2-b545-f71914bc48d5.png",
       "count": 1
     }
   ]
