@@ -1,5 +1,5 @@
 {{- /* 카드 하나 렌더링. 인자: {url, thumbnail, date, title, summary} 형태의 dict/map */ -}}
-<a class="post-card" href="{{ .url }}" target="_blank" rel="noopener">
+<a class="post-card" href="{{ .url }}">
   {{ with .thumbnail }}<img class="thumb" src="{{ . }}" alt="" loading="lazy">{{ end }}
   <div class="post-card-body">
     <span class="date">{{ .date }}</span>

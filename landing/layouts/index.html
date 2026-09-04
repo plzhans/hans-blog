@@ -172,7 +172,7 @@
       <span class="eyebrow">plzhans blog</span>
       <h1>{{ .Params.hero_title }}</h1>
       <p class="subtitle">{{ .Params.hero_subtitle }}</p>
-      <a class="cta" href="{{ .Site.Params.blogURL }}" target="_blank" rel="noopener">블로그 보러가기 →</a>
+      <a class="cta" href="{{ .Site.Params.blogURL }}">블로그 보러가기 →</a>
     </div>
   </header>
 
@@ -203,7 +203,7 @@
       <div class="posts-grid">
         {{ range . }}{{ partial "post-card.html" . }}{{ end }}
       </div>
-      <p class="see-all"><a href="{{ $.Site.Params.blogURL }}" target="_blank" rel="noopener">블로그 전체 글 보기 →</a></p>
+      <p class="see-all"><a href="{{ $.Site.Params.blogURL }}">블로그 전체 글 보기 →</a></p>
     </div>
   </section>
   {{- end }}
@@ -218,7 +218,7 @@
       </div>
       <div class="services-grid">
         {{ range .Params.services }}
-        <a class="service-card" href="{{ .url }}" target="_blank" rel="noopener">
+        <a class="service-card" href="{{ .url }}">
           <span class="name">{{ .name }}</span>
           <p class="summary">{{ .summary }}</p>
         </a>
