@@ -1,0 +1,19 @@
+# Cloudflare Workers Static Assets는 Pages와 동일하게 이 파일을 읽어 응답 헤더를
+# 오버라이드한다. 기본 Content-Type에 charset이 안 붙어서(GitHub Pages는 자동으로
+# 붙는데 Workers Static Assets는 안 붙음) 헤더의 charset을 신뢰하는 클라이언트가
+# 한글 텍스트를 ISO-8859-1로 잘못 디코딩해 깨지는 문제(SEO 감사에서 발견) 수정.
+
+/*.html
+  Content-Type: text/html; charset=utf-8
+
+/
+  Content-Type: text/html; charset=utf-8
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+
+/ads.txt
+  Content-Type: text/plain; charset=utf-8

@@ -3,8 +3,11 @@
       og-default.jpg(1200x630, 소셜 공유용 대형 이미지)로 폴백됨 - 이 카드(9rem 높이)에
       쓰기엔 과대 용량이라, 그 경우 이미지 없이 텍스트만 보여줌 */ -}}
 {{- $isFallbackImage := and .thumbnail (in .thumbnail "og-default.jpg") -}}
+{{- /* 최상단 섹션(인기 블로그 글)의 처음 몇 장은 above-the-fold라 loading=lazy를
+      걸면 LCP 후보 발견이 늦어짐(SEO 감사에서 발견, 모바일 LCP 2.7s의 원인) -
+      호출부에서 eager=true를 넘긴 카드만 즉시 로딩 */ -}}
 <a class="post-card" href="{{ .url }}">
-  {{ if and .thumbnail (not $isFallbackImage) }}<img class="thumb" src="{{ .thumbnail }}" alt="{{ .title }}" loading="lazy">{{ end }}
+  {{ if and .thumbnail (not $isFallbackImage) }}<img class="thumb" src="{{ .thumbnail }}" alt="{{ .title }}" loading="{{ if .eager }}eager{{ else }}lazy{{ end }}">{{ end }}
   <div class="post-card-body">
     <span class="date">{{ .date }}</span>
     <span class="title">{{ .title }}</span>

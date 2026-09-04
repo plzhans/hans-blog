@@ -124,3 +124,23 @@ jobs:
             -H "Content-Type: application/json; charset=utf-8" \
             -d "$payload" \
             -w "\nIndexNow response: %{http_code}\n"
+
+      # IndexNow는 제출 host와 keyLocation의 host가 같아야 해서 blog와 별도 제출이 필요함
+      # (landing/static/<key>.txt에 같은 키 파일을 복사해둠).
+      - name: Submit landing URLs to IndexNow
+        env:
+          INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
+        run: |
+          set -euo pipefail
+          urls=$(grep -ohE '<loc>[^<]+</loc>' landing/public/sitemap.xml | sed -E 's#</?loc>##g')
+          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
+          payload=$(jq -n \
+            --arg host "plzhans.com" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "https://plzhans.com/${INDEXNOW_KEY}.txt" \
+            --argjson urlList "$url_list" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$payload" \
+            -w "\nIndexNow response: %{http_code}\n"

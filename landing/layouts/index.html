@@ -197,7 +197,7 @@
         <h2>인기 블로그 글</h2>
       </div>
       <div class="posts-grid">
-        {{ range . }}{{ partial "post-card.html" . }}{{ end }}
+        {{ range $i, $post := . }}{{ partial "post-card.html" (merge $post (dict "eager" (lt $i 2))) }}{{ end }}
       </div>
     </div>
   </section>
