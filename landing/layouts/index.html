@@ -6,6 +6,10 @@
   <title>{{ .Title }}</title>
   <meta name="description" content="{{ .Description }}">
   <link rel="canonical" href="{{ .Permalink }}">
+  {{- /* 카드 썸네일/아바타가 전부 blog.plzhans.com에서 핫링크되는 크로스오리진
+        이미지라, DNS/TLS 핸드셰이크를 미리 시작해두면 첫 이미지 로드가 빨라짐
+        (성능 감사 권장) */}}
+  <link rel="preconnect" href="{{ .Site.Params.blogURL }}">
 
   {{- $ogImage := printf "%s/assets/img/og-default.jpg" .Site.Params.blogURL }}
   <meta property="og:type" content="website">
@@ -54,6 +58,8 @@
           "name" "손원철 (plzhans)"
           "url" .Site.BaseURL
           "image" (printf "%s/assets/img/avatar-plzhans.webp" .Site.Params.blogURL)
+          "jobTitle" "게임/플랫폼 백엔드 엔지니어"
+          "knowsAbout" (slice "백엔드 개발" "서버 인프라" "게임 서버" "API 설계")
           "sameAs" $sameAs
         )
         (dict
