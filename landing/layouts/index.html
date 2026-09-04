@@ -19,25 +19,32 @@
   <meta name="twitter:description" content="{{ .Description }}">
   <meta name="twitter:image" content="{{ $ogImage }}">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "url": "{{ .Site.BaseURL }}",
-        "name": "{{ .Site.Title }}",
-        "description": {{ .Description | jsonify }}
-      },
-      {
-        "@type": "Person",
-        "name": "손원철 (plzhans)",
-        "url": "{{ .Site.BaseURL }}",
-        "sameAs": [{{ range $i, $s := .Site.Params.social }}{{ if $i }},{{ end }}{{ $s.url | jsonify }}{{ end }}]
-      }
-    ]
-  }
-  </script>
+  {{- /* 필드별로 jsonify를 개별 적용하면 <script> 컨텍스트의 Go html/template 자동
+        이스케이핑과 충돌해 값이 이중 인코딩됨(예: sameAs URL에 리터럴 따옴표가 섞여
+        들어감). @graph 전체를 Hugo dict/slice로 구성한 뒤 한 번만 jsonify하고
+        safeJS로 감싸 재이스케이핑을 막는 방식으로 근본 해결. */}}
+  {{- $sameAs := slice }}
+  {{- range .Site.Params.social }}
+    {{- $sameAs = $sameAs | append .url }}
+  {{- end }}
+  {{- $jsonLd := dict
+      "@context" "https://schema.org"
+      "@graph" (slice
+        (dict
+          "@type" "WebSite"
+          "url" .Site.BaseURL
+          "name" .Site.Title
+          "description" .Description
+        )
+        (dict
+          "@type" "Person"
+          "name" "손원철 (plzhans)"
+          "url" .Site.BaseURL
+          "sameAs" $sameAs
+        )
+      )
+  }}
+  <script type="application/ld+json">{{ $jsonLd | jsonify | safeJS }}</script>
 
   <style>
     :root {
