@@ -5,9 +5,12 @@
 {{- $isFallbackImage := and .thumbnail (in .thumbnail "og-default.jpg") -}}
 {{- /* 최상단 섹션(인기 블로그 글)의 처음 몇 장은 above-the-fold라 loading=lazy를
       걸면 LCP 후보 발견이 늦어짐(SEO 감사에서 발견, 모바일 LCP 2.7s의 원인) -
-      호출부에서 eager=true를 넘긴 카드만 즉시 로딩 */ -}}
+      호출부에서 eager=true를 넘긴 카드만 즉시 로딩.
+      loading=eager만으로는 부족했음 - PSI 감사가 fetchpriority=high 부재를
+      LCP 지연의 남은 원인으로 정확히 지목(로딩은 즉시 되지만 우선순위가
+      낮아 브라우저가 다른 리소스보다 먼저 안 받아옴) */ -}}
 <a class="post-card" href="{{ .url }}">
-  {{ if and .thumbnail (not $isFallbackImage) }}<img class="thumb" src="{{ .thumbnail }}" alt="{{ .title }}" loading="{{ if .eager }}eager{{ else }}lazy{{ end }}">{{ end }}
+  {{ if and .thumbnail (not $isFallbackImage) }}<img class="thumb" src="{{ .thumbnail }}" alt="{{ .title }}" loading="{{ if .eager }}eager{{ else }}lazy{{ end }}"{{ if .eager }} fetchpriority="high"{{ end }}>{{ end }}
   <div class="post-card-body">
     <span class="date">{{ .date }}</span>
     <span class="title">{{ .title }}</span>
