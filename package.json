@@ -18,6 +18,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "hugo:watch": "hugo server -D -s ./hugo --noHTTPCache --logLevel debug",
+    "landing:watch": "hugo server -D -s ./landing --port 1314",
     "ga4:export": "node src/GA4Cli.mjs"
   },
   "dependencies": {

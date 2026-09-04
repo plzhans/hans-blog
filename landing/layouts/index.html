@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }}</title>
+  <meta name="description" content="{{ .Description }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{ .Params.hero_title }}">
+  <meta property="og:description" content="{{ .Description }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ .Params.hero_title }}">
+  <meta name="twitter:description" content="{{ .Description }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "url": "{{ .Site.BaseURL }}",
+        "name": "{{ .Site.Title }}",
+        "description": {{ .Description | jsonify }}
+      },
+      {
+        "@type": "Person",
+        "name": "손원철 (plzhans)",
+        "url": "{{ .Site.BaseURL }}",
+        "sameAs": [{{ range $i, $s := .Site.Params.social }}{{ if $i }},{{ end }}{{ $s.url | jsonify }}{{ end }}]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #2b8a5e;
+      --primary-dark: #226e4b;
+      --text: #16202a;
+      --muted: #57636e;
+      --bg: #ffffff;
+      --bg-alt: #f6f8f7;
+      --border: rgba(22,32,42,0.08);
+      --shadow: 0 1px 2px rgba(22,32,42,0.04), 0 8px 24px rgba(22,32,42,0.04);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 75rem; margin: 0 auto; padding: 0 2rem; }
+    @media (max-width: 640px) { .wrap { padding: 0 1.25rem; } }
+
+    /* ---- Hero ---- */
+    .hero {
+      background: linear-gradient(180deg, var(--bg-alt), var(--bg) 85%);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+    }
+    .hero .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1.4;
+      margin: 0 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .hero p.subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin: 0 auto 2rem;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background .15s, transform .15s;
+    }
+    .cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    /* ---- Section shell ---- */
+    section.block { padding: 4rem 0; }
+    section.block.alt { background: var(--bg-alt); }
+    .block-head { margin-bottom: 2rem; }
+    .block-head .kicker {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em;
+      color: var(--primary); text-transform: uppercase; margin-bottom: 0.4rem; display: block;
+    }
+    .block-head h2 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+    .block-head p { color: var(--muted); margin: 0; max-width: 38rem; }
+
+    /* ---- Latest posts (star of the page) ---- */
+    .posts-grid { display: grid; gap: 1.3rem; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 900px) { .posts-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) { .posts-grid { grid-template-columns: 1fr; } }
+    .post-card {
+      display: flex; flex-direction: column; overflow: hidden;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 12px;
+      text-decoration: none; color: inherit;
+      box-shadow: var(--shadow); transition: transform .15s, border-color .15s;
+    }
+    .post-card:hover { transform: translateY(-2px); border-color: var(--primary); }
+    .post-card .thumb { width: 100%; height: 9rem; object-fit: cover; display: block; background: var(--bg-alt); }
+    .post-card-body { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.2rem 1.4rem 1.4rem; flex: 1; }
+    .post-card .date { font-size: 0.78rem; color: var(--muted); opacity: 0.75; }
+    .post-card .title { font-size: 1.05rem; font-weight: 700; line-height: 1.4; }
+    .post-card .summary { font-size: 0.9rem; color: var(--muted); margin: 0; flex: 1; }
+    .post-card .more { font-size: 0.85rem; font-weight: 700; color: var(--primary); }
+    .see-all { text-align: center; margin-top: 2rem; }
+    .see-all a { font-weight: 700; color: var(--primary); text-decoration: none; }
+    .see-all a:hover { text-decoration: underline; }
+
+    /* ---- Services (secondary) ---- */
+    .services-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 640px) { .services-grid { grid-template-columns: 1fr; } }
+    .service-card {
+      display: block; padding: 1.2rem 1.4rem; background: var(--bg);
+      border: 1px solid var(--border); border-radius: 10px; text-decoration: none; color: inherit;
+      transition: border-color .15s;
+    }
+    .service-card:hover { border-color: var(--primary); }
+    .service-card .name { font-weight: 700; color: var(--primary); margin-bottom: 0.3rem; display: block; }
+    .service-card .summary { font-size: 0.88rem; color: var(--muted); margin: 0; }
+
+    /* ---- About (bottom, quiet) ---- */
+    .about { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .about img.avatar {
+      width: 4.5rem; height: 4.5rem; border-radius: 50%; flex-shrink: 0;
+      border: 1px solid var(--border); object-fit: cover;
+    }
+    .about .about-text { color: var(--muted); font-size: 0.95rem; }
+    .about .about-text p { margin: 0 0 0.9rem; }
+    .about .about-text p:last-child { margin-bottom: 0; }
+    @media (max-width: 560px) { .about { flex-direction: column; align-items: center; text-align: center; } }
+
+    /* ---- Footer ---- */
+    footer { padding: 2.5rem 0; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); }
+    footer .links { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">plzhans blog</span>
+      <h1>{{ .Params.hero_title }}</h1>
+      <p class="subtitle">{{ .Params.hero_subtitle }}</p>
+      <a class="cta" href="{{ .Site.Params.blogURL }}" target="_blank" rel="noopener">블로그 보러가기 →</a>
+    </div>
+  </header>
+
+  {{- /* data/blog_posts.json이 아예 없거나(CI 복사 스텝 전 로컬 등) latest/popular가
+        비어 있어도 with가 자연스럽게 건너뛰므로 별도 에러 처리 불필요 */}}
+  {{- with hugo.Data.blog_posts }}
+  {{- with .popular }}
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="kicker">Popular</span>
+        <h2>인기 블로그 글</h2>
+      </div>
+      <div class="posts-grid">
+        {{ range . }}{{ partial "post-card.html" . }}{{ end }}
+      </div>
+    </div>
+  </section>
+  {{- end }}
+
+  {{- with .latest }}
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="kicker">Latest</span>
+        <h2>최근 블로그 글</h2>
+      </div>
+      <div class="posts-grid">
+        {{ range . }}{{ partial "post-card.html" . }}{{ end }}
+      </div>
+      <p class="see-all"><a href="{{ $.Site.Params.blogURL }}" target="_blank" rel="noopener">블로그 전체 글 보기 →</a></p>
+    </div>
+  </section>
+  {{- end }}
+  {{- end }}
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="kicker">Services</span>
+        <h2>{{ .Params.services_title }}</h2>
+        <p>{{ .Params.services_subtitle }}</p>
+      </div>
+      <div class="services-grid">
+        {{ range .Params.services }}
+        <a class="service-card" href="{{ .url }}" target="_blank" rel="noopener">
+          <span class="name">{{ .name }}</span>
+          <p class="summary">{{ .summary }}</p>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="block-head">
+        <span class="kicker">About</span>
+        <h2>{{ .Params.about_title }}</h2>
+      </div>
+      <div class="about">
+        <img class="avatar" src="{{ .Site.Params.blogURL }}/assets/img/avatar-plzhans.webp" alt="손원철" loading="lazy">
+        <div class="about-text">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="links">
+        {{ range .Site.Params.social }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
+        <a href="{{ .Site.Params.privacyURL }}">개인정보처리방침</a>
+      </div>
+      <p>&copy; {{ now.Format "2006" }} plzhans. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

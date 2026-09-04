@@ -31,7 +31,8 @@ dataDir = "../data"
   notAlternative = true
 
 [outputs]
-  home = ["HTML", "RSS", "LLMS"]
+  # JSON: 루트 도메인 랜딩 페이지(../landing)가 빌드 시점에 최신 글 목록을 읽어가는 용도
+  home = ["HTML", "RSS", "LLMS", "JSON"]
 
 # 다국어 설정
 [languages]

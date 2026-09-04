@@ -31,5 +31,10 @@ hugo/resources/_gen
 hugo/public
 .claude
 
+# landing (root domain, separate Hugo site)
+landing/public
+landing/resources/_gen
+landing/.hugo_build.lock
+
 # claude-seo audit output
 blog.plzhans.com-audit/

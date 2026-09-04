@@ -9,6 +9,7 @@ on:
       - "hugo/**"
       - "content/**"
       - "data/**"
+      - "landing/**"
 
   workflow_dispatch:
 
@@ -64,6 +65,22 @@ jobs:
 
       - name: Print deployed URL
         run: echo "Deployed to ${{ steps.deploy.outputs.page_url }}"
+
+      # 루트 도메인(plzhans.com) 랜딩 페이지 — blog와 같은 잡에서 빌드해야
+      # hugo/public/index.json(최신 글 목록)을 네트워크 fetch 없이 그대로 복사해 쓸 수 있음.
+      - name: Copy latest/popular posts data for landing
+        run: cp hugo/public/index.json landing/data/blog_posts.json
+
+      - name: Build landing
+        run: hugo -s ./landing --baseURL https://plzhans.com --minify --gc --cleanDestinationDir
+
+      - name: Deploy landing to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: plzhans-landing
+          directory: ./landing/public
 
       - name: Submit URLs to IndexNow
         env:

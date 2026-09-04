@@ -1,0 +1,21 @@
+# 루트 도메인(plzhans.com) 전용 랜딩 페이지. blog.plzhans.com(../hugo)과는 완전히
+# 별도의 Hugo 인스턴스 — baseURL도, 배포 대상(Cloudflare Pages)도 다르기 때문.
+# 로컬 미리보기: hugo server -s ./landing --port 1314 (package.json의 landing:watch)
+baseURL = 'https://plzhans.com'
+title = "HansApp"
+locale = 'ko-kr'
+
+enableRobotsTXT = true
+# 원페이지 사이트라 카테고리/태그·섹션 목록·RSS 피드 자체가 불필요(robots.txt/sitemap/404는 유지)
+disableKinds = ["taxonomy", "term", "section", "rss"]
+
+[params]
+  description = "MediFinder 병원 찾기, Telegram Exporter, Hans API 등 직접 만든 서비스를 한 곳에서. 만든 과정은 블로그에 기록합니다."
+  blogURL = "https://blog.plzhans.com"
+  privacyURL = "https://blog.plzhans.com/privacy/"
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/plzhans"
+  [[params.social]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/plzhans"

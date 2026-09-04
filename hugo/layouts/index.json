@@ -1,0 +1,73 @@
+{{- /* 루트 도메인 랜딩 페이지(../landing)가 빌드 시점에 이 파일을 읽어 최신 글/인기글을 렌더링함.
+      같은 CI 잡에서 hugo/public/index.json → landing/data/blog_posts.json 으로 복사되고,
+      Hugo의 데이터 템플릿 기능이 자동으로 hugo.Data.blog_posts 로 로드해준다.
+      data/popular/ko.json 은 GA4 동기화 워크플로가 별도로 채우는 파일이라 없을 수도 있음 -
+      각 단계를 with로 감싸 파일이 없거나 posts가 비어 있어도 에러 없이 빈 배열로 처리 */ -}}
+
+{{- $allPosts := where .Site.RegularPages "Type" "posts" -}}
+{{- $ogDefault := ("/assets/img/og-default.jpg" | absURL) -}}
+
+{{- /* 최신 글: 실제 Page 객체 기준. 대표 이미지가 없으면 사이트 기본 og 이미지로 대체.
+      3열 그리드에서 마지막 줄이 비어 보이지 않도록 3의 배수(6개)로 맞춤 */ -}}
+{{- $latest := first 6 $allPosts -}}
+{{- $latestOut := slice -}}
+{{- range $latest -}}
+  {{- $page := . -}}
+  {{- $thumb := "" -}}
+  {{- with $page.Params.images -}}
+    {{- $resource := $page.Resources.GetMatch (index . 0) -}}
+    {{- if and $resource (reflect.IsImageResourceProcessable $resource) -}}
+      {{- $thumb = ($resource.Resize "480x webp").Permalink -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $thumb -}}
+    {{- $thumb = $ogDefault -}}
+  {{- end -}}
+  {{- $latestOut = $latestOut | append (dict
+    "title" $page.Title
+    "url" $page.Permalink
+    "date" ($page.Date.Format "2006-01-02")
+    "summary" ($page.Description | default "")
+    "thumbnail" $thumb) -}}
+{{- end -}}
+
+{{- /* 인기글: data/popular/ko.json (GA4 동기화 산출물) - 파일이 없거나 posts가 비어도 안전.
+      3열 그리드 기준 6개(2줄)로 최신 글과 동일하게 맞춤 */ -}}
+{{- $popularOut := slice -}}
+{{- with .Site.Data.popular -}}
+  {{- with .ko -}}
+    {{- with .posts -}}
+      {{- range first 6 . -}}
+        {{- $post := . -}}
+        {{- $thumb := "" -}}
+        {{- $wantPermalink := printf "/posts/%s/" $post.slug -}}
+        {{- with $post.image -}}
+          {{- /* popular.json의 image는 "/posts/<slug>/assets/파일명" 형태의 절대 경로인데,
+                front matter의 images 필드(GetMatch가 찾는 값)는 "assets/파일명"이라
+                path.Base로 자르면 "assets/" 접두사가 없어져 GetMatch가 못 찾음 -
+                페이지 permalink 접두사만 잘라내 "assets/파일명" 형태로 복원 */ -}}
+          {{- $relPath := strings.TrimPrefix $wantPermalink . -}}
+          {{- range $allPosts -}}
+            {{- if eq .RelPermalink $wantPermalink -}}
+              {{- $resource := .Resources.GetMatch $relPath -}}
+              {{- if and $resource (reflect.IsImageResourceProcessable $resource) -}}
+                {{- $thumb = ($resource.Resize "480x webp").Permalink -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if not $thumb -}}
+          {{- $thumb = $ogDefault -}}
+        {{- end -}}
+        {{- $popularOut = $popularOut | append (dict
+          "title" $post.title
+          "url" ($post.url | absURL)
+          "date" ($post.date | time.AsTime | time.Format "2006-01-02")
+          "summary" ($post.description | default "")
+          "thumbnail" $thumb) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{ (dict "latest" $latestOut "popular" $popularOut) | jsonify }}
