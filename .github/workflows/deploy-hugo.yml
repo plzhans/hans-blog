@@ -72,7 +72,12 @@ jobs:
       - name: Copy latest/popular posts data for landing
         run: cp hugo/public/index.json landing/data/blog_posts.json
 
+      # HUGO_BASEURL(잡 레벨 env, blog.plzhans.com용)이 --baseURL 플래그보다 우선순위가 높아
+      # 이 스텝에서 재정의하지 않으면 랜딩 빌드가 blog.plzhans.com을 baseURL로 써버린다
+      # (canonical/og:url/sitemap이 전부 blog 도메인으로 나가던 버그의 원인).
       - name: Build landing
+        env:
+          HUGO_BASEURL: https://plzhans.com
         run: hugo -s ./landing --baseURL https://plzhans.com --minify --gc --cleanDestinationDir
 
       # npx가 매 실행마다 wrangler를 새로 받으면 이 스텝만 수 분씩 걸린다 - npm 캐시로 완화.
