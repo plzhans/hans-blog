@@ -1,0 +1,8 @@
+{
+  "type": "CNAME",
+  "name": "www.plzhans.com",
+  "content": "plzhans.com",
+  "proxied": true,
+  "ttl": 1,
+  "comment": "plzhans.com(비-www)로 301 리다이렉트 - www-to-apex 규칙 참고"
+}
