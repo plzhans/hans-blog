@@ -1,0 +1,13 @@
+// Cloudflare Workers 정적 자산 설정. Pages 대신 Workers Static Assets로 배포한다
+// (계정의 다른 프론트엔드들 - hansapp-web 등 - 도 같은 방식). 원페이지 정적 사이트라
+// SPA fallback(not_found_handling) 설정은 필요 없다 - 없는 경로는 그냥 404가 맞다.
+{
+  "name": "plzhans-landing",
+  "compatibility_date": "2026-09-04",
+  // 공용 미리보기 서브도메인(*.workers.dev)은 안 쓴다 - plzhans.com 커스텀 도메인만 노출.
+  // 꺼두면 배포 시 workers/subdomain 조회 자체를 건너뛴다.
+  "workers_dev": false,
+  "assets": {
+    "directory": "./public"
+  }
+}

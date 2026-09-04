@@ -74,13 +74,16 @@ jobs:
       - name: Build landing
         run: hugo -s ./landing --baseURL https://plzhans.com --minify --gc --cleanDestinationDir
 
-      - name: Deploy landing to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: plzhans-landing
-          directory: ./landing/public
+      # Pages가 아니라 Workers Static Assets로 배포한다 (계정의 다른 프론트엔드들과 동일한 방식).
+      - name: Deploy landing to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          cd landing
+          CI=true WRANGLER_SEND_METRICS=false npx wrangler@4 deploy \
+            --tag "${{ github.sha }}" \
+            --message "ref: ${{ github.ref_name }}"
 
       - name: Submit URLs to IndexNow
         env:
