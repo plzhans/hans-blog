@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T04:46:44.257Z",
+  "generated_at": "2026-09-05T04:40:59.856Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 95
+      "count": 99
     },
     {
       "rank": 2,
@@ -30,7 +30,7 @@
       ],
       "url": "/posts/122-local-ai-llm-infra-guide/",
       "image": null,
-      "count": 47
+      "count": 49
     },
     {
       "rank": 3,
@@ -47,6 +47,19 @@
     },
     {
       "rank": 4,
+      "slug": "120-cloudflare-security-headers-hsts-csp",
+      "title": "SEO 감사가 지적한 보안 헤더 4개, Cloudflare에서 코드 없이 적용하기",
+      "description": "SEO 감사 리포트가 HSTS·CSP·X-Content-Type-Options·Referrer-Policy를 지적하는 이유와 각 헤더의 역할을 정리합니다. 값이 고정된 헤더는 Cloudflare Transform Rules로, 자주 바뀌는 CSP는 HTML meta 태그로 나눠 관리하는 방법과 meta에서 frame-ancestors가 안 되기 때문에 X-Frame-Options가 필요한 이유를 다룹니다.",
+      "date": "2026-08-30T01:25:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/120-cloudflare-security-headers-hsts-csp/",
+      "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
+      "count": 12
+    },
+    {
+      "rank": 5,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
@@ -59,7 +72,7 @@
       "count": 9
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "118-telegram-chat-backup",
       "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
       "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
@@ -69,19 +82,6 @@
       ],
       "url": "/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 8
-    },
-    {
-      "rank": 6,
-      "slug": "120-cloudflare-security-headers-hsts-csp",
-      "title": "SEO 감사가 지적한 보안 헤더 4개, Cloudflare에서 코드 없이 적용하기",
-      "description": "SEO 감사 리포트가 HSTS·CSP·X-Content-Type-Options·Referrer-Policy를 지적하는 이유와 각 헤더의 역할을 정리합니다. 값이 고정된 헤더는 Cloudflare Transform Rules로, 자주 바뀌는 CSP는 HTML meta 태그로 나눠 관리하는 방법과 meta에서 frame-ancestors가 안 되기 때문에 X-Frame-Options가 필요한 이유를 다룹니다.",
-      "date": "2026-08-30T01:25:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/posts/120-cloudflare-security-headers-hsts-csp/",
-      "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
       "count": 8
     },
     {
@@ -95,7 +95,7 @@
       ],
       "url": "/posts/104-synology-dsm-acme-sh-letsencrypt/",
       "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 7
+      "count": 6
     },
     {
       "rank": 8,
@@ -138,6 +138,19 @@
     },
     {
       "rank": 11,
+      "slug": "123-hugo-blog-guide",
+      "title": "Hugo 블로그 만들기 - 시작부터 SEO까지",
+      "description": "Notion→Hugo→GitHub Pages로 블로그를 만들고, 커스텀 도메인 연결, 다국어 지원, 보안 헤더 적용까지 순서대로 정리합니다.",
+      "date": "2026-09-03T00:00:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/123-hugo-blog-guide/",
+      "image": null,
+      "count": 4
+    },
+    {
+      "rank": 12,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOS DNS 캐시 지우기",
       "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
@@ -150,7 +163,7 @@
       "count": 4
     },
     {
-      "rank": 12,
+      "rank": 13,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "TortoiseGit 인증 오류 해결: 저장된 인증 정보 초기화(Clear) 방법",
       "description": "TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 정리, credential.helper 확인, PAT 준비와 SSH 전환까지 다룹니다.",
@@ -163,7 +176,7 @@
       "count": 3
     },
     {
-      "rank": 13,
+      "rank": 14,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
       "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
@@ -176,7 +189,7 @@
       "count": 3
     },
     {
-      "rank": 14,
+      "rank": 15,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
       "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
@@ -189,7 +202,7 @@
       "count": 3
     },
     {
-      "rank": 15,
+      "rank": 16,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Claude 계정 스위치 자동화",
       "description": "Claude Code 계정을 로그아웃 없이 빠르게 전환하는 방법을 정리합니다. macOS Keychain의 인증 정보를 security 명령으로 백업·교체하는 자동화 스크립트와 claudini·CCSwitcher 같은 전용 도구 사용법을 함께 다룹니다.",
@@ -202,7 +215,7 @@
       "count": 2
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "105-mac-office-activation",
       "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
       "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
@@ -212,19 +225,6 @@
       ],
       "url": "/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 2
-    },
-    {
-      "rank": 17,
-      "slug": "123-hugo-blog-guide",
-      "title": "Hugo 블로그 만들기 - 시작부터 SEO까지",
-      "description": "Notion→Hugo→GitHub Pages로 블로그를 만들고, 커스텀 도메인 연결, 다국어 지원, 보안 헤더 적용까지 순서대로 정리합니다.",
-      "date": "2026-09-03T00:00:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/posts/123-hugo-blog-guide/",
-      "image": null,
       "count": 2
     },
     {
@@ -242,6 +242,19 @@
     },
     {
       "rank": 19,
+      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
+      "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
+      "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
+      "date": "2026-05-06T13:52:00.000Z",
+      "categories": [
+        "devops"
+      ],
+      "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
+      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 1
+    },
+    {
+      "rank": 20,
       "slug": "107-openclaw-node-mode-remote-infra-setup",
       "title": "OpenClaw 노드 모드 설치와 원격 인프라 연결 방법",
       "description": "OpenClaw 노드 모드로 원격 서버를 게이트웨이에 연결하는 방법을 설명합니다. 설치, 실행 확인, 장치 승인, systemd 서비스 등록까지 인프라 제어 흐름을 정리합니다.",
@@ -251,19 +264,6 @@
       ],
       "url": "/posts/107-openclaw-node-mode-remote-infra-setup/",
       "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "111-tailscale-linux-install-secure-remote-vpn",
-      "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
-      "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/posts/111-tailscale-linux-install-secure-remote-vpn/",
-      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
       "count": 1
     }
   ]

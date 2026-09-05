@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T04:46:44.263Z",
+  "generated_at": "2026-09-05T04:40:59.864Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 95
+      "count": 99
     },
     {
       "rank": 2,
@@ -30,7 +30,7 @@
       ],
       "url": "/en/posts/122-local-ai-llm-infra-guide/",
       "image": null,
-      "count": 47
+      "count": 49
     },
     {
       "rank": 3,
@@ -47,6 +47,19 @@
     },
     {
       "rank": 4,
+      "slug": "120-cloudflare-security-headers-hsts-csp",
+      "title": "4 Security Headers Flagged by an SEO Audit — Applying Them on Cloudflare Without Code",
+      "description": "Explains why SEO audit reports flag HSTS, CSP, X-Content-Type-Options, and Referrer-Policy, and what each header actually does. Covers splitting fixed-value headers into Cloudflare Transform Rules while managing the frequently-changing CSP via an HTML meta tag, and why X-Frame-Options is still needed since meta can't handle frame-ancestors.",
+      "date": "2026-08-30T01:25:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/120-cloudflare-security-headers-hsts-csp/",
+      "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
+      "count": 12
+    },
+    {
+      "rank": 5,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -59,7 +72,7 @@
       "count": 9
     },
     {
-      "rank": 5,
+      "rank": 6,
       "slug": "118-telegram-chat-backup",
       "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
       "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
@@ -69,19 +82,6 @@
       ],
       "url": "/en/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 8
-    },
-    {
-      "rank": 6,
-      "slug": "120-cloudflare-security-headers-hsts-csp",
-      "title": "4 Security Headers Flagged by an SEO Audit — Applying Them on Cloudflare Without Code",
-      "description": "Explains why SEO audit reports flag HSTS, CSP, X-Content-Type-Options, and Referrer-Policy, and what each header actually does. Covers splitting fixed-value headers into Cloudflare Transform Rules while managing the frequently-changing CSP via an HTML meta tag, and why X-Frame-Options is still needed since meta can't handle frame-ancestors.",
-      "date": "2026-08-30T01:25:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/120-cloudflare-security-headers-hsts-csp/",
-      "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
       "count": 8
     },
     {
@@ -95,7 +95,7 @@
       ],
       "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
       "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 7
+      "count": 6
     },
     {
       "rank": 8,
@@ -138,6 +138,19 @@
     },
     {
       "rank": 11,
+      "slug": "123-hugo-blog-guide",
+      "title": "Building a Hugo Blog - From Start to SEO",
+      "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
+      "date": "2026-09-03T00:00:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/123-hugo-blog-guide/",
+      "image": null,
+      "count": 4
+    },
+    {
+      "rank": 12,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -150,7 +163,7 @@
       "count": 4
     },
     {
-      "rank": 12,
+      "rank": 13,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
       "description": "A walkthrough of how to fix repeated Authentication failed errors in TortoiseGit by clearing saved authentication data via Clear in Saved Data. Covers cleaning up the Windows Credential Manager, checking credential.helper, preparing a PAT, and switching to SSH.",
@@ -163,7 +176,7 @@
       "count": 3
     },
     {
-      "rank": 13,
+      "rank": 14,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -176,7 +189,7 @@
       "count": 3
     },
     {
-      "rank": 14,
+      "rank": 15,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
@@ -189,7 +202,7 @@
       "count": 3
     },
     {
-      "rank": 15,
+      "rank": 16,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Automating Claude Account Switching",
       "description": "This post summarizes how to quickly switch between Claude Code accounts without logging out. It covers an automation script that backs up and swaps macOS Keychain credentials using the security command, along with how to use dedicated tools like claudini and CCSwitcher.",
@@ -202,7 +215,7 @@
       "count": 2
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "105-mac-office-activation",
       "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
       "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
@@ -212,19 +225,6 @@
       ],
       "url": "/en/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 2
-    },
-    {
-      "rank": 17,
-      "slug": "123-hugo-blog-guide",
-      "title": "Building a Hugo Blog - From Start to SEO",
-      "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
-      "date": "2026-09-03T00:00:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/123-hugo-blog-guide/",
-      "image": null,
       "count": 2
     },
     {
@@ -242,6 +242,19 @@
     },
     {
       "rank": 19,
+      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
+      "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
+      "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
+      "date": "2026-05-06T13:52:00.000Z",
+      "categories": [
+        "devops"
+      ],
+      "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
+      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 1
+    },
+    {
+      "rank": 20,
       "slug": "107-openclaw-node-mode-remote-infra-setup",
       "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
       "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
@@ -251,19 +264,6 @@
       ],
       "url": "/en/posts/107-openclaw-node-mode-remote-infra-setup/",
       "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "111-tailscale-linux-install-secure-remote-vpn",
-      "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
-      "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/en/posts/111-tailscale-linux-install-secure-remote-vpn/",
-      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
       "count": 1
     }
   ]
