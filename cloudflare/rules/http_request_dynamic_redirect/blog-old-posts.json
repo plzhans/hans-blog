@@ -1,0 +1,15 @@
+{
+  "ref": "ed8f30a3b8994d42936207dd1ac1d252",
+  "description": "[blog-old-posts] 슬러그 개편 전 구주소(숫자-슬러그)를 /posts/ 밑 새 주소로 301 - 원래 대시보드에서 직접 만들어져 repo IaC에 없던 규칙이라 편입. UUID 기반 구주소 1건(claude-code-ollama-uuid-legacy)이 이 목록에서 빠져 있었고, 그 URL만 200으로 응답하며 Hugo meta-refresh로 처리되던 게 GSC '리디렉션 오류'의 원인이었음 - blog-ollama-uuid-legacy.json으로 별도 규칙 추가해 해결.",
+  "expression": "(http.request.full_uri eq \"https://blog.plzhans.com/93-hugo-multilingual-seo-setup/\") or (http.request.full_uri eq \"https://blog.plzhans.com/95-openclaw-setup/\") or (http.request.full_uri eq \"https://blog.plzhans.com/80-redis-dump-vs-aof/\") or (http.request.full_uri eq \"https://blog.plzhans.com/39-https-tls-ssl-free-vs-paid-certificates/\") or (http.request.full_uri eq \"https://blog.plzhans.com/89-gpg-encrypt-env-file/\") or (http.request.full_uri eq \"https://blog.plzhans.com/94-hugo-github-blog/\") or (http.request.full_uri eq \"https://blog.plzhans.com/86-github-pages-custom-domain/\") or (http.request.full_uri eq \"https://blog.plzhans.com/69-git-deleted-branch-recovery/\") or (http.request.full_uri eq \"https://blog.plzhans.com/88-github-gpg-commit-signing/\") or (http.request.full_uri eq \"https://blog.plzhans.com/6-flush-dns-cache/\")",
+  "action": "redirect",
+  "action_parameters": {
+    "from_value": {
+      "target_url": {
+        "expression": "concat(\"https://blog.plzhans.com/posts\", http.request.uri.path)"
+      },
+      "status_code": 301,
+      "preserve_query_string": true
+    }
+  }
+}

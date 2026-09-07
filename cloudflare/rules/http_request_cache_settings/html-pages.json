@@ -1,0 +1,11 @@
+{
+  "ref": "html-pages",
+  "description": "[html-pages] HTML 페이지(확장자 없는 clean URL)를 엣지에서 캐싱 - 기존 static/immutable 규칙은 에셋(실제 확장자 있는 파일)만 대상이라 HTML은 캐싱 규칙이 없어 매 요청이 origin(GitHub Pages/Fastly)까지 왕복하고 있었음(cf-cache-status: DYNAMIC으로 확인). 경로 접두사(/posts/* 등) 대신 확장자 유무로 판별해 /posts/{slug}/assets/*.webp 같은 에셋 경로와 절대 안 겹치게 함. edge_ttl은 origin의 Cache-Control을 따르지 않고 10분(600초)으로 직접 고정 - origin 설정이 바뀌어도 우리가 의도한 캐시 수명이 흔들리지 않게 함. 글이 간간히 수정되는 점을 감안해 static/immutable(30일~1년)보다 훨씬 짧게 잡음.",
+  "expression": "(http.host eq \"blog.plzhans.com\") and (http.request.uri.path.extension eq \"\")",
+  "action": "set_cache_settings",
+  "action_parameters": {
+    "cache": true,
+    "edge_ttl": { "mode": "override_origin", "default": 600 },
+    "browser_ttl": { "mode": "override_origin", "default": 600 }
+  }
+}
