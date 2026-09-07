@@ -1,0 +1,11 @@
+{
+  "ref": "telegram-exporter",
+  "description": "[telegram-exporter] HTML 을 엣지에 캐시한다 - 기본값은 HTML 미캐시라 매 요청이 origin 까지 간다",
+  "expression": "(http.host eq \"telegram-exporter.plzhans.com\")",
+  "action": "set_cache_settings",
+  "action_parameters": {
+    "cache": true,
+    "edge_ttl": { "mode": "respect_origin" },
+    "browser_ttl": { "mode": "respect_origin" }
+  }
+}
