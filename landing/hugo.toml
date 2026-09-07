@@ -2,7 +2,7 @@
 # 별도의 Hugo 인스턴스 — baseURL도, 배포 대상(Cloudflare Pages)도 다르기 때문.
 # 로컬 미리보기: hugo server -s ./landing --port 1314 (package.json의 landing:watch)
 baseURL = 'https://plzhans.com'
-title = "HansApp"
+title = "손원철 (plzhans)"
 locale = 'ko-kr'
 
 enableRobotsTXT = true
