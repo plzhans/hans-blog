@@ -1,11 +1,17 @@
 {
   "ref": "immutable",
-  "description": "[immutable] URL이 콘텐츠 변경 시 새로 발급되는(재사용되지 않는) 자산",
+  "description": "[immutable] URL이 콘텐츠 변경 시 새로 발급되는(재사용되지 않는) 자산. status_code_ttl로 4xx/5xx는 캐싱 제외 - static.json과 같은 이유(스테일 404가 최대 1년까지 박제되는 것 방지).",
   "expression": "(http.host eq \"blog.plzhans.com\") and (http.request.uri.path wildcard \"*_hu_*.webp\" or http.request.uri.path wildcard \"*_hu_*.avif\" or http.request.uri.path wildcard \"*_hu_*.png\" or http.request.uri.path wildcard \"*_hu_*.jpg\" or http.request.uri.path wildcard \"*_hu_*.jpeg\" or http.request.uri.path wildcard \"*_hu_*.gif\" or http.request.uri.path wildcard \"*_hu_*.bmp\" or http.request.uri.path wildcard \"*_hu_*.tif\" or http.request.uri.path wildcard \"*_hu_*.tiff\" or http.request.uri.path wildcard \"/css/main.min.*.css\")",
   "action": "set_cache_settings",
   "action_parameters": {
     "cache": true,
-    "edge_ttl": { "mode": "override_origin", "default": 31536000 },
+    "edge_ttl": {
+      "mode": "override_origin",
+      "default": 31536000,
+      "status_code_ttl": [
+        { "status_code_range": { "from": 400, "to": 599 }, "value": 0 }
+      ]
+    },
     "browser_ttl": { "mode": "override_origin", "default": 31536000 }
   }
 }

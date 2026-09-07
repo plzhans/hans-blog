@@ -1,11 +1,17 @@
 {
   "ref": "static",
-  "description": "[static] URL이 고정되어 재발급되지 않는 정적 파일",
+  "description": "[static] URL이 고정되어 재발급되지 않는 정적 파일. status_code_ttl로 4xx/5xx는 캐싱 제외 - 안 그러면 /assets/* 밑에 존재하지 않는 경로(오타, 스캐너 요청 등)가 404를 받았을 때 그 404가 30일간 캐싱돼 나중에 실제 파일이 생겨도 스테일한 404가 계속 보이는 문제가 있었음(실제 재현: /assets/analytics.js).",
   "expression": "(http.host eq \"blog.plzhans.com\") and (http.request.uri.path wildcard \"/favicon.ico\" or http.request.uri.path wildcard \"/assets/*\")",
   "action": "set_cache_settings",
   "action_parameters": {
     "cache": true,
-    "edge_ttl": { "mode": "override_origin", "default": 2592000 },
+    "edge_ttl": {
+      "mode": "override_origin",
+      "default": 2592000,
+      "status_code_ttl": [
+        { "status_code_range": { "from": 400, "to": 599 }, "value": 0 }
+      ]
+    },
     "browser_ttl": { "mode": "override_origin", "default": 2592000 }
   }
 }
