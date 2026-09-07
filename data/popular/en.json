@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T04:50:36.934Z",
+  "generated_at": "2026-09-07T04:56:56.956Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 99
+      "count": 100
     },
     {
       "rank": 2,
@@ -30,7 +30,7 @@
       ],
       "url": "/en/posts/122-local-ai-llm-infra-guide/",
       "image": null,
-      "count": 49
+      "count": 50
     },
     {
       "rank": 3,
@@ -216,19 +216,6 @@
     },
     {
       "rank": 17,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
-      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 2
-    },
-    {
-      "rank": 18,
       "slug": "86-github-pages-custom-domain",
       "title": "Using a Custom Domain with GitHub Pages",
       "description": "This post summarizes the CNAME/A/AAAA record settings and the Pages Custom domain setup steps needed to connect a custom domain to GitHub Pages. It also covers the difference in how the CNAME file is handled between Actions and branch deployments, verifying DNS with dig, and why Enforce HTTPS fails to turn on because of a CAA record.",
@@ -241,7 +228,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
       "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
@@ -251,6 +238,19 @@
       ],
       "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 1
+    },
+    {
+      "rank": 19,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
+      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 1
     },
     {

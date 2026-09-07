@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T04:50:36.926Z",
+  "generated_at": "2026-09-07T04:56:56.951Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 99
+      "count": 100
     },
     {
       "rank": 2,
@@ -30,7 +30,7 @@
       ],
       "url": "/posts/122-local-ai-llm-infra-guide/",
       "image": null,
-      "count": 49
+      "count": 50
     },
     {
       "rank": 3,
@@ -216,19 +216,6 @@
     },
     {
       "rank": 17,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
-      "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 2
-    },
-    {
-      "rank": 18,
       "slug": "86-github-pages-custom-domain",
       "title": "Github pages 커스텀 도메인 사용하기",
       "description": "GitHub Pages에 커스텀 도메인을 연결할 때 필요한 CNAME·A/AAAA 레코드 설정과 Pages의 Custom domain 적용 절차를 정리했습니다. Actions와 브랜치 배포의 CNAME 파일 처리 차이, dig로 DNS 확인, CAA 레코드 때문에 Enforce HTTPS가 안 켜지는 원인까지 다룹니다.",
@@ -241,7 +228,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
       "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
@@ -251,6 +238,19 @@
       ],
       "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 1
+    },
+    {
+      "rank": 19,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
+      "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 1
     },
     {
