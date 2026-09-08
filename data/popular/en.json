@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T04:56:56.956Z",
+  "generated_at": "2026-09-08T04:52:47.993Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/en/posts/122-local-ai-llm-infra-guide/",
       "image": null,
-      "count": 50
+      "count": 52
     },
     {
       "rank": 3,
@@ -112,6 +112,19 @@
     },
     {
       "rank": 9,
+      "slug": "6-flush-dns-cache",
+      "title": "Clearing DNS Cache on Windows/Linux/macOS",
+      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "networking"
+      ],
+      "url": "/en/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 5
+    },
+    {
+      "rank": 10,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
       "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
@@ -124,7 +137,7 @@
       "count": 4
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
       "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
@@ -137,7 +150,7 @@
       "count": 4
     },
     {
-      "rank": 11,
+      "rank": 12,
       "slug": "123-hugo-blog-guide",
       "title": "Building a Hugo Blog - From Start to SEO",
       "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
@@ -147,19 +160,6 @@
       ],
       "url": "/en/posts/123-hugo-blog-guide/",
       "image": null,
-      "count": 4
-    },
-    {
-      "rank": 12,
-      "slug": "6-flush-dns-cache",
-      "title": "Clearing DNS Cache on Windows/Linux/macOS",
-      "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/en/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
       "count": 4
     },
     {

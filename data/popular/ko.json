@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T04:56:56.951Z",
+  "generated_at": "2026-09-08T04:52:47.986Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/posts/122-local-ai-llm-infra-guide/",
       "image": null,
-      "count": 50
+      "count": 52
     },
     {
       "rank": 3,
@@ -112,6 +112,19 @@
     },
     {
       "rank": 9,
+      "slug": "6-flush-dns-cache",
+      "title": "Windows/Linux/macOS DNS 캐시 지우기",
+      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
+      "date": "2026-02-22T16:11:00.000Z",
+      "categories": [
+        "networking"
+      ],
+      "url": "/posts/6-flush-dns-cache/",
+      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
+      "count": 5
+    },
+    {
+      "rank": 10,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
       "description": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
@@ -124,7 +137,7 @@
       "count": 4
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -137,7 +150,7 @@
       "count": 4
     },
     {
-      "rank": 11,
+      "rank": 12,
       "slug": "123-hugo-blog-guide",
       "title": "Hugo 블로그 만들기 - 시작부터 SEO까지",
       "description": "Notion→Hugo→GitHub Pages로 블로그를 만들고, 커스텀 도메인 연결, 다국어 지원, 보안 헤더 적용까지 순서대로 정리합니다.",
@@ -147,19 +160,6 @@
       ],
       "url": "/posts/123-hugo-blog-guide/",
       "image": null,
-      "count": 4
-    },
-    {
-      "rank": 12,
-      "slug": "6-flush-dns-cache",
-      "title": "Windows/Linux/macOS DNS 캐시 지우기",
-      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
-      "date": "2026-02-22T16:11:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
       "count": 4
     },
     {
