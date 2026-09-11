@@ -1,11 +1,11 @@
 {
   "object": "page",
-  "id": "39922a0f-7e83-80f3-bd74-df71ef8469fc",
-  "created_time": "2026-07-10T04:40:00.000Z",
-  "last_edited_time": "2026-09-03T11:09:00.000Z",
+  "id": "3d822a0f-7e83-814c-a8ce-dc9037caab69",
+  "created_time": "2026-09-11T09:54:00.000Z",
+  "last_edited_time": "2026-09-11T13:01:00.000Z",
   "created_by": {
     "object": "user",
-    "id": "47040b04-8430-4330-b2bc-0d0328a5c1a0"
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
   },
   "last_edited_by": {
     "object": "user",
@@ -30,51 +30,56 @@
     "created_at": {
       "id": "Hhcd",
       "type": "created_time",
-      "created_time": "2026-07-10T04:40:00.000Z"
+      "created_time": "2026-09-11T09:54:00.000Z"
     },
     "태그": {
       "id": "NGeX",
       "type": "multi_select",
       "multi_select": [
         {
-          "id": "c4780975-8d5e-480a-90eb-a86270f15701",
-          "name": "vpn",
-          "color": "blue"
-        },
-        {
-          "id": "7f0d9ede-bff3-49ec-b7dc-510b5866f5fb",
-          "name": "wireguard",
-          "color": "default"
-        },
-        {
-          "id": "e6424f2b-5b46-48a8-ab47-a5b91968366a",
-          "name": "mac",
+          "id": "a0745ac3-b285-47bb-b3d4-322bdfb29a0c",
+          "name": "cloudflare",
           "color": "pink"
         },
         {
-          "id": "d4a4aa54-ec5d-4582-a740-53a0875ce528",
-          "name": "linux",
+          "id": "67a12647-4d4d-421f-9218-14f8d04c189d",
+          "name": "workers",
+          "color": "pink"
+        },
+        {
+          "id": "11687b98-a492-430b-8b26-0a74227dbee0",
+          "name": "seo",
+          "color": "red"
+        },
+        {
+          "id": "297017e1-dcc6-45ae-9398-56a22b8d7e6c",
+          "name": "react",
           "color": "yellow"
+        },
+        {
+          "id": "84f94af9-7f5b-4da7-86d0-a60605afa899",
+          "name": "ssr",
+          "color": "pink"
         }
       ]
     },
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-09-03T11:09:00.000Z"
+      "last_edited_time": "2026-09-11T13:01:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
       "type": "unique_id",
       "unique_id": {
         "prefix": null,
-        "number": 31
+        "number": 45
       }
     },
     "발행 URL": {
       "id": "Yx%3Ai",
       "type": "url",
-      "url": "https://blog.plzhans.com/posts/116-wireguard-install-client-setup/"
+      "url": "https://blog.plzhans.com/posts/128-react-spa-seo-cloudflare-workers-ssr/"
     },
     "toc": {
       "id": "ZR~A",
@@ -85,7 +90,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-09-03T20:09:00.000+09:00",
+        "start": "2026-09-11T22:01:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -106,7 +111,7 @@
         {
           "type": "text",
           "text": {
-            "content": "✅ 발행 완료 (2026-09-03T11:08:57.962Z)",
+            "content": "✅ 발행 완료 (2026-09-11T13:01:25.975Z)",
             "link": null
           },
           "annotations": {
@@ -117,7 +122,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "✅ 발행 완료 (2026-09-03T11:08:57.962Z)",
+          "plain_text": "✅ 발행 완료 (2026-09-11T13:01:25.975Z)",
           "href": null
         }
       ]
@@ -129,7 +134,7 @@
         {
           "type": "text",
           "text": {
-            "content": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+            "content": "React SPA 를 정적 호스팅에 올리면 원본 HTML 이 빈 껍데기다. 서버를 새로 세우지 않고 Cloudflare Workers 만으로 단계적으로 개선한 과정.",
             "link": null
           },
           "annotations": {
@@ -140,7 +145,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+          "plain_text": "React SPA 를 정적 호스팅에 올리면 원본 HTML 이 빈 껍데기다. 서버를 새로 세우지 않고 Cloudflare Workers 만으로 단계적으로 개선한 과정.",
           "href": null
         }
       ]
@@ -152,7 +157,7 @@
         {
           "type": "text",
           "text": {
-            "content": "116",
+            "content": "128",
             "link": null
           },
           "annotations": {
@@ -163,7 +168,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "116",
+          "plain_text": "128",
           "href": null
         }
       ]
@@ -175,7 +180,7 @@
         {
           "type": "text",
           "text": {
-            "content": "wireguard-install-client-setup",
+            "content": "react-spa-seo-cloudflare-workers-ssr",
             "link": null
           },
           "annotations": {
@@ -186,7 +191,7 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "wireguard-install-client-setup",
+          "plain_text": "react-spa-seo-cloudflare-workers-ssr",
           "href": null
         }
       ]
@@ -200,7 +205,7 @@
       "id": "nEEr",
       "type": "date",
       "date": {
-        "start": "2026-07-10T08:20:00.000+00:00",
+        "start": "2026-09-11T13:01:00.000+00:00",
         "end": null,
         "time_zone": null
       }
@@ -209,7 +214,7 @@
       "id": "oe%60s",
       "type": "date",
       "date": {
-        "start": "2026-07-10T13:40:00.000+09:00",
+        "start": "2026-09-11T18:54:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -218,8 +223,8 @@
       "id": "vwVr",
       "type": "select",
       "select": {
-        "id": "867be476-ec09-42f7-9b62-5d3bcd73c1fe",
-        "name": "Networking",
+        "id": "f8a45a20-5dfa-4116-b3ba-1a002de30df6",
+        "name": "Web",
         "color": "pink"
       }
     },
@@ -230,7 +235,7 @@
         {
           "type": "text",
           "text": {
-            "content": "WireGuard 설치와 클라이언트 접속 설정 방법",
+            "content": "React SPA SEO 개선 방법 - Cloudflare Workers로 메타 태그부터 SSR까지",
             "link": null
           },
           "annotations": {
@@ -241,13 +246,13 @@
             "code": false,
             "color": "default"
           },
-          "plain_text": "WireGuard 설치와 클라이언트 접속 설정 방법",
+          "plain_text": "React SPA SEO 개선 방법 - Cloudflare Workers로 메타 태그부터 SSR까지",
           "href": null
         }
       ]
     }
   },
-  "url": "https://app.notion.com/p/WireGuard-39922a0f7e8380f3bd74df71ef8469fc",
+  "url": "https://app.notion.com/p/React-SPA-SEO-Cloudflare-Workers-SSR-3d822a0f7e83814ca8cedc9037caab69",
   "public_url": null,
   "archived": false
 }
