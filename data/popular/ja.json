@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T04:55:53.929Z",
+  "generated_at": "2026-09-11T04:52:38.342Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -60,19 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "ネイバー地図 Open API 認証失敗(200)の解決:ncpClientIdからncpKeyIdへの変更",
-      "description": "ネイバー地図 Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。コンソール統合によりncpClientId・govClientId・finClientIdがncpKeyIdに変更された点と、ポート・URIを除外する必要があるWebサービスURL登録ルールまで確認してください。",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 9
-    },
-    {
-      "rank": 6,
       "slug": "118-telegram-chat-backup",
       "title": "テレグラムのトーク履歴をバックアップする方法 - インストール不要、ブラウザからzipでエクスポート",
       "description": "テレグラム公式のエクスポートとは異なり、期間指定・特定のトークルーム選択・吹き出し表示・匿名化処理が可能なブラウザ用バックアップツールを紹介します。インストール不要ですぐに使え、サーバーを経由しないためログイン情報が外部に漏れることもありません。",
@@ -82,6 +69,19 @@
       ],
       "url": "/ja/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 8
+    },
+    {
+      "rank": 6,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "ネイバー地図 Open API 認証失敗(200)の解決:ncpClientIdからncpKeyIdへの変更",
+      "description": "ネイバー地図 Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。コンソール統合によりncpClientId・govClientId・finClientIdがncpKeyIdに変更された点と、ポート・URIを除外する必要があるWebサービスURL登録ルールまで確認してください。",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 8
     },
     {

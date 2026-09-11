@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T04:55:53.913Z",
+  "generated_at": "2026-09-11T04:52:38.325Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -60,19 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 9
-    },
-    {
-      "rank": 6,
       "slug": "118-telegram-chat-backup",
       "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
       "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
@@ -82,6 +69,19 @@
       ],
       "url": "/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 8
+    },
+    {
+      "rank": 6,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 8
     },
     {

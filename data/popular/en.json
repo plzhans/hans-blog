@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T04:55:53.921Z",
+  "generated_at": "2026-09-11T04:52:38.334Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -60,19 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
-      "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 9
-    },
-    {
-      "rank": 6,
       "slug": "118-telegram-chat-backup",
       "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
       "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
@@ -82,6 +69,19 @@
       ],
       "url": "/en/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 8
+    },
+    {
+      "rank": 6,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
+      "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 8
     },
     {
