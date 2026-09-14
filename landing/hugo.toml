@@ -9,6 +9,14 @@ enableRobotsTXT = true
 # 원페이지 사이트라 카테고리/태그·섹션 목록·RSS 피드 자체가 불필요(robots.txt/sitemap/404는 유지)
 disableKinds = ["taxonomy", "term", "section", "rss"]
 
+# 이 도메인에는 서로 다른 빌드에서 나오는 사이트맵이 둘 있다 - 이 랜딩(Hugo)과
+# /docs(별도 repo의 VitePress). /sitemap.xml 자리는 둘을 묶는 sitemapindex가 쓰고
+# (static/sitemap.xml), Hugo가 만드는 랜딩 자체 사이트맵은 이 이름으로 비켜준다.
+# 주의: TOML 테이블([sitemap])은 최상위 키(disableKinds 등)보다 뒤에 와야 한다.
+# 앞에 두면 뒤따르는 최상위 키가 이 테이블 안으로 들어가 조용히 무시된다.
+[sitemap]
+  filename = "sitemap-landing.xml"
+
 [params]
   description = "MediFinder 병원 찾기, Telegram Exporter, Hans API 등 직접 만든 서비스를 한 곳에서. 만든 과정은 블로그에 기록합니다."
   blogURL = "https://blog.plzhans.com"

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  plzhans.com 사이트맵 인덱스.
+  이 도메인의 사이트맵은 서로 다른 빌드에서 나오기 때문에 빌드 시점에 하나로 합칠 수 없다:
+    - /sitemap-landing.xml : 이 랜딩(Hugo). hugo.toml의 [sitemap] filename으로 이름을 옮겨둠
+    - /docs/sitemap.xml    : hansapp-docs(VitePress, 별도 repo)가 생성
+  그래서 항목이 거의 바뀌지 않는 이 인덱스만 정적 파일로 두고 하위를 가리킨다.
+  사이트맵이 늘면 <sitemap> 블록을 한 개 추가할 것.
+  lastmod는 하위 사이트맵이 URL마다 들고 있으므로 여기 손으로 적지 않는다
+  (적어두면 실제 갱신 시점과 어긋나 잘못된 신호가 된다).
+-->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://plzhans.com/sitemap-landing.xml</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://plzhans.com/docs/sitemap.xml</loc>
+  </sitemap>
+</sitemapindex>

@@ -132,7 +132,10 @@ jobs:
           INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
         run: |
           set -euo pipefail
-          urls=$(grep -ohE '<loc>[^<]+</loc>' landing/public/sitemap.xml | sed -E 's#</?loc>##g')
+          # sitemap.xml은 하위 사이트맵을 묶는 sitemapindex라 <loc>이 페이지가 아니라
+          # 사이트맵 파일을 가리킨다. 실제 페이지 URL은 sitemap-landing.xml에 있다.
+          # /docs/sitemap.xml은 별도 repo(hansapp-docs)가 빌드·배포하므로 여기서 제출하지 않는다.
+          urls=$(grep -ohE '<loc>[^<]+</loc>' landing/public/sitemap-landing.xml | sed -E 's#</?loc>##g')
           url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
           payload=$(jq -n \
             --arg host "plzhans.com" \
