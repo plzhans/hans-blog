@@ -9,9 +9,18 @@ enableRobotsTXT = true
 # 원페이지 사이트라 카테고리/태그·섹션 목록·RSS 피드 자체가 불필요(robots.txt/sitemap/404는 유지)
 disableKinds = ["taxonomy", "term", "section", "rss"]
 
-# 이 도메인에는 서로 다른 빌드에서 나오는 사이트맵이 둘 있다 - 이 랜딩(Hugo)과
-# /docs(별도 repo의 VitePress). /sitemap.xml 자리는 둘을 묶는 sitemapindex가 쓰고
-# (static/sitemap.xml), Hugo가 만드는 랜딩 자체 사이트맵은 이 이름으로 비켜준다.
+# 사이트맵 구성 (이 도메인의 사이트맵은 서로 다른 빌드에서 나와 빌드 시점에 합칠 수 없다)
+#
+#   /sitemap.xml          sitemapindex. static/sitemap.xml 에 정적 파일로 둔다.
+#                         항목이 거의 바뀌지 않아 템플릿으로 만들 이유가 없다.
+#                         사이트맵이 늘면 그 파일에 <sitemap> 블록을 하나 추가할 것.
+#                         기계 판독용으로 공개되는 파일이라 주석은 넣지 않는다 - 설명은 여기에 둔다.
+#   /sitemap-landing.xml  이 랜딩(Hugo). 아래 filename 으로 이름을 옮겨 /sitemap.xml 자리를 비워준다.
+#   /docs/sitemap.xml     hansapp-docs(VitePress, 별도 repo)가 생성.
+#
+# lastmod 는 하위 사이트맵이 URL 마다 들고 있으므로 인덱스에 손으로 적지 않는다
+# (적어두면 실제 갱신 시점과 어긋나 잘못된 신호가 된다).
+#
 # 주의: TOML 테이블([sitemap])은 최상위 키(disableKinds 등)보다 뒤에 와야 한다.
 # 앞에 두면 뒤따르는 최상위 키가 이 테이블 안으로 들어가 조용히 무시된다.
 [sitemap]
