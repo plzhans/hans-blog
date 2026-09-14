@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T05:00:04.377Z",
+  "generated_at": "2026-09-14T05:09:06.364Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -82,7 +82,7 @@
       ],
       "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 8
+      "count": 7
     },
     {
       "rank": 7,
@@ -216,6 +216,19 @@
     },
     {
       "rank": 17,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
+      "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png",
+      "count": 2
+    },
+    {
+      "rank": 18,
       "slug": "86-github-pages-custom-domain",
       "title": "Github pages 커스텀 도메인 사용하기",
       "description": "GitHub Pages에 커스텀 도메인을 연결할 때 필요한 CNAME·A/AAAA 레코드 설정과 Pages의 Custom domain 적용 절차를 정리했습니다. Actions와 브랜치 배포의 CNAME 파일 처리 차이, dig로 DNS 확인, CAA 레코드 때문에 Enforce HTTPS가 안 켜지는 원인까지 다룹니다.",
@@ -228,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
       "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "105-mac-office-activation",
       "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
       "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
@@ -251,19 +264,6 @@
       ],
       "url": "/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "107-openclaw-node-mode-remote-infra-setup",
-      "title": "OpenClaw 노드 모드 설치와 원격 인프라 연결 방법",
-      "description": "OpenClaw 노드 모드로 원격 서버를 게이트웨이에 연결하는 방법을 설명합니다. 설치, 실행 확인, 장치 승인, systemd 서비스 등록까지 인프라 제어 흐름을 정리합니다.",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/posts/107-openclaw-node-mode-remote-infra-setup/",
-      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
       "count": 1
     }
   ]

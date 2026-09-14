@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T05:00:04.385Z",
+  "generated_at": "2026-09-14T05:09:06.371Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -82,7 +82,7 @@
       ],
       "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 8
+      "count": 7
     },
     {
       "rank": 7,
@@ -216,6 +216,19 @@
     },
     {
       "rank": 17,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
+      "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png",
+      "count": 2
+    },
+    {
+      "rank": 18,
       "slug": "86-github-pages-custom-domain",
       "title": "Using a Custom Domain with GitHub Pages",
       "description": "This post summarizes the CNAME/A/AAAA record settings and the Pages Custom domain setup steps needed to connect a custom domain to GitHub Pages. It also covers the difference in how the CNAME file is handled between Actions and branch deployments, verifying DNS with dig, and why Enforce HTTPS fails to turn on because of a CAA record.",
@@ -228,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
       "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "105-mac-office-activation",
       "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
       "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
@@ -251,19 +264,6 @@
       ],
       "url": "/en/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "107-openclaw-node-mode-remote-infra-setup",
-      "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
-      "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/107-openclaw-node-mode-remote-infra-setup/",
-      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
       "count": 1
     }
   ]
