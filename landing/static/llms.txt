@@ -14,4 +14,4 @@ Author: 손원철 (plzhans) - https://github.com/plzhans, https://www.linkedin.c
 - [MediFinder](https://medifinder.kr): 전국 병원을 지역·진료과목·응급실 조건으로 찾는 병원 찾기 서비스
 - [Telegram Exporter](https://telegram-exporter.plzhans.com): 브라우저에서 설치 없이 텔레그램 대화를 내보내는 도구
 - [Hans API](https://console.plzhans.com): 위 서비스들이 쓰는 공공 데이터 API 콘솔
-- [Docs](https://console.plzhans.com/docs/): 위 서비스/API 사용법 문서
+- [Docs](https://plzhans.com/docs/): 위 서비스/API 사용법 문서
