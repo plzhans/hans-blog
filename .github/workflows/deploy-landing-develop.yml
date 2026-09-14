@@ -1,0 +1,106 @@
+# develop 랜딩(develop.plzhans.com) 배포 - 수동 실행 전용.
+#
+# 운영 배포(deploy-hugo.yml)와 분리한 이유. develop 은 "운영에 올리기 전에 확인하는 곳"이라
+# master 와 자동으로 같아지면 존재 이유가 없어진다. 원하는 브랜치를 골라 올릴 수 있어야 해서
+# workflow_dispatch 만 둔다(Actions 에서 실행할 ref 를 고르면 그 소스로 구워진다).
+#
+# 그러면서도 CI 로 가져온 이유는 따로 있다. 여태 develop 은 make landing-develop 으로만
+# 갱신돼서 각자 로컬의 Hugo 로 구워졌고, 실제로 운영(0.166.0)과 develop(0.163.2)의 판본이
+# 어긋나 있었다. 그 상태의 develop 은 낡았는지 여부와 무관하게 운영을 대변하지 못한다.
+# 운영과 같은 툴체인으로 구워야 사전 확인에 의미가 생긴다.
+#
+# 색인 차단과 광고 제외는 이 워크플로가 아니라 빌드가 한다(-e develop 이 robots.txt 의
+# Disallow 와 noindex 메타를 켜고 애드센스를 끈다). 그래서 -e develop 은 빠뜨리면 안 되는 값이다.
+name: Deploy landing (develop)
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: landing-develop
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_CACHEDIR: /tmp/hugo_cache
+      # 운영 배포와 같은 판본으로 고정한다. 여기가 어긋나면 develop 으로 확인하는 의미가 없다.
+      HUGO_VERSION: "0.166.0"
+      WRANGLER_VERSION: 4.129.0
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Cache Hugo
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.HUGO_CACHEDIR }}
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
+      # 운영 배포는 같은 잡에서 방금 구운 hugo/public/index.json 을 복사해 쓰지만, 여기서는
+      # blog 를 굽지 않는다(develop 랜딩은 blog 와 무관하게 올릴 수 있어야 한다).
+      # 대신 라이브 blog 에서 받아온다 - Makefile 의 landing-data 타깃과 같은 방식이고,
+      # 라이브에서 받으므로 썸네일의 _hu_ 해시가 실제 서빙 중인 파일과 어긋나지 않는다.
+      - name: Fetch blog posts data
+        run: |
+          mkdir -p landing/data
+          curl -fsS https://blog.plzhans.com/index.json -o landing/data/blog_posts.json
+
+      # HUGO_BASEURL 환경변수가 --baseURL 플래그보다 우선하므로 둘을 같은 값으로 맞춰 둔다
+      # (운영 워크플로에서 blog 용 값이 새어 들어가 canonical 이 전부 blog 도메인으로 나간 적 있음).
+      - name: Build landing (develop)
+        env:
+          HUGO_BASEURL: https://develop.plzhans.com
+        run: |
+          hugo -s ./landing -e develop \
+            --baseURL https://develop.plzhans.com \
+            --destination public-develop \
+            --minify --gc --cleanDestinationDir
+
+      # 색인 차단이 실제로 걸렸는지 배포 전에 확인한다. -e develop 을 빠뜨리거나 템플릿 조건이
+      # 깨지면 운영과 같은 내용이 develop 도메인에 색인되고 광고까지 나가므로, 조용히 넘어가면 안 된다.
+      - name: Verify develop build is de-indexed
+        run: |
+          set -euo pipefail
+          out=landing/public-develop
+          grep -q "Disallow: /" "$out/robots.txt" \
+            || { echo "robots.txt 에 Disallow 가 없다"; exit 1; }
+          grep -q "noindex" "$out/index.html" \
+            || { echo "index.html 에 noindex 메타가 없다"; exit 1; }
+          if grep -q "pagead2\|<ins" "$out/index.html"; then
+            echo "develop 산출물에 광고가 들어 있다"; exit 1
+          fi
+          echo "확인 완료 - Disallow / noindex 있음, 광고 없음"
+
+      - name: Cache npm (wrangler)
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-wrangler-${{ env.WRANGLER_VERSION }}
+
+      - name: Deploy to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          cd landing
+          CI=true WRANGLER_SEND_METRICS=false npx "wrangler@$WRANGLER_VERSION" deploy \
+            -c wrangler.develop.jsonc \
+            --tag "${{ github.sha }}" \
+            --message "develop ref: ${{ github.ref_name }}"
+
+      # IndexNow 제출은 하지 않는다 - develop 은 색인 대상이 아니다.
+      - name: Print result
+        run: echo "Deployed https://develop.plzhans.com from ${{ github.ref_name }}"
