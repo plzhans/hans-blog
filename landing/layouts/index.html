@@ -199,6 +199,12 @@
     .about .about-text p:last-child { margin-bottom: 0; }
     @media (max-width: 560px) { .about { flex-direction: column; align-items: center; text-align: center; } }
 
+    /* ---- Ad ---- */
+    /* 광고가 채워지지 않으면(승인 전/미충족) ins가 높이 0으로 접히므로 min-height를 주지
+       않는다 - 빈 띠가 보이는 것보다 섹션이 통째로 얇아지는 편이 낫다. */
+    .ad-block { padding-top: 0; padding-bottom: 0; }
+    .ad-block .adsbygoogle { margin: 0 auto; }
+
     /* ---- Footer ---- */
     footer { padding: 2.5rem 0; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--muted); }
     footer .links { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-bottom: 0.7rem; }
@@ -206,6 +212,15 @@
     footer a { display: inline-block; padding: 0.65rem 0.15rem; margin: -0.65rem -0.15rem; text-decoration: none; }
     footer a:hover { color: var(--primary); }
   </style>
+
+  {{- /* 애드센스 로더. publisherId가 설정돼 있을 때만 나가므로 hugo.toml에서
+        [params.adsense]를 지우면 즉시 꺼진다(blog 쪽 baseof.html과 동일한 패턴).
+        이 도메인에는 CSP 메타도 Cloudflare CSP 헤더도 없어서 별도 허용 설정이 필요 없다. */}}
+  {{- with .Site.Params.adsense }}
+  {{- if .publisherId }}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .publisherId }}" crossorigin="anonymous"></script>
+  {{- end }}
+  {{- end }}
 </head>
 <body>
 
@@ -246,6 +261,20 @@
         {{ range . }}{{ partial "post-card.html" . }}{{ end }}
       </div>
       <p class="see-all"><a href="{{ $.Site.Params.blogURL }}">블로그 전체 글 보기 →</a></p>
+    </div>
+  </section>
+  {{- end }}
+  {{- end }}
+
+  {{- /* 인콘텐츠 광고. 글 목록을 다 보고 Services로 넘어가는 지점에 한 개만 둔다 -
+        히어로 바로 아래나 푸터 직전은 클릭 품질이 나쁘고, 한 장짜리 페이지에 여러 개를
+        얹으면 콘텐츠 대비 광고 비중이 과해진다(애드센스 정책상 위험).
+        slotId가 비면 partial이 아무것도 렌더링하지 않으므로 섹션만 비어 남는다. */}}
+  {{- with .Site.Params.adsense }}
+  {{- if and .publisherId .adSlotContent }}
+  <section class="block ad-block">
+    <div class="wrap">
+      {{ partial "adsense.html" (dict "publisherId" .publisherId "slotId" .adSlotContent) }}
     </div>
   </section>
   {{- end }}

@@ -4,3 +4,5 @@ Allow: /
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 Sitemap: {{ "sitemap.xml" | absURL }}
+{{/* 별도 웹사이트 docs sitemap.xml 연결 */ -}}
+Sitemap: {{ "docs/sitemap.xml" | absURL }}

@@ -1,0 +1,13 @@
+{{- /* blog(hugo/layouts/partials/adsense.html)와 같은 형태 - 두 사이트의 광고 마크업을
+      다르게 둘 이유가 없어서 그대로 맞춤. publisherId와 slotId가 모두 있을 때만 렌더링한다. */ -}}
+{{- $publisherId := .publisherId }}
+{{- $slotId := .slotId }}
+{{- if and $publisherId $slotId }}
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="{{ $publisherId }}"
+     data-ad-slot="{{ $slotId }}"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{{- end }}

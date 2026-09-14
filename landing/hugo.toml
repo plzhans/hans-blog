@@ -20,6 +20,17 @@ disableKinds = ["taxonomy", "term", "section", "rss"]
     name = "LinkedIn"
     url = "https://www.linkedin.com/in/plzhans"
 
+  # 애드센스 심사 대상 도메인이 plzhans.com이라 루트에도 로더 스크립트를 싣는다.
+  # 랜딩은 한 페이지뿐이라 광고 유닛(ins 태그)은 두지 않고 로더만 둔다 - 심사에 필요한 건
+  # 사이트에 코드가 존재하는 것이고, 한 장짜리 페이지에 광고를 얹을 자리도 마땅치 않다.
+  [params.adsense]
+    publisherId = "ca-pub-6229891888422992"
+    # 최신 글 목록과 Services 사이에 들어가는 인콘텐츠 광고 슬롯.
+    # TODO: 지금은 blog의 본문 하단 유닛(adSlotArticleBottom)을 그대로 쓰고 있다.
+    # 동작에는 문제가 없지만(광고 유닛은 사이트에 묶이지 않음) 리포트에서 blog 수익과
+    # 섞여 구분이 안 되므로, 애드센스 콘솔에서 랜딩 전용 유닛을 만들어 이 값만 교체할 것.
+    adSlotContent = "8636834920"
+
 [services]
   [services.googleAnalytics]
     ID = "G-3MLM9NWMK8"

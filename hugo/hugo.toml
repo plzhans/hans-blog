@@ -143,11 +143,14 @@ dataDir = "../data"
   theme = "light"
   lang = "ko"
 
-# AdSense 승인 전까지 임시 비활성화 (주석 해제 시 스크립트/광고 렌더링 재개)
-# [params.adsense]
-#   publisherId = "ca-pub-6229891888422992"
-#   adSlotArticleBottom = "8636834920"
-#   adSlotSidebar = "3576079939"
+# 애드센스 심사는 사이트에 코드가 올라가 있어야 진행되므로 승인 전에도 켜둔다.
+# 승인 전까지 광고 슬롯은 빈 자리로 남고(구글이 미충족 유닛을 접음) 수익도 발생하지 않는다.
+# publisherId가 있으면 baseof.html이 로더 스크립트를, adSlot*이 있으면 각 위치의
+# 광고 유닛(partials/adsense.html)을 렌더링한다.
+[params.adsense]
+  publisherId = "ca-pub-6229891888422992"
+  adSlotArticleBottom = "8636834920"
+  adSlotSidebar = "3576079939"
 
 [services]
   [services.googleAnalytics]
