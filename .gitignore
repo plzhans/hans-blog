@@ -34,6 +34,12 @@ hugo/public
 # landing (root domain, separate Hugo site)
 landing/public
 landing/public-develop
+# blog 최신/인기글 스냅샷. 배포 때마다 덮어써지는 생성물이라 추적하지 않는다
+# (CI: hugo/public/index.json 복사 / 로컬: make landing-data 가 blog에서 받아옴).
+# 커밋된 값이 배포에 쓰이는 경로가 없는데 diff에는 보여서 실제로 오해를 샀다.
+# 파일이 없어도 landing/layouts/index.html 이 hugo.Data.blog_posts 를 with 로 감싸고 있어
+# 해당 섹션만 비고 빌드는 통과한다.
+landing/data/blog_posts.json
 landing/resources/_gen
 landing/.hugo_build.lock
 

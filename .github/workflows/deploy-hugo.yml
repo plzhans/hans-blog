@@ -69,8 +69,12 @@ jobs:
 
       # 루트 도메인(plzhans.com) 랜딩 페이지 — blog와 같은 잡에서 빌드해야
       # hugo/public/index.json(최신 글 목록)을 네트워크 fetch 없이 그대로 복사해 쓸 수 있음.
+      # blog_posts.json 은 추적하지 않으므로(생성물) 새 클론에는 landing/data 디렉터리 자체가
+      # 없다 - mkdir 없이 cp 하면 "No such file or directory" 로 죽는다.
       - name: Copy latest/popular posts data for landing
-        run: cp hugo/public/index.json landing/data/blog_posts.json
+        run: |
+          mkdir -p landing/data
+          cp hugo/public/index.json landing/data/blog_posts.json
 
       # HUGO_BASEURL 환경변수는 --baseURL CLI 플래그보다 우선순위가 높다. 잡 레벨에 두면
       # 다른 빌드 스텝에 값이 새어 들어갈 수 있어(실제로 blog용 값이 랜딩 빌드에 새어 들어가

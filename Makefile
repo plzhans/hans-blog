@@ -38,8 +38,10 @@ translate:
 #
 # CI 는 같은 잡에서 방금 구운 산출물을 복사하지만, 로컬은 블로그를 통째로 빌드할
 # 이유가 없으므로 발행된 것을 받는다 — 블로그가 이미 공개하는 파일이다.
+# blog_posts.json 은 추적하지 않는 생성물이라 새 클론에는 landing/data 가 없다.
 .PHONY: landing-data
 landing-data:
+	mkdir -p landing/data
 	curl -fsS https://blog.plzhans.com/index.json -o landing/data/blog_posts.json
 
 .PHONY: landing
