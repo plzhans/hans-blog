@@ -36,10 +36,15 @@ jobs:
         with:
           fetch-depth: 1
 
+      # 버전을 고정하는 이유는 wrangler/compatibility_date와 같다 - 배포할 때마다 다른
+      # 판본이 잡히면 같은 소스를 다시 올려도 산출물이 달라질 수 있다. Hugo는 특히
+      # 이미지 처리 파일명에 붙는 _hu_ 해시가 판본 영향을 받는데, 랜딩이 blog의 처리
+      # 이미지를 크로스도메인으로 핫링크하고 있어서 해시가 바뀌면 그 링크가 깨진다.
+      # 올릴 때는 로컬(README/setup.md)도 같이 맞출 것.
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
+          hugo-version: "0.166.0"
           extended: true
 
       - name: Cache Hugo
