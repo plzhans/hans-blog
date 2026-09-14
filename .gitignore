@@ -33,6 +33,7 @@ hugo/public
 
 # landing (root domain, separate Hugo site)
 landing/public
+landing/public-develop
 landing/resources/_gen
 landing/.hugo_build.lock
 

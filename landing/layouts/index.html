@@ -6,6 +6,12 @@
   <title>{{ .Title }}</title>
   <meta name="description" content="{{ .Description }}">
   <link rel="canonical" href="{{ .Permalink }}">
+  {{- /* develop 사본은 색인에서 뺀다. 운영과 내용이 같아서 열어 두면 중복 콘텐츠가 된다.
+        robots.txt 의 Disallow 는 크롤링만 막고, 외부에 링크가 있으면 읽지 않은 채로도
+        색인될 수 있다. noindex 는 읽은 크롤러에게 직접 빼라고 말하는 것이라 확실하다. */}}
+  {{- if not hugo.IsProduction }}
+  <meta name="robots" content="noindex, nofollow">
+  {{- end }}
   {{- /* 카드 썸네일/아바타가 전부 blog.plzhans.com에서 핫링크되는 크로스오리진
         이미지라, DNS/TLS 핸드셰이크를 미리 시작해두면 첫 이미지 로드가 빨라짐
         (성능 감사 권장) */}}
@@ -216,9 +222,13 @@
   {{- /* 애드센스 로더. publisherId가 설정돼 있을 때만 나가므로 hugo.toml에서
         [params.adsense]를 지우면 즉시 꺼진다(blog 쪽 baseof.html과 동일한 패턴).
         이 도메인에는 CSP 메타도 Cloudflare CSP 헤더도 없어서 별도 허용 설정이 필요 없다. */}}
+  {{- /* develop 사본에는 광고를 싣지 않는다. 심사·게재 대상이 아닌 주소에서 광고가
+        나가면 무효 트래픽으로 잡힐 수 있다. */}}
+  {{- if hugo.IsProduction }}
   {{- with .Site.Params.adsense }}
   {{- if .publisherId }}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .publisherId }}" crossorigin="anonymous"></script>
+  {{- end }}
   {{- end }}
   {{- end }}
 </head>
@@ -270,6 +280,7 @@
         히어로 바로 아래나 푸터 직전은 클릭 품질이 나쁘고, 한 장짜리 페이지에 여러 개를
         얹으면 콘텐츠 대비 광고 비중이 과해진다(애드센스 정책상 위험).
         slotId가 비면 partial이 아무것도 렌더링하지 않으므로 섹션만 비어 남는다. */}}
+  {{- if hugo.IsProduction }}
   {{- with .Site.Params.adsense }}
   {{- if and .publisherId .adSlotContent }}
   <section class="block ad-block">
@@ -277,6 +288,7 @@
       {{ partial "adsense.html" (dict "publisherId" .publisherId "slotId" .adSlotContent) }}
     </div>
   </section>
+  {{- end }}
   {{- end }}
   {{- end }}
 

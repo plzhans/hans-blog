@@ -19,7 +19,7 @@ services:
     image: "/img/services/hans-api-card.webp"
     summary: "위 서비스들이 실제로 쓰고 있는 공공 데이터 API입니다. 콘솔에서 앱을 등록하고 관리하면 바로 쓸 수 있습니다. 기관마다 흩어져 있는 데이터를 하나로 합쳐, 키 하나로 여러 데이터를 불러올 수 있습니다."
   - name: "Docs"
-    url: "https://console.plzhans.com/docs/"
+    url: "https://plzhans.com/docs/"
     image: "/img/services/docs-card.webp"
     summary: "위 서비스와 API들의 사용법을 한곳에 정리해뒀습니다. 직접 붙여보고 싶다면 여기부터 보시면 됩니다."
 about_title: "만든 사람"

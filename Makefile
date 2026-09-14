@@ -29,6 +29,21 @@ notion-page-sync:
 translate:
 	claude -p "$$(cat prompts/translate-database-sync.md)" --permission-mode acceptEdits
 
+.PHONY: landing
+landing:
+	hugo -s ./landing
+	npx wrangler deploy -c landing/wrangler.jsonc
+
+# develop 랜딩(develop.plzhans.com). 운영과 같은 소스를 다른 baseURL 로 굽는다.
+#
+# **빌드와 배포를 한 타깃으로 묶는다.** 둘을 따로 두면 "develop 을 굽고 운영을 배포" 하는
+# 조합이 언젠가 나온다. -e develop 이 robots.txt Disallow 와 noindex 메타를 켜고 광고를 끄므로,
+# 이 플래그를 빠뜨린 채 배포하면 운영과 같은 내용이 색인되고 광고까지 나간다.
+.PHONY: landing-develop
+landing-develop:
+	hugo -s ./landing -e develop -b https://develop.plzhans.com --destination public-develop
+	npx wrangler deploy -c landing/wrangler.develop.jsonc
+
 .PHONY: cloudflare-rules
 cloudflare-rules:
 	./cloudflare/manage-rules.sh

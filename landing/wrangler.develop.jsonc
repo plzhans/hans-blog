@@ -1,0 +1,18 @@
+// develop 랜딩(develop.plzhans.com). 운영(wrangler.jsonc)과 **같은 소스를 다른 baseURL 로**
+// 구운 사본이라, 다른 점은 워커 이름과 자산 디렉터리뿐이다.
+//
+// 자산 디렉터리를 운영과 나눠 두는 이유. 한 곳(./public)을 두 환경이 번갈아 쓰면
+// "develop 을 굽고 운영을 배포" 하는 순간 develop 산출물이 운영으로 나간다 —
+// 빌드도 배포도 성공해서 아무도 모른다. 디렉터리가 다르면 그 사고가 구조적으로 안 난다.
+//
+// 색인 차단은 여기가 아니라 빌드가 한다(hugo -e develop → robots.txt Disallow + noindex 메타).
+{
+  "name": "dev-plzhans-landing",
+  "compatibility_date": "2026-09-04",
+  // 공용 미리보기 서브도메인(*.workers.dev)은 안 쓴다 - develop.plzhans.com 커스텀 도메인만 노출.
+  "workers_dev": false,
+  "assets": {
+    "directory": "./public-develop",
+    "not_found_handling": "404-page"
+  }
+}

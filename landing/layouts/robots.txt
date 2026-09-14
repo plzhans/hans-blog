@@ -1,3 +1,7 @@
+{{- /* 운영만 색인을 연다. develop(hugo -e develop)은 운영과 내용이 같은 사본이라
+      열어 두면 같은 글이 두 도메인에 뜨는 중복 콘텐츠가 된다.
+      robots.txt 는 크롤링만 막으므로 색인 차단은 index.html 의 noindex 메타가 같이 맡는다. */ -}}
+{{- if hugo.IsProduction -}}
 User-agent: *
 Allow: /
 
@@ -6,3 +10,7 @@ Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Sitemap: {{ "sitemap.xml" | absURL }}
 {{/* 별도 웹사이트 docs sitemap.xml 연결 */ -}}
 Sitemap: {{ "docs/sitemap.xml" | absURL }}
+{{- else -}}
+User-agent: *
+Disallow: /
+{{- end }}
