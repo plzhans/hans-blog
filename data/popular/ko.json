@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T05:09:06.364Z",
+  "generated_at": "2026-09-15T05:03:26.517Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 100
+      "count": 101
     },
     {
       "rank": 2,
@@ -190,6 +190,19 @@
     },
     {
       "rank": 15,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
+      "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png",
+      "count": 3
+    },
+    {
+      "rank": 16,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
       "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
@@ -202,7 +215,7 @@
       "count": 3
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Claude 계정 스위치 자동화",
       "description": "Claude Code 계정을 로그아웃 없이 빠르게 전환하는 방법을 정리합니다. macOS Keychain의 인증 정보를 security 명령으로 백업·교체하는 자동화 스크립트와 claudini·CCSwitcher 같은 전용 도구 사용법을 함께 다룹니다.",
@@ -215,20 +228,20 @@
       "count": 2
     },
     {
-      "rank": 17,
-      "slug": "124-cloudflare-workers-static-site-guide",
-      "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
-      "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
+      "rank": 18,
+      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
+      "title": "wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포",
+      "description": "wrangler 설치와 타입 설정, wrangler dev 로 workerd 를 띄우는 법, 그리고 배포. wrangler dev 가 프론트 개발 서버가 아니라는 점부터.",
       "date": "2026-09-11T13:01:00.000Z",
       "categories": [
         "web"
       ],
-      "url": "/posts/124-cloudflare-workers-static-site-guide/",
-      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png",
+      "url": "/posts/126-cloudflare-workers-wrangler-dev-deploy/",
+      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.png",
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "86-github-pages-custom-domain",
       "title": "Github pages 커스텀 도메인 사용하기",
       "description": "GitHub Pages에 커스텀 도메인을 연결할 때 필요한 CNAME·A/AAAA 레코드 설정과 Pages의 Custom domain 적용 절차를 정리했습니다. Actions와 브랜치 배포의 CNAME 파일 처리 차이, dig로 DNS 확인, CAA 레코드 때문에 Enforce HTTPS가 안 켜지는 원인까지 다룹니다.",
@@ -241,7 +254,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
       "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
@@ -251,19 +264,6 @@
       ],
       "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
-      "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
       "count": 1
     }
   ]
