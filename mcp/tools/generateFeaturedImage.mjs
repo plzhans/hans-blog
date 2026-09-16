@@ -17,7 +17,7 @@ export const generateFeaturedImage = {
     title: "Generate featured image",
     description:
       "블로그 글의 대표 이미지를 Gemini 이미지 모델로 생성한다. " +
-      "블로그 공통 시각 스타일(prompts/featured-image-style.txt)은 코드가 자동으로 앞에 붙이므로 " +
+      "블로그 공통 시각 스타일(prompts/featured-image-style.md)은 코드가 자동으로 앞에 붙이므로 " +
       "prompt 에는 이 글에만 해당하는 장면만 적는다. 배경색·조명·아이소메트릭 같은 스타일은 다시 적지 말 것. " +
       "pageId 와 caption 을 함께 주면 생성 직후 Notion 에 올리고 직전 후보는 지운다. " +
       "사람이 노션에서 보고 고르므로 올리기 전에 혼자 판단해 반려하지 말 것. " +

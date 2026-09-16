@@ -24,11 +24,11 @@ node src/NotionCli.mjs database sync --draft  # 초안까지 포함
 | [translate-database-sync.md](prompts/translate-database-sync.md) | 동기화 뒤 번역할 때 | 번역 대상을 고르는 기준(`AI_번역` 체크박스), 일괄 처리 방법, 검수 체크리스트 |
 | [translate-blog-post.md](prompts/translate-blog-post.md) | 글 하나를 번역할 때 | 무엇을 번역하고 무엇을 그대로 둘지, 언어별 문체(영어는 기술 문서체, 일본어는 です・ます체) |
 | [generate-featured-image.md](prompts/generate-featured-image.md) | 대표 이미지를 만들 때 | 작업 순서, 프롬프트 작성법, 검수 항목, 비용 |
-| [featured-image-style.txt](prompts/featured-image-style.txt) | 읽지 않아도 된다 | 블로그 공통 시각 스타일. 코드가 이미지 프롬프트 앞에 자동으로 붙인다 |
+| [featured-image-style.md](prompts/featured-image-style.md) | 읽지 않아도 된다 | 블로그 공통 시각 스타일. 코드가 이미지 프롬프트 앞에 자동으로 붙인다 |
 | [claude-seo.md](prompts/claude-seo.md) | 발행된 글의 SEO 를 점검할 때 | title·description·구조·태그·링크 점검 항목. 시스템 필드는 제안만 하고 직접 고치지 않는다 |
 
-`featured-image-style.txt` 만 성격이 다르다. 사람이 읽는 지침이 아니라 **모델에게 그대로
-전달되는 프롬프트 조각**이다. 스타일을 바꾸려면 이 파일을 고친다.
+`featured-image-style.md` 만 성격이 다르다. 코드 블록 안의 내용이 **모델에게 그대로
+전달된다.** 바깥의 설명은 전달되지 않으므로, 스타일을 바꾸려면 코드 블록 안을 고친다.
 
 ## 번역
 
@@ -68,7 +68,7 @@ attach_featured_image_to_notion  이미 만들어 둔 파일을 올릴 때만 �
 
 ### 프롬프트를 쓸 때
 
-공통 시각 스타일은 [prompts/featured-image-style.txt](prompts/featured-image-style.txt) 에
+공통 시각 스타일은 [prompts/featured-image-style.md](prompts/featured-image-style.md) 에
 있고 **코드가 자동으로 앞에 붙인다.** 배경색·아이소메트릭·네온 액센트를 다시 적지 않는다.
 `prompt` 에는 그 글만의 장면(사물·배치·연결·라벨)만 적는다.
 

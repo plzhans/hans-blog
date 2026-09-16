@@ -11,7 +11,7 @@ import { trimGeneratedBorder } from "../utils/ImageUtils.mjs";
  * 도구가 자동으로 붙인다. 스타일을 바꾸려면 이 파일만 고치면 된다.
  */
 const STYLE_PROMPT_PATH = fileURLToPath(
-  new URL("../../prompts/featured-image-style.txt", import.meta.url)
+  new URL("../../prompts/featured-image-style.md", import.meta.url)
 );
 
 /**
@@ -78,11 +78,19 @@ export class FeaturedImageService {
    * @throws {Error} 파일이 없는 경우
    */
   async #loadStylePrompt() {
+    let raw;
     try {
-      return (await fsp.readFile(STYLE_PROMPT_PATH, "utf-8")).trim();
+      raw = await fsp.readFile(STYLE_PROMPT_PATH, "utf-8");
     } catch {
       throw new Error(`Style prompt not found: ${STYLE_PROMPT_PATH}`);
     }
+    // 문서의 설명이 아니라 코드 블록 안만 모델에게 보낸다. 바깥에 무엇을 적어도
+    // 프롬프트로 새지 않는다.
+    const fenced = raw.match(/```[a-z]*\n([\s\S]*?)```/);
+    if (!fenced) {
+      throw new Error(`Style prompt has no fenced block: ${STYLE_PROMPT_PATH}`);
+    }
+    return fenced[1].trim();
   }
 
   /**
