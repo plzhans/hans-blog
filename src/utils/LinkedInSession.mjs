@@ -20,7 +20,7 @@ export const SESSION_FILE = ".linkedin-session.json";
 
 // CI 에는 이 파일이 없다. 파일 내용을 통째로 담은 시크릿을 환경변수로 받아 같은 모양으로 쓴다.
 // 필드별로 환경변수를 두면 필드를 늘릴 때마다 시크릿이 늘고 로컬과 CI 의 코드 경로가 갈린다.
-export const SESSION_ENV = "LINKEDIN_SESSION";
+export const SESSION_ENV = "LINKEDIN_SESSION_JSON";
 
 // 만료가 이만큼 남았을 때부터 경고한다. 재인증은 브라우저를 열어야 해서
 // 게시하려는 순간에 알게 되면 곤란하다.

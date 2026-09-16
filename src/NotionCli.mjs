@@ -43,7 +43,7 @@ function createLinkedInService() {
   const notionApiClient = new NotionApiClient(notionClient, process.env.NOTION_API_TOKEN);
 
   // 토큰과 URN 은 인증하면서 생기는 파생값이라 .env 가 아니라 세션에 산다.
-  // 로컬은 .linkedin-session.json, CI 는 같은 내용을 담은 LINKEDIN_SESSION 시크릿이다.
+  // 로컬은 .linkedin-session.json, CI 는 같은 내용을 담은 LINKEDIN_SESSION_JSON 시크릿이다.
   // readSession 이 둘을 가려주므로 여기서는 구분하지 않는다.
   const session = readSession() || {};
   assertUsable(session);
