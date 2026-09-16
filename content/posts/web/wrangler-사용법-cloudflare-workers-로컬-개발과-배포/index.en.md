@@ -15,11 +15,11 @@ lastmod: 2026-09-11T13:01:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.png"
+  - "assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg"
 ---
 
 
-![Cover image showing the Worker runtime you ran locally going up to the edge platform as is](./assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.png)
+![Diagram of the Worker runtime running locally with wrangler dev and going up to the edge unchanged with wrangler deploy](./assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg)
 
 
 ## Overview
@@ -132,7 +132,7 @@ Deploy it and it dies with `document is not defined`. **You've deferred to runti
 There's a reverse direction too. Without `@cloudflare/workers-types`, `HTMLRewriter`, `ExecutionContext`, and `caches` all become "cannot find name."
 
 
-**Cramming both into one configuration isn't the answer either.<strong> Put DOM and Workers types together and things like `Request`, `Response`, and `caches` — </strong>names that exist on both sides in different shapes**—get mixed up, and you end up with the wrong type.
+**Cramming both into one configuration isn't the answer either.** Put DOM and Workers types together and things like `Request`, `Response`, and `caches` — **names that exist on both sides in different shapes**—get mixed up, and you end up with the wrong type.
 
 
 So you split the configuration and tie it together with project references. Each configuration decides three things.
@@ -190,7 +190,7 @@ In other words, it's **"standing up a miniature of production locally"** — not
 
 |                 | `vite dev`             | `wrangler dev`                        |
 | --------------- | ---------------------- | ------------------------------------- |
-| What it is      | frontend **dev server<strong> | a replica of the production </strong>runtime**  |
+| What it is      | frontend **dev server** | a replica of the production **runtime**  |
 | Input           | `src/` source          | **build output (`dist/`)**            |
 | Source changes  | applied instantly via HMR | not applied — **you have to rebuild** |
 | Worker          | doesn't exist          | runs                                  |
@@ -374,7 +374,7 @@ CLOUDFLARE_ACCOUNT_ID
 ### Don't deploy to a Worker that doesn't exist
 
 
-`wrangler deploy --name X` **creates X if it doesn't exist<strong>, and overwrites it if it does. Convenient as that looks, </strong>a deploy with the wrong name silently "succeeds."** A stray Worker gets created while the site you're actually looking at doesn't change.
+`wrangler deploy --name X` **creates X if it doesn't exist**, and overwrites it if it does. Convenient as that looks, **a deploy with the wrong name silently "succeeds."** A stray Worker gets created while the site you're actually looking at doesn't change.
 
 
 In CI it's safer to check existence once before deploying. Query the API for that name and look at **the status code only**.

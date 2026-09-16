@@ -11,15 +11,15 @@ tags:
   - "cloudflare"
   - "workers"
 date: 2026-09-11T13:01:00.000Z
-lastmod: 2026-09-11T13:01:00.000Z
+lastmod: 2026-09-16T14:55:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.png"
+  - "assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg"
 ---
 
 
-![로컬에서 돌린 워커 런타임이 그대로 엣지 플랫폼으로 올라가는 과정을 나타낸 대표 이미지](./assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.png)
+![로컬에서 wrangler dev 로 돌린 워커 런타임이 wrangler deploy 로 그대로 엣지에 올라가는 과정](./assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg)
 
 
 ## 개요
@@ -132,7 +132,7 @@ export default {
 반대 방향도 있다. `@cloudflare/workers-types` 를 넣지 않으면 `HTMLRewriter`·`ExecutionContext`·`caches` 가 전부 "이름을 찾을 수 없음" 이 된다.
 
 
-**한 설정에 둘 다 욱여넣는 것도 답이 아니다.<strong> DOM 과 Workers 타입을 함께 넣으면 `Request`·`Response`·`caches` 처럼 </strong>양쪽에 같은 이름이 다른 모양으로 있는 것들**이 섞여 엉뚱한 타입이 잡힌다.
+**한 설정에 둘 다 욱여넣는 것도 답이 아니다.** DOM 과 Workers 타입을 함께 넣으면 `Request`·`Response`·`caches` 처럼 <strong>양쪽에 같은 이름이 다른 모양으로 있는 것들</strong>이 섞여 엉뚱한 타입이 잡힌다.
 
 
 그래서 설정을 나누고 project reference 로 묶는다. 각 설정이 정하는 것은 셋이다.
@@ -190,7 +190,7 @@ export default {
 
 |       | `vite dev`    | `wrangler dev`          |
 | ----- | ------------- | ----------------------- |
-| 무엇인가  | 프론트 **개발 서버<strong> | 프로덕션 </strong>런타임 복제본**        |
+| 무엇인가  | 프론트 **개발 서버** | 프로덕션 **런타임 복제본**        |
 | 입력    | `src/` 소스     | **빌드 산출물(`dist/`)**     |
 | 소스 변경 | HMR 로 즉시 반영   | 반영 안 됨 — **다시 빌드해야 한다** |
 | 워커    | 존재하지 않음       | 돈다                      |
@@ -374,7 +374,7 @@ CLOUDFLARE_ACCOUNT_ID
 ### 없는 Worker 에 배포하지 않기
 
 
-`wrangler deploy --name X` 는 X 가 없으면 **만들고<strong>, 있으면 덮어쓴다. 편해 보이지만 </strong>이름을 잘못 준 배포가 조용히 "성공"** 한다. 엉뚱한 Worker 가 새로 생기고 정작 보고 있는 사이트는 안 바뀐다.
+`wrangler deploy --name X` 는 X 가 없으면 **만들고**, 있으면 덮어쓴다. 편해 보이지만 **이름을 잘못 준 배포가 조용히 "성공"** 한다. 엉뚱한 Worker 가 새로 생기고 정작 보고 있는 사이트는 안 바뀐다.
 
 
 CI 라면 배포 전에 존재 확인을 한 번 하는 편이 안전하다. API 로 그 이름을 조회해서 **상태 코드만** 보면 된다.
