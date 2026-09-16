@@ -134,7 +134,7 @@ Open index.html first.](./assets/8_3a822a0f-7e83-8178-b4ac-d05db0d62f47.png)
 Opening index.html reproduces the conversation exactly — without the tool or the internet.](./assets/9_3a822a0f-7e83-81ad-bf91-c958f51759e0.png)
 
 
-> 💡 When exporting, you can **keep participants' names as they are<strong>, or you can</strong> anonymize them**. The default is to keep names as they are.  
+> 💡 When exporting, you can **keep participants' names as they are**, or you can** anonymize them**. The default is to keep names as they are.  
 > When anonymization is turned on, names become A, B, C and member IDs become 1, 2, 3.  
 > Profile photos and chat names are hidden too, so even if you hand the file to someone else, it won't reveal who's who.
 
@@ -346,7 +346,7 @@ Telegram's default order is newest-first. Taking it as-is stacks the file in rev
 ### Not Buffering Everything in Memory
 
 
-If the File System Access API (`showSaveFilePicker`) is available, the compressed chunks are **streamed straight to disk.<strong> If it's not available (Firefox or Safari), everything is gathered and downloaded as a Blob instead, and the screen indicates this. This picker only opens in response to a user gesture, so </strong>it needs to be called at the very start**of the click handler. If it's called after the export has already begun, the gesture has already been consumed and the call gets rejected.
+If the File System Access API (`showSaveFilePicker`) is available, the compressed chunks are **streamed straight to disk.** If it's not available (Firefox or Safari), everything is gathered and downloaded as a Blob instead, and the screen indicates this. This picker only opens in response to a user gesture, so **it needs to be called at the very start**of the click handler. If it's called after the export has already begun, the gesture has already been consumed and the call gets rejected.
 
 
 ### The "Looks Frozen" Problem
@@ -380,7 +380,7 @@ telegram-<chat-name>-<date>.zip
 ```
 
 
-`index.html` is **complete as a single file.<strong> All styles are inline, so it opens without the internet and without this tool. And </strong>it contains no script.** If a document presented as evidence contained code, that would leave room for the argument that "it just happened to render that way at the time." It shows the same thing no matter when you open it.
+`index.html` is **complete as a single file.** All styles are inline, so it opens without the internet and without this tool. And **it contains no script.** If a document presented as evidence contained code, that would leave room for the argument that "it just happened to render that way at the time." It shows the same thing no matter when you open it.
 
 
 Compression uses <strong>fflate's synchronous streaming API</strong>. JSZip and fflate's asynchronous API spin up a Web Worker via a blob URL. That requires opening `worker-src blob:` in the CSP. The synchronous API occupies the main thread. So control is handed back to the event loop every 200 messages. That's what keeps the progress display and cancel button alive and responsive.
