@@ -15,6 +15,28 @@ node src/NotionCli.mjs database sync --draft  # 초안까지 포함
 
 번역본(`index.en.md` · `index.ja.md`)은 예외다. Notion 에 없으므로 직접 만들고 고친다.
 
+## 번역
+
+**프롬프트를 따른다. 직접 규칙을 세우지 않는다.**
+
+| 문서 | 언제 |
+| --- | --- |
+| [prompts/translate-database-sync.md](prompts/translate-database-sync.md) | 동기화 후 번역할 글을 고르고 일괄 처리할 때 |
+| [prompts/translate-blog-post.md](prompts/translate-blog-post.md) | 글 하나를 번역하는 상세 규칙 |
+
+### 번역 대상 고르기
+
+**`notion_*.json` 의 `properties["AI_번역"].checkbox` 가 `true` 인 글만 번역한다.**
+
+`false` 인 글은 의도적으로 제외한 것이다. 한국 한정 서비스를 다루는 글처럼 영어·일본어
+독자에게 의미가 없는 경우가 있다. 예를 들어 130(공공데이터포털)이 그렇다.
+
+이미 있는 번역본은 건드리지 않는다. 없는 언어만 새로 만든다.
+
+원문이 바뀌면 그 글은 다시 번역한다. 다만 **대표 이미지만 바뀐 경우는 재번역하지 않는다.**
+이미지 경로와 alt 한 줄만 고치면 된다. 이미지 확장자가 바뀌었다면(png → jpg) 번역본도
+같이 고쳐야 한다. 안 그러면 영어·일본어 페이지에서 이미지가 깨진다.
+
 ## 대표 이미지 만들기
 
 AI 에게 SVG 를 그리게 하지 않는다. 결과가 조악하다. `hans-blog` MCP 서버의 도구를 쓴다.
