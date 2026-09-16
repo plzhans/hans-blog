@@ -17,11 +17,11 @@ lastmod: 2026-09-11T13:01:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.png"
+  - "assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.jpg"
 ---
 
 
-![Cover image showing empty HTML being filled in as it passes through the edge, with a crawler reading the result](./assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.png)
+![An empty HTML shell being filled in with meta tags and body content as it passes through Cloudflare Workers, with a crawler reading the result](./assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.jpg)
 
 
 ## Overview
@@ -98,7 +98,7 @@ curl -s https://example.com/products/1234
 A shell of about 1.6KB. No product name, no price, no description. All of it is created only after the JS runs and the API response arrives.
 
 
-**For a human there's no problem at all.<strong> The browser runs the JS. The problem is </strong>when the reader doesn't run JS**.
+**For a human there's no problem at all.** The browser runs the JS. The problem is **when the reader doesn't run JS**.
 
 - Link preview bots for KakaoTalk, LINE, and X
 - Search engine crawlers that don't run JavaScript
@@ -413,7 +413,7 @@ export const routes: RouteObject[] = [
 ```
 
 
-**The point is not creating the router here.<strong> The browser builds its router with `createBrowserRouter` and the server with [`createStaticHandler`](https://reactrouter.com/api/data-routers/createStaticHandler) — different routers, but </strong>the route array has to be the same.** If they differ, the screen the server rendered and the browser's first render diverge, and hydration breaks.
+**The point is not creating the router here.** The browser builds its router with `createBrowserRouter` and the server with [`createStaticHandler`](https://reactrouter.com/api/data-routers/createStaticHandler) — different routers, but **the route array has to be the same.** If they differ, the screen the server rendered and the browser's first render diverge, and hydration breaks.
 
 
 ### After ② Share the Provider shell
@@ -543,7 +543,7 @@ export async function render(
 **Four things to know here**
 
 
-**①** [**`react-dom/server`<strong>](https://react.dev/reference/react-dom/server) </strong>is already in React.** There's nothing extra to install. It's a subpath of the `react-dom` package. No new framework to adopt, no plugin.
+**①** [**`react-dom/server`**](https://react.dev/reference/react-dom/server) **is already in React.** There's nothing extra to install. It's a subpath of the `react-dom` package. No new framework to adopt, no plugin.
 
 
 On web-standard runtimes like Workers you use [`renderToReadableStream`](https://react.dev/reference/react-dom/server/renderToReadableStream) — not Node's `renderToPipeableStream`. Which build gets picked is decided by the Vite configuration that follows.
@@ -564,7 +564,7 @@ That said, streaming it out isn't the goal. What we want is **complete HTML that
 ### Building — `vite build --ssr`
 
 
-[**It's a feature built into Vite<strong>](https://vite.dev/guide/ssr)</strong>.** No plugin required.
+[**It's a feature built into Vite**](https://vite.dev/guide/ssr)**.** No plugin required.
 
 
 ```json
@@ -621,7 +621,36 @@ Build time grew by **1.7 seconds**. The 1.7MB server bundle only goes up to the 
 Two lines get added to the stage 1 Worker.
 
 
-@@PLACEHOLDER_3@@
+```typescript
+import { render } from '../../dist-server/entry-server.js';
+
+// ... same as Stage 1 up to here
+
+const product = await fetchProduct(id, env, ctx);
+if (!product) return asset;
+
+// Seed the cache with the response the worker already has - render must not refetch.
+const body = await render(url.toString(), (queryClient) => {
+  queryClient.setQueryData(getProductQueryKey(id), product);
+});
+
+return new HTMLRewriter()
+  .on('title', { element(e) { e.setInnerContent(product.name); } })
+  .on('head', {
+    element(e) {
+      e.append(headTags(meta), { html: true });
+      // Hand the server-side data to the browser.
+      // Escaping `<` stops a literal `</script>` in the data from closing the tag.
+      e.append(
+        `<script>window.__RQ_STATE__=${body.state.replace(/</g, '\\u003c')}</script>`,
+        { html: true },
+      );
+    },
+  })
+  // This line is what Stage 1 does not have: inject the body
+  .on('#root', { element(e) { e.setInnerContent(body.html, { html: true }); } })
+  .transform(asset);
+```
 
 
 ### Not adding API round trips matters
@@ -700,7 +729,7 @@ run 5   12.1ms     4.7ms
 ```
 
 
-**You shouldn't take these numbers at face value.<strong> Look at runs 4 and 5: work that took 5ms on the wall clock reports 12ms of CPU. That's because Node's `process.cpuUsage()` </strong>sums CPU across all threads** (GC and so on). This workload has no I/O, so the real render cost is closer to the `wall` side (**3–5ms**). On top of that, Node and `workerd` differ in runtime and in GC pressure. Treat these as values for gauging the order of magnitude only.
+**You shouldn't take these numbers at face value.** Look at runs 4 and 5: work that took 5ms on the wall clock reports 12ms of CPU. That's because Node's `process.cpuUsage()` **sums CPU across all threads** (GC and so on). This workload has no I/O, so the real render cost is closer to the `wall` side (**3–5ms**). On top of that, Node and `workerd` differ in runtime and in GC pressure. Treat these as values for gauging the order of magnitude only.
 
 
 After deployment, requesting 12 different pages back to back produced no CPU-exceeded errors (1102). That said, it's <strong>a value each person has to verify for themselves, depending on page complexity</strong>. Rather than guessing, it's better to look at the actual CPU time recorded in Workers Logs.

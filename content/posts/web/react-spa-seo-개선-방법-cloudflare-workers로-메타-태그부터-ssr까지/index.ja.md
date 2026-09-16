@@ -17,11 +17,11 @@ lastmod: 2026-09-11T13:01:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.png"
+  - "assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.jpg"
 ---
 
 
-![空だったHTMLがエッジを通りながら埋められ、クローラーがその結果を読む流れを表した代表画像](./assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.png)
+![空の HTML の殻が Cloudflare Workers を通りながらメタタグと本文で満たされ、クローラーがそれを読む流れ](./assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.jpg)
 
 
 ## 概要
@@ -98,7 +98,7 @@ curl -s https://example.com/products/1234
 1.6KBほどの殻です。商品名も価格も説明もありません。すべてJSが実行され、APIのレスポンスが届いた後にはじめて作られます。
 
 
-**人には何の問題もありません。<strong>ブラウザがJSを実行するからです。問題は</strong>読む側がJSを実行しないとき**です。
+**人には何の問題もありません。**ブラウザがJSを実行するからです。問題は**読む側がJSを実行しないとき**です。
 
 - カカオトーク・LINE・Xのリンクプレビューボット
 - JavaScriptを実行しない検索エンジンのクローラー
@@ -413,7 +413,7 @@ export const routes: RouteObject[] = [
 ```
 
 
-**ルーターをここで作らないことが要点です。<strong>ブラウザは `createBrowserRouter`、サーバーは [`createStaticHandler`](https://reactrouter.com/api/data-routers/createStaticHandler) で互いに異なるルーターを作りますが、</strong>ルートの配列は同じでなければなりません。** 異なると、サーバーが描いた画面とブラウザの初回レンダリングが食い違い、hydrationが壊れます。
+**ルーターをここで作らないことが要点です。**ブラウザは `createBrowserRouter`、サーバーは [`createStaticHandler`](https://reactrouter.com/api/data-routers/createStaticHandler) で互いに異なるルーターを作りますが、**ルートの配列は同じでなければなりません。** 異なると、サーバーが描いた画面とブラウザの初回レンダリングが食い違い、hydrationが壊れます。
 
 
 ### After ② Providerの殻を共有する
@@ -543,7 +543,7 @@ export async function render(
 **ここで知っておくべき4つのこと**
 
 
-**①** [**`react-dom/server`<strong>](https://react.dev/reference/react-dom/server) </strong>はReactにすでに入っています。** 別途のインストールはありません。`react-dom` パッケージのサブパスです。新しく導入するフレームワークもプラグインもありません。
+**①** [**`react-dom/server`**](https://react.dev/reference/react-dom/server) **はReactにすでに入っています。** 別途のインストールはありません。`react-dom` パッケージのサブパスです。新しく導入するフレームワークもプラグインもありません。
 
 
 Workersのようなウェブ標準ランタイムでは [`renderToReadableStream`](https://react.dev/reference/react-dom/server/renderToReadableStream) を使います — Nodeの `renderToPipeableStream` ではありません。どの版が当たるかは、後で出てくるViteの設定が決めます。
@@ -564,7 +564,7 @@ Workersのようなウェブ標準ランタイムでは [`renderToReadableStream
 ### ビルド — `vite build --ssr`
 
 
-[**Viteに内蔵された機能<strong>](https://vite.dev/guide/ssr)</strong>です。** プラグインは不要です。
+[**Viteに内蔵された機能**](https://vite.dev/guide/ssr)**です。** プラグインは不要です。
 
 
 ```json
@@ -621,7 +621,36 @@ export default defineConfig(({ isSsrBuild }) => ({
 1段階のWorkerに2行が増えます。
 
 
-@@PLACEHOLDER_3@@
+```typescript
+import { render } from '../../dist-server/entry-server.js';
+
+// ... same as Stage 1 up to here
+
+const product = await fetchProduct(id, env, ctx);
+if (!product) return asset;
+
+// Seed the cache with the response the worker already has - render must not refetch.
+const body = await render(url.toString(), (queryClient) => {
+  queryClient.setQueryData(getProductQueryKey(id), product);
+});
+
+return new HTMLRewriter()
+  .on('title', { element(e) { e.setInnerContent(product.name); } })
+  .on('head', {
+    element(e) {
+      e.append(headTags(meta), { html: true });
+      // Hand the server-side data to the browser.
+      // Escaping `<` stops a literal `</script>` in the data from closing the tag.
+      e.append(
+        `<script>window.__RQ_STATE__=${body.state.replace(/</g, '\\u003c')}</script>`,
+        { html: true },
+      );
+    },
+  })
+  // This line is what Stage 1 does not have: inject the body
+  .on('#root', { element(e) { e.setInnerContent(body.html, { html: true }); } })
+  .transform(asset);
+```
 
 
 ### APIの往復を増やさないことが重要です
@@ -700,7 +729,7 @@ cpu       wall
 ```
 
 
-**この数字をそのまま信じてはいけません。<strong>4・5回目を見ると、壁時計で5msかかった作業のCPUが12msです。Nodeの `process.cpuUsage()` が</strong>すべてのスレッドのCPUを合算する**ためです（GCなど）。このワークロードにはI/Oがないので、実際のレンダリングコストはむしろ `wall` の方（**3〜5ms**）に近いです。さらにNodeと `workerd` はランタイムもGC圧も異なります。桁を見積もる用途にだけ使う値です。
+**この数字をそのまま信じてはいけません。**4・5回目を見ると、壁時計で5msかかった作業のCPUが12msです。Nodeの `process.cpuUsage()` が**すべてのスレッドのCPUを合算する**ためです（GCなど）。このワークロードにはI/Oがないので、実際のレンダリングコストはむしろ `wall` の方（**3〜5ms**）に近いです。さらにNodeと `workerd` はランタイムもGC圧も異なります。桁を見積もる用途にだけ使う値です。
 
 
 デプロイ後に互いに異なるページ12件を連続でリクエストしたとき、CPU超過エラー（1102）は出ませんでした。ただし<strong>ページの複雑度によって各自が確認すべき値</strong>です。推測せず、Workers Logsに記録される実際のCPU timeを見る方がよいです。

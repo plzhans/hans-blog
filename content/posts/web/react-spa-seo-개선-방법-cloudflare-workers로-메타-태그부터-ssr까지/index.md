@@ -13,15 +13,15 @@ tags:
   - "ssr"
   - "workers"
 date: 2026-09-11T13:01:00.000Z
-lastmod: 2026-09-11T13:01:00.000Z
+lastmod: 2026-09-16T14:55:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.png"
+  - "assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.jpg"
 ---
 
 
-![비어 있던 HTML 이 엣지를 지나며 채워지고 크롤러가 그 결과를 읽는 흐름을 나타낸 대표 이미지](./assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.png)
+![빈 HTML 껍데기가 Cloudflare Workers 를 지나며 메타 태그와 본문으로 채워지고 크롤러가 그것을 읽는 흐름](./assets/1_3d822a0f-7e83-8126-8051-dfd669349a3e.jpg)
 
 
 ## 개요
@@ -98,7 +98,7 @@ curl -s https://example.com/products/1234
 1.6KB 남짓의 껍데기다. 제품 이름도 가격도 설명도 없다. 전부 JS 가 실행되고 API 응답이 도착한 뒤에야 만들어진다.
 
 
-**사람에게는 아무 문제가 없다.<strong> 브라우저가 JS 를 실행하니까. 문제는 </strong>읽는 쪽이 JS 를 실행하지 않을 때**다.
+**사람에게는 아무 문제가 없다.** 브라우저가 JS 를 실행하니까. 문제는 <strong>읽는 쪽이 JS 를 실행하지 않을 때</strong>다.
 
 - 카카오톡·라인·X 의 링크 미리보기 봇
 - JS 를 실행하지 않는 검색엔진 크롤러
@@ -413,7 +413,7 @@ export const routes: RouteObject[] = [
 ```
 
 
-**라우터를 여기서 만들지 않는 것이 요점이다.<strong> 브라우저는 `createBrowserRouter`, 서버는 [`createStaticHandler`](https://reactrouter.com/api/data-routers/createStaticHandler) 로 서로 다른 라우터를 만들지만 </strong>라우트 배열은 같아야 한다.** 다르면 서버가 그린 화면과 브라우저의 첫 렌더가 어긋나 hydration 이 깨진다.
+**라우터를 여기서 만들지 않는 것이 요점이다.** 브라우저는 `createBrowserRouter`, 서버는 [`createStaticHandler`](https://reactrouter.com/api/data-routers/createStaticHandler) 로 서로 다른 라우터를 만들지만 **라우트 배열은 같아야 한다.** 다르면 서버가 그린 화면과 브라우저의 첫 렌더가 어긋나 hydration 이 깨진다.
 
 
 ### After ② Provider 껍데기를 공유한다
@@ -543,7 +543,7 @@ export async function render(
 **여기서 알아야 할 네 가지**
 
 
-**①** [**`react-dom/server`<strong>](https://react.dev/reference/react-dom/server) </strong>는 React 에 이미 들어 있다.** 별도 설치가 없다. `react-dom` 패키지의 서브경로다. 새로 도입할 프레임워크도 플러그인도 없다.
+**①** [**`react-dom/server`**](https://react.dev/reference/react-dom/server) **는 React 에 이미 들어 있다.** 별도 설치가 없다. `react-dom` 패키지의 서브경로다. 새로 도입할 프레임워크도 플러그인도 없다.
 
 
 Workers 같은 웹 표준 런타임에서는 [`renderToReadableStream`](https://react.dev/reference/react-dom/server/renderToReadableStream) 을 쓴다 — Node 의 `renderToPipeableStream` 이 아니다. 어느 판본이 잡히느냐는 뒤에 나오는 Vite 설정이 정한다.
@@ -564,7 +564,7 @@ Workers 같은 웹 표준 런타임에서는 [`renderToReadableStream`](https://
 ### 빌드 — `vite build --ssr`
 
 
-[**Vite 에 내장된 기능<strong>](https://vite.dev/guide/ssr)</strong>이다.** 플러그인이 필요 없다.
+[**Vite 에 내장된 기능**](https://vite.dev/guide/ssr)**이다.** 플러그인이 필요 없다.
 
 
 ```json
@@ -621,7 +621,36 @@ export default defineConfig(({ isSsrBuild }) => ({
 1단계의 워커에 두 줄이 늘어난다.
 
 
-@@PLACEHOLDER_3@@
+```typescript
+import { render } from '../../dist-server/entry-server.js';
+
+// ... same as Stage 1 up to here
+
+const product = await fetchProduct(id, env, ctx);
+if (!product) return asset;
+
+// Seed the cache with the response the worker already has - render must not refetch.
+const body = await render(url.toString(), (queryClient) => {
+  queryClient.setQueryData(getProductQueryKey(id), product);
+});
+
+return new HTMLRewriter()
+  .on('title', { element(e) { e.setInnerContent(product.name); } })
+  .on('head', {
+    element(e) {
+      e.append(headTags(meta), { html: true });
+      // Hand the server-side data to the browser.
+      // Escaping `<` stops a literal `</script>` in the data from closing the tag.
+      e.append(
+        `<script>window.__RQ_STATE__=${body.state.replace(/</g, '\\u003c')}</script>`,
+        { html: true },
+      );
+    },
+  })
+  // This line is what Stage 1 does not have: inject the body
+  .on('#root', { element(e) { e.setInnerContent(body.html, { html: true }); } })
+  .transform(asset);
+```
 
 
 ### API 왕복을 늘리지 않는 것이 중요하다
@@ -700,7 +729,7 @@ cpu       wall
 ```
 
 
-**이 숫자를 그대로 믿으면 안 된다.<strong> 4·5회차를 보면 벽시계로 5ms 걸린 작업의 CPU 가 12ms 다. Node 의 `process.cpuUsage()` 가 </strong>모든 스레드의 CPU 를 합산**하기 때문이다(GC 등). 이 워크로드에는 I/O 가 없으니 실제 렌더 비용은 오히려 `wall` 쪽(**3~5ms**)에 가깝다. 게다가 Node 와 `workerd` 는 런타임도 GC 압력도 다르다. 자릿수를 가늠하는 용도로만 쓸 값이다.
+**이 숫자를 그대로 믿으면 안 된다.** 4·5회차를 보면 벽시계로 5ms 걸린 작업의 CPU 가 12ms 다. Node 의 `process.cpuUsage()` 가 <strong>모든 스레드의 CPU 를 합산</strong>하기 때문이다(GC 등). 이 워크로드에는 I/O 가 없으니 실제 렌더 비용은 오히려 `wall` 쪽(**3~5ms**)에 가깝다. 게다가 Node 와 `workerd` 는 런타임도 GC 압력도 다르다. 자릿수를 가늠하는 용도로만 쓸 값이다.
 
 
 배포 후 서로 다른 페이지 12개를 연속 요청했을 때 CPU 초과 오류(1102)는 나지 않았다. 다만 <strong>페이지 복잡도에 따라 각자 확인해야 하는 값</strong>이다. 추측하지 말고 Workers Logs 에 찍히는 실제 CPU time 을 보는 편이 낫다.
