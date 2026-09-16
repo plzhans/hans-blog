@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-ifneq (,$(filter env notioncli notion-page-sync notion-database-sync notion-database-sync-draft,$(firstword $(MAKECMDGOALS))))
+ifneq (,$(filter env notioncli notion-page-sync notion-database-sync notion-database-sync-draft linkedin-post linkedin-auth,$(firstword $(MAKECMDGOALS))))
   RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   $(eval $(RUN_ARGS):;@:)
 endif
@@ -24,6 +24,21 @@ notion-database-sync-draft:
 .PHONY: notion-page-sync
 notion-page-sync:
 	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && node src/NotionCli.mjs page sync $(RUN_ARGS)
+
+# 노션 페이지를 링크드인에 게시한다.
+#
+# **게시는 되돌릴 수 없다.** 지웠다 다시 올리면 반응이 날아가고, OG 카드는 게시 시점에
+# 굳어서 나중에 못 고친다. --dry-run 으로 먼저 확인할 것.
+#   make linkedin-post <page_id> --dry-run
+.PHONY: linkedin-post
+linkedin-post:
+	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && node src/NotionCli.mjs linkedin post $(RUN_ARGS)
+
+# 링크드인 액세스 토큰을 발급받는다. 60일 만료라 주기적으로 다시 돌려야 한다.
+# 결과는 .linkedin-session.json 에 저장된다 - .env 는 건드리지 않는다.
+.PHONY: linkedin-auth
+linkedin-auth:
+	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && node src/LinkedInAuthCli.mjs
 
 .PHONY: translate
 translate:
@@ -71,10 +86,14 @@ cloudflare-dns:
 cloudflare-purge:
 	./cloudflare/purge-cache.sh
 
+# 수신자를 고정한다. -r 없이 돌리면 gpg 가 대화형으로 묻는데, 이 머신에는 키가 둘이라
+# 잘못 고르기 쉽다. 틀린 키로 암호화하면 그 자리에서는 성공하고 복호화할 때 실패한다.
+ENV_GPG_RECIPIENT ?= D9F62FE2379DF7E6
+
 .PHONY: env
 env:
 ifeq ($(firstword $(RUN_ARGS)),enc)
-	gpg --yes -e -o .env.enc .env
+	gpg --yes --trust-model always -r $(ENV_GPG_RECIPIENT) -e -o .env.enc .env
 else ifeq ($(firstword $(RUN_ARGS)),dec)
 	gpg --yes -d -o .env .env.enc
 else

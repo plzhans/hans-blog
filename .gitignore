@@ -20,6 +20,11 @@ logs
 .env
 *.env
 
+# 링크드인 세션. 액세스 토큰은 60일이면 죽는 파생 상태라 .env 가 아니라 여기 산다
+# (make linkedin-auth 가 써넣는다). 토큰이 들어 있으므로 절대 추적하지 않는다.
+# CI 는 이 파일 없이 GitHub Secrets 의 환경변수로 동작한다.
+.linkedin-session.json
+
 # google service account key
 config/google_service_account.json
 

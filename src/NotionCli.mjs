@@ -6,6 +6,9 @@ import { hideBin } from "yargs/helpers";
 import { Client } from "@notionhq/client";
 import { NotionApiClient } from "./clients/NotionApiClient.mjs";
 import { NotionExportService } from "./services/NotionExportService.mjs";
+import { LinkedInApiClient } from "./clients/LinkedInApiClient.mjs";
+import { LinkedInShareService } from "./services/LinkedInShareService.mjs";
+import { readSession, assertUsable } from "./utils/LinkedInSession.mjs";
 
 /**
  * YAML 설정 파일을 로드하여 객체로 반환
@@ -28,6 +31,33 @@ function createService() {
   });
   const notionApiClient = new NotionApiClient(notionClient, process.env.NOTION_API_TOKEN);
   return new NotionExportService(notionApiClient, notionClient, config.propertyKeys, config.statusValues, config.hugoBaseUrl);
+}
+
+/**
+ * LinkedInShareService 인스턴스를 생성
+ * @returns {LinkedInShareService} 설정이 적용된 서비스 인스턴스
+ */
+function createLinkedInService() {
+  const config = loadConfig();
+  const notionClient = new Client({ auth: process.env.NOTION_API_TOKEN });
+  const notionApiClient = new NotionApiClient(notionClient, process.env.NOTION_API_TOKEN);
+
+  // 토큰과 URN 은 인증하면서 생기는 파생값이라 .env 가 아니라 세션 파일에 산다
+  // (make linkedin-auth 가 써넣는다). 다만 CI 에는 그 파일이 없으므로 환경변수가
+  // 있으면 그쪽을 우선한다 - GitHub Secrets 로 주입되는 경로다.
+  const session = readSession() || {};
+  assertUsable(session);
+
+  const linkedInApiClient = new LinkedInApiClient({
+    accessToken: process.env.LINKEDIN_ACCESS_TOKEN || session.accessToken,
+    refreshToken: process.env.LINKEDIN_REFRESH_TOKEN || session.refreshToken,
+    personUrn: process.env.LINKEDIN_PERSON_URN || session.personUrn,
+    // 앱 자격증명은 성격이 다르다. 만료되지 않고 사람이 한 번 넣는 값이라 .env 에 둔다.
+    clientId: process.env.LINKEDIN_CLIENT_ID,
+    clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
+    apiVersion: process.env.LINKEDIN_API_VERSION,
+  });
+  return new LinkedInShareService(notionApiClient, linkedInApiClient, config.propertyKeys);
 }
 
 yargs(hideBin(process.argv))
@@ -107,7 +137,75 @@ yargs(hideBin(process.argv))
       )
       .demandCommand(1, "Please specify a page subcommand")
   )
-  .demandCommand(1, "Please specify a command: page or database")
+  .command(
+    "linkedin",
+    "LinkedIn share commands",
+    (y) => y
+      .command(
+        "post [page_id]",
+        "Share a Notion page to LinkedIn",
+        (yy) =>
+          yy
+            .positional("page_id", {
+              type: "string",
+              describe: "Notion page ID",
+            })
+            .option("dry-run", {
+              type: "boolean",
+              default: false,
+              describe: "Verify only - print what would be posted without posting",
+            })
+            .option("test", {
+              type: "boolean",
+              default: false,
+              describe: "Post without feed distribution, then delete after confirmation",
+            })
+            .option("image", {
+              type: "array",
+              default: [],
+              describe: "Image file(s) to attach - note this removes the link preview card",
+            })
+            .option("alt", {
+              type: "array",
+              default: [],
+              describe: "Alt text for each --image, in the same order",
+            })
+            ,
+        async (argv) => {
+          if (!argv.page_id) {
+            throw new Error("page_id is required");
+          }
+          // yargs 의 conflicts() 는 기본값이 채워진 것도 "지정됨" 으로 봐서
+          // --dry-run 만 줘도 충돌로 판정한다. 그래서 직접 본다.
+          if (argv.dryRun && argv.test) {
+            throw new Error("--dry-run and --test cannot be used together");
+          }
+          // alt 는 --image 와 순서로 짝지운다. 모자라면 빈 값으로 두고,
+          // 남으면 짝이 밀렸다는 뜻이므로 조용히 넘기지 않는다.
+          if (argv.alt.length > argv.image.length) {
+            throw new Error(
+              `--alt (${argv.alt.length}) cannot outnumber --image (${argv.image.length})`
+            );
+          }
+          const images = argv.image.map((p, i) => ({
+            path: String(p),
+            altText: argv.alt[i] ? String(argv.alt[i]) : undefined,
+          }));
+
+          const service = createLinkedInService();
+          const result = await service.postByPageId(argv.page_id, {
+            dryRun: argv.dryRun,
+            test: argv.test,
+            images,
+          });
+          // 게시하지 않았으면 0 으로 끝내지 않는다. CI 가 성공으로 보면
+          // 실패한 게시가 조용히 묻힌다.
+          if (!result.ok) process.exit(1);
+        }
+      )
+      .demandCommand(1, "Please specify a linkedin subcommand")
+  )
+  .demandCommand(1, "Please specify a command: page, database or linkedin")
   .strict()
   .help()
   .parse();
