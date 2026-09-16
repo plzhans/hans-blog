@@ -18,21 +18,34 @@ import path from "node:path";
 
 export const SESSION_FILE = ".linkedin-session.json";
 
+// CI 에는 이 파일이 없다. 파일 내용을 통째로 담은 시크릿을 환경변수로 받아 같은 모양으로 쓴다.
+// 필드별로 환경변수를 두면 필드를 늘릴 때마다 시크릿이 늘고 로컬과 CI 의 코드 경로가 갈린다.
+export const SESSION_ENV = "LINKEDIN_SESSION";
+
 // 만료가 이만큼 남았을 때부터 경고한다. 재인증은 브라우저를 열어야 해서
 // 게시하려는 순간에 알게 되면 곤란하다.
 const WARN_BEFORE_DAYS = 14;
 
 /**
- * 세션 파일을 읽는다
+ * 세션을 읽는다. 파일이 없으면 환경변수를 본다
+ *
+ * 로컬은 파일, CI 는 환경변수(GitHub Secrets)다. 어느 쪽이든 같은 모양이 나오므로
+ * 호출하는 쪽은 구분할 필요가 없다.
+ *
  * @param {string} [file=SESSION_FILE] - 세션 파일 경로
- * @returns {Object|null} 세션 객체. 파일이 없거나 깨졌으면 null
+ * @returns {Object|null} 세션 객체. 어느 쪽에서도 못 읽으면 null
  */
 export function readSession(file = SESSION_FILE) {
   try {
     return JSON.parse(fs.readFileSync(file, "utf-8"));
   } catch {
     // 없는 것과 깨진 것을 굳이 나누지 않는다. 어느 쪽이든 다시 인증받아야 한다.
-    return null;
+  }
+  try {
+    const raw = process.env[SESSION_ENV];
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    throw new Error(`${SESSION_ENV} 값이 JSON 이 아닙니다. 시크릿을 다시 넣으세요.`);
   }
 }
 

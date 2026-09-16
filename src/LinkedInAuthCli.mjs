@@ -17,7 +17,7 @@ import "dotenv/config";
 import http from "node:http";
 import crypto from "node:crypto";
 import { spawn } from "node:child_process";
-import { buildSession, writeSession, SESSION_FILE } from "./utils/LinkedInSession.mjs";
+import { buildSession, writeSession, SESSION_FILE, SESSION_ENV } from "./utils/LinkedInSession.mjs";
 
 const AUTHORIZE_URL = "https://www.linkedin.com/oauth/v2/authorization";
 const TOKEN_URL = "https://www.linkedin.com/oauth/v2/accessToken";
@@ -219,24 +219,18 @@ function saveAndReport(token, personUrn) {
 async function syncGithubSecrets(session) {
   if (!(await hasGh())) {
     console.log("\ngh 를 못 찾았거나 로그인돼 있지 않습니다. GitHub Secrets 는 건너뜁니다.");
-    console.log("CI 에서 쓰려면 직접 넣으세요: LINKEDIN_ACCESS_TOKEN  LINKEDIN_PERSON_URN");
+    console.log(`CI 에서 쓰려면 ${SESSION_FILE} 내용을 ${SESSION_ENV} 시크릿에 그대로 넣으세요.`);
     return;
   }
 
-  const pairs = [
-    ["LINKEDIN_ACCESS_TOKEN", session.accessToken],
-    ["LINKEDIN_PERSON_URN", session.personUrn],
-    ...(session.refreshToken ? [["LINKEDIN_REFRESH_TOKEN", session.refreshToken]] : []),
-  ];
-
-  console.log("\nGitHub Secrets 갱신 중...");
-  for (const [name, value] of pairs) {
-    try {
-      await runGh(["secret", "set", name], value);
-      console.log(`  ✅ ${name}`);
-    } catch (err) {
-      console.log(`  ❌ ${name} - ${err.message}`);
-    }
+  // 세션 파일 내용을 통째로 넣는다. 필드별로 쪼개면 필드를 늘릴 때마다 시크릿이 늘고
+  // CI 와 로컬이 서로 다른 모양을 보게 된다.
+  console.log(`\nGitHub Secrets(${SESSION_ENV}) 갱신 중...`);
+  try {
+    await runGh(["secret", "set", SESSION_ENV], JSON.stringify(session));
+    console.log(`  ✅ ${SESSION_ENV}`);
+  } catch (err) {
+    console.log(`  ❌ ${SESSION_ENV} - ${err.message}`);
   }
 }
 

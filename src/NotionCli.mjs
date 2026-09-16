@@ -42,16 +42,16 @@ function createLinkedInService() {
   const notionClient = new Client({ auth: process.env.NOTION_API_TOKEN });
   const notionApiClient = new NotionApiClient(notionClient, process.env.NOTION_API_TOKEN);
 
-  // 토큰과 URN 은 인증하면서 생기는 파생값이라 .env 가 아니라 세션 파일에 산다
-  // (make linkedin-auth 가 써넣는다). 다만 CI 에는 그 파일이 없으므로 환경변수가
-  // 있으면 그쪽을 우선한다 - GitHub Secrets 로 주입되는 경로다.
+  // 토큰과 URN 은 인증하면서 생기는 파생값이라 .env 가 아니라 세션에 산다.
+  // 로컬은 .linkedin-session.json, CI 는 같은 내용을 담은 LINKEDIN_SESSION 시크릿이다.
+  // readSession 이 둘을 가려주므로 여기서는 구분하지 않는다.
   const session = readSession() || {};
   assertUsable(session);
 
   const linkedInApiClient = new LinkedInApiClient({
-    accessToken: process.env.LINKEDIN_ACCESS_TOKEN || session.accessToken,
-    refreshToken: process.env.LINKEDIN_REFRESH_TOKEN || session.refreshToken,
-    personUrn: process.env.LINKEDIN_PERSON_URN || session.personUrn,
+    accessToken: session.accessToken,
+    refreshToken: session.refreshToken,
+    personUrn: session.personUrn,
     // 앱 자격증명은 성격이 다르다. 만료되지 않고 사람이 한 번 넣는 값이라 .env 에 둔다.
     clientId: process.env.LINKEDIN_CLIENT_ID,
     clientSecret: process.env.LINKEDIN_CLIENT_SECRET,
