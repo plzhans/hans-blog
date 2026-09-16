@@ -139,4 +139,13 @@ export class NotionApiClient {
     const children = await this.listAllChildren(pageId);
     return children.find((block) => block.type === "image") ?? null;
   }
+
+  /**
+   * 블록을 삭제(휴지통으로 이동)
+   * @param {string} blockId - 삭제할 블록 ID
+   * @returns {Promise<Object>} 삭제된 블록 객체
+   */
+  async deleteBlock(blockId) {
+    return this.notion.blocks.delete({ block_id: blockId });
+  }
 }
