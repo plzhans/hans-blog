@@ -164,7 +164,7 @@ ubuntu@a1-free:~$ ss -tlnp | grep 11434
 Based on Oracle Cloud A1 ARM 2OCPU / 12 RAM
 
 
-| **Purpose<strong>          | </strong>Model<strong>          | </strong>Recommendation<strong> | </strong>Speed** | **Tool Calling<strong> | </strong>Korean<strong> | </strong>Memory<strong> | </strong>Notes**     |
+| **Purpose**          | **Model**          | **Recommendation** | **Speed** | **Tool Calling** | **Korean** | **Memory** | **Notes**     |
 | --------------- | --------------- | ------- | ------ | ---------------- | ------- | ------- | ---------- |
 | 🥇 Chat + Tool combined use | **Qwen3:4B**    | ⭐⭐⭐⭐⭐   | ★★★★☆  | ★★★★★            | ★★★★★   | 4~5GB   | Most recommended      |
 | Chat only           | **Gemma3:4B**   | ⭐⭐⭐⭐☆   | ★★★★★  | ★★★☆☆            | ★★★★☆   | 4GB     | Fast response      |

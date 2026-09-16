@@ -164,7 +164,7 @@ ubuntu@a1-free:~$ ss -tlnp | grep 11434
 Oracle Cloud A1 ARM 2OCPU / 12 RAM基準
 
 
-| **用途<strong>          | </strong>モデル<strong>          | </strong>推奨度<strong> | </strong>速度** | **Tool Calling<strong> | </strong>韓国語<strong> | </strong>メモリ<strong> | </strong>備考**     |
+| **用途**          | **モデル**          | **推奨度** | **速度** | **Tool Calling** | **韓国語** | **メモリ** | **備考**     |
 | --------------- | --------------- | ------- | ------ | ---------------- | ------- | ------- | ---------- |
 | 🥇 チャット+Tool兼用 | **Qwen3:4B**    | ⭐⭐⭐⭐⭐   | ★★★★☆  | ★★★★★            | ★★★★★   | 4~5GB   | 最もおすすめ      |
 | チャット専用           | **Gemma3:4B**   | ⭐⭐⭐⭐☆   | ★★★★★  | ★★★☆☆            | ★★★★☆   | 4GB     | 高速応答      |

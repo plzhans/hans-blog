@@ -10,7 +10,7 @@ tags:
   - "ai"
   - "ollama"
 date: 2026-07-03T00:00:00.000Z
-lastmod: 2026-09-03T11:08:00.000Z
+lastmod: 2026-09-03T11:09:00.000Z
 toc: true
 draft: false
 images:
@@ -163,7 +163,7 @@ ubuntu@a1-free:~$ ss -tlnp | grep 11434
 Oracle Cloud A1 ARM 2OCPU / 12 RAM 기준
 
 
-| **용도<strong>          | </strong>모델<strong>          | </strong>추천도<strong> | </strong>속도** | **Tool Calling<strong> | </strong>한국어<strong> | </strong>메모리<strong> | </strong>비고**     |
+| **용도**          | **모델**          | **추천도** | **속도** | **Tool Calling** | **한국어** | **메모리** | **비고**     |
 | --------------- | --------------- | ------- | ------ | ---------------- | ------- | ------- | ---------- |
 | 🥇 채팅 + Tool 겸용 | **Qwen3:4B**    | ⭐⭐⭐⭐⭐   | ★★★★☆  | ★★★★★            | ★★★★★   | 4~5GB   | 가장 추천      |
 | 채팅 전용           | **Gemma3:4B**   | ⭐⭐⭐⭐☆   | ★★★★★  | ★★★☆☆            | ★★★★☆   | 4GB     | 빠른 응답      |
