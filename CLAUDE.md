@@ -15,14 +15,22 @@ node src/NotionCli.mjs database sync --draft  # 초안까지 포함
 
 번역본(`index.en.md` · `index.ja.md`)은 예외다. Notion 에 없으므로 직접 만들고 고친다.
 
+## prompts/
+
+작업별 규칙이 여기 있다. **해당 작업을 시작하기 전에 읽는다. 직접 규칙을 세우지 않는다.**
+
+| 파일 | 언제 읽나 | 무엇이 들어 있나 |
+| --- | --- | --- |
+| [translate-database-sync.md](prompts/translate-database-sync.md) | 동기화 뒤 번역할 때 | 번역 대상을 고르는 기준(`AI_번역` 체크박스), 일괄 처리 방법, 검수 체크리스트 |
+| [translate-blog-post.md](prompts/translate-blog-post.md) | 글 하나를 번역할 때 | 무엇을 번역하고 무엇을 그대로 둘지, 언어별 문체(영어는 기술 문서체, 일본어는 です・ます체) |
+| [generate-featured-image.md](prompts/generate-featured-image.md) | 대표 이미지를 만들 때 | 작업 순서, 프롬프트 작성법, 검수 항목, 비용 |
+| [featured-image-style.txt](prompts/featured-image-style.txt) | 읽지 않아도 된다 | 블로그 공통 시각 스타일. 코드가 이미지 프롬프트 앞에 자동으로 붙인다 |
+| [claude-seo.md](prompts/claude-seo.md) | 발행된 글의 SEO 를 점검할 때 | title·description·구조·태그·링크 점검 항목. 시스템 필드는 제안만 하고 직접 고치지 않는다 |
+
+`featured-image-style.txt` 만 성격이 다르다. 사람이 읽는 지침이 아니라 **모델에게 그대로
+전달되는 프롬프트 조각**이다. 스타일을 바꾸려면 이 파일을 고친다.
+
 ## 번역
-
-**프롬프트를 따른다. 직접 규칙을 세우지 않는다.**
-
-| 문서 | 언제 |
-| --- | --- |
-| [prompts/translate-database-sync.md](prompts/translate-database-sync.md) | 동기화 후 번역할 글을 고르고 일괄 처리할 때 |
-| [prompts/translate-blog-post.md](prompts/translate-blog-post.md) | 글 하나를 번역하는 상세 규칙 |
 
 ### 번역 대상 고르기
 
