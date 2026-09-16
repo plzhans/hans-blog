@@ -15,18 +15,18 @@ lastmod: 2026-09-11T13:01:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.png"
+  - "assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg"
 ---
 
 
-![Cover image showing an incoming request splitting into a path that goes through the Worker and a path that goes straight out as a static asset](./assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.png)
+![Diagram showing a request splitting at the Cloudflare edge into a static asset path and a Worker path, where only Worker invocations are billed](./assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg)
 
 
 ## Overview
 
 > This post is part of the [Cloudflare Workers Static Site Guide - From Deployment to SEO](../124-cloudflare-workers-static-site-guide/) series.
 
-One way to put a static site on Cloudflare is **Workers Static Assets<strong>. Upload your build output (`dist/`) and it is served from edges worldwide, and if you need it you can layer </strong>a bit of code in front of it.**
+One way to put a static site on Cloudflare is **Workers Static Assets**. Upload your build output (`dist/`) and it is served from edges worldwide, and if you need it you can layer **a bit of code in front of it.**
 
 
 It's a way to solve the "I want to tweak the response a little" requirement that comes up while you're using it as static hosting — without standing up a new server.

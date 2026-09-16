@@ -11,22 +11,22 @@ tags:
   - "infra"
   - "workers"
 date: 2026-09-11T13:01:00.000Z
-lastmod: 2026-09-11T13:01:00.000Z
+lastmod: 2026-09-16T14:55:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.png"
+  - "assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg"
 ---
 
 
-![들어온 요청이 워커를 거쳐 나가는 길과 정적 자산으로 바로 나가는 길로 갈리는 흐름을 나타낸 대표 이미지](./assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.png)
+![요청이 Cloudflare 엣지에서 정적 자산과 워커 실행으로 갈리고 워커가 돈 요청만 과금되는 흐름](./assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg)
 
 
 ## 개요
 
 > 이 글은 [Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지](../124-cloudflare-workers-static-site-guide/) 시리즈의 일부다.
 
-정적 사이트를 Cloudflare 에 올리는 방법으로 **Workers Static Assets<strong> 가 있다. 빌드 산출물(`dist/`)을 올리면 전 세계 엣지에서 서빙되고 필요하면 그 앞에 </strong>코드를 한 겹 얹을 수 있다.**
+정적 사이트를 Cloudflare 에 올리는 방법으로 **Workers Static Assets** 가 있다. 빌드 산출물(`dist/`)을 올리면 전 세계 엣지에서 서빙되고 필요하면 그 앞에 **코드를 한 겹 얹을 수 있다.**
 
 
 정적 호스팅으로 쓰다가 "응답을 조금 고치고 싶다"는 요구가 생겼을 때 서버를 새로 세우지 않고 해결할 수 있는 길이다.

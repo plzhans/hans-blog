@@ -15,18 +15,18 @@ lastmod: 2026-09-11T13:01:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.png"
+  - "assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg"
 ---
 
 
-![入ってきたリクエストがWorkerを経由して出る道と、静的アセットとして直接出る道に分かれる流れを表した代表画像](./assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.png)
+![リクエストが Cloudflare エッジで静的アセットと Worker 実行に分かれ、Worker が動いたリクエストだけが課金される流れ](./assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg)
 
 
 ## 概要
 
 > この記事は [Cloudflare Workers 静的サイトガイド - デプロイからSEOまで](../124-cloudflare-workers-static-site-guide/) シリーズの一部です。
 
-静的サイトをCloudflareに載せる方法として **Workers Static Assets<strong> があります。ビルド成果物（`dist/`）をアップロードすると全世界のエッジでサービングされ、必要なら その前に</strong>コードを一枚重ねることができます。**
+静的サイトをCloudflareに載せる方法として **Workers Static Assets** があります。ビルド成果物（`dist/`）をアップロードすると全世界のエッジでサービングされ、必要なら その前に**コードを一枚重ねることができます。**
 
 
 静的ホスティングとして使っているうちに「レスポンスを少し直したい」という要求が生まれたとき、サーバーを新しく立てずに解決できる道です。
