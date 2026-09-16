@@ -1,0 +1,248 @@
+{
+  "object": "page",
+  "id": "3dd22a0f-7e83-814c-a556-f40a56f71911",
+  "created_time": "2026-09-16T14:39:00.000Z",
+  "last_edited_time": "2026-09-16T14:55:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "00000000-0000-0000-0000-000000000003"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "data_source_id",
+    "data_source_id": "2fd22a0f-7e83-814c-9f88-000b7bdd1d4a",
+    "database_id": "2fd22a0f-7e83-81d7-82d0-cd0ed07cb7cb"
+  },
+  "in_trash": false,
+  "is_archived": false,
+  "is_locked": false,
+  "properties": {
+    "AI_번역": {
+      "id": "H%3BiO",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "created_at": {
+      "id": "Hhcd",
+      "type": "created_time",
+      "created_time": "2026-09-16T14:39:00.000Z"
+    },
+    "태그": {
+      "id": "NGeX",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "a0745ac3-b285-47bb-b3d4-322bdfb29a0c",
+          "name": "cloudflare",
+          "color": "pink"
+        },
+        {
+          "id": "11687b98-a492-430b-8b26-0a74227dbee0",
+          "name": "seo",
+          "color": "red"
+        },
+        {
+          "id": "H>R@",
+          "name": "ai",
+          "color": "default"
+        }
+      ]
+    },
+    "updated_at": {
+      "id": "PeH%60",
+      "type": "last_edited_time",
+      "last_edited_time": "2026-09-16T14:55:00.000Z"
+    },
+    "AUTO_ID": {
+      "id": "WCbd",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null,
+        "number": 54
+      }
+    },
+    "발행 URL": {
+      "id": "Yx%3Ai",
+      "type": "url",
+      "url": "https://blog.plzhans.com/posts/132-cloudflare-ai-crawl-control-managed-robots-txt/"
+    },
+    "toc": {
+      "id": "ZR~A",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "수정일": {
+      "id": "ZlPk",
+      "type": "date",
+      "date": {
+        "start": "2026-09-16T23:55:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "상태": {
+      "id": "%5B~Jq",
+      "type": "status",
+      "status": {
+        "id": "DOao",
+        "name": "발행 완료",
+        "color": "green"
+      }
+    },
+    "발행 결과": {
+      "id": "_xvq",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "✅ 발행 완료 (2026-09-16T14:55:17.309Z)",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "✅ 발행 완료 (2026-09-16T14:55:17.309Z)",
+          "href": null
+        }
+      ]
+    },
+    "요약": {
+      "id": "bCTc",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Cloudflare 가 robots.txt 를 대신 써 주고 AI 봇을 엣지에서 차단한다. 어떤 봇이 얼마나 가져갔는지도 보여 준다.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Cloudflare 가 robots.txt 를 대신 써 주고 AI 봇을 엣지에서 차단한다. 어떤 봇이 얼마나 가져갔는지도 보여 준다.",
+          "href": null
+        }
+      ]
+    },
+    "POST_ID": {
+      "id": "ik%40%5C",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "132",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "132",
+          "href": null
+        }
+      ]
+    },
+    "slug": {
+      "id": "inig",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "cloudflare-ai-crawl-control-managed-robots-txt",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "cloudflare-ai-crawl-control-managed-robots-txt",
+          "href": null
+        }
+      ]
+    },
+    "동기화": {
+      "id": "keny",
+      "type": "button",
+      "button": {}
+    },
+    "발행일": {
+      "id": "nEEr",
+      "type": "date",
+      "date": {
+        "start": "2026-09-16T14:55:00.000+00:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "생성일": {
+      "id": "oe%60s",
+      "type": "date",
+      "date": {
+        "start": "2026-09-16T23:39:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "카테고리": {
+      "id": "vwVr",
+      "type": "select",
+      "select": {
+        "id": "f8a45a20-5dfa-4116-b3ba-1a002de30df6",
+        "name": "Web",
+        "color": "pink"
+      }
+    },
+    "제목": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Cloudflare 로 AI 봇 차단하기 - Managed robots.txt 와 AI Crawl Control",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Cloudflare 로 AI 봇 차단하기 - Managed robots.txt 와 AI Crawl Control",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://app.notion.com/p/Cloudflare-AI-Managed-robots-txt-AI-Crawl-Control-3dd22a0f7e83814ca556f40a56f71911",
+  "public_url": null,
+  "archived": false
+}
