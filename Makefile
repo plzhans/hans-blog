@@ -35,7 +35,8 @@ linkedin-post:
 	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && node src/NotionCli.mjs linkedin post $(RUN_ARGS)
 
 # 링크드인 액세스 토큰을 발급받는다. 60일 만료라 주기적으로 다시 돌려야 한다.
-# 결과는 .linkedin-session.json 에 저장된다 - .env 는 건드리지 않는다.
+# 결과는 .linkedin-session.json 에 저장하고 GitHub Secrets 까지 갱신한다.
+# .env 는 건드리지 않으므로 .env.enc 도 다시 만들 필요가 없다.
 .PHONY: linkedin-auth
 linkedin-auth:
 	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && node src/LinkedInAuthCli.mjs

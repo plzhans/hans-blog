@@ -16,6 +16,7 @@
 import "dotenv/config";
 import http from "node:http";
 import crypto from "node:crypto";
+import { spawn } from "node:child_process";
 import { buildSession, writeSession, SESSION_FILE } from "./utils/LinkedInSession.mjs";
 
 const AUTHORIZE_URL = "https://www.linkedin.com/oauth/v2/authorization";
@@ -49,7 +50,8 @@ async function main() {
   const token = await exchangeCode(code, clientId, clientSecret);
   const personUrn = await fetchPersonUrn(token.access_token);
 
-  saveAndReport(token, personUrn);
+  const session = saveAndReport(token, personUrn);
+  await syncGithubSecrets(session);
 }
 
 /**
@@ -199,8 +201,76 @@ function saveAndReport(token, personUrn) {
   // 이 파일은 추적하지 않는다. CI 는 GitHub Secrets 로 env 를 받아 쓴다.
   console.log(`\n${SESSION_FILE} 은 커밋되지 않습니다. .env 를 고치지 않았으니`);
   console.log(".env.enc 도 다시 만들 필요가 없습니다.");
-  console.log("\nCI 에서 쓰려면 GitHub Secrets 에 아래를 넣으세요:");
-  console.log("  LINKEDIN_ACCESS_TOKEN  LINKEDIN_PERSON_URN");
+
+  return session;
+}
+
+/**
+ * 새 토큰을 GitHub Secrets 에도 밀어넣는다
+ *
+ * 로컬 세션 파일만 갱신하면 CI 는 옛 토큰을 계속 쓴다. 그 상태는 노션 버튼을
+ * 누르기 전까지 드러나지 않으므로 여기서 같이 맞춘다.
+ *
+ * 값은 stdin 으로 넘긴다. 인자로 주면 ps 에 토큰이 그대로 보인다.
+ *
+ * @param {Object} session - 저장된 세션
+ * @returns {Promise<void>}
+ */
+async function syncGithubSecrets(session) {
+  if (!(await hasGh())) {
+    console.log("\ngh 를 못 찾았거나 로그인돼 있지 않습니다. GitHub Secrets 는 건너뜁니다.");
+    console.log("CI 에서 쓰려면 직접 넣으세요: LINKEDIN_ACCESS_TOKEN  LINKEDIN_PERSON_URN");
+    return;
+  }
+
+  const pairs = [
+    ["LINKEDIN_ACCESS_TOKEN", session.accessToken],
+    ["LINKEDIN_PERSON_URN", session.personUrn],
+    ...(session.refreshToken ? [["LINKEDIN_REFRESH_TOKEN", session.refreshToken]] : []),
+  ];
+
+  console.log("\nGitHub Secrets 갱신 중...");
+  for (const [name, value] of pairs) {
+    try {
+      await runGh(["secret", "set", name], value);
+      console.log(`  ✅ ${name}`);
+    } catch (err) {
+      console.log(`  ❌ ${name} - ${err.message}`);
+    }
+  }
+}
+
+/**
+ * gh 가 있고 로그인돼 있는지 확인
+ * @returns {Promise<boolean>}
+ */
+async function hasGh() {
+  try {
+    await runGh(["auth", "status"]);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * gh 를 실행한다. 출력은 삼킨다 - 토큰이 섞여 나올 수 있다
+ * @param {string[]} args - gh 인자
+ * @param {string} [stdin] - 표준입력으로 넘길 값
+ * @returns {Promise<void>}
+ */
+function runGh(args, stdin) {
+  return new Promise((resolve, reject) => {
+    const p = spawn("gh", args, { stdio: ["pipe", "ignore", "pipe"] });
+    let stderr = "";
+    p.stderr.on("data", (c) => (stderr += c));
+    p.on("error", () => reject(new Error("gh 실행 실패")));
+    p.on("close", (code) =>
+      code === 0 ? resolve() : reject(new Error(stderr.trim().split("\n")[0] || `exit ${code}`))
+    );
+    if (stdin !== undefined) p.stdin.write(stdin);
+    p.stdin.end();
+  });
 }
 
 main().catch((err) => {
