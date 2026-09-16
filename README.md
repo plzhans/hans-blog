@@ -20,7 +20,12 @@ hans-blog/
 │   ├── themes/m10c/   # 테마 (git subtree로 vendoring, 아래 참고)
 │   └── public/        # 빌드 결과물 (GitHub Actions에서 배포)
 ├── src/
-│   └── NotionCli.mjs  # Notion → Hugo Markdown 변환 CLI
+│   ├── NotionCli.mjs  # Notion → Hugo Markdown 변환 CLI
+│   ├── clients/       # 외부 API 클라이언트 (Notion, Gemini)
+│   └── services/      # 변환·생성 로직
+├── mcp/               # AI 에이전트용 MCP 서버 (아래 참고)
+├── prompts/           # AI 에이전트에 전달하는 작업 프롬프트
+├── .mcp.json          # MCP 서버 등록 (프로젝트 스코프)
 ├── .github/workflows/ # GitHub Actions 워크플로우
 ├── .makecom/          # Make.com 시나리오 설정
 ├── package.json
@@ -105,6 +110,46 @@ make translate
 ```
 
 > ChatGPT, Claude 등 사용하는 AI 에이전트에 [`prompts/translate-database-sync.md`](prompts/translate-database-sync.md) 파일을 참조하도록 요청하면 됩니다.
+
+## 대표 이미지 생성 (MCP)
+
+글의 대표 이미지를 이미지 모델 API 로 생성해 Notion 페이지에 넣습니다.
+
+AI 에게 SVG 를 그리게 하면 결과가 조악합니다. 그래서 Gemini 이미지 모델을 직접 호출합니다.
+AI 에이전트가 이 흐름을 스스로 굴릴 수 있도록 MCP 서버로 감쌌습니다.
+
+```
+mcp/
+├── server.mjs                            # 실행 진입로. 서버를 띄우고 도구를 등록만 한다
+├── serviceFactory.mjs                    # 서비스 조립. 로직 없이 주입만 한다
+├── toolResult.mjs                        # MCP 결과 헬퍼 (텍스트 / 이미지 / 오류)
+└── tools/
+    ├── index.mjs                         # 등록할 도구 목록
+    ├── generateFeaturedImage.mjs         # 프롬프트 → 이미지 생성
+    └── attachFeaturedImageToNotion.mjs   # 이미지 → Notion 업로드
+```
+
+| 도구 | 하는 일 |
+| --- | --- |
+| `generate_featured_image` | 프롬프트로 이미지를 생성합니다. `tmp/featured-images/` 에 저장하고 이미지를 그대로 돌려줍니다. |
+| `attach_featured_image_to_notion` | 저장된 이미지를 Notion 페이지에 업로드해 이미지 블록으로 넣습니다. |
+
+두 단계로 나눈 이유가 있습니다. 이미지 모델은 한 번에 원하는 그림을 주지 않습니다.
+생성 결과를 눈으로 보고 판단한 뒤 통과한 것만 Notion 에 올립니다.
+
+Notion 이 원본입니다. `content/posts/**/index.md` 를 직접 고치지 않습니다.
+이미지를 Notion 에 올린 뒤 `make notion-database-sync` 로 내려받습니다.
+
+프롬프트 작성 규칙과 블로그 고유의 시각 스타일은
+[`prompts/generate-featured-image.md`](prompts/generate-featured-image.md) 에 정의되어 있습니다.
+
+`.env` 에 `GEMINI_API_KEY` 가 필요합니다. https://aistudio.google.com/apikey 에서 발급합니다.
+Gemini API 가 활성화된 프로젝트의 키여야 합니다.
+
+### 도구 추가하기
+
+`mcp/tools/` 아래에 파일을 하나 만들고 `tools/index.mjs` 에만 더합니다.
+`server.mjs` 는 손대지 않습니다.
 
 ## 배포
 

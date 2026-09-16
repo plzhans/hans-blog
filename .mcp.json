@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hans-blog": {
+      "command": "node",
+      "args": ["mcp/server.mjs"]
+    }
+  }
+}

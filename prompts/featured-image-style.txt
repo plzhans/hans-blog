@@ -1,0 +1,22 @@
+Isometric 3D technical illustration for a developer blog article header.
+
+Style:
+- Isometric projection, flat shaded surfaces with soft gradients. Not photographic.
+- Background: deep navy fading into dark purple, with faint grid lines.
+- Accents: neon cyan, mint green and violet, with a soft outer glow.
+- One clear focal point at the center. Supporting elements sink into the background.
+- Flowing light lines connect elements to show how data moves between them.
+- Clean vector-like finish. No texture, no noise, no film grain, no watermark.
+- Wide cinematic composition with generous empty space around the focal point.
+
+Text rules:
+- Keep any text in the image extremely short. Single English words or short commands only.
+- Never render Korean text, sentences or paragraphs.
+- Prefer monospace lettering for anything that looks like code or a filename.
+
+Avoid:
+- Human faces and hands.
+- Corporate logos and real brand marks.
+- Busy layouts where elements are spread evenly with no focus.
+
+Subject:
