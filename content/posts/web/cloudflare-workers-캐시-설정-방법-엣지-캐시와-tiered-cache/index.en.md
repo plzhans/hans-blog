@@ -15,11 +15,11 @@ lastmod: 2026-09-11T13:01:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.png"
+  - "assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg"
 ---
 
 
-![Cover image showing a Tiered Cache setup where multiple edge nodes reach the origin through a single upper tier](./assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.png)
+![Diagram of Cloudflare Workers edge caches separated per data center, with Tiered Cache reducing origin requests through an upper tier](./assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg)
 
 
 ## Overview
@@ -88,7 +88,7 @@ ctx.waitUntil(cache.put(key, response.clone()));
 Tokyo doesn't know what Seoul cached. When you serve traffic coming in from all over the world, the same URL hits the origin as many times as you have data centers.
 
 
-[**Tiered Cache<strong>](https://developers.cloudflare.com/cache/how-to/tiered-cache/) </strong>reduces that.<strong> When a lower data center misses, it asks an </strong>upper data center** first instead of the origin. It's free on every plan. One caveat: **entries stored with `cache.put()` are not eligible for Tiered Cache** — which is why approach ① is the better default.
+[**Tiered Cache**](https://developers.cloudflare.com/cache/how-to/tiered-cache/) **reduces that.** When a lower data center misses, it asks an **upper data center** first instead of the origin. It's free on every plan. One caveat: **entries stored with `cache.put()` are not eligible for Tiered Cache** — which is why approach ① is the better default.
 
 
 **The cache key is the URL.** If the same URL returns different responses depending on request headers (`Accept-Language` and the like), leaving it as is means whoever fills the cache first serves everyone. You can change the key with `cf.cacheKey`, but that is <strong>Enterprise only</strong>, so on lower plans you have to put the distinguishing value in the URL query.

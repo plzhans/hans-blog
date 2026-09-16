@@ -11,15 +11,15 @@ tags:
   - "cloudflare"
   - "workers"
 date: 2026-09-11T13:01:00.000Z
-lastmod: 2026-09-11T13:01:00.000Z
+lastmod: 2026-09-16T14:55:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.png"
+  - "assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg"
 ---
 
 
-![여러 엣지 노드가 상위 계층 한 곳을 거쳐 원본에 닿는 Tiered Cache 구성을 나타낸 대표 이미지](./assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.png)
+![Cloudflare Workers 의 엣지 캐시가 데이터센터마다 분리되고 Tiered Cache 가 상위 계층을 거쳐 오리진 요청을 줄이는 구성](./assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg)
 
 
 ## 개요
@@ -88,7 +88,7 @@ ctx.waitUntil(cache.put(key, response.clone()));
 서울에서 캐시한 것을 도쿄는 모른다. 전 세계에서 들어오는 트래픽을 상대하면 같은 URL 이 데이터센터 수만큼 원본을 때린다.
 
 
-[**Tiered Cache<strong>](https://developers.cloudflare.com/cache/how-to/tiered-cache/) </strong>가 그걸 줄여 준다.<strong> 하위 데이터센터가 미스일 때 오리진이 아니라 </strong>상위 데이터센터**에 먼저 묻는다. 전 플랜 무료다. 다만 **`cache.put()` 으로 넣은 것은 Tiered Cache 대상이 아니다** — 그래서 ①번 방식을 쓰는 편이 낫다.
+[**Tiered Cache**](https://developers.cloudflare.com/cache/how-to/tiered-cache/) **가 그걸 줄여 준다.** 하위 데이터센터가 미스일 때 오리진이 아니라 <strong>상위 데이터센터</strong>에 먼저 묻는다. 전 플랜 무료다. 다만 **`cache.put()` 으로 넣은 것은 Tiered Cache 대상이 아니다** — 그래서 ①번 방식을 쓰는 편이 낫다.
 
 
 **캐시 키는 URL 이다.** 같은 URL 이 요청 헤더에 따라 다른 응답을 준다면(`Accept-Language` 등) 그대로 두면 먼저 채운 쪽이 전부에게 나간다. `cf.cacheKey` 로 키를 바꾸는 방법이 있지만 <strong>Enterprise 전용</strong>이라, 그 아래 플랜에서는 구분값을 URL 쿼리에 넣어야 한다.

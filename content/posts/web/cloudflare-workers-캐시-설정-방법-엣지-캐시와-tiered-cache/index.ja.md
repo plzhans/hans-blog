@@ -15,11 +15,11 @@ lastmod: 2026-09-11T13:01:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.png"
+  - "assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg"
 ---
 
 
-![複数のエッジノードが上位階層の一箇所を経由してオリジンに到達するTiered Cache構成を表した代表画像](./assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.png)
+![Cloudflare Workers のエッジキャッシュがデータセンターごとに分かれ、Tiered Cache が上位階層を経由してオリジンへのリクエストを減らす構成](./assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg)
 
 
 ## 概要
@@ -88,7 +88,7 @@ ctx.waitUntil(cache.put(key, response.clone()));
 ソウルでキャッシュしたものを東京は知りません。全世界から入ってくるトラフィックを相手にすると、同じURLがデータセンターの数だけオリジンを叩きます。
 
 
-[**Tiered Cache<strong>](https://developers.cloudflare.com/cache/how-to/tiered-cache/) </strong>がそれを減らしてくれます。<strong>下位のデータセンターがミスしたとき、オリジンではなく</strong>上位のデータセンター**に先に問い合わせます。全プラン無料です。ただし、**`cache.put()` で入れたものはTiered Cacheの対象外です** — そのため①の方式を使う方がよいです。
+[**Tiered Cache**](https://developers.cloudflare.com/cache/how-to/tiered-cache/) **がそれを減らしてくれます。**下位のデータセンターがミスしたとき、オリジンではなく**上位のデータセンター**に先に問い合わせます。全プラン無料です。ただし、**`cache.put()` で入れたものはTiered Cacheの対象外です** — そのため①の方式を使う方がよいです。
 
 
 **キャッシュキーはURLです。** 同じURLがリクエストヘッダーによって異なるレスポンスを返す場合（`Accept-Language` など）、そのままにしておくと先に埋めた方が全員に返されます。`cf.cacheKey` でキーを変える方法がありますが<strong>Enterprise専用</strong>なので、それ以下のプランでは区別する値をURLのクエリに入れる必要があります。
