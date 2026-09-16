@@ -11,15 +11,15 @@ tags:
   - "seo"
   - "workers"
 date: 2026-09-11T13:01:00.000Z
-lastmod: 2026-09-11T13:01:00.000Z
+lastmod: 2026-09-16T14:55:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png"
+  - "assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg"
 ---
 
 
-![Cloudflare Workers 엣지 노드를 가운데 두고 호스팅·로컬 개발·캐시·SEO 네 편이 이어지는 시리즈 대표 이미지](./assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png)
+![Cloudflare Workers 정적 사이트 시리즈가 호스팅·로컬 개발·캐시·SEO 네 편으로 이어지는 구성](./assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg)
 
 
 ## 개요
@@ -80,7 +80,7 @@ Workers Static Assets 가 무엇이고 <strong>요청이 어떤 순서로 흐르
 `wrangler` 설치부터 배포까지. 런타임 의존성은 늘지 않는다는 것, 워커 코드의 <strong>타입 설정을 분리</strong>해야 하는 이유, 그리고 가장 헷갈리는 것 하나.
 
 
-**`wrangler dev` 는 프론트 개발 서버가 아니다.<strong> 프로덕션과 같은 런타임(`workerd`)을 로컬에 띄우는 것이라, 소스가 아니라 </strong>빌드 산출물**을 먹는다. 이걸 모르면 "분명히 고쳤는데 왜 그대로지" 를 반복한다.
+**`wrangler dev` 는 프론트 개발 서버가 아니다.** 프로덕션과 같은 런타임(`workerd`)을 로컬에 띄우는 것이라, 소스가 아니라 <strong>빌드 산출물</strong>을 먹는다. 이걸 모르면 "분명히 고쳤는데 왜 그대로지" 를 반복한다.
 
 
 → [wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포](../126-cloudflare-workers-wrangler-dev-deploy/)
@@ -92,7 +92,7 @@ Workers Static Assets 가 무엇이고 <strong>요청이 어떤 순서로 흐르
 워커가 외부 API 를 부르기 시작하면 캐시가 필요해진다. 안 걸면 원본 부하가 페이지뷰만큼 늘어난다.
 
 
-거는 방법은 둘인데 **고르는 기준이 있다.<strong> 그리고 엣지 캐시가 </strong>데이터센터마다 따로**라는 점은 알고 나면 당연하지만 모르면 "왜 캐시가 안 맞지" 로 한참 헤맨다.
+거는 방법은 둘인데 **고르는 기준이 있다.** 그리고 엣지 캐시가 <strong>데이터센터마다 따로</strong>라는 점은 알고 나면 당연하지만 모르면 "왜 캐시가 안 맞지" 로 한참 헤맨다.
 
 
 → [Cloudflare Workers 캐시 설정 방법 - 엣지 캐시와 Tiered Cache](../127-cloudflare-workers-cache-tiered-cache/)

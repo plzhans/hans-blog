@@ -15,11 +15,11 @@ lastmod: 2026-09-11T13:01:00.000Z
 toc: true
 draft: false
 images:
-  - "assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png"
+  - "assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg"
 ---
 
 
-![Series cover image with a Cloudflare Workers edge node at the center, connecting the four parts: hosting, local development, caching, and SEO](./assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png)
+![Diagram of the Cloudflare Workers static site series, with hosting, local development, caching and SEO branching out from the center](./assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg)
 
 
 ## Overview
@@ -80,7 +80,7 @@ The key points are the basic rule that **"if the asset exists, the Worker doesn'
 From installing `wrangler` to deploying. That your runtime dependencies don't grow, why you need to <strong>separate the type configuration</strong> for your Worker code, and the single most confusing thing about it.
 
 
-**`wrangler dev` is not a frontend dev server.<strong> It runs the same runtime as production (`workerd`) locally, so it consumes </strong>build output**, not source. Not knowing this gets you stuck repeating "I definitely changed it, so why is it the same?"
+**`wrangler dev` is not a frontend dev server.** It runs the same runtime as production (`workerd`) locally, so it consumes **build output**, not source. Not knowing this gets you stuck repeating "I definitely changed it, so why is it the same?"
 
 
 → [How to Use wrangler - Local Development and Deployment for Cloudflare Workers](../126-cloudflare-workers-wrangler-dev-deploy/)
@@ -92,7 +92,7 @@ From installing `wrangler` to deploying. That your runtime dependencies don't gr
 Once your Worker starts calling external APIs, you need a cache. Without one, origin load grows in proportion to page views.
 
 
-There are two ways to do it, and **there's a basis for choosing.<strong> And the fact that the edge cache is </strong>separate per data center** is obvious once you know it, but without that knowledge you'll waste a lot of time wondering "why isn't the cache hitting?"
+There are two ways to do it, and **there's a basis for choosing.** And the fact that the edge cache is **separate per data center** is obvious once you know it, but without that knowledge you'll waste a lot of time wondering "why isn't the cache hitting?"
 
 
 → [How to Set Up Caching in Cloudflare Workers - Edge Cache and Tiered Cache](../127-cloudflare-workers-cache-tiered-cache/)
