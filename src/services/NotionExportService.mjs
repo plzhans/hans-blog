@@ -981,9 +981,17 @@ export class NotionExportService {
    */
   #fixKoreanBoldItalic(markdown) {
     // **text**한글 → <strong>text</strong>한글 (<strong>과 ** 결과 동일, 한글 뒤따를 때 파싱 우회)
+    //
+    // 뒤따르는 글자가 한글인지는 정규식 밖에서 본다. 그 조건을 패턴 안에 넣으면
+    // "**A** 그리고 **B**" 처럼 한 문단에 볼드가 둘일 때 첫 쌍이 매칭에 실패하고,
+    // 엔진이 앞 쌍의 닫는 **와 뒤 쌍의 여는 **를 짝지어 사이의 일반 텍스트까지
+    // 감싸 버린다. 쌍을 왼쪽부터 정상으로 맺은 뒤 치환 여부만 판단한다.
+    const endsWithHangul = (str, index) => /[\uAC00-\uD7A3]/.test(str[index] ?? "");
     return markdown
-      .replace(/\*\*([^*\n]+)\*\*([\uAC00-\uD7A3])/g, '<strong>$1</strong>$2')
-      .replace(/(?<!\*)\*(?!\*)([^*\n]+)\*(?!\*)([\uAC00-\uD7A3])/g, '<em>$1</em>$2');
+      .replace(/\*\*([^*\n]+)\*\*/g, (m, inner, offset, str) =>
+        endsWithHangul(str, offset + m.length) ? `<strong>${inner}</strong>` : m)
+      .replace(/(?<!\*)\*(?!\*)([^*\n]+)\*(?!\*)/g, (m, inner, offset, str) =>
+        endsWithHangul(str, offset + m.length) ? `<em>${inner}</em>` : m);
   }
 
   /**
