@@ -10,7 +10,7 @@ tags:
   - "dsm"
   - "synology-nas"
 date: 2026-05-16T05:03:00.000Z
-lastmod: 2026-09-03T02:14:00.000Z
+lastmod: 2026-09-03T02:15:00.000Z
 toc: true
 draft: false
 images:
@@ -30,7 +30,7 @@ DSM을 외부에서 직접 노출하는 방식은 위험하므로 Tailscale, Ope
 외부 접근을 차단하고 도메인을 사설 IP로 매칭한 환경에서는 HTTP 인증 방식으로 무료 인증서 등록이 어렵다. 
 
 
-이 글은 **Synology NAS(DSM)에서** [**acme.sh<strong>](http://acme.sh/)</strong>로 Let’s Encrypt 무료 SSL 인증서를 발급하고 DSM에 자동 설치하는 방법**을 정리한다.
+이 글은 **Synology NAS(DSM)에서** [**acme.sh**](http://acme.sh/)<strong>로 Let’s Encrypt 무료 SSL 인증서를 발급하고 DSM에 자동 설치하는 방법</strong>을 정리한다.
 
 
 ---
