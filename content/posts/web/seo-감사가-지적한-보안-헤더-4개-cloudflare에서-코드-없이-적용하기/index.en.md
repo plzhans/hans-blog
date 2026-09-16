@@ -23,9 +23,6 @@ images:
 ![Representative image showing a setup that splits security headers between Cloudflare and an HTML meta tag](./assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png)
 
 
-![Representative image showing a setup that splits security headers between Cloudflare and an HTML meta tag](./assets/2_3cb22a0f-7e83-805e-96d1-eef71485d603.png)
-
-
 ## Overview
 
 
