@@ -9,7 +9,7 @@
   },
   "last_edited_by": {
     "object": "user",
-    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
+    "id": "00000000-0000-0000-0000-000000000003"
   },
   "cover": null,
   "icon": null,
@@ -75,7 +75,7 @@
       "id": "ZlPk",
       "type": "date",
       "date": {
-        "start": "2026-08-29T19:52:00.000+09:00",
+        "start": "2026-08-29T20:03:00.000+09:00",
         "end": null,
         "time_zone": null
       }
@@ -239,6 +239,5 @@
   },
   "url": "https://app.notion.com/p/Redis-dump-vs-aof-2fd22a0f7e8381aa90c1ca4e5a44b42d",
   "public_url": null,
-  "archived": false,
-  "request_id": "df50fcaf-c179-4058-9079-02568cd801ac"
+  "archived": false
 }

@@ -10,7 +10,7 @@ tags:
   - "database"
   - "redis"
 date: 2026-02-06T06:30:00.000Z
-lastmod: 2026-08-29T10:52:00.000Z
+lastmod: 2026-08-29T11:03:00.000Z
 toc: true
 draft: false
 images:
@@ -151,7 +151,7 @@ auto-aof-rewrite-min-size 64mb
 ### 장점
 
 - 명령어 처리 시 즉시 기록하여 **데이터 유실 가능성 감소**
-- RDB처럼 **빠른 복구<strong> + AOF의 </strong>안정성** 확보
+- RDB처럼 **빠른 복구** + AOF의 **안정성** 확보
 
 ### 단점
 
