@@ -1,0 +1,248 @@
+{
+  "object": "page",
+  "id": "3dd22a0f-7e83-814b-a2ce-d9ee732fc731",
+  "created_time": "2026-09-16T14:10:00.000Z",
+  "last_edited_time": "2026-09-16T14:55:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "00000000-0000-0000-0000-000000000003"
+  },
+  "cover": null,
+  "icon": null,
+  "parent": {
+    "type": "data_source_id",
+    "data_source_id": "2fd22a0f-7e83-814c-9f88-000b7bdd1d4a",
+    "database_id": "2fd22a0f-7e83-81d7-82d0-cd0ed07cb7cb"
+  },
+  "in_trash": false,
+  "is_archived": false,
+  "is_locked": false,
+  "properties": {
+    "AI_번역": {
+      "id": "H%3BiO",
+      "type": "checkbox",
+      "checkbox": false
+    },
+    "created_at": {
+      "id": "Hhcd",
+      "type": "created_time",
+      "created_time": "2026-09-16T14:10:00.000Z"
+    },
+    "태그": {
+      "id": "NGeX",
+      "type": "multi_select",
+      "multi_select": [
+        {
+          "id": "75d96651-3822-4c98-818e-e5b6f3fd3496",
+          "name": "nodejs",
+          "color": "green"
+        },
+        {
+          "id": "f245b6ad-94ec-49d8-b9c2-4f046d7b7e4d",
+          "name": "sentry",
+          "color": "gray"
+        },
+        {
+          "id": "28aef06f-de07-4f49-a0bb-5d02ff0377ed",
+          "name": "datagokr",
+          "color": "yellow"
+        }
+      ]
+    },
+    "updated_at": {
+      "id": "PeH%60",
+      "type": "last_edited_time",
+      "last_edited_time": "2026-09-16T14:55:00.000Z"
+    },
+    "AUTO_ID": {
+      "id": "WCbd",
+      "type": "unique_id",
+      "unique_id": {
+        "prefix": null,
+        "number": 53
+      }
+    },
+    "발행 URL": {
+      "id": "Yx%3Ai",
+      "type": "url",
+      "url": "https://blog.plzhans.com/posts/130-data-go-kr-400-invalid-request-parameter-error/"
+    },
+    "toc": {
+      "id": "ZR~A",
+      "type": "checkbox",
+      "checkbox": true
+    },
+    "수정일": {
+      "id": "ZlPk",
+      "type": "date",
+      "date": {
+        "start": "2026-09-16T23:55:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "상태": {
+      "id": "%5B~Jq",
+      "type": "status",
+      "status": {
+        "id": "DOao",
+        "name": "발행 완료",
+        "color": "green"
+      }
+    },
+    "발행 결과": {
+      "id": "_xvq",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "✅ 발행 완료 (2026-09-16T14:55:19.174Z)",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "✅ 발행 완료 (2026-09-16T14:55:19.174Z)",
+          "href": null
+        }
+      ]
+    },
+    "요약": {
+      "id": "bCTc",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
+          "href": null
+        }
+      ]
+    },
+    "POST_ID": {
+      "id": "ik%40%5C",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "130",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "130",
+          "href": null
+        }
+      ]
+    },
+    "slug": {
+      "id": "inig",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "data-go-kr-400-invalid-request-parameter-error",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "data-go-kr-400-invalid-request-parameter-error",
+          "href": null
+        }
+      ]
+    },
+    "동기화": {
+      "id": "keny",
+      "type": "button",
+      "button": {}
+    },
+    "발행일": {
+      "id": "nEEr",
+      "type": "date",
+      "date": {
+        "start": "2026-09-16T14:55:00.000+00:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "생성일": {
+      "id": "oe%60s",
+      "type": "date",
+      "date": {
+        "start": "2026-09-16T23:10:00.000+09:00",
+        "end": null,
+        "time_zone": null
+      }
+    },
+    "카테고리": {
+      "id": "vwVr",
+      "type": "select",
+      "select": {
+        "id": "ab81d1ac-9425-4cbe-91ba-0909c81fb65b",
+        "name": "Develop",
+        "color": "pink"
+      }
+    },
+    "제목": {
+      "id": "title",
+      "type": "title",
+      "title": [
+        {
+          "type": "text",
+          "text": {
+            "content": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
+          "href": null
+        }
+      ]
+    }
+  },
+  "url": "https://app.notion.com/p/API-400-environment-3dd22a0f7e83814ba2ced9ee732fc731",
+  "public_url": null,
+  "archived": false
+}
