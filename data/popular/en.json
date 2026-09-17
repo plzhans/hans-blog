@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T04:59:16.470Z",
+  "generated_at": "2026-09-17T05:01:22.959Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -47,6 +47,19 @@
     },
     {
       "rank": 4,
+      "slug": "118-telegram-chat-backup",
+      "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
+      "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
+      "date": "2026-07-27T05:15:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/118-telegram-chat-backup/",
+      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 12
+    },
+    {
+      "rank": 5,
       "slug": "120-cloudflare-security-headers-hsts-csp",
       "title": "4 Security Headers Flagged by an SEO Audit — Applying Them on Cloudflare Without Code",
       "description": "Explains why SEO audit reports flag HSTS, CSP, X-Content-Type-Options, and Referrer-Policy, and what each header actually does. Covers splitting fixed-value headers into Cloudflare Transform Rules while managing the frequently-changing CSP via an HTML meta tag, and why X-Frame-Options is still needed since meta can't handle frame-ancestors.",
@@ -57,19 +70,6 @@
       "url": "/en/posts/120-cloudflare-security-headers-hsts-csp/",
       "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
       "count": 12
-    },
-    {
-      "rank": 5,
-      "slug": "118-telegram-chat-backup",
-      "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
-      "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
-      "date": "2026-07-27T05:15:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/118-telegram-chat-backup/",
-      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 8
     },
     {
       "rank": 6,
@@ -198,7 +198,7 @@
         "web"
       ],
       "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
-      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
       "count": 3
     },
     {
@@ -237,7 +237,7 @@
         "web"
       ],
       "url": "/en/posts/126-cloudflare-workers-wrangler-dev-deploy/",
-      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.png",
+      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
       "count": 2
     },
     {

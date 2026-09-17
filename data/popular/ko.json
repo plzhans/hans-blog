@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T04:59:16.462Z",
+  "generated_at": "2026-09-17T05:01:22.949Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -47,6 +47,19 @@
     },
     {
       "rank": 4,
+      "slug": "118-telegram-chat-backup",
+      "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
+      "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
+      "date": "2026-07-27T05:15:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/posts/118-telegram-chat-backup/",
+      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 12
+    },
+    {
+      "rank": 5,
       "slug": "120-cloudflare-security-headers-hsts-csp",
       "title": "SEO 감사가 지적한 보안 헤더 4개, Cloudflare에서 코드 없이 적용하기",
       "description": "SEO 감사 리포트가 HSTS·CSP·X-Content-Type-Options·Referrer-Policy를 지적하는 이유와 각 헤더의 역할을 정리합니다. 값이 고정된 헤더는 Cloudflare Transform Rules로, 자주 바뀌는 CSP는 HTML meta 태그로 나눠 관리하는 방법과 meta에서 frame-ancestors가 안 되기 때문에 X-Frame-Options가 필요한 이유를 다룹니다.",
@@ -57,19 +70,6 @@
       "url": "/posts/120-cloudflare-security-headers-hsts-csp/",
       "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
       "count": 12
-    },
-    {
-      "rank": 5,
-      "slug": "118-telegram-chat-backup",
-      "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
-      "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
-      "date": "2026-07-27T05:15:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/118-telegram-chat-backup/",
-      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 8
     },
     {
       "rank": 6,
@@ -198,7 +198,7 @@
         "web"
       ],
       "url": "/posts/124-cloudflare-workers-static-site-guide/",
-      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.png",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
       "count": 3
     },
     {
@@ -237,7 +237,7 @@
         "web"
       ],
       "url": "/posts/126-cloudflare-workers-wrangler-dev-deploy/",
-      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.png",
+      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
       "count": 2
     },
     {
