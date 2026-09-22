@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T05:09:09.978Z",
+  "generated_at": "2026-09-22T05:10:09.334Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 101
+      "count": 102
     },
     {
       "rank": 2,
