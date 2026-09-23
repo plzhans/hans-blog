@@ -1,0 +1,13 @@
+{
+  "name": "hans-blog-landing",
+  "version": "0.0.1",
+  "private": true,
+  "description": "plzhans.com 랜딩 페이지. 배포 도구(wrangler)를 이 배포 단위가 직접 들고 있다.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "deploy:develop": "wrangler deploy -c wrangler.develop.jsonc"
+  },
+  "devDependencies": {
+    "wrangler": "4.129.0"
+  }
+}

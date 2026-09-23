@@ -27,7 +27,6 @@ jobs:
       HUGO_CACHEDIR: /tmp/hugo_cache
       # 운영 배포와 같은 판본으로 고정한다. 여기가 어긋나면 develop 으로 확인하는 의미가 없다.
       HUGO_VERSION: "0.166.0"
-      WRANGLER_VERSION: 4.129.0
 
     steps:
       - name: Checkout
@@ -40,6 +39,18 @@ jobs:
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
+
+      # 배포 도구 wrangler 가 landing/package.json 에 있다. 이 워크플로는 블로그를 굽지
+      # 않으므로 루트 의존성(pagefind 55MB 포함)은 설치하지 않는다 - landing 것만 깐다.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: landing/package-lock.json
+
+      - name: Install landing dependencies
+        run: npm ci --prefix landing
 
       - name: Cache Hugo
         uses: actions/cache@v4
@@ -84,20 +95,15 @@ jobs:
           fi
           echo "확인 완료 - Disallow / noindex 있음, 광고 없음"
 
-      - name: Cache npm (wrangler)
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-wrangler-${{ env.WRANGLER_VERSION }}
-
       - name: Deploy to Cloudflare Workers
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CI: "true"
+          WRANGLER_SEND_METRICS: "false"
         run: |
           cd landing
-          CI=true WRANGLER_SEND_METRICS=false npx "wrangler@$WRANGLER_VERSION" deploy \
-            -c wrangler.develop.jsonc \
+          npm run deploy:develop -- \
             --tag "${{ github.sha }}" \
             --message "develop ref: ${{ github.ref_name }}"
 

@@ -52,6 +52,8 @@ hugo/public
 !.claude/skills/
 
 # landing (root domain, separate Hugo site)
+# wrangler 가 만드는 로컬 상태 디렉터리 (배포 캐시/세션). 생성물이라 추적하지 않는다.
+landing/.wrangler
 landing/public
 landing/public-develop
 # blog 최신/인기글 스냅샷. 배포 때마다 덮어써지는 생성물이라 추적하지 않는다

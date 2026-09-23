@@ -56,8 +56,13 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
+      # 루트는 검색 인덱스를 굽는 pagefind 때문에, landing 은 배포 도구 wrangler 때문에
+      # 필요하다. 둘은 서로 다른 배포 단위라 package.json 을 따로 들고 있다 - wrangler 는
+      # workerd 바이너리까지 236MB 라 루트에 두면 Notion 동기화 워크플로들까지 끌어쓴다.
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm ci --prefix landing
 
       - name: Cache Hugo
         uses: actions/cache@v4
@@ -108,26 +113,18 @@ jobs:
         run: hugo -s ./landing --baseURL https://plzhans.com --minify --gc --cleanDestinationDir
 
       # Pages가 아니라 Workers Static Assets로 배포한다 (계정의 다른 프론트엔드들과 동일한 방식).
-      # npx가 매 실행마다 wrangler를 새로 받으면 이 스텝만 수 분씩 걸린다 - npm 캐시로 완화.
-      # 버전을 고정하는 이유는 hugo.toml의 compatibility_date를 고정하는 이유와 같다:
-      # 배포할 때마다 다른 버전이 잡히면 같은 산출물을 다시 올려도 동작이 달라질 수 있다.
-      - name: Cache npm (wrangler)
-        env:
-          WRANGLER_VERSION: 4.129.0
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-wrangler-${{ env.WRANGLER_VERSION }}
-
-      # Pages가 아니라 Workers Static Assets로 배포한다 (계정의 다른 프론트엔드들과 동일한 방식).
+      # 버전은 landing/package-lock.json 에 고정돼 있다. 배포할 때마다 다른 판본이 잡히면
+      # 같은 산출물을 다시 올려도 동작이 달라질 수 있어서, hugo.toml 의 compatibility_date 를
+      # 고정하는 것과 같은 이유로 락파일에 박아둔다. develop 배포도 같은 락파일을 쓴다.
       - name: Deploy landing to Cloudflare Workers
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          WRANGLER_VERSION: 4.129.0
+          CI: "true"
+          WRANGLER_SEND_METRICS: "false"
         run: |
           cd landing
-          CI=true WRANGLER_SEND_METRICS=false npx "wrangler@$WRANGLER_VERSION" deploy \
+          npm run deploy -- \
             --tag "${{ github.sha }}" \
             --message "ref: ${{ github.ref_name }}"
 
