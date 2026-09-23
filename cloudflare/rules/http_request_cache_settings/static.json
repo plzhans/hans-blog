@@ -1,7 +1,7 @@
 {
   "ref": "static",
-  "description": "[static] URL이 고정되어 재발급되지 않는 정적 파일. status_code_ttl로 4xx/5xx는 캐싱 제외 - 안 그러면 /assets/* 밑에 존재하지 않는 경로(오타, 스캐너 요청 등)가 404를 받았을 때 그 404가 30일간 캐싱돼 나중에 실제 파일이 생겨도 스테일한 404가 계속 보이는 문제가 있었음(실제 재현: /assets/analytics.js).",
-  "expression": "(http.host eq \"blog.plzhans.com\") and (http.request.uri.path wildcard \"/favicon.ico\" or http.request.uri.path wildcard \"/assets/*\")",
+  "description": "[static] URL 이 고정되어 재발급되지 않는 정적 파일과 Pagefind 검색 인덱스. Pagefind 는 fragment/index/filter/pf_meta 만 넣는다 - 파일명에 콘텐츠 해시가 박혀 재발급되므로 오래 캐싱해도 스테일해지지 않는다. pagefind.js/pagefind-ui/wasm 같은 고정 이름 런타임은 일부러 뺐다 - 판본을 올리면 같은 이름으로 내용이 바뀌어 엣지와 브라우저에 옛 런타임이 30일간 남고, 그게 새 포맷 인덱스를 못 읽으면 검색이 깨진다. 그것들은 Cloudflare 기본 TTL(4시간)이면 충분하다. status_code_ttl 로 4xx/5xx 는 캐싱 제외 - 안 그러면 없는 경로의 404 가 30일간 박제돼 나중에 실제 파일이 생겨도 스테일한 404 가 계속 보인다(실제 재현: /assets/analytics.js).",
+  "expression": "(http.host eq \"blog.plzhans.com\") and (http.request.uri.path wildcard \"/favicon.ico\" or http.request.uri.path wildcard \"/assets/*\" or http.request.uri.path wildcard \"/pagefind/fragment/*\" or http.request.uri.path wildcard \"/pagefind/index/*\" or http.request.uri.path wildcard \"/pagefind/filter/*\" or http.request.uri.path wildcard \"/pagefind/*.pf_meta\")",
   "action": "set_cache_settings",
   "action_parameters": {
     "cache": true,
@@ -9,9 +9,18 @@
       "mode": "override_origin",
       "default": 2592000,
       "status_code_ttl": [
-        { "status_code_range": { "from": 400, "to": 599 }, "value": 0 }
+        {
+          "status_code_range": {
+            "from": 400,
+            "to": 599
+          },
+          "value": 0
+        }
       ]
     },
-    "browser_ttl": { "mode": "override_origin", "default": 2592000 }
+    "browser_ttl": {
+      "mode": "override_origin",
+      "default": 2592000
+    }
   }
 }
