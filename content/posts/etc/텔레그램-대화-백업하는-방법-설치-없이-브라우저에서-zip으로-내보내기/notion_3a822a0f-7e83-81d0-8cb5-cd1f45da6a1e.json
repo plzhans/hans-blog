@@ -2,14 +2,14 @@
   "object": "page",
   "id": "3a822a0f-7e83-81d0-8cb5-cd1f45da6a1e",
   "created_time": "2026-07-25T01:10:00.000Z",
-  "last_edited_time": "2026-09-03T07:25:00.000Z",
+  "last_edited_time": "2026-09-16T16:22:00.000Z",
   "created_by": {
     "object": "user",
     "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
   },
   "last_edited_by": {
     "object": "user",
-    "id": "00000000-0000-0000-0000-000000000003"
+    "id": "8906a0e4-defa-4e2f-bdc0-7c8102c9cbf8"
   },
   "cover": null,
   "icon": null,
@@ -71,7 +71,7 @@
     "updated_at": {
       "id": "PeH%60",
       "type": "last_edited_time",
-      "last_edited_time": "2026-09-03T07:25:00.000Z"
+      "last_edited_time": "2026-09-16T16:22:00.000Z"
     },
     "AUTO_ID": {
       "id": "WCbd",
@@ -155,6 +155,29 @@
         }
       ]
     },
+    "링크드인 결과": {
+      "id": "e%3EEp",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "✅ 게시 완료 (2026-09-16T16:22:39.551Z)",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "✅ 게시 완료 (2026-09-16T16:22:39.551Z)",
+          "href": null
+        }
+      ]
+    },
     "POST_ID": {
       "id": "ik%40%5C",
       "type": "rich_text",
@@ -206,6 +229,11 @@
       "type": "button",
       "button": {}
     },
+    "링크드인 URL": {
+      "id": "lC%5DD",
+      "type": "url",
+      "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7506024764432334849/"
+    },
     "발행일": {
       "id": "nEEr",
       "type": "date",
@@ -224,6 +252,29 @@
         "time_zone": null
       }
     },
+    "링크드인 문구": {
+      "id": "shm%3A",
+      "type": "rich_text",
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "텔레그램 대화를 백업할 일이 생겨서 도구를 하나 만들어 봤습니다.\n\n공식 내보내기가 있긴 하지만 쓰다 보니 아쉬운 지점이 있었습니다. 원하는 방과 기간만 골라서 나중에 읽기 좋게 남기고 싶었습니다.\n\n제일 오래 붙든 건 기능이 아니라 구조였습니다. 백업 도구가 전화번호와 로그인 코드를 받으면 그걸 지키는 일이 통째로 제 몫이 됩니다.\n\n그래서 서버를 두지 않았습니다. 브라우저가 MTProto로 텔레그램에 직접 붙습니다. 제 쪽으로 오는 데이터가 없습니다. 지킬 것도 없습니다.\n\n덕분에 설치도 가입도 필요 없습니다. HTML 파일 하나로 동작해서 모바일 브라우저에서도 돌아갑니다.\n\n가장 마음에 드는 기능은 익명 처리입니다. 이름과 프로필 사진을 가린 채로 내보낼 수 있습니다. 대화 기록을 넘겨야 할 때 유용합니다.\n\n소스는 전부 공개돼 있습니다.\n\n바로 써보기\nhttps://telegram-exporter.plzhans.com/\n\n정리한 글\nhttps://blog.plzhans.com/posts/118-telegram-chat-backup/",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "텔레그램 대화를 백업할 일이 생겨서 도구를 하나 만들어 봤습니다.\n\n공식 내보내기가 있긴 하지만 쓰다 보니 아쉬운 지점이 있었습니다. 원하는 방과 기간만 골라서 나중에 읽기 좋게 남기고 싶었습니다.\n\n제일 오래 붙든 건 기능이 아니라 구조였습니다. 백업 도구가 전화번호와 로그인 코드를 받으면 그걸 지키는 일이 통째로 제 몫이 됩니다.\n\n그래서 서버를 두지 않았습니다. 브라우저가 MTProto로 텔레그램에 직접 붙습니다. 제 쪽으로 오는 데이터가 없습니다. 지킬 것도 없습니다.\n\n덕분에 설치도 가입도 필요 없습니다. HTML 파일 하나로 동작해서 모바일 브라우저에서도 돌아갑니다.\n\n가장 마음에 드는 기능은 익명 처리입니다. 이름과 프로필 사진을 가린 채로 내보낼 수 있습니다. 대화 기록을 넘겨야 할 때 유용합니다.\n\n소스는 전부 공개돼 있습니다.\n\n바로 써보기\nhttps://telegram-exporter.plzhans.com/\n\n정리한 글\nhttps://blog.plzhans.com/posts/118-telegram-chat-backup/",
+          "href": null
+        }
+      ]
+    },
     "카테고리": {
       "id": "vwVr",
       "type": "select",
@@ -231,6 +282,15 @@
         "id": "0dafa6eb-ed7d-4b79-8f8f-8070db05a249",
         "name": "Etc",
         "color": "brown"
+      }
+    },
+    "링크드인 게시일": {
+      "id": "xIWi",
+      "type": "date",
+      "date": {
+        "start": "2026-09-16T16:22:00.000+00:00",
+        "end": null,
+        "time_zone": null
       }
     },
     "제목": {
