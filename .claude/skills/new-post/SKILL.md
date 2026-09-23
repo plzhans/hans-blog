@@ -138,6 +138,9 @@ H1 은 쓰지 않는다. 제목은 Notion 의 `제목` 프로퍼티가 된다. �
 
 사람이 Notion 에서 읽고 상태를 `발행 요청` 으로 바꾼 뒤 동기화한다.
 
+**발행 뒤에 글을 고쳤다면 상태를 다시 `발행 요청` 으로 돌린다.** `발행 완료` 는 동기화
+대상에서 빠진다. 오타 하나를 고쳐도 상태를 되돌려야 반영된다.
+
 ```bash
 node src/NotionCli.mjs page sync {page_id}      # 이 글만
 node src/NotionCli.mjs database sync            # 발행 요청 전체
