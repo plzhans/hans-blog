@@ -222,8 +222,12 @@ Turn on Website Access Enabled in the bucket settings.
 ## Wrapping up
 
 
-The same work simply moved from the terminal to a browser. Assign and Apply are still two steps, and keys and buckets are still created separately and joined by permissions. The webui is a wrapper around the admin API, so nothing here is confusing once you know the Garage concepts. Come at it the other way, screen first, and you get stuck in ways like assigning a node and never applying the layout.
+The same work simply moved from the terminal to a browser. Assign and Apply are still two steps, and keys and buckets are still created separately and joined by permissions.
 
-Two things are worth keeping in mind. This is a third-party console rather than an official one, so its release cycle is not tied to Garage itself. And **authentication is off by default.** Without `AUTH_USER_PASS`, anyone who can reach port 3909 is an administrator. There is no reason to leave that open even on an internal network.
+The webui is a wrapper around the admin API, so nothing here is confusing once you know the Garage concepts. Come at it the other way, screen first, and you get stuck in ways like assigning a node and never applying the layout.
+
+Two things are worth keeping in mind. This is a third-party console rather than an official one, so its release cycle is not tied to Garage itself.
+
+And **authentication is off by default.** Without `AUTH_USER_PASS`, anyone who can reach port 3909 is an administrator. There is no reason to leave that open even on an internal network.
 
 Changing the password means generating a new hash and recreating the container. In production it is easier to move authentication to a reverse proxy in front, or to stop publishing the port entirely and reach it only over a VPN.
