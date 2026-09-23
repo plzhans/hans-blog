@@ -1,0 +1,32 @@
+services:
+  garage:
+    image: dxflrs/garage:v2.4.1
+    container_name: garage
+    restart: unless-stopped
+    ports:
+      - "3900:3900"     # S3 API, signed requests only
+    # - "3901:3901"     # RPC, only needed to join other nodes
+      - "3902:3902"     # static website hosting, public read
+    # - "3903:3903"     # admin API, reached by webui over the compose network
+    env_file:
+      - .env
+    volumes:
+      - ./garage.toml:/etc/garage.toml:ro
+      - ./meta:/var/lib/garage/meta
+      - ./data:/var/lib/garage/data
+
+  webui:
+    image: khairul169/garage-webui:1.1.0
+    container_name: garage-webui
+    restart: unless-stopped
+    depends_on:
+      - garage
+    ports:
+      - "3909:3909"
+    environment:
+      API_BASE_URL: "http://garage:3903"
+      S3_ENDPOINT_URL: "http://garage:3900"
+      API_ADMIN_KEY: "${GARAGE_ADMIN_TOKEN}"
+      AUTH_USER_PASS: "${AUTH_USER_PASS}"
+    volumes:
+      - ./garage.toml:/etc/garage.toml:ro

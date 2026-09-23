@@ -1,0 +1,27 @@
+# required, no defaults
+metadata_dir = "/var/lib/garage/meta"
+data_dir     = "/var/lib/garage/data"
+
+# 1 for single node, 3 is the recommended cluster setting
+replication_factor = 1
+
+rpc_bind_addr = "[::]:3901"
+
+# db_engine   = "lmdb"              # default since v0.9
+# rpc_public_addr = "127.0.0.1:3901"  # advertised to other nodes, multi-node only
+# rpc_secret is injected as GARAGE_RPC_SECRET
+
+[s3_api]
+api_bind_addr = "[::]:3900"
+s3_region     = "garage"          # required, no default
+# root_domain = ".s3.garage.localhost"   # enables vhost-style, path-style works without it
+
+[admin]
+api_bind_addr = "[::]:3903"
+# admin_token is injected as GARAGE_ADMIN_TOKEN
+
+# whole section optional, root_domain required once it exists
+# [s3_web]
+# bind_addr   = "[::]:3902"
+# root_domain = ".web.garage.localhost"
+# index       = "index.html"

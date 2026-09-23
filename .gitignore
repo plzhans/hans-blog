@@ -20,6 +20,10 @@ logs
 .env
 *.env
 
+# sample/ 은 글과 함께 커밋되는 디렉터리다. 그 안의 시크릿을 명시적으로 막는다
+sample/**/.env
+sample/**/*.env
+
 # 링크드인 세션. 액세스 토큰은 60일이면 죽는 파생 상태라 .env 가 아니라 여기 산다
 # (make linkedin-auth 가 써넣는다). 토큰이 들어 있으므로 절대 추적하지 않는다.
 # CI 는 이 파일 없이 GitHub Secrets 의 환경변수로 동작한다.
@@ -34,7 +38,12 @@ config/google_service_account.json
 # hugo
 hugo/resources/_gen
 hugo/public
-.claude
+
+# .claude 는 settings.local.json 같은 개인 설정이 섞여 무시한다.
+# 스킬만 예외 - 팀(이라 쓰고 다른 기기라 읽는다)이 공유해야 한다.
+# 상위 디렉터리가 제외되면 하위를 되살릴 수 없으므로 .claude 가 아니라 .claude/* 를 막는다.
+.claude/*
+!.claude/skills/
 
 # landing (root domain, separate Hugo site)
 landing/public
