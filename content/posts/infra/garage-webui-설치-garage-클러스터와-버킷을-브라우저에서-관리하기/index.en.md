@@ -42,6 +42,10 @@ Installing Garage itself and configuring it from the CLI is covered in the previ
 ## Installation
 
 
+Docker and Docker Compose need to be installed already. That is covered in the post below.
+
+- [Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2](../97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/)
+
 ### Adding the webui service
 
 

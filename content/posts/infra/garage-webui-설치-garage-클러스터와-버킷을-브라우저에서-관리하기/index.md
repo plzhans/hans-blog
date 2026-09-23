@@ -12,7 +12,7 @@ tags:
   - "infra"
   - "s3"
 date: 2026-09-23T10:56:00.000Z
-lastmod: 2026-09-23T11:17:00.000Z
+lastmod: 2026-09-23T11:32:00.000Z
 toc: true
 draft: false
 images:
@@ -41,6 +41,10 @@ Garage 자체의 설치와 CLI 구성은 앞선 글에서 다룬다.
 
 ## 설치
 
+
+Docker 와 Docker Compose 가 설치돼 있어야 한다. 설치는 아래 글에서 다룬다.
+
+- [Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기](../97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/)
 
 ### webui 서비스 추가
 
