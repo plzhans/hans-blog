@@ -16,9 +16,13 @@ node src/NotionCli.mjs database sync --draft  # 초안까지
 
 ## skills/
 
-새 글은 **`/new-post` 스킬**로 쓴다. 규칙은 [.claude/skills/new-post/SKILL.md](.claude/skills/new-post/SKILL.md)
-에 있다. 실습 대화 → 목차 협의 → 초안 → Notion 페이지 생성 → 동기화 순서를 강제한다.
-승인 없이 다음 단계로 넘어가지 않는다.
+| 스킬 | 언제 |
+| --- | --- |
+| [new-post](.claude/skills/new-post/SKILL.md) | 새 글을 쓸 때. 실습 대화 → 목차 협의 → 초안 → Notion 생성 → 동기화 |
+| [translate-post](.claude/skills/translate-post/SKILL.md) | 동기화한 글을 en·ja 로 번역할 때. 대상 선별과 언어별 문체 |
+
+두 스킬 모두 승인 없이 다음 단계로 넘어가지 않고, 원문(`content/posts/**/index.md`)을
+직접 고치지 않는다.
 
 `.claude` 는 개인 설정이 섞여 있어 git 이 무시하지만 `.claude/skills/` 만은 추적한다.
 
@@ -28,8 +32,6 @@ node src/NotionCli.mjs database sync --draft  # 초안까지
 
 | 파일 | 언제 |
 | --- | --- |
-| [translate-database-sync.md](prompts/translate-database-sync.md) | 동기화 뒤 번역 대상을 고르고 일괄 처리할 때 |
-| [translate-blog-post.md](prompts/translate-blog-post.md) | 글 하나를 번역할 때. 상세 규칙과 언어별 문체 |
 | [generate-featured-image.md](prompts/generate-featured-image.md) | 대표 이미지를 만들 때. 순서·프롬프트 작성법·검수·비용 |
 | [claude-seo.md](prompts/claude-seo.md) | 발행된 글의 SEO 를 점검할 때 |
 | [featured-image-style.md](prompts/featured-image-style.md) | 읽지 않아도 된다. 코드가 이미지 프롬프트 앞에 자동으로 붙인다 |
