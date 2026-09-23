@@ -33,3 +33,30 @@ other = "About"
 
 [tldr_label]
 other = "Summary"
+
+[search_placeholder]
+other = "Search"
+
+[search_clear]
+other = "Clear"
+
+[search_load_more]
+other = "Load more results"
+
+[search_label]
+other = "Search"
+
+[search_filters_label]
+other = "Filters"
+
+[search_zero_results]
+other = "No results for [SEARCH_TERM]"
+
+[search_many_results]
+other = "[COUNT] results for [SEARCH_TERM]"
+
+[search_one_result]
+other = "[COUNT] result for [SEARCH_TERM]"
+
+[search_searching]
+other = "Searching for [SEARCH_TERM]..."

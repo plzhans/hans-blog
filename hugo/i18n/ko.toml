@@ -30,3 +30,30 @@ other = "About"
 
 [tldr_label]
 other = "요약"
+
+[search_placeholder]
+other = "검색어를 입력하세요"
+
+[search_clear]
+other = "지우기"
+
+[search_load_more]
+other = "더 보기"
+
+[search_label]
+other = "검색"
+
+[search_filters_label]
+other = "필터"
+
+[search_zero_results]
+other = "[SEARCH_TERM] 검색 결과가 없습니다"
+
+[search_many_results]
+other = "[SEARCH_TERM] 검색 결과 [COUNT]건"
+
+[search_one_result]
+other = "[SEARCH_TERM] 검색 결과 [COUNT]건"
+
+[search_searching]
+other = "[SEARCH_TERM] 검색 중..."

@@ -47,6 +47,18 @@ jobs:
           hugo-version: "0.166.0"
           extended: true
 
+      # 검색 인덱스를 굽는 Pagefind 가 devDependency 라 노드가 필요하다. 로컬과 같은
+      # 판본을 쓰도록 .nvmrc 를 따르고, package-lock.json 에 고정된 것을 npm ci 로
+      # 그대로 설치한다 (npx 로 받으면 로컬과 다른 판본이 잡힐 수 있다).
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Cache Hugo
         uses: actions/cache@v4
         with:
@@ -59,6 +71,12 @@ jobs:
         env:
           HUGO_BASEURL: https://blog.plzhans.com
         run: hugo -s ./hugo --baseURL $HUGO_BASEURL --minify --gc --cleanDestinationDir
+
+      # Pagefind 는 Hugo 가 만든 HTML 을 읽어 인덱스를 hugo/public/pagefind/ 에 떨구는
+      # 후처리 도구다. **반드시 Build 뒤, 아티팩트 업로드 전에** 돌아야 한다 - 이 스텝이
+      # 빠지면 /search/ 페이지만 배포되고 인덱스가 없어 검색창이 빈 채로 뜬다.
+      - name: Build search index
+        run: npm run pagefind:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -89,6 +107,7 @@ jobs:
           HUGO_BASEURL: https://plzhans.com
         run: hugo -s ./landing --baseURL https://plzhans.com --minify --gc --cleanDestinationDir
 
+      # Pages가 아니라 Workers Static Assets로 배포한다 (계정의 다른 프론트엔드들과 동일한 방식).
       # npx가 매 실행마다 wrangler를 새로 받으면 이 스텝만 수 분씩 걸린다 - npm 캐시로 완화.
       # 버전을 고정하는 이유는 hugo.toml의 compatibility_date를 고정하는 이유와 같다:
       # 배포할 때마다 다른 버전이 잡히면 같은 산출물을 다시 올려도 동작이 달라질 수 있다.

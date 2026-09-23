@@ -13,6 +13,21 @@ install:
 hugo:
 	hugo -s ./hugo --logLevel debug
 
+# 검색 인덱스를 굽는다.
+#
+# Pagefind 는 Hugo 가 만든 HTML(hugo/public)을 읽어 인덱스를 만드는 후처리 도구라
+# **반드시 빌드 뒤에 돌려야 한다.** `hugo server`(npm run hugo:watch)는 이 인덱스를
+# 만들지 않으므로, 로컬에서 검색을 확인하려면 make build 로 한 번 구워야 한다.
+# 글을 고쳐도 다시 굽기 전까지 검색 결과는 옛날 것이 나온다.
+.PHONY: pagefind-build
+pagefind-build:
+	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && npm run pagefind:build
+
+# 빌드 + 검색 인덱스. CI(deploy-hugo.yml)가 하는 것과 같은 순서다.
+.PHONY: build
+build:
+	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && npm run build
+
 .PHONY: notion-database-sync
 notion-database-sync:
 	@source "$$NVM_DIR/nvm.sh" && nvm use --silent && node src/NotionCli.mjs database sync $(RUN_ARGS)

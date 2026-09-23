@@ -1,5 +1,14 @@
 User-agent: *
 Allow: /
+{{- /* 검색 결과 페이지는 크롤링 가치가 없고 쿼리스트링마다 다른 URL로 보여 색인이 부풀 수 있음.
+       페이지 자체에도 noindex가 있지만(baseof.html, front matter의 noindex) robots.txt로 크롤을
+       먼저 끊는다. 언어별 경로(/search/, /en/search/, /ja/search/)를 직접 적지 않고 각 사이트의
+       실제 permalink에서 뽑아, 언어를 추가해도 자동으로 따라오게 한다. */}}
+{{- range hugo.Sites }}
+{{- with .GetPage "/search" }}
+Disallow: {{ .RelPermalink }}
+{{- end }}
+{{- end }}
 
 Content-Signal: search=yes, ai-input=yes, ai-train=yes
 

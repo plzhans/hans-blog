@@ -16,7 +16,7 @@
     {{/* meta 태그 CSP는 frame-ancestors/report-uri를 지원하지 않아 클릭재킹 방어는 Cloudflare의 X-Frame-Options로 별도 처리.
          adsense.publisherId는 현재 비활성이지만, 활성화 시 재수정 없도록 관련 도메인 미리 반영해둠.
          실제 켤 때는 광고주별 크리에이티브 도메인이 다양해 콘솔에서 추가 위반 여부 재확인 필요. */}}
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://giscus.app https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://static.cloudflareinsights.com; style-src 'self' https://giscus.app; img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://giscus.app https://pagead2.googlesyndication.com https://cloudflareinsights.com; frame-src https://giscus.app https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; base-uri 'self'; form-action 'self'; object-src 'none'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://www.googletagmanager.com https://giscus.app https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://static.cloudflareinsights.com; style-src 'self' https://giscus.app; img-src 'self' data: https://*.googlesyndication.com https://*.doubleclick.net; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://giscus.app https://pagead2.googlesyndication.com https://cloudflareinsights.com; frame-src https://giscus.app https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; base-uri 'self'; form-action 'self'; object-src 'none'" />
     {{ hugo.Generator }}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ if .Site.Params.authorRealName }}{{ printf "%s (%s)" .Site.Params.authorRealName .Site.Params.author }}{{ else }}{{ .Site.Params.author | default "John Doe" }}{{ end }}" />
@@ -62,6 +62,11 @@
     {{- end }}
     <link rel="canonical" href="{{ $canonicalURL }}" />
 
+    {{/* 검색 결과 페이지처럼 색인 가치가 없는 페이지는 front matter의 noindex로 막는다 */}}
+    {{- if .Params.noindex }}
+    <meta name="robots" content="noindex, follow" />
+    {{- end }}
+
     {{/* 다국어 hreflang 태그 */}}
     {{ if .IsTranslated }}
       {{- range .AllTranslations }}
@@ -102,6 +107,13 @@
       <div class="top-header-inner">
         <a class="top-header-logo" href="{{ "" | relLangURL }}">{{ .Site.Title }}</a>
         <div class="top-header-actions">
+          {{/* 라벨은 언어별로 번역하지 않고 영문 "Search"로 고정한다. 사이드바의
+               Categories/Tags와 같은 규칙이고, 돋보기 아이콘만 두면 뭘 하는 버튼인지
+               모호해서 글자를 함께 노출한다. */}}
+          <a class="top-header-search" href="{{ "/search/" | relLangURL }}">
+            {{ partial "icon.html" (dict "ctx" $ "name" "search") }}
+            <span>Search</span>
+          </a>
           {{ if .IsTranslated }}
           <div class="top-header-lang">
             <span class="language-current">{{ .Language.Label }}</span>

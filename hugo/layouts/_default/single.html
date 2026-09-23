@@ -1,9 +1,9 @@
 {{ define "main" }}
   <article class="post">
     <div class="post-content-wrap">
-      <div class="post-main">
+      <div class="post-main" data-pagefind-body>
         <header class="post-header">
-          <div class="post-actions">
+          <div class="post-actions" data-pagefind-ignore>
             <button class="post-action-btn bookmark-btn" title="Bookmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="1em" height="1em"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></button>
             <button class="post-action-btn" onclick="window.print()" title="Print"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="1em" height="1em"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
             <div class="share-wrap">
@@ -31,13 +31,13 @@
           {{- with (.GetTerms "categories") }}
           <div class="post-category">
             {{- range . }}
-            <a href="{{ .RelPermalink }}">[{{ .Title }}]</a>
+            <a href="{{ .RelPermalink }}" data-pagefind-filter="category:{{ .Title }}">[{{ .Title }}]</a>
             {{- end }}
           </div>
           {{- end }}
           <h1 class ="post-title">{{ .Title }}</h1>
           {{- if ne .Type "page" }}
-          <div class="post-meta-row">
+          <div class="post-meta-row" data-pagefind-ignore>
             <div class="post-meta">
               <span>
                 {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
@@ -63,14 +63,14 @@
             {{- range . -}}
               {{- $tag := . -}}
               {{ with $.Site.GetPage (printf "/%s/%s" "tags" . ) }}
-                <a class="tag" href="{{ .RelPermalink }}">{{ $tag }}</a>
+                <a class="tag" href="{{ .RelPermalink }}" data-pagefind-filter="tag:{{ $tag }}">{{ $tag }}</a>
               {{- end }}
             {{- end }}
           </div>
           {{- end }}
           {{- $source := index (where .Site.Params.social "name" "Source") 0 }}
           {{- with $source }}
-          <div class="post-source">
+          <div class="post-source" data-pagefind-ignore>
             <span class="post-source-label">{{ partial "icon.html" (dict "ctx" $ "name" "brand-github") }}</span>
             <a class="post-source-link" href="{{ .url }}/blob/{{ .branch | default "master" }}/{{ .contentPrefix | default "content" }}/{{ $.File.Path }}" target="_blank" rel="noopener noreferrer">
               {{ .url | replaceRE "^https?://" "" }}
@@ -81,7 +81,7 @@
         </header>
         {{- if ne .Language.Lang "ko" }}
         {{- with i18n "translation_notice" }}
-        <div class="post-translation-notice">
+        <div class="post-translation-notice" data-pagefind-ignore>
           {{ . }}
         </div>
         {{- end }}
@@ -105,7 +105,7 @@
           {{ .Content }}
         </div>
         <hr class="post-divider">
-        <div class="post-notice">
+        <div class="post-notice" data-pagefind-ignore>
           {{ partial "build-notice.html" . }}
           {{- with .Site.Params.CopyrightHTML }}
           <div class="post-copyright">{{ . | safeHTML }}</div>
@@ -114,7 +114,7 @@
         </div>
         {{- with .Site.Params.adsense }}
         {{- if and .publisherId .adSlotArticleBottom }}
-        <div class="adsense-article-bottom">
+        <div class="adsense-article-bottom" data-pagefind-ignore>
           {{ partial "adsense.html" (dict "publisherId" .publisherId "slotId" .adSlotArticleBottom) }}
         </div>
         {{- end }}
@@ -127,7 +127,7 @@
           {{- $firstCategory := index $categories 0 }}
           {{- $categoryPosts = where $firstCategory.Pages "Permalink" "ne" $currentPage.Permalink | first 5 }}
           {{- if $categoryPosts }}
-        <div class="related-posts">
+        <div class="related-posts" data-pagefind-ignore>
           <h3 class="related-posts-title">{{ i18n "related_posts_title" $firstCategory.Title }}</h3>
           <ul class="related-posts-list">
             {{- range $categoryPosts }}
@@ -159,7 +159,7 @@
         {{- $hugoRelatedAll := $relatedCandidates.Related . }}
         {{- $hugoRelated := complement $categoryPosts $hugoRelatedAll | first 5 }}
         {{- if and $hugoRelated (not $hasManualRelated) }}
-        <div class="related-posts">
+        <div class="related-posts" data-pagefind-ignore>
           <h3 class="related-posts-title">{{ i18n "hugo_related_posts_title" }}</h3>
           <ul class="related-posts-list">
             {{- range $hugoRelated }}
@@ -171,7 +171,7 @@
           </ul>
         </div>
         {{- end }}
-        <div class="post-footer">
+        <div class="post-footer" data-pagefind-ignore>
           {{- with .Site.Params.giscus }}
             {{- if .repo }}
             {{- /* giscus/client.js(~85KB)를 정적 script 태그로 바로 박아두면 브라우저

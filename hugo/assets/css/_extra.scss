@@ -32,6 +32,12 @@ $top-header-height: 3rem;
   position: relative;
 
   .language-current {
+    // 인라인 span이면 padding/border가 라인박스를 키우지 않아, 부모의 align-items:center가
+    // 실제로 칠해지는 테두리 박스가 아니라 그보다 작은 라인박스를 기준으로 가운데를 잡는다.
+    // 그래서 옆의 Search 링크보다 테두리 박스가 아래로 내려가 보였음 - 박스로 만들어 맞춘다.
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
     font-size: 0.85em;
     color: $lightest-color;
     cursor: pointer;
@@ -112,6 +118,28 @@ $top-header-height: 3rem;
   display: flex;
   align-items: center;
   gap: 0.6em;
+}
+
+// 상단 헤더 검색 링크 - 사이드바를 접어도 보이도록 top-header에 둔다
+.top-header-search {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  // 터치 타깃 높이 확보 (menu-toggle과 동일 기준)
+  height: 40px;
+  padding: 0 0.4em;
+  font-size: 0.85em;
+  line-height: 1;
+  color: $lightest-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 // 햄버거 메뉴 버튼 (모바일 전용)

@@ -33,3 +33,30 @@ other = "About"
 
 [tldr_label]
 other = "要約"
+
+[search_placeholder]
+other = "検索キーワードを入力"
+
+[search_clear]
+other = "クリア"
+
+[search_load_more]
+other = "もっと見る"
+
+[search_label]
+other = "検索"
+
+[search_filters_label]
+other = "フィルター"
+
+[search_zero_results]
+other = "[SEARCH_TERM] の検索結果はありません"
+
+[search_many_results]
+other = "[SEARCH_TERM] の検索結果 [COUNT] 件"
+
+[search_one_result]
+other = "[SEARCH_TERM] の検索結果 [COUNT] 件"
+
+[search_searching]
+other = "[SEARCH_TERM] を検索中..."

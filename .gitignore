@@ -38,6 +38,12 @@ config/google_service_account.json
 # hugo
 hugo/resources/_gen
 hugo/public
+.hugo_build.lock
+
+# 레포 루트에서 `hugo`(-s ./hugo 없이)를 돌리면 루트의 config.yml 을 사이트 설정으로,
+# content/ 를 콘텐츠로 잡고 여기에 산출물을 쏟는다. 이 블로그의 진짜 산출물은
+# hugo/public 이므로 루트 public 은 항상 잘못 생긴 것이다 - 커밋되지 않게 막아둔다.
+/public
 
 # .claude 는 settings.local.json 같은 개인 설정이 섞여 무시한다.
 # 스킬만 예외 - 팀(이라 쓰고 다른 기기라 읽는다)이 공유해야 한다.

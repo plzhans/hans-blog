@@ -1,0 +1,36 @@
+{{ define "main" }}
+  {{/* Pagefind 번들(/pagefind/)은 Hugo가 만드는 게 아니라 빌드 후
+       `npx pagefind --site hugo/public`이 hugo/public 안에 떨궈놓는 산출물이다.
+       그래서 `hugo server`로 띄우면 이 페이지의 검색창이 비어 있다(번들이 없어 404).
+       로컬 확인은 빌드 → pagefind → 정적 서버 순서로 해야 한다. */}}
+  <article class="post search-page">
+    <header class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+    </header>
+    <div class="post-content">
+      {{ .Content }}
+      <div id="search"></div>
+    </div>
+  </article>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: false,
+      pageSize: 10,
+      translations: {
+        placeholder: {{ i18n "search_placeholder" }},
+        clear_search: {{ i18n "search_clear" }},
+        load_more: {{ i18n "search_load_more" }},
+        search_label: {{ i18n "search_label" }},
+        filters_label: {{ i18n "search_filters_label" }},
+        zero_results: {{ i18n "search_zero_results" }},
+        many_results: {{ i18n "search_many_results" }},
+        one_result: {{ i18n "search_one_result" }},
+        searching: {{ i18n "search_searching" }}
+      }
+    });
+  </script>
+{{ end }}
