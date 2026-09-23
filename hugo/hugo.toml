@@ -19,6 +19,9 @@ enableRobotsTXT = true
 contentDir = "../content"
 dataDir = "../data"
 
+# 빌드 시 무시할 파일 패턴
+ignoreFiles = ['content/posts/.*/notion_.*\.json$']
+
 # 목록 페이지 페이지네이션 (페이지당 글 수)
 [pagination]
   pagerSize = 20
