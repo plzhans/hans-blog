@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T05:10:09.338Z",
+  "generated_at": "2026-09-23T04:54:40.486Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -112,6 +112,32 @@
     },
     {
       "rank": 9,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
+      "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
+      "date": "2026-07-10T03:44:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 5
+    },
+    {
+      "rank": 10,
+      "slug": "123-hugo-blog-guide",
+      "title": "Building a Hugo Blog - From Start to SEO",
+      "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
+      "date": "2026-09-03T00:00:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/123-hugo-blog-guide/",
+      "image": null,
+      "count": 5
+    },
+    {
+      "rank": 11,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -124,7 +150,7 @@
       "count": 5
     },
     {
-      "rank": 10,
+      "rank": 12,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
       "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
@@ -137,33 +163,33 @@
       "count": 4
     },
     {
-      "rank": 11,
-      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
-      "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
-      "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
-      "date": "2026-07-10T03:44:00.000Z",
+      "rank": 13,
+      "slug": "111-tailscale-linux-install-secure-remote-vpn",
+      "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
+      "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
+      "date": "2026-07-03T00:00:00.000Z",
       "categories": [
-        "cloud"
+        "networking"
       ],
-      "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
-      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "url": "/en/posts/111-tailscale-linux-install-secure-remote-vpn/",
+      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
       "count": 4
     },
     {
-      "rank": 12,
-      "slug": "123-hugo-blog-guide",
-      "title": "Building a Hugo Blog - From Start to SEO",
-      "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
-      "date": "2026-09-03T00:00:00.000Z",
+      "rank": 14,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
+      "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
+      "date": "2026-09-11T13:01:00.000Z",
       "categories": [
         "web"
       ],
-      "url": "/en/posts/123-hugo-blog-guide/",
-      "image": null,
+      "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
       "count": 4
     },
     {
-      "rank": 13,
+      "rank": 15,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
       "description": "A walkthrough of how to fix repeated Authentication failed errors in TortoiseGit by clearing saved authentication data via Clear in Saved Data. Covers cleaning up the Windows Credential Manager, checking credential.helper, preparing a PAT, and switching to SSH.",
@@ -176,7 +202,7 @@
       "count": 3
     },
     {
-      "rank": 14,
+      "rank": 16,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -189,20 +215,7 @@
       "count": 3
     },
     {
-      "rank": 15,
-      "slug": "124-cloudflare-workers-static-site-guide",
-      "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
-      "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
-      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
-      "count": 3
-    },
-    {
-      "rank": 16,
+      "rank": 17,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
@@ -215,7 +228,7 @@
       "count": 3
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Automating Claude Account Switching",
       "description": "This post summarizes how to quickly switch between Claude Code accounts without logging out. It covers an automation script that backs up and swaps macOS Keychain credentials using the security command, along with how to use dedicated tools like claudini and CCSwitcher.",
@@ -228,7 +241,20 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
+      "slug": "107-openclaw-node-mode-remote-infra-setup",
+      "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
+      "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
+      "date": "2026-06-29T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/107-openclaw-node-mode-remote-infra-setup/",
+      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
+      "count": 2
+    },
+    {
+      "rank": 20,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
       "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
@@ -238,32 +264,6 @@
       ],
       "url": "/en/posts/126-cloudflare-workers-wrangler-dev-deploy/",
       "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
-      "count": 2
-    },
-    {
-      "rank": 19,
-      "slug": "86-github-pages-custom-domain",
-      "title": "Using a Custom Domain with GitHub Pages",
-      "description": "This post summarizes the CNAME/A/AAAA record settings and the Pages Custom domain setup steps needed to connect a custom domain to GitHub Pages. It also covers the difference in how the CNAME file is handled between Actions and branch deployments, verifying DNS with dig, and why Enforce HTTPS fails to turn on because of a CAA record.",
-      "date": "2026-02-10T07:34:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/86-github-pages-custom-domain/",
-      "image": "/posts/86-github-pages-custom-domain/assets/1_30a22a0f-7e83-80e7-8f4c-f143df1f0d00.png",
-      "count": 2
-    },
-    {
-      "rank": 20,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "A guide to encrypting .env files with GPG to prevent secret exposure when you need to commit them to Git. Covers everything from .gitignore handling to gpg encrypt/decrypt commands and setting a default recipient, so you can start operating a secure repository.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
       "count": 2
     }
   ]
