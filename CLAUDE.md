@@ -14,6 +14,14 @@ node src/NotionCli.mjs database sync --draft  # 초안까지
 
 번역본(`index.en.md` · `index.ja.md`)만 예외다. Notion 에 없으므로 직접 만든다.
 
+## skills/
+
+새 글은 **`/new-post` 스킬**로 쓴다. 규칙은 [.claude/skills/new-post/SKILL.md](.claude/skills/new-post/SKILL.md)
+에 있다. 실습 대화 → 목차 협의 → 초안 → Notion 페이지 생성 → 동기화 순서를 강제한다.
+승인 없이 다음 단계로 넘어가지 않는다.
+
+`.claude` 는 개인 설정이 섞여 있어 git 이 무시하지만 `.claude/skills/` 만은 추적한다.
+
 ## prompts/
 
 작업별 규칙이 여기 있다. **시작하기 전에 읽는다. 직접 규칙을 세우지 않는다.**
