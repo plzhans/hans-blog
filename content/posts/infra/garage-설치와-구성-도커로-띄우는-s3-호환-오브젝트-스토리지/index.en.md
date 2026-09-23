@@ -35,6 +35,20 @@ Garage fills that spot. It is an S3-compatible object store written in Rust, and
 Approach it with S3 habits, though, and a few things block you. It will not even start without a config file, there is one more thing to do before you can create a bucket, and enabling public reads works in a completely different way. This post walks through those spots one at a time, from starting the container to putting an object in and taking it back out.
 
 
+### What is Garage
+
+
+It is an S3-compatible object store built by Deuxfleurs, a French non-profit hosting collective. The project describes itself as "an S3 object store so reliable you can run it outside datacenters," and its design intent sits in that one line. It was built for tying together servers in homes and offices, machines with no dedicated backbone and slow links.
+
+
+Three traits stand out. It runs as a single binary with no external database. Each node is assigned a zone so replicas are spread geographically. And it implements the S3 API, so existing SDKs and tools attach to it unchanged.
+
+
+It is written in Rust and licensed under AGPL-3.0.
+
+- Main repository: [git.deuxfleurs.fr/Deuxfleurs/garage](https://git.deuxfleurs.fr/Deuxfleurs/garage)
+- GitHub mirror: [deuxfleurs-org/garage](https://github.com/deuxfleurs-org/garage)
+
 ### What this post covers
 
 - Running Garage v2.4.1 with Docker Compose
@@ -604,13 +618,22 @@ Trust a value labelled "default" in the docs and delete it and this is what happ
 ## Wrapping up
 
 
-Garage speaks the S3 API, but it is not S3. A node needs a role before you can create a bucket, permissions exist only per key, and it will not even start without a config file. Know those three going in and the rest goes smoothly.
+Garage speaks the S3 API, but it is not S3.
 
 
-On the other hand it is a fine thing to start small with. One binary, one config file, five required entries. Fifteen lines of Docker Compose gets you S3-compatible storage, and the `aws` CLI attaches to it as-is.
+Know these three going in and the rest goes smoothly.
+
+- A node needs a role before you can create a bucket
+- Permissions exist only per access key.
+- It will not even start without a config file.
+
+One binary, one config file, five required entries. Fifteen lines of Docker Compose gets you S3-compatible storage and the `aws` CLI attaches to it as-is.
 
 
-That is the floor. To actually use it you need a domain and HTTPS, and since Garage does no TLS itself, something has to sit in front. Serving public files on the web is also handled by a separate endpoint rather than the S3 API. That is where the next post picks up.
+That is the floor. To actually use it you need a domain and HTTPS, and since Garage does no TLS itself, something has to sit in front.
+
+
+Serving public files on the web is also handled by a separate endpoint rather than the S3 API.
 
 
 ### References
