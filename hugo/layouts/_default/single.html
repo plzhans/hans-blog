@@ -240,17 +240,13 @@
   </article>
   {{- if ne .Type "page" }}
   {{- $description := .Description | default (.Summary | plainify | truncate 160) -}}
-  {{- $authorSameAs := slice }}
-  {{- range where .Site.Params.social "name" "in" (slice "Github" "LinkedIn") }}
-    {{- $authorSameAs = $authorSameAs | append .url }}
-  {{- end }}
   {{- $jsonLd := dict
       "@context" "https://schema.org"
       "@type" "BlogPosting"
       "headline" .Title
       "datePublished" (.PublishDate.Format "2006-01-02T15:04:05Z07:00")
       "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
-      "author" (dict "@type" "Person" "name" (printf "%s (%s)" .Site.Params.authorRealName .Site.Params.author) "sameAs" $authorSameAs)
+      "author" (partial "author-person.html" .)
       "description" $description
       "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
       "publisher" (dict

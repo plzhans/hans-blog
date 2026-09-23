@@ -254,6 +254,29 @@ $top-header-height: 3rem;
   border-color: rgba($light-color, 0.3);
 }
 
+// 핸들(@plzhans)과 실명을 한 덩어리로 묶는다. 핸들에 바짝 붙이고 아래는 띄워야
+// 설명 문단과 섞이지 않는다. 테마 규칙이 margin: 0.67em 0 이고 여기 font-size 가
+// 2em 이라 아래쪽만 덮어쓴다 - 0.1em 은 본문 기준 약 3px.
+.app-header-title {
+  margin-bottom: 0.1em;
+}
+
+// 크기로 위계를 주고 색·굵기는 죽이지 않는다. 흐리게 처리하면 바로 아래 설명 문단보다
+// 약해져서 이름이 곁다리로 읽힌다. 굵기는 400/700 만 서브셋으로 받으므로 500 을 쓰면
+// 합성 볼드가 되어 지저분해진다.
+.app-header a.app-header-realname {
+  display: block;
+  margin-bottom: 1.1em;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: $light-color;
+
+  &:hover {
+    color: $lightest-color;
+  }
+}
+
 // 사이드바 링크 색상
 .app-header a {
   color: $light-color;

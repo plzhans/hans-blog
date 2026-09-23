@@ -1,0 +1,28 @@
+{{- /*
+  저자 Person 엔티티. 글(BlogPosting.author)과 소개 페이지(ProfilePage.mainEntity)가
+  같은 @id 를 물게 해서 구글이 둘을 한 사람으로 묶도록 한다. 페이지마다 따로 만들면
+  이름·sameAs 가 조금씩 어긋나 엔티티가 쪼개진다.
+
+  name 은 실명(손원철), alternateName 이 핸들(plzhans). 화면 노출은 핸들이 주지만
+  스키마의 Person.name 은 사람 이름 자리라 실명을 둔다. "손원철" 검색 매칭도 이쪽이 낫다.
+*/ -}}
+{{- $sameAs := slice }}
+{{- range where site.Params.social "name" "in" (slice "Github" "LinkedIn") }}
+  {{- $sameAs = $sameAs | append .url }}
+{{- end }}
+{{- $url := site.Home.Permalink }}
+{{- with site.GetPage "/about" }}
+  {{- $url = .Permalink }}
+{{- end }}
+{{- $person := dict
+    "@type" "Person"
+    "@id" (printf "%s#author" site.Home.Permalink)
+    "name" (site.Params.authorRealName | default site.Params.author)
+    "url" $url
+    "image" (site.Params.avatar | absURL)
+    "sameAs" $sameAs
+-}}
+{{- with site.Params.authorRealName }}
+  {{- $person = merge $person (dict "alternateName" site.Params.author) }}
+{{- end }}
+{{- return $person }}

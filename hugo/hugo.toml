@@ -58,7 +58,8 @@ dataDir = "../data"
 [params]
   # 작성자 이름
   author = "plzhans"
-  # 저자 실명 (스키마의 Person.name 엔티티 식별용, UI 표시에는 사용하지 않음)
+  # 저자 실명. 사이드바 핸들 아래 한 줄로 노출되고 Person.name 으로도 쓰인다
+  # (핸들은 alternateName). 지우면 사이드바 이름 줄과 스키마 실명이 함께 사라진다
   authorRealName = "손원철"
   # 사이트 설명
   description = "개발하며 구축한 것들의 트러블슈팅 기록을 남기는 블로그입니다."

@@ -132,8 +132,14 @@
     <div class="menu-overlay" onclick="document.body.classList.remove('menu-open')"></div>
     <button class="sidebar-collapse-btn" aria-label="Toggle sidebar" onclick="toggleSidebar()">&#x276E;</button>
     <header class="app-header">
-      <a href="{{ "" | relLangURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
+      <a href="{{ "" | relLangURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}{{ with .Site.Params.authorRealName }} ({{ . }}){{ end }}" /></a>
       <span class="app-header-title">@{{ .Site.Params.author }}</span>
+      {{- /* 실명은 모든 페이지에 한 줄로만 노출한다. 핸들(@plzhans)이 주고 이름은 보조지만,
+             사이트 전역에 실명 텍스트가 있어야 이름 검색에 걸린다. 소개 페이지 링크로
+             Person 엔티티(_partials/author-person.html)와도 이어둔다. */ -}}
+      {{- with .Site.Params.authorRealName }}
+      <a class="app-header-realname" href="{{ "/about/" | relLangURL }}" rel="author">{{ . }}</a>
+      {{- end }}
       <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
       {{- with .Site.Params.social }}
       <div class="app-header-social">

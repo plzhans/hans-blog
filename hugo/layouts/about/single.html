@@ -7,18 +7,10 @@
       {{ .Content }}
     </div>
   </article>
-  {{- $sameAs := slice }}
-  {{- range where .Site.Params.social "name" "in" (slice "Github" "LinkedIn") }}
-    {{- $sameAs = $sameAs | append .url }}
+  {{- $person := partial "author-person.html" . -}}
+  {{- with .Params.job_title }}
+    {{- $person = merge $person (dict "jobTitle" .) }}
   {{- end }}
-  {{- $person := dict
-      "@type" "Person"
-      "name" (printf "%s (%s)" .Site.Params.authorRealName .Site.Params.author)
-      "url" .Permalink
-      "image" (.Site.Params.avatar | absURL)
-      "jobTitle" (.Params.job_title | default "")
-      "sameAs" $sameAs
-  -}}
   {{- $jsonLd := dict "@context" "https://schema.org" "@type" "ProfilePage" "mainEntity" $person -}}
   {{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($jsonLd | jsonify (dict "indent" "  ")) | safeHTML }}
 {{ end }}
