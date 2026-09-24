@@ -245,7 +245,7 @@ CI(`deploy-hugo.yml`)도 빌드와 아티팩트 업로드 사이에서 `npm run 
 
 `pagefind`는 npx 가 아니라 devDependency 로 둡니다. 로컬과 CI 가 같은 판본을 써야 하기 때문입니다.
 
-> 인덱스 파일의 캐시 규칙은 [`cloudflare/rules/http_request_cache_settings/static.json`](cloudflare/rules/http_request_cache_settings/static.json)에 있습니다. 파일명에 콘텐츠 해시가 박힌 인덱스 본체만 장기 캐시하고, 이름이 고정된 런타임(`pagefind-ui.js` 등)은 판본을 올릴 때 스테일해지지 않도록 뺐습니다.
+> 인덱스 파일의 캐시 지시는 [`hugo/static/_headers`](hugo/static/_headers)에 있습니다. 파일명에 콘텐츠 해시가 박힌 인덱스 본체만 장기 캐시하고, 이름이 고정된 런타임(`pagefind-ui.js` 등)은 판본을 올릴 때 스테일해지지 않도록 뺐습니다.
 
 ## 댓글 시스템 (giscus)
 
