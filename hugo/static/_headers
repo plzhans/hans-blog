@@ -48,3 +48,8 @@
 /pagefind/filter/*
   ! Cache-Control
   Cache-Control: public, max-age=2592000
+
+# pf_meta 만 하위 디렉터리가 아니라 /pagefind/ 바로 아래에 있다.
+/pagefind/*.pf_meta
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
