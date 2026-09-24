@@ -22,11 +22,8 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     env:
       HUGO_CACHEDIR: /tmp/hugo_cache
 
@@ -88,12 +85,46 @@ jobs:
         with:
           path: ./hugo/public
 
-      - name: Deploy to GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4
+      # 위 Pages 아티팩트는 전용 포맷이라 다른 잡에서 못 꺼낸다. 파일이 1,900개라 tar 로
+      # 묶고, 대부분 이미 압축된 이미지라 재압축은 끈다.
+      - name: Pack blog output for Workers
+        run: tar -cf blog-public.tar -C hugo public
 
-      - name: Print deployed URL
-        run: echo "Deployed to ${{ steps.deploy.outputs.page_url }}"
+      - name: Upload blog output
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-public
+          path: blog-public.tar
+          retention-days: 1
+          compression-level: 0
+
+      # 제출은 배포 뒤에 해야 하는데(post-indexnow) 그 잡에는 사이트맵이 없다.
+      # 페이로드만 여기서 만들어 넘긴다.
+      - name: Build IndexNow payload for blog
+        env:
+          INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
+        run: |
+          set -euo pipefail
+          urls=$(grep -ohE '<loc>[^<]+</loc>' \
+            hugo/public/ko/sitemap.xml \
+            hugo/public/en/sitemap.xml \
+            hugo/public/ja/sitemap.xml \
+            | sed -E 's#</?loc>##g')
+          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
+          jq -n \
+            --arg host "blog.plzhans.com" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "https://blog.plzhans.com/${INDEXNOW_KEY}.txt" \
+            --argjson urlList "$url_list" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}' \
+            > indexnow-blog.json
+
+      - name: Upload IndexNow payload
+        uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-blog
+          path: indexnow-blog.json
+          retention-days: 1
 
       # 루트 도메인(plzhans.com) 랜딩 페이지 — blog와 같은 잡에서 빌드해야
       # hugo/public/index.json(최신 글 목록)을 네트워크 fetch 없이 그대로 복사해 쓸 수 있음.
@@ -128,28 +159,6 @@ jobs:
             --tag "${{ github.sha }}" \
             --message "ref: ${{ github.ref_name }}"
 
-      - name: Submit URLs to IndexNow
-        env:
-          INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
-        run: |
-          set -euo pipefail
-          urls=$(grep -ohE '<loc>[^<]+</loc>' \
-            hugo/public/ko/sitemap.xml \
-            hugo/public/en/sitemap.xml \
-            hugo/public/ja/sitemap.xml \
-            | sed -E 's#</?loc>##g')
-          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
-          payload=$(jq -n \
-            --arg host "blog.plzhans.com" \
-            --arg key "$INDEXNOW_KEY" \
-            --arg keyLocation "https://blog.plzhans.com/${INDEXNOW_KEY}.txt" \
-            --argjson urlList "$url_list" \
-            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
-          curl -sS -X POST https://api.indexnow.org/indexnow \
-            -H "Content-Type: application/json; charset=utf-8" \
-            -d "$payload" \
-            -w "\nIndexNow response: %{http_code}\n"
-
       # IndexNow는 제출 host와 keyLocation의 host가 같아야 해서 blog와 별도 제출이 필요함
       # (landing/static/<key>.txt에 같은 키 파일을 복사해둠).
       - name: Submit landing URLs to IndexNow
@@ -172,3 +181,80 @@ jobs:
             -H "Content-Type: application/json; charset=utf-8" \
             -d "$payload" \
             -w "\nIndexNow response: %{http_code}\n"
+
+  deploy-github-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Print deployed URL
+        run: echo "Deployed to ${{ steps.deploy.outputs.page_url }}"
+
+  # 배포에서 뗀 이유는 IndexNow 가 죽었을 때 배포 잡까지 실패로 뜨지 않게 하려는 것이다.
+  # needs 로 배포가 성공해야만 돈다 - 먼저 쏘면 크롤러가 옛 페이지를 긁어간다.
+  post-indexnow:
+    needs: deploy-github-pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download IndexNow payload
+        uses: actions/download-artifact@v4
+        with:
+          name: indexnow-blog
+
+      - name: Submit URLs to IndexNow
+        run: |
+          set -euo pipefail
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d @indexnow-blog.json \
+            -w "\nIndexNow response: %{http_code}\n"
+
+  # 전환 준비용 병행 배포. 도메인을 붙이지 않은 워커에 같은 산출물을 올린다.
+  deploy-cloudflare-workers:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # 루트 락파일이 바뀌었다고 이 캐시가 날아가지 않게 hugo 것만 본다.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: hugo/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefix hugo
+
+      - name: Download blog output
+        uses: actions/download-artifact@v4
+        with:
+          name: blog-public
+
+      - name: Unpack blog output
+        run: tar -xf blog-public.tar -C hugo
+
+      - name: Deploy blog to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CI: "true"
+          WRANGLER_SEND_METRICS: "false"
+        run: |
+          cd hugo
+          npm run deploy -- \
+            --tag "${{ github.sha }}" \
+            --message "ref: ${{ github.ref_name }}"

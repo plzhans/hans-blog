@@ -1,0 +1,15 @@
+// 블로그를 Workers Static Assets 로도 올리는 전환 준비용 설정. blog.plzhans.com 은
+// 그대로 GitHub Pages 가 받고, 이 워커는 도메인 없이 산출물만 들고 있는다.
+//
+// workers_dev 를 끈 이유는 공개 URL 이 생기면 블로그가 중복 색인되고, *.workers.dev 는
+// plzhans.com zone 밖이라 캐시 규칙이 적용되지 않아 검증에도 못 쓰기 때문이다.
+// 전환할 때 여기에 도메인을 붙이고 deploy-github-pages 잡을 지운다.
+{
+  "name": "hans-blog",
+  "compatibility_date": "2026-09-04",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

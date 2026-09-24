@@ -1,0 +1,12 @@
+{
+  "name": "hans-blog-hugo",
+  "version": "0.0.1",
+  "private": true,
+  "description": "blog.plzhans.com 블로그. 배포 도구(wrangler)를 이 배포 단위가 직접 들고 있다. 루트에 두지 않는 이유는 Notion 동기화·GA4·LinkedIn 워크플로가 전부 루트에서 npm ci 를 돌아서, 쓰지도 않는 236MB 를 매번 받게 되기 때문이다.",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.129.0"
+  }
+}
