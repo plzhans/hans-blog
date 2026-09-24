@@ -9,4 +9,5 @@ images:
 build:
   render: true
   list: false
+  publishResources: false
 ---

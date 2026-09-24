@@ -10,4 +10,5 @@ draft: false
 build:
   render: true
   list: false
+  publishResources: false
 ---
