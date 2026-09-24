@@ -151,7 +151,10 @@ jobs:
 
       # IndexNow는 제출 host와 keyLocation의 host가 같아야 해서 blog와 별도 제출이 필요함
       # (landing/static/<key>.txt에 같은 키 파일을 복사해둠).
+      # 검색엔진에 알리는 부수 작업이다. 외부 API 라 우리가 어쩔 수 없는 이유로 죽는데,
+      # 여기서 잡이 실패하면 이미 다 구워둔 블로그 산출물이 배포되지 못한다.
       - name: Submit landing URLs to IndexNow
+        continue-on-error: true
         env:
           INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
         run: |
@@ -185,7 +188,9 @@ jobs:
         with:
           name: indexnow-blog
 
+      # 위와 같은 이유로 비차단. 제출이 실패해도 배포는 이미 끝나 있다.
       - name: Submit URLs to IndexNow
+        continue-on-error: true
         run: |
           set -euo pipefail
           curl -sS -X POST https://api.indexnow.org/indexnow \
