@@ -13,7 +13,22 @@
         <a class="post-card-link" href="{{ $p.url }}" aria-label="{{ $p.title }}"></a>
         {{ with $p.image }}
         <div class="post-card-thumbnail">
-          <img src="{{ . }}" alt="{{ $p.title }}" loading="{{ if eq $i 0 }}eager{{ else }}lazy{{ end }}"{{ if eq $i 0 }} fetchpriority="high"{{ end }}>
+          {{- /* GA4 데이터의 image 는 리사이즈 전 원본 경로다(/posts/{slug}/assets/{파일}).
+               번들 원본은 build.publishResources = false 로 더 이상 배포되지 않으므로
+               그대로 쓰면 404 가 난다. 경로에서 글을 되찾아 다른 목록과 같은 썸네일
+               파이프라인을 태운다. image 는 언어와 무관하게 항상 기본 언어 경로라
+               hugo.Sites 0 에서 찾는다. */ -}}
+          {{- $pageURL := printf "%s/" (path.Dir (path.Dir .)) -}}
+          {{- $imgPath := printf "assets/%s" (path.Base .) -}}
+          {{- $thumbPage := "" -}}
+          {{- range (index hugo.Sites 0).RegularPages -}}
+            {{- if eq .RelPermalink $pageURL -}}{{- $thumbPage = . -}}{{- end -}}
+          {{- end -}}
+          {{- if $thumbPage -}}
+            {{ partial "image-thumb.html" (dict "page" $thumbPage "imgPath" $imgPath "alt" $p.title "first" (eq $i 0)) }}
+          {{- else -}}
+            <img src="{{ . }}" alt="{{ $p.title }}" loading="{{ if eq $i 0 }}eager{{ else }}lazy{{ end }}"{{ if eq $i 0 }} fetchpriority="high"{{ end }}>
+          {{- end -}}
         </div>
         {{ end }}
         <div class="post-card-body">
