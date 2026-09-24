@@ -1,20 +1,14 @@
-# 옛 URL 을 현재 글 주소로 넘긴다. 전에는 같은 일을 두 군데서 했다 - Cloudflare
-# 동적 리다이렉트 규칙이 10개를 301 로 처리하고, content/_redirect/ 의 Hugo 번들이
-# 같은 10개를 meta refresh 로 한 번 더 처리했다(규칙이 먼저 걸려 도달조차 하지
-# 않았다). UUID 경로 하나만 Hugo 쪽에서 처리됐는데 그것도 301 이 아니라 200 이었다.
-#
-# Workers 는 정적 자산보다 이 파일을 먼저 본다. 규칙 슬롯을 쓰지 않고 레포 안에서
-# 한눈에 보인다. 상태 코드를 안 적으면 302 라 301 을 명시한다.
-/6-flush-dns-cache/                            /posts/6-flush-dns-cache/                            301
-/39-https-tls-ssl-free-vs-paid-certificates/   /posts/39-https-tls-ssl-free-vs-paid-certificates/   301
-/69-git-deleted-branch-recovery/               /posts/69-git-deleted-branch-recovery/               301
-/80-redis-dump-vs-aof/                         /posts/80-redis-dump-vs-aof/                         301
-/86-github-pages-custom-domain/                /posts/86-github-pages-custom-domain/                301
-/88-github-gpg-commit-signing/                 /posts/88-github-gpg-commit-signing/                 301
-/89-gpg-encrypt-env-file/                      /posts/89-gpg-encrypt-env-file/                      301
-/93-hugo-multilingual-seo-setup/               /posts/93-hugo-multilingual-seo-setup/               301
-/94-hugo-github-blog/                          /posts/94-hugo-github-blog/                          301
-/95-openclaw-setup/                            /posts/95-openclaw-setup/                            301
+# Default status is 302, so 301 is explicit.
 
-# Notion 페이지 ID 로 만들어졌던 옛 경로
+/6-flush-dns-cache/                           /posts/6-flush-dns-cache/                           301
+/39-https-tls-ssl-free-vs-paid-certificates/  /posts/39-https-tls-ssl-free-vs-paid-certificates/  301
+/69-git-deleted-branch-recovery/              /posts/69-git-deleted-branch-recovery/              301
+/80-redis-dump-vs-aof/                        /posts/80-redis-dump-vs-aof/                        301
+/86-github-pages-custom-domain/               /posts/86-github-pages-custom-domain/               301
+/88-github-gpg-commit-signing/                /posts/88-github-gpg-commit-signing/                301
+/89-gpg-encrypt-env-file/                     /posts/89-gpg-encrypt-env-file/                     301
+/93-hugo-multilingual-seo-setup/              /posts/93-hugo-multilingual-seo-setup/              301
+/94-hugo-github-blog/                         /posts/94-hugo-github-blog/                         301
+/95-openclaw-setup/                           /posts/95-openclaw-setup/                           301
+
 /posts/39222a0f-7e83-80fe-8b4d-ee6466d71c77-claude-code-ollama-local-llm/  /posts/113-claude-code-ollama-local-llm/  301

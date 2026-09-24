@@ -1,37 +1,20 @@
-# Workers Static Assets 의 기본 Cache-Control 은 max-age=0, must-revalidate 라
-# 방문자가 매 요청 재검증한다. zone 의 캐시 규칙은 워커 응답에 적용되지 않으므로
-# (커스텀 도메인 전환 후 실측 확인) 브라우저 캐시 지시는 여기서 준다.
-# 엣지 캐싱은 Workers 가 자체적으로 한다.
-#
-# 규칙이 겹치면 리터럴 접두사가 긴 쪽이 이긴다. 선언 순서로는 결정되지 않는다.
-#
-# 값은 두 가지다. 콘텐츠 해시가 박혀 재발급되는 파일(css, pagefind 인덱스)과 거의
-# 바뀌지 않는 사이트 공용 자산은 30일, 글 본문 이미지는 1일이다. 1년은 쓰지 않는다 -
-# 해시 전제가 깨지는 경우가 실제로 있어서 틀렸을 때 갇히는 기간만 길어진다.
-# immutable 도 같은 이유로 안 쓴다. 붙으면 새로고침으로도 회복되지 않는다.
+# Zone Cache Rules do not apply to Worker responses, and Workers Static Assets
+# defaults to max-age=0, must-revalidate. Edge caching is handled by Workers.
+# On overlap the longest literal prefix wins, not declaration order.
 
 /*
   Cache-Control: public, max-age=600
 
-# 글 본문 이미지. 이 경로에는 Hugo 처리본(_hu_<콘텐츠 해시>)과 리사이즈 전 원본이
-# 섞여 있고 _headers 로는 둘을 못 가른다 - _hu_ 는 파일명 안쪽이라 splat 이 두 개
-# 필요한데 패턴당 하나만 쓸 수 있고, placeholder 는 세그먼트 단위라 파일명 내용을
-# 못 본다. 그래서 둘을 같은 값으로 통일한다.
-#
-# 원본은 파일명이 {순번}_{Notion 블록ID} 로 고정이라 Notion 에서 같은 블록의 이미지를
-# 교체하면 URL 은 그대로고 내용만 바뀐다. 30일을 주면 그 사이 원본을 받아간 사람에게
-# 한 달간 옛 이미지가 남는다. 1일이면 만료 뒤에도 ETag 로 304 만 오가므로 다시
-# 내려받지는 않는다.
+# Holds both Hugo-processed (_hu_<hash>) and unresized originals, which this
+# file cannot tell apart, so both get the shorter TTL.
 /posts/:slug/assets/*
   ! Cache-Control
   Cache-Control: public, max-age=86400
 
-# Hugo 가 파일명에 콘텐츠 해시를 붙인다.
 /css/*
   ! Cache-Control
   Cache-Control: public, max-age=2592000
 
-# 아바타·OG 기본 이미지·폰트·mermaid. 이름이 고정이다.
 /assets/*
   ! Cache-Control
   Cache-Control: public, max-age=2592000
@@ -40,9 +23,8 @@
   ! Cache-Control
   Cache-Control: public, max-age=2592000
 
-# Pagefind 인덱스. 파일명에 해시가 박혀 있다. 이름이 고정인 런타임과 진입점
-# (pagefind-ui.js, wasm, pagefind-entry.json)은 일부러 뺐다 - 판본을 올리거나
-# 글을 쓰면 같은 이름으로 내용이 바뀐다.
+# Content-hashed index files only. Fixed-name runtime (pagefind-ui.js, wasm,
+# pagefind-entry.json) is left at the default so version bumps take effect.
 /pagefind/fragment/*
   ! Cache-Control
   Cache-Control: public, max-age=2592000
@@ -55,7 +37,6 @@
   ! Cache-Control
   Cache-Control: public, max-age=2592000
 
-# pf_meta 만 하위 디렉터리가 아니라 /pagefind/ 바로 아래에 있다.
 /pagefind/*.pf_meta
   ! Cache-Control
   Cache-Control: public, max-age=2592000
