@@ -22,6 +22,17 @@ dataDir = "../data"
 # 빌드 시 무시할 파일 패턴
 ignoreFiles = ['content/posts/.*/notion_.*\.json$']
 
+# 페이지 번들 리소스는 기본적으로 참조 여부와 무관하게 전부 public/ 으로 복사된다.
+# 그래서 Hugo 가 리사이즈하기 전의 원본 이미지까지 배포됐다 - 어떤 HTML 도 참조하지
+# 않는 182개, 57MB 다. false 로 두면 템플릿이 RelPermalink 를 부른 것만 나간다.
+# _headers 의 /posts/:slug/assets/* 규칙이 성립하려면 이것이 꺼져 있어야 한다.
+# 그 경로에 해시 없는 고정 이름 파일이 남으면 1년 캐싱이 스테일해진다.
+[cascade]
+  [cascade.build]
+    publishResources = false
+  [cascade.target]
+    path = '{/posts,/posts/**,/_redirect,/_redirect/**}'
+
 # 목록 페이지 페이지네이션 (페이지당 글 수)
 [pagination]
   pagerSize = 20

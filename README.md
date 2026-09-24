@@ -4,10 +4,11 @@
 [![Notion Database Sync](https://github.com/plzhans/hans-blog/actions/workflows/notion-database-sync.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/notion-database-sync.yml)
 [![Notion Page Sync](https://github.com/plzhans/hans-blog/actions/workflows/notion-page-sync.yml/badge.svg)](https://github.com/plzhans/hans-blog/actions/workflows/notion-page-sync.yml)
 [![Hugo](https://img.shields.io/badge/Hugo-extended-ff4088)](https://gohugo.io)
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-F38020?logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/workers/static-assets/)
 [![Blog](https://img.shields.io/badge/Blog-blog.plzhans.com-blue)](https://blog.plzhans.com)
 ![License](https://img.shields.io/github/license/plzhans/hans-blog)
 
-[Hugo](https://gohugo.io) 기반 개인 블로그. Notion에서 작성한 글을 Markdown으로 변환하여 Hugo로 빌드하고 GitHub Pages에 배포합니다.
+[Hugo](https://gohugo.io) 기반 개인 블로그. Notion에서 작성한 글을 Markdown으로 변환하여 Hugo로 빌드하고 Cloudflare Workers에 배포합니다.
 > 블로그 주소: https://blog.plzhans.com
 
 ## 구조
@@ -46,6 +47,8 @@ hans-blog/
 |---|---|
 | `make install` | npm 패키지 설치 |
 | `make hugo` | Hugo 빌드 |
+| `make build` | Hugo 빌드 + Pagefind 검색 인덱스 생성 |
+| `make pagefind-build` | Pagefind 검색 인덱스만 다시 생성 (빌드 뒤에 실행) |
 | `make notion-database-sync` | Notion 데이터베이스 전체 동기화 |
 | `make notion-page-sync [page_id]` | 특정 Notion 페이지 동기화 |
 | `make translate` | 동기화된 글을 AI 에이전트로 영어·일본어 자동 번역 |
@@ -153,21 +156,21 @@ Gemini API 가 활성화된 프로젝트의 키여야 합니다.
 
 ## 배포
 
-### GitHub Pages
+### Cloudflare Workers
 
-GitHub Actions의 `deploy-hugo.yml` 워크플로우에서 Hugo 빌드 후 `actions/deploy-pages`를 통해 GitHub Pages에 배포합니다. 
+`deploy-hugo.yml` 워크플로우가 Hugo 빌드 후 [Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/)로 배포합니다. 설정은 [`hugo/wrangler.jsonc`](hugo/wrangler.jsonc)에 있고, 배포 도구(wrangler)는 [`hugo/package.json`](hugo/package.json)이 판본을 고정합니다.
 
-별도의 저장소나 브랜치 없이 아티팩트 업로드 방식으로 동작합니다.
-
-- `master` 브랜치에 `hugo/` 하위 변경이 push되면 자동으로 빌드 및 배포 실행
+- `master` 브랜치에 `hugo/`·`content/`·`data/`·`landing/` 하위 변경이 push되면 자동 실행
 - `workflow_dispatch`로 수동 배포도 가능
+- 정적 자산 요청은 과금되지 않습니다
 
-**커스텀 도메인 설정:**
+잡은 넷으로 나뉩니다. `build`가 블로그와 랜딩을 굽고, `deploy-cloudflare-workers`가 블로그를, 랜딩은 `build` 안에서 각각 배포합니다. IndexNow 제출(`post-indexnow`)은 배포가 성공한 뒤에만 돕니다.
 
-GitHub Pages는 기본적으로 `plzhans.github.io/hans-blog` URL을 제공합니다. 커스텀 도메인 `blog.plzhans.com`을 사용하기 위해 다음 설정이 필요합니다:
+**커스텀 도메인:**
 
-1. DNS에 CNAME 레코드 추가: `blog.plzhans.com` → `plzhans.github.io`
-2. GitHub 저장소 Settings > Pages에서 커스텀 도메인 설정
+`blog.plzhans.com`은 워커의 Custom Domain으로 붙어 있어 Cloudflare가 DNS 레코드를 직접 관리합니다. 그래서 [`cloudflare/dns/`](cloudflare/dns/)에 이 호스트의 레코드 파일을 두면 안 됩니다. `manage-dns.sh`가 실행될 때 그 값으로 되돌려 배포가 끊깁니다.
+
+> 원래 GitHub Pages로 배포했습니다. 엣지 캐시가 빗나갈 때 origin(Fastly)까지 왕복하느라 TTFB가 3초까지 튀어 이미지가 간헐적으로 늦게 떴고, origin을 Cloudflare 안으로 들이면서 해소했습니다.
 
 ### GitHub Actions
 
@@ -219,6 +222,30 @@ Notion 데이터베이스에 버튼 속성을 추가하고, 버튼 클릭 시 �
 ```
 
 > API 키/서비스 계정 등 상세 설정 방법은 [`docs/claude-seo.md`](docs/claude-seo.md)를 참고하세요.
+
+## 검색 (Pagefind)
+
+[Pagefind](https://pagefind.app)로 사이트 내 검색을 제공합니다. 검색 페이지는 `/search/` 이며 상단 헤더의 검색 링크로 들어갑니다.
+
+Hugo 에는 검색 기능이 없습니다. Pagefind 는 빌드된 HTML 을 읽어 정적 인덱스를 만드는 후처리 도구라 별도 서버나 외부 검색 서비스 없이 붙습니다. 인덱스를 조각내 질의에 걸리는 것만 내려받으므로 글이 늘어도 첫 로딩이 무거워지지 않습니다.
+
+- **색인 범위**: 본문(`data-pagefind-body`)만 잡고, 전 페이지에 반복되는 공유 버튼·관련 글·giscus·저작권 영역은 제외합니다. 안 빼면 모든 글이 공통 문구로 검색됩니다.
+- **필터**: 카테고리와 태그를 `data-pagefind-filter`로 넘겨 검색 UI 에서 좁힐 수 있습니다.
+- **템플릿**: [`hugo/layouts/search/single.html`](hugo/layouts/search/single.html), 다국어 문안은 [`hugo/i18n/`](hugo/i18n/)에 있습니다.
+- **크롤링 제외**: 검색 결과 페이지는 robots.txt `Disallow`·`noindex` 메타·사이트맵 제외로 막아둡니다.
+
+**인덱스는 반드시 Hugo 빌드 뒤에 구워야 합니다.** `hugo server`(`npm run hugo:watch`)는 인덱스를 만들지 않으므로, 로컬에서 검색을 확인하려면 한 번 빌드해야 합니다.
+
+```bash
+make build   # hugo 빌드 + 검색 인덱스 (CI 와 같은 순서)
+```
+
+CI(`deploy-hugo.yml`)도 빌드와 아티팩트 업로드 사이에서 `npm run pagefind:build`를 돌립니다.
+이 순서가 어긋나면 `/search/` 페이지만 배포되고 검색창이 빈 채로 뜹니다.
+
+`pagefind`는 npx 가 아니라 devDependency 로 둡니다. 로컬과 CI 가 같은 판본을 써야 하기 때문입니다.
+
+> 인덱스 파일의 캐시 규칙은 [`cloudflare/rules/http_request_cache_settings/static.json`](cloudflare/rules/http_request_cache_settings/static.json)에 있습니다. 파일명에 콘텐츠 해시가 박힌 인덱스 본체만 장기 캐시하고, 이름이 고정된 런타임(`pagefind-ui.js` 등)은 판본을 올릴 때 스테일해지지 않도록 뺐습니다.
 
 ## 댓글 시스템 (giscus)
 

@@ -1,0 +1,50 @@
+# Workers Static Assets 의 기본 Cache-Control 은 max-age=0, must-revalidate 라
+# 방문자가 매 요청 재검증한다. zone 의 캐시 규칙은 워커 응답에 적용되지 않으므로
+# (커스텀 도메인 전환 후 실측 확인) 브라우저 캐시 지시는 여기서 준다.
+# 엣지 캐싱은 Workers 가 자체적으로 한다.
+#
+# 규칙이 겹치면 리터럴 접두사가 긴 쪽이 이긴다. 선언 순서로는 결정되지 않는다.
+#
+# 오래 가는 것은 전부 30일로 통일한다. 콘텐츠 해시가 박힌 파일(_hu_, css)은 1년을
+# 줘도 원리적으로는 안전하지만, 그 전제가 깨지는 파일이 실제로 하나 발견됐다
+# (popular 페이지가 참조하는 해시 없는 원본). 30일과 1년의 캐시 이득 차이는 작고
+# 틀렸을 때 갇히는 기간만 길어진다. immutable 도 같은 이유로 뺀다 - 그게 붙으면
+# 새로고침으로도 회복이 안 된다.
+
+/*
+  Cache-Control: public, max-age=600
+
+# 글 본문 이미지. Hugo 가 _hu_<콘텐츠 해시> 를 붙여 내용이 바뀌면 URL 을 재발급한다.
+# publishResources=false 라 이 경로에는 처리본만 남는다.
+/posts/:slug/assets/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
+
+# Hugo 가 파일명에 콘텐츠 해시를 붙인다.
+/css/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
+
+# 아바타·OG 기본 이미지·폰트·mermaid. 이름이 고정이다.
+/assets/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
+
+/favicon.ico
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
+
+# Pagefind 인덱스. 파일명에 해시가 박혀 있다. 이름이 고정인 런타임과 진입점
+# (pagefind-ui.js, wasm, pagefind-entry.json)은 일부러 뺐다 - 판본을 올리거나
+# 글을 쓰면 같은 이름으로 내용이 바뀐다.
+/pagefind/fragment/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
+
+/pagefind/index/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
+
+/pagefind/filter/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000

@@ -1,13 +1,19 @@
-// 블로그를 Workers Static Assets 로도 올리는 전환 준비용 설정. blog.plzhans.com 은
-// 그대로 GitHub Pages 가 받고, 이 워커는 도메인 없이 산출물만 들고 있는다.
+// blog.plzhans.com 을 서빙하는 워커. GitHub Pages 에서 옮겨왔다 - 엣지 캐시가 빗나갈 때
+// origin 이 Fastly 까지 왕복하느라 TTFB 가 3초까지 튀던 것이 원인이었다.
 //
-// workers_dev 를 끈 이유는 공개 URL 이 생기면 블로그가 중복 색인되고, *.workers.dev 는
-// plzhans.com zone 밖이라 캐시 규칙이 적용되지 않아 검증에도 못 쓰기 때문이다.
-// 전환할 때 여기에 도메인을 붙이고 deploy-github-pages 잡을 지운다.
+// workers_dev 는 끈다. blog.plzhans.com 이 정식 주소라 *.workers.dev 가 열려 있으면
+// 같은 블로그가 두 주소로 중복 색인된다.
+//
+// routes 의 custom_domain 은 Cloudflare 가 DNS 레코드까지 직접 관리한다는 뜻이다.
+// 그래서 cloudflare/dns/ 에 blog CNAME 파일을 두면 안 된다 - manage-dns.sh 가
+// 그 값(GitHub Pages)으로 되돌려버린다.
 {
   "name": "hans-blog",
   "compatibility_date": "2026-09-04",
   "workers_dev": false,
+  "routes": [
+    { "pattern": "blog.plzhans.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"
