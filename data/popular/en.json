@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T04:54:40.486Z",
+  "generated_at": "2026-09-24T05:04:36.123Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 102
+      "count": 104
     },
     {
       "rank": 2,
@@ -34,6 +34,19 @@
     },
     {
       "rank": 3,
+      "slug": "135-garage-webui-install-docker-compose",
+      "title": "Installing garage-webui - Manage Garage Clusters and Buckets from a Browser",
+      "description": "Add garage-webui to Garage and manage layout, buckets, and keys from a browser. One compose service plus an htpasswd login.",
+      "date": "2026-09-23T10:56:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/en/posts/135-garage-webui-install-docker-compose/",
+      "image": "/posts/135-garage-webui-install-docker-compose/assets/1_3e422a0f-7e83-81ac-be01-c24ca688240a.jpg",
+      "count": 40
+    },
+    {
+      "rank": 4,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLMs",
       "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
@@ -43,10 +56,36 @@
       ],
       "url": "/en/posts/113-claude-code-ollama-local-llm/",
       "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
-      "count": 29
+      "count": 31
     },
     {
-      "rank": 4,
+      "rank": 5,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
+      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 16
+    },
+    {
+      "rank": 6,
+      "slug": "134-garage-docker-install-s3-object-storage",
+      "title": "Installing and Configuring Garage - S3-Compatible Object Storage with Docker",
+      "description": "From missing field s3_region to a signature region mismatch. Bring Garage up with Docker Compose and put an object in a bucket.",
+      "date": "2026-09-23T10:56:00.000Z",
+      "categories": [
+        "infra"
+      ],
+      "url": "/en/posts/134-garage-docker-install-s3-object-storage/",
+      "image": "/posts/134-garage-docker-install-s3-object-storage/assets/1_3e422a0f-7e83-816a-8dd3-fc8f62a53a59.jpg",
+      "count": 14
+    },
+    {
+      "rank": 7,
       "slug": "118-telegram-chat-backup",
       "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
       "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
@@ -59,7 +98,7 @@
       "count": 13
     },
     {
-      "rank": 5,
+      "rank": 8,
       "slug": "120-cloudflare-security-headers-hsts-csp",
       "title": "4 Security Headers Flagged by an SEO Audit — Applying Them on Cloudflare Without Code",
       "description": "Explains why SEO audit reports flag HSTS, CSP, X-Content-Type-Options, and Referrer-Policy, and what each header actually does. Covers splitting fixed-value headers into Cloudflare Transform Rules while managing the frequently-changing CSP via an HTML meta tag, and why X-Frame-Options is still needed since meta can't handle frame-ancestors.",
@@ -72,7 +111,33 @@
       "count": 12
     },
     {
-      "rank": 6,
+      "rank": 9,
+      "slug": "130-data-go-kr-400-invalid-request-parameter-error",
+      "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
+      "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
+      "date": "2026-09-16T14:55:00.000Z",
+      "categories": [
+        "develop"
+      ],
+      "url": "/posts/130-data-go-kr-400-invalid-request-parameter-error/",
+      "image": "/posts/130-data-go-kr-400-invalid-request-parameter-error/assets/1_3dd22a0f-7e83-8111-9893-f6ccdf4c2ddc.jpg",
+      "count": 9
+    },
+    {
+      "rank": 10,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
+      "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
+      "date": "2026-07-10T03:44:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 7
+    },
+    {
+      "rank": 11,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -85,7 +150,7 @@
       "count": 7
     },
     {
-      "rank": 7,
+      "rank": 12,
       "slug": "95-openclaw-setup",
       "title": "Setting Up OpenClaw ",
       "description": "A summary of installing OpenClaw (OpenClaw AI agent framework) locally and configuring the model, channel, and skills through onboard. Follow along with the Telegram bot authentication and security warning checkpoints to run the agent safely.",
@@ -98,33 +163,7 @@
       "count": 6
     },
     {
-      "rank": 8,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
-      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 5
-    },
-    {
-      "rank": 9,
-      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
-      "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
-      "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
-      "date": "2026-07-10T03:44:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
-      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
-      "count": 5
-    },
-    {
-      "rank": 10,
+      "rank": 13,
       "slug": "123-hugo-blog-guide",
       "title": "Building a Hugo Blog - From Start to SEO",
       "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
@@ -137,7 +176,7 @@
       "count": 5
     },
     {
-      "rank": 11,
+      "rank": 14,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -150,7 +189,7 @@
       "count": 5
     },
     {
-      "rank": 12,
+      "rank": 15,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
       "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
@@ -163,7 +202,7 @@
       "count": 4
     },
     {
-      "rank": 13,
+      "rank": 16,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
       "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
@@ -176,7 +215,7 @@
       "count": 4
     },
     {
-      "rank": 14,
+      "rank": 17,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
       "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
@@ -189,7 +228,20 @@
       "count": 4
     },
     {
-      "rank": 15,
+      "rank": 18,
+      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
+      "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
+      "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/126-cloudflare-workers-wrangler-dev-deploy/",
+      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
+      "count": 4
+    },
+    {
+      "rank": 19,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
       "description": "A walkthrough of how to fix repeated Authentication failed errors in TortoiseGit by clearing saved authentication data via Clear in Saved Data. Covers cleaning up the Windows Credential Manager, checking credential.helper, preparing a PAT, and switching to SSH.",
@@ -202,7 +254,7 @@
       "count": 3
     },
     {
-      "rank": 16,
+      "rank": 20,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -213,58 +265,6 @@
       "url": "/en/posts/102-age-recipients-team-encryption-guide/",
       "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
       "count": 3
-    },
-    {
-      "rank": 17,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
-      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
-      "date": "2022-03-17T07:48:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 3
-    },
-    {
-      "rank": 18,
-      "slug": "101-claude-code-account-switch-macos-keychain",
-      "title": "Automating Claude Account Switching",
-      "description": "This post summarizes how to quickly switch between Claude Code accounts without logging out. It covers an automation script that backs up and swaps macOS Keychain credentials using the security command, along with how to use dedicated tools like claudini and CCSwitcher.",
-      "date": "2026-03-26T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/101-claude-code-account-switch-macos-keychain/",
-      "image": "/posts/101-claude-code-account-switch-macos-keychain/assets/1_39522a0f-7e83-8009-a988-e146d610f764.png",
-      "count": 2
-    },
-    {
-      "rank": 19,
-      "slug": "107-openclaw-node-mode-remote-infra-setup",
-      "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
-      "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/107-openclaw-node-mode-remote-infra-setup/",
-      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
-      "count": 2
-    },
-    {
-      "rank": 20,
-      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
-      "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
-      "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/126-cloudflare-workers-wrangler-dev-deploy/",
-      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
-      "count": 2
     }
   ]
 }
