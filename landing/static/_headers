@@ -1,8 +1,5 @@
-# Cloudflare Workers Static Assets는 Pages와 동일하게 이 파일을 읽어 응답 헤더를
-# 오버라이드한다. 기본 Content-Type에 charset이 안 붙어서(GitHub Pages는 자동으로
-# 붙는데 Workers Static Assets는 안 붙음) 헤더의 charset을 신뢰하는 클라이언트가
-# 한글 텍스트를 ISO-8859-1로 잘못 디코딩해 깨지는 문제(SEO 감사에서 발견) 수정.
-
+# Workers Static Assets does not add charset to Content-Type the way GitHub Pages
+# did, so clients that trust the header decoded Korean text as ISO-8859-1.
 /*.html
   Content-Type: text/html; charset=utf-8
 
@@ -23,3 +20,13 @@
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
+
+# Workers Static Assets defaults to max-age=0, must-revalidate. Edge caching is
+# handled by Workers. On overlap the longest literal prefix wins, not order.
+/*
+  Cache-Control: public, max-age=600
+
+# Service card images. Fixed names that rarely change.
+/img/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000
