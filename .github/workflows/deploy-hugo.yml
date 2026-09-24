@@ -86,34 +86,6 @@ jobs:
           retention-days: 1
           compression-level: 0
 
-      # 제출은 배포 뒤에 해야 하는데(post-indexnow) 그 잡에는 사이트맵이 없다.
-      # 페이로드만 여기서 만들어 넘긴다.
-      - name: Build IndexNow payload for blog
-        env:
-          INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
-        run: |
-          set -euo pipefail
-          urls=$(grep -ohE '<loc>[^<]+</loc>' \
-            hugo/public/ko/sitemap.xml \
-            hugo/public/en/sitemap.xml \
-            hugo/public/ja/sitemap.xml \
-            | sed -E 's#</?loc>##g')
-          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
-          jq -n \
-            --arg host "blog.plzhans.com" \
-            --arg key "$INDEXNOW_KEY" \
-            --arg keyLocation "https://blog.plzhans.com/${INDEXNOW_KEY}.txt" \
-            --argjson urlList "$url_list" \
-            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}' \
-            > indexnow-blog.json
-
-      - name: Upload IndexNow payload
-        uses: actions/upload-artifact@v7
-        with:
-          name: indexnow-blog
-          path: indexnow-blog.json
-          retention-days: 1
-
       # 루트 도메인(plzhans.com) 랜딩 페이지 — blog와 같은 잡에서 빌드해야
       # hugo/public/index.json(최신 글 목록)을 네트워크 fetch 없이 그대로 복사해 쓸 수 있음.
       # blog_posts.json 은 추적하지 않으므로(생성물) 새 클론에는 landing/data 디렉터리 자체가
@@ -144,26 +116,6 @@ jobs:
           path: landing-public.tar
           retention-days: 1
           compression-level: 0
-
-  post-indexnow:
-    needs: deploy-blog
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download IndexNow payload
-        uses: actions/download-artifact@v8
-        with:
-          name: indexnow-blog
-
-      # 위와 같은 이유로 비차단. 제출이 실패해도 배포는 이미 끝나 있다.
-      - name: Submit URLs to IndexNow
-        continue-on-error: true
-        run: |
-          set -euo pipefail
-          curl -sS -X POST https://api.indexnow.org/indexnow \
-            -H "Content-Type: application/json; charset=utf-8" \
-            -d @indexnow-blog.json \
-            -w "\nIndexNow response: %{http_code}\n"
 
   # blog.plzhans.com 을 서빙한다.
   deploy-blog:
@@ -206,6 +158,30 @@ jobs:
           npm run deploy -- \
             --tag "${{ github.sha }}" \
             --message "ref: ${{ github.ref_name }}"
+
+      # 외부 API 라 언제든 죽을 수 있다. 배포는 이미 끝났으므로 비차단으로 둔다.
+      - name: Submit blog URLs to IndexNow
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
+        run: |
+          set -euo pipefail
+          urls=$(grep -ohE '<loc>[^<]+</loc>' \
+            hugo/public/ko/sitemap.xml \
+            hugo/public/en/sitemap.xml \
+            hugo/public/ja/sitemap.xml \
+            | sed -E 's#</?loc>##g')
+          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
+          payload=$(jq -n \
+            --arg host "blog.plzhans.com" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "https://blog.plzhans.com/${INDEXNOW_KEY}.txt" \
+            --argjson urlList "$url_list" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$payload" \
+            -w "\nIndexNow response: %{http_code}\n"
 
   deploy-landing:
     needs: build
