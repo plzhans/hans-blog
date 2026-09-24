@@ -133,7 +133,6 @@ ignoreFiles = ['content/posts/.*/notion_.*\.json$']
 # URL 구조 설정 - slug만 사용
 [permalinks]
   posts = "/posts/:slug/"
-  _redirect = "/:slug/"
 
 [params.giscus]
   repo = "plzhans/hans-blog"

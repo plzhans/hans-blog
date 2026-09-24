@@ -16,12 +16,6 @@ other = "Other posts in {{ . }}"
 [hugo_related_posts_title]
 other = "Recommended Posts"
 
-[redirect_message]
-other = "This page has moved. If you are not redirected automatically, please click the link below."
-
-[redirect_link_label]
-other = "Go to page →"
-
 [more_posts]
 other = "View All Posts"
 

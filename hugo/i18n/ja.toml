@@ -16,12 +16,6 @@ other = "{{ . }}カテゴリの他の記事"
 [hugo_related_posts_title]
 other = "おすすめ記事"
 
-[redirect_message]
-other = "ページが移動されました。自動的にリダイレクトされない場合は、以下のリンクをクリックしてください。"
-
-[redirect_link_label]
-other = "ページへ移動 →"
-
 [more_posts]
 other = "もっと見る"
 
