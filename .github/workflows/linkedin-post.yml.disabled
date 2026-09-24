@@ -1,0 +1,67 @@
+# 보류 중. 확장자가 .yml 이 아니라 GitHub 이 워크플로로 읽지 않는다 - 노션 버튼이
+# Make.com 을 거쳐 보내는 repository_dispatch 도 발동하지 않는다. 쓰기로 하면
+# 확장자를 .yml 로 되돌리면 된다.
+#
+name: LinkedIn Post
+
+# 노션의 "링크드인 게시" 버튼이 Make.com 을 거쳐 이 워크플로를 부른다.
+# Make.com 시나리오는 event_type 을 그대로 흘려보내는 범용 중계기라
+# 버튼이 보내는 event_type 만 다르면 되고, 시나리오를 새로 만들 필요가 없다.
+on:
+  repository_dispatch:
+    types: [linkedin-post]
+
+  # 버튼을 연결하기 전에, 그리고 실패를 재현할 때 손으로 돌린다.
+  workflow_dispatch:
+    inputs:
+      page_id:
+        description: "Notion page ID"
+        required: true
+        type: string
+      dry_run:
+        description: "검증만 하고 실제로 올리지 않는다"
+        required: false
+        type: boolean
+        default: true
+
+# 같은 글을 두 번 올리지 않도록 페이지 단위로 직렬화한다. 재게시 자체는
+# "링크드인 URL" 값으로도 막지만, 동시에 두 번 눌리면 둘 다 빈 값을 보고 통과한다.
+concurrency:
+  group: linkedin-post-${{ github.event.client_payload.notion_data.id || inputs.page_id }}
+  cancel-in-progress: false
+
+jobs:
+  linkedin-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Post to LinkedIn
+        env:
+          NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+          # .linkedin-session.json 의 내용을 통째로 담은 시크릿. make linkedin-auth 가
+          # 재인증할 때마다 갱신한다. 코드가 파일 대신 이 값을 읽으므로 복구 단계가 없다.
+          LINKEDIN_SESSION_JSON: ${{ secrets.LINKEDIN_SESSION_JSON }}
+          PAGE_ID: ${{ github.event.client_payload.notion_data.id || inputs.page_id }}
+          # repository_dispatch(버튼)로 들어오면 실제로 올린다.
+          # 손으로 돌릴 때는 기본이 dry-run 이라 실수로 올라가지 않는다.
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          set -euo pipefail
+          if [ -z "$PAGE_ID" ]; then
+            echo "page_id is empty - client_payload.notion_data.id 를 확인하세요"
+            exit 1
+          fi
+          node src/NotionCli.mjs linkedin post "$PAGE_ID" $DRY_RUN
