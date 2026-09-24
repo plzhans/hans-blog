@@ -15,12 +15,18 @@
     {{- if gt $targetWidth $maxWidth -}}{{- $targetWidth = $maxWidth -}}{{- end -}}
     {{- $webp := $resource.Resize (printf "%dx webp" $targetWidth) -}}
     {{- $fallback := $resource.Resize (printf "%dx" $targetWidth) -}}
+    {{- /* 클릭 확대. 원본이 표시 크기보다 클 때만 data-zoom-src 로 원본을 가리킨다.
+         없으면 medium-zoom 이 이미 받아둔 이미지를 그대로 확대하므로 추가 요청이 없다. */ -}}
+    {{- .Page.Store.Set "hasZoomableImage" true -}}
+    {{- $zoomSrc := "" -}}
+    {{- if gt $resource.Width $targetWidth -}}{{- $zoomSrc = $resource.RelPermalink -}}{{- end -}}
     <picture>
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-      <img src="{{ $fallback.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
+      <img src="{{ $fallback.RelPermalink }}"{{ with $zoomSrc }} data-zoom-src="{{ . }}"{{ end }}{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
     </picture>
   {{- else if $resource -}}
     {{- /* SVG 등 래스터 리사이즈가 불가능한 리소스는 원본 그대로 출력 */}}
+    {{- .Page.Store.Set "hasZoomableImage" true -}}
     <img src="{{ $resource.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
   {{- else -}}
     {{- $basePath := .Page.RelPermalink | strings.TrimPrefix (printf "/%s/" .Page.Language.Lang) -}}

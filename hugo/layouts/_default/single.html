@@ -279,6 +279,23 @@
   {{- end }}
   {{- end }}
 
+  {{ if .Store.Get "hasZoomableImage" }}
+  {{- /* 본문 이미지 클릭 확대 (medium-zoom 1.1.0, MIT). 스타일을 직접 주입해서
+       CSS 파일이 따로 없다. 이미지가 있는 글에서만 붙이고, defer 로 파싱을 막지
+       않으며, 초기화는 idle 까지 미뤄 LCP 와 겹치지 않게 한다. */ -}}
+  <script defer src="/assets/lib/medium-zoom.min.js"></script>
+  <script>
+    (function () {
+      var init = function () {
+        if (!window.mediumZoom) return;
+        mediumZoom('.post-main img', { background: 'rgba(26, 32, 44, 0.9)', margin: 24 });
+      };
+      var idle = window.requestIdleCallback || function (fn) { setTimeout(fn, 1); };
+      window.addEventListener('DOMContentLoaded', function () { idle(init); });
+    })();
+  </script>
+  {{ end }}
+
   {{ if .Store.Get "hasMermaid" }}
   <script src="/assets/lib/mermaid.min.js"></script>
   <script>
