@@ -15,15 +15,17 @@
     {{- if gt $targetWidth $maxWidth -}}{{- $targetWidth = $maxWidth -}}{{- end -}}
     {{- $webp := $resource.Resize (printf "%dx webp" $targetWidth) -}}
     {{- $fallback := $resource.Resize (printf "%dx" $targetWidth) -}}
-    {{- /* 클릭 확대. 원본이 표시 크기보다 클 때만 data-zoom-src 로 원본을 가리킨다.
-         없으면 medium-zoom 이 이미 받아둔 이미지를 그대로 확대하므로 추가 요청이 없다. */ -}}
+    {{- /* 클릭 확대. 원본이 표시 크기보다 크면 원본을, 아니면 표시본을 연다.
+         PhotoSwipe 는 열기 전에 크기를 알아야 해서 폭·높이를 같이 넘긴다. */ -}}
     {{- .Page.Store.Set "hasZoomableImage" true -}}
-    {{- $zoomSrc := "" -}}
-    {{- if gt $resource.Width $targetWidth -}}{{- $zoomSrc = $resource.RelPermalink -}}{{- end -}}
-    <picture>
-      <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
-      <img src="{{ $fallback.RelPermalink }}"{{ with $zoomSrc }} data-zoom-src="{{ . }}"{{ end }}{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
-    </picture>
+    {{- $full := $fallback -}}
+    {{- if gt $resource.Width $targetWidth -}}{{- $full = $resource -}}{{- end -}}
+    <a href="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" target="_blank" rel="noopener"{{ with $alt }} aria-label="{{ . }}"{{ end }}>
+      <picture>
+        <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+        <img src="{{ $fallback.RelPermalink }}"{{ with $alt }} alt="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }} width="{{ $fallback.Width }}" height="{{ $fallback.Height }}"{{ if $isFirstImage }} loading="eager" fetchpriority="high"{{ else }} loading="lazy"{{ end }}>
+      </picture>
+    </a>
   {{- else if $resource -}}
     {{- /* SVG 등 래스터 리사이즈가 불가능한 리소스는 원본 그대로 출력 */}}
     {{- .Page.Store.Set "hasZoomableImage" true -}}

@@ -280,19 +280,24 @@
   {{- end }}
 
   {{ if .Store.Get "hasZoomableImage" }}
-  {{- /* 본문 이미지 클릭 확대 (medium-zoom 1.1.0, MIT). 스타일을 직접 주입해서
-       CSS 파일이 따로 없다. 이미지가 있는 글에서만 붙이고, defer 로 파싱을 막지
-       않으며, 초기화는 idle 까지 미뤄 LCP 와 겹치지 않게 한다. */ -}}
-  <script defer src="/assets/lib/medium-zoom.min.js"></script>
-  <script>
-    (function () {
-      var init = function () {
-        if (!window.mediumZoom) return;
-        mediumZoom('.post-main img', { background: 'rgba(26, 32, 44, 0.9)', margin: 24 });
-      };
-      var idle = window.requestIdleCallback || function (fn) { setTimeout(fn, 1); };
-      window.addEventListener('DOMContentLoaded', function () { idle(init); });
-    })();
+  {{- /* 본문 이미지 클릭 확대 (PhotoSwipe 5.4.4, MIT). 오버레이·닫기·이전/다음·
+       카운터·핀치 줌이 들어 있다. 이미지가 있는 글에만 붙이고, CSS 는 preload 로
+       미리 받되 초기화는 idle 까지 미뤄 LCP 와 겹치지 않게 한다. */ -}}
+  <link rel="stylesheet" href="/assets/lib/photoswipe/photoswipe.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/lib/photoswipe/photoswipe.css"></noscript>
+  <script type="module">
+    var init = async function () {
+      var { default: PhotoSwipeLightbox } = await import('/assets/lib/photoswipe/photoswipe-lightbox.esm.min.js');
+      new PhotoSwipeLightbox({
+        gallery: '.post-main',
+        children: 'a[data-pswp-width]',
+        pswpModule: function () { return import('/assets/lib/photoswipe/photoswipe.esm.min.js'); },
+        bgOpacity: 0.92,
+        padding: { top: 24, bottom: 24, left: 16, right: 16 },
+      }).init();
+    };
+    var idle = window.requestIdleCallback || function (fn) { setTimeout(fn, 1); };
+    idle(init);
   </script>
   {{ end }}
 
