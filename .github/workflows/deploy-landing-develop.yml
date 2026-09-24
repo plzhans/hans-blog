@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 1
 
@@ -43,7 +43,7 @@ jobs:
       # 배포 도구 wrangler 가 landing/package.json 에 있다. 이 워크플로는 블로그를 굽지
       # 않으므로 루트 의존성(pagefind 55MB 포함)은 설치하지 않는다 - landing 것만 깐다.
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -53,7 +53,7 @@ jobs:
         run: npm ci --prefix landing
 
       - name: Cache Hugo
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ env.HUGO_CACHEDIR }}
           key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
