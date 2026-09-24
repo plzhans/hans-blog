@@ -49,13 +49,10 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      # 루트는 검색 인덱스를 굽는 pagefind 때문에, landing 은 배포 도구 wrangler 때문에
-      # 필요하다. 둘은 서로 다른 배포 단위라 package.json 을 따로 들고 있다 - wrangler 는
-      # workerd 바이너리까지 236MB 라 루트에 두면 Notion 동기화 워크플로들까지 끌어쓴다.
+      # 검색 인덱스를 굽는 pagefind 만 필요하다. 배포 도구(wrangler)는 각 배포 잡이
+      # 자기 배포 단위 것을 설치한다.
       - name: Install dependencies
-        run: |
-          npm ci
-          npm ci --prefix landing
+        run: npm ci
 
       - name: Cache Hugo
         uses: actions/cache@v6
@@ -137,49 +134,19 @@ jobs:
       # 버전은 landing/package-lock.json 에 고정돼 있다. 배포할 때마다 다른 판본이 잡히면
       # 같은 산출물을 다시 올려도 동작이 달라질 수 있어서, hugo.toml 의 compatibility_date 를
       # 고정하는 것과 같은 이유로 락파일에 박아둔다. develop 배포도 같은 락파일을 쓴다.
-      - name: Deploy landing to Cloudflare Workers
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CI: "true"
-          WRANGLER_SEND_METRICS: "false"
-        run: |
-          cd landing
-          npm run deploy -- \
-            --tag "${{ github.sha }}" \
-            --message "ref: ${{ github.ref_name }}"
+      - name: Pack landing output
+        run: tar -cf landing-public.tar -C landing public
 
-      # IndexNow는 제출 host와 keyLocation의 host가 같아야 해서 blog와 별도 제출이 필요함
-      # (landing/static/<key>.txt에 같은 키 파일을 복사해둠).
-      # 검색엔진에 알리는 부수 작업이다. 외부 API 라 우리가 어쩔 수 없는 이유로 죽는데,
-      # 여기서 잡이 실패하면 이미 다 구워둔 블로그 산출물이 배포되지 못한다.
-      - name: Submit landing URLs to IndexNow
-        continue-on-error: true
-        env:
-          INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
-        run: |
-          set -euo pipefail
-          # sitemap.xml은 하위 사이트맵을 묶는 sitemapindex라 <loc>이 페이지가 아니라
-          # 사이트맵 파일을 가리킨다. 실제 페이지 URL은 sitemap-landing.xml에 있다.
-          # /docs/sitemap.xml은 별도 repo(hansapp-docs)가 빌드·배포하므로 여기서 제출하지 않는다.
-          urls=$(grep -ohE '<loc>[^<]+</loc>' landing/public/sitemap-landing.xml | sed -E 's#</?loc>##g')
-          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
-          payload=$(jq -n \
-            --arg host "plzhans.com" \
-            --arg key "$INDEXNOW_KEY" \
-            --arg keyLocation "https://plzhans.com/${INDEXNOW_KEY}.txt" \
-            --argjson urlList "$url_list" \
-            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
-          curl -sS -X POST https://api.indexnow.org/indexnow \
-            -H "Content-Type: application/json; charset=utf-8" \
-            -d "$payload" \
-            -w "\nIndexNow response: %{http_code}\n"
+      - name: Upload landing output
+        uses: actions/upload-artifact@v7
+        with:
+          name: landing-public
+          path: landing-public.tar
+          retention-days: 1
+          compression-level: 0
 
-  # 배포에서 뗀 이유는 IndexNow 가 죽었을 때 배포 잡까지 실패로 뜨지 않게 하려는 것이다.
-  # needs 는 실제로 blog.plzhans.com 을 서빙하는 쪽이어야 한다 - 먼저 쏘면 크롤러가
-  # 옛 페이지를 긁어간다.
   post-indexnow:
-    needs: deploy-cloudflare-workers
+    needs: deploy-blog
     runs-on: ubuntu-latest
 
     steps:
@@ -199,7 +166,7 @@ jobs:
             -w "\nIndexNow response: %{http_code}\n"
 
   # blog.plzhans.com 을 서빙한다.
-  deploy-cloudflare-workers:
+  deploy-blog:
     needs: build
     runs-on: ubuntu-latest
 
@@ -239,3 +206,68 @@ jobs:
           npm run deploy -- \
             --tag "${{ github.sha }}" \
             --message "ref: ${{ github.ref_name }}"
+
+  deploy-landing:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: landing/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefix landing
+
+      - name: Download landing output
+        uses: actions/download-artifact@v8
+        with:
+          name: landing-public
+
+      - name: Unpack landing output
+        run: tar -xf landing-public.tar -C landing
+
+      # 버전은 landing/package-lock.json 에 고정돼 있다.
+      - name: Deploy landing to Cloudflare Workers
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CI: "true"
+          WRANGLER_SEND_METRICS: "false"
+        run: |
+          cd landing
+          npm run deploy -- \
+            --tag "${{ github.sha }}" \
+            --message "ref: ${{ github.ref_name }}"
+
+      # IndexNow 는 제출 host 와 keyLocation 의 host 가 같아야 해서 blog 와 따로 낸다
+      # (landing/static/<key>.txt 에 같은 키 파일을 복사해둠). 외부 API 라 비차단.
+      - name: Submit landing URLs to IndexNow
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: a147cb4e39957f43ac4c2089298ab0c0
+        run: |
+          set -euo pipefail
+          # sitemap.xml 은 하위 사이트맵을 묶는 sitemapindex 라 <loc> 이 페이지가 아니라
+          # 사이트맵 파일을 가리킨다. 실제 페이지 URL 은 sitemap-landing.xml 에 있다.
+          # /docs/sitemap.xml 은 별도 repo(hansapp-docs)가 배포하므로 제출하지 않는다.
+          urls=$(grep -ohE '<loc>[^<]+</loc>' landing/public/sitemap-landing.xml | sed -E 's#</?loc>##g')
+          url_list=$(printf '%s\n' "$urls" | jq -R . | jq -s .)
+          payload=$(jq -n \
+            --arg host "plzhans.com" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "https://plzhans.com/${INDEXNOW_KEY}.txt" \
+            --argjson urlList "$url_list" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
+          curl -sS -X POST https://api.indexnow.org/indexnow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$payload" \
+            -w "\nIndexNow response: %{http_code}\n"
