@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T08:20:35.638Z",
+  "generated_at": "2026-09-25T05:06:52.519Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/ja/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 104
+      "count": 106
     },
     {
       "rank": 2,
@@ -43,7 +43,7 @@
       ],
       "url": "/ja/posts/135-garage-webui-install-docker-compose/",
       "image": "/posts/135-garage-webui-install-docker-compose/assets/1_3e422a0f-7e83-81ac-be01-c24ca688240a.jpg",
-      "count": 40
+      "count": 39
     },
     {
       "rank": 4,
@@ -60,19 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "Synology DSM 無料 SSL 証明書の発行方法 | acme.sh + Cloudflare DNS で Let’s Encrypt を自動更新",
-      "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 16
-    },
-    {
-      "rank": 6,
       "slug": "134-garage-docker-install-s3-object-storage",
       "title": "Garage のインストールと構成 - Docker で動かす S3 互換オブジェクトストレージ",
       "description": "missing field s3_region から署名のリージョン不一致まで。Docker Compose で Garage を起動し、バケットにオブジェクトを入れるまでを扱います。",
@@ -82,7 +69,20 @@
       ],
       "url": "/ja/posts/134-garage-docker-install-s3-object-storage/",
       "image": "/posts/134-garage-docker-install-s3-object-storage/assets/1_3e422a0f-7e83-816a-8dd3-fc8f62a53a59.jpg",
-      "count": 14
+      "count": 26
+    },
+    {
+      "rank": 6,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "Synology DSM 無料 SSL 証明書の発行方法 | acme.sh + Cloudflare DNS で Let’s Encrypt を自動更新",
+      "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 19
     },
     {
       "rank": 7,
@@ -112,19 +112,6 @@
     },
     {
       "rank": 9,
-      "slug": "130-data-go-kr-400-invalid-request-parameter-error",
-      "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
-      "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
-      "date": "2026-09-16T14:55:00.000Z",
-      "categories": [
-        "develop"
-      ],
-      "url": "/posts/130-data-go-kr-400-invalid-request-parameter-error/",
-      "image": "/posts/130-data-go-kr-400-invalid-request-parameter-error/assets/1_3dd22a0f-7e83-8111-9893-f6ccdf4c2ddc.jpg",
-      "count": 9
-    },
-    {
-      "rank": 10,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "Oracle Cloud Always Free A1インスタンスの作成方法 - パブリックIP接続とSSHセキュリティ設定",
       "description": "Oracle Cloud Always Free A1(ARM)インスタンスを作成する方法を段階的にまとめます。無料スペックの選択からパブリックIPの接続、SSHキーの設定、VCN Security ListとNSGによるSSH 22番ポートの制限までを含みます。",
@@ -137,7 +124,7 @@
       "count": 7
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "ネイバー地図 Open API 認証失敗(200)の解決:ncpClientIdからncpKeyIdへの変更",
       "description": "ネイバー地図 Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。コンソール統合によりncpClientId・govClientId・finClientIdがncpKeyIdに変更された点と、ポート・URIを除外する必要があるWebサービスURL登録ルールまで確認してください。",
@@ -148,6 +135,19 @@
       "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 7
+    },
+    {
+      "rank": 11,
+      "slug": "130-data-go-kr-400-invalid-request-parameter-error",
+      "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
+      "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
+      "date": "2026-09-16T14:55:00.000Z",
+      "categories": [
+        "develop"
+      ],
+      "url": "/posts/130-data-go-kr-400-invalid-request-parameter-error/",
+      "image": "/posts/130-data-go-kr-400-invalid-request-parameter-error/assets/1_3dd22a0f-7e83-8111-9893-f6ccdf4c2ddc.jpg",
+      "count": 6
     },
     {
       "rank": 12,
@@ -177,6 +177,19 @@
     },
     {
       "rank": 14,
+      "slug": "131-robots-txt-ai-crawler-content-signals",
+      "title": "robots.txt で AI クローラーを制御する - 検索・学習・エージェントを分けて許可する方法",
+      "description": "AI クローラーのせいで robots.txt に書くことが増えました。用途別のボット名と Google-Extended と Content-Signal を整理します。",
+      "date": "2026-09-16T14:55:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/ja/posts/131-robots-txt-ai-crawler-content-signals/",
+      "image": "/posts/131-robots-txt-ai-crawler-content-signals/assets/1_3dd22a0f-7e83-81b3-9ca5-fb1ae5e5862d.jpg",
+      "count": 5
+    },
+    {
+      "rank": 15,
       "slug": "6-flush-dns-cache",
       "title": "Windows/Linux/macOSでDNSキャッシュをクリアする",
       "description": "DNSレコード変更後に接続できないとき、Windows・Linux・macOSでDNSキャッシュをフラッシュする方法をまとめました。ipconfig、resolvectl、mDNSResponderコマンドとTTL・ブラウザキャッシュの確認で伝播遅延を素早く診断します。",
@@ -189,7 +202,7 @@
       "count": 5
     },
     {
-      "rank": 15,
+      "rank": 16,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "Samsung SmartThings API 連携方法 - CLI インストールから OAuth 認証まで",
       "description": "Samsung SmartThings API 連携に必要な CLI インストール、OAuth アプリ作成、Redirect URI 設定、トークン発行、デバイス一覧取得の方法をステップごとに解説します。",
@@ -199,19 +212,6 @@
       ],
       "url": "/ja/posts/110-samsung-smartthings-api-integration-cli-oauth/",
       "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
-      "count": 4
-    },
-    {
-      "rank": 16,
-      "slug": "111-tailscale-linux-install-secure-remote-vpn",
-      "title": "Tailscale Linuxインストール - 安全なリモートVPN構成",
-      "description": "Linuxサーバーに Tailscale をインストールして、安全なリモートVPN環境を構成する方法を説明します。アウトバウンドベースの接続、P2P通信、DERPリレー、ServeとFunnelの活用方法についてもまとめます。",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/ja/posts/111-tailscale-linux-install-secure-remote-vpn/",
-      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
       "count": 4
     },
     {

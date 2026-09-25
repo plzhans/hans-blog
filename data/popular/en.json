@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T08:20:35.628Z",
+  "generated_at": "2026-09-25T05:06:52.508Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 104
+      "count": 106
     },
     {
       "rank": 2,
@@ -43,7 +43,7 @@
       ],
       "url": "/en/posts/135-garage-webui-install-docker-compose/",
       "image": "/posts/135-garage-webui-install-docker-compose/assets/1_3e422a0f-7e83-81ac-be01-c24ca688240a.jpg",
-      "count": 40
+      "count": 39
     },
     {
       "rank": 4,
@@ -60,19 +60,6 @@
     },
     {
       "rank": 5,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
-      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 16
-    },
-    {
-      "rank": 6,
       "slug": "134-garage-docker-install-s3-object-storage",
       "title": "Installing and Configuring Garage - S3-Compatible Object Storage with Docker",
       "description": "From missing field s3_region to a signature region mismatch. Bring Garage up with Docker Compose and put an object in a bucket.",
@@ -82,7 +69,20 @@
       ],
       "url": "/en/posts/134-garage-docker-install-s3-object-storage/",
       "image": "/posts/134-garage-docker-install-s3-object-storage/assets/1_3e422a0f-7e83-816a-8dd3-fc8f62a53a59.jpg",
-      "count": 14
+      "count": 26
+    },
+    {
+      "rank": 6,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
+      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 19
     },
     {
       "rank": 7,
@@ -112,19 +112,6 @@
     },
     {
       "rank": 9,
-      "slug": "130-data-go-kr-400-invalid-request-parameter-error",
-      "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
-      "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
-      "date": "2026-09-16T14:55:00.000Z",
-      "categories": [
-        "develop"
-      ],
-      "url": "/posts/130-data-go-kr-400-invalid-request-parameter-error/",
-      "image": "/posts/130-data-go-kr-400-invalid-request-parameter-error/assets/1_3dd22a0f-7e83-8111-9893-f6ccdf4c2ddc.jpg",
-      "count": 9
-    },
-    {
-      "rank": 10,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
       "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
@@ -137,7 +124,7 @@
       "count": 7
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -148,6 +135,19 @@
       "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 7
+    },
+    {
+      "rank": 11,
+      "slug": "130-data-go-kr-400-invalid-request-parameter-error",
+      "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
+      "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
+      "date": "2026-09-16T14:55:00.000Z",
+      "categories": [
+        "develop"
+      ],
+      "url": "/posts/130-data-go-kr-400-invalid-request-parameter-error/",
+      "image": "/posts/130-data-go-kr-400-invalid-request-parameter-error/assets/1_3dd22a0f-7e83-8111-9893-f6ccdf4c2ddc.jpg",
+      "count": 6
     },
     {
       "rank": 12,
@@ -177,6 +177,19 @@
     },
     {
       "rank": 14,
+      "slug": "131-robots-txt-ai-crawler-content-signals",
+      "title": "Controlling AI Crawlers with robots.txt - How to Allow Search, Training and Agents Separately",
+      "description": "AI crawlers have added more to write in robots.txt. A rundown of per-purpose bot names, Google-Extended and Content-Signal.",
+      "date": "2026-09-16T14:55:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/131-robots-txt-ai-crawler-content-signals/",
+      "image": "/posts/131-robots-txt-ai-crawler-content-signals/assets/1_3dd22a0f-7e83-81b3-9ca5-fb1ae5e5862d.jpg",
+      "count": 5
+    },
+    {
+      "rank": 15,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -189,7 +202,7 @@
       "count": 5
     },
     {
-      "rank": 15,
+      "rank": 16,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
       "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
@@ -199,19 +212,6 @@
       ],
       "url": "/en/posts/110-samsung-smartthings-api-integration-cli-oauth/",
       "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
-      "count": 4
-    },
-    {
-      "rank": 16,
-      "slug": "111-tailscale-linux-install-secure-remote-vpn",
-      "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
-      "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/en/posts/111-tailscale-linux-install-secure-remote-vpn/",
-      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
       "count": 4
     },
     {
