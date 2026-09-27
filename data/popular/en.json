@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T05:10:34.261Z",
+  "generated_at": "2026-09-27T05:27:28.764Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -177,6 +177,19 @@
     },
     {
       "rank": 14,
+      "slug": "102-age-recipients-team-encryption-guide",
+      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
+      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
+      "date": "2026-05-01T22:57:00.000Z",
+      "categories": [
+        "security"
+      ],
+      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
+      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "count": 4
+    },
+    {
+      "rank": 15,
       "slug": "110-samsung-smartthings-api-integration-cli-oauth",
       "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
       "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
@@ -189,7 +202,7 @@
       "count": 4
     },
     {
-      "rank": 15,
+      "rank": 16,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
       "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
@@ -202,7 +215,7 @@
       "count": 4
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
       "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
@@ -215,7 +228,7 @@
       "count": 4
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
       "description": "A walkthrough of how to fix repeated Authentication failed errors in TortoiseGit by clearing saved authentication data via Clear in Saved Data. Covers cleaning up the Windows Credential Manager, checking credential.helper, preparing a PAT, and switching to SSH.",
@@ -225,19 +238,6 @@
       ],
       "url": "/en/posts/10-tortoisegit-clear-saved-authentication-data/",
       "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
-      "count": 3
-    },
-    {
-      "rank": 18,
-      "slug": "102-age-recipients-team-encryption-guide",
-      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
-      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
-      "date": "2026-05-01T22:57:00.000Z",
-      "categories": [
-        "security"
-      ],
-      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
-      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
       "count": 3
     },
     {
