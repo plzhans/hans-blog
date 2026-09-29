@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T05:35:51.799Z",
+  "generated_at": "2026-09-29T05:53:37.817Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 106
+      "count": 101
     },
     {
       "rank": 2,
@@ -190,19 +190,6 @@
     },
     {
       "rank": 15,
-      "slug": "110-samsung-smartthings-api-integration-cli-oauth",
-      "title": "Samsung SmartThings API 연동 방법 - CLI 설치부터 OAuth 인증까지",
-      "description": "Samsung SmartThings API 연동에 필요한 CLI 설치, OAuth 앱 생성, Redirect URI 설정, 토큰 발급, 디바이스 조회 방법을 단계별로 정리합니다.",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/110-samsung-smartthings-api-integration-cli-oauth/",
-      "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
-      "count": 4
-    },
-    {
-      "rank": 16,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
       "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
@@ -215,7 +202,7 @@
       "count": 4
     },
     {
-      "rank": 17,
+      "rank": 16,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포",
       "description": "wrangler 설치와 타입 설정, wrangler dev 로 workerd 를 띄우는 법, 그리고 배포. wrangler dev 가 프론트 개발 서버가 아니라는 점부터.",
@@ -228,7 +215,7 @@
       "count": 4
     },
     {
-      "rank": 18,
+      "rank": 17,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "TortoiseGit 인증 오류 해결: 저장된 인증 정보 초기화(Clear) 방법",
       "description": "TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 정리, credential.helper 확인, PAT 준비와 SSH 전환까지 다룹니다.",
@@ -241,7 +228,7 @@
       "count": 3
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
       "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
@@ -254,7 +241,7 @@
       "count": 3
     },
     {
-      "rank": 20,
+      "rank": 19,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "robots.txt 로 AI 크롤러 제어하기 - 검색·학습·에이전트를 나눠 허용하는 방법",
       "description": "AI 크롤러 때문에 robots.txt 에 적을 것이 늘었다. 용도별 봇 이름과 Google-Extended 와 Content-Signal 을 정리한다.",
@@ -265,6 +252,19 @@
       "url": "/posts/131-robots-txt-ai-crawler-content-signals/",
       "image": "/posts/131-robots-txt-ai-crawler-content-signals/assets/1_3dd22a0f-7e83-81b3-9ca5-fb1ae5e5862d.jpg",
       "count": 3
+    },
+    {
+      "rank": 20,
+      "slug": "101-claude-code-account-switch-macos-keychain",
+      "title": "Claude 계정 스위치 자동화",
+      "description": "Claude Code 계정을 로그아웃 없이 빠르게 전환하는 방법을 정리합니다. macOS Keychain의 인증 정보를 security 명령으로 백업·교체하는 자동화 스크립트와 claudini·CCSwitcher 같은 전용 도구 사용법을 함께 다룹니다.",
+      "date": "2026-03-26T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/posts/101-claude-code-account-switch-macos-keychain/",
+      "image": "/posts/101-claude-code-account-switch-macos-keychain/assets/1_39522a0f-7e83-8009-a988-e146d610f764.png",
+      "count": 2
     }
   ]
 }

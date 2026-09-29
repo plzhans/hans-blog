@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T05:35:51.809Z",
+  "generated_at": "2026-09-29T05:53:37.824Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 106
+      "count": 101
     },
     {
       "rank": 2,
@@ -190,19 +190,6 @@
     },
     {
       "rank": 15,
-      "slug": "110-samsung-smartthings-api-integration-cli-oauth",
-      "title": "How to Integrate Samsung SmartThings API - From CLI Installation to OAuth Authentication",
-      "description": "A step-by-step guide covering CLI installation, OAuth app creation, Redirect URI configuration, token issuance, and device listing for Samsung SmartThings API integration.",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/110-samsung-smartthings-api-integration-cli-oauth/",
-      "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
-      "count": 4
-    },
-    {
-      "rank": 16,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
       "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
@@ -215,7 +202,7 @@
       "count": 4
     },
     {
-      "rank": 17,
+      "rank": 16,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
       "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
@@ -228,7 +215,7 @@
       "count": 4
     },
     {
-      "rank": 18,
+      "rank": 17,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
       "description": "A walkthrough of how to fix repeated Authentication failed errors in TortoiseGit by clearing saved authentication data via Clear in Saved Data. Covers cleaning up the Windows Credential Manager, checking credential.helper, preparing a PAT, and switching to SSH.",
@@ -241,7 +228,7 @@
       "count": 3
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
       "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
@@ -254,7 +241,7 @@
       "count": 3
     },
     {
-      "rank": 20,
+      "rank": 19,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "Controlling AI Crawlers with robots.txt - How to Allow Search, Training and Agents Separately",
       "description": "AI crawlers have added more to write in robots.txt. A rundown of per-purpose bot names, Google-Extended and Content-Signal.",
@@ -265,6 +252,19 @@
       "url": "/en/posts/131-robots-txt-ai-crawler-content-signals/",
       "image": "/posts/131-robots-txt-ai-crawler-content-signals/assets/1_3dd22a0f-7e83-81b3-9ca5-fb1ae5e5862d.jpg",
       "count": 3
+    },
+    {
+      "rank": 20,
+      "slug": "101-claude-code-account-switch-macos-keychain",
+      "title": "Automating Claude Account Switching",
+      "description": "This post summarizes how to quickly switch between Claude Code accounts without logging out. It covers an automation script that backs up and swaps macOS Keychain credentials using the security command, along with how to use dedicated tools like claudini and CCSwitcher.",
+      "date": "2026-03-26T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/101-claude-code-account-switch-macos-keychain/",
+      "image": "/posts/101-claude-code-account-switch-macos-keychain/assets/1_39522a0f-7e83-8009-a988-e146d610f764.png",
+      "count": 2
     }
   ]
 }

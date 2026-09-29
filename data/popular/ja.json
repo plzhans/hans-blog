@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T05:35:51.819Z",
+  "generated_at": "2026-09-29T05:53:37.832Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/ja/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 106
+      "count": 101
     },
     {
       "rank": 2,
@@ -190,19 +190,6 @@
     },
     {
       "rank": 15,
-      "slug": "110-samsung-smartthings-api-integration-cli-oauth",
-      "title": "Samsung SmartThings API 連携方法 - CLI インストールから OAuth 認証まで",
-      "description": "Samsung SmartThings API 連携に必要な CLI インストール、OAuth アプリ作成、Redirect URI 設定、トークン発行、デバイス一覧取得の方法をステップごとに解説します。",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/110-samsung-smartthings-api-integration-cli-oauth/",
-      "image": "/posts/110-samsung-smartthings-api-integration-cli-oauth/assets/1_39522a0f-7e83-8044-b526-d76309a8b4d4.png",
-      "count": 4
-    },
-    {
-      "rank": 16,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 静的サイトガイド - デプロイからSEOまで",
       "description": "静的サイトをCloudflareに載せ、その前にコードを一枚重ねてSEOを改善するまで。4編に分けて整理したシリーズの案内板。",
@@ -215,7 +202,7 @@
       "count": 4
     },
     {
-      "rank": 17,
+      "rank": 16,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "wrangler 使い方 - Cloudflare Workers のローカル開発とデプロイ",
       "description": "wranglerのインストールと型設定、wrangler devでworkerdを立ち上げる方法、そしてデプロイ。wrangler devがフロントエンドの開発サーバーではないという点から。",
@@ -228,7 +215,7 @@
       "count": 4
     },
     {
-      "rank": 18,
+      "rank": 17,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "TortoiseGitの認証エラーを解決する：保存された認証情報を初期化(Clear)する方法",
       "description": "TortoiseGitでAuthentication failedが繰り返し発生する場合に、Saved DataのClearで保存された認証情報を初期化する手順をまとめました。Windows資格情報マネージャーの整理、credential.helperの確認、PATの準備、SSHへの切り替えまで扱います。",
@@ -241,7 +228,7 @@
       "count": 3
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linuxインストール - 安全なリモートVPN構成",
       "description": "Linuxサーバーに Tailscale をインストールして、安全なリモートVPN環境を構成する方法を説明します。アウトバウンドベースの接続、P2P通信、DERPリレー、ServeとFunnelの活用方法についてもまとめます。",
@@ -254,7 +241,7 @@
       "count": 3
     },
     {
-      "rank": 20,
+      "rank": 19,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "robots.txt で AI クローラーを制御する - 検索・学習・エージェントを分けて許可する方法",
       "description": "AI クローラーのせいで robots.txt に書くことが増えました。用途別のボット名と Google-Extended と Content-Signal を整理します。",
@@ -265,6 +252,19 @@
       "url": "/ja/posts/131-robots-txt-ai-crawler-content-signals/",
       "image": "/posts/131-robots-txt-ai-crawler-content-signals/assets/1_3dd22a0f-7e83-81b3-9ca5-fb1ae5e5862d.jpg",
       "count": 3
+    },
+    {
+      "rank": 20,
+      "slug": "101-claude-code-account-switch-macos-keychain",
+      "title": "Claudeアカウントスイッチの自動化",
+      "description": "ログアウトせずにClaude Codeアカウントを素早く切り替える方法をまとめます。macOS Keychainの認証情報をsecurityコマンドでバックアップ・置き換えする自動化スクリプトと、claudini・CCSwitcherのような専用ツールの使い方を併せて紹介します。",
+      "date": "2026-03-26T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/ja/posts/101-claude-code-account-switch-macos-keychain/",
+      "image": "/posts/101-claude-code-account-switch-macos-keychain/assets/1_39522a0f-7e83-8009-a988-e146d610f764.png",
+      "count": 2
     }
   ]
 }
