@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T05:53:37.824Z",
+  "generated_at": "2026-09-30T05:44:18.043Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 101
+      "count": 98
     },
     {
       "rank": 2,
@@ -34,19 +34,6 @@
     },
     {
       "rank": 3,
-      "slug": "113-claude-code-ollama-local-llm",
-      "title": "How to Use Claude Code with Ollama Local LLMs",
-      "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/113-claude-code-ollama-local-llm/",
-      "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
-      "count": 31
-    },
-    {
-      "rank": 4,
       "slug": "135-garage-webui-install-docker-compose",
       "title": "Installing garage-webui - Manage Garage Clusters and Buckets from a Browser",
       "description": "Add garage-webui to Garage and manage layout, buckets, and keys from a browser. One compose service plus an htpasswd login.",
@@ -59,7 +46,7 @@
       "count": 30
     },
     {
-      "rank": 5,
+      "rank": 4,
       "slug": "134-garage-docker-install-s3-object-storage",
       "title": "Installing and Configuring Garage - S3-Compatible Object Storage with Docker",
       "description": "From missing field s3_region to a signature region mismatch. Bring Garage up with Docker Compose and put an object in a bucket.",
@@ -72,7 +59,7 @@
       "count": 22
     },
     {
-      "rank": 6,
+      "rank": 5,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
       "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
@@ -85,20 +72,7 @@
       "count": 19
     },
     {
-      "rank": 7,
-      "slug": "118-telegram-chat-backup",
-      "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
-      "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
-      "date": "2026-07-27T05:15:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/118-telegram-chat-backup/",
-      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 13
-    },
-    {
-      "rank": 8,
+      "rank": 6,
       "slug": "120-cloudflare-security-headers-hsts-csp",
       "title": "4 Security Headers Flagged by an SEO Audit — Applying Them on Cloudflare Without Code",
       "description": "Explains why SEO audit reports flag HSTS, CSP, X-Content-Type-Options, and Referrer-Policy, and what each header actually does. Covers splitting fixed-value headers into Cloudflare Transform Rules while managing the frequently-changing CSP via an HTML meta tag, and why X-Frame-Options is still needed since meta can't handle frame-ancestors.",
@@ -111,20 +85,20 @@
       "count": 12
     },
     {
-      "rank": 9,
-      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
-      "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
-      "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
-      "date": "2026-07-10T03:44:00.000Z",
+      "rank": 7,
+      "slug": "118-telegram-chat-backup",
+      "title": "How to Back Up Telegram Chats - Export to zip From Your Browser, No Install Required",
+      "description": "Unlike Telegram's official export, this browser-based backup tool lets you specify a date range, select specific chats, view messages as chat bubbles, and anonymize data. It works instantly with no installation, and since no server is involved, your login information never leaves your browser.",
+      "date": "2026-07-27T05:15:00.000Z",
       "categories": [
-        "cloud"
+        "etc"
       ],
-      "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
-      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
-      "count": 7
+      "url": "/en/posts/118-telegram-chat-backup/",
+      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
+      "count": 11
     },
     {
-      "rank": 10,
+      "rank": 8,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -137,7 +111,7 @@
       "count": 7
     },
     {
-      "rank": 11,
+      "rank": 9,
       "slug": "130-data-go-kr-400-invalid-request-parameter-error",
       "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
       "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
@@ -150,7 +124,7 @@
       "count": 6
     },
     {
-      "rank": 12,
+      "rank": 10,
       "slug": "123-hugo-blog-guide",
       "title": "Building a Hugo Blog - From Start to SEO",
       "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
@@ -163,7 +137,7 @@
       "count": 5
     },
     {
-      "rank": 13,
+      "rank": 11,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -176,20 +150,33 @@
       "count": 5
     },
     {
-      "rank": 14,
-      "slug": "102-age-recipients-team-encryption-guide",
-      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
-      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
-      "date": "2026-05-01T22:57:00.000Z",
+      "rank": 12,
+      "slug": "113-claude-code-ollama-local-llm",
+      "title": "How to Use Claude Code with Ollama Local LLMs",
+      "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
+      "date": "2026-07-03T00:00:00.000Z",
       "categories": [
-        "security"
+        "ai"
       ],
-      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
-      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "url": "/en/posts/113-claude-code-ollama-local-llm/",
+      "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
       "count": 4
     },
     {
-      "rank": 15,
+      "rank": 13,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
+      "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
+      "date": "2026-07-10T03:44:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 4
+    },
+    {
+      "rank": 14,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
       "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
@@ -202,7 +189,7 @@
       "count": 4
     },
     {
-      "rank": 16,
+      "rank": 15,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
       "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
@@ -215,7 +202,7 @@
       "count": 4
     },
     {
-      "rank": 17,
+      "rank": 16,
       "slug": "10-tortoisegit-clear-saved-authentication-data",
       "title": "Fixing TortoiseGit Authentication Errors: How to Clear Saved Authentication Data",
       "description": "A walkthrough of how to fix repeated Authentication failed errors in TortoiseGit by clearing saved authentication data via Clear in Saved Data. Covers cleaning up the Windows Credential Manager, checking credential.helper, preparing a PAT, and switching to SSH.",
@@ -228,7 +215,7 @@
       "count": 3
     },
     {
-      "rank": 18,
+      "rank": 17,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
       "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
@@ -241,7 +228,7 @@
       "count": 3
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "Controlling AI Crawlers with robots.txt - How to Allow Search, Training and Agents Separately",
       "description": "AI crawlers have added more to write in robots.txt. A rundown of per-purpose bot names, Google-Extended and Content-Signal.",
@@ -254,7 +241,7 @@
       "count": 3
     },
     {
-      "rank": 20,
+      "rank": 19,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Automating Claude Account Switching",
       "description": "This post summarizes how to quickly switch between Claude Code accounts without logging out. It covers an automation script that backs up and swaps macOS Keychain credentials using the security command, along with how to use dedicated tools like claudini and CCSwitcher.",
@@ -264,6 +251,19 @@
       ],
       "url": "/en/posts/101-claude-code-account-switch-macos-keychain/",
       "image": "/posts/101-claude-code-account-switch-macos-keychain/assets/1_39522a0f-7e83-8009-a988-e146d610f764.png",
+      "count": 2
+    },
+    {
+      "rank": 20,
+      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
+      "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
+      "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
+      "date": "2026-05-06T13:52:00.000Z",
+      "categories": [
+        "devops"
+      ],
+      "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
+      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
       "count": 2
     }
   ]
