@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T05:44:18.043Z",
+  "generated_at": "2026-10-01T06:10:49.697Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -99,19 +99,6 @@
     },
     {
       "rank": 8,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
-      "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 7
-    },
-    {
-      "rank": 9,
       "slug": "130-data-go-kr-400-invalid-request-parameter-error",
       "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
       "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
@@ -124,7 +111,7 @@
       "count": 6
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "123-hugo-blog-guide",
       "title": "Building a Hugo Blog - From Start to SEO",
       "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
@@ -137,7 +124,7 @@
       "count": 5
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "6-flush-dns-cache",
       "title": "Clearing DNS Cache on Windows/Linux/macOS",
       "description": "When DNS changes fail to appear, flush the cache on Windows, Linux, and macOS with ipconfig, resolvectl, and mDNSResponder commands, and check TTL and browser caches to diagnose propagation delays quickly.",
@@ -150,7 +137,7 @@
       "count": 5
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLMs",
       "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
@@ -163,7 +150,7 @@
       "count": 4
     },
     {
-      "rank": 13,
+      "rank": 12,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
       "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
@@ -176,7 +163,7 @@
       "count": 4
     },
     {
-      "rank": 14,
+      "rank": 13,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
       "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
@@ -189,7 +176,7 @@
       "count": 4
     },
     {
-      "rank": 15,
+      "rank": 14,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
       "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
@@ -199,6 +186,19 @@
       ],
       "url": "/en/posts/126-cloudflare-workers-wrangler-dev-deploy/",
       "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
+      "count": 4
+    },
+    {
+      "rank": 15,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
+      "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 4
     },
     {
