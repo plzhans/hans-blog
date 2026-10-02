@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T06:10:49.688Z",
+  "generated_at": "2026-10-02T05:54:25.727Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -95,7 +95,7 @@
       ],
       "url": "/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 11
+      "count": 8
     },
     {
       "rank": 8,
@@ -138,6 +138,19 @@
     },
     {
       "rank": 11,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 5
+    },
+    {
+      "rank": 12,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법",
       "description": "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다.",
@@ -150,7 +163,7 @@
       "count": 4
     },
     {
-      "rank": 12,
+      "rank": 13,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -163,7 +176,7 @@
       "count": 4
     },
     {
-      "rank": 13,
+      "rank": 14,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
       "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
@@ -176,7 +189,7 @@
       "count": 4
     },
     {
-      "rank": 14,
+      "rank": 15,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포",
       "description": "wrangler 설치와 타입 설정, wrangler dev 로 workerd 를 띄우는 법, 그리고 배포. wrangler dev 가 프론트 개발 서버가 아니라는 점부터.",
@@ -186,19 +199,6 @@
       ],
       "url": "/posts/126-cloudflare-workers-wrangler-dev-deploy/",
       "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
-      "count": 4
-    },
-    {
-      "rank": 15,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 4
     },
     {
