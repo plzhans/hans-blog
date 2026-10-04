@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T05:29:22.956Z",
+  "generated_at": "2026-10-04T06:03:45.283Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -8,32 +8,6 @@
   "posts": [
     {
       "rank": 1,
-      "slug": "116-wireguard-install-client-setup",
-      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
-      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
-      "date": "2026-07-10T08:20:00.000Z",
-      "categories": [
-        "networking"
-      ],
-      "url": "/posts/116-wireguard-install-client-setup/",
-      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 98
-    },
-    {
-      "rank": 2,
-      "slug": "122-local-ai-llm-infra-guide",
-      "title": "로컬 AI/LLM 인프라 구축 가이드",
-      "description": "Ollama로 로컬 LLM 서버를 세우고, 평소 쓰던 Claude Code까지 로컬 모델로 연결하는 방법을 정리합니다.",
-      "date": "2026-09-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/posts/122-local-ai-llm-infra-guide/",
-      "image": null,
-      "count": 52
-    },
-    {
-      "rank": 3,
       "slug": "135-garage-webui-install-docker-compose",
       "title": "garage-webui 설치 - Garage 클러스터와 버킷을 브라우저에서 관리하기",
       "description": "Garage 에 garage-webui 를 붙여 레이아웃·버킷·키를 브라우저에서 관리한다. compose 서비스 하나와 htpasswd 로그인 설정.",
@@ -46,7 +20,7 @@
       "count": 30
     },
     {
-      "rank": 4,
+      "rank": 2,
       "slug": "134-garage-docker-install-s3-object-storage",
       "title": "Garage 설치와 구성 - 도커로 띄우는 S3 호환 오브젝트 스토리지",
       "description": "missing field s3_region 부터 서명 리전 불일치까지. 도커 컴포즈로 Garage 를 띄워 버킷에 객체를 넣는 데까지.",
@@ -59,7 +33,7 @@
       "count": 22
     },
     {
-      "rank": 5,
+      "rank": 3,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "Synology DSM 무료 SSL 인증서 발급 방법 | acme.sh + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
       "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
@@ -69,23 +43,23 @@
       ],
       "url": "/posts/104-synology-dsm-acme-sh-letsencrypt/",
       "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 19
+      "count": 14
     },
     {
-      "rank": 6,
-      "slug": "120-cloudflare-security-headers-hsts-csp",
-      "title": "SEO 감사가 지적한 보안 헤더 4개, Cloudflare에서 코드 없이 적용하기",
-      "description": "SEO 감사 리포트가 HSTS·CSP·X-Content-Type-Options·Referrer-Policy를 지적하는 이유와 각 헤더의 역할을 정리합니다. 값이 고정된 헤더는 Cloudflare Transform Rules로, 자주 바뀌는 CSP는 HTML meta 태그로 나눠 관리하는 방법과 meta에서 frame-ancestors가 안 되기 때문에 X-Frame-Options가 필요한 이유를 다룹니다.",
-      "date": "2026-08-30T01:25:00.000Z",
+      "rank": 4,
+      "slug": "116-wireguard-install-client-setup",
+      "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
+      "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
+      "date": "2026-07-10T08:20:00.000Z",
       "categories": [
-        "web"
+        "networking"
       ],
-      "url": "/posts/120-cloudflare-security-headers-hsts-csp/",
-      "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
-      "count": 12
+      "url": "/posts/116-wireguard-install-client-setup/",
+      "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
+      "count": 11
     },
     {
-      "rank": 7,
+      "rank": 5,
       "slug": "118-telegram-chat-backup",
       "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
       "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
@@ -95,10 +69,10 @@
       ],
       "url": "/posts/118-telegram-chat-backup/",
       "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 8
+      "count": 6
     },
     {
-      "rank": 8,
+      "rank": 6,
       "slug": "130-data-go-kr-400-invalid-request-parameter-error",
       "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
       "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
@@ -111,72 +85,33 @@
       "count": 6
     },
     {
-      "rank": 9,
-      "slug": "123-hugo-blog-guide",
-      "title": "Hugo 블로그 만들기 - 시작부터 SEO까지",
-      "description": "Notion→Hugo→GitHub Pages로 블로그를 만들고, 커스텀 도메인 연결, 다국어 지원, 보안 헤더 적용까지 순서대로 정리합니다.",
+      "rank": 7,
+      "slug": "122-local-ai-llm-infra-guide",
+      "title": "로컬 AI/LLM 인프라 구축 가이드",
+      "description": "Ollama로 로컬 LLM 서버를 세우고, 평소 쓰던 Claude Code까지 로컬 모델로 연결하는 방법을 정리합니다.",
       "date": "2026-09-03T00:00:00.000Z",
       "categories": [
-        "web"
+        "ai"
       ],
-      "url": "/posts/123-hugo-blog-guide/",
+      "url": "/posts/122-local-ai-llm-infra-guide/",
       "image": null,
       "count": 5
     },
     {
-      "rank": 10,
-      "slug": "6-flush-dns-cache",
-      "title": "Windows/Linux/macOS DNS 캐시 지우기",
-      "description": "DNS 레코드 변경 후 접속이 안 될 때 Windows·Linux·macOS에서 DNS 캐시를 플러시하는 방법을 정리합니다. ipconfig, resolvectl, mDNSResponder 명령과 TTL·브라우저 캐시 확인으로 전파 지연을 빠르게 진단하세요.",
-      "date": "2026-02-22T16:11:00.000Z",
+      "rank": 8,
+      "slug": "120-cloudflare-security-headers-hsts-csp",
+      "title": "SEO 감사가 지적한 보안 헤더 4개, Cloudflare에서 코드 없이 적용하기",
+      "description": "SEO 감사 리포트가 HSTS·CSP·X-Content-Type-Options·Referrer-Policy를 지적하는 이유와 각 헤더의 역할을 정리합니다. 값이 고정된 헤더는 Cloudflare Transform Rules로, 자주 바뀌는 CSP는 HTML meta 태그로 나눠 관리하는 방법과 meta에서 frame-ancestors가 안 되기 때문에 X-Frame-Options가 필요한 이유를 다룹니다.",
+      "date": "2026-08-30T01:25:00.000Z",
       "categories": [
-        "networking"
+        "web"
       ],
-      "url": "/posts/6-flush-dns-cache/",
-      "image": "/posts/6-flush-dns-cache/assets/1_30f22a0f-7e83-8064-b489-d30573976c05.png",
-      "count": 5
-    },
-    {
-      "rank": 11,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
-      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 5
-    },
-    {
-      "rank": 12,
-      "slug": "113-claude-code-ollama-local-llm",
-      "title": "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법",
-      "description": "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다.",
-      "date": "2026-07-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/posts/113-claude-code-ollama-local-llm/",
-      "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "url": "/posts/120-cloudflare-security-headers-hsts-csp/",
+      "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
       "count": 4
     },
     {
-      "rank": 13,
-      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
-      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
-      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
-      "date": "2026-07-10T03:44:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
-      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
-      "count": 4
-    },
-    {
-      "rank": 14,
+      "rank": 9,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
       "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
@@ -189,7 +124,7 @@
       "count": 4
     },
     {
-      "rank": 15,
+      "rank": 10,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포",
       "description": "wrangler 설치와 타입 설정, wrangler dev 로 workerd 를 띄우는 법, 그리고 배포. wrangler dev 가 프론트 개발 서버가 아니라는 점부터.",
@@ -202,33 +137,33 @@
       "count": 4
     },
     {
-      "rank": 16,
-      "slug": "10-tortoisegit-clear-saved-authentication-data",
-      "title": "TortoiseGit 인증 오류 해결: 저장된 인증 정보 초기화(Clear) 방법",
-      "description": "TortoiseGit에서 Authentication failed가 반복될 때 Saved Data의 Clear로 저장된 인증 정보를 초기화하는 절차를 정리했습니다. Windows 자격 증명 관리자 정리, credential.helper 확인, PAT 준비와 SSH 전환까지 다룹니다.",
-      "date": "2020-09-03T16:46:00.000Z",
+      "rank": 11,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
+      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
+      "date": "2026-07-10T03:44:00.000Z",
       "categories": [
-        "git"
+        "cloud"
       ],
-      "url": "/posts/10-tortoisegit-clear-saved-authentication-data/",
-      "image": "/posts/10-tortoisegit-clear-saved-authentication-data/assets/1_31222a0f-7e83-80ae-9ee2-d7e9823934ad.png",
+      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
       "count": 3
     },
     {
-      "rank": 17,
-      "slug": "111-tailscale-linux-install-secure-remote-vpn",
-      "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
-      "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
-      "date": "2026-07-03T00:00:00.000Z",
+      "rank": 12,
+      "slug": "123-hugo-blog-guide",
+      "title": "Hugo 블로그 만들기 - 시작부터 SEO까지",
+      "description": "Notion→Hugo→GitHub Pages로 블로그를 만들고, 커스텀 도메인 연결, 다국어 지원, 보안 헤더 적용까지 순서대로 정리합니다.",
+      "date": "2026-09-03T00:00:00.000Z",
       "categories": [
-        "networking"
+        "web"
       ],
-      "url": "/posts/111-tailscale-linux-install-secure-remote-vpn/",
-      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
+      "url": "/posts/123-hugo-blog-guide/",
+      "image": null,
       "count": 3
     },
     {
-      "rank": 18,
+      "rank": 13,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "robots.txt 로 AI 크롤러 제어하기 - 검색·학습·에이전트를 나눠 허용하는 방법",
       "description": "AI 크롤러 때문에 robots.txt 에 적을 것이 늘었다. 용도별 봇 이름과 Google-Extended 와 Content-Signal 을 정리한다.",
@@ -241,20 +176,7 @@
       "count": 3
     },
     {
-      "rank": 19,
-      "slug": "101-claude-code-account-switch-macos-keychain",
-      "title": "Claude 계정 스위치 자동화",
-      "description": "Claude Code 계정을 로그아웃 없이 빠르게 전환하는 방법을 정리합니다. macOS Keychain의 인증 정보를 security 명령으로 백업·교체하는 자동화 스크립트와 claudini·CCSwitcher 같은 전용 도구 사용법을 함께 다룹니다.",
-      "date": "2026-03-26T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/posts/101-claude-code-account-switch-macos-keychain/",
-      "image": "/posts/101-claude-code-account-switch-macos-keychain/assets/1_39522a0f-7e83-8009-a988-e146d610f764.png",
-      "count": 2
-    },
-    {
-      "rank": 20,
+      "rank": 14,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
       "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
@@ -264,6 +186,84 @@
       ],
       "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 2
+    },
+    {
+      "rank": 15,
+      "slug": "111-tailscale-linux-install-secure-remote-vpn",
+      "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
+      "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "networking"
+      ],
+      "url": "/posts/111-tailscale-linux-install-secure-remote-vpn/",
+      "image": "/posts/111-tailscale-linux-install-secure-remote-vpn/assets/1_39222a0f-7e83-80b5-9302-c17947e91a83.png",
+      "count": 2
+    },
+    {
+      "rank": 16,
+      "slug": "113-claude-code-ollama-local-llm",
+      "title": "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법",
+      "description": "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다.",
+      "date": "2026-07-03T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/posts/113-claude-code-ollama-local-llm/",
+      "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 2
+    },
+    {
+      "rank": 17,
+      "slug": "125-cloudflare-workers-static-assets-routing-billing",
+      "title": "Cloudflare Workers 정적 사이트 호스팅 - 요청 흐름과 과금 기준",
+      "description": "Workers Static Assets 가 무엇이고 요청이 어떤 순서로 흐르는지. 언제 워커가 돌고 언제 과금되는지. 정적 사이트에 동적 처리를 얹기 전에 알아야 할 것.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/125-cloudflare-workers-static-assets-routing-billing/",
+      "image": "/posts/125-cloudflare-workers-static-assets-routing-billing/assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg",
+      "count": 2
+    },
+    {
+      "rank": 18,
+      "slug": "132-cloudflare-ai-crawl-control-managed-robots-txt",
+      "title": "Cloudflare 로 AI 봇 차단하기 - Managed robots.txt 와 AI Crawl Control",
+      "description": "Cloudflare 가 robots.txt 를 대신 써 주고 AI 봇을 엣지에서 차단한다. 어떤 봇이 얼마나 가져갔는지도 보여 준다.",
+      "date": "2026-09-16T14:55:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/132-cloudflare-ai-crawl-control-managed-robots-txt/",
+      "image": "/posts/132-cloudflare-ai-crawl-control-managed-robots-txt/assets/1_3dd22a0f-7e83-81e9-ab71-dd552f2abd95.jpg",
+      "count": 2
+    },
+    {
+      "rank": 19,
+      "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
+      "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
+      "description": "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 구성하는 방법을 정리합니다. Docker Compose 플러그인 설치와 버전 고정, permission denied·arm64 manifest 오류 해결, 로그 용량 제한과 디스크 정리까지 함께 다룹니다.",
+      "date": "2026-03-19T03:44:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/",
+      "image": "/posts/97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install/assets/1_32822a0f-7e83-8061-b2db-e3359b83d6d3.png",
+      "count": 2
+    },
+    {
+      "rank": 20,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
+      "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 2
     }
   ]
