@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T06:03:45.292Z",
+  "generated_at": "2026-10-05T05:55:50.303Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -56,7 +56,7 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 11
+      "count": 7
     },
     {
       "rank": 5,
@@ -86,32 +86,6 @@
     },
     {
       "rank": 7,
-      "slug": "122-local-ai-llm-infra-guide",
-      "title": "Local AI/LLM Infrastructure Guide",
-      "description": "A guide to setting up a local LLM server with Ollama, then connecting Claude Code you already use to run on top of it.",
-      "date": "2026-09-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/122-local-ai-llm-infra-guide/",
-      "image": null,
-      "count": 5
-    },
-    {
-      "rank": 8,
-      "slug": "120-cloudflare-security-headers-hsts-csp",
-      "title": "4 Security Headers Flagged by an SEO Audit — Applying Them on Cloudflare Without Code",
-      "description": "Explains why SEO audit reports flag HSTS, CSP, X-Content-Type-Options, and Referrer-Policy, and what each header actually does. Covers splitting fixed-value headers into Cloudflare Transform Rules while managing the frequently-changing CSP via an HTML meta tag, and why X-Frame-Options is still needed since meta can't handle frame-ancestors.",
-      "date": "2026-08-30T01:25:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/120-cloudflare-security-headers-hsts-csp/",
-      "image": "/posts/120-cloudflare-security-headers-hsts-csp/assets/1_bb515481-7252-4c3f-94cb-0474c42c9d1c.png",
-      "count": 4
-    },
-    {
-      "rank": 9,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
       "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
@@ -124,7 +98,7 @@
       "count": 4
     },
     {
-      "rank": 10,
+      "rank": 8,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
       "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
@@ -137,7 +111,7 @@
       "count": 4
     },
     {
-      "rank": 11,
+      "rank": 9,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
       "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
@@ -150,20 +124,20 @@
       "count": 3
     },
     {
-      "rank": 12,
-      "slug": "123-hugo-blog-guide",
-      "title": "Building a Hugo Blog - From Start to SEO",
-      "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
+      "rank": 10,
+      "slug": "122-local-ai-llm-infra-guide",
+      "title": "Local AI/LLM Infrastructure Guide",
+      "description": "A guide to setting up a local LLM server with Ollama, then connecting Claude Code you already use to run on top of it.",
       "date": "2026-09-03T00:00:00.000Z",
       "categories": [
-        "web"
+        "ai"
       ],
-      "url": "/en/posts/123-hugo-blog-guide/",
+      "url": "/en/posts/122-local-ai-llm-infra-guide/",
       "image": null,
       "count": 3
     },
     {
-      "rank": 13,
+      "rank": 11,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "Controlling AI Crawlers with robots.txt - How to Allow Search, Training and Agents Separately",
       "description": "AI crawlers have added more to write in robots.txt. A rundown of per-purpose bot names, Google-Extended and Content-Signal.",
@@ -176,20 +150,7 @@
       "count": 3
     },
     {
-      "rank": 14,
-      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
-      "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
-      "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
-      "date": "2026-05-06T13:52:00.000Z",
-      "categories": [
-        "devops"
-      ],
-      "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
-      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 2
-    },
-    {
-      "rank": 15,
+      "rank": 12,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
       "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
@@ -202,7 +163,7 @@
       "count": 2
     },
     {
-      "rank": 16,
+      "rank": 13,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLMs",
       "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
@@ -215,7 +176,7 @@
       "count": 2
     },
     {
-      "rank": 17,
+      "rank": 14,
       "slug": "125-cloudflare-workers-static-assets-routing-billing",
       "title": "Cloudflare Workers Static Site Hosting - Request Flow and Billing",
       "description": "What Workers Static Assets is and the order in which a request flows. When the Worker runs and when you get billed. What you need to know before layering dynamic processing onto a static site.",
@@ -228,7 +189,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 15,
       "slug": "132-cloudflare-ai-crawl-control-managed-robots-txt",
       "title": "Blocking AI Bots with Cloudflare - Managed robots.txt and AI Crawl Control",
       "description": "Cloudflare writes robots.txt on your behalf and blocks AI bots at the edge. It also shows you which bots took how much.",
@@ -241,7 +202,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 16,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
       "description": "This post covers installing Docker with dnf on Amazon Linux 2023 ARM64 (aarch64) EC2, including service activation and configuring docker group permissions. It also covers installing the Docker Compose plugin and pinning its version, resolving permission denied and arm64 manifest errors, and limiting log size and cleaning up disk space.",
@@ -254,7 +215,7 @@
       "count": 2
     },
     {
-      "rank": 20,
+      "rank": 17,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -265,6 +226,45 @@
       "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
       "count": 2
+    },
+    {
+      "rank": 18,
+      "slug": "102-age-recipients-team-encryption-guide",
+      "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
+      "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
+      "date": "2026-05-01T22:57:00.000Z",
+      "categories": [
+        "security"
+      ],
+      "url": "/en/posts/102-age-recipients-team-encryption-guide/",
+      "image": "/posts/102-age-recipients-team-encryption-guide/assets/1_38322a0f-7e83-80a2-ba17-e65632a1b3af.png",
+      "count": 1
+    },
+    {
+      "rank": 19,
+      "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
+      "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
+      "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
+      "date": "2026-05-06T13:52:00.000Z",
+      "categories": [
+        "devops"
+      ],
+      "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
+      "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 1
+    },
+    {
+      "rank": 20,
+      "slug": "107-openclaw-node-mode-remote-infra-setup",
+      "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
+      "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
+      "date": "2026-06-29T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/107-openclaw-node-mode-remote-infra-setup/",
+      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
+      "count": 1
     }
   ]
 }
