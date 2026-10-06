@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T05:55:50.295Z",
+  "generated_at": "2026-10-06T06:34:04.120Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -190,6 +190,19 @@
     },
     {
       "rank": 15,
+      "slug": "127-cloudflare-workers-cache-tiered-cache",
+      "title": "Cloudflare Workers 캐시 설정 방법 - 엣지 캐시와 Tiered Cache",
+      "description": "워커가 외부 API 를 부를 때 캐시를 거는 두 가지 방법과, 모르면 반드시 밟는 함정 셋. 데이터센터별 캐시·Tiered Cache·캐시 키.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/127-cloudflare-workers-cache-tiered-cache/",
+      "image": "/posts/127-cloudflare-workers-cache-tiered-cache/assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg",
+      "count": 2
+    },
+    {
+      "rank": 16,
       "slug": "132-cloudflare-ai-crawl-control-managed-robots-txt",
       "title": "Cloudflare 로 AI 봇 차단하기 - Managed robots.txt 와 AI Crawl Control",
       "description": "Cloudflare 가 robots.txt 를 대신 써 주고 AI 봇을 엣지에서 차단한다. 어떤 봇이 얼마나 가져갔는지도 보여 준다.",
@@ -202,7 +215,7 @@
       "count": 2
     },
     {
-      "rank": 16,
+      "rank": 17,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
       "description": "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 구성하는 방법을 정리합니다. Docker Compose 플러그인 설치와 버전 고정, permission denied·arm64 manifest 오류 해결, 로그 용량 제한과 디스크 정리까지 함께 다룹니다.",
@@ -215,7 +228,7 @@
       "count": 2
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
@@ -228,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
       "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
       "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
@@ -251,19 +264,6 @@
       ],
       "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "107-openclaw-node-mode-remote-infra-setup",
-      "title": "OpenClaw 노드 모드 설치와 원격 인프라 연결 방법",
-      "description": "OpenClaw 노드 모드로 원격 서버를 게이트웨이에 연결하는 방법을 설명합니다. 설치, 실행 확인, 장치 승인, systemd 서비스 등록까지 인프라 제어 흐름을 정리합니다.",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/posts/107-openclaw-node-mode-remote-infra-setup/",
-      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
       "count": 1
     }
   ]
