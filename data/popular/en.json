@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T06:34:04.130Z",
+  "generated_at": "2026-10-07T06:12:13.206Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -56,7 +56,7 @@
       ],
       "url": "/en/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 7
+      "count": 6
     },
     {
       "rank": 5,
@@ -125,19 +125,6 @@
     },
     {
       "rank": 10,
-      "slug": "122-local-ai-llm-infra-guide",
-      "title": "Local AI/LLM Infrastructure Guide",
-      "description": "A guide to setting up a local LLM server with Ollama, then connecting Claude Code you already use to run on top of it.",
-      "date": "2026-09-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/122-local-ai-llm-infra-guide/",
-      "image": null,
-      "count": 3
-    },
-    {
-      "rank": 11,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "Controlling AI Crawlers with robots.txt - How to Allow Search, Training and Agents Separately",
       "description": "AI crawlers have added more to write in robots.txt. A rundown of per-purpose bot names, Google-Extended and Content-Signal.",
@@ -150,7 +137,7 @@
       "count": 3
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
       "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
@@ -163,7 +150,7 @@
       "count": 2
     },
     {
-      "rank": 13,
+      "rank": 12,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLMs",
       "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
@@ -173,6 +160,19 @@
       ],
       "url": "/en/posts/113-claude-code-ollama-local-llm/",
       "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 2
+    },
+    {
+      "rank": 13,
+      "slug": "122-local-ai-llm-infra-guide",
+      "title": "Local AI/LLM Infrastructure Guide",
+      "description": "A guide to setting up a local LLM server with Ollama, then connecting Claude Code you already use to run on top of it.",
+      "date": "2026-09-03T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/122-local-ai-llm-infra-guide/",
+      "image": null,
       "count": 2
     },
     {

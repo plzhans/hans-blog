@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T06:34:04.140Z",
+  "generated_at": "2026-10-07T06:12:13.218Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -56,7 +56,7 @@
       ],
       "url": "/ja/posts/116-wireguard-install-client-setup/",
       "image": "/posts/116-wireguard-install-client-setup/assets/1_39922a0f-7e83-8083-8055-de3d7910f539.png",
-      "count": 7
+      "count": 6
     },
     {
       "rank": 5,
@@ -125,19 +125,6 @@
     },
     {
       "rank": 10,
-      "slug": "122-local-ai-llm-infra-guide",
-      "title": "ローカルAI/LLMインフラ構築ガイド",
-      "description": "OllamaでローカルLLMサーバーを立て、普段使っているClaude Codeをその上でローカルモデルに接続する方法を整理します。",
-      "date": "2026-09-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/ja/posts/122-local-ai-llm-infra-guide/",
-      "image": null,
-      "count": 3
-    },
-    {
-      "rank": 11,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "robots.txt で AI クローラーを制御する - 検索・学習・エージェントを分けて許可する方法",
       "description": "AI クローラーのせいで robots.txt に書くことが増えました。用途別のボット名と Google-Extended と Content-Signal を整理します。",
@@ -150,7 +137,7 @@
       "count": 3
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linuxインストール - 安全なリモートVPN構成",
       "description": "Linuxサーバーに Tailscale をインストールして、安全なリモートVPN環境を構成する方法を説明します。アウトバウンドベースの接続、P2P通信、DERPリレー、ServeとFunnelの活用方法についてもまとめます。",
@@ -163,7 +150,7 @@
       "count": 2
     },
     {
-      "rank": 13,
+      "rank": 12,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "Claude CodeをOllamaローカルLLMで使う方法",
       "description": "Claude CodeをOllamaローカルLLMに接続する方法を説明します。Claude互換API、環境変数、モデル選択、LiteLLMプロキシが必要な場合まで整理します。",
@@ -173,6 +160,19 @@
       ],
       "url": "/ja/posts/113-claude-code-ollama-local-llm/",
       "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 2
+    },
+    {
+      "rank": 13,
+      "slug": "122-local-ai-llm-infra-guide",
+      "title": "ローカルAI/LLMインフラ構築ガイド",
+      "description": "OllamaでローカルLLMサーバーを立て、普段使っているClaude Codeをその上でローカルモデルに接続する方法を整理します。",
+      "date": "2026-09-03T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/ja/posts/122-local-ai-llm-infra-guide/",
+      "image": null,
       "count": 2
     },
     {
