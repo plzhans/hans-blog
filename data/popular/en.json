@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-07T06:12:13.206Z",
+  "generated_at": "2026-10-08T06:20:18.482Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -164,19 +164,6 @@
     },
     {
       "rank": 13,
-      "slug": "122-local-ai-llm-infra-guide",
-      "title": "Local AI/LLM Infrastructure Guide",
-      "description": "A guide to setting up a local LLM server with Ollama, then connecting Claude Code you already use to run on top of it.",
-      "date": "2026-09-03T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/122-local-ai-llm-infra-guide/",
-      "image": null,
-      "count": 2
-    },
-    {
-      "rank": 14,
       "slug": "125-cloudflare-workers-static-assets-routing-billing",
       "title": "Cloudflare Workers Static Site Hosting - Request Flow and Billing",
       "description": "What Workers Static Assets is and the order in which a request flows. When the Worker runs and when you get billed. What you need to know before layering dynamic processing onto a static site.",
@@ -189,7 +176,7 @@
       "count": 2
     },
     {
-      "rank": 15,
+      "rank": 14,
       "slug": "127-cloudflare-workers-cache-tiered-cache",
       "title": "How to Set Up Caching in Cloudflare Workers - Edge Cache and Tiered Cache",
       "description": "Two ways to cache when a Worker calls an external API, and the three traps you will definitely hit if you don't know about them. Per-data-center cache, Tiered Cache, and cache keys.",
@@ -202,7 +189,7 @@
       "count": 2
     },
     {
-      "rank": 16,
+      "rank": 15,
       "slug": "132-cloudflare-ai-crawl-control-managed-robots-txt",
       "title": "Blocking AI Bots with Cloudflare - Managed robots.txt and AI Crawl Control",
       "description": "Cloudflare writes robots.txt on your behalf and blocks AI bots at the edge. It also shows you which bots took how much.",
@@ -215,7 +202,7 @@
       "count": 2
     },
     {
-      "rank": 17,
+      "rank": 16,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
       "description": "This post covers installing Docker with dnf on Amazon Linux 2023 ARM64 (aarch64) EC2, including service activation and configuring docker group permissions. It also covers installing the Docker Compose plugin and pinning its version, resolving permission denied and arm64 manifest errors, and limiting log size and cleaning up disk space.",
@@ -228,7 +215,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 17,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -241,7 +228,7 @@
       "count": 2
     },
     {
-      "rank": 19,
+      "rank": 18,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -254,7 +241,7 @@
       "count": 1
     },
     {
-      "rank": 20,
+      "rank": 19,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
       "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
@@ -264,6 +251,19 @@
       ],
       "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
+      "count": 1
+    },
+    {
+      "rank": 20,
+      "slug": "107-openclaw-node-mode-remote-infra-setup",
+      "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
+      "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
+      "date": "2026-06-29T00:00:00.000Z",
+      "categories": [
+        "ai"
+      ],
+      "url": "/en/posts/107-openclaw-node-mode-remote-infra-setup/",
+      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
       "count": 1
     }
   ]
