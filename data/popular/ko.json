@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T06:01:46.043Z",
+  "generated_at": "2026-10-12T06:11:50.874Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -43,7 +43,7 @@
       ],
       "url": "/posts/104-synology-dsm-acme-sh-letsencrypt/",
       "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 15
+      "count": 16
     },
     {
       "rank": 4,
@@ -86,32 +86,6 @@
     },
     {
       "rank": 7,
-      "slug": "124-cloudflare-workers-static-site-guide",
-      "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
-      "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/posts/124-cloudflare-workers-static-site-guide/",
-      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
-      "count": 4
-    },
-    {
-      "rank": 8,
-      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
-      "title": "wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포",
-      "description": "wrangler 설치와 타입 설정, wrangler dev 로 workerd 를 띄우는 법, 그리고 배포. wrangler dev 가 프론트 개발 서버가 아니라는 점부터.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/posts/126-cloudflare-workers-wrangler-dev-deploy/",
-      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
-      "count": 4
-    },
-    {
-      "rank": 9,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -121,6 +95,32 @@
       ],
       "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
       "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 3
+    },
+    {
+      "rank": 8,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
+      "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
+      "count": 3
+    },
+    {
+      "rank": 9,
+      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
+      "title": "wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포",
+      "description": "wrangler 설치와 타입 설정, wrangler dev 로 workerd 를 띄우는 법, 그리고 배포. wrangler dev 가 프론트 개발 서버가 아니라는 점부터.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/126-cloudflare-workers-wrangler-dev-deploy/",
+      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
       "count": 3
     },
     {
@@ -203,6 +203,19 @@
     },
     {
       "rank": 16,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
+      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
+      "date": "2026-02-06T06:29:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 2
+    },
+    {
+      "rank": 17,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
       "description": "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 구성하는 방법을 정리합니다. Docker Compose 플러그인 설치와 버전 고정, permission denied·arm64 manifest 오류 해결, 로그 용량 제한과 디스크 정리까지 함께 다룹니다.",
@@ -215,7 +228,7 @@
       "count": 2
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
@@ -228,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
       "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
       "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
@@ -251,19 +264,6 @@
       ],
       "url": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "107-openclaw-node-mode-remote-infra-setup",
-      "title": "OpenClaw 노드 모드 설치와 원격 인프라 연결 방법",
-      "description": "OpenClaw 노드 모드로 원격 서버를 게이트웨이에 연결하는 방법을 설명합니다. 설치, 실행 확인, 장치 승인, systemd 서비스 등록까지 인프라 제어 흐름을 정리합니다.",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/posts/107-openclaw-node-mode-remote-infra-setup/",
-      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
       "count": 1
     }
   ]

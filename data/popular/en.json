@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T06:01:46.048Z",
+  "generated_at": "2026-10-12T06:11:50.879Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -43,7 +43,7 @@
       ],
       "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
       "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 15
+      "count": 16
     },
     {
       "rank": 4,
@@ -86,32 +86,6 @@
     },
     {
       "rank": 7,
-      "slug": "124-cloudflare-workers-static-site-guide",
-      "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
-      "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
-      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
-      "count": 4
-    },
-    {
-      "rank": 8,
-      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
-      "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
-      "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/126-cloudflare-workers-wrangler-dev-deploy/",
-      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
-      "count": 4
-    },
-    {
-      "rank": 9,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
       "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
@@ -121,6 +95,32 @@
       ],
       "url": "/en/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
       "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 3
+    },
+    {
+      "rank": 8,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
+      "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
+      "count": 3
+    },
+    {
+      "rank": 9,
+      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
+      "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
+      "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/126-cloudflare-workers-wrangler-dev-deploy/",
+      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
       "count": 3
     },
     {
@@ -203,6 +203,19 @@
     },
     {
       "rank": 16,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
+      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
+      "date": "2022-03-17T07:48:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
+      "count": 2
+    },
+    {
+      "rank": 17,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Installing Docker and Docker Compose on Amazon Linux 2023 ARM64 EC2",
       "description": "This post covers installing Docker with dnf on Amazon Linux 2023 ARM64 (aarch64) EC2, including service activation and configuring docker group permissions. It also covers installing the Docker Compose plugin and pinning its version, resolving permission denied and arm64 manifest errors, and limiting log size and cleaning up disk space.",
@@ -215,7 +228,7 @@
       "count": 2
     },
     {
-      "rank": 17,
+      "rank": 18,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -228,7 +241,7 @@
       "count": 2
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform Practical Guide: Installation, plan/apply, AWS SSO & AssumeRole, State Backend",
       "description": "Covers Terraform installation through the basic flow of init, plan, and apply along with project structure. Explains the difference between AWS SSO and AssumeRole for credentials, the backend concept for state sharing with an AWS (S3) example, minimum IAM permissions, and operational tips.",
@@ -251,19 +264,6 @@
       ],
       "url": "/en/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/",
       "image": "/posts/103-terraform-practical-guide-aws-sso-assumerole-state-backend/assets/1_38322a0f-7e83-804b-a963-f4d395ba7a9c.png",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "107-openclaw-node-mode-remote-infra-setup",
-      "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
-      "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
-      "date": "2026-06-29T00:00:00.000Z",
-      "categories": [
-        "ai"
-      ],
-      "url": "/en/posts/107-openclaw-node-mode-remote-infra-setup/",
-      "image": "/posts/107-openclaw-node-mode-remote-infra-setup/assets/1_39222a0f-7e83-8060-b7f3-e21076ffcbf3.png",
       "count": 1
     }
   ]
