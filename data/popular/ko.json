@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T06:54:20.878Z",
+  "generated_at": "2026-10-14T05:04:48.726Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -99,19 +99,6 @@
     },
     {
       "rank": 8,
-      "slug": "124-cloudflare-workers-static-site-guide",
-      "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
-      "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/posts/124-cloudflare-workers-static-site-guide/",
-      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
-      "count": 3
-    },
-    {
-      "rank": 9,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포",
       "description": "wrangler 설치와 타입 설정, wrangler dev 로 workerd 를 띄우는 법, 그리고 배포. wrangler dev 가 프론트 개발 서버가 아니라는 점부터.",
@@ -124,7 +111,7 @@
       "count": 3
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "robots.txt 로 AI 크롤러 제어하기 - 검색·학습·에이전트를 나눠 허용하는 방법",
       "description": "AI 크롤러 때문에 robots.txt 에 적을 것이 늘었다. 용도별 봇 이름과 Google-Extended 와 Content-Signal 을 정리한다.",
@@ -137,7 +124,7 @@
       "count": 3
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
       "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
@@ -150,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법",
       "description": "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다.",
@@ -160,6 +147,19 @@
       ],
       "url": "/posts/113-claude-code-ollama-local-llm/",
       "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 2
+    },
+    {
+      "rank": 12,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
+      "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
       "count": 2
     },
     {

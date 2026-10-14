@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T06:54:20.884Z",
+  "generated_at": "2026-10-14T05:04:48.735Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -99,19 +99,6 @@
     },
     {
       "rank": 8,
-      "slug": "124-cloudflare-workers-static-site-guide",
-      "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
-      "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
-      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
-      "count": 3
-    },
-    {
-      "rank": 9,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
       "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
@@ -124,7 +111,7 @@
       "count": 3
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "Controlling AI Crawlers with robots.txt - How to Allow Search, Training and Agents Separately",
       "description": "AI crawlers have added more to write in robots.txt. A rundown of per-purpose bot names, Google-Extended and Content-Signal.",
@@ -137,7 +124,7 @@
       "count": 3
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Installing Tailscale on Linux - Secure Remote VPN Setup",
       "description": "This post explains how to install Tailscale on a Linux server to set up a secure remote VPN environment. It also covers outbound-based connections, P2P communication, DERP relay, and how to use Serve and Funnel.",
@@ -150,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLMs",
       "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
@@ -160,6 +147,19 @@
       ],
       "url": "/en/posts/113-claude-code-ollama-local-llm/",
       "image": "/posts/113-claude-code-ollama-local-llm/assets/1_39522a0f-7e83-80b7-877c-d1ff175d736c.png",
+      "count": 2
+    },
+    {
+      "rank": 12,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
+      "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
       "count": 2
     },
     {
