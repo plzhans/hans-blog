@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T04:42:05.404Z",
+  "generated_at": "2026-10-18T04:47:51.215Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -47,19 +47,6 @@
     },
     {
       "rank": 4,
-      "slug": "118-telegram-chat-backup",
-      "title": "텔레그램 대화 백업하는 방법 - 설치 없이 브라우저에서 zip으로 내보내기",
-      "description": "텔레그램 공식 내보내기와 달리 기간 지정·특정 방 선택·말풍선 보기·익명 처리가 가능한 브라우저 백업 도구를 소개합니다. 설치 없이 바로 쓰고 서버를 거치지 않아 로그인 정보가 외부로 나가지 않습니다.",
-      "date": "2026-07-27T05:15:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/118-telegram-chat-backup/",
-      "image": "/posts/118-telegram-chat-backup/assets/1_3a822a0f-7e83-8070-a296-d9dffad002b5.png",
-      "count": 6
-    },
-    {
-      "rank": 5,
       "slug": "130-data-go-kr-400-invalid-request-parameter-error",
       "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
       "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
@@ -72,7 +59,7 @@
       "count": 6
     },
     {
-      "rank": 6,
+      "rank": 5,
       "slug": "116-wireguard-install-client-setup",
       "title": "WireGuard 설치와 클라이언트 접속 설정 방법",
       "description": "Linux 서버에 WireGuard VPN을 설치하고 키 생성 방화벽 개방 서비스 등록까지 구성하는 방법을 설명합니다. Mac 클라이언트 conf 설정과 GUI 연결 확인 절차를 포함해 안전한 원격 접속 환경을 구축할 수 있습니다.",
@@ -85,7 +72,7 @@
       "count": 5
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -98,7 +85,7 @@
       "count": 3
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "131-robots-txt-ai-crawler-content-signals",
       "title": "robots.txt 로 AI 크롤러 제어하기 - 검색·학습·에이전트를 나눠 허용하는 방법",
       "description": "AI 크롤러 때문에 robots.txt 에 적을 것이 늘었다. 용도별 봇 이름과 Google-Extended 와 Content-Signal 을 정리한다.",
@@ -111,7 +98,7 @@
       "count": 3
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "111-tailscale-linux-install-secure-remote-vpn",
       "title": "Tailscale Linux 설치 - 안전한 원격 VPN 구성",
       "description": "리눅스 서버에 Tailscale을 설치해 안전한 원격 VPN 환경을 구성하는 방법을 설명합니다. 아웃바운드 기반 연결, P2P 통신, DERP 릴레이, Serve와 Funnel 활용 방식을 함께 정리합니다.",
@@ -124,7 +111,7 @@
       "count": 2
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법",
       "description": "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다.",
@@ -137,7 +124,7 @@
       "count": 2
     },
     {
-      "rank": 11,
+      "rank": 10,
       "slug": "126-cloudflare-workers-wrangler-dev-deploy",
       "title": "wrangler 사용법 - Cloudflare Workers 로컬 개발과 배포",
       "description": "wrangler 설치와 타입 설정, wrangler dev 로 workerd 를 띄우는 법, 그리고 배포. wrangler dev 가 프론트 개발 서버가 아니라는 점부터.",
@@ -150,7 +137,7 @@
       "count": 2
     },
     {
-      "rank": 12,
+      "rank": 11,
       "slug": "127-cloudflare-workers-cache-tiered-cache",
       "title": "Cloudflare Workers 캐시 설정 방법 - 엣지 캐시와 Tiered Cache",
       "description": "워커가 외부 API 를 부를 때 캐시를 거는 두 가지 방법과, 모르면 반드시 밟는 함정 셋. 데이터센터별 캐시·Tiered Cache·캐시 키.",
@@ -163,20 +150,7 @@
       "count": 2
     },
     {
-      "rank": 13,
-      "slug": "132-cloudflare-ai-crawl-control-managed-robots-txt",
-      "title": "Cloudflare 로 AI 봇 차단하기 - Managed robots.txt 와 AI Crawl Control",
-      "description": "Cloudflare 가 robots.txt 를 대신 써 주고 AI 봇을 엣지에서 차단한다. 어떤 봇이 얼마나 가져갔는지도 보여 준다.",
-      "date": "2026-09-16T14:55:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/posts/132-cloudflare-ai-crawl-control-managed-robots-txt/",
-      "image": "/posts/132-cloudflare-ai-crawl-control-managed-robots-txt/assets/1_3dd22a0f-7e83-81e9-ab71-dd552f2abd95.jpg",
-      "count": 2
-    },
-    {
-      "rank": 14,
+      "rank": 12,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
       "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
@@ -189,7 +163,7 @@
       "count": 2
     },
     {
-      "rank": 15,
+      "rank": 13,
       "slug": "97-amazon-linux-2023-arm64-ec2-docker-docker-compose-install",
       "title": "Amazon Linux 2023 ARM64 EC2에서 Docker와 Docker Compose 설치하기",
       "description": "Amazon Linux 2023 ARM64(aarch64) EC2에서 dnf로 Docker를 설치하고 서비스 활성화와 docker 그룹 권한까지 구성하는 방법을 정리합니다. Docker Compose 플러그인 설치와 버전 고정, permission denied·arm64 manifest 오류 해결, 로그 용량 제한과 디스크 정리까지 함께 다룹니다.",
@@ -202,7 +176,7 @@
       "count": 2
     },
     {
-      "rank": 16,
+      "rank": 14,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
@@ -215,7 +189,7 @@
       "count": 2
     },
     {
-      "rank": 17,
+      "rank": 15,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 사용법 정리: recipients로 팀 비밀 파일 암호화하고 개인키로 복호화",
       "description": "age로 팀 비밀 파일을 공개키(recipients)로 암호화하고 개인키로 복호화하는 방법을 정리한다. 키 생성, recipients 관리, GPG와 차이점, 구성원 변경 시 재암호화가 필요한 이유까지 함께 설명한다.",
@@ -228,7 +202,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 16,
       "slug": "103-terraform-practical-guide-aws-sso-assumerole-state-backend",
       "title": "Terraform 실무 가이드: 설치, plan/apply, AWS SSO·AssumeRole, state backend",
       "description": "Terraform 설치부터 init·plan·apply 기본 흐름과 프로젝트 구조를 정리한다. AWS 자격증명에서 SSO와 AssumeRole 차이, state 공유를 위한 backend 개념과 AWS(S3) 예시, 최소 IAM 권한과 운영 팁까지 한 번에 확인한다.",
@@ -241,7 +215,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 17,
       "slug": "107-openclaw-node-mode-remote-infra-setup",
       "title": "OpenClaw 노드 모드 설치와 원격 인프라 연결 방법",
       "description": "OpenClaw 노드 모드로 원격 서버를 게이트웨이에 연결하는 방법을 설명합니다. 설치, 실행 확인, 장치 승인, systemd 서비스 등록까지 인프라 제어 흐름을 정리합니다.",
@@ -254,7 +228,7 @@
       "count": 1
     },
     {
-      "rank": 20,
+      "rank": 18,
       "slug": "123-hugo-blog-guide",
       "title": "Hugo 블로그 만들기 - 시작부터 SEO까지",
       "description": "Notion→Hugo→GitHub Pages로 블로그를 만들고, 커스텀 도메인 연결, 다국어 지원, 보안 헤더 적용까지 순서대로 정리합니다.",
@@ -264,6 +238,32 @@
       ],
       "url": "/posts/123-hugo-blog-guide/",
       "image": null,
+      "count": 1
+    },
+    {
+      "rank": 19,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
+      "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
+      "count": 1
+    },
+    {
+      "rank": 20,
+      "slug": "125-cloudflare-workers-static-assets-routing-billing",
+      "title": "Cloudflare Workers 정적 사이트 호스팅 - 요청 흐름과 과금 기준",
+      "description": "Workers Static Assets 가 무엇이고 요청이 어떤 순서로 흐르는지. 언제 워커가 돌고 언제 과금되는지. 정적 사이트에 동적 처리를 얹기 전에 알아야 할 것.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/125-cloudflare-workers-static-assets-routing-billing/",
+      "image": "/posts/125-cloudflare-workers-static-assets-routing-billing/assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg",
       "count": 1
     }
   ]
