@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T04:56:14.827Z",
+  "generated_at": "2026-10-20T05:02:14.974Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -216,6 +216,19 @@
     },
     {
       "rank": 17,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
+      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 1
+    },
+    {
+      "rank": 18,
       "slug": "107-openclaw-node-mode-remote-infra-setup",
       "title": "How to Install OpenClaw Node Mode and Connect Remote Infrastructure",
       "description": "This post explains how to connect a remote server to a gateway using OpenClaw node mode. It covers the infrastructure control flow from installation, run verification, device approval, to systemd service registration.",
@@ -228,7 +241,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "123-hugo-blog-guide",
       "title": "Building a Hugo Blog - From Start to SEO",
       "description": "A step-by-step guide to building a blog with Notion→Hugo→GitHub Pages, connecting a custom domain, adding multilingual support, and applying security headers.",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
       "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
@@ -251,19 +264,6 @@
       ],
       "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
       "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "125-cloudflare-workers-static-assets-routing-billing",
-      "title": "Cloudflare Workers Static Site Hosting - Request Flow and Billing",
-      "description": "What Workers Static Assets is and the order in which a request flows. When the Worker runs and when you get billed. What you need to know before layering dynamic processing onto a static site.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/125-cloudflare-workers-static-assets-routing-billing/",
-      "image": "/posts/125-cloudflare-workers-static-assets-routing-billing/assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg",
       "count": 1
     }
   ]

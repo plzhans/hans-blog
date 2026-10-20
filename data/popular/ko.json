@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T04:56:14.822Z",
+  "generated_at": "2026-10-20T05:02:14.940Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -216,6 +216,19 @@
     },
     {
       "rank": 17,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office 정품인증 방법 | 볼륨 라이선스 VL Serializer로 LTSC 설치",
+      "description": "Mac에서 Microsoft Office를 볼륨 라이선스로 설치하고 정품 인증을 활성화하는 절차를 정리한다. LTSC 설치 파일 선택부터 VL Serializer 적용과 인증 확인 방법까지 한 번에 안내한다.",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 1
+    },
+    {
+      "rank": 18,
       "slug": "107-openclaw-node-mode-remote-infra-setup",
       "title": "OpenClaw 노드 모드 설치와 원격 인프라 연결 방법",
       "description": "OpenClaw 노드 모드로 원격 서버를 게이트웨이에 연결하는 방법을 설명합니다. 설치, 실행 확인, 장치 승인, systemd 서비스 등록까지 인프라 제어 흐름을 정리합니다.",
@@ -228,7 +241,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "123-hugo-blog-guide",
       "title": "Hugo 블로그 만들기 - 시작부터 SEO까지",
       "description": "Notion→Hugo→GitHub Pages로 블로그를 만들고, 커스텀 도메인 연결, 다국어 지원, 보안 헤더 적용까지 순서대로 정리합니다.",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
       "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
@@ -251,19 +264,6 @@
       ],
       "url": "/posts/124-cloudflare-workers-static-site-guide/",
       "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "125-cloudflare-workers-static-assets-routing-billing",
-      "title": "Cloudflare Workers 정적 사이트 호스팅 - 요청 흐름과 과금 기준",
-      "description": "Workers Static Assets 가 무엇이고 요청이 어떤 순서로 흐르는지. 언제 워커가 돌고 언제 과금되는지. 정적 사이트에 동적 처리를 얹기 전에 알아야 할 것.",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/posts/125-cloudflare-workers-static-assets-routing-billing/",
-      "image": "/posts/125-cloudflare-workers-static-assets-routing-billing/assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg",
       "count": 1
     }
   ]

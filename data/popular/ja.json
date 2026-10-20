@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T04:56:14.834Z",
+  "generated_at": "2026-10-20T05:02:15.019Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -216,6 +216,19 @@
     },
     {
       "rank": 17,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
+      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 1
+    },
+    {
+      "rank": 18,
       "slug": "107-openclaw-node-mode-remote-infra-setup",
       "title": "OpenClawノードモードのインストールとリモートインフラ接続方法",
       "description": "OpenClawノードモードでリモートサーバーをゲートウェイに接続する方法を説明します。インストール、実行確認、デバイス承認、systemdサービス登録までのインフラ制御フローをまとめます。",
@@ -228,7 +241,7 @@
       "count": 1
     },
     {
-      "rank": 18,
+      "rank": 19,
       "slug": "123-hugo-blog-guide",
       "title": "Hugoブログを作る - 始め方からSEOまで",
       "description": "Notion→Hugo→GitHub Pagesでブログを作り、カスタムドメインの接続、多言語対応、セキュリティヘッダーの適用まで順番に整理します。",
@@ -241,7 +254,7 @@
       "count": 1
     },
     {
-      "rank": 19,
+      "rank": 20,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 静的サイトガイド - デプロイからSEOまで",
       "description": "静的サイトをCloudflareに載せ、その前にコードを一枚重ねてSEOを改善するまで。4編に分けて整理したシリーズの案内板。",
@@ -251,19 +264,6 @@
       ],
       "url": "/ja/posts/124-cloudflare-workers-static-site-guide/",
       "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
-      "count": 1
-    },
-    {
-      "rank": 20,
-      "slug": "125-cloudflare-workers-static-assets-routing-billing",
-      "title": "Cloudflare Workers 静的サイトホスティング - リクエストの流れと課金基準",
-      "description": "Workers Static Assetsとは何か、リクエストがどの順序で流れるのか。いつWorkerが動き、いつ課金されるのか。静的サイトに動的処理を重ねる前に知っておくべきこと。",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/ja/posts/125-cloudflare-workers-static-assets-routing-billing/",
-      "image": "/posts/125-cloudflare-workers-static-assets-routing-billing/assets/1_3d822a0f-7e83-81cf-9f13-e8e4f94cfedf.jpg",
       "count": 1
     }
   ]
