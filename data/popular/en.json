@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T04:57:48.889Z",
+  "generated_at": "2026-10-26T05:01:25.761Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -8,6 +8,19 @@
   "posts": [
     {
       "rank": 1,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
+      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 4
+    },
+    {
+      "rank": 2,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
       "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
@@ -20,33 +33,7 @@
       "count": 3
     },
     {
-      "rank": 2,
-      "slug": "134-garage-docker-install-s3-object-storage",
-      "title": "Installing and Configuring Garage - S3-Compatible Object Storage with Docker",
-      "description": "From missing field s3_region to a signature region mismatch. Bring Garage up with Docker Compose and put an object in a bucket.",
-      "date": "2026-09-23T10:56:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/en/posts/134-garage-docker-install-s3-object-storage/",
-      "image": "/posts/134-garage-docker-install-s3-object-storage/assets/1_3e422a0f-7e83-816a-8dd3-fc8f62a53a59.jpg",
-      "count": 3
-    },
-    {
       "rank": 3,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
-      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 2
-    },
-    {
-      "rank": 4,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
@@ -59,7 +46,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 4,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -72,7 +59,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 5,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Automating Claude Account Switching",
       "description": "This post summarizes how to quickly switch between Claude Code accounts without logging out. It covers an automation script that backs up and swaps macOS Keychain credentials using the security command, along with how to use dedicated tools like claudini and CCSwitcher.",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age Usage Guide: Encrypt Team Secret Files with Recipients and Decrypt with Private Keys",
       "description": "A guide to encrypting team secret files with public keys (recipients) and decrypting them with private keys using age. Covers key generation, recipients management, differences from GPG, and why re-encryption is needed when team members change.",
@@ -98,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLMs",
       "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
@@ -111,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "127-cloudflare-workers-cache-tiered-cache",
       "title": "How to Set Up Caching in Cloudflare Workers - Edge Cache and Tiered Cache",
       "description": "Two ways to cache when a Worker calls an external API, and the three traps you will definitely hit if you don't know about them. Per-data-center cache, Tiered Cache, and cache keys.",
@@ -124,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "A guide to encrypting .env files with GPG to prevent secret exposure when you need to commit them to Git. Covers everything from .gitignore handling to gpg encrypt/decrypt commands and setting a default recipient, so you can start operating a secure repository.",

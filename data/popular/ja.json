@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T04:57:48.893Z",
+  "generated_at": "2026-10-26T05:01:25.771Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -8,6 +8,19 @@
   "posts": [
     {
       "rank": 1,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
+      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 4
+    },
+    {
+      "rank": 2,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "Synology DSM 無料 SSL 証明書の発行方法 | acme.sh + Cloudflare DNS で Let’s Encrypt を自動更新",
       "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
@@ -20,33 +33,7 @@
       "count": 3
     },
     {
-      "rank": 2,
-      "slug": "134-garage-docker-install-s3-object-storage",
-      "title": "Garage のインストールと構成 - Docker で動かす S3 互換オブジェクトストレージ",
-      "description": "missing field s3_region から署名のリージョン不一致まで。Docker Compose で Garage を起動し、バケットにオブジェクトを入れるまでを扱います。",
-      "date": "2026-09-23T10:56:00.000Z",
-      "categories": [
-        "infra"
-      ],
-      "url": "/ja/posts/134-garage-docker-install-s3-object-storage/",
-      "image": "/posts/134-garage-docker-install-s3-object-storage/assets/1_3e422a0f-7e83-816a-8dd3-fc8f62a53a59.jpg",
-      "count": 3
-    },
-    {
       "rank": 3,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
-      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 2
-    },
-    {
-      "rank": 4,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
       "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
@@ -59,7 +46,7 @@
       "count": 2
     },
     {
-      "rank": 5,
+      "rank": 4,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "ネイバー地図 Open API 認証失敗(200)の解決:ncpClientIdからncpKeyIdへの変更",
       "description": "ネイバー地図 Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。コンソール統合によりncpClientId・govClientId・finClientIdがncpKeyIdに変更された点と、ポート・URIを除外する必要があるWebサービスURL登録ルールまで確認してください。",
@@ -72,7 +59,7 @@
       "count": 2
     },
     {
-      "rank": 6,
+      "rank": 5,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Claudeアカウントスイッチの自動化",
       "description": "ログアウトせずにClaude Codeアカウントを素早く切り替える方法をまとめます。macOS Keychainの認証情報をsecurityコマンドでバックアップ・置き換えする自動化スクリプトと、claudini・CCSwitcherのような専用ツールの使い方を併せて紹介します。",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "102-age-recipients-team-encryption-guide",
       "title": "age 使い方まとめ: recipients でチームの秘密ファイルを暗号化し、秘密鍵で復号する",
       "description": "age でチームの秘密ファイルを公開鍵（recipients）で暗号化し、秘密鍵で復号する方法を整理します。鍵の生成、recipients の管理、GPG との違い、メンバー変更時に再暗号化が必要な理由まで併せて説明します。",
@@ -98,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "Claude CodeをOllamaローカルLLMで使う方法",
       "description": "Claude CodeをOllamaローカルLLMに接続する方法を説明します。Claude互換API、環境変数、モデル選択、LiteLLMプロキシが必要な場合まで整理します。",
@@ -111,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "127-cloudflare-workers-cache-tiered-cache",
       "title": "Cloudflare Workers キャッシュ設定方法 - エッジキャッシュとTiered Cache",
       "description": "Workerが外部APIを呼ぶときにキャッシュをかける2つの方法と、知らなければ必ず踏む罠3つ。データセンターごとのキャッシュ・Tiered Cache・キャッシュキー。",
@@ -124,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 9,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする方法",
       "description": ".envファイルをGitにコミットする必要がある場合に、GPGで暗号化して機密情報の漏洩を防ぐ方法をまとめました。.gitignoreの設定からgpg encrypt/decryptコマンド、recipientのデフォルト設定まで適用して、安全なリポジトリ運用を始めましょう。",
