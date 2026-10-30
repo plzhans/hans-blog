@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T06:03:22.998Z",
+  "generated_at": "2026-10-30T06:03:28.994Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -21,19 +21,6 @@
     },
     {
       "rank": 2,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "Synology DSM 무료 SSL 인증서 발급 방법 | acme.sh + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
-      "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 3
-    },
-    {
-      "rank": 3,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "네이버 지도 Open API 인증 실패(200) 해결: ncpClientId에서 ncpKeyId로 변경",
       "description": "네이버 지도 Open API에서 Authentication Failed(200) 오류가 나는 원인을 정리합니다. 콘솔 통합으로 ncpClientId·govClientId·finClientId가 ncpKeyId로 바뀜 점과, 포트·URI를 제외해야 하는 웹 서비스 URL 등록 규칙까지 확인하세요.",
@@ -43,6 +30,19 @@
       ],
       "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 4
+    },
+    {
+      "rank": 3,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "Synology DSM 무료 SSL 인증서 발급 방법 | acme.sh + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
+      "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
       "count": 3
     },
     {
