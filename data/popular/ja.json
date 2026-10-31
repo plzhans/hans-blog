@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T06:03:29.002Z",
+  "generated_at": "2026-10-31T05:58:20.994Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 4
+      "count": 5
     },
     {
       "rank": 3,
@@ -99,6 +99,19 @@
     },
     {
       "rank": 8,
+      "slug": "17-windows-tortoisegit-icon-overlay-fix",
+      "title": "Windows で TortoiseGit のアイコンオーバーレイが消えたときの対処法",
+      "description": "Windows エクスプローラーで TortoiseGit の状態アイコンが表示されない場合、ShellIconOverlayIdentifiers の上限と優先度を確認します。レジストリ整理と Explorer の再起動でアイコンをすぐに復旧できます。",
+      "date": "2021-02-27T02:00:00.000Z",
+      "categories": [
+        "git"
+      ],
+      "url": "/ja/posts/17-windows-tortoisegit-icon-overlay-fix/",
+      "image": "/posts/17-windows-tortoisegit-icon-overlay-fix/assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png",
+      "count": 1
+    },
+    {
+      "rank": 9,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする方法",
       "description": ".envファイルをGitにコミットする必要がある場合に、GPGで暗号化して機密情報の漏洩を防ぐ方法をまとめました。.gitignoreの設定からgpg encrypt/decryptコマンド、recipientのデフォルト設定まで適用して、安全なリポジトリ運用を始めましょう。",
