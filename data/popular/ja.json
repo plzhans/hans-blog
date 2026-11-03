@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T06:28:31.113Z",
+  "generated_at": "2026-11-03T07:00:24.762Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -21,19 +21,6 @@
     },
     {
       "rank": 2,
-      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
-      "title": "ネイバー地図 Open API 認証失敗(200)の解決:ncpClientIdからncpKeyIdへの変更",
-      "description": "ネイバー地図 Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。コンソール統合によりncpClientId・govClientId・finClientIdがncpKeyIdに変更された点と、ポート・URIを除外する必要があるWebサービスURL登録ルールまで確認してください。",
-      "date": "2026-03-24T06:54:00.000Z",
-      "categories": [
-        "cloud"
-      ],
-      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
-      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 4
-    },
-    {
-      "rank": 3,
       "slug": "104-synology-dsm-acme-sh-letsencrypt",
       "title": "Synology DSM 無料 SSL 証明書の発行方法 | acme.sh + Cloudflare DNS で Let’s Encrypt を自動更新",
       "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
@@ -46,7 +33,7 @@
       "count": 3
     },
     {
-      "rank": 4,
+      "rank": 3,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
       "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
@@ -56,7 +43,20 @@
       ],
       "url": "/ja/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 2
+      "count": 3
+    },
+    {
+      "rank": 4,
+      "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
+      "title": "ネイバー地図 Open API 認証失敗(200)の解決:ncpClientIdからncpKeyIdへの変更",
+      "description": "ネイバー地図 Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。コンソール統合によりncpClientId・govClientId・finClientIdがncpKeyIdに変更された点と、ポート・URIを除外する必要があるWebサービスURL登録ルールまで確認してください。",
+      "date": "2026-03-24T06:54:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
+      "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
+      "count": 3
     },
     {
       "rank": 5,
