@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T06:43:34.862Z",
+  "generated_at": "2026-11-05T07:02:57.620Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/ja/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 13
+      "count": 15
     },
     {
       "rank": 2,
@@ -86,19 +86,6 @@
     },
     {
       "rank": 7,
-      "slug": "127-cloudflare-workers-cache-tiered-cache",
-      "title": "Cloudflare Workers キャッシュ設定方法 - エッジキャッシュとTiered Cache",
-      "description": "Workerが外部APIを呼ぶときにキャッシュをかける2つの方法と、知らなければ必ず踏む罠3つ。データセンターごとのキャッシュ・Tiered Cache・キャッシュキー。",
-      "date": "2026-09-11T13:01:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/ja/posts/127-cloudflare-workers-cache-tiered-cache/",
-      "image": "/posts/127-cloudflare-workers-cache-tiered-cache/assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg",
-      "count": 1
-    },
-    {
-      "rank": 8,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows で TortoiseGit のアイコンオーバーレイが消えたときの対処法",
       "description": "Windows エクスプローラーで TortoiseGit の状態アイコンが表示されない場合、ShellIconOverlayIdentifiers の上限と優先度を確認します。レジストリ整理と Explorer の再起動でアイコンをすぐに復旧できます。",
@@ -111,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする方法",
       "description": ".envファイルをGitにコミットする必要がある場合に、GPGで暗号化して機密情報の漏洩を防ぐ方法をまとめました。.gitignoreの設定からgpg encrypt/decryptコマンド、recipientのデフォルト設定まで適用して、安全なリポジトリ運用を始めましょう。",
