@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T07:02:58.273Z",
+  "generated_at": "2026-11-07T06:15:28.048Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -86,6 +86,19 @@
     },
     {
       "rank": 7,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
+      "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
+      "count": 1
+    },
+    {
+      "rank": 8,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "How to fix missing TortoiseGit icon overlays on Windows",
       "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "A guide to encrypting .env files with GPG to prevent secret exposure when you need to commit them to Git. Covers everything from .gitignore handling to gpg encrypt/decrypt commands and setting a default recipient, so you can start operating a secure repository.",

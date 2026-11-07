@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T07:02:58.278Z",
+  "generated_at": "2026-11-07T06:15:28.053Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -86,6 +86,19 @@
     },
     {
       "rank": 7,
+      "slug": "124-cloudflare-workers-static-site-guide",
+      "title": "Cloudflare Workers 静的サイトガイド - デプロイからSEOまで",
+      "description": "静的サイトをCloudflareに載せ、その前にコードを一枚重ねてSEOを改善するまで。4編に分けて整理したシリーズの案内板。",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/ja/posts/124-cloudflare-workers-static-site-guide/",
+      "image": "/posts/124-cloudflare-workers-static-site-guide/assets/1_3d822a0f-7e83-818c-8060-c230fe8eebe7.jpg",
+      "count": 1
+    },
+    {
+      "rank": 8,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows で TortoiseGit のアイコンオーバーレイが消えたときの対処法",
       "description": "Windows エクスプローラーで TortoiseGit の状態アイコンが表示されない場合、ShellIconOverlayIdentifiers の上限と優先度を確認します。レジストリ整理と Explorer の再起動でアイコンをすぐに復旧できます。",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする方法",
       "description": ".envファイルをGitにコミットする必要がある場合に、GPGで暗号化して機密情報の漏洩を防ぐ方法をまとめました。.gitignoreの設定からgpg encrypt/decryptコマンド、recipientのデフォルト設定まで適用して、安全なリポジトリ運用を始めましょう。",
