@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T06:15:28.041Z",
+  "generated_at": "2026-11-08T06:21:28.645Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 15
+      "count": 16
     },
     {
       "rank": 2,
@@ -86,6 +86,19 @@
     },
     {
       "rank": 7,
+      "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
+      "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
+      "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
+      "date": "2026-07-10T03:44:00.000Z",
+      "categories": [
+        "cloud"
+      ],
+      "url": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/",
+      "image": "/posts/115-oracle-cloud-always-free-a1-instance-ssh-security/assets/1_39922a0f-7e83-80a9-bd69-fd5331deb6ba.png",
+      "count": 1
+    },
+    {
+      "rank": 8,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
       "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows에서 TortoiseGit 아이콘 오버레이 안 보일 때 해결 방법",
       "description": "Windows 탐색기에서 TortoiseGit 상태 아이콘이 안 보이면 ShellIconOverlayIdentifiers 오버레이 제한과 우선순위를 점검해야 합니다. 레지스트리 정리와 Explorer 재시작으로 아이콘을 바로 복구합니다.",
@@ -111,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
       "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
