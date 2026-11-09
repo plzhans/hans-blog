@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T06:21:28.654Z",
+  "generated_at": "2026-11-09T06:54:53.620Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -34,19 +34,6 @@
     },
     {
       "rank": 3,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "Synology DSM 無料 SSL 証明書の発行方法 | acme.sh + Cloudflare DNS で Let’s Encrypt を自動更新",
-      "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 3
-    },
-    {
-      "rank": 4,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
       "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
@@ -57,6 +44,19 @@
       "url": "/ja/posts/39-https-tls-ssl-free-vs-paid-certificates/",
       "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
       "count": 3
+    },
+    {
+      "rank": 4,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "Synology DSM 無料 SSL 証明書の発行方法 | acme.sh + Cloudflare DNS で Let’s Encrypt を自動更新",
+      "description": "Synology DSM で acme.sh と Cloudflare DNS 認証を使い、Let's Encrypt 無料 SSL 証明書を発行して自動更新する方法を整理します。synology_dsm deploy-hook の設定と 2FA およびホスト名エラーの解決方法まで案内します。",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 2
     },
     {
       "rank": 5,
