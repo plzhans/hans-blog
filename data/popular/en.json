@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T06:49:01.386Z",
+  "generated_at": "2026-11-12T07:26:36.606Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/en/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 21
+      "count": 23
     },
     {
       "rank": 2,
@@ -30,36 +30,10 @@
       ],
       "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 5
+      "count": 6
     },
     {
       "rank": 3,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
-      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
-      "date": "2022-03-17T07:48:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 3
-    },
-    {
-      "rank": 4,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
-      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 2
-    },
-    {
-      "rank": 5,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Automating Claude Account Switching",
       "description": "This post summarizes how to quickly switch between Claude Code accounts without logging out. It covers an automation script that backs up and swaps macOS Keychain credentials using the security command, along with how to use dedicated tools like claudini and CCSwitcher.",
@@ -72,7 +46,20 @@
       "count": 1
     },
     {
-      "rank": 6,
+      "rank": 4,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "How to Issue a Free SSL Certificate on Synology DSM | Automatic Let’s Encrypt Renewal with acme.sh + Cloudflare DNS",
+      "description": "A guide to issuing and auto-renewing a Let's Encrypt free SSL certificate on Synology DSM using acme.sh and Cloudflare DNS validation. Covers synology_dsm deploy-hook setup and troubleshooting 2FA and hostname errors.",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 1
+    },
+    {
+      "rank": 5,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "How to Use Claude Code with Ollama Local LLMs",
       "description": "Explains how to connect Claude Code to an Ollama local LLM. Covers the Claude-compatible API, environment variables, model selection, and when you need a LiteLLM proxy.",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "How to Create an Oracle Cloud Always Free A1 Instance - Public IP Connection and SSH Security Setup",
       "description": "A step-by-step guide to creating an Oracle Cloud Always Free A1 (ARM) instance. Covers everything from selecting the free spec to connecting a public IP, setting up an SSH key, and restricting SSH port 22 with a VCN Security List and NSG.",
@@ -98,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers Static Site Guide - From Deployment to SEO",
       "description": "Putting a static site on Cloudflare, then layering code in front of it to improve SEO. A signpost for a four-part series.",
@@ -111,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "How to fix missing TortoiseGit icon overlays on Windows",
       "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
@@ -121,6 +108,19 @@
       ],
       "url": "/en/posts/17-windows-tortoisegit-icon-overlay-fix/",
       "image": "/posts/17-windows-tortoisegit-icon-overlay-fix/assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png",
+      "count": 1
+    },
+    {
+      "rank": 9,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL Free vs Paid Certificates",
+      "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
+      "date": "2022-03-17T07:48:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
       "count": 1
     },
     {

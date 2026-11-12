@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T06:49:01.379Z",
+  "generated_at": "2026-11-12T07:26:36.601Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 21
+      "count": 23
     },
     {
       "rank": 2,
@@ -30,36 +30,10 @@
       ],
       "url": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 5
+      "count": 6
     },
     {
       "rank": 3,
-      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
-      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
-      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
-      "date": "2026-02-06T06:29:00.000Z",
-      "categories": [
-        "web"
-      ],
-      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
-      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
-      "count": 3
-    },
-    {
-      "rank": 4,
-      "slug": "104-synology-dsm-acme-sh-letsencrypt",
-      "title": "Synology DSM 무료 SSL 인증서 발급 방법 | acme.sh + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
-      "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
-      "date": "2026-05-16T05:03:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/posts/104-synology-dsm-acme-sh-letsencrypt/",
-      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
-      "count": 2
-    },
-    {
-      "rank": 5,
       "slug": "101-claude-code-account-switch-macos-keychain",
       "title": "Claude 계정 스위치 자동화",
       "description": "Claude Code 계정을 로그아웃 없이 빠르게 전환하는 방법을 정리합니다. macOS Keychain의 인증 정보를 security 명령으로 백업·교체하는 자동화 스크립트와 claudini·CCSwitcher 같은 전용 도구 사용법을 함께 다룹니다.",
@@ -72,7 +46,20 @@
       "count": 1
     },
     {
-      "rank": 6,
+      "rank": 4,
+      "slug": "104-synology-dsm-acme-sh-letsencrypt",
+      "title": "Synology DSM 무료 SSL 인증서 발급 방법 | acme.sh + Cloudflare DNS로 Let’s Encrypt 자동 갱신",
+      "description": "Synology DSM에서 acme.sh와 Cloudflare DNS 인증으로 Let’s Encrypt 무료 SSL 인증서를 발급하고 자동 갱신하는 방법을 정리한다. synology_dsm deploy-hook 설정과 2FA 및 Hostname 오류 해결까지 안내한다.",
+      "date": "2026-05-16T05:03:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/posts/104-synology-dsm-acme-sh-letsencrypt/",
+      "image": "/posts/104-synology-dsm-acme-sh-letsencrypt/assets/1_38322a0f-7e83-80ac-9410-f92e336bb81a.png",
+      "count": 1
+    },
+    {
+      "rank": 5,
       "slug": "113-claude-code-ollama-local-llm",
       "title": "Claude Code를 Ollama 로컬 LLM으로 사용하는 방법",
       "description": "Claude Code를 Ollama 로컬 LLM으로 연결하는 방법을 설명합니다. Claude 호환 API, 환경변수, 모델 선택, LiteLLM 프록시가 필요한 경우까지 정리합니다.",
@@ -85,7 +72,7 @@
       "count": 1
     },
     {
-      "rank": 7,
+      "rank": 6,
       "slug": "115-oracle-cloud-always-free-a1-instance-ssh-security",
       "title": "오라클 클라우드 Always Free A1 인스턴스 생성 방법 - 공인 IP 연결과 SSH 보안 설정",
       "description": "Oracle Cloud Always Free A1(ARM) 인스턴스를 만드는 방법을 단계별로 정리합니다. 무료 스펙 선택부터 공인 IP 연결 SSH 키 설정 VCN Security List와 NSG로 SSH 22 포트 제한까지 포함합니다.",
@@ -98,7 +85,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 7,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 정적 사이트 가이드 - 배포부터 SEO까지",
       "description": "정적 사이트를 Cloudflare 에 올리고, 그 앞에 코드를 한 겹 얹어 SEO 를 개선하기까지. 네 편으로 나눠 정리한 시리즈의 안내판.",
@@ -111,7 +98,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 8,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows에서 TortoiseGit 아이콘 오버레이 안 보일 때 해결 방법",
       "description": "Windows 탐색기에서 TortoiseGit 상태 아이콘이 안 보이면 ShellIconOverlayIdentifiers 오버레이 제한과 우선순위를 점검해야 합니다. 레지스트리 정리와 Explorer 재시작으로 아이콘을 바로 복구합니다.",
@@ -121,6 +108,19 @@
       ],
       "url": "/posts/17-windows-tortoisegit-icon-overlay-fix/",
       "image": "/posts/17-windows-tortoisegit-icon-overlay-fix/assets/1_31422a0f-7e83-801f-a182-fce89d37a3c2.png",
+      "count": 1
+    },
+    {
+      "rank": 9,
+      "slug": "39-https-tls-ssl-free-vs-paid-certificates",
+      "title": "HTTPS TLS/SSL 무료 vs 유료 인증서",
+      "description": "HTTPS 구축 시 필요한 TLS/SSL 인증서 발급·검증 흐름과 무료(ACME/Let’s Encrypt)·유료·클라우드 관리형 옵션을 비교합니다. 갱신 자동화와 종단 지점 최소화 전략으로 비용과 운영 리스크를 줄이는 방법을 확인하세요.",
+      "date": "2026-02-06T06:29:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/posts/39-https-tls-ssl-free-vs-paid-certificates/",
+      "image": "/posts/39-https-tls-ssl-free-vs-paid-certificates/assets/1_2fe22a0f-7e83-805c-bf08-d71559e37b4a.png",
       "count": 1
     },
     {
