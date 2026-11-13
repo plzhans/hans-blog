@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T07:26:36.610Z",
+  "generated_at": "2026-11-13T06:58:10.958Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -17,7 +17,7 @@
       ],
       "url": "/ja/posts/105-mac-office-activation/",
       "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 23
+      "count": 24
     },
     {
       "rank": 2,
@@ -86,6 +86,19 @@
     },
     {
       "rank": 7,
+      "slug": "123-hugo-blog-guide",
+      "title": "Hugoブログを作る - 始め方からSEOまで",
+      "description": "Notion→Hugo→GitHub Pagesでブログを作り、カスタムドメインの接続、多言語対応、セキュリティヘッダーの適用まで順番に整理します。",
+      "date": "2026-09-03T00:00:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/ja/posts/123-hugo-blog-guide/",
+      "image": null,
+      "count": 1
+    },
+    {
+      "rank": 8,
       "slug": "124-cloudflare-workers-static-site-guide",
       "title": "Cloudflare Workers 静的サイトガイド - デプロイからSEOまで",
       "description": "静的サイトをCloudflareに載せ、その前にコードを一枚重ねてSEOを改善するまで。4編に分けて整理したシリーズの案内板。",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows で TortoiseGit のアイコンオーバーレイが消えたときの対処法",
       "description": "Windows エクスプローラーで TortoiseGit の状態アイコンが表示されない場合、ShellIconOverlayIdentifiers の上限と優先度を確認します。レジストリ整理と Explorer の再起動でアイコンをすぐに復旧できます。",
@@ -111,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
       "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする方法",
       "description": ".envファイルをGitにコミットする必要がある場合に、GPGで暗号化して機密情報の漏洩を防ぐ方法をまとめました。.gitignoreの設定からgpg encrypt/decryptコマンド、recipientのデフォルト設定まで適用して、安全なリポジトリ運用を始めましょう。",
