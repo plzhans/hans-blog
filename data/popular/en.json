@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T06:51:31.007Z",
+  "generated_at": "2026-11-17T08:09:53.894Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 6
+      "count": 7
     },
     {
       "rank": 3,
@@ -112,6 +112,19 @@
     },
     {
       "rank": 9,
+      "slug": "130-data-go-kr-400-invalid-request-parameter-error",
+      "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
+      "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
+      "date": "2026-09-16T14:55:00.000Z",
+      "categories": [
+        "develop"
+      ],
+      "url": "/posts/130-data-go-kr-400-invalid-request-parameter-error/",
+      "image": "/posts/130-data-go-kr-400-invalid-request-parameter-error/assets/1_3dd22a0f-7e83-8111-9893-f6ccdf4c2ddc.jpg",
+      "count": 1
+    },
+    {
+      "rank": 10,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "How to fix missing TortoiseGit icon overlays on Windows",
       "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
@@ -137,7 +150,7 @@
       "count": 1
     },
     {
-      "rank": 11,
+      "rank": 12,
       "slug": "89-gpg-encrypt-env-file",
       "title": "Encrypting .env Files with GPG for Safe Commits",
       "description": "A guide to encrypting .env files with GPG to prevent secret exposure when you need to commit them to Git. Covers everything from .gitignore handling to gpg encrypt/decrypt commands and setting a default recipient, so you can start operating a secure repository.",
@@ -147,6 +160,19 @@
       ],
       "url": "/en/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 1
+    },
+    {
+      "rank": 13,
+      "slug": "94-hugo-github-blog",
+      "title": "Building a Blog with Hugo + GitHub",
+      "description": "A walkthrough of building a personal blog using the Notion → Markdown conversion → Hugo build → GitHub Pages deployment flow. Follow along with Hugo installation, applying the m10c theme, automated deployment with GitHub Actions, and baseURL configuration pitfalls to reduce deployment errors.",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
       "count": 1
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T06:51:31.011Z",
+  "generated_at": "2026-11-17T08:09:53.898Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 6
+      "count": 7
     },
     {
       "rank": 3,
@@ -112,6 +112,19 @@
     },
     {
       "rank": 9,
+      "slug": "130-data-go-kr-400-invalid-request-parameter-error",
+      "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
+      "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
+      "date": "2026-09-16T14:55:00.000Z",
+      "categories": [
+        "develop"
+      ],
+      "url": "/posts/130-data-go-kr-400-invalid-request-parameter-error/",
+      "image": "/posts/130-data-go-kr-400-invalid-request-parameter-error/assets/1_3dd22a0f-7e83-8111-9893-f6ccdf4c2ddc.jpg",
+      "count": 1
+    },
+    {
+      "rank": 10,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows で TortoiseGit のアイコンオーバーレイが消えたときの対処法",
       "description": "Windows エクスプローラーで TortoiseGit の状態アイコンが表示されない場合、ShellIconOverlayIdentifiers の上限と優先度を確認します。レジストリ整理と Explorer の再起動でアイコンをすぐに復旧できます。",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL 無料 vs 有料証明書",
       "description": "HTTPS構築に必要なTLS/SSL証明書の発行・検証フローと無料(ACME/Let's Encrypt)・有料・クラウド管理型オプションの比較を整理しました。更新自動化と終端ポイントの最小化戦略でコストと運用リスクを抑える方法を確認してください。",
@@ -137,7 +150,7 @@
       "count": 1
     },
     {
-      "rank": 11,
+      "rank": 12,
       "slug": "89-gpg-encrypt-env-file",
       "title": "GPGで.envファイルを暗号化して安全にコミットする方法",
       "description": ".envファイルをGitにコミットする必要がある場合に、GPGで暗号化して機密情報の漏洩を防ぐ方法をまとめました。.gitignoreの設定からgpg encrypt/decryptコマンド、recipientのデフォルト設定まで適用して、安全なリポジトリ運用を始めましょう。",
@@ -147,6 +160,19 @@
       ],
       "url": "/ja/posts/89-gpg-encrypt-env-file/",
       "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
+      "count": 1
+    },
+    {
+      "rank": 13,
+      "slug": "94-hugo-github-blog",
+      "title": "Hugo + GitHubでブログを作る",
+      "description": "Notion→Markdown変換→Hugoビルド→GitHub Pagesデプロイという流れで個人ブログを構築する過程をまとめました。Hugoのインストールとm10cテーマの適用、GitHub Actionsによる自動デプロイ、baseURL設定の注意点まで実践し、デプロイエラーを減らしましょう。",
+      "date": "2026-02-10T08:46:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/ja/posts/94-hugo-github-blog/",
+      "image": "/posts/94-hugo-github-blog/assets/1_30a22a0f-7e83-80c6-b1d4-ed75cfa333a7.png",
       "count": 1
     }
   ]
