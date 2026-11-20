@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T07:40:16.432Z",
+  "generated_at": "2026-11-20T07:30:59.869Z",
   "lang": "ko",
   "period": {
     "start_date": "30daysAgo",
@@ -151,19 +151,6 @@
     },
     {
       "rank": 12,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPG로 .env 파일 암호화해서 안전하게 커밋하기",
-      "description": ".env 파일을 Git에 커밋해야 할 때 GPG로 암호화해 비밀값 노출을 막는 방법을 정리했습니다. .gitignore 처리부터 gpg encrypt/decrypt 명령과 recipient 기본 설정까지 적용해 안전한 저장소 운영을 시작하세요.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 1
-    },
-    {
-      "rank": 13,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + Github 블로그 만들기",
       "description": "Notion→Markdown→Hugo 빌드→GitHub Pages 배포 흐름으로 개인 블로그를 구축하는 과정을 정리했습니다. Hugo 설치와 m10c 테마 적용, GitHub Actions 자동 배포, baseURL 설정 주의점까지 따라 하며 배포 오류를 줄이세요.",

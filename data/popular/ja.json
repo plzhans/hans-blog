@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T07:40:16.440Z",
+  "generated_at": "2026-11-20T07:30:59.879Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -151,19 +151,6 @@
     },
     {
       "rank": 12,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "GPGで.envファイルを暗号化して安全にコミットする方法",
-      "description": ".envファイルをGitにコミットする必要がある場合に、GPGで暗号化して機密情報の漏洩を防ぐ方法をまとめました。.gitignoreの設定からgpg encrypt/decryptコマンド、recipientのデフォルト設定まで適用して、安全なリポジトリ運用を始めましょう。",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/ja/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 1
-    },
-    {
-      "rank": 13,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + GitHubでブログを作る",
       "description": "Notion→Markdown変換→Hugoビルド→GitHub Pagesデプロイという流れで個人ブログを構築する過程をまとめました。Hugoのインストールとm10cテーマの適用、GitHub Actionsによる自動デプロイ、baseURL設定の注意点まで実践し、デプロイエラーを減らしましょう。",

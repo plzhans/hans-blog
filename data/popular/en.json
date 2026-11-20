@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T07:40:16.436Z",
+  "generated_at": "2026-11-20T07:30:59.874Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -151,19 +151,6 @@
     },
     {
       "rank": 12,
-      "slug": "89-gpg-encrypt-env-file",
-      "title": "Encrypting .env Files with GPG for Safe Commits",
-      "description": "A guide to encrypting .env files with GPG to prevent secret exposure when you need to commit them to Git. Covers everything from .gitignore handling to gpg encrypt/decrypt commands and setting a default recipient, so you can start operating a secure repository.",
-      "date": "2026-02-16T17:42:00.000Z",
-      "categories": [
-        "git"
-      ],
-      "url": "/en/posts/89-gpg-encrypt-env-file/",
-      "image": "/posts/89-gpg-encrypt-env-file/assets/1_30922a0f-7e83-803e-8671-fa8de7b1660a.png",
-      "count": 1
-    },
-    {
-      "rank": 13,
       "slug": "94-hugo-github-blog",
       "title": "Building a Blog with Hugo + GitHub",
       "description": "A walkthrough of building a personal blog using the Notion → Markdown conversion → Hugo build → GitHub Pages deployment flow. Follow along with Hugo installation, applying the m10c theme, automated deployment with GitHub Actions, and baseURL configuration pitfalls to reduce deployment errors.",
