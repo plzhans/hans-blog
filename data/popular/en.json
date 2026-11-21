@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T07:30:59.874Z",
+  "generated_at": "2026-11-21T07:27:01.574Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -30,7 +30,7 @@
       ],
       "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 7
+      "count": 8
     },
     {
       "rank": 3,
@@ -112,6 +112,19 @@
     },
     {
       "rank": 9,
+      "slug": "127-cloudflare-workers-cache-tiered-cache",
+      "title": "How to Set Up Caching in Cloudflare Workers - Edge Cache and Tiered Cache",
+      "description": "Two ways to cache when a Worker calls an external API, and the three traps you will definitely hit if you don't know about them. Per-data-center cache, Tiered Cache, and cache keys.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/127-cloudflare-workers-cache-tiered-cache/",
+      "image": "/posts/127-cloudflare-workers-cache-tiered-cache/assets/1_3d822a0f-7e83-8170-a661-c0a4f4df8698.jpg",
+      "count": 1
+    },
+    {
+      "rank": 10,
       "slug": "130-data-go-kr-400-invalid-request-parameter-error",
       "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
       "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "How to fix missing TortoiseGit icon overlays on Windows",
       "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
@@ -137,7 +150,7 @@
       "count": 1
     },
     {
-      "rank": 11,
+      "rank": 12,
       "slug": "39-https-tls-ssl-free-vs-paid-certificates",
       "title": "HTTPS TLS/SSL Free vs Paid Certificates",
       "description": "Compare TLS/SSL certificate issuance flows across free (ACME/Let's Encrypt), paid, and cloud-managed options, and design renewal automation plus termination point minimization to reduce cost and operational risk.",
@@ -150,7 +163,7 @@
       "count": 1
     },
     {
-      "rank": 12,
+      "rank": 13,
       "slug": "94-hugo-github-blog",
       "title": "Building a Blog with Hugo + GitHub",
       "description": "A walkthrough of building a personal blog using the Notion → Markdown conversion → Hugo build → GitHub Pages deployment flow. Follow along with Hugo installation, applying the m10c theme, automated deployment with GitHub Actions, and baseURL configuration pitfalls to reduce deployment errors.",
