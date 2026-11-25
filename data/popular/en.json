@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T10:07:48.419Z",
+  "generated_at": "2026-11-25T08:53:41.627Z",
   "lang": "en",
   "period": {
     "start_date": "30daysAgo",
@@ -8,19 +8,6 @@
   "posts": [
     {
       "rank": 1,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
-      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/en/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 23
-    },
-    {
-      "rank": 2,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "Resolving Naver Map Open API Authentication Failure (200): Changing ncpClientId to ncpKeyId",
       "description": "This post summarizes the cause of the Authentication Failed (200) error in the Naver Map Open API. It covers how console integration changed ncpClientId, govClientId, and finClientId to ncpKeyId, as well as the web service URL registration rules that require excluding the port and URI.",
@@ -30,7 +17,20 @@
       ],
       "url": "/en/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 13
+      "count": 24
+    },
+    {
+      "rank": 2,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office Activation Guide | Install LTSC with Volume License VL Serializer",
+      "description": "A step-by-step guide to installing and activating Microsoft Office on Mac using a volume license. Covers LTSC installer selection, VL Serializer application, and activation verification.",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/en/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 22
     },
     {
       "rank": 3,
@@ -86,6 +86,19 @@
     },
     {
       "rank": 7,
+      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
+      "title": "How to Use wrangler - Local Development and Deployment for Cloudflare Workers",
+      "description": "Installing wrangler and setting up types, booting workerd with wrangler dev, and deploying. Starting with the fact that wrangler dev is not a frontend dev server.",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/en/posts/126-cloudflare-workers-wrangler-dev-deploy/",
+      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
+      "count": 1
+    },
+    {
+      "rank": 8,
       "slug": "127-cloudflare-workers-cache-tiered-cache",
       "title": "How to Set Up Caching in Cloudflare Workers - Edge Cache and Tiered Cache",
       "description": "Two ways to cache when a Worker calls an external API, and the three traps you will definitely hit if you don't know about them. Per-data-center cache, Tiered Cache, and cache keys.",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "130-data-go-kr-400-invalid-request-parameter-error",
       "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
       "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
@@ -111,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "How to fix missing TortoiseGit icon overlays on Windows",
       "description": "When Windows Explorer hides TortoiseGit status icons, check the ShellIconOverlayIdentifiers limit and priority. Clean up the registry and restart Explorer to bring the overlays back instantly.",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "94-hugo-github-blog",
       "title": "Building a Blog with Hugo + GitHub",
       "description": "A walkthrough of building a personal blog using the Notion → Markdown conversion → Hugo build → GitHub Pages deployment flow. Follow along with Hugo installation, applying the m10c theme, automated deployment with GitHub Actions, and baseURL configuration pitfalls to reduce deployment errors.",

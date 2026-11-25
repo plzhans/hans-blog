@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T10:07:48.425Z",
+  "generated_at": "2026-11-25T08:53:41.631Z",
   "lang": "ja",
   "period": {
     "start_date": "30daysAgo",
@@ -8,19 +8,6 @@
   "posts": [
     {
       "rank": 1,
-      "slug": "105-mac-office-activation",
-      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
-      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
-      "date": "2026-06-17T11:18:00.000Z",
-      "categories": [
-        "etc"
-      ],
-      "url": "/ja/posts/105-mac-office-activation/",
-      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
-      "count": 23
-    },
-    {
-      "rank": 2,
       "slug": "99-naver-map-openapi-authentication-failed-200-ncpkeyid",
       "title": "ネイバー地図 Open API 認証失敗(200)の解決:ncpClientIdからncpKeyIdへの変更",
       "description": "ネイバー地図 Open APIでAuthentication Failed(200)エラーが発生する原因をまとめます。コンソール統合によりncpClientId・govClientId・finClientIdがncpKeyIdに変更された点と、ポート・URIを除外する必要があるWebサービスURL登録ルールまで確認してください。",
@@ -30,7 +17,20 @@
       ],
       "url": "/ja/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/",
       "image": "/posts/99-naver-map-openapi-authentication-failed-200-ncpkeyid/assets/1_32d22a0f-7e83-8032-898f-d7ab33128d85.png",
-      "count": 13
+      "count": 24
+    },
+    {
+      "rank": 2,
+      "slug": "105-mac-office-activation",
+      "title": "Mac Office ライセンス認証方法 | ボリュームライセンス VL Serializer で LTSC をインストール",
+      "description": "Mac で Microsoft Office をボリュームライセンスでインストールし、ライセンス認証を有効化する手順を整理します。LTSC インストーラーの選択から VL Serializer の適用、認証確認方法までまとめて案内します。",
+      "date": "2026-06-17T11:18:00.000Z",
+      "categories": [
+        "etc"
+      ],
+      "url": "/ja/posts/105-mac-office-activation/",
+      "image": "/posts/105-mac-office-activation/assets/1_38322a0f-7e83-809e-bbe9-ec706fca96d9.png",
+      "count": 22
     },
     {
       "rank": 3,
@@ -86,6 +86,19 @@
     },
     {
       "rank": 7,
+      "slug": "126-cloudflare-workers-wrangler-dev-deploy",
+      "title": "wrangler 使い方 - Cloudflare Workers のローカル開発とデプロイ",
+      "description": "wranglerのインストールと型設定、wrangler devでworkerdを立ち上げる方法、そしてデプロイ。wrangler devがフロントエンドの開発サーバーではないという点から。",
+      "date": "2026-09-11T13:01:00.000Z",
+      "categories": [
+        "web"
+      ],
+      "url": "/ja/posts/126-cloudflare-workers-wrangler-dev-deploy/",
+      "image": "/posts/126-cloudflare-workers-wrangler-dev-deploy/assets/1_3d822a0f-7e83-81f6-b43f-ee90a3347422.jpg",
+      "count": 1
+    },
+    {
+      "rank": 8,
       "slug": "127-cloudflare-workers-cache-tiered-cache",
       "title": "Cloudflare Workers キャッシュ設定方法 - エッジキャッシュとTiered Cache",
       "description": "Workerが外部APIを呼ぶときにキャッシュをかける2つの方法と、知らなければ必ず踏む罠3つ。データセンターごとのキャッシュ・Tiered Cache・キャッシュキー。",
@@ -98,7 +111,7 @@
       "count": 1
     },
     {
-      "rank": 8,
+      "rank": 9,
       "slug": "130-data-go-kr-400-invalid-request-parameter-error",
       "title": "공공데이터포털 API 400 오류 - 헤더에 environment 가 있으면 거부한다",
       "description": "INVALID_REQUEST_PARAMETER_ERROR 는 파라미터 문제가 아닐 수 있다. data.go.kr 은 헤더 값의 environment= 을 거부한다.",
@@ -111,7 +124,7 @@
       "count": 1
     },
     {
-      "rank": 9,
+      "rank": 10,
       "slug": "17-windows-tortoisegit-icon-overlay-fix",
       "title": "Windows で TortoiseGit のアイコンオーバーレイが消えたときの対処法",
       "description": "Windows エクスプローラーで TortoiseGit の状態アイコンが表示されない場合、ShellIconOverlayIdentifiers の上限と優先度を確認します。レジストリ整理と Explorer の再起動でアイコンをすぐに復旧できます。",
@@ -124,7 +137,7 @@
       "count": 1
     },
     {
-      "rank": 10,
+      "rank": 11,
       "slug": "94-hugo-github-blog",
       "title": "Hugo + GitHubでブログを作る",
       "description": "Notion→Markdown変換→Hugoビルド→GitHub Pagesデプロイという流れで個人ブログを構築する過程をまとめました。Hugoのインストールとm10cテーマの適用、GitHub Actionsによる自動デプロイ、baseURL設定の注意点まで実践し、デプロイエラーを減らしましょう。",
